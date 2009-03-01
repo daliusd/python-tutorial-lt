@@ -1,47 +1,54 @@
 .. _tutorial-index:
 
 ######################
-  The Python Tutorial
+  Pitono vadovėlis
 ######################
 
 :Release: |version|
 :Date: |today|
 
-Python is an easy to learn, powerful programming language. It has efficient
-high-level data structures and a simple but effective approach to
-object-oriented programming. Python's elegant syntax and dynamic typing,
-together with its interpreted nature, make it an ideal language for scripting
-and rapid application development in many areas on most platforms.
+Pitonas yra lengvai išmokstama, galinga programavimo kalba. Ji turi
+efektyvias aukšto lygio duomenų struktūras ir paprastą, bet efektyvų
+objektinio programavimo modelį. Dėl elegantiškos Pitono sintaksės, dinamiško
+tipizavimo ir interpretatorius, Pitonas yra ideali kalba scenarijų rašymui
+ir greitam aplikacijų kūrimui įvairiose srityse įvairioms platformoms.
 
-The Python interpreter and the extensive standard library are freely available
-in source or binary form for all major platforms from the Python Web site,
-http://www.python.org/, and may be freely distributed. The same site also
-contains distributions of and pointers to many free third party Python modules,
-programs and tools, and additional documentation.
+Pitono interpretatorių ir plačią standartinę biblioteką galima nemokamai
+parsisiųsti kodo arba binariniu formatu visoms pagrindinėms plaformoms
+iš Pitono puslapio http://www.python.org/. Taip pat Pitoną galima laisvai
+platinti. Šiame puslapyje taip rasite informacijos apie kitus nemokamus
+Pitono modulius, programas ir įrankius, bet papildomą dokumentaciją.
 
-The Python interpreter is easily extended with new functions and data types
-implemented in C or C++ (or other languages callable from C). Python is also
-suitable as an extension language for customizable applications.
+Pitono interpretatorius yra lengvai praplečiamas naujomis funkcijomis
+ir duomenų tipais naudojant C arba C++ (arba kitas kalbas, kurias galima
+kviesti iš C). Pitonas taip pat gali būti naudojamas kaip praplėtimo
+kalba.
 
-This tutorial introduces the reader informally to the basic concepts and
-features of the Python language and system. It helps to have a Python
-interpreter handy for hands-on experience, but all examples are self-contained,
-so the tutorial can be read off-line as well.
+Šis vadovėlis skaitytoją neformaliai supažindina su pagrindinėmis Pitono
+kalbos koncepcijomis ir savybėmis. Jums tikrai padės, jei po ranka
+turėsite Pitono interpretatorių, bet visi pavyzdžiai yra išsamūs, todėl
+vadovėlį galima skaityti tiesiog taip.
 
-For a description of standard objects and modules, see the Python Library
-Reference document. The Python Reference Manual gives a more formal definition
-of the language. To write extensions in C or C++, read Extending and Embedding
-the Python Interpreter and Python/C API Reference. There are also several books
-covering Python in depth.
+*Vertėjo pastaba:* Daugumą pavyzdžių galite išbandyti http://py.sandbox.lt,
+jei negalite ar nenorite instaliuoti Pitono interpretatoriaus dabar.
 
-This tutorial does not attempt to be comprehensive and cover every single
-feature, or even every commonly used feature. Instead, it introduces many of
-Python's most noteworthy features, and will give you a good idea of the
-language's flavor and style. After reading it, you will be able to read and
-write Python modules and programs, and you will be ready to learn more about the
-various Python library modules described in the Python Library Reference.
+Jei jums reikia standartinių objektų ir modulių aprašymo, žiūrėkite *Python Library
+Reference* dokumentą. *Python Reference Manual* formaliai aprašo kalbą.
+Jei norite rašyti plėtinius C ar C++ skaitykite *Extending and Embedding
+the Python Interpreter and Python/C API Reference*. Taip pat yra keletas
+knygų aprašančių Pitoną išsamiai.
 
-The :ref:`glossary` is also worth going through.
+*Vertėjo pastaba:* Dokumentų pavadinimai neišversti į lietuvių kalbą, nes
+dokumentų lietuvių kalba nėra.
+
+Šis vadovėlis nėra bandymas išsamiai aprašyti kiekvieną savybę ar netgi
+kiekvieną dažnai naudojamą savybę. Čia aprašytos Pitono savybės, kurias
+verta paminėti, ir vadovėlis leis suprasti kalbos tipą ir stilių. Perskaitę
+jį jūs galėsite skaityti ir rašyti Pitono modulius ir programas, ir būsite
+pasiruošę išmokti daugiau apie Pitono bibliotekos modulius aprašytus
+*Python Library Reference*.
+
+Terminų :ref:`glossary` žodynėlį taip pat verta permesti akimis.
 
 .. toctree::
 
