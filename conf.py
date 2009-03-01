@@ -14,7 +14,9 @@ sys.path.append(os.path.abspath('tools/sphinxext'))
 # ---------------------
 
 extensions = ['sphinx.ext.refcounting', 'sphinx.ext.coverage',
-              'sphinx.ext.doctest', 'pyspecific']
+              'sphinx.ext.doctest',]
+# XXX: pyspecific – guli python'o svn'e. Galbūt prireiks?
+#'pyspecific']
 templates_path = ['tools/sphinxext']
 
 # General substitutions.
@@ -24,14 +26,14 @@ copyright = '1990-%s, Python Software Foundation' % time.strftime('%Y')
 # The default replacements for |version| and |release|.
 #
 # The short X.Y version.
-# version = '2.6'
+version = '2.6'
 # The full version, including alpha/beta/rc tags.
-# release = '2.6a0'
+release = '2.6'
 
 # We look for the Include/patchlevel.h file in the current Python source tree
 # and replace the values accordingly.
-import patchlevel
-version, release = patchlevel.get_version_info()
+# import patchlevel
+# version, release = patchlevel.get_version_info()
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -47,7 +49,7 @@ unused_docs = [
 ]
 
 # Relative filename of the reference count data file.
-refcount_file = 'data/refcounts.dat'
+#refcount_file = 'data/refcounts.dat'
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
 add_function_parentheses = True
@@ -74,73 +76,22 @@ html_sidebars = {
 }
 
 # Additional templates that should be rendered to pages.
-html_additional_pages = {
-    'download': 'download.html',
-    'index': 'indexcontent.html',
-}
+#html_additional_pages = {
+#    'download': 'download.html',
+#    'index': 'indexcontent.html',
+#}
 
 # Output an OpenSearch description file.
 html_use_opensearch = 'http://docs.python.org/dev'
 
 # Additional static files.
-html_static_path = ['tools/sphinxext/static']
+#html_static_path = ['tools/sphinxext/static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'python' + release.replace('.', '')
 
 # Split the index
 html_split_index = True
-
-
-# Options for LaTeX output
-# ------------------------
-
-# The paper size ('letter' or 'a4').
-latex_paper_size = 'a4'
-
-# The font size ('10pt', '11pt' or '12pt').
-latex_font_size = '10pt'
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, document class [howto/manual]).
-_stdauthor = r'Guido van Rossum\\Fred L. Drake, Jr., editor'
-latex_documents = [
-    ('c-api/index', 'c-api.tex',
-     'The Python/C API', _stdauthor, 'manual'),
-    ('distutils/index', 'distutils.tex',
-     'Distributing Python Modules', _stdauthor, 'manual'),
-    ('documenting/index', 'documenting.tex',
-     'Documenting Python', 'Georg Brandl', 'manual'),
-    ('extending/index', 'extending.tex',
-     'Extending and Embedding Python', _stdauthor, 'manual'),
-    ('install/index', 'install.tex',
-     'Installing Python Modules', _stdauthor, 'manual'),
-    ('library/index', 'library.tex',
-     'The Python Library Reference', _stdauthor, 'manual'),
-    ('reference/index', 'reference.tex',
-     'The Python Language Reference', _stdauthor, 'manual'),
-    ('tutorial/index', 'tutorial.tex',
-     'Python Tutorial', _stdauthor, 'manual'),
-    ('using/index', 'using.tex',
-     'Using Python', _stdauthor, 'manual'),
-    ('whatsnew/' + version, 'whatsnew.tex',
-     'What\'s New in Python', 'A. M. Kuchling', 'howto'),
-]
-# Collect all HOWTOs individually
-latex_documents.extend(('howto/' + fn[:-4], 'howto-' + fn[:-4] + '.tex',
-                        '', _stdauthor, 'howto')
-                       for fn in os.listdir('howto')
-                       if fn.endswith('.rst') and fn != 'index.rst')
-
-# Additional stuff for the LaTeX preamble.
-latex_preamble = r'''
-\authoraddress{
-  \strong{Python Software Foundation}\\
-  Email: \email{docs@python.org}
-}
-\let\Verbatim=\OriginalVerbatim
-\let\endVerbatim=\endOriginalVerbatim
-'''
 
 # Documents to append as an appendix to all manuals.
 latex_appendices = ['glossary', 'about', 'license', 'copyright']
