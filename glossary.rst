@@ -1,8 +1,8 @@
 .. _glossary:
 
-********
-Glossary
-********
+***************
+Terminų žodynas
+***************
 
 .. if you add new entries, keep the alphabetical sorting!
 
@@ -26,7 +26,7 @@ Glossary
       entry point is provided as :file:`Tools/scripts/2to3`.  See
       :ref:`2to3-reference`.
 
-   abstract base class
+   abstrakti bazinė klase / abstract base class
       Abstract Base Classes (abbreviated ABCs) complement :term:`duck-typing` by
       providing a way to define interfaces when other techniques like :func:`hasattr`
       would be clumsy. Python comes with many builtin ABCs for data structures
@@ -34,7 +34,7 @@ Glossary
       module), and streams (in the :mod:`io` module). You can create your own
       ABC with the :mod:`abc` module.
 
-   argument
+   argumentas / argument
       A value passed to a function or method, assigned to a named local
       variable in the function body.  A function or method may have both
       positional arguments and keyword arguments in its definition.
@@ -46,16 +46,16 @@ Glossary
       Any expression may be used within the argument list, and the evaluated
       value is passed to the local variable.
 
-   attribute
+   atributas / attribute
       A value associated with an object which is referenced by name using
       dotted expressions.  For example, if an object *o* has an attribute
       *a* it would be referenced as *o.a*.
 
-   BDFL
+   BFDL
       Benevolent Dictator For Life, a.k.a. `Guido van Rossum
       <http://www.python.org/~guido/>`_, Python's creator.
 
-   bytecode
+   baitinis kodas / bytecode
       Python source code is compiled into bytecode, the internal representation
       of a Python program in the interpreter.  The bytecode is also cached in
       ``.pyc`` and ``.pyo`` files so that executing the same file is faster the
@@ -63,16 +63,16 @@ Glossary
       "intermediate language" is said to run on a :term:`virtual machine`
       that executes the machine code corresponding to each bytecode.
 
-   class
+   klasė / class
       A template for creating user-defined objects. Class definitions
       normally contain method definitions which operate on instances of the
       class.
 
-   classic class
+   klasikinė klasė / classic class
       Any class which does not inherit from :class:`object`.  See
       :term:`new-style class`.  Classic classes will be removed in Python 3.0.
 
-   coercion
+   pakeitimas / coercion
       The implicit conversion of an instance of one type to another during an
       operation which involves two arguments of the same type.  For example,
       ``int(3.15)`` converts the floating point number to the integer ``3``, but
@@ -85,7 +85,7 @@ Glossary
       compatible types would have to be normalized to the same value by the
       programmer, e.g., ``float(3)+4.5`` rather than just ``3+4.5``.
 
-   complex number
+   kompleksinis skaičius / complex number
       An extension of the familiar real number system in which all numbers are
       expressed as a sum of a real part and an imaginary part.  Imaginary
       numbers are real multiples of the imaginary unit (the square root of
@@ -97,7 +97,7 @@ Glossary
       advanced mathematical feature.  If you're not aware of a need for them,
       it's almost certain you can safely ignore them.
 
-   context manager
+   konteksto menedžeris / context manager
       An object which controls the environment seen in a :keyword:`with`
       statement by defining :meth:`__enter__` and :meth:`__exit__` methods.
       See :pep:`343`.
@@ -107,7 +107,7 @@ Glossary
       term "CPython" is used in contexts when necessary to distinguish this
       implementation from others such as Jython or IronPython.
 
-   decorator
+   dekoratorius / decorator
       A function returning another function, usually applied as a function
       transformation using the ``@wrapper`` syntax.  Common examples for
       decorators are :func:`classmethod` and :func:`staticmethod`.
@@ -126,7 +126,7 @@ Glossary
       See :ref:`the documentation for function definition <function>` for more
       about decorators.
 
-   descriptor
+   deskriptorius / descriptor
       Any *new-style* object which defines the methods :meth:`__get__`,
       :meth:`__set__`, or :meth:`__delete__`.  When a class attribute is a
       descriptor, its special binding behavior is triggered upon attribute
@@ -139,13 +139,13 @@ Glossary
 
       For more information about descriptors' methods, see :ref:`descriptors`.
 
-   dictionary
+   žodynas / dictionary
       An associative array, where arbitrary keys are mapped to values.  The use
       of :class:`dict` closely resembles that for :class:`list`, but the keys can
       be any object with a :meth:`__hash__` function, not just integers.
       Called a hash in Perl.
 
-   docstring
+   dokumentuojanti eilutė / docstring
       A string literal which appears as the first expression in a class,
       function or module.  While ignored when the suite is executed, it is
       recognized by the compiler and put into the :attr:`__doc__` attribute
@@ -153,7 +153,7 @@ Glossary
       introspection, it is the canonical place for documentation of the
       object.
 
-   duck-typing
+   anties-tipizavimas / duck-typing
       A pythonic programming style which determines an object's type by inspection
       of its method or attribute signature rather than by explicit relationship
       to some type object ("If it looks like a duck and quacks like a duck, it
@@ -172,7 +172,7 @@ Glossary
       statements.  The technique contrasts with the :term:`LBYL` style
       common to many other languages such as C.
 
-   expression
+   išraiška / expression
       A piece of syntax which can be evaluated to some value.  In other words,
       an expression is an accumulation of expression elements like literals, names,
       attribute access, operators or function calls which all return a value.
@@ -181,11 +181,11 @@ Glossary
       such as :keyword:`print` or :keyword:`if`.  Assignments are also statements,
       not expressions.
 
-   extension module
+   išplėtimo modulis / extension module
       A module written in C or C++, using Python's C API to interact with the core and
       with user code.
 
-   function
+   funkcija / function
       A series of statements which returns some value to a caller. It can also
       be passed zero or more arguments which may be used in the execution of
       the body. See also :term:`argument` and :term:`method`.
@@ -207,12 +207,12 @@ Glossary
          >>> __future__.division
          _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192)
 
-   garbage collection
+   šiukšlių surinkimas / garbage collection
       The process of freeing memory when it is not used anymore.  Python
       performs garbage collection via reference counting and a cyclic garbage
       collector that is able to detect and break reference cycles.
 
-   generator
+   generatorius / generator
       A function which returns an iterator.  It looks like a normal function
       except that values are returned to the caller using a :keyword:`yield`
       statement instead of a :keyword:`return` statement.  Generator functions
@@ -224,7 +224,7 @@ Glossary
 
       .. index:: single: generator expression
 
-   generator expression
+   generatoriaus išraiška / generator expression
       An expression that returns a generator.  It looks like a normal expression
       followed by a :keyword:`for` expression defining a loop variable, range,
       and an optional :keyword:`if` expression.  The combined expression
@@ -236,7 +236,7 @@ Glossary
    GIL
       See :term:`global interpreter lock`.
 
-   global interpreter lock
+   globalus interpretatoriaus užrakinimas / global interpreter lock
       The lock used by Python threads to assure that only one thread
       executes in the :term:`CPython` :term:`virtual machine` at a time.
       This simplifies the CPython implementation by assuring that no two
@@ -248,7 +248,7 @@ Glossary
       much finer granularity), but so far none have been successful because
       performance suffered in the common single-processor case.
 
-   hashable
+   ? / hashable
       An object is *hashable* if it has a hash value which never changes during
       its lifetime (it needs a :meth:`__hash__` method), and can be compared to
       other objects (it needs an :meth:`__eq__` or :meth:`__cmp__` method).
@@ -269,14 +269,14 @@ Glossary
       those wanting to implement a moderately sophisticated, multi-platform GUI
       application.
 
-   immutable
+   nemutabilus / immutable
       An object with a fixed value.  Immutable objects include numbers, strings and
       tuples.  Such an object cannot be altered.  A new object has to
       be created if a different value has to be stored.  They play an important
       role in places where a constant hash value is needed, for example as a key
       in a dictionary.
 
-   integer division
+   sveikųjų skaičių dalybą / integer division
       Mathematical division discarding any remainder.  For example, the
       expression ``11/4`` currently evaluates to ``2`` in contrast to the
       ``2.75`` returned by float division.  Also called *floor division*.
@@ -288,7 +288,7 @@ Glossary
       fraction.  Integer division can be forced by using the ``//`` operator
       instead of the ``/`` operator.  See also :term:`__future__`.
 
-   interactive
+   interaktyvus / interactive
       Python has an interactive interpreter which means you can enter
       statements and expressions at the interpreter prompt, immediately
       execute them and see their results.  Just launch ``python`` with no
@@ -296,7 +296,7 @@ Glossary
       menu). It is a very powerful way to test out new ideas or inspect
       modules and packages (remember ``help(x)``).
 
-   interpreted
+   interpretuojamas / interpreted
       Python is an interpreted language, as opposed to a compiled one,
       though the distinction can be blurry because of the presence of the
       bytecode compiler.  This means that source files can be run directly
@@ -305,7 +305,7 @@ Glossary
       than compiled ones, though their programs generally also run more
       slowly.  See also :term:`interactive`.
 
-   iterable
+   iteruojamas / iterable
       A container object capable of returning its members one at a
       time. Examples of iterables include all sequence types (such as
       :class:`list`, :class:`str`, and :class:`tuple`) and some non-sequence
@@ -321,7 +321,7 @@ Glossary
       variable to hold the iterator for the duration of the loop.  See also
       :term:`iterator`, :term:`sequence`, and :term:`generator`.
 
-   iterator
+   iteratorius / iterator
       An object representing a stream of data.  Repeated calls to the iterator's
       :meth:`next` method return successive items in the stream.  When no more
       data are available a :exc:`StopIteration` exception is raised instead.  At
@@ -338,7 +338,7 @@ Glossary
 
       More information can be found in :ref:`typeiter`.
 
-   keyword argument
+   raktinis argumentas / keyword argument
       Arguments which are preceded with a ``variable_name=`` in the call.
       The variable name designates the local name in the function to which the
       value is assigned.  ``**`` is used to accept or pass a dictionary of
@@ -355,12 +355,12 @@ Glossary
       the :term:`EAFP` approach and is characterized by the presence of many
       :keyword:`if` statements.
 
-   list
+   sąrašas / list
       A built-in Python :term:`sequence`.  Despite its name it is more akin
       to an array in other languages than to a linked list since access to
       elements are O(1).
 
-   list comprehension
+   kompaktiška sąrašo išraiška / list comprehension
       A compact way to process all or part of the elements in a sequence and
       return a list with the results.  ``result = ["0x%02x" % x for x in
       range(256) if x % 2 == 0]`` generates a list of strings containing
@@ -372,7 +372,7 @@ Glossary
       A container object (such as :class:`dict`) which supports arbitrary key
       lookups using the special method :meth:`__getitem__`.
 
-   metaclass
+   metaklasė / metaclass
       The class of a class.  Class definitions create a class name, a class
       dictionary, and a list of base classes.  The metaclass is responsible for
       taking those three arguments and creating the class.  Most object oriented
@@ -385,17 +385,17 @@ Glossary
 
       More information can be found in :ref:`metaclasses`.
 
-   method
+   metodas / method
       A function which is defined inside a class body.  If called as an attribute
       of an instance of that class, the method will get the instance object as
       its first :term:`argument` (which is usually called ``self``).
       See :term:`function` and :term:`nested scope`.
 
-   mutable
+   mutabilus / mutable
       Mutable objects can change their value but keep their :func:`id`.  See
       also :term:`immutable`.
 
-   named tuple
+   vardinė eilutė / named tuple
       Any tuple-like class whose indexable elements are also accessible using
       named attributes (for example, :func:`time.localtime` returns a
       tuple-like object where the *year* is accessible either with an
@@ -408,7 +408,7 @@ Glossary
       provides extra features such as a self-documenting representation like
       ``Employee(name='jones', title='programmer')``.
 
-   namespace
+   vardų erdvė / namespace
       The place where a variable is stored.  Namespaces are implemented as
       dictionaries.  There are the local, global and builtin namespaces as well
       as nested namespaces in objects (in methods).  Namespaces support
@@ -420,7 +420,7 @@ Glossary
       functions are implemented by the :mod:`random` and :mod:`itertools`
       modules, respectively.
 
-   nested scope
+   vidinė sritis / nested scope
       The ability to refer to a variable in an enclosing definition.  For
       instance, a function defined inside another function can refer to
       variables in the outer function.  Note that nested scopes work only for
@@ -428,7 +428,7 @@ Glossary
       scope.  In contrast, local variables both read and write in the innermost
       scope.  Likewise, global variables read and write to the global namespace.
 
-   new-style class
+   naujo-stiliaus klasė / new-style class
       Any class which inherits from :class:`object`.  This includes all built-in
       types like :class:`list` and :class:`dict`.  Only new-style classes can
       use Python's newer, versatile features like :attr:`__slots__`,
@@ -436,12 +436,12 @@ Glossary
 
       More information can be found in :ref:`newstyle`.
 
-   object
+   objektas / object
       Any data with state (attributes or value) and defined behavior
       (methods).  Also the ultimate base class of any :term:`new-style
       class`.
 
-   positional argument
+   pozicinis argumentas / positional argument
       The arguments assigned to local names inside a function or method,
       determined by the order in which they were given in the call.  ``*`` is
       used to either accept multiple positional arguments (when in the
@@ -453,7 +453,7 @@ Glossary
       when the release of version 3 was something in the distant future.)  This
       is also abbreviated "Py3k".
 
-   Pythonic
+   Pitoniškas / Pythonic
       An idea or piece of code which closely follows the most common idioms
       of the Python language, rather than implementing code using concepts
       common to other languages.  For example, a common idiom in Python is
@@ -469,7 +469,7 @@ Glossary
          for piece in food:
              print piece
 
-   reference count
+   nuorodų skaičius / reference count
       The number of references to an object.  When the reference count of an
       object drops to zero, it is deallocated.  Reference counting is
       generally not visible to Python code, but it is a key element of the
@@ -484,7 +484,7 @@ Glossary
       right and is best reserved for rare cases where there are large numbers of
       instances in a memory-critical application.
 
-   sequence
+   seka / sequence
       An :term:`iterable` which supports efficient element access using integer
       indices via the :meth:`__getitem__` special method and defines a
       :meth:`len` method that returns the length of the sequence.
@@ -494,25 +494,25 @@ Glossary
       mapping rather than a sequence because the lookups use arbitrary
       :term:`immutable` keys rather than integers.
 
-   slice
+   riekė / slice
       An object usually containing a portion of a :term:`sequence`.  A slice is
       created using the subscript notation, ``[]`` with colons between numbers
       when several are given, such as in ``variable_name[1:3:5]``.  The bracket
       (subscript) notation uses :class:`slice` objects internally (or in older
       versions, :meth:`__getslice__` and :meth:`__setslice__`).
 
-   special method
+   specialus metodas / special method
       A method that is called implicitly by Python to execute a certain
       operation on a type, such as addition.  Such methods have names starting
       and ending with double underscores.  Special methods are documented in
       :ref:`specialnames`.
 
-   statement
+   reiškinys / statement
       A statement is part of a suite (a "block" of code).  A statement is either
       an :term:`expression` or a one of several constructs with a keyword, such
       as :keyword:`if`, :keyword:`while` or :keyword:`print`.
 
-   triple-quoted string
+   eilutė su trigubomis kabutėmis / triple-quoted string
       A string which is bound by three instances of either a quotation mark
       (") or an apostrophe (').  While they don't provide any functionality
       not available with single-quoted strings, they are useful for a number
@@ -521,16 +521,16 @@ Glossary
       use of the continuation character, making them especially useful when
       writing docstrings.
 
-   type
+   tipas / type
       The type of a Python object determines what kind of object it is; every
       object has a type.  An object's type is accessible as its
       :attr:`__class__` attribute or can be retrieved with ``type(obj)``.
 
-   virtual machine
+   virtuali mašina / virtual machine
       A computer defined entirely in software.  Python's virtual machine
       executes the :term:`bytecode` emitted by the bytecode compiler.
 
-   Zen of Python
+   Pitono Zen / Zen of Python
       Listing of Python design principles and philosophies that are helpful in
       understanding and using the language.  The listing can be found by typing
       "``import this``" at the interactive prompt.
