@@ -52,7 +52,7 @@ Vertėjai
 Jei ruošiatės versti kažkurį failą prieš tai darydami pridėkite
 failo, kurį versite, vardą ir savo inicialus.
 
-* glossary.rst –
+* glossary.rst – Dalius Dobravolskas
 * tutorial\index.rst – Dalius Dobravolskas
 * tutorial\appetite.rst –
 * tutorial\classes.rst –
