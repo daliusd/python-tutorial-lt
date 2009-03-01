@@ -35,6 +35,9 @@ Jei jūs norite versti kažką kito negu tai, kas dabar yra repozitorijoje,
 paanalizuokite Pitono dokumentaciją. Tiesa sakant, griežtų reikalavimų
 nėra, kad reikia versti būtent iš Pitono dokumentacijos.
 
+Dar vienas prašymas: būtų šaunu, kad pavyzdžius skaitytojams
+duotumėte išbandyti http://py.sandbox.lt (žinoma, kur yra prasmės).
+
 Kaip naudotis sphinx'u?
 =======================
 
