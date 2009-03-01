@@ -1,8 +1,9 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- Pitono dokumentacijos turinys
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+ Pitono dokumentacija
+%%%%%%%%%%%%%%%%%%%%%%
 
 .. toctree::
 
    tutorial/index.rst
    glossary.rst
+   vertimas.rst
