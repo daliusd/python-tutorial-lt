@@ -97,7 +97,7 @@ Terminų žodynas
       advanced mathematical feature.  If you're not aware of a need for them,
       it's almost certain you can safely ignore them.
 
-   konteksto menedžeris / context manager
+   konteksto valdiklis / context manager
       An object which controls the environment seen in a :keyword:`with`
       statement by defining :meth:`__enter__` and :meth:`__exit__` methods.
       See :pep:`343`.
@@ -248,7 +248,7 @@ Terminų žodynas
       much finer granularity), but so far none have been successful because
       performance suffered in the common single-processor case.
 
-   ? / hashable
+   maišomas / hashable
       An object is *hashable* if it has a hash value which never changes during
       its lifetime (it needs a :meth:`__hash__` method), and can be compared to
       other objects (it needs an :meth:`__eq__` or :meth:`__cmp__` method).
@@ -368,7 +368,7 @@ Terminų žodynas
       clause is optional.  If omitted, all elements in ``range(256)`` are
       processed.
 
-   mapping
+   atvaizdis / mapping
       A container object (such as :class:`dict`) which supports arbitrary key
       lookups using the special method :meth:`__getitem__`.
 
@@ -395,7 +395,7 @@ Terminų žodynas
       Mutable objects can change their value but keep their :func:`id`.  See
       also :term:`immutable`.
 
-   vardinė eilutė / named tuple
+   vardinis kortežas / named tuple
       Any tuple-like class whose indexable elements are also accessible using
       named attributes (for example, :func:`time.localtime` returns a
       tuple-like object where the *year* is accessible either with an
