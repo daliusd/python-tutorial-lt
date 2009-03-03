@@ -38,6 +38,9 @@ nėra, kad reikia versti būtent iš Pitono dokumentacijos.
 Dar vienas prašymas: būtų šaunu, kad pavyzdžius skaitytojams
 duotumėte išbandyti http://py.sandbox.lt (žinoma, kur yra prasmės).
 
+Jei neaišku kaip versti žodį pasitikrinkite viename iš šių šaltinių:
+:ref:`glossary` arba http://www.likit.lt/en-lt/angl.html.
+
 Kaip naudotis sphinx'u?
 =======================
 

@@ -48,7 +48,7 @@ jį jūs galėsite skaityti ir rašyti Pitono modulius ir programas, ir būsite
 pasiruošę išmokti daugiau apie Pitono bibliotekos modulius aprašytus
 *Python Library Reference*.
 
-Terminų :ref:`glossary` žodynėlį taip pat verta permesti akimis.
+Taip pat verta permesti akimis: :ref:`glossary`.
 
 .. toctree::
 
