@@ -58,7 +58,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\classes.rst –
 * tutorial\controlflow.rst –
 * tutorial\datastructures.rst –
-* tutorial\errors.rst –
+* tutorial\errors.rst – Maksim Norkin
 * tutorial\floatingpoint.rst –
 * tutorial\inputoutput.rst –
 * tutorial\interactive.rst –

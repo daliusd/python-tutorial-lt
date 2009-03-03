@@ -1,28 +1,29 @@
 .. _tut-errors:
 
 *********************
-Errors and Exceptions
+Klaidos ir išimtys
 *********************
 
-Until now error messages haven't been more than mentioned, but if you have tried
-out the examples you have probably seen some.  There are (at least) two
-distinguishable kinds of errors: *syntax errors* and *exceptions*.
-
+Nuo dabar klaidos pranešimai nebuvo daugiau minami, bet jeigu jūs jau bandėte 
+mūsų pavyzdžius, tikriausiai matėte kelis. Čia yra ( mažiausiai ) dvi
+erzinančios klaidų rūšys: *sinteksės klaidos* ir *išimtys*.
 
 .. _tut-syntaxerrors:
 
-Syntax Errors
+Sintaksės klaidos
 =============
 
-Syntax errors, also known as parsing errors, are perhaps the most common kind of
-complaint you get while you are still learning Python::
+Sintaksės klaidos taip pat žinomos //parsing// klaidos, yra turbūt dažniausiai 
+pasitaikančios klaidų rūšys, jeigu dar mokotes Python::
 
-   >>> while True print 'Hello world'
+
+   >>> while True print 'Sveikas pasauli'
      File "<stdin>", line 1, in ?
-       while True print 'Hello world'
+       while True print 'Sveikas pasauli'
                       ^
    SyntaxError: invalid syntax
 
+// ČIa baigiau
 The parser repeats the offending line and displays a little 'arrow' pointing at
 the earliest point in the line where the error was detected.  The error is
 caused by (or at least detected at) the token *preceding* the arrow: in the

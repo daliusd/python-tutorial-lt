@@ -1,87 +1,85 @@
 .. _tut-intro:
 
 **********************
-Whetting Your Appetite
+Galandinam apetitą
 **********************
 
-If you do much work on computers, eventually you find that there's some task
-you'd like to automate.  For example, you may wish to perform a
-search-and-replace over a large number of text files, or rename and rearrange a
-bunch of photo files in a complicated way. Perhaps you'd like to write a small
-custom database, or a specialized GUI application, or a simple game.
+Jeigu Jūs daug dirbate kompiuteriais, galų gale Jūs pamatysite, kad egzistuoja 
+kažkokios užduotis, kurias galite automatizuoti. Pavyzdžiui, galima atlikti
+paiešką ir pakeisti daug tekstinių failų, ar pervadinti ir pertvarkyti sauja
+nuotraukų sudėtingu būdu. Galbūt norite parašyti mažas nestandartines
+duomenų bazes ar specializuota GUI aplikaciją, ar paprastą žaidimą.
 
-If you're a professional software developer, you may have to work with several
-C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is
-too slow.  Perhaps you're writing a test suite for such a library and find
-writing the testing code a tedious task.  Or maybe you've written a program that
-could use an extension language, and you don't want to design and implement a
-whole new language for your application.
+Jeigu esate profesionalus programuotojas, Jums gali tekti dirbti su keliomis 
+C/C++/Java biliotekomis, bet įprastas rašymo / kompiliavimo / testavimo / pakartotinio 
+kompiliavimo ciklas yra pernelyg lėtas. Galbūt Jūs rašote testavimo komplektą 
+tokiai biliotekai, bet greitai atrandat, kad testavimo komplekto rašymas 
+yra per didelė užduotis. O gal Jūs parašėte programa, kuri gali naudoti 
+pratęsimo kalbą ir Jūs nenorite kurti ir įgyvendinti visiškai naują kalbą
+Jūsų programai.
 
-Python is just the language for you.
+Python yra kalba kaip tik Jums.
 
-You could write a Unix shell script or Windows batch files for some of these
-tasks, but shell scripts are best at moving around files and changing text data,
-not well-suited for GUI applications or games. You could write a C/C++/Java
-program, but it can take a lot of development time to get even a first-draft
-program.  Python is simpler to use, available on Windows, Mac OS X, and Unix
-operating systems, and will help you get the job done more quickly.
+Jūs galite naudoti Unix kiauto (shell) skriptą arba Windows batch failą tam tikroms 
+užduotis, bet skiauto scriptai yra puikūs keisti failus ir teksto duomenis, bet  
+netinka GUI programomis ir žaidimams. Jūs galite rašyti C/C++/Java programas, 
+bet tai užtruks daug laiko iki pirmos programos. Python yra paprastesnis naudojimui 
+Windows, Mac OS X ir UNIX operacinėse sistemose ir padės darbą padaryti kuo greičiau.
 
-Python is simple to use, but it is a real programming language, offering much
-more structure and support for large programs than shell scripts or batch files
-can offer.  On the other hand, Python also offers much more error checking than
-C, and, being a *very-high-level language*, it has high-level data types built
-in, such as flexible arrays and dictionaries.  Because of its more general data
-types Python is applicable to a much larger problem domain than Awk or even
-Perl, yet many things are at least as easy in Python as in those languages.
+Python yra lengvas naudoti, bet tai yra reali programavimo kalba, siųlanti daug 
+daugiau struktūros ir palaikymą didelėms programomis, atvirkščiai nei kiauto scriptai 
+ar batch failai gali pasiųlyti. Kita vertus, Python taip pat siųlo daug daugiau 
+klaidų tikrinimo negu C, ir būdama aukšto lygio programavimo kalba, ji turi 
+aukšto lygio duomenu tipus, lankščius masyvūs ir žodynus. Kadangi yra daug pagrindinių 
+kintamųjų tipų, Python yra tiknamas daugybei problemų sprendimui, atvirkščiai nei 
+Awk ar net Perl, tuo pat metu tai taip lengva Python'e, kaip ir tose kalbose.
 
-Python allows you to split your program into modules that can be reused in other
-Python programs.  It comes with a large collection of standard modules that you
-can use as the basis of your programs --- or as examples to start learning to
-program in Python.  Some of these modules provide things like file I/O, system
-calls, sockets, and even interfaces to graphical user interface toolkits like
-Tk.
+Python leidžia suskirstyti programą į modulius, kurie gali būti naudojami kitose 
+Python programose. Jis ateina su didesniu standartiniu moduliu paketu, kurį  
+galite naudoti savo programose -- arba kaip pavyzdžius mokindamiesi Python. 
+Kaikurie moduliai suteikia galimybę skaityti/rašyti failus, inicijuoti sisteminius kvietimus, 
+socket'us arba net sąsajas su GUI įrankiais, kaip Tk.
 
-Python is an interpreted language, which can save you considerable time during
-program development because no compilation and linking is necessary.  The
-interpreter can be used interactively, which makes it easy to experiment with
-features of the language, to write throw-away programs, or to test functions
-during bottom-up program development. It is also a handy desk calculator.
+Python yra interpretuojama kalba, kuri gali išsaugoti Jums didelius laiko kaštus 
+rašant programą, kadangi nebereikia kompiliavimo ir linkinimo. Interpretatorius 
+gali būti naudojamas interaktyviai, kas leidžia lengvai eksperementuoti su 
+kalbos ypatumais, testinėmis programomis, ar tiesiog testuojant tam tikras 
+funkcijas, per atvirkščią programos kūrimą. Jis taip pat yra galingas stalo 
+škaičiuotuvas.
 
-Python enables programs to be written compactly and readably.  Programs written
-in Python are typically much shorter than equivalent C,  C++, or Java programs,
-for several reasons:
 
-* the high-level data types allow you to express complex operations in a single
-  statement;
+Python leidžia programoms būti parašytoms kompaktiškai ir įskaitomai. Programos 
+rašymas Python'e tipiškai yra daug trumpesnis, negu ekvivalenčioms C, C++ ar Java 
+programos, kadangi:
 
-* statement grouping is done by indentation instead of beginning and ending
-  brackets;
+* aukšto lygio duomenų tipai leidžia išreikšti kompleksinius sveiksmus vienu 
+  teiginiu;
 
-* no variable or argument declarations are necessary.
+* teiginio grupavimas yra vykdomas atskirimu, o ne laužtiniais skliaustais;
 
-Python is *extensible*: if you know how to program in C it is easy to add a new
-built-in function or module to the interpreter, either to perform critical
-operations at maximum speed, or to link Python programs to libraries that may
-only be available in binary form (such as a vendor-specific graphics library).
-Once you are really hooked, you can link the Python interpreter into an
-application written in C and use it as an extension or command language for that
-application.
+* nereikia deklaruoti kintamūjų ar argumentų;
 
-By the way, the language is named after the BBC show "Monty Python's Flying
-Circus" and has nothing to do with reptiles.  Making references to Monty
-Python skits in documentation is not only allowed, it is encouraged!
+Python yra *išplečimas*: jeigu žinote programą, parašyta C kalba, labai lengva įdėti 
+naują įskiepytą funkciją ar modulį į interpretatoriu, taip pat atlikti 
+kritines operacijas didžiausiu greičiu, ar sujungti Python programas su bibliotekomis, 
+kurios egzistuoja tik binarinėje formoje ( kaip atgalinė grafinė biblioteka). 
+Kaip tik esate pasiruotęs, jūs galite sujungti Python interpretatorių su programa, 
+parašyta C kalba ir naudoti ją kaip papildymą ar komandinę kalbą programai.
 
-Now that you are all excited about Python, you'll want to examine it in some
-more detail.  Since the best way to learn a language is to use it, the tutorial
-invites you to play with the Python interpreter as you read.
+Tiesa, kalba yra pavadinta dėl BBC laidos "Monty Python's Flying Circus" ir neturi 
+nieko bendro su reptilijomis. Darydami nurodymus į Monty Python parodiją 
+dokumentacijoje nėra tik leidžiamas, bet ir propaguojamas!
 
-In the next chapter, the mechanics of using the interpreter are explained.  This
-is rather mundane information, but essential for trying out the examples shown
-later.
+Kadangi dabar esate sujaudinti dėl Python, galima išegzaminuoti jį daug detalesniu 
+pavidalu. O geriausias būdas išmokti programavimo kalbą yra ją naudoti, todėl vadovas 
+kviečia pažaisti su Python interpretatoriumi, skaitymo metu.
 
-The rest of the tutorial introduces various features of the Python language and
-system through examples, beginning with simple expressions, statements and data
-types, through functions and modules, and finally touching upon advanced
-concepts like exceptions and user-defined classes.
+Sekančiam skyriuje, paaiškinsime interpretatoriaus naudojimo mechanika. Tai yra 
+gan neįdomi informacija, bet būtina bendydami mūsų pavyzdžius vėliau.
+
+Likęs vadovas pristato įvairius Python kalbos įpatumus ir pereina per pavyzdžius, 
+pradedant paprastais išsireiškimais, deklaravimais ir duomenų tipais, iki funkcijų, 
+modulių ir galiausiai paliesime aukščiausius konceptus, kaip išskirtinumus ir 
+vartotojo aprašytas klases.
 
 
