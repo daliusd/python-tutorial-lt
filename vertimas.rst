@@ -61,7 +61,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\errors.rst – Maksim Norkin
 * tutorial\floatingpoint.rst –
 * tutorial\inputoutput.rst –
-* tutorial\interactive.rst –
+* tutorial\interactive.rst – Armandas Jarušauskas
 * tutorial\interpreter.rst –
 * tutorial\introduction.rst –
 * tutorial\modules.rst –

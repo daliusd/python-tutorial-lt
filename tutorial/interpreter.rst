@@ -1,47 +1,44 @@
 .. _tut-using:
 
-****************************
-Using the Python Interpreter
-****************************
+*************************************
+Naudojimasis Pitono interpretatoriumi
+*************************************
 
 
 .. _tut-invoking:
 
-Invoking the Interpreter
-========================
+Interpretatoriaus paleidimas
+============================
 
-The Python interpreter is usually installed as :file:`/usr/local/bin/python` on
-those machines where it is available; putting :file:`/usr/local/bin` in your
-Unix shell's search path makes it possible to start it by typing the command ::
+Pitono interpretatorius dažniausiai instaliuojamas į :file:`/usr/local/bin/python`;
+pridėję :file:`/usr/local/bin` į savo
+Unix šelo paieškos kelią, galėsite Pitoną paleisti įrašę komandą ::
 
    python
 
-to the shell.  Since the choice of the directory where the interpreter lives is
-an installation option, other places are possible; check with your local Python
-guru or system administrator.  (E.g., :file:`/usr/local/python` is a popular
-alternative location.)
+Kadangi direktorija, kurioje „gyvena“ interpretatorius, yra pasirenkama instaliacijos
+metu, aukščiau minėtas kelias nebūtinai yra teisingas; pasitikslinkite detales su savo
+administratoriumi.  (Pvz.: :file:`/usr/local/python` yra populiari alternatyva.)
 
-On Windows machines, the Python installation is usually placed in
-:file:`C:\\Python26`, though you can change this when you're running the
-installer.  To add this directory to your path,  you can type the following
-command into the command prompt in a DOS box::
+Windows sistemose, Pitono instaliacija sukuriama kataloge
+:file:`C:\\Python26`, tačiau šis nustatymas gali būti pakeistas instaliacijos metu.
+Norėdami pridėti šią direktoriją į paieškos kelią, galite įrašyti tokią komandą į
+DOS terminalą::
 
    set path=%path%;C:\python26
 
-Typing an end-of-file character (:kbd:`Control-D` on Unix, :kbd:`Control-Z` on
-Windows) at the primary prompt causes the interpreter to exit with a zero exit
-status.  If that doesn't work, you can exit the interpreter by typing the
-following commands: ``import sys; sys.exit()``.
+Įrašę failo pabaigos simbolį (:kbd:`Control-D` Unix sistemose, :kbd:`Control-Z` Windows)
+Pitono komandinėje eilutėje išjungsite interpretatorių. Jei tai nesuveikia, galite išjungti
+interpretatorių surinkę : ``import sys; sys.exit()``.
 
-The interpreter's line-editing features usually aren't very sophisticated.  On
-Unix, whoever installed the interpreter may have enabled support for the GNU
-readline library, which adds more elaborate interactive editing and history
-features. Perhaps the quickest check to see whether command line editing is
-supported is typing Control-P to the first Python prompt you get.  If it beeps,
-you have command line editing; see Appendix :ref:`tut-interacting` for an
-introduction to the keys.  If nothing appears to happen, or if ``^P`` is echoed,
-command line editing isn't available; you'll only be able to use backspace to
-remove characters from the current line.
+Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Pitoną
+instaliavęs žmogus galėjo pridėti GNU readline bibliotekos palaikymą, taip
+įgalindamas vartotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
+Turbūt greičiausias būdas patikrinti ar komandinės eilutės redagavimas yra
+palaikomas - surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą - redagavimas
+įjungtas; įvadą į klavišus rasite priede: :ref:`tut-interacting` .  Jei pyptelėjimo nesigirdi
+arba išvedama ``^P``, redagavimo palaikymas neįjungtas; galėsite tik trinti simbolius, toje
+pačioje eilutėje, naudodami Backspace klavišą.
 
 The interpreter operates somewhat like the Unix shell: when called with standard
 input connected to a tty device, it reads and executes commands interactively;
