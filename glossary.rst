@@ -9,47 +9,47 @@ Terminų žodynas
 .. glossary::
 
    ``>>>``
-      The default Python prompt of the interactive shell.  Often seen for code
-      examples which can be executed interactively in the interpreter.
+      Numatytasis Pitono raginimas interaktyviajame apvalkale. Dažnai
+      naudojamas pavyzdžiuose, kurie gali būti paleidžiami interpretatoriuje.
 
    ``...``
-      The default Python prompt of the interactive shell when entering code for
-      an indented code block or within a pair of matching left and right
-      delimiters (parentheses, square brackets or curly braces).
+      Numatytasis Pitono raginimas interaktyviajame apvalkale kai įvedamas
+      kodas įtrauktam kodo blokui arba tarp poros sutampančių kairiojo
+      ir dešiniojo skirtukų (skliaustų, laužtinių arba riestinių skliaustų).
 
    2to3
-      A tool that tries to convert Python 2.x code to Python 3.x code by
-      handling most of the incompatibilites which can be detected by parsing the
-      source and traversing the parse tree.
+      Įrankis, kuris bando konvertuoti Pitono 2.x kodą į Pitoną 3.x kodą.
+      Konvertuojami tie kodo nesuderinamumai, kurie gali būti nustatyti
+      analizuojant kodą ir pereinant analizės medį.
 
-      2to3 is available in the standard library as :mod:`lib2to3`; a standalone
-      entry point is provided as :file:`Tools/scripts/2to3`.  See
+      2to3 įrankis yra standartinėje bibliotekoje kaip :mod:`lib2to3`; 
+      Įrankis pateikiamas kaip :file:`Tools/scripts/2to3`. Žiūrėti
       :ref:`2to3-reference`.
 
    abstrakčioji bazinė klase / abstract base class
-      Abstract Base Classes (abbreviated ABCs) complement :term:`duck-typing` by
-      providing a way to define interfaces when other techniques like :func:`hasattr`
-      would be clumsy. Python comes with many builtin ABCs for data structures
-      (in the :mod:`collections` module), numbers (in the :mod:`numbers`
-      module), and streams (in the :mod:`io` module). You can create your own
-      ABC with the :mod:`abc` module.
+      Abstrakčioji Bazinė Klasė (ABC) papildo neišreikštinį tipizavimą suteikdama
+      būdą apibrėžti sąsaja kai kitų technikų (pvz.: :func:`hasattr`)
+      naudojimas yra nepatogys. Pitone yra daug standartinių ABC duomenų
+      struktūroms (:mod:`collections` modulyje), skaičiams (:mod:`numbers`
+      modulyje), srautams (:mod:`io` modulyje). Galima kurti savo ABC
+      naudojant :mod:`abc` modulį.
 
    argumentas / argument
-      A value passed to a function or method, assigned to a named local
-      variable in the function body.  A function or method may have both
-      positional arguments and keyword arguments in its definition.
-      Positional and keyword arguments may be variable-length: ``*`` accepts
-      or passes (if in the function definition or call) several positional
-      arguments in a list, while ``**`` does the same for keyword arguments
-      in a dictionary.
+      Reikšmė perduota funkcijai arba metodui ir priskirta lokaliam
+      kintamajam su vardu funkcijoje. Funkcija arba metodas gali
+      turėti tiek pozicinius argumentas tiek vardinius argumentus
+      apibrėžime. Poziciniai ir vardiniai argumentai gali turėti
+      kintamą ilgį: ``*`` priima arba perduoda (jei funkcijos apibrėžime
+      arba kvietime) kelis pozicinius argumentus sąrašu, kai tuo tarpu
+      ``**`` atlieka tą patį su vardiniais argumentais žodyne.
 
-      Any expression may be used within the argument list, and the evaluated
-      value is passed to the local variable.
+      Betkoks reiškinys gali būti naudojamas argumentų sąraše ir apskaičiuota
+      reikšmė yra perduodama lokaliam kintamajam.
 
    atributas / attribute
-      A value associated with an object which is referenced by name using
-      dotted expressions.  For example, if an object *o* has an attribute
-      *a* it would be referenced as *o.a*.
+      Reikšmė susieta su objektu, kuri yra pasiekiama pagal vardą naudojant
+      taško išraišką. Pvz.: jei objektas *o* turi atributą *a* tai jis
+      gali būti pasiektas kaip *o.a*.
 
    BFDL
       Benevolent Dictator For Life, a.k.a. `Guido van Rossum
@@ -153,7 +153,7 @@ Terminų žodynas
       introspection, it is the canonical place for documentation of the
       object.
 
-   anties-tipizavimas / duck-typing
+   neišreikštinis tipizavimas / duck-typing
       A pythonic programming style which determines an object's type by inspection
       of its method or attribute signature rather than by explicit relationship
       to some type object ("If it looks like a duck and quacks like a duck, it
