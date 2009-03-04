@@ -469,7 +469,7 @@ Terminų žodynas
          for piece in food:
              print piece
 
-   nuorodų skaičius / reference count
+   rodyklių skaičius / reference count
       The number of references to an object.  When the reference count of an
       object drops to zero, it is deallocated.  Reference counting is
       generally not visible to Python code, but it is a key element of the
