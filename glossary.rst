@@ -26,7 +26,7 @@ Terminų žodynas
       entry point is provided as :file:`Tools/scripts/2to3`.  See
       :ref:`2to3-reference`.
 
-   abstrakti bazinė klase / abstract base class
+   abstrakčioji bazinė klase / abstract base class
       Abstract Base Classes (abbreviated ABCs) complement :term:`duck-typing` by
       providing a way to define interfaces when other techniques like :func:`hasattr`
       would be clumsy. Python comes with many builtin ABCs for data structures
@@ -72,7 +72,7 @@ Terminų žodynas
       Any class which does not inherit from :class:`object`.  See
       :term:`new-style class`.  Classic classes will be removed in Python 3.0.
 
-   pakeitimas / coercion
+   keitimas / coercion
       The implicit conversion of an instance of one type to another during an
       operation which involves two arguments of the same type.  For example,
       ``int(3.15)`` converts the floating point number to the integer ``3``, but
@@ -145,7 +145,7 @@ Terminų žodynas
       be any object with a :meth:`__hash__` function, not just integers.
       Called a hash in Perl.
 
-   dokumentuojanti eilutė / docstring
+   dokumentavimo eilutė / docstring
       A string literal which appears as the first expression in a class,
       function or module.  While ignored when the suite is executed, it is
       recognized by the compiler and put into the :attr:`__doc__` attribute
@@ -172,7 +172,7 @@ Terminų žodynas
       statements.  The technique contrasts with the :term:`LBYL` style
       common to many other languages such as C.
 
-   išraiška / expression
+   reiškinys / expression
       A piece of syntax which can be evaluated to some value.  In other words,
       an expression is an accumulation of expression elements like literals, names,
       attribute access, operators or function calls which all return a value.
@@ -224,7 +224,7 @@ Terminų žodynas
 
       .. index:: single: generator expression
 
-   generatoriaus išraiška / generator expression
+   generatoriaus reiškinys / generator expression
       An expression that returns a generator.  It looks like a normal expression
       followed by a :keyword:`for` expression defining a loop variable, range,
       and an optional :keyword:`if` expression.  The combined expression
@@ -269,7 +269,7 @@ Terminų žodynas
       those wanting to implement a moderately sophisticated, multi-platform GUI
       application.
 
-   nemutabilus / immutable
+   nekintamas / immutable
       An object with a fixed value.  Immutable objects include numbers, strings and
       tuples.  Such an object cannot be altered.  A new object has to
       be created if a different value has to be stored.  They play an important
@@ -338,7 +338,7 @@ Terminų žodynas
 
       More information can be found in :ref:`typeiter`.
 
-   raktinis argumentas / keyword argument
+   vardinis argumentas / keyword argument
       Arguments which are preceded with a ``variable_name=`` in the call.
       The variable name designates the local name in the function to which the
       value is assigned.  ``**`` is used to accept or pass a dictionary of
@@ -360,7 +360,7 @@ Terminų žodynas
       to an array in other languages than to a linked list since access to
       elements are O(1).
 
-   kompaktiška sąrašo išraiška / list comprehension
+   sąrašo užklausa / list comprehension
       A compact way to process all or part of the elements in a sequence and
       return a list with the results.  ``result = ["0x%02x" % x for x in
       range(256) if x % 2 == 0]`` generates a list of strings containing
@@ -391,7 +391,7 @@ Terminų žodynas
       its first :term:`argument` (which is usually called ``self``).
       See :term:`function` and :term:`nested scope`.
 
-   mutabilus / mutable
+   kintamas / mutable
       Mutable objects can change their value but keep their :func:`id`.  See
       also :term:`immutable`.
 
@@ -428,7 +428,7 @@ Terminų žodynas
       scope.  In contrast, local variables both read and write in the innermost
       scope.  Likewise, global variables read and write to the global namespace.
 
-   naujo-stiliaus klasė / new-style class
+   naujo stiliaus klasė / new-style class
       Any class which inherits from :class:`object`.  This includes all built-in
       types like :class:`list` and :class:`dict`.  Only new-style classes can
       use Python's newer, versatile features like :attr:`__slots__`,
@@ -453,7 +453,7 @@ Terminų žodynas
       when the release of version 3 was something in the distant future.)  This
       is also abbreviated "Py3k".
 
-   Pitoniškas / Pythonic
+   pitoniškas / Pythonic
       An idea or piece of code which closely follows the most common idioms
       of the Python language, rather than implementing code using concepts
       common to other languages.  For example, a common idiom in Python is
@@ -507,7 +507,7 @@ Terminų žodynas
       and ending with double underscores.  Special methods are documented in
       :ref:`specialnames`.
 
-   reiškinys / statement
+   sakinys / statement
       A statement is part of a suite (a "block" of code).  A statement is either
       an :term:`expression` or a one of several constructs with a keyword, such
       as :keyword:`if`, :keyword:`while` or :keyword:`print`.
@@ -526,7 +526,7 @@ Terminų žodynas
       object has a type.  An object's type is accessible as its
       :attr:`__class__` attribute or can be retrieved with ``type(obj)``.
 
-   virtuali mašina / virtual machine
+   virtualioji mašina / virtual machine
       A computer defined entirely in software.  Python's virtual machine
       executes the :term:`bytecode` emitted by the bytecode compiler.
 
