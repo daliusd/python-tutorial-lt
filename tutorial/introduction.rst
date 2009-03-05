@@ -196,7 +196,7 @@ eilutės gale galima nurodyti, kad toliau einanti eilutė yra šios tęsinys::
 
 Turėkite omenyje, kad pasvirasis brūkšnelis sujungia gretimas eilutes
 į vieną, todėl naujas eilutes reikia sudaryti naudojant ``\n``.
-Šis pavyzdys ekrane atspausdintų::
+Ankstesnis pavyzdys ekrane atspausdintų::
 
    This is a rather long string containing
    several lines of text just as you would do in C.
@@ -495,20 +495,20 @@ encoding name as the second argument. ::
 
 .. _tut-lists:
 
-Lists
------
+Sąrašai
+-------
 
-Python knows a number of *compound* data types, used to group together other
-values.  The most versatile is the *list*, which can be written as a list of
-comma-separated values (items) between square brackets.  List items need not all
-have the same type. ::
+Pitonas žino daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
+Lanksčiausias iš tokių tipų yra *sąrašas*, kuris aprašomas kaip laužtiniais
+skliaustais apgaubtas sąrašas kableliais atskirtų elementų. Sąrašo elementai
+neprivalo visi būti to paties tipo. ::
 
    >>> a = ['spam', 'eggs', 100, 1234]
    >>> a
    ['spam', 'eggs', 100, 1234]
 
-Like string indices, list indices start at 0, and lists can be sliced,
-concatenated and so on::
+Kaip ir simbolių eilučių indeksai, sąrašų indeksai prasideda nuo 0, sąrašai gali
+būti atriekti, sujungti ir taip toliau::
 
    >>> a[0]
    'spam'
@@ -523,8 +523,8 @@ concatenated and so on::
    >>> 3*a[:3] + ['Boo!']
    ['spam', 'eggs', 100, 'spam', 'eggs', 100, 'spam', 'eggs', 100, 'Boo!']
 
-Unlike strings, which are *immutable*, it is possible to change individual
-elements of a list::
+Priešingai negu simbolių eilutės, kurios yra nekintamos, sąrašo elementus galima
+pakeisti::
 
    >>> a
    ['spam', 'eggs', 100, 1234]
@@ -532,38 +532,38 @@ elements of a list::
    >>> a
    ['spam', 'eggs', 123, 1234]
 
-Assignment to slices is also possible, and this can even change the size of the
-list or clear it entirely::
+Išpjovoms (slice) taip pat galima priskirti reikšmes, net jeigu tai pakeičia sąrašo
+dydį arba jį ištuština::
 
-   >>> # Replace some items:
+   >>> # Pakeiskime porą elementų:
    ... a[0:2] = [1, 12]
    >>> a
    [1, 12, 123, 1234]
-   >>> # Remove some:
+   >>> # Panaikinkime keletą:
    ... a[0:2] = []
    >>> a
    [123, 1234]
-   >>> # Insert some:
+   >>> # Įterpkime:
    ... a[1:1] = ['bletch', 'xyzzy']
    >>> a
    [123, 'bletch', 'xyzzy', 1234]
-   >>> # Insert (a copy of) itself at the beginning
+   >>> # Įterpkime sąrašo kopiją į paties pradžią
    >>> a[:0] = a
    >>> a
    [123, 'bletch', 'xyzzy', 1234, 123, 'bletch', 'xyzzy', 1234]
-   >>> # Clear the list: replace all items with an empty list
+   >>> # Ištuštinkime sąrašą: pakeiskime visus elementus tuščiu sąrašu
    >>> a[:] = []
    >>> a
    []
 
-The built-in function :func:`len` also applies to lists::
+Standartinė funkcija :func:`len` tinka ir sąrašams::
 
    >>> a = ['a', 'b', 'c', 'd']
    >>> len(a)
    4
 
-It is possible to nest lists (create lists containing other lists), for
-example::
+Galima sąrašus sudėti į sąrašus (sukurti sąrašus, kurių elementai yra
+kiti sąrašai), pavyzdžiui::
 
    >>> q = [2, 3]
    >>> p = [1, q, 4]
@@ -573,14 +573,14 @@ example::
    [2, 3]
    >>> p[1][0]
    2
-   >>> p[1].append('xtra')     # See section 5.1
+   >>> p[1].append('xtra')     # Žiūrėkite skyrių 5.1
    >>> p
    [1, [2, 3, 'xtra'], 4]
    >>> q
    [2, 3, 'xtra']
 
-Note that in the last example, ``p[1]`` and ``q`` really refer to the same
-object!  We'll come back to *object semantics* later.
+Turėkite omenyje, kad paskutiniame pavyzdyje ``p[1]`` ir ``q`` iš tiesų
+nurodo tą patį objektą! *Objektų semantiką* aptarsime vėliau.
 
 
 .. _tut-firststeps:
