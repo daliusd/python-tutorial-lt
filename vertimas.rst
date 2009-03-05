@@ -66,7 +66,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\inputoutput.rst –
 * tutorial\interactive.rst – Armandas Jarušauskas
 * tutorial\interpreter.rst –
-* tutorial\introduction.rst –
+* tutorial\introduction.rst – Adomas Paltanavičius
 * tutorial\modules.rst –
 * tutorial\stdlib2.rst –
 * tutorial\stdlib.rst –
