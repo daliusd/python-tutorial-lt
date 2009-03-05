@@ -1,77 +1,78 @@
 .. _tut-informal:
 
-**********************************
-An Informal Introduction to Python
-**********************************
+***************
+Įvadas į Pitoną
+***************
 
-In the following examples, input and output are distinguished by the presence or
-absence of prompts (``>>>`` and ``...``): to repeat the example, you must type
-everything after the prompt, when the prompt appears; lines that do not begin
-with a prompt are output from the interpreter. Note that a secondary prompt on a
-line by itself in an example means you must type a blank line; this is used to
-end a multi-line command.
+Pavyzdžiuose, pateikiamuose toliau, įvedamas komandos bei jų išvestį galima
+atskirti pagal tai, ar yra eilutė prasideda raginimu (``>>>`` ir ``...``).
+Norėdami pakartoti pavyzdį savarankiškai, perrašykite viską, kas eina pavyzdyje
+po raginimo. Eilutės, neprasidedančios raginimu, yra išvestis iš
+interpretatoriaus. Turėkite omenyje, kad antrasis raginimo variantas tuščiai
+eilutei reiškia, jog jūs turėsite įvesti tuščia eilutę; taip užbaigiamos
+komandos, kurios užima daugiau nei vieną eilutę.
 
-Many of the examples in this manual, even those entered at the interactive
-prompt, include comments.  Comments in Python start with the hash character,
-``#``, and extend to the end of the physical line.  A comment may appear at the
-start of a line or following whitespace or code, but not within a string
-literal.  A hash character within a string literal is just a hash character.
-Since comments are to clarify code and are not interpreted by Python, they may
-be omitted when typing in examples.
+Dauguma pavyzdžių, net ir tie, kurie prasideda raginimu, turi paaiškinamuosius
+komentarus. Pitone komentarai pradedami simboliu ``#`` ir tęsiasi iki eilutės
+pabaigos. Komentarai gali prasidėti eilutės pradžioje, taip pat po tarpų
+arba po kodo, tačiau ne simbolių eilutės viduje. Simbolių eilutėje
+tai tėra ``#`` simbolis, neatliekantis jokios papildomos funkcijos. Kadangi
+komentarai paaiškina kodą, tačiau Pitonas jų niekaip neinterpretuoja, atkartojant
+pavyzdžius interaktyviame apvalkale, komentarus galima praleisti.
 
-Some examples::
+Pora pavyzdžių::
 
-   # this is the first comment
-   SPAM = 1                 # and this is the second comment
-                            # ... and now a third!
-   STRING = "# This is not a comment."
+   # čia pirmasis komentaras
+   SPAM = 1                 # o čia - antrasis komentaras
+                            # ...ir trečiasis!
+   STRING = "# Tai nėra komentaras."
 
 
 .. _tut-calculator:
 
-Using Python as a Calculator
-============================
+Pitonas kaip skaičiuoklis
+=========================
 
-Let's try some simple Python commands.  Start the interpreter and wait for the
-primary prompt, ``>>>``.  (It shouldn't take long.)
+Pradėkime išbandydami porą paprastų Pitono komandų. Pasileiskite interpretatorių
+ir luktelkite iki pasirodys raginimas ``>>>``. (Neturėtų užtrukti.)
 
 
 .. _tut-numbers:
 
-Numbers
--------
+Skaičiai
+--------
 
-The interpreter acts as a simple calculator: you can type an expression at it
-and it will write the value.  Expression syntax is straightforward: the
-operators ``+``, ``-``, ``*`` and ``/`` work just like in most other languages
-(for example, Pascal or C); parentheses can be used for grouping.  For example::
+Interpretatorius veikia kaip paprastas skaičiuoklis -- jūs įvedate reiškinį,
+o interpretatorius užrašo rezultatą. Reiškinių sintaksė paprasta: operatoriai
+``+``, ``-``, ``*`` bei ``/`` veikia visai kaip ir daugumoje kitų kalbų
+(tarkime, Paskalyje arba C). Grupavimui galima naudoti skliaustelius. Pavyzdžiui::
 
    >>> 2+2
    4
-   >>> # This is a comment
+   >>> # Tai komentaras
    ... 2+2
    4
-   >>> 2+2  # and a comment on the same line as code
+   >>> 2+2  # o čia - komentaras toje pačioje eilutėje, kaip ir kodas
    4
    >>> (50-5*6)/4
    5
-   >>> # Integer division returns the floor:
+   >>> # Sveikų skaičių dalyba apskaičiuoja sveiką dalį:
    ... 7/3
    2
    >>> 7/-3
    -3
 
-The equal sign (``'='``) is used to assign a value to a variable. Afterwards, no
-result is displayed before the next interactive prompt::
+Lygybės ženklas (``'='``) naudojamas priskirti reikšmę kintamajam. Atlikus
+priskyrimą nėra parodomas joks rezultatas::
 
    >>> width = 20
    >>> height = 5*9
    >>> width * height
    900
 
-A value can be assigned to several variables simultaneously::
+Reikšmę galima priskirti iš karto keliems kintamiesiems::
 
-   >>> x = y = z = 0  # Zero x, y and z
+   >>> x = y = z = 0  # Priskiriame nulį x, y ir z
    >>> x
    0
    >>> y
@@ -79,26 +80,28 @@ A value can be assigned to several variables simultaneously::
    >>> z
    0
 
-Variables must be "defined" (assigned a value) before they can be used, or an
-error will occur::
+Kintamieji turi būti apibrėžti (jiems priskirta reikšmė) prieš naudojant.
+Priešingu atveju įvyks klaida::
 
-   >>> # try to access an undefined variable
+   >>> # pabandome gauti neapibrėžto kintamojo reikšmę
    ... n
    Traceback (most recent call last):
      File "<stdin>", line 1, in <module>
    NameError: name 'n' is not defined
 
-There is full support for floating point; operators with mixed type operands
-convert the integer operand to floating point::
+Taip pat galima dirbti su slankaus kablelio skaičiais. Jeigu naudosime vieną
+iš anksčiau aptartų operatorių su sveikais ir slankaus kablelio skaičiais,
+rezultatas bus slankaus kablelio::
 
    >>> 3 * 3.75 / 1.5
    7.5
    >>> 7.0 / 2
    3.5
 
-Complex numbers are also supported; imaginary numbers are written with a suffix
-of ``j`` or ``J``.  Complex numbers with a nonzero real component are written as
-``(real+imagj)``, or can be created with the ``complex(real, imag)`` function.
+Taip pat galima naudoti ir kompleksinius skaičius. Menamoji dalis aprašoma
+naudojant galūnę ``j``` arba ``J``. Kompleksiniai skaičiai su nenuline realiąja
+dalimi užrašomi kaip ``(reali+menamojiJ)``, arba pasinaudojama
+``complex(reali, menamoji)`` funkcija.
 ::
 
    >>> 1j * 1J
@@ -112,9 +115,10 @@ of ``j`` or ``J``.  Complex numbers with a nonzero real component are written as
    >>> (1+2j)/(1+1j)
    (1.5+0.5j)
 
-Complex numbers are always represented as two floating point numbers, the real
-and imaginary part.  To extract these parts from a complex number *z*, use
-``z.real`` and ``z.imag``.   ::
+Kompleksiniai skaičiai visuomet aprašomi dviem slankaus kablelio skaičiais,
+realiąja ir menamąja dalimi. Norėdami išskirti šias dalis iš kompleksinio
+skaičiaus *z*, naudokite ``z.real`` (realiąjai daliai) ir ``z.imag``
+(menamąjai daliai).  ::
 
    >>> a=1.5+0.5j
    >>> a.real
@@ -122,10 +126,10 @@ and imaginary part.  To extract these parts from a complex number *z*, use
    >>> a.imag
    0.5
 
-The conversion functions to floating point and integer (:func:`float`,
-:func:`int` and :func:`long`) don't work for complex numbers --- there is no one
-correct way to convert a complex number to a real number.  Use ``abs(z)`` to get
-its magnitude (as a float) or ``z.real`` to get its real part. ::
+Sveikų ir slankaus kablelio skaičių konvertavimo funkcijos neveikia kompleksiniams
+skaičiams --- nes nėra vienaprasmio būdo to atlikti. Naudodami ``abs(z)``
+gausite kompleksinio skaičiaus modulį (slankaus kablelio skaičiaus pavidalu).
+Jau minėtas ``z.real`` leis gauti realiąją kompleksinio skaičiaus dalį. ::
 
    >>> a=3.0+4.0j
    >>> float(a)
@@ -140,24 +144,23 @@ its magnitude (as a float) or ``z.real`` to get its real part. ::
    5.0
    >>>
 
-In interactive mode, the last printed expression is assigned to the variable
-``_``.  This means that when you are using Python as a desk calculator, it is
-somewhat easier to continue calculations, for example::
+Interaktyvioje veiksenoje, paskutinė atspausdinta reikšmė yra priskiriama
+kintamajam ``_``. Tai reiškia, kad jums naudojant Pitoną kaip skaičiuoklį,
+kai kuriuos skaičiavimus galima atlikti daug paprasčiau::
 
-   >>> tax = 12.5 / 100
-   >>> price = 100.50
-   >>> price * tax
+   >>> mokestis = 12.5 / 100
+   >>> kaina = 100.50
+   >>> kaina * mokestis
    12.5625
-   >>> price + _
+   >>> kaina + _
    113.0625
    >>> round(_, 2)
    113.06
    >>>
 
-This variable should be treated as read-only by the user.  Don't explicitly
-assign a value to it --- you would create an independent local variable with the
-same name masking the built-in variable with its magic behavior.
-
+Su šiuo kintamuoju turėtų būti elgiamasi lyg jis būtų skirtas tik skaitymui.
+Nepriskyrinėkite jam reikšmė --- taip sukurtumėte nesusijusį kintamąjį,
+kurio vardas neleistų prieiti prie tikrojo magiško Pitono kintamojo.
 
 .. _tut-strings:
 
