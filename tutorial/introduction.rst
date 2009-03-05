@@ -585,15 +585,15 @@ nurodo tą patį objektą! *Objektų semantiką* aptarsime vėliau.
 
 .. _tut-firststeps:
 
-First Steps Towards Programming
-===============================
+Pirmieji žingsniai link programavimo
+====================================
 
-Of course, we can use Python for more complicated tasks than adding two and two
-together.  For instance, we can write an initial sub-sequence of the *Fibonacci*
-series as follows::
+Be abejonės, Pitonas gali būti naudojamas daug sudėtingesniems darbams negu
+apskaičiuoti du plius du. Pavyzdžiui, galime apskaičiuoti pradinius *Fibonačio*
+sekos narius::
 
-   >>> # Fibonacci series:
-   ... # the sum of two elements defines the next
+   >>> # Fibonačio seka:
+   ... # dviejų narių suma apibrėžia tolesnį narį
    ... a, b = 0, 1
    >>> while b < 10:
    ...     print b
@@ -606,43 +606,44 @@ series as follows::
    5
    8
 
-This example introduces several new features.
+Šis pavyzdys pristatė porą naujų dalykų.
 
-* The first line contains a *multiple assignment*: the variables ``a`` and ``b``
-  simultaneously get the new values 0 and 1.  On the last line this is used again,
-  demonstrating that the expressions on the right-hand side are all evaluated
-  first before any of the assignments take place.  The right-hand side expressions
-  are evaluated  from the left to the right.
+* Pirmoje eilutėje naudojamas *priskyrimas keliems kintamiesiems*: kintamieji
+  ``a`` ir ``b`` tuo pat metu įgauna reikšmes; atitinkamai 0 ir 1. Panašus
+  priskyrimas naudojamas ir paskutinėje eilutėje, kas parodo, kad visos dešinės
+  priskyrimo pusės išraiškos apskaičiuojamos anksčiau nei atliekamas bet koks
+  priskyrimas.  Dešinės pusės apskaičiavimas atliekamas iš kairės į dešinę.
 
-* The :keyword:`while` loop executes as long as the condition (here: ``b < 10``)
-  remains true.  In Python, like in C, any non-zero integer value is true; zero is
-  false.  The condition may also be a string or list value, in fact any sequence;
-  anything with a non-zero length is true, empty sequences are false.  The test
-  used in the example is a simple comparison.  The standard comparison operators
-  are written the same as in C: ``<`` (less than), ``>`` (greater than), ``==``
-  (equal to), ``<=`` (less than or equal to), ``>=`` (greater than or equal to)
-  and ``!=`` (not equal to).
+* Ciklo konstrukcija :keyword:`while` vykdoma tol, kol sąlyga yra teisinga
+  (šiuo atveju: ``b < 10``). Pitone, panašiai kaip ir C, bet kuris nelygus
+  nuliui skaičius laikomas *teisingu*; nulis yra *klaidingas*. Sąlyga taip
+  taip pat gali būti eilutės arba sąrašo reikšmė, arba apibendrinant: bet
+  kokia seka. Tuščia seka yra *klaidinga*; netuščia (turinti bent vieną
+  elementą) yra *teisinga*. Pavyzdyje naudojama sąlyga yra paprastas palyginimas.
+  Standartiniai palyginimo operatoriai užrašomi kaip ir C kalboje: ``<``
+  (mažiau negu), ``>`` (daugiau negu), ``==`` (lygu), ``<=`` (mažiau arba lygu),
+  ``>=`` (daugiau arba lygu) bei ``!=`` (nelygu).
 
-* The *body* of the loop is *indented*: indentation is Python's way of grouping
-  statements.  Python does not (yet!) provide an intelligent input line editing
-  facility, so you have to type a tab or space(s) for each indented line.  In
-  practice you will prepare more complicated input for Python with a text editor;
-  most text editors have an auto-indent facility.  When a compound statement is
-  entered interactively, it must be followed by a blank line to indicate
-  completion (since the parser cannot guess when you have typed the last line).
-  Note that each line within a basic block must be indented by the same amount.
+* Vidinis ciklo kodas yra *įtrauktas* -- tai Pitono būdas sugrupuoti kodo sakinius.
+  Pitonas nesuteikia (kol kas) gudraus eilutės redagavimo galimybės, taigi tarpus
+  arba tabuliacijos ženklus reikia eilutės pradžioje įterpti rankomis. Praktikoje,
+  visgi, dauguma tekstų redaktorių, naudojamų rašyti Pitono kodą, pateikia
+  galimybę automatiškai lygiuoti kodą. Kai sudėtinis kodo sakinys įvedamas
+  interaktyvioje veiksenoje, po jo turi sekti tuščia eilutė tam, kad Pitonas
+  suprastų, jog jūs užrašėte paskutinę eilutę. Taip pat turėkite omenyje, kad
+  visos to paties kodo bloko eilutės įtraukiamos vienu skaičiumi tarpo ženklų.
 
-* The :keyword:`print` statement writes the value of the expression(s) it is
-  given.  It differs from just writing the expression you want to write (as we did
-  earlier in the calculator examples) in the way it handles multiple expressions
-  and strings.  Strings are printed without quotes, and a space is inserted
-  between items, so you can format things nicely, like this::
+* :keyword:`print` komanda atspausdina duotos išraiškos reikšmę. Tai skiriasi nuo
+  paprasčiausio išraiškos užrašymo prie Pitono raginimo tuo, kad :keyword:`print`
+  gali atspausdinti daugiau negu vieną reikšmę. Taip pat ji spausdina eilutes
+  be kabučių ženklų, o pateikus daugiau negu vieną išraišką, spausdinant tarp
+  jų įterpiami tarpo simboliai::
 
      >>> i = 256*256
      >>> print 'The value of i is', i
      The value of i is 65536
 
-  A trailing comma avoids the newline after the output::
+  Gale parašyta kabutė nurodo atspausdinus reikšmes nepradėti naujos eilutės::
 
      >>> a, b = 0, 1
      >>> while b < 1000:
@@ -651,5 +652,5 @@ This example introduces several new features.
      ...
      1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
 
-  Note that the interpreter inserts a newline before it prints the next prompt if
-  the last line was not completed.
+  Tačiau interpretatorius įterps naują eilutę prieš pateikdamas raginimą, jei
+  ankstesnė eilutė nebuvo užbaigta.
