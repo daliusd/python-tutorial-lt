@@ -126,10 +126,11 @@ skaičiaus *z*, naudokite ``z.real`` (realiąjai daliai) ir ``z.imag``
    >>> a.imag
    0.5
 
-Sveikų ir slankaus kablelio skaičių konvertavimo funkcijos neveikia kompleksiniams
-skaičiams --- nes nėra vienaprasmio būdo to atlikti. Naudodami ``abs(z)``
-gausite kompleksinio skaičiaus modulį (slankaus kablelio skaičiaus pavidalu).
-Jau minėtas ``z.real`` leis gauti realiąją kompleksinio skaičiaus dalį. ::
+Sveikų ir slankaus kablelio skaičių konvertavimo funkcijos (``float``,
+``int`` ir ``long``) neveikia kompleksiniams skaičiams --- nes nėra vienaprasmio
+būdo to atlikti. Naudodami ``abs(z)`` gausite kompleksinio skaičiaus modulį
+(slankaus kablelio skaičiaus pavidalu). Jau minėtas ``z.real`` leis gauti
+realiąją kompleksinio skaičiaus dalį. ::
 
    >>> a=3.0+4.0j
    >>> float(a)
@@ -164,11 +165,12 @@ kurio vardas neleistų prieiti prie tikrojo magiško Pitono kintamojo.
 
 .. _tut-strings:
 
-Strings
+Eilutės
 -------
 
-Besides numbers, Python can also manipulate strings, which can be expressed in
-several ways.  They can be enclosed in single quotes or double quotes::
+Pitonas dirba ne tik su skaičiais, bet ir su simbolių eilutėmis, kurias
+galima užrašyto pora būdų. Galima apsupti viengubomis arba dvigubomis
+kabutėmis::
 
    >>> 'spam eggs'
    'spam eggs'
@@ -183,43 +185,41 @@ several ways.  They can be enclosed in single quotes or double quotes::
    >>> '"Isn\'t," she said.'
    '"Isn\'t," she said.'
 
-String literals can span multiple lines in several ways.  Continuation lines can
-be used, with a backslash as the last character on the line indicating that the
-next line is a logical continuation of the line::
+Simbolių eilutės gali aprėpti porą eilučių. Naudojant pasvirąjį brūkšnelį
+eilutės gale galima nurodyti, kad toliau einanti eilutė yra šios tęsinys::
 
-   hello = "This is a rather long string containing\n\
-   several lines of text just as you would do in C.\n\
-       Note that whitespace at the beginning of the line is\
-    significant."
+   >>> hello = "This is a rather long string containing\n\
+   ... several lines of text just as you would do in C.\n\
+   ...     Note that whitespace at the beginning of the line is\
+   ... significant."
+   >>> print hello
 
-   print hello
-
-Note that newlines still need to be embedded in the string using ``\n``; the
-newline following the trailing backslash is discarded.  This example would print
-the following::
+Turėkite omenyje, kad pasvirasis brūkšnelis sujungia gretimas eilutes
+į vieną, todėl naujas eilutes reikia sudaryti naudojant ``\n``.
+Šis pavyzdys ekrane atspausdintų::
 
    This is a rather long string containing
    several lines of text just as you would do in C.
        Note that whitespace at the beginning of the line is significant.
 
-If we make the string literal a "raw" string, however, the ``\n`` sequences are
-not converted to newlines, but the backslash at the end of the line, and the
-newline character in the source, are both included in the string as data.  Thus,
-the example::
+Kita vertus, jeigu eilutę pažymime kaip "neapdorojamą" (raw), tuomet ``\n``
+nepradeda naujos eilutės. Neapdorojamose eilutėse pasvirieji brūkšneliai
+taip pat praranda savo reikšmę (t.y. lieka pasviraisiais brūkšneliais),
+tačiau skirstymas į eilutes nėra prarandamas -- lieka taip, kaip užrašyta:
 
    hello = r"This is a rather long string containing\n\
    several lines of text much as you would do in C."
 
    print hello
 
-would print::
+atspausdintų::
 
    This is a rather long string containing\n\
    several lines of text much as you would do in C.
 
-Or, strings can be surrounded in a pair of matching triple-quotes: ``"""`` or
-``'''``.  End of lines do not need to be escaped when using triple-quotes, but
-they will be included in the string. ::
+Dar galima eilutes apgaubti poromis trigubų kabučių: ``"""``` arba ``'''``.
+Eilučių pabaigų nereikia užrašyti specialiai, bus paliekamas toks skaidymas
+į eilutes, kaip užrašyme. ::
 
    print """
    Usage: thingy [OPTIONS]
@@ -227,7 +227,7 @@ they will be included in the string. ::
         -H hostname               Hostname to connect to
    """
 
-produces the following output::
+ekrane išvestų::
 
    Usage: thingy [OPTIONS]
         -h                        Display this usage message
