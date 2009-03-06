@@ -233,58 +233,62 @@ ekrane išvestų::
         -h                        Display this usage message
         -H hostname               Hostname to connect to
 
-The interpreter prints the result of string operations in the same way as they
-are typed for input: inside quotes, and with quotes and other funny characters
-escaped by backslashes, to show the precise value.  The string is enclosed in
-double quotes if the string contains a single quote and no double quotes, else
-it's enclosed in single quotes.  (The :keyword:`print` statement, described
-later, can be used to write strings without quotes or escapes.)
+Interpretatorius atspausdina operacijų su eilutėmis rezultatus visiškai taip
+pat, kaip eilutės ir įvedamos: apgaubia kabutėmis iš šonų, o viduje eilutės
+esančios kabutės užrašomos pridedant pasvirąjį brukšnelį. Jeigu eilutės
+viduje yra vienguba kabutė, atspausdinama apgaubiant dvigubomis kabutėmis.
+Kitais atvejais apgaubiama dvigubomis kabutėmis. (Komanda :keyword:`print`,
+kurią aptarsime kiek vėliau, gali būti naudojama atspausdini eilutes be
+apgaubiančių kabučių.)
 
-Strings can be concatenated (glued together) with the ``+`` operator, and
-repeated with ``*``::
+Eilutės gali būti sujungtos (pridėtos viena prie kitos) naudojant ``+``
+operatorių bei pakartotos porą kartų su ``*`` operatoriumi::
 
-   >>> word = 'Help' + 'A'
+   >>> word = 'Pagalb' + 'a'
    >>> word
-   'HelpA'
+   'Pagalba'
    >>> '<' + word*5 + '>'
-   '<HelpAHelpAHelpAHelpAHelpA>'
+   '<PagalbaPagalbaPagalbaPagalbaPagalba>'
 
-Two string literals next to each other are automatically concatenated; the first
-line above could also have been written ``word = 'Help' 'A'``; this only works
-with two literals, not with arbitrary string expressions::
+Dvi eilutės, užrašytos viena po kitos, yra automatiškai sujungiamos. Taigi pirmąja
+eilutę pavyzdyje galėjome užrašyti tiesiog kaip ``word = 'Pagalb' 'a'``; turėkite
+omenyje, kad šitaip galima daryti tik su rankomis užrašytomis eilutėmis, o ne
+su operacijų rezultatais::
 
-   >>> 'str' 'ing'                   #  <-  This is ok
+   >>> 'str' 'ing'             #  <-  Taisyklinga
    'string'
-   >>> 'str'.strip() + 'ing'   #  <-  This is ok
+   >>> 'str'.strip() + 'ing'   #  <-  Taisyklinga
    'string'
-   >>> 'str'.strip() 'ing'     #  <-  This is invalid
+   >>> 'str'.strip() 'ing'     #  <-  Netaisyklinga
      File "<stdin>", line 1, in ?
        'str'.strip() 'ing'
                          ^
    SyntaxError: invalid syntax
 
-Strings can be subscripted (indexed); like in C, the first character of a string
-has subscript (index) 0.  There is no separate character type; a character is
-simply a string of size one.  Like in Icon, substrings can be specified with the
-*slice notation*: two indices separated by a colon. ::
+Eilutės gali būti indeksuojamos; kaip ir C kalboje, pirmasis eilutės simbolis
+atitinka indeksą 0. Pitono kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
+tai eilutė, kurios dydis -- vienas simbolis. Eilučių dalys gali būti nurodomos
+su *išpjovos notacija*: du indeksai atskirti dvitaškiu. ::
 
+   >>> word
+   'Pagalba'
    >>> word[4]
-   'A'
+   'l'
    >>> word[0:2]
-   'He'
+   'Pa'
    >>> word[2:4]
-   'lp'
+   'ga'
 
-Slice indices have useful defaults; an omitted first index defaults to zero, an
-omitted second index defaults to the size of the string being sliced. ::
+Išpjovos indeksai gali būti nenurodyti; jeigu praleistas pirmasis indeksas, vietoje
+jo naudojamas nulis, o praleistas antrasis indeksas tapatus eilutės ilgio nurodymui. ::
 
-   >>> word[:2]    # The first two characters
-   'He'
-   >>> word[2:]    # Everything except the first two characters
-   'lpA'
+   >>> word[:2]    # Du pirmi simboliai
+   'Pa'
+   >>> word[2:]    # Viskas, kas eina po dviejų pirmų simbolių
+   'galba'
 
-Unlike a C string, Python strings cannot be changed.  Assigning to an indexed
-position in the string results in an error::
+Priešingai negu C kalboje, Pitono eilutės negali būti keičiamos. Bandant pakeisti
+eilutės simbolį nurodant indeksą įvyksta klaida::
 
    >>> word[0] = 'x'
    Traceback (most recent call last):
@@ -295,80 +299,80 @@ position in the string results in an error::
      File "<stdin>", line 1, in ?
    TypeError: object doesn't support slice assignment
 
-However, creating a new string with the combined content is easy and efficient::
+Tačiau naujų eilučių sukūrimas sudedant turimas yra paprastas ir efektyvus::
 
-   >>> 'x' + word[1:]
-   'xelpA'
-   >>> 'Splat' + word[4]
-   'SplatA'
+   >>> 't' + word[1:]
+   'tagalba'
+   >>> 'Kal' + word[4]
+   'Kalk'
 
-Here's a useful invariant of slice operations: ``s[:i] + s[i:]`` equals ``s``.
+Naudinga išpjovų operacijų savybė: ``s[:i] + s[i:]`` visuomet lygu ``s``.
 ::
 
    >>> word[:2] + word[2:]
-   'HelpA'
+   'Pagalba'
    >>> word[:3] + word[3:]
-   'HelpA'
+   'Pagalba'
 
-Degenerate slice indices are handled gracefully: an index that is too large is
-replaced by the string size, an upper bound smaller than the lower bound returns
-an empty string. ::
+Išeinantys iš ribų indeksai yra tvarkingai apdorojami. Per didelis indeksas 
+pakeičiamas eilutės ilgiu. Jeigu išpjovos pradžios indeksas didesnis už
+pabaigos indeksą, gausime tuščią eilutę. ::
 
    >>> word[1:100]
-   'elpA'
+   'Pagalba'
    >>> word[10:]
    ''
    >>> word[2:1]
    ''
 
-Indices may be negative numbers, to start counting from the right. For example::
+Kaip indeksus galima naudoti ir neigiamus skaičius, tokiu atveju skaičiuojama
+nuo dešinės. Pavyzdžiui,::
 
-   >>> word[-1]     # The last character
-   'A'
-   >>> word[-2]     # The last-but-one character
-   'p'
-   >>> word[-2:]    # The last two characters
-   'pA'
-   >>> word[:-2]    # Everything except the last two characters
-   'Hel'
+   >>> word[-1]     # Paskutinis simbolis
+   'a'
+   >>> word[-2]     # Priešpaskutinis simbolis
+   'b'
+   >>> word[-2:]    # Du paskutiniai simboliai
+   'ba'
+   >>> word[:-2]    # Viskas iki dviejų paskutinių simbolių
+   'Pagal'
 
-But note that -0 is really the same as 0, so it does not count from the right!
-::
+Pastebėkite, kad -0 iš tiesų yra tas pats kaip ir 0, todėl šiuo atveju nuo
+dešinės nėra skaičiuojama. ::
 
-   >>> word[-0]     # (since -0 equals 0)
-   'H'
+   >>> word[-0]     # (nes -0 yra kaip 0)
+   'P'
 
-Out-of-range negative slice indices are truncated, but don't try this for
-single-element (non-slice) indices::
+Išeinantys iš ribų neigiami indeksai yra apkarpomi, tačiau tai galioja
+tik išpjovoms::
 
    >>> word[-100:]
-   'HelpA'
-   >>> word[-10]    # error
+   'Pagalba'
+   >>> word[-10]    # klaida
    Traceback (most recent call last):
      File "<stdin>", line 1, in ?
    IndexError: string index out of range
 
-One way to remember how slices work is to think of the indices as pointing
-*between* characters, with the left edge of the first character numbered 0.
-Then the right edge of the last character of a string of *n* characters has
-index *n*, for example::
+Bus lengviau atsiminti, kaip veikia išpjovos, jeigu galvosite apie indeksus
+kaip apie rodykles *tarp* simbolių, o eilutės kraštą prieš pirmą simbolį kaip
+turintį nulinį indeksą. Tuomet dešinys eilutės, sudarytos iš *n* simbolių,
+kraštas turės indeksą *n*. ::
 
-    +---+---+---+---+---+
-    | H | e | l | p | A |
-    +---+---+---+---+---+
-    0   1   2   3   4   5
-   -5  -4  -3  -2  -1
+    +---+---+---+---+---+---+---+
+    | P | a | g | a | l | b | a |
+    +---+---+---+---+---+---+---+
+    0   1   2   3   4   5   6   7
+   -7  -6  -5  -4  -3  -2  -1
 
-The first row of numbers gives the position of the indices 0...5 in the string;
-the second row gives the corresponding negative indices. The slice from *i* to
-*j* consists of all characters between the edges labeled *i* and *j*,
-respectively.
+Pirma skaičių eilutė parodo indeksų 0..7 vietas simbolių eilutėje. Antroji
+eilutė -- atitinkamai atvaizduoja neigiamus indeksus. Tada išpjova nuo *i*
+iki *j* susidea iš visų simbolių, esančių tarp *i* ir *j*.
 
-For non-negative indices, the length of a slice is the difference of the
-indices, if both are within bounds.  For example, the length of ``word[1:3]`` is
+Neneigiamiems indeksams, išpjovos ilgis yra indeksų skirtumas (jeigu abu
+indeksai yra eilutės ribose). Tarkime, išpjovos ``word[1:3]`` ilgis yra
 2.
 
-The built-in function :func:`len` returns the length of a string::
+Standartinė funkcija :func:`len` grąžina eilutės ilgį.
 
    >>> s = 'supercalifragilisticexpialidocious'
    >>> len(s)
@@ -508,7 +512,7 @@ neprivalo visi būti to paties tipo. ::
    ['spam', 'eggs', 100, 1234]
 
 Kaip ir simbolių eilučių indeksai, sąrašų indeksai prasideda nuo 0, sąrašai gali
-būti atriekti, sujungti ir taip toliau::
+būti išpjauti, sujungti ir taip toliau::
 
    >>> a[0]
    'spam'
