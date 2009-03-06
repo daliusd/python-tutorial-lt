@@ -401,41 +401,42 @@ Standartinė funkcija :func:`len` grąžina eilutės ilgį.
 
 .. _tut-unicodestrings:
 
-Unicode Strings
+Unikodo eilutės
 ---------------
 
 .. sectionauthor:: Marc-Andre Lemburg <mal@lemburg.com>
 
+Pradedant Pitono versija 2.0 programuotojams pateikiamas naujas duomenų tipas,
+skirtas tekstinių duomenų saugojimui: Unikodo objektai. Jis gali būti naudojamas
+saugoti bei operuoti Unikodu paremtais duomenimis (daugiau informacijos
+rasite http://lt.wikipedia.org/wiki/Unikodas bei http://www.unicode.org).
+Šis duomenų tipas taip pat gerai integruojasi su paprastomis simbolių
+eilutėmis; esant poreikiui tipų pakeitimas atliekamas automatiškai.
 
-Starting with Python 2.0 a new data type for storing text data is available to
-the programmer: the Unicode object. It can be used to store and manipulate
-Unicode data (see http://www.unicode.org/) and integrates well with the existing
-string objects, providing auto-conversions where necessary.
+Didelis Unikodo pranašumas yra tai, kad šis standartas aprašo visus ženklus,
+naudojamus bet kuriame dabarties bei senovės tekste. Prieš Unikodą
+būdavo apsiribojama 256-ių rašto ženklų lentelėmis. Tekstai būdavo
+susiejami su šiomis lentelėmis, kurios aprašydavo skaičių ir rašto ženklų
+sąryšį. Tai sukurdavo labai daug maišaties, ypač ten, kur tai susiję
+su programinės įrangos daugiakalbyste. Unikodas šias problemas išsprendžia
+pristatydamas vientisą kodų lentelę, kurią galima naudoti visoms rašto
+sistemoms.
 
-Unicode has the advantage of providing one ordinal for every character in every
-script used in modern and ancient texts. Previously, there were only 256
-possible ordinals for script characters. Texts were typically bound to a code
-page which mapped the ordinals to script characters. This lead to very much
-confusion especially with respect to internationalization (usually written as
-``i18n`` --- ``'i'`` + 18 characters + ``'n'``) of software.  Unicode solves
-these problems by defining one code page for all scripts.
+Unikodo eilučių sukūrimas Pitone yra ne ką sudėtingesnis negu paprastų
+eilučių::
 
-Creating Unicode strings in Python is just as simple as creating normal
-strings::
+   >>> u'Labas, pasauli!'
+   u'Labas, pasauli!'
 
-   >>> u'Hello World !'
-   u'Hello World !'
+Mažoji ``'u'`` prieš kabutę nurodo, kad aprašome Unikodo eilutę. Jeigu
+norite eilutėje naudoti specialius simbolius, galite tai padaryti naudodami
+specialią Pitono sintaksę. ::
 
-The small ``'u'`` in front of the quote indicates that a Unicode string is
-supposed to be created. If you want to include special characters in the string,
-you can do so by using the Python *Unicode-Escape* encoding. The following
-example shows how::
+   >>> u'Sveikas,\u0020pasauli!'
+   u'Sveikas, pasauliĄ'
 
-   >>> u'Hello\u0020World !'
-   u'Hello World !'
-
-The escape sequence ``\u0020`` indicates to insert the Unicode character with
-the ordinal value 0x0020 (the space character) at the given position.
+Čia užrašyta seka ``\u0020`` reiškia Unikodo simbolio, kurio kodas 0x0020
+(o tai yra tarpo simbolis), įterpimą eilutėje.
 
 Other characters are interpreted by using their respective ordinal values
 directly as Unicode ordinals.  If you have literal strings in the standard
@@ -482,16 +483,17 @@ When a Unicode string is printed, written to a file, or converted with
      File "<stdin>", line 1, in ?
    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2: ordinal not in range(128)
 
-To convert a Unicode string into an 8-bit string using a specific encoding,
-Unicode objects provide an :func:`encode` method that takes one argument, the
-name of the encoding.  Lowercase names for encodings are preferred. ::
+Galite paversti Unikodo eilutę į 8 bitų simbolių eilutę nurodydami norimą
+teksto koduotę su :func:`encode` metodu, kuriam būtinas vienas parametras --
+koduotės pavadinimas. Teksto koduočių vardus rekomenduojama užrašyti
+mažosiomis raidėmis. ::
 
    >>> u"äöü".encode('utf-8')
    '\xc3\xa4\xc3\xb6\xc3\xbc'
 
-If you have data in a specific encoding and want to produce a corresponding
-Unicode string from it, you can use the :func:`unicode` function with the
-encoding name as the second argument. ::
+Jeigu jūs turite duomenis žinomojo teksto koduotėje ir norite iš jų gauti
+Unikodo eilutę, galite naudoti :func:`unicode` funkciją, kartu nurodydami
+koduotės pavadinimą. ::
 
    >>> unicode('\xc3\xa4\xc3\xb6\xc3\xbc', 'utf-8')
    u'\xe4\xf6\xfc'
@@ -502,7 +504,7 @@ encoding name as the second argument. ::
 Sąrašai
 -------
 
-Pitonas žino daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
+Pitonas pateikia daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
 Lanksčiausias iš tokių tipų yra *sąrašas*, kuris aprašomas kaip laužtiniais
 skliaustais apgaubtas sąrašas kableliais atskirtų elementų. Sąrašo elementai
 neprivalo visi būti to paties tipo. ::
