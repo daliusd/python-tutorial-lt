@@ -52,25 +52,27 @@ Terminų žodynas
       gali būti pasiektas kaip *o.a*.
 
    BFDL
-      Benevolent Dictator For Life, a.k.a. `Guido van Rossum
-      <http://www.python.org/~guido/>`_, Python's creator.
+      Dosnusis Diktatorius Visam Gyvenimui (angliško termino Benevolent
+      Dictator For Life sutrumpinimas), taip pat žinomas kaip `Guido van Rossum
+      <http://www.python.org/~guido/>`_, Pitono kūrėjas.
 
    baitinis kodas / bytecode
-      Python source code is compiled into bytecode, the internal representation
-      of a Python program in the interpreter.  The bytecode is also cached in
-      ``.pyc`` and ``.pyo`` files so that executing the same file is faster the
-      second time (recompilation from source to bytecode can be avoided).  This
-      "intermediate language" is said to run on a :term:`virtual machine`
-      that executes the machine code corresponding to each bytecode.
+      Pitono kodas yra kompiliuojamas į baitinį kodą – vidinę Pitono programos
+      reprezentaciją interpretatoriuje. Pitono baitinis kodas yra išsaugojamas
+      ``.pyc`` ir ``.pyo`` failuose, kad to paties failo vykdymas būtų greitesnis
+      vykdant antrą kartą (išvengiama perkompiliavimo iš kodo į baitinį kodą).
+      Sakoma, kad "tarpinė kalba" yra vykdoma :term:`virtualiojoje mašinoje`
+      kuri vykdo mašininį kodą kiekvienam baitiniam kodui.
 
    klasė / class
-      A template for creating user-defined objects. Class definitions
-      normally contain method definitions which operate on instances of the
-      class.
+        Šablonas, kuris naudojamas kurti vartotojo apibrėžtus objektus.
+        Klasės apibrėžimas dažniausiai susideda iš metodų apibrėžimų,
+        kurie operuoja su tos klasės objektais.
 
    klasikinė klasė / classic class
-      Any class which does not inherit from :class:`object`.  See
-      :term:`new-style class`.  Classic classes will be removed in Python 3.0.
+        Bet kuri klasė, kuri nėra paveldta iš :class:`object`. Taip
+        pat žiūrėto :term:`naujo stiliaus klasė`. Klasikinės klasės bus
+        išimtos iš Pitono 3.0.
 
    keitimas / coercion
       The implicit conversion of an instance of one type to another during an
