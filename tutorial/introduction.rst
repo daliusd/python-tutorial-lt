@@ -160,7 +160,7 @@ kai kuriuos skaičiavimus galima atlikti daug paprasčiau::
    >>>
 
 Su šiuo kintamuoju turėtų būti elgiamasi lyg jis būtų skirtas tik skaitymui.
-Nepriskyrinėkite jam reikšmė --- taip sukurtumėte nesusijusį kintamąjį,
+Nepriskyrinėkite jam reikšmės --- taip sukurtumėte nesusijusį kintamąjį,
 kurio vardas neleistų prieiti prie tikrojo magiško Pitono kintamojo.
 
 .. _tut-strings:
@@ -631,7 +631,8 @@ sekos narius::
   galimybę automatiškai lygiuoti kodą. Kai sudėtinis kodo sakinys įvedamas
   interaktyvioje veiksenoje, po jo turi sekti tuščia eilutė tam, kad Pitonas
   suprastų, jog jūs užrašėte paskutinę eilutę. Taip pat turėkite omenyje, kad
-  visos to paties kodo bloko eilutės įtraukiamos vienu skaičiumi tarpo ženklų.
+  visos to paties kodo bloko eilutės privalo būti įtrauktos vienodu skaičiumi
+  tarpo ženklų.
 
 * :keyword:`print` komanda atspausdina duotos išraiškos reikšmę. Tai skiriasi nuo
   paprasčiausio išraiškos užrašymo prie Pitono raginimo tuo, kad :keyword:`print`
@@ -643,7 +644,7 @@ sekos narius::
      >>> print 'The value of i is', i
      The value of i is 65536
 
-  Gale parašyta kabutė nurodo atspausdinus reikšmes nepradėti naujos eilutės::
+  Gale parašytas kablelis nurodo atspausdinus reikšmes nepradėti naujos eilutės::
 
      >>> a, b = 0, 1
      >>> while b < 1000:
