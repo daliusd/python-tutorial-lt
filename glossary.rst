@@ -70,52 +70,52 @@ Terminų žodynas
         kurie operuoja su tos klasės objektais.
 
    klasikinė klasė / classic class
-        Bet kuri klasė, kuri nėra paveldta iš :class:`object`. Taip
+        Bet kuri klasė, kuri nėra paveldėta iš :class:`object`. Taip
         pat žiūrėto :term:`naujo stiliaus klasė`. Klasikinės klasės bus
         išimtos iš Pitono 3.0.
 
    keitimas / coercion
-      The implicit conversion of an instance of one type to another during an
-      operation which involves two arguments of the same type.  For example,
-      ``int(3.15)`` converts the floating point number to the integer ``3``, but
-      in ``3+4.5``, each argument is of a different type (one int, one float),
-      and both must be converted to the same type before they can be added or it
-      will raise a ``TypeError``.  Coercion between two operands can be
-      performed with the ``coerce`` builtin function; thus, ``3+4.5`` is
-      equivalent to calling ``operator.add(*coerce(3, 4.5))`` and results in
-      ``operator.add(3.0, 4.5)``.  Without coercion, all arguments of even
-      compatible types would have to be normalized to the same value by the
-      programmer, e.g., ``float(3)+4.5`` rather than just ``3+4.5``.
+        Neišreikštinis vieno tipo objekto konvertavimas į kitą tipą per operaciją,
+        kurioje naudojami du to paties tipo argumentai. Pavyzdžiui
+        ``int(3.15)`` konvertuoja slankiojo kablelio skaičių į sveiką skaičių ``3``, bet
+        operacijoje ``3+4.5`` kiekvienas argumentas yra skirtingo tipo (vienas yra sveikas
+        skaičius, kitas slankaus kablelio) ir abu turi būti sukonvertuojami į tą patį
+        tipą prieš tai, kai jie yra sudedami arba kitaip bus išmetama ``TypeError`` klaida.
+        Keitimas tarp dviejų objektų gali būti atliktas naudojantis ``coerce`` funkcija.
+        Taigi ``3+4.5`` yra tolygu ``operator.add(*coerce(3, 4.5))`` kvietimui ir tokios
+        operacijos rezultatas yra ``operator.add(3.0, 4.5)``. Be keitimo visi argumentai
+        (net jei argumentų tipai yra suderinami) turėtų būti normalizuojami programuotojo,
+        pvz.: ``float(3)+4.5`` užtuot tiesiog rašius ``3+4.5``.
 
    kompleksinis skaičius / complex number
-      An extension of the familiar real number system in which all numbers are
-      expressed as a sum of a real part and an imaginary part.  Imaginary
-      numbers are real multiples of the imaginary unit (the square root of
-      ``-1``), often written ``i`` in mathematics or ``j`` in
-      engineering. Python has builtin support for complex numbers, which are
-      written with this latter notation; the imaginary part is written with a
-      ``j`` suffix, e.g., ``3+1j``.  To get access to complex equivalents of the
-      :mod:`math` module, use :mod:`cmath`.  Use of complex numbers is a fairly
-      advanced mathematical feature.  If you're not aware of a need for them,
-      it's almost certain you can safely ignore them.
+      Pažįstamos realiųjų skaičių sistemos plėtinys, kuriame visi skaičiai
+      yra išreiškiami kaip realios ir menamosios dalių suma. Menamieji
+      skaičiai yra realieji skaičiai padauginti iš menamojo vieneto (kvadratinė
+      šaknis iš ``-1``), dažnai žymimo kaip ``i`` matematikoje arba ``j``
+      inžinerijoje. Pitonas palaiko kompleksinius skaičius, kurie naudoja
+      pastarąjį žymėjimą – menamoji dalis yra rašoma naudojant ``j``, pvz.: 
+      ``3+1j``.  Jei jums reikia :mod:`math` modulio ekvivalento kompleksiniams
+      skaičiams naudokite :mod:`cmath`. Kompleksinių skaičių naudojimas
+      yra pakankamai sudėtinga matematikos tema. Jei nesate tikras ar jums jų reikia,
+      tai galite ramiai juos ignoruoti.
 
    konteksto valdiklis / context manager
-      An object which controls the environment seen in a :keyword:`with`
-      statement by defining :meth:`__enter__` and :meth:`__exit__` methods.
-      See :pep:`343`.
+      Objektas, kuris valdo aplinką sakinyje su :keyword:`with` konstrukcija.
+      Objekte reikia apibrėžti :meth:`__enter__` ir :meth:`__exit__` metodus.
+      Daugiau informacijos :pep:`343`.
 
    CPython
-      The canonical implementation of the Python programming language.  The
-      term "CPython" is used in contexts when necessary to distinguish this
-      implementation from others such as Jython or IronPython.
+      Pagrindinis Pitono programavimo kalbos įgyvendinimas. Terminas
+      „CPython“ naudojamas, kai reikia atskirti šį įgyvendinimą nuo kitų, pvz.:
+      Jython arba IronPython.
 
    dekoratorius / decorator
-      A function returning another function, usually applied as a function
-      transformation using the ``@wrapper`` syntax.  Common examples for
-      decorators are :func:`classmethod` and :func:`staticmethod`.
+      Funkcija, kuri gražina kitą funkciją, dažniausiai naudojant
+      funkcijos transformacijos sintaksę ``@wrapper``. Dažnas
+      pavyzdys dekoratoriams yra :func:`classmethod` ir :func:`staticmethod`.
 
-      The decorator syntax is merely syntactic sugar, the following two
-      function definitions are semantically equivalent::
+      Dekoratoriaus sintaksė yra sukurta tik dėl patogumo. Pavyzdžiui
+      du sekantys funkcijos apibrėžimai yra lygiaverčiai:
 
          def f(...):
              ...
@@ -124,9 +124,6 @@ Terminų žodynas
          @staticmethod
          def f(...):
              ...
-
-      See :ref:`the documentation for function definition <function>` for more
-      about decorators.
 
    deskriptorius / descriptor
       Any *new-style* object which defines the methods :meth:`__get__`,
