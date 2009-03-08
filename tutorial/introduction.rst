@@ -250,7 +250,7 @@ operatorių bei pakartotos keletą kartų su ``*`` operatoriumi::
    >>> '<' + word*5 + '>'
    '<PagalbaPagalbaPagalbaPagalbaPagalba>'
 
-Dvi eilutės, užrašytos viena po kitos, yra automatiškai sujungiamos. Taigi pirmąja
+Dvi eilutės, užrašytos viena po kitos, yra automatiškai sujungiamos. Taigi pirmąją
 eilutę pavyzdyje galėjome užrašyti tiesiog kaip ``word = 'Pagalb' 'a'``; turėkite
 omenyje, kad šitaip galima daryti tik su rankomis užrašytomis eilutėmis, o ne
 su operacijų rezultatais::
