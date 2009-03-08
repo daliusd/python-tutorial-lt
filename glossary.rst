@@ -26,10 +26,10 @@ Terminų žodynas
       Įrankis pateikiamas kaip :file:`Tools/scripts/2to3`. Žiūrėti
       :ref:`2to3-reference`.
 
-   abstrakčioji bazinė klase / abstract base class
-      Abstrakčioji Bazinė Klasė (ABC) papildo neišreikštinį tipizavimą suteikdama
-      būdą apibrėžti sąsaja kai kitų technikų (pvz.: :func:`hasattr`)
-      naudojimas yra nepatogys. Pitone yra daug standartinių ABC duomenų
+   abstrakčioji bazinė klasė / abstract base class
+      Abstrakčioji bazinė klasė (ABC) papildo neišreikštinį tipizavimą suteikdama
+      būdą apibrėžti klasės šabloninę sąsają kai kitų technikų (pvz.: :func:`hasattr`)
+      naudojimas yra nepatogus. Pitone yra daug standartinių ABC duomenų
       struktūroms (:mod:`collections` modulyje), skaičiams (:mod:`numbers`
       modulyje), srautams (:mod:`io` modulyje). Galima kurti savo ABC
       naudojant :mod:`abc` modulį.
@@ -224,7 +224,7 @@ Terminų žodynas
 
       .. index:: single: generator expression
 
-   generatoriaus reiškinys / generator expression
+   generatorinis reiškinys / generator expression
       Reiškinys, kuris sugrąžina generatorių. Jis panašus į normalų reiškinį
       po kurio seka :keyword:`for` reiškinys apibrėžiantis ciklo
       kintamuosius, ribas ir papidomą :keyword:`if` reiškinį. Kombinuotas
@@ -279,7 +279,7 @@ Terminų žodynas
       objektas, jei norime sukurti kitokią reikšmę. Jei yra svarbūs situacijose,
       kur reikia konstantinės maišos reikšmės, pvz.: rakto žodynui.
 
-   sveikųjų skaičių dalybą / integer division
+   sveikųjų skaičių dalyba / integer division
       Matematinė dalyba numetant liekaną. Pvz.: reiškinys ``11/4`` apskaičiuojamas
       kaip ``2``, kai tuo tarpu realiųjų skaičių dalyboje būtų sugražinta
       ``2.75``.  Taip pat dar vadinama *grindų dalyba*.
@@ -437,7 +437,7 @@ Terminų žodynas
       sritis dirbs tik su rodyklėms, bet net priskyrimams, kurie yra visada
       rašomi artimiausioje srityje. 
 
-   naujo stiliaus klasė / new-style class
+   naujojo stiliaus klasė / new-style class
       Bet kuri klasė, kuri paveldi iš :class:`object`. Į tai įeina visi
       standartiniai tipai kaip :class:`list` ar :class:`dict`.  Tik
       naujo stiliaus klasės gali naudoti naujas visapusiškas Pitono
@@ -506,8 +506,8 @@ Terminų žodynas
       bet yra atvaizdis, o ne seka, nes paieškai naudojami
       :term:`nekintami` raktai, o ne sveikieji skaičiai.
 
-   riekė / slice
-      Objektas, kuris paprastai turi dalį :term:`sekos`. Riekė paprastai
+   atkarpa / slice
+      Objektas, kuris paprastai turi dalį :term:`sekos`. Atkarpa paprastai
       sukuriama naudojant ``[]`` išraišką su dvitaškiais tarp skaičių, kai keli
       paduodami, pvz.: ``variable_name[1:3:5]``. Laužtiniai skliaustai
       naudoja klasės :class:`slice` objektus (arba senesnėse versijose
