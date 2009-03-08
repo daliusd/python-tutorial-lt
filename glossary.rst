@@ -26,10 +26,10 @@ Terminų žodynas
       Įrankis pateikiamas kaip :file:`Tools/scripts/2to3`. Žiūrėti
       :ref:`2to3-reference`.
 
-   abstrakčioji bazinė klase / abstract base class
-      Abstrakčioji Bazinė Klasė (ABC) papildo neišreikštinį tipizavimą suteikdama
-      būdą apibrėžti sąsaja kai kitų technikų (pvz.: :func:`hasattr`)
-      naudojimas yra nepatogys. Pitone yra daug standartinių ABC duomenų
+   abstrakčioji bazinė klasė / abstract base class
+      Abstrakčioji bazinė klasė (ABC) papildo neišreikštinį tipizavimą suteikdama
+      būdą apibrėžti klasės šabloninę sąsają kai kitų technikų (pvz.: :func:`hasattr`)
+      naudojimas yra nepatogus. Pitone yra daug standartinių ABC duomenų
       struktūroms (:mod:`collections` modulyje), skaičiams (:mod:`numbers`
       modulyje), srautams (:mod:`io` modulyje). Galima kurti savo ABC
       naudojant :mod:`abc` modulį.
@@ -226,7 +226,7 @@ Terminų žodynas
 
       .. index:: single: generator expression
 
-   generatoriaus reiškinys / generator expression
+   generatorinis reiškinys / generator expression
       An expression that returns a generator.  It looks like a normal expression
       followed by a :keyword:`for` expression defining a loop variable, range,
       and an optional :keyword:`if` expression.  The combined expression
@@ -238,7 +238,7 @@ Terminų žodynas
    GIL
       See :term:`global interpreter lock`.
 
-   globalus interpretatoriaus užrakinimas / global interpreter lock
+   globalus interpretatoriaus užraktas / global interpreter lock
       The lock used by Python threads to assure that only one thread
       executes in the :term:`CPython` :term:`virtual machine` at a time.
       This simplifies the CPython implementation by assuring that no two
@@ -278,7 +278,7 @@ Terminų žodynas
       role in places where a constant hash value is needed, for example as a key
       in a dictionary.
 
-   sveikųjų skaičių dalybą / integer division
+   sveikųjų skaičių dalyba / integer division
       Mathematical division discarding any remainder.  For example, the
       expression ``11/4`` currently evaluates to ``2`` in contrast to the
       ``2.75`` returned by float division.  Also called *floor division*.
@@ -410,7 +410,7 @@ Terminų žodynas
       provides extra features such as a self-documenting representation like
       ``Employee(name='jones', title='programmer')``.
 
-   vardų erdvė / namespace
+   vardų sritis / namespace
       The place where a variable is stored.  Namespaces are implemented as
       dictionaries.  There are the local, global and builtin namespaces as well
       as nested namespaces in objects (in methods).  Namespaces support
@@ -430,7 +430,7 @@ Terminų žodynas
       scope.  In contrast, local variables both read and write in the innermost
       scope.  Likewise, global variables read and write to the global namespace.
 
-   naujo stiliaus klasė / new-style class
+   naujojo stiliaus klasė / new-style class
       Any class which inherits from :class:`object`.  This includes all built-in
       types like :class:`list` and :class:`dict`.  Only new-style classes can
       use Python's newer, versatile features like :attr:`__slots__`,
@@ -496,7 +496,7 @@ Terminų žodynas
       mapping rather than a sequence because the lookups use arbitrary
       :term:`immutable` keys rather than integers.
 
-   riekė / slice
+   atkarpa / slice
       An object usually containing a portion of a :term:`sequence`.  A slice is
       created using the subscript notation, ``[]`` with colons between numbers
       when several are given, such as in ``variable_name[1:3:5]``.  The bracket
