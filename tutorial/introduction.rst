@@ -233,58 +233,62 @@ ekrane išvestų::
         -h                        Display this usage message
         -H hostname               Hostname to connect to
 
-The interpreter prints the result of string operations in the same way as they
-are typed for input: inside quotes, and with quotes and other funny characters
-escaped by backslashes, to show the precise value.  The string is enclosed in
-double quotes if the string contains a single quote and no double quotes, else
-it's enclosed in single quotes.  (The :keyword:`print` statement, described
-later, can be used to write strings without quotes or escapes.)
+Interpretatorius atspausdina operacijų su eilutėmis rezultatus visiškai taip
+pat, kaip eilutės ir įvedamos: apgaubia kabutėmis iš šonų, o viduje eilutės
+esančios kabutės užrašomos pridedant pasvirąjį brukšnelį. Jeigu eilutės
+viduje yra vienguba kabutė, atspausdinama apgaubiant dvigubomis kabutėmis.
+Kitais atvejais apgaubiama dvigubomis kabutėmis. (Komanda :keyword:`print`,
+kurią aptarsime kiek vėliau, gali būti naudojama atspausdini eilutes be
+apgaubiančių kabučių.)
 
-Strings can be concatenated (glued together) with the ``+`` operator, and
-repeated with ``*``::
+Eilutės gali būti sujungtos (pridėtos viena prie kitos) naudojant ``+``
+operatorių bei pakartotos porą kartų su ``*`` operatoriumi::
 
-   >>> word = 'Help' + 'A'
+   >>> word = 'Pagalb' + 'a'
    >>> word
-   'HelpA'
+   'Pagalba'
    >>> '<' + word*5 + '>'
-   '<HelpAHelpAHelpAHelpAHelpA>'
+   '<PagalbaPagalbaPagalbaPagalbaPagalba>'
 
-Two string literals next to each other are automatically concatenated; the first
-line above could also have been written ``word = 'Help' 'A'``; this only works
-with two literals, not with arbitrary string expressions::
+Dvi eilutės, užrašytos viena po kitos, yra automatiškai sujungiamos. Taigi pirmąja
+eilutę pavyzdyje galėjome užrašyti tiesiog kaip ``word = 'Pagalb' 'a'``; turėkite
+omenyje, kad šitaip galima daryti tik su rankomis užrašytomis eilutėmis, o ne
+su operacijų rezultatais::
 
-   >>> 'str' 'ing'                   #  <-  This is ok
+   >>> 'str' 'ing'             #  <-  Taisyklinga
    'string'
-   >>> 'str'.strip() + 'ing'   #  <-  This is ok
+   >>> 'str'.strip() + 'ing'   #  <-  Taisyklinga
    'string'
-   >>> 'str'.strip() 'ing'     #  <-  This is invalid
+   >>> 'str'.strip() 'ing'     #  <-  Netaisyklinga
      File "<stdin>", line 1, in ?
        'str'.strip() 'ing'
                          ^
    SyntaxError: invalid syntax
 
-Strings can be subscripted (indexed); like in C, the first character of a string
-has subscript (index) 0.  There is no separate character type; a character is
-simply a string of size one.  Like in Icon, substrings can be specified with the
-*slice notation*: two indices separated by a colon. ::
+Eilutės gali būti indeksuojamos; kaip ir C kalboje, pirmasis eilutės simbolis
+atitinka indeksą 0. Pitono kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
+tai eilutė, kurios dydis -- vienas simbolis. Eilučių dalys gali būti nurodomos
+su *išpjovos notacija*: du indeksai atskirti dvitaškiu. ::
 
+   >>> word
+   'Pagalba'
    >>> word[4]
-   'A'
+   'l'
    >>> word[0:2]
-   'He'
+   'Pa'
    >>> word[2:4]
-   'lp'
+   'ga'
 
-Slice indices have useful defaults; an omitted first index defaults to zero, an
-omitted second index defaults to the size of the string being sliced. ::
+Išpjovos indeksai gali būti nenurodyti; jeigu praleistas pirmasis indeksas, vietoje
+jo naudojamas nulis, o praleistas antrasis indeksas tapatus eilutės ilgio nurodymui. ::
 
-   >>> word[:2]    # The first two characters
-   'He'
-   >>> word[2:]    # Everything except the first two characters
-   'lpA'
+   >>> word[:2]    # Du pirmi simboliai
+   'Pa'
+   >>> word[2:]    # Viskas, kas eina po dviejų pirmų simbolių
+   'galba'
 
-Unlike a C string, Python strings cannot be changed.  Assigning to an indexed
-position in the string results in an error::
+Priešingai negu C kalboje, Pitono eilutės negali būti keičiamos. Bandant pakeisti
+eilutės simbolį nurodant indeksą įvyksta klaida::
 
    >>> word[0] = 'x'
    Traceback (most recent call last):
@@ -295,80 +299,80 @@ position in the string results in an error::
      File "<stdin>", line 1, in ?
    TypeError: object doesn't support slice assignment
 
-However, creating a new string with the combined content is easy and efficient::
+Tačiau naujų eilučių sukūrimas sudedant turimas yra paprastas ir efektyvus::
 
-   >>> 'x' + word[1:]
-   'xelpA'
-   >>> 'Splat' + word[4]
-   'SplatA'
+   >>> 't' + word[1:]
+   'tagalba'
+   >>> 'Kal' + word[4]
+   'Kalk'
 
-Here's a useful invariant of slice operations: ``s[:i] + s[i:]`` equals ``s``.
+Naudinga išpjovų operacijų savybė: ``s[:i] + s[i:]`` visuomet lygu ``s``.
 ::
 
    >>> word[:2] + word[2:]
-   'HelpA'
+   'Pagalba'
    >>> word[:3] + word[3:]
-   'HelpA'
+   'Pagalba'
 
-Degenerate slice indices are handled gracefully: an index that is too large is
-replaced by the string size, an upper bound smaller than the lower bound returns
-an empty string. ::
+Išeinantys iš ribų indeksai yra tvarkingai apdorojami. Per didelis indeksas 
+pakeičiamas eilutės ilgiu. Jeigu išpjovos pradžios indeksas didesnis už
+pabaigos indeksą, gausime tuščią eilutę. ::
 
    >>> word[1:100]
-   'elpA'
+   'Pagalba'
    >>> word[10:]
    ''
    >>> word[2:1]
    ''
 
-Indices may be negative numbers, to start counting from the right. For example::
+Kaip indeksus galima naudoti ir neigiamus skaičius, tokiu atveju skaičiuojama
+nuo dešinės. Pavyzdžiui,::
 
-   >>> word[-1]     # The last character
-   'A'
-   >>> word[-2]     # The last-but-one character
-   'p'
-   >>> word[-2:]    # The last two characters
-   'pA'
-   >>> word[:-2]    # Everything except the last two characters
-   'Hel'
+   >>> word[-1]     # Paskutinis simbolis
+   'a'
+   >>> word[-2]     # Priešpaskutinis simbolis
+   'b'
+   >>> word[-2:]    # Du paskutiniai simboliai
+   'ba'
+   >>> word[:-2]    # Viskas iki dviejų paskutinių simbolių
+   'Pagal'
 
-But note that -0 is really the same as 0, so it does not count from the right!
-::
+Pastebėkite, kad -0 iš tiesų yra tas pats kaip ir 0, todėl šiuo atveju nuo
+dešinės nėra skaičiuojama. ::
 
-   >>> word[-0]     # (since -0 equals 0)
-   'H'
+   >>> word[-0]     # (nes -0 yra kaip 0)
+   'P'
 
-Out-of-range negative slice indices are truncated, but don't try this for
-single-element (non-slice) indices::
+Išeinantys iš ribų neigiami indeksai yra apkarpomi, tačiau tai galioja
+tik išpjovoms::
 
    >>> word[-100:]
-   'HelpA'
-   >>> word[-10]    # error
+   'Pagalba'
+   >>> word[-10]    # klaida
    Traceback (most recent call last):
      File "<stdin>", line 1, in ?
    IndexError: string index out of range
 
-One way to remember how slices work is to think of the indices as pointing
-*between* characters, with the left edge of the first character numbered 0.
-Then the right edge of the last character of a string of *n* characters has
-index *n*, for example::
+Bus lengviau atsiminti, kaip veikia išpjovos, jeigu galvosite apie indeksus
+kaip apie rodykles *tarp* simbolių, o eilutės kraštą prieš pirmą simbolį kaip
+turintį nulinį indeksą. Tuomet dešinys eilutės, sudarytos iš *n* simbolių,
+kraštas turės indeksą *n*. ::
 
-    +---+---+---+---+---+
-    | H | e | l | p | A |
-    +---+---+---+---+---+
-    0   1   2   3   4   5
-   -5  -4  -3  -2  -1
+    +---+---+---+---+---+---+---+
+    | P | a | g | a | l | b | a |
+    +---+---+---+---+---+---+---+
+    0   1   2   3   4   5   6   7
+   -7  -6  -5  -4  -3  -2  -1
 
-The first row of numbers gives the position of the indices 0...5 in the string;
-the second row gives the corresponding negative indices. The slice from *i* to
-*j* consists of all characters between the edges labeled *i* and *j*,
-respectively.
+Pirma skaičių eilutė parodo indeksų 0..7 vietas simbolių eilutėje. Antroji
+eilutė -- atitinkamai atvaizduoja neigiamus indeksus. Tada išpjova nuo *i*
+iki *j* susidea iš visų simbolių, esančių tarp *i* ir *j*.
 
-For non-negative indices, the length of a slice is the difference of the
-indices, if both are within bounds.  For example, the length of ``word[1:3]`` is
+Neneigiamiems indeksams, išpjovos ilgis yra indeksų skirtumas (jeigu abu
+indeksai yra eilutės ribose). Tarkime, išpjovos ``word[1:3]`` ilgis yra
 2.
 
-The built-in function :func:`len` returns the length of a string::
+Standartinė funkcija :func:`len` grąžina eilutės ilgį.
 
    >>> s = 'supercalifragilisticexpialidocious'
    >>> len(s)
@@ -397,41 +401,42 @@ The built-in function :func:`len` returns the length of a string::
 
 .. _tut-unicodestrings:
 
-Unicode Strings
+Unikodo eilutės
 ---------------
 
 .. sectionauthor:: Marc-Andre Lemburg <mal@lemburg.com>
 
+Pradedant Pitono versija 2.0 programuotojams pateikiamas naujas duomenų tipas,
+skirtas tekstinių duomenų saugojimui: Unikodo objektai. Jis gali būti naudojamas
+saugoti bei operuoti Unikodu paremtais duomenimis (daugiau informacijos
+rasite http://lt.wikipedia.org/wiki/Unikodas bei http://www.unicode.org).
+Šis duomenų tipas taip pat gerai integruojasi su paprastomis simbolių
+eilutėmis; esant poreikiui tipų pakeitimas atliekamas automatiškai.
 
-Starting with Python 2.0 a new data type for storing text data is available to
-the programmer: the Unicode object. It can be used to store and manipulate
-Unicode data (see http://www.unicode.org/) and integrates well with the existing
-string objects, providing auto-conversions where necessary.
+Didelis Unikodo pranašumas yra tai, kad šis standartas aprašo visus ženklus,
+naudojamus bet kuriame dabarties bei senovės tekste. Prieš Unikodą
+būdavo apsiribojama 256-ių rašto ženklų lentelėmis. Tekstai būdavo
+susiejami su šiomis lentelėmis, kurios aprašydavo skaičių ir rašto ženklų
+sąryšį. Tai sukurdavo labai daug maišaties, ypač ten, kur tai susiję
+su programinės įrangos daugiakalbyste. Unikodas šias problemas išsprendžia
+pristatydamas vientisą kodų lentelę, kurią galima naudoti visoms rašto
+sistemoms.
 
-Unicode has the advantage of providing one ordinal for every character in every
-script used in modern and ancient texts. Previously, there were only 256
-possible ordinals for script characters. Texts were typically bound to a code
-page which mapped the ordinals to script characters. This lead to very much
-confusion especially with respect to internationalization (usually written as
-``i18n`` --- ``'i'`` + 18 characters + ``'n'``) of software.  Unicode solves
-these problems by defining one code page for all scripts.
+Unikodo eilučių sukūrimas Pitone yra ne ką sudėtingesnis negu paprastų
+eilučių::
 
-Creating Unicode strings in Python is just as simple as creating normal
-strings::
+   >>> u'Labas, pasauli!'
+   u'Labas, pasauli!'
 
-   >>> u'Hello World !'
-   u'Hello World !'
+Mažoji ``'u'`` prieš kabutę nurodo, kad aprašome Unikodo eilutę. Jeigu
+norite eilutėje naudoti specialius simbolius, galite tai padaryti naudodami
+specialią Pitono sintaksę. ::
 
-The small ``'u'`` in front of the quote indicates that a Unicode string is
-supposed to be created. If you want to include special characters in the string,
-you can do so by using the Python *Unicode-Escape* encoding. The following
-example shows how::
+   >>> u'Sveikas,\u0020pasauli!'
+   u'Sveikas, pasauliĄ'
 
-   >>> u'Hello\u0020World !'
-   u'Hello World !'
-
-The escape sequence ``\u0020`` indicates to insert the Unicode character with
-the ordinal value 0x0020 (the space character) at the given position.
+Čia užrašyta seka ``\u0020`` reiškia Unikodo simbolio, kurio kodas 0x0020
+(o tai yra tarpo simbolis), įterpimą eilutėje.
 
 Other characters are interpreted by using their respective ordinal values
 directly as Unicode ordinals.  If you have literal strings in the standard
@@ -478,16 +483,17 @@ When a Unicode string is printed, written to a file, or converted with
      File "<stdin>", line 1, in ?
    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2: ordinal not in range(128)
 
-To convert a Unicode string into an 8-bit string using a specific encoding,
-Unicode objects provide an :func:`encode` method that takes one argument, the
-name of the encoding.  Lowercase names for encodings are preferred. ::
+Galite paversti Unikodo eilutę į 8 bitų simbolių eilutę nurodydami norimą
+teksto koduotę su :func:`encode` metodu, kuriam būtinas vienas parametras --
+koduotės pavadinimas. Teksto koduočių vardus rekomenduojama užrašyti
+mažosiomis raidėmis. ::
 
    >>> u"äöü".encode('utf-8')
    '\xc3\xa4\xc3\xb6\xc3\xbc'
 
-If you have data in a specific encoding and want to produce a corresponding
-Unicode string from it, you can use the :func:`unicode` function with the
-encoding name as the second argument. ::
+Jeigu jūs turite duomenis žinomojo teksto koduotėje ir norite iš jų gauti
+Unikodo eilutę, galite naudoti :func:`unicode` funkciją, kartu nurodydami
+koduotės pavadinimą. ::
 
    >>> unicode('\xc3\xa4\xc3\xb6\xc3\xbc', 'utf-8')
    u'\xe4\xf6\xfc'
@@ -498,7 +504,7 @@ encoding name as the second argument. ::
 Sąrašai
 -------
 
-Pitonas žino daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
+Pitonas pateikia daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
 Lanksčiausias iš tokių tipų yra *sąrašas*, kuris aprašomas kaip laužtiniais
 skliaustais apgaubtas sąrašas kableliais atskirtų elementų. Sąrašo elementai
 neprivalo visi būti to paties tipo. ::
@@ -508,7 +514,7 @@ neprivalo visi būti to paties tipo. ::
    ['spam', 'eggs', 100, 1234]
 
 Kaip ir simbolių eilučių indeksai, sąrašų indeksai prasideda nuo 0, sąrašai gali
-būti atriekti, sujungti ir taip toliau::
+būti išpjauti, sujungti ir taip toliau::
 
    >>> a[0]
    'spam'
