@@ -235,14 +235,14 @@ ekrane išvestų::
 
 Interpretatorius atspausdina operacijų su eilutėmis rezultatus visiškai taip
 pat, kaip eilutės ir įvedamos: apgaubia kabutėmis iš šonų, o viduje eilutės
-esančios kabutės užrašomos pridedant pasvirąjį brukšnelį. Jeigu eilutės
-viduje yra vienguba kabutė, atspausdinama apgaubiant dvigubomis kabutėmis.
+esančios kabutės užrašomos pridedant pasvirąjį brūkšnelį. Jeigu eilutės
+viduje yra vienguba kabutė, eilutė spausdinama apgaubta dvigubomis kabutėmis.
 Kitais atvejais apgaubiama dvigubomis kabutėmis. (Komanda :keyword:`print`,
 kurią aptarsime kiek vėliau, gali būti naudojama atspausdini eilutes be
 apgaubiančių kabučių.)
 
 Eilutės gali būti sujungtos (pridėtos viena prie kitos) naudojant ``+``
-operatorių bei pakartotos porą kartų su ``*`` operatoriumi::
+operatorių bei pakartotos keletą kartų su ``*`` operatoriumi::
 
    >>> word = 'Pagalb' + 'a'
    >>> word
@@ -355,7 +355,7 @@ tik išpjovoms::
 
 Bus lengviau atsiminti, kaip veikia išpjovos, jeigu galvosite apie indeksus
 kaip apie rodykles *tarp* simbolių, o eilutės kraštą prieš pirmą simbolį kaip
-turintį nulinį indeksą. Tuomet dešinys eilutės, sudarytos iš *n* simbolių,
+turintį nulinį indeksą. Tuomet eilutės, sudarytos iš *n* simbolių, dešinys
 kraštas turės indeksą *n*. ::
 
     +---+---+---+---+---+---+---+
@@ -366,7 +366,7 @@ kraštas turės indeksą *n*. ::
 
 Pirma skaičių eilutė parodo indeksų 0..7 vietas simbolių eilutėje. Antroji
 eilutė -- atitinkamai atvaizduoja neigiamus indeksus. Tada išpjova nuo *i*
-iki *j* susidea iš visų simbolių, esančių tarp *i* ir *j*.
+iki *j* susideda iš visų simbolių, esančių tarp *i* ir *j*.
 
 Neneigiamiems indeksams, išpjovos ilgis yra indeksų skirtumas (jeigu abu
 indeksai yra eilutės ribose). Tarkime, išpjovos ``word[1:3]`` ilgis yra
@@ -433,7 +433,7 @@ norite eilutėje naudoti specialius simbolius, galite tai padaryti naudodami
 specialią Pitono sintaksę. ::
 
    >>> u'Sveikas,\u0020pasauli!'
-   u'Sveikas, pasauliĄ'
+   u'Sveikas, pasauli!'
 
 Čia užrašyta seka ``\u0020`` reiškia Unikodo simbolio, kurio kodas 0x0020
 (o tai yra tarpo simbolis), įterpimą eilutėje.
@@ -491,7 +491,7 @@ mažosiomis raidėmis. ::
    >>> u"äöü".encode('utf-8')
    '\xc3\xa4\xc3\xb6\xc3\xbc'
 
-Jeigu jūs turite duomenis žinomojo teksto koduotėje ir norite iš jų gauti
+Jeigu jūs turite duomenis žinomoje teksto koduotėje ir norite iš jų gauti
 Unikodo eilutę, galite naudoti :func:`unicode` funkciją, kartu nurodydami
 koduotės pavadinimą. ::
 

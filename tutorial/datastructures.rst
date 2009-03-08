@@ -4,9 +4,9 @@
 Duomenų struktūros
 ******************
 
-Šis skyrius pateiks daugiau informacijos apie duomenų struktūras, su kuriuomis
-buvo glaustai susidūrę ankstesniuose skyreliuose. Taip pat turėtumėte čia rasti
-ir daugiau naujų dalykų.
+Šis skyrius pateiks daugiau informacijos apie duomenų struktūras, su kuriomis
+buvo glaustai susipažinta ankstesniuose skyreliuose. Taip pat čia rasite
+ir naujų dalykų.
 
 .. _tut-morelists:
 
