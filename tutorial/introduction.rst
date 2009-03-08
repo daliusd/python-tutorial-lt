@@ -303,8 +303,8 @@ Tačiau naujų eilučių sukūrimas sudedant turimas yra paprastas ir efektyvus:
 
    >>> 't' + word[1:]
    'tagalba'
-   >>> 'Kal' + word[4]
-   'Kalk'
+   >>> 'Kav' + word[1]
+   'Kava'
 
 Naudinga išpjovų operacijų savybė: ``s[:i] + s[i:]`` visuomet lygu ``s``.
 ::
