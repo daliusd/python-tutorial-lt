@@ -8,8 +8,8 @@ Pavyzdžiuose, pateikiamuose toliau, įvedamas komandos bei jų išvestį galima
 atskirti pagal tai, ar yra eilutė prasideda raginimu (``>>>`` ir ``...``).
 Norėdami pakartoti pavyzdį savarankiškai, perrašykite viską, kas eina pavyzdyje
 po raginimo. Eilutės, neprasidedančios raginimu, yra išvestis iš
-interpretatoriaus. Turėkite omenyje, kad antrasis raginimo variantas tuščiai
-eilutei reiškia, jog jūs turėsite įvesti tuščia eilutę; taip užbaigiamos
+interpretatoriaus. Turėkite omenyje, kad antrasis raginimo variantas (``...``) tuščiai
+eilutei reiškia, jog jūs turėsite įvesti tuščią eilutę; taip užbaigiamos
 komandos, kurios užima daugiau nei vieną eilutę.
 
 Dauguma pavyzdžių, net ir tie, kurie prasideda raginimu, turi paaiškinamuosius
@@ -44,7 +44,7 @@ Skaičiai
 
 Interpretatorius veikia kaip paprastas skaičiuoklis -- jūs įvedate reiškinį,
 o interpretatorius užrašo rezultatą. Reiškinių sintaksė paprasta: operatoriai
-``+``, ``-``, ``*`` bei ``/`` veikia visai kaip ir daugumoje kitų kalbų
+``+``, ``-``, ``*`` bei ``/`` veikia kaip ir daugumoje kitų kalbų
 (tarkime, Paskalyje arba C). Grupavimui galima naudoti skliaustelius. Pavyzdžiui::
 
    >>> 2+2
@@ -90,18 +90,18 @@ Priešingu atveju įvyks klaida::
    NameError: name 'n' is not defined
 
 Taip pat galima dirbti su slankaus kablelio skaičiais. Jeigu naudosime vieną
-iš anksčiau aptartų operatorių su sveikais ir slankaus kablelio skaičiais,
-rezultatas bus slankaus kablelio::
+iš anksčiau aptartų operatorių su argumentais, kurių vienas -- sveikas skaičius,
+o kitas -- slankaus kablelio skaičiais, tuomet rezultatas bus slankaus kablelio::
 
    >>> 3 * 3.75 / 1.5
    7.5
    >>> 7.0 / 2
    3.5
 
-Taip pat galima naudoti ir kompleksinius skaičius. Menamoji dalis aprašoma
+Be to, galima naudoti ir kompleksinius skaičius. Menamoji dalis aprašoma
 naudojant galūnę ``j``` arba ``J``. Kompleksiniai skaičiai su nenuline realiąja
-dalimi užrašomi kaip ``(reali+menamojiJ)``, arba pasinaudojama
-``complex(reali, menamoji)`` funkcija.
+dalimi užrašomi kaip ``(realioji+menamojiJ)``, arba pasinaudojama
+``complex(realioji, menamoji)`` funkcija.
 ::
 
    >>> 1j * 1J
@@ -127,7 +127,7 @@ skaičiaus *z*, naudokite ``z.real`` (realiąjai daliai) ir ``z.imag``
    0.5
 
 Sveikų ir slankaus kablelio skaičių konvertavimo funkcijos (``float``,
-``int`` ir ``long``) neveikia kompleksiniams skaičiams --- nes nėra vienaprasmio
+``int`` ir ``long``) neveikia kompleksiniams skaičiams -- nes nėra vienaprasmio
 būdo to atlikti. Naudodami ``abs(z)`` gausite kompleksinio skaičiaus modulį
 (slankaus kablelio skaičiaus pavidalu). Jau minėtas ``z.real`` leis gauti
 realiąją kompleksinio skaičiaus dalį. ::
@@ -147,7 +147,7 @@ realiąją kompleksinio skaičiaus dalį. ::
 
 Interaktyvioje veiksenoje, paskutinė atspausdinta reikšmė yra priskiriama
 kintamajam ``_``. Tai reiškia, kad jums naudojant Pitoną kaip skaičiuoklį,
-kai kuriuos skaičiavimus galima atlikti daug paprasčiau::
+kai kuriuos skaičiavimus galima atlikti daug paprasčiau. ::
 
    >>> mokestis = 12.5 / 100
    >>> kaina = 100.50
@@ -268,7 +268,7 @@ su operacijų rezultatais::
 Eilutės gali būti indeksuojamos; kaip ir C kalboje, pirmasis eilutės simbolis
 atitinka indeksą 0. Pitono kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
 tai eilutė, kurios dydis -- vienas simbolis. Eilučių dalys gali būti nurodomos
-su *išpjovos notacija*: du indeksai atskirti dvitaškiu. ::
+su *išpjovos notacija* (angl. *slice notation*): du indeksai atskirti dvitaškiu. ::
 
    >>> word
    'Pagalba'
@@ -340,7 +340,7 @@ nuo dešinės. Pavyzdžiui,::
 Pastebėkite, kad -0 iš tiesų yra tas pats kaip ir 0, todėl šiuo atveju nuo
 dešinės nėra skaičiuojama. ::
 
-   >>> word[-0]     # (nes -0 yra kaip 0)
+   >>> word[-0]     # (nes -0 lygu 0)
    'P'
 
 Išeinantys iš ribų neigiami indeksai yra apkarpomi, tačiau tai galioja
@@ -383,8 +383,8 @@ Standartinė funkcija :func:`len` grąžina eilutės ilgį.
 
    :ref:`typesseq`
       Simbolių eilutės, o taip pat ir Unikodo eilutės, aprašomos tolesniame
-      skyrelyje, yra vienos iš *sekų tipų*, todėl leidžia naudoti visiems
-      sekų tipams apibrėžtas operacijas.
+      skyrelyje, yra *sekų tipai*, todėl leidžia naudoti visiems sekų tipams
+      apibrėžtas operacijas.
 
    :ref:`string-methods`
       Ir paprastos eilutės, ir Unikodo eilutės pateikia daug metodų nesudėtingoms
@@ -469,7 +469,7 @@ arba daugiau baitu. Pagal nutylėjimą dažniausiai naudojama ASCII koduotė,
 kuri turi 127 simbolius, atitinkančius pirmus 127 Unikodo simbolius. Ši
 koduotė pranešdama apie klaidą atmes visus kitus simbolius. Spausdinant
 Unikodo eilutę ekrane arba faile, nauodojama funkcija :func:`str`, kuri
-konvertuoja eilutę naudojant numatytąją teksto koduotę. ::
+konvertuoja eilutę naudodama numatytąją teksto koduotę. ::
 
    >>> u"abc"
    u'abc'
@@ -537,8 +537,8 @@ pakeisti::
    >>> a
    ['spam', 'eggs', 123, 1234]
 
-Išpjovoms (slice) taip pat galima priskirti reikšmes, net jeigu tai pakeičia sąrašo
-dydį arba jį ištuština::
+Išpjovoms (angl. *slice*) taip pat galima priskirti reikšmes, net jeigu tai pakeičia
+sąrašo dydį arba jį ištuština::
 
    >>> # Pakeiskime porą elementų:
    ... a[0:2] = [1, 12]
