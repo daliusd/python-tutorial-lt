@@ -8,8 +8,8 @@ Pavyzdžiuose, pateikiamuose toliau, įvedamas komandos bei jų išvestį galima
 atskirti pagal tai, ar yra eilutė prasideda raginimu (``>>>`` ir ``...``).
 Norėdami pakartoti pavyzdį savarankiškai, perrašykite viską, kas eina pavyzdyje
 po raginimo. Eilutės, neprasidedančios raginimu, yra išvestis iš
-interpretatoriaus. Turėkite omenyje, kad antrasis raginimo variantas tuščiai
-eilutei reiškia, jog jūs turėsite įvesti tuščia eilutę; taip užbaigiamos
+interpretatoriaus. Turėkite omenyje, kad antrasis raginimo variantas (``...``) tuščiai
+eilutei reiškia, jog jūs turėsite įvesti tuščią eilutę; taip užbaigiamos
 komandos, kurios užima daugiau nei vieną eilutę.
 
 Dauguma pavyzdžių, net ir tie, kurie prasideda raginimu, turi paaiškinamuosius
@@ -34,7 +34,7 @@ Pitonas kaip skaičiuoklis
 =========================
 
 Pradėkime išbandydami porą paprastų Pitono komandų. Pasileiskite interpretatorių
-ir luktelkite iki pasirodys raginimas ``>>>``. (Neturėtų užtrukti.)
+ir luktelkite iki pasirodys raginimas ``>>>`` (neturėtų užtrukti).
 
 
 .. _tut-numbers:
@@ -44,7 +44,7 @@ Skaičiai
 
 Interpretatorius veikia kaip paprastas skaičiuoklis -- jūs įvedate reiškinį,
 o interpretatorius užrašo rezultatą. Reiškinių sintaksė paprasta: operatoriai
-``+``, ``-``, ``*`` bei ``/`` veikia visai kaip ir daugumoje kitų kalbų
+``+``, ``-``, ``*`` bei ``/`` veikia kaip ir daugumoje kitų kalbų
 (tarkime, Paskalyje arba C). Grupavimui galima naudoti skliaustelius. Pavyzdžiui::
 
    >>> 2+2
@@ -90,18 +90,18 @@ Priešingu atveju įvyks klaida::
    NameError: name 'n' is not defined
 
 Taip pat galima dirbti su slankaus kablelio skaičiais. Jeigu naudosime vieną
-iš anksčiau aptartų operatorių su sveikais ir slankaus kablelio skaičiais,
-rezultatas bus slankaus kablelio::
+iš anksčiau aptartų operatorių su argumentais, kurių vienas -- sveikas skaičius,
+o kitas -- slankaus kablelio skaičiais, tuomet rezultatas bus slankaus kablelio::
 
    >>> 3 * 3.75 / 1.5
    7.5
    >>> 7.0 / 2
    3.5
 
-Taip pat galima naudoti ir kompleksinius skaičius. Menamoji dalis aprašoma
+Be to, galima naudoti ir kompleksinius skaičius. Menamoji dalis aprašoma
 naudojant galūnę ``j``` arba ``J``. Kompleksiniai skaičiai su nenuline realiąja
-dalimi užrašomi kaip ``(reali+menamojiJ)``, arba pasinaudojama
-``complex(reali, menamoji)`` funkcija.
+dalimi užrašomi kaip ``(realioji+menamojiJ)``, arba pasinaudojama
+``complex(realioji, menamoji)`` funkcija.
 ::
 
    >>> 1j * 1J
@@ -127,7 +127,7 @@ skaičiaus *z*, naudokite ``z.real`` (realiąjai daliai) ir ``z.imag``
    0.5
 
 Sveikų ir slankaus kablelio skaičių konvertavimo funkcijos (``float``,
-``int`` ir ``long``) neveikia kompleksiniams skaičiams --- nes nėra vienaprasmio
+``int`` ir ``long``) neveikia kompleksiniams skaičiams -- nes nėra vienaprasmio
 būdo to atlikti. Naudodami ``abs(z)`` gausite kompleksinio skaičiaus modulį
 (slankaus kablelio skaičiaus pavidalu). Jau minėtas ``z.real`` leis gauti
 realiąją kompleksinio skaičiaus dalį. ::
@@ -147,7 +147,7 @@ realiąją kompleksinio skaičiaus dalį. ::
 
 Interaktyvioje veiksenoje, paskutinė atspausdinta reikšmė yra priskiriama
 kintamajam ``_``. Tai reiškia, kad jums naudojant Pitoną kaip skaičiuoklį,
-kai kuriuos skaičiavimus galima atlikti daug paprasčiau::
+kai kuriuos skaičiavimus galima atlikti daug paprasčiau. ::
 
    >>> mokestis = 12.5 / 100
    >>> kaina = 100.50
@@ -202,7 +202,7 @@ Ankstesnis pavyzdys ekrane atspausdintų::
    several lines of text just as you would do in C.
        Note that whitespace at the beginning of the line is significant.
 
-Kita vertus, jeigu eilutę pažymime kaip "neapdorojamą" (raw), tuomet ``\n``
+Kita vertus, jeigu eilutę pažymime kaip „neapdorojamą“ (angl. *raw*), tuomet ``\n``
 nepradeda naujos eilutės. Neapdorojamose eilutėse pasvirieji brūkšneliai
 taip pat praranda savo reikšmę (t.y. lieka pasviraisiais brūkšneliais),
 tačiau skirstymas į eilutes nėra prarandamas -- lieka taip, kaip užrašyta:
@@ -250,7 +250,7 @@ operatorių bei pakartotos keletą kartų su ``*`` operatoriumi::
    >>> '<' + word*5 + '>'
    '<PagalbaPagalbaPagalbaPagalbaPagalba>'
 
-Dvi eilutės, užrašytos viena po kitos, yra automatiškai sujungiamos. Taigi pirmąja
+Dvi eilutės, užrašytos viena po kitos, yra automatiškai sujungiamos. Taigi pirmąją
 eilutę pavyzdyje galėjome užrašyti tiesiog kaip ``word = 'Pagalb' 'a'``; turėkite
 omenyje, kad šitaip galima daryti tik su rankomis užrašytomis eilutėmis, o ne
 su operacijų rezultatais::
@@ -268,7 +268,7 @@ su operacijų rezultatais::
 Eilutės gali būti indeksuojamos; kaip ir C kalboje, pirmasis eilutės simbolis
 atitinka indeksą 0. Pitono kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
 tai eilutė, kurios dydis -- vienas simbolis. Eilučių dalys gali būti nurodomos
-su *išpjovos notacija*: du indeksai atskirti dvitaškiu. ::
+su *išpjovos notacija* (angl. *slice notation*): du indeksai atskirti dvitaškiu. ::
 
    >>> word
    'Pagalba'
@@ -303,8 +303,8 @@ Tačiau naujų eilučių sukūrimas sudedant turimas yra paprastas ir efektyvus:
 
    >>> 't' + word[1:]
    'tagalba'
-   >>> 'Kal' + word[4]
-   'Kalk'
+   >>> 'Kav' + word[1]
+   'Kava'
 
 Naudinga išpjovų operacijų savybė: ``s[:i] + s[i:]`` visuomet lygu ``s``.
 ::
@@ -340,7 +340,7 @@ nuo dešinės. Pavyzdžiui,::
 Pastebėkite, kad -0 iš tiesų yra tas pats kaip ir 0, todėl šiuo atveju nuo
 dešinės nėra skaičiuojama. ::
 
-   >>> word[-0]     # (nes -0 yra kaip 0)
+   >>> word[-0]     # (nes -0 lygu 0)
    'P'
 
 Išeinantys iš ribų neigiami indeksai yra apkarpomi, tačiau tai galioja
@@ -382,21 +382,20 @@ Standartinė funkcija :func:`len` grąžina eilutės ilgį.
 .. seealso::
 
    :ref:`typesseq`
-      Strings, and the Unicode strings described in the next section, are
-      examples of *sequence types*, and support the common operations supported
-      by such types.
+      Simbolių eilutės, o taip pat ir Unikodo eilutės, aprašomos tolesniame
+      skyrelyje, yra *sekų tipai*, todėl leidžia naudoti visiems sekų tipams
+      apibrėžtas operacijas.
 
    :ref:`string-methods`
-      Both strings and Unicode strings support a large number of methods for
-      basic transformations and searching.
+      Ir paprastos eilutės, ir Unikodo eilutės pateikia daug metodų nesudėtingoms
+      teksto transformacijoms bei teksto paieškai.
 
    :ref:`new-string-formatting`
-      Information about string formatting with :meth:`str.format` is described
-      here.
+      Čia aprašoma, kaip suformuoti eilutes su :meth:`str.format` metodu.
 
    :ref:`string-formatting`
-      The old formatting operations invoked when strings and Unicode strings are
-      the left operand of the ``%`` operator are described in more detail here.
+      Čia detaliau aprašoma, kaip suformuoti eilutes naudojant senesnį metodą --
+      paprastoms arba Unikodo eilutėms kviečiamą ``%`` operatorių.
 
 
 .. _tut-unicodestrings:
@@ -438,39 +437,39 @@ specialią Pitono sintaksę. ::
 Čia užrašyta seka ``\u0020`` reiškia Unikodo simbolio, kurio kodas 0x0020
 (o tai yra tarpo simbolis), įterpimą eilutėje.
 
-Other characters are interpreted by using their respective ordinal values
-directly as Unicode ordinals.  If you have literal strings in the standard
-Latin-1 encoding that is used in many Western countries, you will find it
-convenient that the lower 256 characters of Unicode are the same as the 256
-characters of Latin-1.
+Visi kiti simboliai interpretuojami pagal tai, kokį Unikodo kodą jie
+atitinka. Jeigu jūs užrašote eilutes naudodami Latin-1 koduotę (turinčią
+daugumą vakarų Europos kalboms skirtų simbolių), tikrai įvertinsite tai,
+kad pirmi 256 Unikodo rašmenys sutampa su Latin-1 kodų lentele.
 
-For experts, there is also a raw mode just like the one for normal strings. You
-have to prefix the opening quote with 'ur' to have Python use the
-*Raw-Unicode-Escape* encoding. It will only apply the above ``\uXXXX``
-conversion if there is an uneven number of backslashes in front of the small
-'u'. ::
+Ypatingiems poreikiams galima naudoti neapdorojamas (angl. *raw*) eilutes --
+visai taip pat, kaip ir paprastų eilučių atveju. Norėdami tokias 
+eilutes įvesti, prieš atidarančią kabutę parašykite 'ur'. Tuomet ``\uXXXX``
+užrašymas bus apdorojamas tik tuomet, kai pasvirųjų brūkšnelių skaičius
+prieš 'u' yra nelyginis. ::
 
-   >>> ur'Hello\u0020World !'
-   u'Hello World !'
-   >>> ur'Hello\\u0020World !'
-   u'Hello\\\\u0020World !'
+   >>> ur'Sveikas,\u0020pasauli!'
+   u'Sveikas, pasauli!'
+   >>> ur'Sveikas,\\u0020pasauli!'
+   u'Sveikas,\\\\u0020pasauli!'
 
-The raw mode is most useful when you have to enter lots of backslashes, as can
-be necessary in regular expressions.
+Šis režimas naudingiausias tada, kai reikia įvesti daug pasvirųjų brūkšnelių,
+pavyzdžiui reguliariuosius reiškinius (angl. *regular expression*).
 
-Apart from these standard encodings, Python provides a whole set of other ways
-of creating Unicode strings on the basis of a known encoding.
+Be šių užrašymo būdų, Pitonas pateikia ir daugiau būdų Unikodo eilutėms sukurti
+tuomet, kai žinoma teksto koduotė.
 
 .. index:: builtin: unicode
 
-The built-in function :func:`unicode` provides access to all registered Unicode
-codecs (COders and DECoders). Some of the more well known encodings which these
-codecs can convert are *Latin-1*, *ASCII*, *UTF-8*, and *UTF-16*. The latter two
-are variable-length encodings that store each Unicode character in one or more
-bytes. The default encoding is normally set to ASCII, which passes through
-characters in the range 0 to 127 and rejects any other characters with an error.
-When a Unicode string is printed, written to a file, or converted with
-:func:`str`, conversion takes place using this default encoding. ::
+Standartinė funkcija :func:`unicode` moka iškoduoti ir užkoduoti daug tekstų
+koduočių. Keletas žinomesnių yra *Latin-1*, *ASCII*, *UTF-8*, ir *UTF-16*.
+Dvi paskutinės koduotės yra vadinamos *kintamo ilgio koduotėmis*, kadangi
+naudojant šias koduotes vienas Unikodo simbolis gali būti paverčiamas vienu
+arba daugiau baitu. Pagal nutylėjimą dažniausiai naudojama ASCII koduotė,
+kuri turi 127 simbolius, atitinkančius pirmus 127 Unikodo simbolius. Ši
+koduotė pranešdama apie klaidą atmes visus kitus simbolius. Spausdinant
+Unikodo eilutę ekrane arba faile, nauodojama funkcija :func:`str`, kuri
+konvertuoja eilutę naudodama numatytąją teksto koduotę. ::
 
    >>> u"abc"
    u'abc'
@@ -538,8 +537,8 @@ pakeisti::
    >>> a
    ['spam', 'eggs', 123, 1234]
 
-Išpjovoms (slice) taip pat galima priskirti reikšmes, net jeigu tai pakeičia sąrašo
-dydį arba jį ištuština::
+Išpjovoms (angl. *slice*) taip pat galima priskirti reikšmes, net jeigu tai pakeičia
+sąrašo dydį arba jį ištuština::
 
    >>> # Pakeiskime porą elementų:
    ... a[0:2] = [1, 12]
