@@ -58,7 +58,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * glossary.rst – Dalius Dobravolskas
 * tutorial\index.rst – Dalius Dobravolskas
 * tutorial\appetite.rst – Maksim Norkin
-* tutorial\classes.rst –
+* tutorial\classes.rst – Dalius Dobravolskas
 * tutorial\controlflow.rst –
 * tutorial\datastructures.rst –
 * tutorial\errors.rst – Maksim Norkin
