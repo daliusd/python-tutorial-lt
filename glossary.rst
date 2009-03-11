@@ -1,119 +1,121 @@
 .. _glossary:
 
-********
-Glossary
-********
+***************
+Terminų žodynas
+***************
 
 .. if you add new entries, keep the alphabetical sorting!
 
 .. glossary::
 
    ``>>>``
-      The default Python prompt of the interactive shell.  Often seen for code
-      examples which can be executed interactively in the interpreter.
+      Numatytasis Pitono raginimas interaktyviajame apvalkale. Dažnai
+      naudojamas pavyzdžiuose, kurie gali būti paleidžiami interpretatoriuje.
 
    ``...``
-      The default Python prompt of the interactive shell when entering code for
-      an indented code block or within a pair of matching left and right
-      delimiters (parentheses, square brackets or curly braces).
+      Numatytasis Pitono raginimas interaktyviajame apvalkale kai įvedamas
+      kodas įtrauktam kodo blokui arba tarp poros sutampančių kairiojo
+      ir dešiniojo skirtukų (skliaustų, laužtinių arba riestinių skliaustų).
 
    2to3
-      A tool that tries to convert Python 2.x code to Python 3.x code by
-      handling most of the incompatibilites which can be detected by parsing the
-      source and traversing the parse tree.
+      Įrankis, kuris bando konvertuoti Pitono 2.x kodą į Pitoną 3.x kodą.
+      Konvertuojami tie kodo nesuderinamumai, kurie gali būti nustatyti
+      analizuojant kodą ir pereinant analizės medį.
 
-      2to3 is available in the standard library as :mod:`lib2to3`; a standalone
-      entry point is provided as :file:`Tools/scripts/2to3`.  See
+      2to3 įrankis yra standartinėje bibliotekoje kaip :mod:`lib2to3`; 
+      Įrankis pateikiamas kaip :file:`Tools/scripts/2to3`. Žiūrėti
       :ref:`2to3-reference`.
 
-   abstract base class
-      Abstract Base Classes (abbreviated ABCs) complement :term:`duck-typing` by
-      providing a way to define interfaces when other techniques like :func:`hasattr`
-      would be clumsy. Python comes with many builtin ABCs for data structures
-      (in the :mod:`collections` module), numbers (in the :mod:`numbers`
-      module), and streams (in the :mod:`io` module). You can create your own
-      ABC with the :mod:`abc` module.
+   abstrakčioji bazinė klasė / abstract base class
+      Abstrakčioji bazinė klasė (ABC) papildo neišreikštinį tipizavimą suteikdama
+      būdą apibrėžti klasės šabloninę sąsają kai kitų technikų (pvz.: :func:`hasattr`)
+      naudojimas yra nepatogus. Pitone yra daug standartinių ABC duomenų
+      struktūroms (:mod:`collections` modulyje), skaičiams (:mod:`numbers`
+      modulyje), srautams (:mod:`io` modulyje). Galima kurti savo ABC
+      naudojant :mod:`abc` modulį.
 
-   argument
-      A value passed to a function or method, assigned to a named local
-      variable in the function body.  A function or method may have both
-      positional arguments and keyword arguments in its definition.
-      Positional and keyword arguments may be variable-length: ``*`` accepts
-      or passes (if in the function definition or call) several positional
-      arguments in a list, while ``**`` does the same for keyword arguments
-      in a dictionary.
+   argumentas / argument
+      Reikšmė perduota funkcijai arba metodui ir priskirta lokaliam
+      kintamajam su vardu funkcijoje. Funkcija arba metodas gali
+      turėti tiek pozicinius argumentas tiek vardinius argumentus
+      apibrėžime. Poziciniai ir vardiniai argumentai gali turėti
+      kintamą ilgį: ``*`` priima arba perduoda (jei funkcijos apibrėžime
+      arba kvietime) kelis pozicinius argumentus sąrašu, kai tuo tarpu
+      ``**`` atlieka tą patį su vardiniais argumentais žodyne.
 
-      Any expression may be used within the argument list, and the evaluated
-      value is passed to the local variable.
+      Betkoks reiškinys gali būti naudojamas argumentų sąraše ir apskaičiuota
+      reikšmė yra perduodama lokaliam kintamajam.
 
-   attribute
-      A value associated with an object which is referenced by name using
-      dotted expressions.  For example, if an object *o* has an attribute
-      *a* it would be referenced as *o.a*.
+   atributas / attribute
+      Reikšmė susieta su objektu, kuri yra pasiekiama pagal vardą naudojant
+      taško išraišką. Pvz.: jei objektas *o* turi atributą *a* tai jis
+      gali būti pasiektas kaip *o.a*.
 
-   BDFL
-      Benevolent Dictator For Life, a.k.a. `Guido van Rossum
-      <http://www.python.org/~guido/>`_, Python's creator.
+   BFDL
+      Dosnusis Diktatorius Visam Gyvenimui (angliško termino Benevolent
+      Dictator For Life sutrumpinimas), taip pat žinomas kaip `Guido van Rossum
+      <http://www.python.org/~guido/>`_, Pitono kūrėjas.
 
-   bytecode
-      Python source code is compiled into bytecode, the internal representation
-      of a Python program in the interpreter.  The bytecode is also cached in
-      ``.pyc`` and ``.pyo`` files so that executing the same file is faster the
-      second time (recompilation from source to bytecode can be avoided).  This
-      "intermediate language" is said to run on a :term:`virtual machine`
-      that executes the machine code corresponding to each bytecode.
+   baitinis kodas / bytecode
+      Pitono kodas yra kompiliuojamas į baitinį kodą – vidinę Pitono programos
+      reprezentaciją interpretatoriuje. Pitono baitinis kodas yra išsaugojamas
+      ``.pyc`` ir ``.pyo`` failuose, kad to paties failo vykdymas būtų greitesnis
+      vykdant antrą kartą (išvengiama perkompiliavimo iš kodo į baitinį kodą).
+      Sakoma, kad "tarpinė kalba" yra vykdoma :term:`virtualiojoje mašinoje`
+      kuri vykdo mašininį kodą kiekvienam baitiniam kodui.
 
-   class
-      A template for creating user-defined objects. Class definitions
-      normally contain method definitions which operate on instances of the
-      class.
+   klasė / class
+        Šablonas, kuris naudojamas kurti vartotojo apibrėžtus objektus.
+        Klasės apibrėžimas dažniausiai susideda iš metodų apibrėžimų,
+        kurie operuoja su tos klasės objektais.
 
-   classic class
-      Any class which does not inherit from :class:`object`.  See
-      :term:`new-style class`.  Classic classes will be removed in Python 3.0.
+   klasikinė klasė / classic class
+        Bet kuri klasė, kuri nėra paveldėta iš :class:`object`. Taip
+        pat žiūrėto :term:`naujo stiliaus klasė`. Klasikinės klasės bus
+        išimtos iš Pitono 3.0.
 
-   coercion
-      The implicit conversion of an instance of one type to another during an
-      operation which involves two arguments of the same type.  For example,
-      ``int(3.15)`` converts the floating point number to the integer ``3``, but
-      in ``3+4.5``, each argument is of a different type (one int, one float),
-      and both must be converted to the same type before they can be added or it
-      will raise a ``TypeError``.  Coercion between two operands can be
-      performed with the ``coerce`` builtin function; thus, ``3+4.5`` is
-      equivalent to calling ``operator.add(*coerce(3, 4.5))`` and results in
-      ``operator.add(3.0, 4.5)``.  Without coercion, all arguments of even
-      compatible types would have to be normalized to the same value by the
-      programmer, e.g., ``float(3)+4.5`` rather than just ``3+4.5``.
+   keitimas / coercion
+        Neišreikštinis vieno tipo objekto konvertavimas į kitą tipą per operaciją,
+        kurioje naudojami du to paties tipo argumentai. Pavyzdžiui
+        ``int(3.15)`` konvertuoja slankiojo kablelio skaičių į sveiką skaičių ``3``, bet
+        operacijoje ``3+4.5`` kiekvienas argumentas yra skirtingo tipo (vienas yra sveikas
+        skaičius, kitas slankaus kablelio) ir abu turi būti sukonvertuojami į tą patį
+        tipą prieš tai, kai jie yra sudedami arba kitaip bus išmetama ``TypeError`` klaida.
+        Keitimas tarp dviejų objektų gali būti atliktas naudojantis ``coerce`` funkcija.
+        Taigi ``3+4.5`` yra tolygu ``operator.add(*coerce(3, 4.5))`` kvietimui ir tokios
+        operacijos rezultatas yra ``operator.add(3.0, 4.5)``. Be keitimo visi argumentai
+        (net jei argumentų tipai yra suderinami) turėtų būti normalizuojami programuotojo,
+        pvz.: ``float(3)+4.5`` užuot tiesiog rašius ``3+4.5``.
 
-   complex number
-      An extension of the familiar real number system in which all numbers are
-      expressed as a sum of a real part and an imaginary part.  Imaginary
-      numbers are real multiples of the imaginary unit (the square root of
-      ``-1``), often written ``i`` in mathematics or ``j`` in
-      engineering. Python has builtin support for complex numbers, which are
-      written with this latter notation; the imaginary part is written with a
-      ``j`` suffix, e.g., ``3+1j``.  To get access to complex equivalents of the
-      :mod:`math` module, use :mod:`cmath`.  Use of complex numbers is a fairly
-      advanced mathematical feature.  If you're not aware of a need for them,
-      it's almost certain you can safely ignore them.
+   kompleksinis skaičius / complex number
+      Pažįstamos realiųjų skaičių sistemos plėtinys, kuriame visi skaičiai
+      yra išreiškiami kaip realios ir menamosios dalių suma. Menamieji
+      skaičiai yra realieji skaičiai padauginti iš menamojo vieneto (kvadratinė
+      šaknis iš ``-1``), dažnai žymimo kaip ``i`` matematikoje arba ``j``
+      inžinerijoje. Pitonas palaiko kompleksinius skaičius, kurie naudoja
+      pastarąjį žymėjimą – menamoji dalis yra rašoma naudojant ``j``, pvz.: 
+      ``3+1j``.  Jei jums reikia :mod:`math` modulio ekvivalento kompleksiniams
+      skaičiams naudokite :mod:`cmath`. Kompleksinių skaičių naudojimas
+      yra pakankamai sudėtinga matematikos tema. Jei nesate tikras ar jums jų reikia,
+      galite ramiai juos ignoruoti.
 
-   context manager
-      An object which controls the environment seen in a :keyword:`with`
-      statement by defining :meth:`__enter__` and :meth:`__exit__` methods.
-      See :pep:`343`.
+   konteksto valdiklis / context manager
+      Objektas, kuris valdo aplinką sakinyje su :keyword:`with` konstrukcija.
+      Objekte reikia apibrėžti :meth:`__enter__` ir :meth:`__exit__` metodus.
+      Daugiau informacijos :pep:`343`.
 
    CPython
-      The canonical implementation of the Python programming language.  The
-      term "CPython" is used in contexts when necessary to distinguish this
-      implementation from others such as Jython or IronPython.
+      Pagrindinis Pitono programavimo kalbos įgyvendinimas. Terminas
+      „CPython“ naudojamas, kai reikia atskirti šį įgyvendinimą nuo kitų, pvz.:
+      Jython arba IronPython.
 
-   decorator
-      A function returning another function, usually applied as a function
-      transformation using the ``@wrapper`` syntax.  Common examples for
-      decorators are :func:`classmethod` and :func:`staticmethod`.
+   dekoratorius / decorator
+      Funkcija, kuri grąžina kitą funkciją, dažniausiai naudojant
+      funkcijos transformacijos sintaksę ``@wrapper``. Dažnas
+      pavyzdys dekoratoriams yra :func:`classmethod` ir :func:`staticmethod`.
 
-      The decorator syntax is merely syntactic sugar, the following two
-      function definitions are semantically equivalent::
+      Dekoratoriaus sintaksė yra sukurta tik dėl patogumo. Pavyzdžiui
+      šie du funkcijos apibrėžimai yra lygiaverčiai:
 
          def f(...):
              ...
@@ -123,180 +125,183 @@ Glossary
          def f(...):
              ...
 
-      See :ref:`the documentation for function definition <function>` for more
-      about decorators.
+   deskriptorius / descriptor
+      Bet kuris *naujo stiliaus* objektas, kuris apibrėžia metodus :meth:`__get__`,
+      :meth:`__set__` arba :meth:`__delete__`. Kai klasės atributas yra
+      deskriptorius, jo specialūs metodai kviečiami tuo metu, kai bandoma
+      pasiekti atributą. Paprastai norint gauti, nustatyti ar ištrinti *a.b*
+      atributą yra ieškoma objekto *b* klasės *a* žodyne, bet jei *b* yra
+      deskriptorius, iškviečiamas atitinkamas deskriptoriaus metodas.
+      Deskriptorių supratimas yra reikalingas išsamiam Pitono supratimui, nes
+      jie yra pagrindas daugeliui savybių: funkcijoms, metodams, savybėms,
+      klasės metodams, statiniams metodams ir rodyklėms į super klases.
 
-   descriptor
-      Any *new-style* object which defines the methods :meth:`__get__`,
-      :meth:`__set__`, or :meth:`__delete__`.  When a class attribute is a
-      descriptor, its special binding behavior is triggered upon attribute
-      lookup.  Normally, using *a.b* to get, set or delete an attribute looks up
-      the object named *b* in the class dictionary for *a*, but if *b* is a
-      descriptor, the respective descriptor method gets called.  Understanding
-      descriptors is a key to a deep understanding of Python because they are
-      the basis for many features including functions, methods, properties,
-      class methods, static methods, and reference to super classes.
+      Daugiau informacijos apie deskriptorius rasite :ref:`descriptors`.
 
-      For more information about descriptors' methods, see :ref:`descriptors`.
+   žodynas / dictionary
+      Asociatyvus masyvas, kur raktai yra atvaizduoti į reikšmes. Klasės
+      :class:`dict` naudojimas labai panašus į klasės :class:`list` naudojimą,
+      bet raktais gali būti bet kokie objektai turintys :meth:`__hash__` funkciją,
+      ne tik sveiki skaičiai.
 
-   dictionary
-      An associative array, where arbitrary keys are mapped to values.  The use
-      of :class:`dict` closely resembles that for :class:`list`, but the keys can
-      be any object with a :meth:`__hash__` function, not just integers.
-      Called a hash in Perl.
+   dokumentavimo eilutė / docstring
+      Eilutės objektas, kuris yra pirmas reiškinys klasėje, funkcijoje ar
+      modulyje. Nors šis objektas yra ignoruojamas, kai kodas yra
+      vykdomas, kompiliatorius jį atpažįsta ir priskiria :attr:`__doc__`
+      atributui. Kadangi jis yra pasiekiamas naudojant introspekciją, tai
+      yra įprasta vieta objektų dokumentavimui.
 
-   docstring
-      A string literal which appears as the first expression in a class,
-      function or module.  While ignored when the suite is executed, it is
-      recognized by the compiler and put into the :attr:`__doc__` attribute
-      of the enclosing class, function or module.  Since it is available via
-      introspection, it is the canonical place for documentation of the
-      object.
-
-   duck-typing
-      A pythonic programming style which determines an object's type by inspection
-      of its method or attribute signature rather than by explicit relationship
-      to some type object ("If it looks like a duck and quacks like a duck, it
-      must be a duck.")  By emphasizing interfaces rather than specific types,
-      well-designed code improves its flexibility by allowing polymorphic
-      substitution.  Duck-typing avoids tests using :func:`type` or
-      :func:`isinstance`. (Note, however, that duck-typing can be complemented
-      with abstract base classes.) Instead, it typically employs :func:`hasattr`
-      tests or :term:`EAFP` programming.
+   neišreikštinis tipizavimas / duck-typing
+      Pitoniškas programavimo stilius, kuris nustato objekto tipą analizuojant
+      jo metodus arba atributus užuot analizuojant objekto santykį su tam tikru
+      tipu (jei versti tiesiogiai iš anglų kalbos, tai būtų anties tipizavimas
+      „Jei tai atrodo kaip antis, kvaksi kaip antis, tai turi būti antis“).
+      Naudojant sąsajas vietoje specifinių tipų gerai suprojektuotas kodas
+      yra lankstesnis, nes leidžia naudoti polimorfinį pakeitimą. Naudojant
+      neišreikštinį tipizavimą išvengiama tikrinimo naudojant :func:`type`arba
+      :func:`isinstance` funkcijas (Pastaba: neišreikštinis tipizavimas gali
+      būti papildytas naudojant abstrakčiąsias bazines klases). Vietoje to
+      įprastai naudojama :func:`hasattr` funkcija arba :term:`EAFP` programavimas.
 
    EAFP
-      Easier to ask for forgiveness than permission.  This common Python coding
-      style assumes the existence of valid keys or attributes and catches
-      exceptions if the assumption proves false.  This clean and fast style is
-      characterized by the presence of many :keyword:`try` and :keyword:`except`
-      statements.  The technique contrasts with the :term:`LBYL` style
-      common to many other languages such as C.
+      Lengviau paprašyti gailestingumo nei leidimo. Programuojant šiuo įprastu Pitono
+      stiliumi daroma prielaida, kad raktai ar atributai egzistuoja ir gaudomos
+      išimtys, jei prielaida yra neteisinga. Šis švarus ir greitas stilius
+      yra charakterizuojamas raktinių žodžių :keyword:`try` ir :keyword:`except`
+      egzistavimu. Ši technika kontrastuoja su :term:`LBYL` stiliaus
+      programavimu dažnu daugelyje kitų programavimo kalbų (pvz.: C).
 
-   expression
-      A piece of syntax which can be evaluated to some value.  In other words,
-      an expression is an accumulation of expression elements like literals, names,
-      attribute access, operators or function calls which all return a value.
-      In contrast to many other languages, not all language constructs are expressions.
-      There are also :term:`statement`\s which cannot be used as expressions,
-      such as :keyword:`print` or :keyword:`if`.  Assignments are also statements,
-      not expressions.
+   reiškinys / expression
+      Sintaksės gabalas, kuris gali būti apskaičiuotas. Kitais žodžiais,
+      reiškinys yra tokių elementų kaip vardai, atributų pasiekimai, operatorių
+      arba funkcijų kvietimai, junginys, kurio visi nariai grąžina reikšmę.
+      Kitaip, nei daugelyje kitų programavimo kalbų, ne visos Pitono
+      konstrukcijos yra reiškiniai. Dar būna :term:`sakiniai`, kurie negali
+      būti naudojami kaip reiškiniai. Pvz.: raktiniai žodžiai :keyword:`print`
+      arba :keyword:`if`.  Priskyrimai taip pat yra sakiniai, o ne reiškiniai.
 
-   extension module
-      A module written in C or C++, using Python's C API to interact with the core and
-      with user code.
+   išplėtimo modulis / extension module
+      Modulis parašytas C arba C++ naudojant Pitono C API skirtas bendradarbiavimui tarp
+      Pitono branduolio ir vartotojo kodo.
 
-   function
-      A series of statements which returns some value to a caller. It can also
-      be passed zero or more arguments which may be used in the execution of
-      the body. See also :term:`argument` and :term:`method`.
+   funkcija / function
+      Sakinių grupė, grąžinanti reikšmę. Funkcijai gali būti perduoti
+      argumentai, kurie gali būti naudojami skaičiavimuose. Taip pat
+      žiūrėti terminus :term:`argumentas` ir :term:`metodas`.
 
    __future__
-      A pseudo module which programmers can use to enable new language features
-      which are not compatible with the current interpreter.  For example, the
-      expression ``11/4`` currently evaluates to ``2``. If the module in which
-      it is executed had enabled *true division* by executing::
+      Pseudo-modulis, kurį programuotojai gali naudoti norėdami įjungti
+      kalbos savybes, kurios nėra suderinamos su dabartine interpretatoriaus
+      versija. Pavyzdžiui reiškinys ``11/4`` apskaičiuojamas kaip ``2``. Jei modulyje
+      kuriame šis reiškinys yra vykdomas įjungiama *true division* įvykdant::
 
          from __future__ import division
 
-      the expression ``11/4`` would evaluate to ``2.75``.  By importing the
-      :mod:`__future__` module and evaluating its variables, you can see when a
-      new feature was first added to the language and when it will become the
-      default::
+      reiškinys ``11/4`` bus apskaičiuotas kaip ``2.75``.  Importavę
+      :mod:`__future__` modulį ir įvertinę jo kintamuosius, jūs galite
+      matyti kada naujos savybės buvo pridėtos į kalbą yra kada jos bus
+      numatytosios::
 
          >>> import __future__
          >>> __future__.division
          _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192)
 
-   garbage collection
-      The process of freeing memory when it is not used anymore.  Python
-      performs garbage collection via reference counting and a cyclic garbage
-      collector that is able to detect and break reference cycles.
+   šiukšlių surinkimas / garbage collection
+      Atminties atlaisvinimo procesas kai ji nebenaudojama. Pitonas
+      atlieka šiukšlių surinkimą naudodamas rodyklių skaičiavimą
+      ir ciklišką šiukšlių surinkiklį, kuris sugeba aptikti ir
+      nutraukti rodyklių ciklus.
 
-   generator
-      A function which returns an iterator.  It looks like a normal function
-      except that values are returned to the caller using a :keyword:`yield`
-      statement instead of a :keyword:`return` statement.  Generator functions
-      often contain one or more :keyword:`for` or :keyword:`while` loops which
-      :keyword:`yield` elements back to the caller.  The function execution is
-      stopped at the :keyword:`yield` keyword (returning the result) and is
-      resumed there when the next element is requested by calling the
-      :meth:`next` method of the returned iterator.
+   generatorius / generator
+      Funkcija, kuri grąžina iteratorių. Ji panaši į normalią funkciją
+      išskyrus tai, kad jos reikšmės yra grąžinamos naudojant
+      :keyword:`yield` sakinį vietoje :keyword:`return` sakinio.  Generatoriaus
+      funkcijos dažnai susideda iš vieno arba daugiau :keyword:`for` arba
+      :keyword:`while` ciklų, kurie grąžina :keyword:`yield` elementus.
+      Funkcijos vykdymas yra sustabdomas ties :keyword:`yield` raktiniu žodžiu
+      (sugrąžinant rezultatą) ir pratęsiamas, kai pareikalaujama kito
+      elemento iškviečiant iteratoriaus :meth:`next` metodą.
 
       .. index:: single: generator expression
 
-   generator expression
-      An expression that returns a generator.  It looks like a normal expression
-      followed by a :keyword:`for` expression defining a loop variable, range,
-      and an optional :keyword:`if` expression.  The combined expression
-      generates values for an enclosing function::
+   generatorinis reiškinys / generator expression
+      Reiškinys, kuris grąžina generatorių. Jis panašus į normalų reiškinį
+      po kurio seka :keyword:`for` reiškinys apibrėžiantis ciklo
+      kintamuosius, ribas ir papildomą :keyword:`if` reiškinį. Kombinuotas
+      reiškinys sugeneruoja reikšmes reiškinį apimančiai funkcijai::
 
-         >>> sum(i*i for i in range(10))         # sum of squares 0, 1, 4, ... 81
+         >>> sum(i*i for i in range(10))         # sumuojame kvadratu pakeltus skaičius 0, 1, 4, ... 81
          285
 
    GIL
-      See :term:`global interpreter lock`.
+      Žiūrime :term:`globalus interpretatoriaus užrakinimas`.
 
-   global interpreter lock
-      The lock used by Python threads to assure that only one thread
-      executes in the :term:`CPython` :term:`virtual machine` at a time.
-      This simplifies the CPython implementation by assuring that no two
-      processes can access the same memory at the same time.  Locking the
-      entire interpreter makes it easier for the interpreter to be
-      multi-threaded, at the expense of much of the parallelism afforded by
-      multi-processor machines.  Efforts have been made in the past to
-      create a "free-threaded" interpreter (one which locks shared data at a
-      much finer granularity), but so far none have been successful because
-      performance suffered in the common single-processor case.
+   globalus interpretatoriaus užrakinimas / global interpreter lock
+      Pitono gijų naudojamas užrakinimas, kuris garantuoja, kad
+      tik viena gija vykdo :term:`CPython` :term:`virtualiąją mašiną`
+      vienu metu. Tai supaprastina CPython įgyvendinimą užtikrinant,
+      kad du procesai negali pasiekti tos pačios atminties vienu metu.
+      Viso interpretatoriaus užrakinimas leidžia interpretatoriui
+      lengviau vykdyti kelias gijas vienu metu. Žinoma, dėl to Pitono
+      interpretatorius pralošia daugiaprocesorinėse mašinose. Praeityje
+      buvo ne vienas bandymas sukurti laisvų gijų interpretatorių (tokį,
+      kuris užrakina bendrus duomenis žemesniame lygyje), bet nė vienas
+      nebuvo sėkmingas, nes nukentėdavo greitis dažnai pasitaikančiose
+      vieno-procesoriaus mašinose.
 
-   hashable
-      An object is *hashable* if it has a hash value which never changes during
-      its lifetime (it needs a :meth:`__hash__` method), and can be compared to
-      other objects (it needs an :meth:`__eq__` or :meth:`__cmp__` method).
-      Hashable objects which compare equal must have the same hash value.
+   maišomas / hashable
+      Objektas yra *maišomas* jei jo maišos reikšmė niekada nepasikeičia
+      per jo gyvavimo laiką (tam reikia :meth:`__hash__` metodo) ir jis
+      gali būti palygintas su kitais objektais (tam reikia :meth:`__eq__`
+      arba :meth:`__cmp__` metodų). Maišomi objektai, kurie turi lygias
+      reikšmes lyginant, privalo turėti lygias maišos reikšmes.
 
-      Hashability makes an object usable as a dictionary key and a set member,
-      because these data structures use the hash value internally.
+      Maišomumas leidžia objektą naudoti žodynuose ir aibėse, nes šios
+      duomenų struktūros naudoja maišos reikšmes.
 
-      All of Python's immutable built-in objects are hashable, while no mutable
-      containers (such as lists or dictionaries) are.  Objects which are
-      instances of user-defined classes are hashable by default; they all
-      compare unequal, and their hash value is their :func:`id`.
+      Visi nekintami Pitono objektai yra maišomi, tuo tarpu kintami
+      objektai nėra (pvz.: konteineriai - sąrašai arba žodynai).
+      Objektai, kurie yra sukuriami iš vartotojo apibrėžtų klasių yra
+      maišomi visada, nes jie niekada nėra lygūs ir jų maišos reikšmė
+      yra jų :func:`id`.
 
    IDLE
-      An Integrated Development Environment for Python.  IDLE is a basic editor
-      and interpreter environment which ships with the standard distribution of
-      Python.  Good for beginners, it also serves as clear example code for
-      those wanting to implement a moderately sophisticated, multi-platform GUI
-      application.
+      Integruota Programavimo Aplinka Pitonui. IDLE yra paprastas redaktorius
+      ir interpretuojama aplinka, kuri pateikiama su standartiniu Pitonu.
+      Tinkama pradedantiesiems, bet taip pat gali būti naudojama kaip
+      pavyzdinis kodas tiems, kurie nori sukurti multi-platforminę GUI
+      aplikaciją.
 
-   immutable
-      An object with a fixed value.  Immutable objects include numbers, strings and
-      tuples.  Such an object cannot be altered.  A new object has to
-      be created if a different value has to be stored.  They play an important
-      role in places where a constant hash value is needed, for example as a key
-      in a dictionary.
+   nekintamas / immutable
+      Objektas su fiksuota reikšme. Nekintamais objektais gali būti skaičiai,
+      eilutės ir kortežai. Tokie objektai negali būti keičiami. Turi būti
+      sukurtas naujas objektas, jei norime sukurti kitokią reikšmę. Jie yra
+      svarbūs situacijose, kur reikia konstantinės maišos reikšmės, pvz.: rakto
+      žodynui.
 
-   integer division
-      Mathematical division discarding any remainder.  For example, the
-      expression ``11/4`` currently evaluates to ``2`` in contrast to the
-      ``2.75`` returned by float division.  Also called *floor division*.
-      When dividing two integers the outcome will always be another integer
-      (having the floor function applied to it). However, if one of the operands
-      is another numeric type (such as a :class:`float`), the result will be
-      coerced (see :term:`coercion`) to a common type.  For example, an integer
-      divided by a float will result in a float value, possibly with a decimal
-      fraction.  Integer division can be forced by using the ``//`` operator
-      instead of the ``/`` operator.  See also :term:`__future__`.
+   sveikųjų skaičių dalyba / integer division
+      Matematinė dalyba numetant liekaną. Pvz.: reiškinys ``11/4`` apskaičiuojamas
+      kaip ``2``, kai tuo tarpu realiųjų skaičių dalyboje būtų grąžinta
+      ``2.75``.  Taip pat dar vadinama *grindų dalyba*.
+      Kai dalinami du sveikieji skaičiai rezultatas visada bus sveikas
+      skaičius (kuriam bus pritaikyta *grindų* funkcija). Tačiau, jei
+      vienas iš skaičių yra kitokio tipo (pvz.: :class:`float`), tai rezultatas
+      bus keičiamas (žiūrime :term:`keitimas`) į bendrą tipą.  Pvz.: jei
+      sveikas skaičius dalinamas iš realiojo skaičiaus rezultatas bus
+      realusis skaičius, tikriausiai su dešimtaine liekana. Sveikųjų
+      skaičių dalyba gali būti nurodoma priverstinai naudojant ``//`` operatorių
+      vietoje ``/`` operatoriaus.  Taip pat žiūrėkite :term:`__future__`.
 
-   interactive
-      Python has an interactive interpreter which means you can enter
-      statements and expressions at the interpreter prompt, immediately
-      execute them and see their results.  Just launch ``python`` with no
-      arguments (possibly by selecting it from your computer's main
-      menu). It is a very powerful way to test out new ideas or inspect
-      modules and packages (remember ``help(x)``).
+   interaktyvus / interactive
+      Pitonas turi interaktyvų interpretatorių, o tai reiškia, kad
+      sakinius ir reiškinius galima įvesti interpretatoriaus
+      raginime, iškart juos įvykdyti ir pamatyti rezultatą. Tiesiog
+      paleiskite ``python`` be argumentų (tikriausiai galite jį
+      rasti pagrindiniame kompiuterio meniu). Tai labai galingas
+      įrankis išbandyti naujas idėjas arba analizuoti modulius
+      (prisiminkite ``help(x)``).
 
-   interpreted
+   interpretuojamas / interpreted
       Python is an interpreted language, as opposed to a compiled one,
       though the distinction can be blurry because of the presence of the
       bytecode compiler.  This means that source files can be run directly
@@ -305,233 +310,239 @@ Glossary
       than compiled ones, though their programs generally also run more
       slowly.  See also :term:`interactive`.
 
-   iterable
-      A container object capable of returning its members one at a
-      time. Examples of iterables include all sequence types (such as
-      :class:`list`, :class:`str`, and :class:`tuple`) and some non-sequence
-      types like :class:`dict` and :class:`file` and objects of any classes you
-      define with an :meth:`__iter__` or :meth:`__getitem__` method.  Iterables
-      can be used in a :keyword:`for` loop and in many other places where a
-      sequence is needed (:func:`zip`, :func:`map`, ...).  When an iterable
-      object is passed as an argument to the builtin function :func:`iter`, it
-      returns an iterator for the object.  This iterator is good for one pass
-      over the set of values.  When using iterables, it is usually not necessary
-      to call :func:`iter` or deal with iterator objects yourself.  The ``for``
-      statement does that automatically for you, creating a temporary unnamed
-      variable to hold the iterator for the duration of the loop.  See also
-      :term:`iterator`, :term:`sequence`, and :term:`generator`.
+   iteruojamas / iterable
+      Objektas, kuris gali grąžinti savo narius po vieną.
+      Iteruojamo objekto pavyzdys galėtų būti bet kuris sekos tipas
+      (pvz.: :class:`list`, :class:`str`, ir :class:`tuple`) ir kai kurie
+      ne sekos tipai (pvz.: :class:`dict` ir :class:`file`) ir bet kurios
+      klasės objektai, kurie apibrėžia :meth:`__iter__` arba :meth:`__getitem__`
+      metodus. Iteruojami objektai gali būti naudojami :keyword:`for` cikle ir
+      daugelyje kitų vietų, kur reikalingos sekos (:func:`zip`, :func:`map`, ...).
+      Kai iteruojamas objektas perduodamas funkcijai :func:`iter` kaip
+      argumentas, ji grąžina objektui iteratorių. Šis iteratorius yra
+      naudingas, kai reikia pereiti per aibės reikšmes. Kai naudojami
+      iteruojami objektai nėra būtina kviesti :func:`iter` ar tvarkytis su
+      iteratoriaus objektu pačiam. ``for`` sakinys tai atlieka automatiškai
+      sukurdamas laikiną bevardį kintamąjį, kuriame laikomas iteratorius
+      ciklui.  Taip pat žiūrėti: :term:`iteratorius`, :term:`seka`, ir
+      :term:`generatorius`.
 
-   iterator
-      An object representing a stream of data.  Repeated calls to the iterator's
-      :meth:`next` method return successive items in the stream.  When no more
-      data are available a :exc:`StopIteration` exception is raised instead.  At
-      this point, the iterator object is exhausted and any further calls to its
-      :meth:`next` method just raise :exc:`StopIteration` again.  Iterators are
-      required to have an :meth:`__iter__` method that returns the iterator
-      object itself so every iterator is also iterable and may be used in most
-      places where other iterables are accepted.  One notable exception is code
-      which attempts multiple iteration passes.  A container object (such as a
-      :class:`list`) produces a fresh new iterator each time you pass it to the
-      :func:`iter` function or use it in a :keyword:`for` loop.  Attempting this
-      with an iterator will just return the same exhausted iterator object used
-      in the previous iteration pass, making it appear like an empty container.
+   iteratorius / iterator
+      Objektas, kuris reprezentuoja duomenų srautą. Pakartotini iteratoriaus
+      metodo :meth:`next` kvietimai grąžina sekantį narį sraute. Kai daugiau
+      duomenų nebėra, išmetama :exc:`StopIteration` išimtis. Nuo šios
+      akimirkos iteratoriaus objektas yra išnaudotas ir bet kuris tolesnis
+      :meth:`next` metodo kvietimas tiesiog išmes :exc:`StopIteration` vėl.
+      Iteratoriai taip pat turi turėti :meth:`__iter__` metodą, kuris sugrąžina
+      iteratoriaus objektą tam, kad pats iteratorius galėtų būti naudojamas
+      kitoje vietoje, kur reikalingi iteruojami objektai. Viena pažymėtina
+      išimtis yra kodas, kuris bando įvykdyti kelis iteracijos žingsnius.
+      Konteinerio objektas (pvz.: :class:`list`) grąžina naują iteratorių
+      kiekvieną kartą, kai jį perduodi :func:`iter` funkcijai arba naudoji
+      :keyword:`for` cikle.  Bandymai atlikti tą patį su iteratoriumi
+      tiesiog sugrąžins tą patį išnaudotą iteratoriaus objektą naudotą
+      praeitame iteracijos vykdyme ir dėl to jis atrodys kaip tuščias
+      konteineris.
 
-      More information can be found in :ref:`typeiter`.
+      Daugiau informacijos galima rasti :ref:`typeiter`.
 
-   keyword argument
-      Arguments which are preceded with a ``variable_name=`` in the call.
-      The variable name designates the local name in the function to which the
-      value is assigned.  ``**`` is used to accept or pass a dictionary of
-      keyword arguments.  See :term:`argument`.
+   vardinis argumentas / keyword argument
+      Argumentas prieš kurį parašoma  ``variable_name=`` kvietime.
+      Kintamojo vardas nurodo lokalų kintamąjį funkcijoje, kuriai
+      perduodama reikšmė. ``**`` naudojamas vardinių argumentų priėmimui
+      arba perdavimui. Daugiau :term:`argumentas`.
 
    lambda
-      An anonymous inline function consisting of a single :term:`expression`
-      which is evaluated when the function is called.  The syntax to create
-      a lambda function is ``lambda [arguments]: expression``
+      Anoniminė funkcija, susidedanti iš vieno reiškinio, kuris
+      apskaičiuojamas, kai funkcija kviečiama. Lambda funkcijų sintaksė yra
+      ``lambda [argumentai]: reiškinys``.
 
    LBYL
-      Look before you leap.  This coding style explicitly tests for
-      pre-conditions before making calls or lookups.  This style contrasts with
-      the :term:`EAFP` approach and is characterized by the presence of many
-      :keyword:`if` statements.
+      Pažiūrėk prieš šokdamas. Programuojant šiuo stiliumi patikrinamos sąlygos
+      prieš vykdant tolimesnius veiksmus. Šis stilius kontrastuoja
+      :term:`EAFP` stiliui ir gali būti atpažintas pagal didelį
+      :keyword:`if` sakinių kiekį.
 
-   list
-      A built-in Python :term:`sequence`.  Despite its name it is more akin
-      to an array in other languages than to a linked list since access to
-      elements are O(1).
+   sąrašas / list
+      Standartinė Pitono :term:`seka`. Nepaisant pavadinimo jis artimesnis kitų
+      programavimo kalbų masyvams, nei rodyklėmis susietais sąrašais, nes
+      priėjimas prie elementų yra O(1).
 
-   list comprehension
-      A compact way to process all or part of the elements in a sequence and
-      return a list with the results.  ``result = ["0x%02x" % x for x in
-      range(256) if x % 2 == 0]`` generates a list of strings containing
-      even hex numbers (0x..) in the range from 0 to 255. The :keyword:`if`
-      clause is optional.  If omitted, all elements in ``range(256)`` are
-      processed.
+   sąrašo užklausa / list comprehension
+      Kompaktiškas būdas apdoroti visus ar dalį sekos elementų ir sugrąžinti
+      sąrašą su rezultatais. ``result = ["0x%02x" % x for x in range(256) if x % 2 == 0]``
+      sugeneruoja eilučių sąrašą susidedančių iš šešioliktainių skaičių (0x..) iš lyginių skaičių
+      aibės nuo 0 iki 255. :keyword:`if` sakinys yra papildomas. Jei jis bus praleistas
+      duotame pavyzdyje bus apdoroti visi elementai iš aibės nuo 0 iki 255.
 
-   mapping
-      A container object (such as :class:`dict`) which supports arbitrary key
-      lookups using the special method :meth:`__getitem__`.
+   atvaizdis / mapping
+      Konteinerio objektas (pvz.: :class:`dict`) kuris palaiko reikšmių paiešką
+      pagal raktus naudojant specialų metodą :meth:`__getitem__`.
 
-   metaclass
-      The class of a class.  Class definitions create a class name, a class
-      dictionary, and a list of base classes.  The metaclass is responsible for
-      taking those three arguments and creating the class.  Most object oriented
-      programming languages provide a default implementation.  What makes Python
-      special is that it is possible to create custom metaclasses.  Most users
-      never need this tool, but when the need arises, metaclasses can provide
-      powerful, elegant solutions.  They have been used for logging attribute
-      access, adding thread-safety, tracking object creation, implementing
-      singletons, and many other tasks.
+   metaklasė / metaclass
+      Klasės klasė. Klasės apibrėžimas sukuria klasės vardą, klasės žodyną
+      ir bazinių klasių sąrašą. Metaklasė yra atsakinga už šių trijų
+      argumentų paėmimą ir klasės sukūrimą. Dauguma objektiškai orientuotų
+      programavimo kalbų pateikia standartinį įgyvendinimą. Pitonas
+      šiuo atveju yra išskirtinis, nes jame galima sukurti savo metaklases.
+      Daugumai vartotojų niekada nereikia šios priemonės, bet kai
+      atsiranda poreikis, metaklasės gali pasiūlyti galingus ir elegantiškus
+      sprendimus. Jos yra naudojamos atributų pasiekimo žurnalų rašymui,
+      gijų-saugumo įgyvendinime, objektų sukūrimo sekimui, singltonų
+      įgyvendinime ir daugelyje kitų užduočių.
 
-      More information can be found in :ref:`metaclasses`.
+      Daugiau informacijos gali rasti :ref:`metaclasses`.
 
-   method
-      A function which is defined inside a class body.  If called as an attribute
-      of an instance of that class, the method will get the instance object as
-      its first :term:`argument` (which is usually called ``self``).
-      See :term:`function` and :term:`nested scope`.
+   metodas / method
+      Funkcija, kuri apibrėžiama klasės viduje. Jei ji iškviečiama kaip
+      klasės egzemplioriaus atributas, metodas gaus egzemplioriaus objektą
+      kaip pirmąjį savo argumentą (žiūrime :term:`argument`). Dažniausiai
+      jis vadinamas ``self``.
+      Taip pat žiūrėti :term:`funkcija` and :term:`įdėtinė sritis`.
 
-   mutable
-      Mutable objects can change their value but keep their :func:`id`.  See
-      also :term:`immutable`.
+   kintamas / mutable
+      Kintamas objektas gali pakeisti savo reikšmę bet išlaikyti :func:`id`.
+      Taip pat žiūrėti :term:`nekintamas`.
 
-   named tuple
-      Any tuple-like class whose indexable elements are also accessible using
-      named attributes (for example, :func:`time.localtime` returns a
-      tuple-like object where the *year* is accessible either with an
-      index such as ``t[0]`` or with a named attribute like ``t.tm_year``).
+   vardinis kortežas / named tuple
+      Bet kuri į kortežą panaši klasė, kurios indeksuojami elementai gali
+      būti pasiekti naudojant vardinius atributus. Pvz.: :func:`time.localtime`
+      sugrąžina į kortežą panašų objektą, kur *year* (metai) gali būti
+      pasiekti arba naudojant indeksą ``t[0]`` arba vardinį atributą
+      ``t.tm_year``).
 
-      A named tuple can be a built-in type such as :class:`time.struct_time`,
-      or it can be created with a regular class definition.  A full featured
-      named tuple can also be created with the factory function
-      :func:`collections.namedtuple`.  The latter approach automatically
-      provides extra features such as a self-documenting representation like
-      ``Employee(name='jones', title='programmer')``.
+      Vardinis kortežas gali būti standartinis tipas (pvz.: :class:`time.struct_time`)
+      arba jis gali būti sukurtas naudojant įprastus klasės apibrėžimus.
+      Visas savybes turintį vardinį kortežą galima sukurti naudojantis
+      :func:`collections.namedtuple` funkcija.  Šis sprendimas automatiškai
+      suteikia papildomas galimybes, pvz.: save-dokumentuojančią išraišką
+      kaip ``Employee(name='Jonas', title='programuotojas')``.
 
-   namespace
-      The place where a variable is stored.  Namespaces are implemented as
-      dictionaries.  There are the local, global and builtin namespaces as well
-      as nested namespaces in objects (in methods).  Namespaces support
-      modularity by preventing naming conflicts.  For instance, the functions
-      :func:`__builtin__.open` and :func:`os.open` are distinguished by their
-      namespaces.  Namespaces also aid readability and maintainability by making
-      it clear which module implements a function.  For instance, writing
-      :func:`random.seed` or :func:`itertools.izip` makes it clear that those
-      functions are implemented by the :mod:`random` and :mod:`itertools`
-      modules, respectively.
+   vardų erdvė / namespace
+      Vieta, kur laikomi kintamieji. Vardų erdvės yra įgyvendintos kaip
+      žodynai. Egzistuoja lokali, globali ir įtaisytoji erdvės bei
+      vidinė erdvė objektuose (arba metoduose). Vardų erdvės
+      suteikia moduliškumą, kuris padeda išvengti vardų konflikto.
+      Pavyzdžiui funkcijos :func:`__builtin__.open` ir :func:`os.open` gali
+      būti atskirtos pagal vardų erdvę. Vardų erdvės taip pat padeda
+      skaitomumui ir priežiūrai aiškiai parodydamos kuriam moduliui
+      priklauso funkcija. Pavyzdžiui, užrašai :func:`random.seed` ir
+      :func:`itertools.izip` aiškiai parodo, kad šios funkcijos
+      yra įgyvendintos :mod:`random` ir :mod:`itertools` moduliuose
+      atitinkamai.
 
-   nested scope
-      The ability to refer to a variable in an enclosing definition.  For
-      instance, a function defined inside another function can refer to
-      variables in the outer function.  Note that nested scopes work only for
-      reference and not for assignment which will always write to the innermost
-      scope.  In contrast, local variables both read and write in the innermost
-      scope.  Likewise, global variables read and write to the global namespace.
+   įdėtinė sritis / nested scope
+      Galimybė kreiptis į kintamuosius ribotame apibrėžime. Pavyzdžiui,
+      funkcija apibrėžta kitos funkcijos viduje gali kreiptis
+      į kintamąjį išorinėje funkcijoje. Atkreipkite dėmesį, kad įdėtinė
+      sritis dirbs tik su rodyklėms, bet net priskyrimams, kurie yra visada
+      rašomi artimiausioje srityje.
 
-   new-style class
-      Any class which inherits from :class:`object`.  This includes all built-in
-      types like :class:`list` and :class:`dict`.  Only new-style classes can
-      use Python's newer, versatile features like :attr:`__slots__`,
-      descriptors, properties, and :meth:`__getattribute__`.
+   naujojo stiliaus klasė / new-style class
+      Bet kuri klasė, kuri paveldi iš :class:`object`. Į tai įeina visi
+      standartiniai tipai kaip :class:`list` ar :class:`dict`.  Tik
+      naujo stiliaus klasės gali naudoti naujas visapusiškas Pitono
+      ypatybes kaip :attr:`__slots__`, deskriptorius, savybes
+      ir :meth:`__getattribute__`.
 
-      More information can be found in :ref:`newstyle`.
+      Daugiau informacijos galima rasti :ref:`newstyle`.
 
-   object
-      Any data with state (attributes or value) and defined behavior
-      (methods).  Also the ultimate base class of any :term:`new-style
-      class`.
+   objektas / object
+      Bet kuris duomenų vienetas su būsena (atributų ar reikšmės)
+      ir apibrėžtu elgesiu (metodais). Taip pat pirmine bazine
+      klase, jei tai  :term:`naujo stiliaus klasė`class`.
 
-   positional argument
-      The arguments assigned to local names inside a function or method,
-      determined by the order in which they were given in the call.  ``*`` is
-      used to either accept multiple positional arguments (when in the
-      definition), or pass several arguments as a list to a function.  See
-      :term:`argument`.
+   pozicinis argumentas / positional argument
+      Argumentai priskirti lokaliems vardams funkcijoje ar metode
+      nustatant jų eilę pagal tai kaip jie buvo kviečiami.
+      ``*`` yra naudojamas kai reikia priimti kelis pozicinius
+      argumentus (apibrėžime) arba kai reikia perduoti kelis argumentus
+      kaip sąrašą funkcijai. Žiūrėti :term:`argumentas`.
 
    Python 3000
-      Nickname for the next major Python version, 3.0 (coined long ago
-      when the release of version 3 was something in the distant future.)  This
-      is also abbreviated "Py3k".
+      Kodinis pavadinimas kitai svarbiai Pitono versijai, 3.0 (sugalvota
+      seniai, kai 3 versija dar buvo tolimoje ateityje). Taip pat
+      trumpinama „Py3k“.
 
-   Pythonic
-      An idea or piece of code which closely follows the most common idioms
-      of the Python language, rather than implementing code using concepts
-      common to other languages.  For example, a common idiom in Python is
-      to loop over all elements of an iterable using a :keyword:`for`
-      statement.  Many other languages don't have this type of construct, so
-      people unfamiliar with Python sometimes use a numerical counter instead::
+   pitoniškas / Pythonic
+      Idėja arba kodo gabalas, kuris atitinka daugumą Pitono kalbos idiomų
+      užuot įgyvendina kodą naudojant kitų kalbų koncepcijas. Pavyzdžiui
+      dažna Pitono idioma yra pereiti per visus iteruojamo objekto elementus
+      naudojant :keyword:`for` sakinį. Dauguma kitų kalbų neturi tokio
+      tipo konstrukcijos, taigi žmonės nesusipažinę su Pitonu naudoja
+      skaitliukus::
 
           for i in range(len(food)):
               print food[i]
 
-      As opposed to the cleaner, Pythonic method::
+      Kai tuo tarpu galima naudoti pitonišką metodą::
 
          for piece in food:
              print piece
 
-   reference count
-      The number of references to an object.  When the reference count of an
-      object drops to zero, it is deallocated.  Reference counting is
-      generally not visible to Python code, but it is a key element of the
-      :term:`CPython` implementation.  The :mod:`sys` module defines a
-      :func:`getrefcount` function that programmers can call to return the
-      reference count for a particular object.
+   rodyklių skaičius / reference count
+      Rodyklių skaičius į objektą. Kai rodyklių skaičius nukrenta iki
+      nulio, jo užimama atmintis yra atlaisvinama. Rodyklių skaičiavimas
+      dažniausiai yra nematomas Pitono kode, bet tai yra svarbiausias
+      elementas :term:`CPython` įgyvendinime.  :mod:`sys` modulis
+      apibrėžia :func:`getrefcount` funkciją, kurią programuotojai gali
+      iškviesti norėdami gauti rodyklių skaičių į tam tikrą objektą.
 
    __slots__
-      A declaration inside a :term:`new-style class` that saves memory by
-      pre-declaring space for instance attributes and eliminating instance
-      dictionaries.  Though popular, the technique is somewhat tricky to get
-      right and is best reserved for rare cases where there are large numbers of
-      instances in a memory-critical application.
+      Apibrėžimas naujo stiliaus klasėje (žr. :term:`naujo stiliaus klasė`),
+      kuris sutaupo atminties, rezervuodamas erdvę egzemplioriaus atributams
+      ir išvengdamas egzemplioriaus žodyno. Nors technika yra populiari, kartais
+      gali būti sudėtinga tai atlikti teisingai, todėl geriau tai palikti
+      situacijoms, kai reikalingas didelis egzempliorių skaičius, o atmintį
+      reikia išnaudoti efektyviai.
 
-   sequence
-      An :term:`iterable` which supports efficient element access using integer
-      indices via the :meth:`__getitem__` special method and defines a
-      :meth:`len` method that returns the length of the sequence.
-      Some built-in sequence types are :class:`list`, :class:`str`,
-      :class:`tuple`, and :class:`unicode`. Note that :class:`dict` also
-      supports :meth:`__getitem__` and :meth:`__len__`, but is considered a
-      mapping rather than a sequence because the lookups use arbitrary
-      :term:`immutable` keys rather than integers.
+   seka / sequence
+      :term:`iteruojamas` objektas, kuris palaiko efektyvų elementų pasiekimą
+      per indeksus naudojant specialų :meth:`__getitem__` metodą ir apibrėžia
+      :meth:`len` metodą, kuris sugrąžina sekos ilgį.
+      Kai kurie standartiniai sekos tipai yra :class:`list`, :class:`str`,
+      :class:`tuple` ir :class:`unicode`. Atkreipkite dėmesį į tai,
+      kad :class:`dict` taip pat palaiko :meth:`__getitem__` ir :meth:`__len__`,
+      bet yra atvaizdis, o ne seka, nes paieškai naudojami
+      :term:`nekintami` raktai, o ne sveikieji skaičiai.
 
-   slice
-      An object usually containing a portion of a :term:`sequence`.  A slice is
-      created using the subscript notation, ``[]`` with colons between numbers
-      when several are given, such as in ``variable_name[1:3:5]``.  The bracket
-      (subscript) notation uses :class:`slice` objects internally (or in older
-      versions, :meth:`__getslice__` and :meth:`__setslice__`).
+   atkarpa / slice
+      Objektas, kuris paprastai turi dalį :term:`sekos`. Atkarpa paprastai
+      sukuriama naudojant ``[]`` išraišką su dvitaškiais tarp skaičių, kai keli
+      paduodami, pvz.: ``variable_name[1:3:5]``. Laužtiniai skliaustai
+      naudoja klasės :class:`slice` objektus (arba senesnėse versijose
+      :meth:`__getslice__` ir :meth:`__setslice__` metodus).
 
-   special method
-      A method that is called implicitly by Python to execute a certain
-      operation on a type, such as addition.  Such methods have names starting
-      and ending with double underscores.  Special methods are documented in
-      :ref:`specialnames`.
+   specialus metodas / special method
+      Metodas, kurį iškviečia Pitonas, kad atliktų tam tikro tipo operaciją
+      (pvz.: sudėtį). Tokie metodai turi vardus prasidedančius ir pasibaigiančius
+      dvigubu pabraukimo brūkšniu. Specialūs metodai yra dokumentuoti: :ref:`specialnames`.
 
-   statement
-      A statement is part of a suite (a "block" of code).  A statement is either
-      an :term:`expression` or a one of several constructs with a keyword, such
-      as :keyword:`if`, :keyword:`while` or :keyword:`print`.
+   sakinys / statement
+      Sakinys yra kodo bloko dalis. Sakinys yra arba :term:`reiškinys` arba
+      viena iš kelių konstrukcijų su raktiniu žodžiu (pvz.: :keyword:`if`,
+      :keyword:`while` arba :keyword:`print`).
 
-   triple-quoted string
-      A string which is bound by three instances of either a quotation mark
-      (") or an apostrophe (').  While they don't provide any functionality
-      not available with single-quoted strings, they are useful for a number
-      of reasons.  They allow you to include unescaped single and double
-      quotes within a string and they can span multiple lines without the
-      use of the continuation character, making them especially useful when
-      writing docstrings.
+   eilutė su trigubomis kabutėmis / triple-quoted string
+      Eilutė, kuri yra apsupta trimis kabutėmis (") arba apostrofais (').
+      Nors jose nėra jokio funkcionalumo, kurio negalima būtų padaryti
+      su paprastomis eilutėmis, jos yra naudingos dėl kelių priežasčių.
+      Jos leidžia naudoti viengubas arba dvigubas kabutes be kaitos (\\)
+      ženklo ir leidžia sujungti kelias eilutes be pratęsimo simbolio.
+      Dėl to jos labai naudingos dokumentavimo eilutėse.
 
-   type
-      The type of a Python object determines what kind of object it is; every
-      object has a type.  An object's type is accessible as its
-      :attr:`__class__` attribute or can be retrieved with ``type(obj)``.
+   tipas / type
+      Pitono objekto tipas nustato koks tai yra objektas. Kiekvienas objektas
+      turi tipą. Objekto tipas pasiekiamas kaip :attr:`__class__` atributas
+      arba gali būti nustatytas naudojant ``type(obj)``.
 
-   virtual machine
-      A computer defined entirely in software.  Python's virtual machine
-      executes the :term:`bytecode` emitted by the bytecode compiler.
+   virtualioji mašina / virtual machine
+      Kompiuteris apibrėžtas programine įranga. Pitono virtualioji
+      mašina vykdo :term:`baitinį kodą`, sugeneruotą baitinio kodo
+      kompiliatoriaus.
 
-   Zen of Python
-      Listing of Python design principles and philosophies that are helpful in
-      understanding and using the language.  The listing can be found by typing
-      "``import this``" at the interactive prompt.
+   Pitono Zen / Zen of Python
+      Pitono dizaino principų ir filosofijų sąrašas kuris padeda suprasti
+      ir naudoti kalbą. Sąrašą galima rasti surinkus "``import this``"
+      interaktyviajame raginime.
 

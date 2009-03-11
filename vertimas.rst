@@ -38,6 +38,9 @@ nėra, kad reikia versti būtent iš Pitono dokumentacijos.
 Dar vienas prašymas: būtų šaunu, kad pavyzdžius skaitytojams
 duotumėte išbandyti http://py.sandbox.lt (žinoma, kur yra prasmės).
 
+Jei neaišku kaip versti žodį pasitikrinkite viename iš šių šaltinių:
+:ref:`glossary` arba http://www.likit.lt/en-lt/angl.html.
+
 Kaip naudotis sphinx'u?
 =======================
 
@@ -52,18 +55,18 @@ Vertėjai
 Jei ruošiatės versti kažkurį failą prieš tai darydami pridėkite
 failo, kurį versite, vardą ir savo inicialus.
 
-* glossary.rst –
+* glossary.rst – Dalius Dobravolskas
 * tutorial\index.rst – Dalius Dobravolskas
-* tutorial\appetite.rst –
-* tutorial\classes.rst –
+* tutorial\appetite.rst – Maksim Norkin
+* tutorial\classes.rst – Dalius Dobravolskas
 * tutorial\controlflow.rst –
 * tutorial\datastructures.rst –
-* tutorial\errors.rst –
+* tutorial\errors.rst – Maksim Norkin
 * tutorial\floatingpoint.rst –
 * tutorial\inputoutput.rst –
 * tutorial\interactive.rst – Armandas Jarušauskas
 * tutorial\interpreter.rst –
-* tutorial\introduction.rst –
+* tutorial\introduction.rst – Adomas Paltanavičius
 * tutorial\modules.rst –
 * tutorial\stdlib2.rst –
 * tutorial\stdlib.rst –

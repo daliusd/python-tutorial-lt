@@ -14,7 +14,7 @@ tipizavimo ir interpretatorius, Pitonas yra ideali kalba scenarijų rašymui
 ir greitam aplikacijų kūrimui įvairiose srityse įvairioms platformoms.
 
 Pitono interpretatorių ir plačią standartinę biblioteką galima nemokamai
-parsisiųsti kodo arba binariniu formatu visoms pagrindinėms plaformoms
+parsisiųsti kodo arba binariniu formatu visoms pagrindinėms platformoms
 iš Pitono puslapio http://www.python.org/. Taip pat Pitoną galima laisvai
 platinti. Šiame puslapyje taip rasite informacijos apie kitus nemokamus
 Pitono modulius, programas ir įrankius, bet papildomą dokumentaciją.
@@ -24,7 +24,7 @@ ir duomenų tipais naudojant C arba C++ (arba kitas kalbas, kurias galima
 kviesti iš C). Pitonas taip pat gali būti naudojamas kaip praplėtimo
 kalba.
 
-Šis vadovėlis skaitytoją neformaliai supažindina su pagrindinėmis Pitono
+Šis vadovėlis neformaliai supažindina skaitytoją su pagrindinėmis Pitono
 kalbos koncepcijomis ir savybėmis. Jums tikrai padės, jei po ranka
 turėsite Pitono interpretatorių, bet visi pavyzdžiai yra išsamūs, todėl
 vadovėlį galima skaityti tiesiog taip.
@@ -43,12 +43,12 @@ dokumentų lietuvių kalba nėra.
 
 Šis vadovėlis nėra bandymas išsamiai aprašyti kiekvieną savybę ar netgi
 kiekvieną dažnai naudojamą savybę. Čia aprašytos Pitono savybės, kurias
-verta paminėti, ir vadovėlis leis suprasti kalbos tipą ir stilių. Perskaitę
+verta paminėti, ir vadovėlis leis suprasti kalbos pobūdį ir stilių. Perskaitę
 jį jūs galėsite skaityti ir rašyti Pitono modulius ir programas, ir būsite
 pasiruošę išmokti daugiau apie Pitono bibliotekos modulius aprašytus
 *Python Library Reference*.
 
-Terminų :ref:`glossary` žodynėlį taip pat verta permesti akimis.
+Taip pat verta permesti akimis: :ref:`glossary`.
 
 .. toctree::
 

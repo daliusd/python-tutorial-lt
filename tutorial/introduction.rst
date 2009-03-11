@@ -1,77 +1,78 @@
 .. _tut-informal:
 
-**********************************
-An Informal Introduction to Python
-**********************************
+***************
+Įvadas į Pitoną
+***************
 
-In the following examples, input and output are distinguished by the presence or
-absence of prompts (``>>>`` and ``...``): to repeat the example, you must type
-everything after the prompt, when the prompt appears; lines that do not begin
-with a prompt are output from the interpreter. Note that a secondary prompt on a
-line by itself in an example means you must type a blank line; this is used to
-end a multi-line command.
+Pavyzdžiuose, pateikiamuose toliau, įvedamas komandos bei jų išvestį galima
+atskirti pagal tai, ar yra eilutė prasideda raginimu (``>>>`` ir ``...``).
+Norėdami pakartoti pavyzdį savarankiškai, perrašykite viską, kas eina pavyzdyje
+po raginimo. Eilutės, neprasidedančios raginimu, yra išvestis iš
+interpretatoriaus. Turėkite omenyje, kad antrasis raginimo variantas (``...``) tuščiai
+eilutei reiškia, jog jūs turėsite įvesti tuščią eilutę; taip užbaigiamos
+komandos, kurios užima daugiau nei vieną eilutę.
 
-Many of the examples in this manual, even those entered at the interactive
-prompt, include comments.  Comments in Python start with the hash character,
-``#``, and extend to the end of the physical line.  A comment may appear at the
-start of a line or following whitespace or code, but not within a string
-literal.  A hash character within a string literal is just a hash character.
-Since comments are to clarify code and are not interpreted by Python, they may
-be omitted when typing in examples.
+Dauguma pavyzdžių, net ir tie, kurie prasideda raginimu, turi paaiškinamuosius
+komentarus. Pitone komentarai pradedami simboliu ``#`` ir tęsiasi iki eilutės
+pabaigos. Komentarai gali prasidėti eilutės pradžioje, taip pat po tarpų
+arba po kodo, tačiau ne simbolių eilutės viduje. Simbolių eilutėje
+tai tėra ``#`` simbolis, neatliekantis jokios papildomos funkcijos. Kadangi
+komentarai paaiškina kodą, tačiau Pitonas jų niekaip neinterpretuoja, atkartojant
+pavyzdžius interaktyviame apvalkale, komentarus galima praleisti.
 
-Some examples::
+Pora pavyzdžių::
 
-   # this is the first comment
-   SPAM = 1                 # and this is the second comment
-                            # ... and now a third!
-   STRING = "# This is not a comment."
+   # čia pirmasis komentaras
+   SPAM = 1                 # o čia - antrasis komentaras
+                            # ...ir trečiasis!
+   STRING = "# Tai nėra komentaras."
 
 
 .. _tut-calculator:
 
-Using Python as a Calculator
-============================
+Pitonas kaip skaičiuoklis
+=========================
 
-Let's try some simple Python commands.  Start the interpreter and wait for the
-primary prompt, ``>>>``.  (It shouldn't take long.)
+Pradėkime išbandydami porą paprastų Pitono komandų. Pasileiskite interpretatorių
+ir luktelkite iki pasirodys raginimas ``>>>`` (neturėtų užtrukti).
 
 
 .. _tut-numbers:
 
-Numbers
--------
+Skaičiai
+--------
 
-The interpreter acts as a simple calculator: you can type an expression at it
-and it will write the value.  Expression syntax is straightforward: the
-operators ``+``, ``-``, ``*`` and ``/`` work just like in most other languages
-(for example, Pascal or C); parentheses can be used for grouping.  For example::
+Interpretatorius veikia kaip paprastas skaičiuoklis -- jūs įvedate reiškinį,
+o interpretatorius užrašo rezultatą. Reiškinių sintaksė paprasta: operatoriai
+``+``, ``-``, ``*`` bei ``/`` veikia kaip ir daugumoje kitų kalbų
+(tarkime, Paskalyje arba C). Grupavimui galima naudoti skliaustelius. Pavyzdžiui::
 
    >>> 2+2
    4
-   >>> # This is a comment
+   >>> # Tai komentaras
    ... 2+2
    4
-   >>> 2+2  # and a comment on the same line as code
+   >>> 2+2  # o čia - komentaras toje pačioje eilutėje, kaip ir kodas
    4
    >>> (50-5*6)/4
    5
-   >>> # Integer division returns the floor:
+   >>> # Sveikų skaičių dalyba apskaičiuoja sveiką dalį:
    ... 7/3
    2
    >>> 7/-3
    -3
 
-The equal sign (``'='``) is used to assign a value to a variable. Afterwards, no
-result is displayed before the next interactive prompt::
+Lygybės ženklas (``'='``) naudojamas priskirti reikšmę kintamajam. Atlikus
+priskyrimą nėra parodomas joks rezultatas::
 
    >>> width = 20
    >>> height = 5*9
    >>> width * height
    900
 
-A value can be assigned to several variables simultaneously::
+Reikšmę galima priskirti iš karto keliems kintamiesiems::
 
-   >>> x = y = z = 0  # Zero x, y and z
+   >>> x = y = z = 0  # Priskiriame nulį x, y ir z
    >>> x
    0
    >>> y
@@ -79,26 +80,28 @@ A value can be assigned to several variables simultaneously::
    >>> z
    0
 
-Variables must be "defined" (assigned a value) before they can be used, or an
-error will occur::
+Kintamieji turi būti apibrėžti (jiems priskirta reikšmė) prieš naudojant.
+Priešingu atveju įvyks klaida::
 
-   >>> # try to access an undefined variable
+   >>> # pabandome gauti neapibrėžto kintamojo reikšmę
    ... n
    Traceback (most recent call last):
      File "<stdin>", line 1, in <module>
    NameError: name 'n' is not defined
 
-There is full support for floating point; operators with mixed type operands
-convert the integer operand to floating point::
+Taip pat galima dirbti su slankaus kablelio skaičiais. Jeigu naudosime vieną
+iš anksčiau aptartų operatorių su argumentais, kurių vienas -- sveikas skaičius,
+o kitas -- slankaus kablelio skaičiais, tuomet rezultatas bus slankaus kablelio::
 
    >>> 3 * 3.75 / 1.5
    7.5
    >>> 7.0 / 2
    3.5
 
-Complex numbers are also supported; imaginary numbers are written with a suffix
-of ``j`` or ``J``.  Complex numbers with a nonzero real component are written as
-``(real+imagj)``, or can be created with the ``complex(real, imag)`` function.
+Be to, galima naudoti ir kompleksinius skaičius. Menamoji dalis aprašoma
+naudojant galūnę ``j``` arba ``J``. Kompleksiniai skaičiai su nenuline realiąja
+dalimi užrašomi kaip ``(realioji+menamojiJ)``, arba pasinaudojama
+``complex(realioji, menamoji)`` funkcija.
 ::
 
    >>> 1j * 1J
@@ -112,9 +115,10 @@ of ``j`` or ``J``.  Complex numbers with a nonzero real component are written as
    >>> (1+2j)/(1+1j)
    (1.5+0.5j)
 
-Complex numbers are always represented as two floating point numbers, the real
-and imaginary part.  To extract these parts from a complex number *z*, use
-``z.real`` and ``z.imag``.   ::
+Kompleksiniai skaičiai visuomet aprašomi dviem slankaus kablelio skaičiais,
+realiąja ir menamąja dalimi. Norėdami išskirti šias dalis iš kompleksinio
+skaičiaus *z*, naudokite ``z.real`` (realiąjai daliai) ir ``z.imag``
+(menamąjai daliai).  ::
 
    >>> a=1.5+0.5j
    >>> a.real
@@ -122,10 +126,11 @@ and imaginary part.  To extract these parts from a complex number *z*, use
    >>> a.imag
    0.5
 
-The conversion functions to floating point and integer (:func:`float`,
-:func:`int` and :func:`long`) don't work for complex numbers --- there is no one
-correct way to convert a complex number to a real number.  Use ``abs(z)`` to get
-its magnitude (as a float) or ``z.real`` to get its real part. ::
+Sveikų ir slankaus kablelio skaičių konvertavimo funkcijos (``float``,
+``int`` ir ``long``) neveikia kompleksiniams skaičiams -- nes nėra vienaprasmio
+būdo to atlikti. Naudodami ``abs(z)`` gausite kompleksinio skaičiaus modulį
+(slankaus kablelio skaičiaus pavidalu). Jau minėtas ``z.real`` leis gauti
+realiąją kompleksinio skaičiaus dalį. ::
 
    >>> a=3.0+4.0j
    >>> float(a)
@@ -140,32 +145,32 @@ its magnitude (as a float) or ``z.real`` to get its real part. ::
    5.0
    >>>
 
-In interactive mode, the last printed expression is assigned to the variable
-``_``.  This means that when you are using Python as a desk calculator, it is
-somewhat easier to continue calculations, for example::
+Interaktyvioje veiksenoje, paskutinė atspausdinta reikšmė yra priskiriama
+kintamajam ``_``. Tai reiškia, kad jums naudojant Pitoną kaip skaičiuoklį,
+kai kuriuos skaičiavimus galima atlikti daug paprasčiau. ::
 
-   >>> tax = 12.5 / 100
-   >>> price = 100.50
-   >>> price * tax
+   >>> mokestis = 12.5 / 100
+   >>> kaina = 100.50
+   >>> kaina * mokestis
    12.5625
-   >>> price + _
+   >>> kaina + _
    113.0625
    >>> round(_, 2)
    113.06
    >>>
 
-This variable should be treated as read-only by the user.  Don't explicitly
-assign a value to it --- you would create an independent local variable with the
-same name masking the built-in variable with its magic behavior.
-
+Su šiuo kintamuoju turėtų būti elgiamasi lyg jis būtų skirtas tik skaitymui.
+Nepriskyrinėkite jam reikšmės --- taip sukurtumėte nesusijusį kintamąjį,
+kurio vardas neleistų prieiti prie tikrojo magiško Pitono kintamojo.
 
 .. _tut-strings:
 
-Strings
+Eilutės
 -------
 
-Besides numbers, Python can also manipulate strings, which can be expressed in
-several ways.  They can be enclosed in single quotes or double quotes::
+Pitonas dirba ne tik su skaičiais, bet ir su simbolių eilutėmis, kurias
+galima užrašyto pora būdų. Galima apsupti viengubomis arba dvigubomis
+kabutėmis::
 
    >>> 'spam eggs'
    'spam eggs'
@@ -180,43 +185,41 @@ several ways.  They can be enclosed in single quotes or double quotes::
    >>> '"Isn\'t," she said.'
    '"Isn\'t," she said.'
 
-String literals can span multiple lines in several ways.  Continuation lines can
-be used, with a backslash as the last character on the line indicating that the
-next line is a logical continuation of the line::
+Simbolių eilutės gali aprėpti porą eilučių. Naudojant pasvirąjį brūkšnelį
+eilutės gale galima nurodyti, kad toliau einanti eilutė yra šios tęsinys::
 
-   hello = "This is a rather long string containing\n\
-   several lines of text just as you would do in C.\n\
-       Note that whitespace at the beginning of the line is\
-    significant."
+   >>> hello = "This is a rather long string containing\n\
+   ... several lines of text just as you would do in C.\n\
+   ...     Note that whitespace at the beginning of the line is\
+   ... significant."
+   >>> print hello
 
-   print hello
-
-Note that newlines still need to be embedded in the string using ``\n``; the
-newline following the trailing backslash is discarded.  This example would print
-the following::
+Turėkite omenyje, kad pasvirasis brūkšnelis sujungia gretimas eilutes
+į vieną, todėl naujas eilutes reikia sudaryti naudojant ``\n``.
+Ankstesnis pavyzdys ekrane atspausdintų::
 
    This is a rather long string containing
    several lines of text just as you would do in C.
        Note that whitespace at the beginning of the line is significant.
 
-If we make the string literal a "raw" string, however, the ``\n`` sequences are
-not converted to newlines, but the backslash at the end of the line, and the
-newline character in the source, are both included in the string as data.  Thus,
-the example::
+Kita vertus, jeigu eilutę pažymime kaip „neapdorojamą“ (angl. *raw*), tuomet ``\n``
+nepradeda naujos eilutės. Neapdorojamose eilutėse pasvirieji brūkšneliai
+taip pat praranda savo reikšmę (t.y. lieka pasviraisiais brūkšneliais),
+tačiau skirstymas į eilutes nėra prarandamas -- lieka taip, kaip užrašyta:
 
    hello = r"This is a rather long string containing\n\
    several lines of text much as you would do in C."
 
    print hello
 
-would print::
+atspausdintų::
 
    This is a rather long string containing\n\
    several lines of text much as you would do in C.
 
-Or, strings can be surrounded in a pair of matching triple-quotes: ``"""`` or
-``'''``.  End of lines do not need to be escaped when using triple-quotes, but
-they will be included in the string. ::
+Dar galima eilutes apgaubti poromis trigubų kabučių: ``"""``` arba ``'''``.
+Eilučių pabaigų nereikia užrašyti specialiai, bus paliekamas toks skaidymas
+į eilutes, kaip užrašyme. ::
 
    print """
    Usage: thingy [OPTIONS]
@@ -224,64 +227,68 @@ they will be included in the string. ::
         -H hostname               Hostname to connect to
    """
 
-produces the following output::
+ekrane išvestų::
 
    Usage: thingy [OPTIONS]
         -h                        Display this usage message
         -H hostname               Hostname to connect to
 
-The interpreter prints the result of string operations in the same way as they
-are typed for input: inside quotes, and with quotes and other funny characters
-escaped by backslashes, to show the precise value.  The string is enclosed in
-double quotes if the string contains a single quote and no double quotes, else
-it's enclosed in single quotes.  (The :keyword:`print` statement, described
-later, can be used to write strings without quotes or escapes.)
+Interpretatorius atspausdina operacijų su eilutėmis rezultatus visiškai taip
+pat, kaip eilutės ir įvedamos: apgaubia kabutėmis iš šonų, o viduje eilutės
+esančios kabutės užrašomos pridedant pasvirąjį brūkšnelį. Jeigu eilutės
+viduje yra vienguba kabutė, eilutė spausdinama apgaubta dvigubomis kabutėmis.
+Kitais atvejais apgaubiama dvigubomis kabutėmis. (Komanda :keyword:`print`,
+kurią aptarsime kiek vėliau, gali būti naudojama atspausdini eilutes be
+apgaubiančių kabučių.)
 
-Strings can be concatenated (glued together) with the ``+`` operator, and
-repeated with ``*``::
+Eilutės gali būti sujungtos (pridėtos viena prie kitos) naudojant ``+``
+operatorių bei pakartotos keletą kartų su ``*`` operatoriumi::
 
-   >>> word = 'Help' + 'A'
+   >>> word = 'Pagalb' + 'a'
    >>> word
-   'HelpA'
+   'Pagalba'
    >>> '<' + word*5 + '>'
-   '<HelpAHelpAHelpAHelpAHelpA>'
+   '<PagalbaPagalbaPagalbaPagalbaPagalba>'
 
-Two string literals next to each other are automatically concatenated; the first
-line above could also have been written ``word = 'Help' 'A'``; this only works
-with two literals, not with arbitrary string expressions::
+Dvi eilutės, užrašytos viena po kitos, yra automatiškai sujungiamos. Taigi pirmąją
+eilutę pavyzdyje galėjome užrašyti tiesiog kaip ``word = 'Pagalb' 'a'``; turėkite
+omenyje, kad šitaip galima daryti tik su rankomis užrašytomis eilutėmis, o ne
+su operacijų rezultatais::
 
-   >>> 'str' 'ing'                   #  <-  This is ok
+   >>> 'str' 'ing'             #  <-  Taisyklinga
    'string'
-   >>> 'str'.strip() + 'ing'   #  <-  This is ok
+   >>> 'str'.strip() + 'ing'   #  <-  Taisyklinga
    'string'
-   >>> 'str'.strip() 'ing'     #  <-  This is invalid
+   >>> 'str'.strip() 'ing'     #  <-  Netaisyklinga
      File "<stdin>", line 1, in ?
        'str'.strip() 'ing'
                          ^
    SyntaxError: invalid syntax
 
-Strings can be subscripted (indexed); like in C, the first character of a string
-has subscript (index) 0.  There is no separate character type; a character is
-simply a string of size one.  Like in Icon, substrings can be specified with the
-*slice notation*: two indices separated by a colon. ::
+Eilutės gali būti indeksuojamos; kaip ir C kalboje, pirmasis eilutės simbolis
+atitinka indeksą 0. Pitono kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
+tai eilutė, kurios dydis -- vienas simbolis. Eilučių dalys gali būti nurodomos
+su *išpjovos notacija* (angl. *slice notation*): du indeksai atskirti dvitaškiu. ::
 
+   >>> word
+   'Pagalba'
    >>> word[4]
-   'A'
+   'l'
    >>> word[0:2]
-   'He'
+   'Pa'
    >>> word[2:4]
-   'lp'
+   'ga'
 
-Slice indices have useful defaults; an omitted first index defaults to zero, an
-omitted second index defaults to the size of the string being sliced. ::
+Išpjovos indeksai gali būti nenurodyti; jeigu praleistas pirmasis indeksas, vietoje
+jo naudojamas nulis, o praleistas antrasis indeksas tapatus eilutės ilgio nurodymui. ::
 
-   >>> word[:2]    # The first two characters
-   'He'
-   >>> word[2:]    # Everything except the first two characters
-   'lpA'
+   >>> word[:2]    # Du pirmi simboliai
+   'Pa'
+   >>> word[2:]    # Viskas, kas eina po dviejų pirmų simbolių
+   'galba'
 
-Unlike a C string, Python strings cannot be changed.  Assigning to an indexed
-position in the string results in an error::
+Priešingai negu C kalboje, Pitono eilutės negali būti keičiamos. Bandant pakeisti
+eilutės simbolį nurodant indeksą įvyksta klaida::
 
    >>> word[0] = 'x'
    Traceback (most recent call last):
@@ -292,80 +299,80 @@ position in the string results in an error::
      File "<stdin>", line 1, in ?
    TypeError: object doesn't support slice assignment
 
-However, creating a new string with the combined content is easy and efficient::
+Tačiau naujų eilučių sukūrimas sudedant turimas yra paprastas ir efektyvus::
 
-   >>> 'x' + word[1:]
-   'xelpA'
-   >>> 'Splat' + word[4]
-   'SplatA'
+   >>> 't' + word[1:]
+   'tagalba'
+   >>> 'Kav' + word[1]
+   'Kava'
 
-Here's a useful invariant of slice operations: ``s[:i] + s[i:]`` equals ``s``.
+Naudinga išpjovų operacijų savybė: ``s[:i] + s[i:]`` visuomet lygu ``s``.
 ::
 
    >>> word[:2] + word[2:]
-   'HelpA'
+   'Pagalba'
    >>> word[:3] + word[3:]
-   'HelpA'
+   'Pagalba'
 
-Degenerate slice indices are handled gracefully: an index that is too large is
-replaced by the string size, an upper bound smaller than the lower bound returns
-an empty string. ::
+Išeinantys iš ribų indeksai yra tvarkingai apdorojami. Per didelis indeksas 
+pakeičiamas eilutės ilgiu. Jeigu išpjovos pradžios indeksas didesnis už
+pabaigos indeksą, gausime tuščią eilutę. ::
 
    >>> word[1:100]
-   'elpA'
+   'Pagalba'
    >>> word[10:]
    ''
    >>> word[2:1]
    ''
 
-Indices may be negative numbers, to start counting from the right. For example::
+Kaip indeksus galima naudoti ir neigiamus skaičius, tokiu atveju skaičiuojama
+nuo dešinės. Pavyzdžiui,::
 
-   >>> word[-1]     # The last character
-   'A'
-   >>> word[-2]     # The last-but-one character
-   'p'
-   >>> word[-2:]    # The last two characters
-   'pA'
-   >>> word[:-2]    # Everything except the last two characters
-   'Hel'
+   >>> word[-1]     # Paskutinis simbolis
+   'a'
+   >>> word[-2]     # Priešpaskutinis simbolis
+   'b'
+   >>> word[-2:]    # Du paskutiniai simboliai
+   'ba'
+   >>> word[:-2]    # Viskas iki dviejų paskutinių simbolių
+   'Pagal'
 
-But note that -0 is really the same as 0, so it does not count from the right!
-::
+Pastebėkite, kad -0 iš tiesų yra tas pats kaip ir 0, todėl šiuo atveju nuo
+dešinės nėra skaičiuojama. ::
 
-   >>> word[-0]     # (since -0 equals 0)
-   'H'
+   >>> word[-0]     # (nes -0 lygu 0)
+   'P'
 
-Out-of-range negative slice indices are truncated, but don't try this for
-single-element (non-slice) indices::
+Išeinantys iš ribų neigiami indeksai yra apkarpomi, tačiau tai galioja
+tik išpjovoms::
 
    >>> word[-100:]
-   'HelpA'
-   >>> word[-10]    # error
+   'Pagalba'
+   >>> word[-10]    # klaida
    Traceback (most recent call last):
      File "<stdin>", line 1, in ?
    IndexError: string index out of range
 
-One way to remember how slices work is to think of the indices as pointing
-*between* characters, with the left edge of the first character numbered 0.
-Then the right edge of the last character of a string of *n* characters has
-index *n*, for example::
+Bus lengviau atsiminti, kaip veikia išpjovos, jeigu galvosite apie indeksus
+kaip apie rodykles *tarp* simbolių, o eilutės kraštą prieš pirmą simbolį kaip
+turintį nulinį indeksą. Tuomet eilutės, sudarytos iš *n* simbolių, dešinys
+kraštas turės indeksą *n*. ::
 
-    +---+---+---+---+---+
-    | H | e | l | p | A |
-    +---+---+---+---+---+
-    0   1   2   3   4   5
-   -5  -4  -3  -2  -1
+    +---+---+---+---+---+---+---+
+    | P | a | g | a | l | b | a |
+    +---+---+---+---+---+---+---+
+    0   1   2   3   4   5   6   7
+   -7  -6  -5  -4  -3  -2  -1
 
-The first row of numbers gives the position of the indices 0...5 in the string;
-the second row gives the corresponding negative indices. The slice from *i* to
-*j* consists of all characters between the edges labeled *i* and *j*,
-respectively.
+Pirma skaičių eilutė parodo indeksų 0..7 vietas simbolių eilutėje. Antroji
+eilutė -- atitinkamai atvaizduoja neigiamus indeksus. Tada išpjova nuo *i*
+iki *j* susideda iš visų simbolių, esančių tarp *i* ir *j*.
 
-For non-negative indices, the length of a slice is the difference of the
-indices, if both are within bounds.  For example, the length of ``word[1:3]`` is
+Neneigiamiems indeksams, išpjovos ilgis yra indeksų skirtumas (jeigu abu
+indeksai yra eilutės ribose). Tarkime, išpjovos ``word[1:3]`` ilgis yra
 2.
 
-The built-in function :func:`len` returns the length of a string::
+Standartinė funkcija :func:`len` grąžina eilutės ilgį.
 
    >>> s = 'supercalifragilisticexpialidocious'
    >>> len(s)
@@ -375,94 +382,94 @@ The built-in function :func:`len` returns the length of a string::
 .. seealso::
 
    :ref:`typesseq`
-      Strings, and the Unicode strings described in the next section, are
-      examples of *sequence types*, and support the common operations supported
-      by such types.
+      Simbolių eilutės, o taip pat ir Unikodo eilutės, aprašomos tolesniame
+      skyrelyje, yra *sekų tipai*, todėl leidžia naudoti visiems sekų tipams
+      apibrėžtas operacijas.
 
    :ref:`string-methods`
-      Both strings and Unicode strings support a large number of methods for
-      basic transformations and searching.
+      Ir paprastos eilutės, ir Unikodo eilutės pateikia daug metodų nesudėtingoms
+      teksto transformacijoms bei teksto paieškai.
 
    :ref:`new-string-formatting`
-      Information about string formatting with :meth:`str.format` is described
-      here.
+      Čia aprašoma, kaip suformuoti eilutes su :meth:`str.format` metodu.
 
    :ref:`string-formatting`
-      The old formatting operations invoked when strings and Unicode strings are
-      the left operand of the ``%`` operator are described in more detail here.
+      Čia detaliau aprašoma, kaip suformuoti eilutes naudojant senesnį metodą --
+      paprastoms arba Unikodo eilutėms kviečiamą ``%`` operatorių.
 
 
 .. _tut-unicodestrings:
 
-Unicode Strings
+Unikodo eilutės
 ---------------
 
 .. sectionauthor:: Marc-Andre Lemburg <mal@lemburg.com>
 
+Pradedant Pitono versija 2.0 programuotojams pateikiamas naujas duomenų tipas,
+skirtas tekstinių duomenų saugojimui: Unikodo objektai. Jis gali būti naudojamas
+saugoti bei operuoti Unikodu paremtais duomenimis (daugiau informacijos
+rasite http://lt.wikipedia.org/wiki/Unikodas bei http://www.unicode.org).
+Šis duomenų tipas taip pat gerai integruojasi su paprastomis simbolių
+eilutėmis; esant poreikiui tipų pakeitimas atliekamas automatiškai.
 
-Starting with Python 2.0 a new data type for storing text data is available to
-the programmer: the Unicode object. It can be used to store and manipulate
-Unicode data (see http://www.unicode.org/) and integrates well with the existing
-string objects, providing auto-conversions where necessary.
+Didelis Unikodo pranašumas yra tai, kad šis standartas aprašo visus ženklus,
+naudojamus bet kuriame dabarties bei senovės tekste. Prieš Unikodą
+būdavo apsiribojama 256-ių rašto ženklų lentelėmis. Tekstai būdavo
+susiejami su šiomis lentelėmis, kurios aprašydavo skaičių ir rašto ženklų
+sąryšį. Tai sukurdavo labai daug maišaties, ypač ten, kur tai susiję
+su programinės įrangos daugiakalbyste. Unikodas šias problemas išsprendžia
+pristatydamas vientisą kodų lentelę, kurią galima naudoti visoms rašto
+sistemoms.
 
-Unicode has the advantage of providing one ordinal for every character in every
-script used in modern and ancient texts. Previously, there were only 256
-possible ordinals for script characters. Texts were typically bound to a code
-page which mapped the ordinals to script characters. This lead to very much
-confusion especially with respect to internationalization (usually written as
-``i18n`` --- ``'i'`` + 18 characters + ``'n'``) of software.  Unicode solves
-these problems by defining one code page for all scripts.
+Unikodo eilučių sukūrimas Pitone yra ne ką sudėtingesnis negu paprastų
+eilučių::
 
-Creating Unicode strings in Python is just as simple as creating normal
-strings::
+   >>> u'Labas, pasauli!'
+   u'Labas, pasauli!'
 
-   >>> u'Hello World !'
-   u'Hello World !'
+Mažoji ``'u'`` prieš kabutę nurodo, kad aprašome Unikodo eilutę. Jeigu
+norite eilutėje naudoti specialius simbolius, galite tai padaryti naudodami
+specialią Pitono sintaksę. ::
 
-The small ``'u'`` in front of the quote indicates that a Unicode string is
-supposed to be created. If you want to include special characters in the string,
-you can do so by using the Python *Unicode-Escape* encoding. The following
-example shows how::
+   >>> u'Sveikas,\u0020pasauli!'
+   u'Sveikas, pasauli!'
 
-   >>> u'Hello\u0020World !'
-   u'Hello World !'
+Čia užrašyta seka ``\u0020`` reiškia Unikodo simbolio, kurio kodas 0x0020
+(o tai yra tarpo simbolis), įterpimą eilutėje.
 
-The escape sequence ``\u0020`` indicates to insert the Unicode character with
-the ordinal value 0x0020 (the space character) at the given position.
+Visi kiti simboliai interpretuojami pagal tai, kokį Unikodo kodą jie
+atitinka. Jeigu jūs užrašote eilutes naudodami Latin-1 koduotę (turinčią
+daugumą vakarų Europos kalboms skirtų simbolių), tikrai įvertinsite tai,
+kad pirmi 256 Unikodo rašmenys sutampa su Latin-1 kodų lentele.
 
-Other characters are interpreted by using their respective ordinal values
-directly as Unicode ordinals.  If you have literal strings in the standard
-Latin-1 encoding that is used in many Western countries, you will find it
-convenient that the lower 256 characters of Unicode are the same as the 256
-characters of Latin-1.
+Ypatingiems poreikiams galima naudoti neapdorojamas (angl. *raw*) eilutes --
+visai taip pat, kaip ir paprastų eilučių atveju. Norėdami tokias 
+eilutes įvesti, prieš atidarančią kabutę parašykite 'ur'. Tuomet ``\uXXXX``
+užrašymas bus apdorojamas tik tuomet, kai pasvirųjų brūkšnelių skaičius
+prieš 'u' yra nelyginis. ::
 
-For experts, there is also a raw mode just like the one for normal strings. You
-have to prefix the opening quote with 'ur' to have Python use the
-*Raw-Unicode-Escape* encoding. It will only apply the above ``\uXXXX``
-conversion if there is an uneven number of backslashes in front of the small
-'u'. ::
+   >>> ur'Sveikas,\u0020pasauli!'
+   u'Sveikas, pasauli!'
+   >>> ur'Sveikas,\\u0020pasauli!'
+   u'Sveikas,\\\\u0020pasauli!'
 
-   >>> ur'Hello\u0020World !'
-   u'Hello World !'
-   >>> ur'Hello\\u0020World !'
-   u'Hello\\\\u0020World !'
+Šis režimas naudingiausias tada, kai reikia įvesti daug pasvirųjų brūkšnelių,
+pavyzdžiui reguliariuosius reiškinius (angl. *regular expression*).
 
-The raw mode is most useful when you have to enter lots of backslashes, as can
-be necessary in regular expressions.
-
-Apart from these standard encodings, Python provides a whole set of other ways
-of creating Unicode strings on the basis of a known encoding.
+Be šių užrašymo būdų, Pitonas pateikia ir daugiau būdų Unikodo eilutėms sukurti
+tuomet, kai žinoma teksto koduotė.
 
 .. index:: builtin: unicode
 
-The built-in function :func:`unicode` provides access to all registered Unicode
-codecs (COders and DECoders). Some of the more well known encodings which these
-codecs can convert are *Latin-1*, *ASCII*, *UTF-8*, and *UTF-16*. The latter two
-are variable-length encodings that store each Unicode character in one or more
-bytes. The default encoding is normally set to ASCII, which passes through
-characters in the range 0 to 127 and rejects any other characters with an error.
-When a Unicode string is printed, written to a file, or converted with
-:func:`str`, conversion takes place using this default encoding. ::
+Standartinė funkcija :func:`unicode` moka iškoduoti ir užkoduoti daug tekstų
+koduočių. Keletas žinomesnių yra *Latin-1*, *ASCII*, *UTF-8*, ir *UTF-16*.
+Dvi paskutinės koduotės yra vadinamos *kintamo ilgio koduotėmis*, kadangi
+naudojant šias koduotes vienas Unikodo simbolis gali būti paverčiamas vienu
+arba daugiau baitu. Pagal nutylėjimą dažniausiai naudojama ASCII koduotė,
+kuri turi 127 simbolius, atitinkančius pirmus 127 Unikodo simbolius. Ši
+koduotė pranešdama apie klaidą atmes visus kitus simbolius. Spausdinant
+Unikodo eilutę ekrane arba faile, nauodojama funkcija :func:`str`, kuri
+konvertuoja eilutę naudodama numatytąją teksto koduotę. ::
 
    >>> u"abc"
    u'abc'
@@ -475,16 +482,17 @@ When a Unicode string is printed, written to a file, or converted with
      File "<stdin>", line 1, in ?
    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2: ordinal not in range(128)
 
-To convert a Unicode string into an 8-bit string using a specific encoding,
-Unicode objects provide an :func:`encode` method that takes one argument, the
-name of the encoding.  Lowercase names for encodings are preferred. ::
+Galite paversti Unikodo eilutę į 8 bitų simbolių eilutę nurodydami norimą
+teksto koduotę su :func:`encode` metodu, kuriam būtinas vienas parametras --
+koduotės pavadinimas. Teksto koduočių vardus rekomenduojama užrašyti
+mažosiomis raidėmis. ::
 
    >>> u"äöü".encode('utf-8')
    '\xc3\xa4\xc3\xb6\xc3\xbc'
 
-If you have data in a specific encoding and want to produce a corresponding
-Unicode string from it, you can use the :func:`unicode` function with the
-encoding name as the second argument. ::
+Jeigu jūs turite duomenis žinomoje teksto koduotėje ir norite iš jų gauti
+Unikodo eilutę, galite naudoti :func:`unicode` funkciją, kartu nurodydami
+koduotės pavadinimą. ::
 
    >>> unicode('\xc3\xa4\xc3\xb6\xc3\xbc', 'utf-8')
    u'\xe4\xf6\xfc'
@@ -492,20 +500,20 @@ encoding name as the second argument. ::
 
 .. _tut-lists:
 
-Lists
------
+Sąrašai
+-------
 
-Python knows a number of *compound* data types, used to group together other
-values.  The most versatile is the *list*, which can be written as a list of
-comma-separated values (items) between square brackets.  List items need not all
-have the same type. ::
+Pitonas pateikia daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
+Lanksčiausias iš tokių tipų yra *sąrašas*, kuris aprašomas kaip laužtiniais
+skliaustais apgaubtas sąrašas kableliais atskirtų elementų. Sąrašo elementai
+neprivalo visi būti to paties tipo. ::
 
    >>> a = ['spam', 'eggs', 100, 1234]
    >>> a
    ['spam', 'eggs', 100, 1234]
 
-Like string indices, list indices start at 0, and lists can be sliced,
-concatenated and so on::
+Kaip ir simbolių eilučių indeksai, sąrašų indeksai prasideda nuo 0, sąrašai gali
+būti išpjauti, sujungti ir taip toliau::
 
    >>> a[0]
    'spam'
@@ -520,8 +528,8 @@ concatenated and so on::
    >>> 3*a[:3] + ['Boo!']
    ['spam', 'eggs', 100, 'spam', 'eggs', 100, 'spam', 'eggs', 100, 'Boo!']
 
-Unlike strings, which are *immutable*, it is possible to change individual
-elements of a list::
+Priešingai negu simbolių eilutės, kurios yra nekintamos, sąrašo elementus galima
+pakeisti::
 
    >>> a
    ['spam', 'eggs', 100, 1234]
@@ -529,38 +537,38 @@ elements of a list::
    >>> a
    ['spam', 'eggs', 123, 1234]
 
-Assignment to slices is also possible, and this can even change the size of the
-list or clear it entirely::
+Išpjovoms (angl. *slice*) taip pat galima priskirti reikšmes, net jeigu tai pakeičia
+sąrašo dydį arba jį ištuština::
 
-   >>> # Replace some items:
+   >>> # Pakeiskime porą elementų:
    ... a[0:2] = [1, 12]
    >>> a
    [1, 12, 123, 1234]
-   >>> # Remove some:
+   >>> # Panaikinkime keletą:
    ... a[0:2] = []
    >>> a
    [123, 1234]
-   >>> # Insert some:
+   >>> # Įterpkime:
    ... a[1:1] = ['bletch', 'xyzzy']
    >>> a
    [123, 'bletch', 'xyzzy', 1234]
-   >>> # Insert (a copy of) itself at the beginning
+   >>> # Įterpkime sąrašo kopiją į paties pradžią
    >>> a[:0] = a
    >>> a
    [123, 'bletch', 'xyzzy', 1234, 123, 'bletch', 'xyzzy', 1234]
-   >>> # Clear the list: replace all items with an empty list
+   >>> # Ištuštinkime sąrašą: pakeiskime visus elementus tuščiu sąrašu
    >>> a[:] = []
    >>> a
    []
 
-The built-in function :func:`len` also applies to lists::
+Standartinė funkcija :func:`len` tinka ir sąrašams::
 
    >>> a = ['a', 'b', 'c', 'd']
    >>> len(a)
    4
 
-It is possible to nest lists (create lists containing other lists), for
-example::
+Galima sąrašus sudėti į sąrašus (sukurti sąrašus, kurių elementai yra
+kiti sąrašai), pavyzdžiui::
 
    >>> q = [2, 3]
    >>> p = [1, q, 4]
@@ -570,27 +578,27 @@ example::
    [2, 3]
    >>> p[1][0]
    2
-   >>> p[1].append('xtra')     # See section 5.1
+   >>> p[1].append('xtra')     # Žiūrėkite skyrių 5.1
    >>> p
    [1, [2, 3, 'xtra'], 4]
    >>> q
    [2, 3, 'xtra']
 
-Note that in the last example, ``p[1]`` and ``q`` really refer to the same
-object!  We'll come back to *object semantics* later.
+Turėkite omenyje, kad paskutiniame pavyzdyje ``p[1]`` ir ``q`` iš tiesų
+nurodo tą patį objektą! *Objektų semantiką* aptarsime vėliau.
 
 
 .. _tut-firststeps:
 
-First Steps Towards Programming
-===============================
+Pirmieji žingsniai link programavimo
+====================================
 
-Of course, we can use Python for more complicated tasks than adding two and two
-together.  For instance, we can write an initial sub-sequence of the *Fibonacci*
-series as follows::
+Be abejonės, Pitonas gali būti naudojamas daug sudėtingesniems darbams negu
+apskaičiuoti du plius du. Pavyzdžiui, galime apskaičiuoti pradinius *Fibonačio*
+sekos narius::
 
-   >>> # Fibonacci series:
-   ... # the sum of two elements defines the next
+   >>> # Fibonačio seka:
+   ... # dviejų narių suma apibrėžia tolesnį narį
    ... a, b = 0, 1
    >>> while b < 10:
    ...     print b
@@ -603,43 +611,45 @@ series as follows::
    5
    8
 
-This example introduces several new features.
+Šis pavyzdys pristatė porą naujų dalykų.
 
-* The first line contains a *multiple assignment*: the variables ``a`` and ``b``
-  simultaneously get the new values 0 and 1.  On the last line this is used again,
-  demonstrating that the expressions on the right-hand side are all evaluated
-  first before any of the assignments take place.  The right-hand side expressions
-  are evaluated  from the left to the right.
+* Pirmoje eilutėje naudojamas *priskyrimas keliems kintamiesiems*: kintamieji
+  ``a`` ir ``b`` tuo pat metu įgauna reikšmes; atitinkamai 0 ir 1. Panašus
+  priskyrimas naudojamas ir paskutinėje eilutėje, kas parodo, kad visos dešinės
+  priskyrimo pusės išraiškos apskaičiuojamos anksčiau nei atliekamas bet koks
+  priskyrimas.  Dešinės pusės apskaičiavimas atliekamas iš kairės į dešinę.
 
-* The :keyword:`while` loop executes as long as the condition (here: ``b < 10``)
-  remains true.  In Python, like in C, any non-zero integer value is true; zero is
-  false.  The condition may also be a string or list value, in fact any sequence;
-  anything with a non-zero length is true, empty sequences are false.  The test
-  used in the example is a simple comparison.  The standard comparison operators
-  are written the same as in C: ``<`` (less than), ``>`` (greater than), ``==``
-  (equal to), ``<=`` (less than or equal to), ``>=`` (greater than or equal to)
-  and ``!=`` (not equal to).
+* Ciklo konstrukcija :keyword:`while` vykdoma tol, kol sąlyga yra teisinga
+  (šiuo atveju: ``b < 10``). Pitone, panašiai kaip ir C, bet kuris nelygus
+  nuliui skaičius laikomas *teisingu*; nulis yra *klaidingas*. Sąlyga taip
+  taip pat gali būti eilutės arba sąrašo reikšmė, arba apibendrinant: bet
+  kokia seka. Tuščia seka yra *klaidinga*; netuščia (turinti bent vieną
+  elementą) yra *teisinga*. Pavyzdyje naudojama sąlyga yra paprastas palyginimas.
+  Standartiniai palyginimo operatoriai užrašomi kaip ir C kalboje: ``<``
+  (mažiau negu), ``>`` (daugiau negu), ``==`` (lygu), ``<=`` (mažiau arba lygu),
+  ``>=`` (daugiau arba lygu) bei ``!=`` (nelygu).
 
-* The *body* of the loop is *indented*: indentation is Python's way of grouping
-  statements.  Python does not (yet!) provide an intelligent input line editing
-  facility, so you have to type a tab or space(s) for each indented line.  In
-  practice you will prepare more complicated input for Python with a text editor;
-  most text editors have an auto-indent facility.  When a compound statement is
-  entered interactively, it must be followed by a blank line to indicate
-  completion (since the parser cannot guess when you have typed the last line).
-  Note that each line within a basic block must be indented by the same amount.
+* Vidinis ciklo kodas yra *įtrauktas* -- tai Pitono būdas sugrupuoti kodo sakinius.
+  Pitonas nesuteikia (kol kas) gudraus eilutės redagavimo galimybės, taigi tarpus
+  arba tabuliacijos ženklus reikia eilutės pradžioje įterpti rankomis. Praktikoje,
+  visgi, dauguma tekstų redaktorių, naudojamų rašyti Pitono kodą, pateikia
+  galimybę automatiškai lygiuoti kodą. Kai sudėtinis kodo sakinys įvedamas
+  interaktyvioje veiksenoje, po jo turi sekti tuščia eilutė tam, kad Pitonas
+  suprastų, jog jūs užrašėte paskutinę eilutę. Taip pat turėkite omenyje, kad
+  visos to paties kodo bloko eilutės privalo būti įtrauktos vienodu skaičiumi
+  tarpo ženklų.
 
-* The :keyword:`print` statement writes the value of the expression(s) it is
-  given.  It differs from just writing the expression you want to write (as we did
-  earlier in the calculator examples) in the way it handles multiple expressions
-  and strings.  Strings are printed without quotes, and a space is inserted
-  between items, so you can format things nicely, like this::
+* :keyword:`print` komanda atspausdina duotos išraiškos reikšmę. Tai skiriasi nuo
+  paprasčiausio išraiškos užrašymo prie Pitono raginimo tuo, kad :keyword:`print`
+  gali atspausdinti daugiau negu vieną reikšmę. Taip pat ji spausdina eilutes
+  be kabučių ženklų, o pateikus daugiau negu vieną išraišką, spausdinant tarp
+  jų įterpiami tarpo simboliai::
 
      >>> i = 256*256
      >>> print 'The value of i is', i
      The value of i is 65536
 
-  A trailing comma avoids the newline after the output::
+  Gale parašytas kablelis nurodo atspausdinus reikšmes nepradėti naujos eilutės::
 
      >>> a, b = 0, 1
      >>> while b < 1000:
@@ -648,5 +658,5 @@ This example introduces several new features.
      ...
      1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
 
-  Note that the interpreter inserts a newline before it prints the next prompt if
-  the last line was not completed.
+  Tačiau interpretatorius įterps naują eilutę prieš pateikdamas raginimą, jei
+  ankstesnė eilutė nebuvo užbaigta.

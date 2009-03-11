@@ -1,48 +1,46 @@
 .. _tut-structures:
 
-***************
-Data Structures
-***************
+******************
+Duomenų struktūros
+******************
 
-This chapter describes some things you've learned about already in more detail,
-and adds some new things as well.
-
+Šis skyrius pateiks daugiau informacijos apie duomenų struktūras, su kuriomis
+buvo glaustai susipažinta ankstesniuose skyreliuose. Taip pat čia rasite
+ir naujų dalykų.
 
 .. _tut-morelists:
 
-More on Lists
-=============
+Daugiau apie sąrašus
+====================
 
-The list data type has some more methods.  Here are all of the methods of list
-objects:
-
+Sąrašo duomenų tipas pateikia naudingų metodų. Štai jie:
 
 .. method:: list.append(x)
    :noindex:
 
-   Add an item to the end of the list; equivalent to ``a[len(a):] = [x]``.
+   Prideda elementą ``x`` į sąrašo pabaigą. Tai ekvivalentu ``a[len(a):] = [x]``.
 
 
 .. method:: list.extend(L)
    :noindex:
 
-   Extend the list by appending all the items in the given list; equivalent to
-   ``a[len(a):] = L``.
+   Išplečia sąrašą kitu duotu sąrašu -- pridėdamas visus duoto sąrašo ``L```
+   elementus į sąrašo pabaigą. Tai tas pats kaip ir ``a[len(a):] = L``.
 
 
 .. method:: list.insert(i, x)
    :noindex:
 
-   Insert an item at a given position.  The first argument is the index of the
-   element before which to insert, so ``a.insert(0, x)`` inserts at the front of
-   the list, and ``a.insert(len(a), x)`` is equivalent to ``a.append(x)``.
+   Įterpia elementą nurodytoje sąrašo pozicijoje. Pirmasis elementas -- indeksas
+   elemento, prieš kurį norime įterpti, taigi ``a.insert(0, x)`` įterpia
+   į sąrašo pradžią, o ``a.insert(len(a), x)`` tapatus ``a.append(x)``.
 
 
 .. method:: list.remove(x)
    :noindex:
 
-   Remove the first item from the list whose value is *x*. It is an error if there
-   is no such item.
+   Pašalina iš sąrašo pirmąjį elementą, kuris lygus *x*. Jeigu tokio elemento nėra,
+   įvyksta klaida.
 
 
 .. method:: list.pop([i])
