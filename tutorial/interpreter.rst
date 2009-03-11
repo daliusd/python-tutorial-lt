@@ -11,240 +11,239 @@ Interpretatoriaus paleidimas
 ============================
 
 Pitono interpretatorius dažniausiai instaliuojamas į :file:`/usr/local/bin/python`;
-pridėję :file:`/usr/local/bin` į savo
-Unix šelo paieškos kelią, galėsite Pitoną paleisti įrašę komandą ::
+pridėję :file:`/usr/local/bin` į savo Unix apvalkalo (shell) paieškos kelią,
+galėsite Pitoną paleisti įrašę komandą ::
 
    python
 
-Kadangi direktorija, kurioje „gyvena“ interpretatorius, yra pasirenkama instaliacijos
-metu, aukščiau minėtas kelias nebūtinai yra teisingas; pasitikslinkite detales su savo
-administratoriumi.  (Pvz.: :file:`/usr/local/python` yra populiari alternatyva.)
+Kadangi direktorija, kurioje „gyvena“ interpretatorius, yra pasirenkama
+instaliacijos metu, aukščiau minėtas kelias nebūtinai yra teisingas;
+pasitikslinkite detales su savo administratoriumi (pvz.:
+:file:`/usr/local/python` yra populiari alternatyva.)
 
-Windows sistemose, Pitono instaliacija sukuriama kataloge
-:file:`C:\\Python26`, tačiau šis nustatymas gali būti pakeistas instaliacijos metu.
-Norėdami pridėti šią direktoriją į paieškos kelią, galite įrašyti tokią komandą į
+Windows sistemose, Pitono instaliacija sukuriama kataloge :file:`C:\\Python26`,
+tačiau šis nustatymas gali būti pakeistas instaliacijos metu. Norėdami pridėti
+šią direktoriją į paieškos kelią, galite įrašyti tokią komandą į
 DOS terminalą::
 
    set path=%path%;C:\python26
 
-Įrašę failo pabaigos simbolį (:kbd:`Control-D` Unix sistemose, :kbd:`Control-Z` Windows)
-Pitono komandinėje eilutėje išjungsite interpretatorių. Jei tai nesuveikia, galite išjungti
-interpretatorių surinkę : ``import sys; sys.exit()``.
+Įrašę failo pabaigos simbolį (:kbd:`Control-D` Unix sistemose, :kbd:`Control-Z`
+Windows) Pitono komandinėje eilutėje išjungsite interpretatorių. Jei tai
+nesuveikia, galite išjungti interpretatorių surinkę : ``import sys; sys.exit()``.
 
 Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Pitoną
 instaliavęs žmogus galėjo pridėti GNU readline bibliotekos palaikymą, taip
 įgalindamas vartotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
 Turbūt greičiausias būdas patikrinti ar komandinės eilutės redagavimas yra
-palaikomas - surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą - redagavimas
-įjungtas; įvadą į klavišus rasite priede: :ref:`tut-interacting` .  Jei pyptelėjimo nesigirdi
-arba išvedama ``^P``, redagavimo palaikymas neįjungtas; galėsite tik trinti simbolius, toje
-pačioje eilutėje, naudodami Backspace klavišą.
+palaikomas - surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą -
+redagavimas įjungtas; įvadą į klavišus rasite priede: :ref:`tut-interacting`.
+Jei pyptelėjimo nesigirdi arba išvedama ``^P``, redagavimo palaikymas
+neįjungtas; galėsite tik trinti simbolius, toje pačioje eilutėje, naudodami
+Backspace klavišą.
 
-The interpreter operates somewhat like the Unix shell: when called with standard
-input connected to a tty device, it reads and executes commands interactively;
-when called with a file name argument or with a file as standard input, it reads
-and executes a *script* from that file.
+Interpretatoriaus darbas šiek tiek primena Unix apvalkalą: kai interpretatorius
+iškviečiamas prijungus standartinę įvestį prie TTY įrenginio, jis nuskaito ir
+vykdo komandas interaktyviai; kai iškviečiamas su bylos pavadinimo parametru
+arba byla pateikiama per standartinę įvestį, interpretatorius nuskaito ir įvykdo
+*scenarijų* esantį byloje.
 
-A second way of starting the interpreter is ``python -c command [arg] ...``,
-which executes the statement(s) in *command*, analogous to the shell's
-:option:`-c` option.  Since Python statements often contain spaces or other
-characters that are special to the shell, it is usually advised to quote
-*command* in its entirety with single quotes.
+Antras būdas paleisti interpretatorių yra ``python -c komanda [argumentai] ...``.
+Šiuo būdu paleistas interpretatorius įvykdys sakinius pateiktus *komanda*
+parametre, analogiškai apvalkalo :option:`-c` opcijai.  Kadangi Pitono
+sakiniuose dažnai būna tarpų ar kitų simbolių, kuriuos apvalkalas laiko
+specialiais, patartina visą *komandos* turinį apgaubti apostrofais.
 
-Some Python modules are also useful as scripts.  These can be invoked using
-``python -m module [arg] ...``, which executes the source file for *module* as
-if you had spelled out its full name on the command line.
+Kai kurie Pitono moduliai yra naudingi kaip scenarijai. Jie gali būti iškviesti
+su ``python -m modulis [argumentai] ...``. Ši eilutė įvykdys bylos *modulis*
+turinį taip, lyg būtumėte parašę tos bylos pilną vardą komandinėje eilutėje.
 
-Note that there is a difference between ``python file`` and ``python <file``.
-In the latter case, input requests from the program, such as calls to
-:func:`input` and :func:`raw_input`, are satisfied from *file*.  Since this file
-has already been read until the end by the parser before the program starts
-executing, the program will encounter end-of-file immediately.  In the former
-case (which is usually what you want) they are satisfied from whatever file or
-device is connected to standard input of the Python interpreter.
+Atkreipkite dėmesį, kad ``python byla`` ir ``python <byla`` skiriasi. Pastaruoju
+atveju, įvesties reikalavimas, pavyzdžiui kviečiant input() ar raw_input(), yra
+užpildomas iš *bylos*. Kadangi byla yra nuskaitoma dar prieš pradedant vykdyti
+scenarijų, bylos pabaiga bus rasta iškart. Pirmu atveju (kurio jūs dažniausiai
+ir norite), duomenys bus imami iš įrenginio, kuris yra sujungtas su standartine
+interpretatoriaus įvestimi.
 
-When a script file is used, it is sometimes useful to be able to run the script
-and enter interactive mode afterwards.  This can be done by passing :option:`-i`
-before the script.  (This does not work if the script is read from standard
-input, for the same reason as explained in the previous paragraph.)
-
+Kartais, kai vykdomas scenarijus, gali būti naudinga persijungti į interaktyvų
+rėžimą scenarijaus vykdymo pabaigoje. Tai galima padaryti su :option:`-i`
+parinktimi prieš scenarijų. (Šis būdas neveikia, jei scenarijus yra nuskaitomas
+iš standartinės įvesties dėl toks pačios priežasties, kuri aprašyta praėjusioje
+pastraipoje.)
 
 .. _tut-argpassing:
 
-Argument Passing
-----------------
+Argumentų perdavimas
+--------------------
 
-When known to the interpreter, the script name and additional arguments
-thereafter are passed to the script in the variable ``sys.argv``, which is a
-list of strings.  Its length is at least one; when no script and no arguments
-are given, ``sys.argv[0]`` is an empty string.  When the script name is given as
-``'-'`` (meaning  standard input), ``sys.argv[0]`` is set to ``'-'``.  When
-:option:`-c` *command* is used, ``sys.argv[0]`` is set to ``'-c'``.  When
-:option:`-m` *module* is used, ``sys.argv[0]``  is set to the full name of the
-located module.  Options found after  :option:`-c` *command* or :option:`-m`
-*module* are not consumed  by the Python interpreter's option processing but
-left in ``sys.argv`` for  the command or module to handle.
-
+Kai pateikti, scenarijaus pavadinimas ir kiti argumentai yra perduodami
+scenarijui, naudojant ``sys.argv`` kintamąjį, eilučių sąrašo (list of strings)
+pavidalu. Kintamojo ilgis yra ne mažesnis už vieną; kai scenarijus ir
+argumentai neperduodami, ``sys.argv[0]`` bus tuščia eilutė. Kai scenarijaus
+vardas yra pateiktas kaip ``-`` (kas reiškia standartinę įvestį), ``sys.argv[0]``
+įgauna ``'-'`` reikšmę. Kai naudojama :option:`-c` *komanda*, ``sys.argv[0]``
+reikšmė bus ``'-c'``. Jei naudojamas :option:`-m` *modulis*, ``sys.argv[0]``
+reikšmė bus pilnas modulio vardas. Parinktys rastos po :option:`-c` *komanda*
+ar :option:`-m` *modulis* nėra apdorojamos interpretatoriaus, jos paliekamos
+``sys.argv`` sąraše iš kur, reikalui esant, jas gali pasiekti komanda ar modulis.
 
 .. _tut-interactive:
 
-Interactive Mode
-----------------
+Interaktyvus rėžimas
+--------------------
 
-When commands are read from a tty, the interpreter is said to be in *interactive
-mode*.  In this mode it prompts for the next command with the *primary prompt*,
-usually three greater-than signs (``>>>``); for continuation lines it prompts
-with the *secondary prompt*, by default three dots (``...``). The interpreter
-prints a welcome message stating its version number and a copyright notice
-before printing the first prompt::
+Kai komandos yra nuskaitomos iš TTY įrenginio, sakome, kad interpretatorius yra
+interaktyviajame rėžime. Šiame rėžime *pirminis raginimas* (dažniausiai trys
+daugiau-už ženklai ```>>>```) reiškia, kad interpretatorius yra pasiruošęs
+nuskaityti sekančią komandą; antrinis raginimas (trys taškai ``...``) reiškia,
+kad laukiamas prieš tai įvestos komandos pratęsimas. Prieš atspausdindamas
+pirmąjį raginimą, interpretatorius parodo pasisveikinimo žinutę, kurioje
+nurodoma interpretatoriaus versija bei autorinių teisių pranešimas::
 
    python
    Python 2.6 (#1, Feb 28 2007, 00:02:06)
    Type "help", "copyright", "credits" or "license" for more information.
    >>>
 
-Continuation lines are needed when entering a multi-line construct. As an
-example, take a look at this :keyword:`if` statement::
+Tęsiamosios eilutės yra naudojamos įvedinėjant komandas užimančias daugiau nei
+vieną eilutę. Kaip pavyzdį galime naudoti šį :keyword:`if` sąlygos teiginį::
 
-   >>> the_world_is_flat = 1
-   >>> if the_world_is_flat:
-   ...     print "Be careful not to fall off!"
+   >>> pasaulis_yra_plokscias = 1
+   >>> if pasaulis_yra_plokscias:
+   ...     print "Atsargiai, nenukriskite!"
    ...
-   Be careful not to fall off!
+   Atsargiai, nenukriskite!
 
 
 .. _tut-interp:
 
-The Interpreter and Its Environment
-===================================
+Interpretatorius ir jo aplinka
+==============================
 
 
 .. _tut-error:
 
-Error Handling
---------------
+Klaidų valdymas
+---------------
 
-When an error occurs, the interpreter prints an error message and a stack trace.
-In interactive mode, it then returns to the primary prompt; when input came from
-a file, it exits with a nonzero exit status after printing the stack trace.
-(Exceptions handled by an :keyword:`except` clause in a :keyword:`try` statement
-are not errors in this context.)  Some errors are unconditionally fatal and
-cause an exit with a nonzero exit; this applies to internal inconsistencies and
-some cases of running out of memory.  All error messages are written to the
-standard error stream; normal output from executed commands is written to
-standard output.
+Kai įvyksta klaida, interpretatorius atspausdina klaidos pranešimą ir dėklo
+pėdsaką (stack trace). Jei klaida įvyksta interaktyviajame rėžime,
+interpretatorius tiesiog grįžta į pirminį raginimą; jei įvestis buvo nuskaityta
+iš bylos, interpretatorius atspausdins dėklo pėdsaką ir baigs darbą grąžindamas
+atitinkamą (nelygų nuliui) būsenos kodą. Išimtys suvaldytos naudojant
+:keyword:`except` sakinį :keyword:`try` teiginyje, šiame kontekste nėra laikomos
+klaidomis. Kai kurios klaidos yra besąlygiškai lemtingos ir priverčia
+interpretatorių baigti darbą su klaidos būsena nelygia nuliui; prie tokių klaidų
+priskiriami vidiniai neatitikimai bei kai kurie atminties trūkumo atvejai. Visi
+klaidų pranešimai yra surašomi į standartinį klaidų srautą; įprastas tekstas,
+grąžinamas vykdomų komandų, yra rašomas į standartinę išvestį.
 
-Typing the interrupt character (usually Control-C or DEL) to the primary or
-secondary prompt cancels the input and returns to the primary prompt. [#]_
-Typing an interrupt while a command is executing raises the
-:exc:`KeyboardInterrupt` exception, which may be handled by a :keyword:`try`
-statement.
-
+Įrašę pertraukties simbolį (paprastai Control-C arba DEL) į pirminį arba antrinį
+raginimą, nutrauksite įvestį ir interpretatorius grįš į pirminį raginimą.
+[#]_ Jei pertraukties simbolis įrašomas kol vykdoma komanda, interpretatorius
+sukelia išimtį, kuri gali būti suvaldyka :keyword:`try` teiginiu.
 
 .. _tut-scripts:
 
-Executable Python Scripts
--------------------------
+Pitono vykdomieji scenarijai
+----------------------------
 
-On BSD'ish Unix systems, Python scripts can be made directly executable, like
-shell scripts, by putting the line ::
+BSD tipo Unix sistemose, Pitono scenarijai gali būti padaryti vykdomaisiais,
+taip pat, kaip apvalkalo scenarijai. Tam bylos pradžioje reikia pridėti tokią
+eilutę::
 
    #! /usr/bin/env python
 
-(assuming that the interpreter is on the user's :envvar:`PATH`) at the beginning
-of the script and giving the file an executable mode.  The ``#!`` must be the
-first two characters of the file.  On some platforms, this first line must end
-with a Unix-style line ending (``'\n'``), not a Windows (``'\r\n'``) line
-ending.  Note that the hash, or pound, character, ``'#'``, is used to start a
-comment in Python.
+Kad ši eilutė veiktų, interpretatorius turi būti vartotojo kelyje
+(:envvar:`PATH`), o bylai turi būti suteikta vykdymo būsena. Pirmi du simboliai
+byloje privalo būti ``#!``. Kai kuriose platformose pirmoji eilutė turi baigtis
+Unix tipo eilutės pabaigos simboliu (``'\n'``), o ne Windows (``'\r\n'``).
+Atkreipkite dėmesį, kad grotelės ``#`` Pitone yra naudojamos kaip komentaro
+pradžios simbolis.
 
-The script can be given an executable mode, or permission, using the
-:program:`chmod` command::
+Scenarijui vykdymo būseną galite suteikti pasinaudoję :program:`chmod` komanda::
 
-   $ chmod +x myscript.py
+   $ chmod +x scenarijus.py
 
-On Windows systems, there is no notion of an "executable mode".  The Python
-installer automatically associates ``.py`` files with ``python.exe`` so that
-a double-click on a Python file will run it as a script.  The extension can
-also be ``.pyw``, in that case, the console window that normally appears is
-suppressed.
+Windows sistemose nėra „vykdomosios būsenos“ žymėjimo. Pitono diegimo programa
+automatiškai susieja ``.py`` rinkmenas su ``python.exe``, todėl spragtelėjus
+du kartus ant Pitono bylos, ji bus įvykdyta kaip scenarijus. Byla taip pat
+gali baigtis ``.pyw`` plėtiniu. Tokiu atveju terminalo langas, nebus rodomas,
+kaip įprasta.
 
+Išeities teksto koduotė
+-----------------------
 
-Source Code Encoding
---------------------
+ASCII nėra vienintelis kodavimas, kuris gali būti naudojamas Pitono išeities
+tekstuose. Geriausias būdas nurodyti savo koduotę yra įdėti dar vieną specialų
+komentarą iš karto po ``#!`` eilute:
 
-It is possible to use encodings different than ASCII in Python source files. The
-best way to do it is to put one more special comment line right after the ``#!``
-line to define the source file encoding::
+   # -*- coding: koduote -*-
 
-   # -*- coding: encoding -*-
+Su šia deklaracija, visi simboliai byloje bus traktuojami, kaip turintys
+*koduotė* kodavimą, be to galėsite rašyti Unikodo simbolius tiesiogiai
+pasirinktoje koduotėje. Galimų koduočių sąrašą galite rasti Pitono bibliotekų
+rodyklėje, :mod:`codecs` skiltyje.
 
-
-With that declaration, all characters in the source file will be treated as
-having the encoding *encoding*, and it will be possible to directly write
-Unicode string literals in the selected encoding.  The list of possible
-encodings can be found in the Python Library Reference, in the section on
-:mod:`codecs`.
-
-For example, to write Unicode literals including the Euro currency symbol, the
-ISO-8859-15 encoding can be used, with the Euro symbol having the ordinal value
-164.  This script will print the value 8364 (the Unicode codepoint corresponding
-to the Euro symbol) and then exit::
+Pavyzdys: norėdami rašyti Unikodo simbolius įskaitant ir Euro valiutos simbolį,
+galite naudoti ISO-8859-15 kodavimą, kur Euro simbolio eilės numeris yra 164.
+Šis scenarijus atspausdins reikšmę 8364 (Kodas atitinkantis Euro simbolį Unikode)
+ir baigs darbą::
 
    # -*- coding: iso-8859-15 -*-
 
-   currency = u"€"
-   print ord(currency)
+   valiuta = u"€"
+   print ord(valiuta)
 
-If your editor supports saving files as ``UTF-8`` with a UTF-8 *byte order mark*
-(aka BOM), you can use that instead of an encoding declaration. IDLE supports
-this capability if ``Options/General/Default Source Encoding/UTF-8`` is set.
-Notice that this signature is not understood in older Python releases (2.2 and
-earlier), and also not understood by the operating system for script files with
-``#!`` lines (only used on Unix systems).
+Jei jūsų teksto redaktorius turi galimybę išsaugoti bylas kaip ``UTF-8`` su UTF-8
+*baitų eiliškumo žyme* (byte order mark, BOM), tuomet galite naudoti šį būdą vietoj
+koduotės deklaracijos. IDLE redaktorius turi tokią galimybę, jei pasirinktas
+``Options/General/Default Source Encoding/UTF-8`` nustatymas. Atkreipkite dėmesį,
+kad senesnės Pitono laidos (2.2 ir ankstesnės) neatpažįsta šio parašo. Taip pat
+operacinės sistemos neatpažįsta BOM scenarijuose, kurie prasideda su ``#!`` eilute
+(naudojama tik Unix sistemose).
 
-By using UTF-8 (either through the signature or an encoding declaration),
-characters of most languages in the world can be used simultaneously in string
-literals and comments.  Using non-ASCII characters in identifiers is not
-supported. To display all these characters properly, your editor must recognize
-that the file is UTF-8, and it must use a font that supports all the characters
-in the file.
+Naudojant UTF-8 (su koduotės deklaracija ar BOM parašu), daugumos pasaulio kalbų
+simboliai gali būti naudojami, komentaruose ir simbolių eilutėse, vienu metu. Ne
+ASCII simboliai negali būti naudojami kintamųjų, funkcijų, klasių ir t.t.
+*varduose.* Ši galimybė yra palaikoma nuo Pitono 3 versijos. Kad visi simboliai
+būtų atvaizduoti tvarkingai, jūsų redaktorius turi atpažinti UTF-8 rinkmenas ir
+naudoti šriftą, palaikanti visus simbolius esančius byloje.
 
 
 .. _tut-startup:
 
-The Interactive Startup File
-----------------------------
+Interaktyvaus rėžimo paleidimo byla
+-----------------------------------
 
-When you use Python interactively, it is frequently handy to have some standard
-commands executed every time the interpreter is started.  You can do this by
-setting an environment variable named :envvar:`PYTHONSTARTUP` to the name of a
-file containing your start-up commands.  This is similar to the :file:`.profile`
-feature of the Unix shells.
+Naudojant Pitoną interaktyviai, gali būti naudinga įvykdyti kokias nors komandas
+kaskart kai paleidžiamas interpretatorius. Tai atlikti galite pakeitę aplinkos
+kintamajo :envvar:`PYTHONSTARTUP` reikšmę į bylos, su jūsų paleidimo komandomis,
+vardą. Šis būdas yra panašus į Unix apvalkalo :file:`.profile` galimybę.
 
 .. XXX This should probably be dumped in an appendix, since most people
    don't use Python interactively in non-trivial ways.
 
-This file is only read in interactive sessions, not when Python reads commands
-from a script, and not when :file:`/dev/tty` is given as the explicit source of
-commands (which otherwise behaves like an interactive session).  It is executed
-in the same namespace where interactive commands are executed, so that objects
-that it defines or imports can be used without qualification in the interactive
-session. You can also change the prompts ``sys.ps1`` and ``sys.ps2`` in this
-file.
+Šis failas yra nuskaitomas tik interaktyvių sesijų metu, bet ne tada, kai Pitonas
+nuskaito komandas iš scenarijaus ar kai :file:`/dev/tty` yra pateiktas kaip
+konkretus įvesties šaltinis (nors šiuo atveju interpretatorius elgsis taip pat
+kaip ir interaktyviajame rėžime). Komandos yra vykdomos toje pačioje vardų
+srityje, kurioje vykdomos interaktyvios komandos, todėl bylos sukurti ar
+importuoti objektai gali būti naudojami iškart interaktyviojoje sesijoje. Šioje
+byloje taip pat galite keisti ir raginimus ``sys.ps1`` bei ``sys.ps2``.
 
-If you want to read an additional start-up file from the current directory, you
-can program this in the global start-up file using code like ``if
-os.path.isfile('.pythonrc.py'): execfile('.pythonrc.py')``.  If you want to use
-the startup file in a script, you must do this explicitly in the script::
+Jei norite nuskaityti papildomas paleidimo paleidimo bylas, galite tai padaryti
+globalioje paleidimo byloje. Pavyzdžiui: ``if os.path.isfile('.pythonrc.py'):
+execfile('.pythonrc.py')``. Jei norite naudoti paleidimo bylą scenarijuje,
+turite tai aprašyti::
 
    import os
-   filename = os.environ.get('PYTHONSTARTUP')
-   if filename and os.path.isfile(filename):
-       execfile(filename)
+   rinkmena = os.environ.get('PYTHONSTARTUP')
+   if rinkmena and os.path.isfile(rinkmena):
+       execfile(rinkmena)
 
 
-.. rubric:: Footnotes
+.. rubric:: Išnašos
 
-.. [#] A problem with the GNU Readline package may prevent this.
+.. [#] Bėdos su GNU Readline paketu gali tam sutrukdyti.
 
