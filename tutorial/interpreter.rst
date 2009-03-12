@@ -11,29 +11,29 @@ Interpretatoriaus paleidimas
 ============================
 
 Pitono interpretatorius dažniausiai instaliuojamas į :file:`/usr/local/bin/python`;
-pridėję :file:`/usr/local/bin` į savo Unix apvalkalo (shell) paieškos kelią,
-galėsite Pitoną paleisti įrašę komandą ::
+pridėję :file:`/usr/local/bin` į savo Unix apvalkalo (angl. *shell*) paieškos kelią,
+galėsite Pitoną paleisti įrašę komandą::
 
    python
 
 Kadangi direktorija, kurioje „gyvena“ interpretatorius, yra pasirenkama
-instaliacijos metu, aukščiau minėtas kelias nebūtinai yra teisingas;
+diegimo metu, aukščiau minėtas kelias nebūtinai yra teisingas;
 pasitikslinkite detales su savo administratoriumi (pvz.:
-:file:`/usr/local/python` yra populiari alternatyva.)
+:file:`/usr/local/python` yra populiari alternatyva).
 
-Windows sistemose, Pitono instaliacija sukuriama kataloge :file:`C:\\Python26`,
-tačiau šis nustatymas gali būti pakeistas instaliacijos metu. Norėdami pridėti
-šią direktoriją į paieškos kelią, galite įrašyti tokią komandą į
-DOS terminalą::
+Windows sistemose, Pitonas įdiegiamas kataloge :file:`C:\\Python26`, tačiau
+šis nustatymas gali būti pakeistas instaliacijos metu. Norėdami pridėti
+šią direktoriją į paieškos kelią, galite įrašyti tokią komandą į DOS
+terminalą::
 
    set path=%path%;C:\python26
 
-Įrašę failo pabaigos simbolį (:kbd:`Control-D` Unix sistemose, :kbd:`Control-Z`
+Įrašę bylos pabaigos simbolį (:kbd:`Control-D` Unix sistemose, :kbd:`Control-Z`
 Windows) Pitono komandinėje eilutėje išjungsite interpretatorių. Jei tai
 nesuveikia, galite išjungti interpretatorių surinkę : ``import sys; sys.exit()``.
 
 Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Pitoną
-instaliavęs žmogus galėjo pridėti GNU readline bibliotekos palaikymą, taip
+įdiegęs žmogus galėjo pridėti GNU readline bibliotekos palaikymą, taip
 įgalindamas vartotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
 Turbūt greičiausias būdas patikrinti ar komandinės eilutės redagavimas yra
 palaikomas - surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą -
@@ -50,7 +50,7 @@ arba byla pateikiama per standartinę įvestį, interpretatorius nuskaito ir įv
 
 Antras būdas paleisti interpretatorių yra ``python -c komanda [argumentai] ...``.
 Šiuo būdu paleistas interpretatorius įvykdys sakinius pateiktus *komanda*
-parametre, analogiškai apvalkalo :option:`-c` opcijai.  Kadangi Pitono
+parametre, analogiškai apvalkalo :option:`-c` parinkčiai. Kadangi Pitono
 sakiniuose dažnai būna tarpų ar kitų simbolių, kuriuos apvalkalas laiko
 specialiais, patartina visą *komandos* turinį apgaubti apostrofais.
 
@@ -77,15 +77,16 @@ Argumentų perdavimas
 --------------------
 
 Kai pateikti, scenarijaus pavadinimas ir kiti argumentai yra perduodami
-scenarijui, naudojant ``sys.argv`` kintamąjį, eilučių sąrašo (list of strings)
-pavidalu. Kintamojo ilgis yra ne mažesnis už vieną; kai scenarijus ir
-argumentai neperduodami, ``sys.argv[0]`` bus tuščia eilutė. Kai scenarijaus
-vardas yra pateiktas kaip ``-`` (kas reiškia standartinę įvestį), ``sys.argv[0]``
-įgauna ``'-'`` reikšmę. Kai naudojama :option:`-c` *komanda*, ``sys.argv[0]``
-reikšmė bus ``'-c'``. Jei naudojamas :option:`-m` *modulis*, ``sys.argv[0]``
-reikšmė bus pilnas modulio vardas. Parinktys rastos po :option:`-c` *komanda*
-ar :option:`-m` *modulis* nėra apdorojamos interpretatoriaus, jos paliekamos
-``sys.argv`` sąraše iš kur, reikalui esant, jas gali pasiekti komanda ar modulis.
+scenarijui, naudojant ``sys.argv`` kintamąjį, eilučių sąrašo (angl.
+*list of strings*) pavidalu. Kintamojo ilgis yra ne mažesnis už vieną; kai
+scenarijus ir argumentai neperduodami, ``sys.argv[0]`` bus tuščia eilutė. Kai
+scenarijaus vardas yra pateiktas kaip ``-`` (kas reiškia standartinę įvestį),
+``sys.argv[0]`` įgauna ``'-'`` reikšmę. Kai naudojama :option:`-c` *komanda*,
+``sys.argv[0]`` reikšmė bus ``'-c'``. Jei naudojamas :option:`-m` *modulis*,
+``sys.argv[0]`` reikšmė bus pilnas modulio vardas. Parinktys rastos po
+:option:`-c` *komanda* ar :option:`-m` *modulis* nėra apdorojamos
+interpretatoriaus, jos paliekamos ``sys.argv`` sąraše iš kur, reikalui esant,
+jas gali pasiekti komanda ar modulis.
 
 .. _tut-interactive:
 
@@ -120,14 +121,13 @@ vieną eilutę. Kaip pavyzdį galime naudoti šį :keyword:`if` sąlygos teigin�
 Interpretatorius ir jo aplinka
 ==============================
 
-
 .. _tut-error:
 
 Klaidų valdymas
 ---------------
 
 Kai įvyksta klaida, interpretatorius atspausdina klaidos pranešimą ir dėklo
-pėdsaką (stack trace). Jei klaida įvyksta interaktyviajame rėžime,
+pėdsaką (angl. *stack trace*). Jei klaida įvyksta interaktyviajame rėžime,
 interpretatorius tiesiog grįžta į pirminį raginimą; jei įvestis buvo nuskaityta
 iš bylos, interpretatorius atspausdins dėklo pėdsaką ir baigs darbą grąžindamas
 atitinkamą (nelygų nuliui) būsenos kodą. Išimtys suvaldytos naudojant
@@ -141,7 +141,7 @@ grąžinamas vykdomų komandų, yra rašomas į standartinę išvestį.
 Įrašę pertraukties simbolį (paprastai Control-C arba DEL) į pirminį arba antrinį
 raginimą, nutrauksite įvestį ir interpretatorius grįš į pirminį raginimą.
 [#]_ Jei pertraukties simbolis įrašomas kol vykdoma komanda, interpretatorius
-sukelia išimtį, kuri gali būti suvaldyka :keyword:`try` teiginiu.
+sukelia išimtį, kuri gali būti suvaldyta :keyword:`try` teiginiu.
 
 .. _tut-scripts:
 
@@ -168,7 +168,7 @@ Scenarijui vykdymo būseną galite suteikti pasinaudoję :program:`chmod` komand
 Windows sistemose nėra „vykdomosios būsenos“ žymėjimo. Pitono diegimo programa
 automatiškai susieja ``.py`` rinkmenas su ``python.exe``, todėl spragtelėjus
 du kartus ant Pitono bylos, ji bus įvykdyta kaip scenarijus. Byla taip pat
-gali baigtis ``.pyw`` plėtiniu. Tokiu atveju terminalo langas, nebus rodomas,
+gali baigtis ``.pyw`` plėtiniu. Tokiu atveju terminalo langas nebus rodomas,
 kaip įprasta.
 
 Išeities teksto koduotė
@@ -195,13 +195,13 @@ ir baigs darbą::
    valiuta = u"€"
    print ord(valiuta)
 
-Jei jūsų teksto redaktorius turi galimybę išsaugoti bylas kaip ``UTF-8`` su UTF-8
-*baitų eiliškumo žyme* (byte order mark, BOM), tuomet galite naudoti šį būdą vietoj
-koduotės deklaracijos. IDLE redaktorius turi tokią galimybę, jei pasirinktas
-``Options/General/Default Source Encoding/UTF-8`` nustatymas. Atkreipkite dėmesį,
-kad senesnės Pitono laidos (2.2 ir ankstesnės) neatpažįsta šio parašo. Taip pat
-operacinės sistemos neatpažįsta BOM scenarijuose, kurie prasideda su ``#!`` eilute
-(naudojama tik Unix sistemose).
+Jei jūsų teksto redaktorius turi galimybę išsaugoti bylas kaip ``UTF-8`` su
+UTF-8 *baitų eiliškumo žyme* (angl. *byte order mark, BOM*), tuomet galite
+naudoti šį būdą vietoj koduotės deklaracijos. IDLE redaktorius turi tokią
+galimybę, jei pasirinktas ``Options/General/Default Source Encoding/UTF-8``
+nustatymas. Atkreipkite dėmesį, kad senesnės Pitono laidos (2.2 ir ankstesnės)
+neatpažįsta šio parašo. Taip pat operacinės sistemos neatpažįsta BOM
+scenarijuose, kurie prasideda eilute su ``#!`` (naudojama tik Unix sistemose).
 
 Naudojant UTF-8 (su koduotės deklaracija ar BOM parašu), daugumos pasaulio kalbų
 simboliai gali būti naudojami, komentaruose ir simbolių eilutėse, vienu metu. Ne
@@ -210,29 +210,29 @@ ASCII simboliai negali būti naudojami kintamųjų, funkcijų, klasių ir t.t.
 būtų atvaizduoti tvarkingai, jūsų redaktorius turi atpažinti UTF-8 rinkmenas ir
 naudoti šriftą, palaikanti visus simbolius esančius byloje.
 
-
 .. _tut-startup:
 
 Interaktyvaus rėžimo paleidimo byla
 -----------------------------------
 
 Naudojant Pitoną interaktyviai, gali būti naudinga įvykdyti kokias nors komandas
-kaskart kai paleidžiamas interpretatorius. Tai atlikti galite pakeitę aplinkos
+kaskart paleidžiant interpretatorių. Tai atlikti galite pakeitę aplinkos
 kintamajo :envvar:`PYTHONSTARTUP` reikšmę į bylos, su jūsų paleidimo komandomis,
 vardą. Šis būdas yra panašus į Unix apvalkalo :file:`.profile` galimybę.
 
 .. XXX This should probably be dumped in an appendix, since most people
    don't use Python interactively in non-trivial ways.
 
-Šis failas yra nuskaitomas tik interaktyvių sesijų metu, bet ne tada, kai Pitonas
+Ši rinkmena yra nuskaitoma tik interaktyvių sesijų metu, bet ne tada, kai Pitonas
 nuskaito komandas iš scenarijaus ar kai :file:`/dev/tty` yra pateiktas kaip
 konkretus įvesties šaltinis (nors šiuo atveju interpretatorius elgsis taip pat
-kaip ir interaktyviajame rėžime). Komandos yra vykdomos toje pačioje vardų
-srityje, kurioje vykdomos interaktyvios komandos, todėl bylos sukurti ar
-importuoti objektai gali būti naudojami iškart interaktyviojoje sesijoje. Šioje
-byloje taip pat galite keisti ir raginimus ``sys.ps1`` bei ``sys.ps2``.
+kaip ir interaktyviajame rėžime). Paleidimo bylos komandos yra vykdomos toje
+pačioje vardų srityje, kurioje vykdomos interaktyvios komandos, todėl bylos
+sukurti ar importuoti objektai gali būti naudojami iškart interaktyviojoje
+sesijoje. Šioje byloje taip pat galite keisti ir raginimus ``sys.ps1`` bei
+``sys.ps2``.
 
-Jei norite nuskaityti papildomas paleidimo paleidimo bylas, galite tai padaryti
+Jei norite nuskaityti papildomas paleidimo bylas, galite tai padaryti
 globalioje paleidimo byloje. Pavyzdžiui: ``if os.path.isfile('.pythonrc.py'):
 execfile('.pythonrc.py')``. Jei norite naudoti paleidimo bylą scenarijuje,
 turite tai aprašyti::
