@@ -66,9 +66,9 @@ ir norite), duomenys bus imami iš įrenginio, kuris yra sujungtas su standartin
 interpretatoriaus įvestimi.
 
 Kartais, kai vykdomas scenarijus, gali būti naudinga persijungti į interaktyvų
-rėžimą scenarijaus vykdymo pabaigoje. Tai galima padaryti su :option:`-i`
+režimą scenarijaus vykdymo pabaigoje. Tai galima padaryti su :option:`-i`
 parinktimi prieš scenarijų. (Šis būdas neveikia, jei scenarijus yra nuskaitomas
-iš standartinės įvesties dėl toks pačios priežasties, kuri aprašyta praėjusioje
+iš standartinės įvesties dėl tos pačios priežasties, kuri aprašyta praėjusioje
 pastraipoje.)
 
 .. _tut-argpassing:
@@ -78,7 +78,7 @@ Argumentų perdavimas
 
 Kai pateikti, scenarijaus pavadinimas ir kiti argumentai yra perduodami
 scenarijui, naudojant ``sys.argv`` kintamąjį, eilučių sąrašo (angl.
-*list of strings*) pavidalu. Kintamojo ilgis yra ne mažesnis už vieną; kai
+*list of strings*) pavidalu. Sąrašo ilgis ne mažesnis už vienetą; kai
 scenarijus ir argumentai neperduodami, ``sys.argv[0]`` bus tuščia eilutė. Kai
 scenarijaus vardas yra pateiktas kaip ``-`` (kas reiškia standartinę įvestį),
 ``sys.argv[0]`` įgauna ``'-'`` reikšmę. Kai naudojama :option:`-c` *komanda*,
@@ -90,11 +90,11 @@ jas gali pasiekti komanda ar modulis.
 
 .. _tut-interactive:
 
-Interaktyvus rėžimas
+Interaktyvus režimas
 --------------------
 
 Kai komandos yra nuskaitomos iš TTY įrenginio, sakome, kad interpretatorius yra
-interaktyviajame rėžime. Šiame rėžime *pirminis raginimas* (dažniausiai trys
+interaktyviajame režime. Šiame režime *pirminis raginimas* (dažniausiai trys
 daugiau-už ženklai ```>>>```) reiškia, kad interpretatorius yra pasiruošęs
 nuskaityti sekančią komandą; antrinis raginimas (trys taškai ``...``) reiškia,
 kad laukiamas prieš tai įvestos komandos pratęsimas. Prieš atspausdindamas
@@ -127,7 +127,7 @@ Klaidų valdymas
 ---------------
 
 Kai įvyksta klaida, interpretatorius atspausdina klaidos pranešimą ir dėklo
-pėdsaką (angl. *stack trace*). Jei klaida įvyksta interaktyviajame rėžime,
+pėdsaką (angl. *stack trace*). Jei klaida įvyksta interaktyviajame režime,
 interpretatorius tiesiog grįžta į pirminį raginimą; jei įvestis buvo nuskaityta
 iš bylos, interpretatorius atspausdins dėklo pėdsaką ir baigs darbą grąžindamas
 atitinkamą (nelygų nuliui) būsenos kodą. Išimtys suvaldytos naudojant
@@ -178,7 +178,7 @@ ASCII nėra vienintelis kodavimas, kuris gali būti naudojamas Pitono išeities
 tekstuose. Geriausias būdas nurodyti savo koduotę yra įdėti dar vieną specialų
 komentarą iš karto po ``#!`` eilute:
 
-   # -*- coding: koduote -*-
+   # -*- coding: <koduotė> -*-
 
 Su šia deklaracija, visi simboliai byloje bus traktuojami, kaip turintys
 *koduotė* kodavimą, be to galėsite rašyti Unikodo simbolius tiesiogiai
@@ -208,16 +208,16 @@ simboliai gali būti naudojami, komentaruose ir simbolių eilutėse, vienu metu.
 ASCII simboliai negali būti naudojami kintamųjų, funkcijų, klasių ir t.t.
 *varduose.* Ši galimybė yra palaikoma nuo Pitono 3 versijos. Kad visi simboliai
 būtų atvaizduoti tvarkingai, jūsų redaktorius turi atpažinti UTF-8 rinkmenas ir
-naudoti šriftą, palaikanti visus simbolius esančius byloje.
+naudoti šriftą, palaikantį visus simbolius esančius byloje.
 
 .. _tut-startup:
 
-Interaktyvaus rėžimo paleidimo byla
+Interaktyvaus režimo paleidimo byla
 -----------------------------------
 
 Naudojant Pitoną interaktyviai, gali būti naudinga įvykdyti kokias nors komandas
 kaskart paleidžiant interpretatorių. Tai atlikti galite pakeitę aplinkos
-kintamajo :envvar:`PYTHONSTARTUP` reikšmę į bylos, su jūsų paleidimo komandomis,
+kintamojo :envvar:`PYTHONSTARTUP` reikšmę į bylos, su jūsų paleidimo komandomis,
 vardą. Šis būdas yra panašus į Unix apvalkalo :file:`.profile` galimybę.
 
 .. XXX This should probably be dumped in an appendix, since most people
@@ -226,7 +226,7 @@ vardą. Šis būdas yra panašus į Unix apvalkalo :file:`.profile` galimybę.
 Ši rinkmena yra nuskaitoma tik interaktyvių sesijų metu, bet ne tada, kai Pitonas
 nuskaito komandas iš scenarijaus ar kai :file:`/dev/tty` yra pateiktas kaip
 konkretus įvesties šaltinis (nors šiuo atveju interpretatorius elgsis taip pat
-kaip ir interaktyviajame rėžime). Paleidimo bylos komandos yra vykdomos toje
+kaip ir interaktyviajame režime). Paleidimo bylos komandos yra vykdomos toje
 pačioje vardų srityje, kurioje vykdomos interaktyvios komandos, todėl bylos
 sukurti ar importuoti objektai gali būti naudojami iškart interaktyviojoje
 sesijoje. Šioje byloje taip pat galite keisti ir raginimus ``sys.ps1`` bei

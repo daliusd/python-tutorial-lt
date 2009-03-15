@@ -439,7 +439,7 @@ specialią Pitono sintaksę. ::
 
 Visi kiti simboliai interpretuojami pagal tai, kokį Unikodo kodą jie
 atitinka. Jeigu jūs užrašote eilutes naudodami Latin-1 koduotę (turinčią
-daugumą vakarų Europos kalboms skirtų simbolių), tikrai įvertinsite tai,
+daugumai vakarų Europos kalbų skirtų simbolių), tikrai įvertinsite tai,
 kad pirmi 256 Unikodo rašmenys sutampa su Latin-1 kodų lentele.
 
 Ypatingiems poreikiams galima naudoti neapdorojamas (angl. *raw*) eilutes --
@@ -453,7 +453,7 @@ prieš 'u' yra nelyginis. ::
    >>> ur'Sveikas,\\u0020pasauli!'
    u'Sveikas,\\\\u0020pasauli!'
 
-Šis režimas naudingiausias tada, kai reikia įvesti daug pasvirųjų brūkšnelių,
+Šis režimas naudingas tada, kai reikia įvesti daug pasvirųjų brūkšnelių,
 pavyzdžiui reguliariuosius reiškinius (angl. *regular expression*).
 
 Be šių užrašymo būdų, Pitonas pateikia ir daugiau būdų Unikodo eilutėms sukurti
@@ -465,10 +465,10 @@ Standartinė funkcija :func:`unicode` moka iškoduoti ir užkoduoti daug tekstų
 koduočių. Keletas žinomesnių yra *Latin-1*, *ASCII*, *UTF-8*, ir *UTF-16*.
 Dvi paskutinės koduotės yra vadinamos *kintamo ilgio koduotėmis*, kadangi
 naudojant šias koduotes vienas Unikodo simbolis gali būti paverčiamas vienu
-arba daugiau baitu. Pagal nutylėjimą dažniausiai naudojama ASCII koduotė,
+arba daugiau baitų. Pagal nutylėjimą dažniausiai naudojama ASCII koduotė,
 kuri turi 127 simbolius, atitinkančius pirmus 127 Unikodo simbolius. Ši
-koduotė pranešdama apie klaidą atmes visus kitus simbolius. Spausdinant
-Unikodo eilutę ekrane arba faile, nauodojama funkcija :func:`str`, kuri
+koduotė atmes visus kitus simbolius, pranešdama apie klaidą. Spausdinant
+Unikodo eilutę ekrane arba faile, naudojama funkcija :func:`str`, kuri
 konvertuoja eilutę naudodama numatytąją teksto koduotę. ::
 
    >>> u"abc"
