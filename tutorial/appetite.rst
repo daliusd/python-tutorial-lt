@@ -1,7 +1,7 @@
 .. _tut-intro:
 
 **********************
-Galandinam apetitą
+Apetito sužadinimui
 **********************
 
 Jeigu Jūs daug dirbate kompiuteriais, galų gale Jūs pamatysite, kad egzistuoja 
@@ -10,33 +10,35 @@ paiešką ir pakeisti daug tekstinių failų, ar pervadinti ir pertvarkyti sauja
 nuotraukų sudėtingu būdu. Galbūt norite parašyti mažas nestandartines
 duomenų bazes ar specializuota GUI aplikaciją, ar paprastą žaidimą.
 
-Jeigu esate profesionalus programuotojas, Jums gali tekti dirbti su keliomis 
-C/C++/Java biliotekomis, bet įprastas rašymo / kompiliavimo / testavimo / pakartotinio 
-kompiliavimo ciklas yra pernelyg lėtas. Galbūt Jūs rašote testavimo komplektą 
-tokiai biliotekai, bet greitai atrandat, kad testavimo komplekto rašymas 
-yra per didelė užduotis. O gal Jūs parašėte programa, kuri gali naudoti 
-pratęsimo kalbą ir Jūs nenorite kurti ir įgyvendinti visiškai naują kalbą
-Jūsų programai.
+Jeigu esate profesionalus programuotojas, Jums gali tekti dirbti su keliomis
+C/C++/Java bibliotekomis, bet įprastas rašymo / kompiliavimo / testavimo /
+pakartotinio kompiliavimo ciklas yra pernelyg lėtas. Galbūt Jūs rašote
+testavimo komplektą tokiai bibliotekai, bet greitai atrandat, kad testavimo
+komplekto rašymas yra per didelė užduotis. O gal Jūs parašėte programa, kuri
+gali naudoti pratęsimo kalbą ir Jūs nenorite kurti ir įgyvendinti visiškai
+naują kalbą Jūsų programai.
 
 Python yra kalba kaip tik Jums.
 
-Jūs galite naudoti Unix kiauto (shell) skriptą arba Windows batch failą tam tikroms 
-užduotis, bet skiauto scriptai yra puikūs keisti failus ir teksto duomenis, bet  
-netinka GUI programomis ir žaidimams. Jūs galite rašyti C/C++/Java programas, 
-bet tai užtruks daug laiko iki pirmos programos. Python yra paprastesnis naudojimui 
-Windows, Mac OS X ir UNIX operacinėse sistemose ir padės darbą padaryti kuo greičiau.
+Jūs galite naudoti Unix shell skriptą arba Windows batch failą tam tikroms
+užduotis, bet shell skriptai puikiai tinkai darbui su bylomis ir tekstiniais
+duomenis, bet netinka GUI programomis ir žaidimams. Jūs galite rašyti
+C/C++/Java programas, bet tai užtruks daug laiko iki pirmos programos. Python
+yra paprastesnis naudojimui Windows, Mac OS X ir UNIX operacinėse sistemose ir
+padės darbą padaryti kuo greičiau.
 
-Python yra lengvas naudoti, bet tai yra reali programavimo kalba, siųlanti daug 
-daugiau struktūros ir palaikymą didelėms programomis, atvirkščiai nei kiauto scriptai 
-ar batch failai gali pasiųlyti. Kita vertus, Python taip pat siųlo daug daugiau 
-klaidų tikrinimo negu C, ir būdama aukšto lygio programavimo kalba, ji turi 
-aukšto lygio duomenu tipus, lankščius masyvūs ir žodynus. Kadangi yra daug pagrindinių 
-kintamųjų tipų, Python yra tiknamas daugybei problemų sprendimui, atvirkščiai nei 
-Awk ar net Perl, tuo pat metu tai taip lengva Python'e, kaip ir tose kalbose.
+Python yra lengvas naudoti, bet tai yra reali programavimo kalba, siūlanti daug
+daugiau struktūros ir palaikymą didelėms programomis, atvirkščiai nei shell
+skriptai ar batch failai gali pasiūlyti. Kita vertus, Python taip pat siūlo
+daug daugiau klaidų tikrinimo negu C, ir būdama aukšto lygio programavimo
+kalba, ji turi aukšto lygio duomenų tipus, lanksčius masyvūs ir žodynus.
+Kadangi yra daug pagrindinių kintamųjų tipų, Python yra tinkamas daugybei
+problemų sprendimui, atvirkščiai nei Awk ar net Perl, tuo pat metu tai taip
+lengva Python'e, kaip ir tose kalbose.
 
 Python leidžia suskirstyti programą į modulius, kurie gali būti naudojami kitose 
 Python programose. Jis ateina su didesniu standartiniu moduliu paketu, kurį  
-galite naudoti savo programose -- arba kaip pavyzdžius mokindamiesi Python. 
+galite naudoti savo programose -- arba kaip pavyzdžius mokydamiesi Python. 
 Kaikurie moduliai suteikia galimybę skaityti/rašyti failus, inicijuoti sisteminius kvietimus, 
 socket'us arba net sąsajas su GUI įrankiais, kaip Tk.
 
