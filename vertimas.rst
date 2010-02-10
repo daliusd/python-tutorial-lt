@@ -41,12 +41,17 @@ nėra, kad reikia versti būtent iš Pitono dokumentacijos.
 Jei neaišku kaip versti žodį pasitikrinkite viename iš šių šaltinių:
 :ref:`glossary` arba http://www.likit.lt/en-lt/angl.html.
 
-Kaip naudotis sphinx'u?
-=======================
+Kaip testuoti savo vertimą?
+===========================
 
-Tiesa sakant, dar nežinau, bet man suveikė toks variantas::
+Aš naudoju tokį būdą::
 
-    sudo easy_install Sphinx
+    cd projects
+    hg clone http://bitbucket.org/ianb/virtualenv/
+    python virtualenv/virtualenv.py pytut
+    cd pytut
+    ./bin/sudo easy_install Sphinx
+    hg clone http://bitbucket.org/Dalius/python-tutorial-lt/
     sphinx-build -b html python-tutorial-lt/ pytut
 
 Vertėjai
