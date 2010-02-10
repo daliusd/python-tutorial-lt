@@ -1,39 +1,42 @@
 .. _tut-modules:
 
-*******
-Modules
-*******
+********
+Moduliai
+********
 
-If you quit from the Python interpreter and enter it again, the definitions you
-have made (functions and variables) are lost. Therefore, if you want to write a
-somewhat longer program, you are better off using a text editor to prepare the
-input for the interpreter and running it with that file as input instead.  This
-is known as creating a *script*.  As your program gets longer, you may want to
-split it into several files for easier maintenance.  You may also want to use a
-handy function that you've written in several programs without copying its
-definition into each program.
+Jei išjungsite Python interpretatorių ir vėliau vėl jį įjungsite, visi jūsų
+aprašai (funkcijos ir kintamieji), aprašyti interpretatoriuje, dings. Todėl,
+jei ketinate rašyti sudėtingesnę programą, geriau naudotis teksto redaktoriumi,
+kintamųjų ir funkcijų aprašymui, kuriuos vėliau galėsite panaudoti
+interpretatoriuje. Failas, kuriame saugomas jūsų paruoštas kodas, vadinamas
+*skriptu*. Programai didėjant, tikriausiai kils poreikis išskaidyti ją keliuose
+failuose, kad būtų lengviau surasti, kas kur aprašyta. Tikriausiai norėsite
+aprašytą funkciją panaudoti keliose kitose programose nekopijuojant viso
+funkcijos aprašo į kiekvieną iš tų programų.
 
-To support this, Python has a way to put definitions in a file and use them in a
-script or in an interactive instance of the interpreter. Such a file is called a
-*module*; definitions from a module can be *imported* into other modules or into
-the *main* module (the collection of variables that you have access to in a
-script executed at the top level and in calculator mode).
+Python gali nuskaityti jūsų kodo aprašus iš failo ir suteikia galimybę
+panaudoti kiekvieną aprašytą struktūrą panaudoti kitame skripte ar
+interpretatoriuje. Toks failas vadinamas *moduliu*: apibrėžtos struktūros iš
+vieno modulio, gali būti *importuotos* į kitus modulius arba į jūsų pagrindinį
+modulį (vykdomasis skriptas arba interaktyvus interpretatoriaus režimas, kur
+galite operuoti kintamaisiais).
 
-A module is a file containing Python definitions and statements.  The file name
-is the module name with the suffix :file:`.py` appended.  Within a module, the
-module's name (as a string) is available as the value of the global variable
-``__name__``.  For instance, use your favorite text editor to create a file
-called :file:`fibo.py` in the current directory with the following contents::
+Modulis yra paprastas failas, kuriame saugomas Python kodas. Failo vardas
+sudaromas iš modulio pavadinimo ir galūnės: :file:`.py`. Modulyje, pačio
+modulio vardas (kaip simbolių eilutė) saugomas globaliame kintamajame
+``__name__``. Praktiniam išbandymui, atverkite savo mėgiamą teksto redaktorių
+ir einamajame kataloge sukurkite naują failą pavadinimu :file:`fibo.py`. Failo
+turinys turėtu būti toks::
 
-   # Fibonacci numbers module
+   # Fibonačio skaičių modulis
 
-   def fib(n):    # write Fibonacci series up to n
+   def fib(n):    # išvedama Fibonačio seka iki n
        a, b = 0, 1
        while b < n:
            print b,
            a, b = b, a+b
 
-   def fib2(n): # return Fibonacci series up to n
+   def fib2(n): # grąžinama Fibonačio seka iki n
        result = []
        a, b = 0, 1
        while b < n:
