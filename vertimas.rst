@@ -15,6 +15,8 @@ jei taip ir atsitiks, tarkim per 50 metų, nematau nieko tame blogo).
 
 2009-03-01 – pradėtas versti Pitono vadovėlis (tutorial) ir terminų žodynėlis (glossary).
 
+2010-02-10 – pakeista vertimo tvarka
+
 Kaip prisidėti?
 ===============
 
@@ -22,21 +24,19 @@ Dokumentacija bus verčiama naudojantis bitbucket.org sistemoje
 sukurta Mercurial repozitorija: http://bitbucket.org/Dalius/python-tutorial-lt/
 
 Susikurkite paskyrą http://bitbucket.org arba prisijunkite ten naudodamiesi
-OpenId (jūs žinoma rinksitės šį variantą!). Praneškite man savo vartotojo
-vardą paštu (dalius@sandbox.lt). Per kažkiek laiko jus pridėsiu prie
-python-tutorial-lt repozitorijos vartotojų. Tada susikurkite SSH raktą ir
-klonuokite repozitoriją::
+OpenId (jūs žinoma rinksitės šį variantą!). Tada jums reikės šakutinti (kaip
+teisingai verčiasi fork'inti?) python-tutorial-lt repozitoriją ir jeigu
+norėsite, kad jūsų vertimas būtų įtrauktas į pagrindinę repozitoriją tiesiog
+mane informuokite (galite tai padaryti paštu dalius@sandbox.lt).
 
-    hg clone ssh://hg@bitbucket.org/[vartotojo-vardas]/python-tutorial-lt/
+Tiesa sakant, jūs neprivalote naudotis bitbucket.org, bet tai gali būti
+greitesnis ir paprastesnis būdas.
 
 Šiuo metu angliški failai imami iš pagrindinės Pitono repozitorijos
 ir tiesiog verčiami: http://svn.python.org/projects/python/trunk/Doc/.
 Jei jūs norite versti kažką kito negu tai, kas dabar yra repozitorijoje,
 paanalizuokite Pitono dokumentaciją. Tiesa sakant, griežtų reikalavimų
 nėra, kad reikia versti būtent iš Pitono dokumentacijos.
-
-Dar vienas prašymas: būtų šaunu, kad pavyzdžius skaitytojams
-duotumėte išbandyti http://py.sandbox.lt (žinoma, kur yra prasmės).
 
 Jei neaišku kaip versti žodį pasitikrinkite viename iš šių šaltinių:
 :ref:`glossary` arba http://www.likit.lt/en-lt/angl.html.
