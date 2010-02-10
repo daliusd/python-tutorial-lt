@@ -52,7 +52,7 @@ Aš naudoju tokį būdą::
     cd pytut
     ./bin/sudo easy_install Sphinx
     hg clone http://bitbucket.org/Dalius/python-tutorial-lt/
-    sphinx-build -b html python-tutorial-lt/ pytut
+    ./bin/sphinx-build -b html python-tutorial-lt/ pytut
 
 Vertėjai
 ========
