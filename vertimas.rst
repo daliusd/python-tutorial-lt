@@ -72,7 +72,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\interactive.rst – Armandas Jarušauskas
 * tutorial\interpreter.rst –
 * tutorial\introduction.rst – Adomas Paltanavičius
-* tutorial\modules.rst –
+* tutorial\modules.rst – sirex
 * tutorial\stdlib2.rst –
 * tutorial\stdlib.rst –
 * tutorial\whatnow.rst –
