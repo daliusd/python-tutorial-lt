@@ -1,87 +1,84 @@
 .. _tut-intro:
 
-**********************
-Apetito sužadinimui
-**********************
+*******************
+Apetito sužadinimas
+*******************
 
-Jeigu Jūs daug dirbate kompiuteriais, galų gale Jūs pamatysite, kad egzistuoja 
-kažkokios užduotis, kurias galite automatizuoti. Pavyzdžiui, galima atlikti
-paiešką ir pakeisti daug tekstinių failų, ar pervadinti ir pertvarkyti sauja
-nuotraukų sudėtingu būdu. Galbūt norite parašyti mažas nestandartines
-duomenų bazes ar specializuota GUI aplikaciją, ar paprastą žaidimą.
+Jeigu jūs dirbate kompiuteriu po kiek laiko pastebėsite, kad yra užduočių, kurias
+jūs norėtumėte automatizuoti. Pavyzdžiui, jūs galite norėti atlikti teksto pakeitimo
+operaciją dideliam tekstinių failų kiekiui, arba pervadinti ir surūšiuoti didelį
+nuotraukų kiekį ypatinga tvarka. Galbūt jūs norėtumėte parašyti mažą duombazę,
+specializuotą grafinę programą arba paprastą žaidimą.
 
-Jeigu esate profesionalus programuotojas, Jums gali tekti dirbti su keliomis
-C/C++/Java bibliotekomis, bet įprastas rašymo / kompiliavimo / testavimo /
-pakartotinio kompiliavimo ciklas yra pernelyg lėtas. Galbūt Jūs rašote
-testavimo komplektą tokiai bibliotekai, bet greitai atrandat, kad testavimo
-komplekto rašymas yra per didelė užduotis. O gal Jūs parašėte programa, kuri
-gali naudoti pratęsimo kalbą ir Jūs nenorite kurti ir įgyvendinti visiškai
-naują kalbą Jūsų programai.
+Jeigu jūs esate profesionalus programuotojas, jums tikriausiai reikia
+dirbti su keliomis C/C++/Java bibliotekomis, bet įprastas darbo ciklas rašai/kompiliuoji/testuoti/perkompiliuoji jums yra per lėtas. Galbūt jūs rašote testavimo įrankį tokiai
+bibliotekai ir testinio kodo rašymas yra varginanti užduotis. Arba galbūt jūs
+parašėte programą, kuri galėtų naudoti praplėtimo kalbą ir jūs nenorite sukurti
+visos naudos kalbos jūsų aplikacijai.
 
-Python yra kalba kaip tik Jums.
+Python'as yra kalba jums.
 
-Jūs galite naudoti Unix shell skriptą arba Windows batch failą tam tikroms
-užduotis, bet shell skriptai puikiai tinkai darbui su bylomis ir tekstiniais
-duomenis, bet netinka GUI programomis ir žaidimams. Jūs galite rašyti
-C/C++/Java programas, bet tai užtruks daug laiko iki pirmos programos. Python
-yra paprastesnis naudojimui Windows, Mac OS X ir UNIX operacinėse sistemose ir
-padės darbą padaryti kuo greičiau.
+Jūs, žinoma, galite rašyti Unix'o arba Windows'ų skriptus kai kurioms šių
+užduočių, bet skriptai tinka failų operacijoms ir tekstinių duomenų keitimui,
+bet nėra tinkami grafinėms aplikacijoms ar žaidimams. Jūs galite rašyti
+C/C++/Java programą, bet jums reikės tikrai daug laiko norint parašyti
+pačią pirmą programos versiją. Python'ą yra paprasčiau naudoti, jį galima
+rasti Windows, Max OS X ir Unix-tipo operacinėse sistemose bei su jo
+pagalba darbą padarysite daug greičiau.
 
-Python yra lengvas naudoti, bet tai yra reali programavimo kalba, siūlanti daug
-daugiau struktūros ir palaikymą didelėms programomis, atvirkščiai nei shell
-skriptai ar batch failai gali pasiūlyti. Kita vertus, Python taip pat siūlo
-daug daugiau klaidų tikrinimo negu C, ir būdama aukšto lygio programavimo
-kalba, ji turi aukšto lygio duomenų tipus, lanksčius masyvūs ir žodynus.
-Kadangi yra daug pagrindinių kintamųjų tipų, Python yra tinkamas daugybei
-problemų sprendimui, atvirkščiai nei Awk ar net Perl, tuo pat metu tai taip
-lengva Python'e, kaip ir tose kalbose.
+Nors Python'ą paprasta naudoti, bet tai yra tikra programavimo kalba, kuri
+gali pasiūlyti geresnes struktūras ir palaikymą didelėms programoms negu skriptai.
+Iš kitos pusės, Python'as gali pasiūlyti daugiau klaidų tikrinimo negu C ir būdama
+*labai-aukšto-lygio kalba* Python'as turi standartinių aukšto lygio duomenų tipų kaip
+kad lanksčių masyvų ir žodynų. Dėl bendresnių duomenų tipų Python'as gali būti
+pritaikytas platesniam problemų spektrui negu Awk arba netgi Perl, ir vėlgi
+dauguma dalykų padaromi taip pat lengvai Python'u kaip ir paminėtomis kalbomis.
 
-Python leidžia suskirstyti programą į modulius, kurie gali būti naudojami kitose 
-Python programose. Jis ateina su didesniu standartiniu moduliu paketu, kurį  
-galite naudoti savo programose -- arba kaip pavyzdžius mokydamiesi Python. 
-Kaikurie moduliai suteikia galimybę skaityti/rašyti failus, inicijuoti sisteminius kvietimus, 
-socket'us arba net sąsajas su GUI įrankiais, kaip Tk.
+Python'as leidžia jūsų programas išskaidyti į modulius, kurie gali būti panaudoti
+kitose Python'o programose. Python'e yra daug standartinių modulių, kuriuos jūs
+galite naudoti kaip pagrindą savo programoms arba kaip pavyzdį pradedant mokytis
+programuoti Python'u. Kai kuriu iš šių modulių leidžia atlikti failų operacijas,
+sisteminius kvietimus, socket'ų operacijas arba netgi grafines vartotojo aplinkas naudojant
+bibliotekas kaip Tk.
 
-Python yra interpretuojama kalba, kuri gali išsaugoti Jums didelius laiko kaštus 
-rašant programą, kadangi nebereikia kompiliavimo ir linkinimo. Interpretatorius 
-gali būti naudojamas interaktyviai, kas leidžia lengvai eksperementuoti su 
-kalbos ypatumais, testinėmis programomis, ar tiesiog testuojant tam tikras 
-funkcijas, per atvirkščią programos kūrimą. Jis taip pat yra galingas stalo 
-škaičiuotuvas.
+Python'as yra interpretuojama kalba, o tai reiškia kad jūs galite sutaupyti daug  laiko,
+nes programos kūrimo metu nereikia kompiliuoti ir saistyti. Interpretatorius gali
+būti naudojamas interaktyviai, todėl jūs galite lengvai eksperimentuoti su įvairiomis
+kalbos galimybėmis, rašyti programas pasibandymui, arba testuoti funkcijas programuodami
+iš apačios viršun. Tai taip pat tiesiog patogus skaičiuotuvas.
 
+Python'as leidžia rašyti programas kompaktiškai ir skaitomai. Programos parašytos
+Python'u dažniausiasi yra trumpesnės negu ekvivalenčios programos parašytos
+C, C++ arba Java dėl kelių priežasčių:
 
-Python leidžia programoms būti parašytoms kompaktiškai ir įskaitomai. Programos 
-rašymas Python'e tipiškai yra daug trumpesnis, negu ekvivalenčioms C, C++ ar Java 
-programos, kadangi:
+* aukšto lygio duomenų tipai leidžia išreikšti sudėtingas operacijas paprastais
+  sakiniais;
 
-* aukšto lygio duomenų tipai leidžia išreikšti kompleksinius sveiksmus vienu 
-  teiginiu;
+* sakinių grupavimas atliekamas stumdant tekstą užuot naudojus pradžios ir pabaigos
+  skliaustelius;
 
-* teiginio grupavimas yra vykdomas atskirimu, o ne laužtiniais skliaustais;
+* kintamųjų ar argumentų nereikia deklaruoti.
 
-* nereikia deklaruoti kintamūjų ar argumentų;
+Python'as yra *išplečiamas*: jeigu jūs mokate programuoti C tada labai paprasta
+pridėti naujas funkcijas ar modulius į interpretatorių. Tai gali praversti
+norint atlikti operacijas maksimaliu greičiu, arba susaistyti Python'o programas
+su bibliotekomis, kurias turime tik sukompiliuotame formate (pvz.: tiekėjui
+specifines grafines bibioletekas). Jeigu jums reikia, jūs galite susieti Python'o
+interpretatorių su programa parašyta C ir naudoti jį kaip praplėtimų arba komandinę
+kalbą tai programai.
 
-Python yra *išplečimas*: jeigu žinote programą, parašyta C kalba, labai lengva įdėti 
-naują įskiepytą funkciją ar modulį į interpretatoriu, taip pat atlikti 
-kritines operacijas didžiausiu greičiu, ar sujungti Python programas su bibliotekomis, 
-kurios egzistuoja tik binarinėje formoje ( kaip atgalinė grafinė biblioteka). 
-Kaip tik esate pasiruotęs, jūs galite sujungti Python interpretatorių su programa, 
-parašyta C kalba ir naudoti ją kaip papildymą ar komandinę kalbą programai.
+Tarp kitko, programa yra pavadinta pagal BBC laidą „Monty Python's Flying
+Circus“ ir neturi nieko bendro su reptilijomis. Nuorodos į Monty Python ištraukas
+dokumentacijoje yra ne tik leidžiamos, bet ir skatinamos!
 
-Tiesa, kalba yra pavadinta dėl BBC laidos "Monty Python's Flying Circus" ir neturi 
-nieko bendro su reptilijomis. Darydami nurodymus į Monty Python parodiją 
-dokumentacijoje nėra tik leidžiamas, bet ir propaguojamas!
+Dabar kai jūs jau esate susižavėjęs Python'u, jūs norite jį panagrinėti detaliau. Kadangi
+geriausias būdas išmokti kalbą yra ją naudoti, vadovėlis kviečia jus žaisti su
+Python'o interpretatoriumi beskaitant.
 
-Kadangi dabar esate sujaudinti dėl Python, galima išegzaminuoti jį daug detalesniu 
-pavidalu. O geriausias būdas išmokti programavimo kalbą yra ją naudoti, todėl vadovas 
-kviečia pažaisti su Python interpretatoriumi, skaitymo metu.
+Kitoje dalyje, paaiškinta kaip naudotis interpretatoriumi. Tai nėra labai įdomi informacija,
+bet būtina norint išbandyti vėliau pateiktus pavyzdžius.
 
-Sekančiam skyriuje, paaiškinsime interpretatoriaus naudojimo mechanika. Tai yra 
-gan neįdomi informacija, bet būtina bendydami mūsų pavyzdžius vėliau.
-
-Likęs vadovas pristato įvairius Python kalbos įpatumus ir pereina per pavyzdžius, 
-pradedant paprastais išsireiškimais, deklaravimais ir duomenų tipais, iki funkcijų, 
-modulių ir galiausiai paliesime aukščiausius konceptus, kaip išskirtinumus ir 
-vartotojo aprašytas klases.
-
-
+Likęs vadovėlis supažindina su įvairiomis Python kalbos savybėmis ir sistema per pavyzdžius.
+Pradedama nuo paprastų reiškinių, sakinių ir duomenų struktūrų, vėliau paaiškinamos funkcijos
+ir moduliai, ir galiausia paliečiami pažangesnės koncepsijos kaip kad išimtys ir vartotojo
+apibrėžtos klasės.
