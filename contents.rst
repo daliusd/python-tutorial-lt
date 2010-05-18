@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%
- Pitono dokumentacija
+ Python dokumentacija
 %%%%%%%%%%%%%%%%%%%%%%
 
 .. toctree::

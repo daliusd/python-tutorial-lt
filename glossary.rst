@@ -9,16 +9,16 @@ Terminų žodynas
 .. glossary::
 
    ``>>>``
-      Numatytasis Pitono raginimas interaktyviajame apvalkale. Dažnai
+      Numatytasis Python'o raginimas interaktyviajame apvalkale. Dažnai
       naudojamas pavyzdžiuose, kurie gali būti paleidžiami interpretatoriuje.
 
    ``...``
-      Numatytasis Pitono raginimas interaktyviajame apvalkale kai įvedamas
+      Numatytasis Python'o raginimas interaktyviajame apvalkale kai įvedamas
       kodas įtrauktam kodo blokui arba tarp poros sutampančių kairiojo
       ir dešiniojo skirtukų (skliaustų, laužtinių arba riestinių skliaustų).
 
    2to3
-      Įrankis, kuris bando konvertuoti Pitono 2.x kodą į Pitoną 3.x kodą.
+      Įrankis, kuris bando konvertuoti Python'o 2.x kodą į Python'ą 3.x kodą.
       Konvertuojami tie kodo nesuderinamumai, kurie gali būti nustatyti
       analizuojant kodą ir pereinant analizės medį.
 
@@ -29,7 +29,7 @@ Terminų žodynas
    abstrakčioji bazinė klasė / abstract base class
       Abstrakčioji bazinė klasė (ABC) papildo neišreikštinį tipizavimą suteikdama
       būdą apibrėžti klasės šabloninę sąsają kai kitų technikų (pvz.: :func:`hasattr`)
-      naudojimas yra nepatogus. Pitone yra daug standartinių ABC duomenų
+      naudojimas yra nepatogus. Python'e yra daug standartinių ABC duomenų
       struktūroms (:mod:`collections` modulyje), skaičiams (:mod:`numbers`
       modulyje), srautams (:mod:`io` modulyje). Galima kurti savo ABC
       naudojant :mod:`abc` modulį.
@@ -54,11 +54,11 @@ Terminų žodynas
    BFDL
       Dosnusis Diktatorius Visam Gyvenimui (angliško termino Benevolent
       Dictator For Life sutrumpinimas), taip pat žinomas kaip `Guido van Rossum
-      <http://www.python.org/~guido/>`_, Pitono kūrėjas.
+      <http://www.python.org/~guido/>`_, Python'o kūrėjas.
 
    baitinis kodas / bytecode
-      Pitono kodas yra kompiliuojamas į baitinį kodą – vidinę Pitono programos
-      reprezentaciją interpretatoriuje. Pitono baitinis kodas yra išsaugojamas
+      Python'o kodas yra kompiliuojamas į baitinį kodą – vidinę Python'o programos
+      reprezentaciją interpretatoriuje. Python'o baitinis kodas yra išsaugojamas
       ``.pyc`` ir ``.pyo`` failuose, kad to paties failo vykdymas būtų greitesnis
       vykdant antrą kartą (išvengiama perkompiliavimo iš kodo į baitinį kodą).
       Sakoma, kad "tarpinė kalba" yra vykdoma :term:`virtualiojoje mašinoje`
@@ -72,7 +72,7 @@ Terminų žodynas
    klasikinė klasė / classic class
         Bet kuri klasė, kuri nėra paveldėta iš :class:`object`. Taip
         pat žiūrėto :term:`naujo stiliaus klasė`. Klasikinės klasės bus
-        išimtos iš Pitono 3.0.
+        išimtos iš Python'o 3.0.
 
    keitimas / coercion
         Neišreikštinis vieno tipo objekto konvertavimas į kitą tipą per operaciją,
@@ -92,7 +92,7 @@ Terminų žodynas
       yra išreiškiami kaip realios ir menamosios dalių suma. Menamieji
       skaičiai yra realieji skaičiai padauginti iš menamojo vieneto (kvadratinė
       šaknis iš ``-1``), dažnai žymimo kaip ``i`` matematikoje arba ``j``
-      inžinerijoje. Pitonas palaiko kompleksinius skaičius, kurie naudoja
+      inžinerijoje. Python'as palaiko kompleksinius skaičius, kurie naudoja
       pastarąjį žymėjimą – menamoji dalis yra rašoma naudojant ``j``, pvz.: 
       ``3+1j``.  Jei jums reikia :mod:`math` modulio ekvivalento kompleksiniams
       skaičiams naudokite :mod:`cmath`. Kompleksinių skaičių naudojimas
@@ -105,7 +105,7 @@ Terminų žodynas
       Daugiau informacijos :pep:`343`.
 
    CPython
-      Pagrindinis Pitono programavimo kalbos įgyvendinimas. Terminas
+      Pagrindinis Python'o programavimo kalbos įgyvendinimas. Terminas
       „CPython“ naudojamas, kai reikia atskirti šį įgyvendinimą nuo kitų, pvz.:
       Jython arba IronPython.
 
@@ -132,7 +132,7 @@ Terminų žodynas
       pasiekti atributą. Paprastai norint gauti, nustatyti ar ištrinti *a.b*
       atributą yra ieškoma objekto *b* klasės *a* žodyne, bet jei *b* yra
       deskriptorius, iškviečiamas atitinkamas deskriptoriaus metodas.
-      Deskriptorių supratimas yra reikalingas išsamiam Pitono supratimui, nes
+      Deskriptorių supratimas yra reikalingas išsamiam Python'o supratimui, nes
       jie yra pagrindas daugeliui savybių: funkcijoms, metodams, savybėms,
       klasės metodams, statiniams metodams ir rodyklėms į super klases.
 
@@ -152,7 +152,7 @@ Terminų žodynas
       yra įprasta vieta objektų dokumentavimui.
 
    neišreikštinis tipizavimas / duck-typing
-      Pitoniškas programavimo stilius, kuris nustato objekto tipą analizuojant
+      Python'iškas programavimo stilius, kuris nustato objekto tipą analizuojant
       jo metodus arba atributus užuot analizuojant objekto santykį su tam tikru
       tipu (jei versti tiesiogiai iš anglų kalbos, tai būtų anties tipizavimas
       „Jei tai atrodo kaip antis, kvaksi kaip antis, tai turi būti antis“).
@@ -164,7 +164,7 @@ Terminų žodynas
       įprastai naudojama :func:`hasattr` funkcija arba :term:`EAFP` programavimas.
 
    EAFP
-      Lengviau paprašyti gailestingumo nei leidimo. Programuojant šiuo įprastu Pitono
+      Lengviau paprašyti gailestingumo nei leidimo. Programuojant šiuo įprastu Python'o
       stiliumi daroma prielaida, kad raktai ar atributai egzistuoja ir gaudomos
       išimtys, jei prielaida yra neteisinga. Šis švarus ir greitas stilius
       yra charakterizuojamas raktinių žodžių :keyword:`try` ir :keyword:`except`
@@ -175,14 +175,14 @@ Terminų žodynas
       Sintaksės gabalas, kuris gali būti apskaičiuotas. Kitais žodžiais,
       reiškinys yra tokių elementų kaip vardai, atributų pasiekimai, operatorių
       arba funkcijų kvietimai, junginys, kurio visi nariai grąžina reikšmę.
-      Kitaip, nei daugelyje kitų programavimo kalbų, ne visos Pitono
+      Kitaip, nei daugelyje kitų programavimo kalbų, ne visos Python'o
       konstrukcijos yra reiškiniai. Dar būna :term:`sakiniai`, kurie negali
       būti naudojami kaip reiškiniai. Pvz.: raktiniai žodžiai :keyword:`print`
       arba :keyword:`if`.  Priskyrimai taip pat yra sakiniai, o ne reiškiniai.
 
    išplėtimo modulis / extension module
-      Modulis parašytas C arba C++ naudojant Pitono C API skirtas bendradarbiavimui tarp
-      Pitono branduolio ir vartotojo kodo.
+      Modulis parašytas C arba C++ naudojant Python'o C API skirtas bendradarbiavimui tarp
+      Python'o branduolio ir vartotojo kodo.
 
    funkcija / function
       Sakinių grupė, grąžinanti reikšmę. Funkcijai gali būti perduoti
@@ -207,7 +207,7 @@ Terminų žodynas
          _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192)
 
    šiukšlių surinkimas / garbage collection
-      Atminties atlaisvinimo procesas kai ji nebenaudojama. Pitonas
+      Atminties atlaisvinimo procesas kai ji nebenaudojama. Python'as
       atlieka šiukšlių surinkimą naudodamas rodyklių skaičiavimą
       ir ciklišką šiukšlių surinkiklį, kuris sugeba aptikti ir
       nutraukti rodyklių ciklus.
@@ -237,12 +237,12 @@ Terminų žodynas
       Žiūrime :term:`globalus interpretatoriaus užrakinimas`.
 
    globalus interpretatoriaus užrakinimas / global interpreter lock
-      Pitono gijų naudojamas užrakinimas, kuris garantuoja, kad
+      Python'o gijų naudojamas užrakinimas, kuris garantuoja, kad
       tik viena gija vykdo :term:`CPython` :term:`virtualiąją mašiną`
       vienu metu. Tai supaprastina CPython įgyvendinimą užtikrinant,
       kad du procesai negali pasiekti tos pačios atminties vienu metu.
       Viso interpretatoriaus užrakinimas leidžia interpretatoriui
-      lengviau vykdyti kelias gijas vienu metu. Žinoma, dėl to Pitono
+      lengviau vykdyti kelias gijas vienu metu. Žinoma, dėl to Python'o
       interpretatorius pralošia daugiaprocesorinėse mašinose. Praeityje
       buvo ne vienas bandymas sukurti laisvų gijų interpretatorių (tokį,
       kuris užrakina bendrus duomenis žemesniame lygyje), bet nė vienas
@@ -259,15 +259,15 @@ Terminų žodynas
       Maišomumas leidžia objektą naudoti žodynuose ir aibėse, nes šios
       duomenų struktūros naudoja maišos reikšmes.
 
-      Visi nekintami Pitono objektai yra maišomi, tuo tarpu kintami
+      Visi nekintami Python'o objektai yra maišomi, tuo tarpu kintami
       objektai nėra (pvz.: konteineriai - sąrašai arba žodynai).
       Objektai, kurie yra sukuriami iš vartotojo apibrėžtų klasių yra
       maišomi visada, nes jie niekada nėra lygūs ir jų maišos reikšmė
       yra jų :func:`id`.
 
    IDLE
-      Integruota Programavimo Aplinka Pitonui. IDLE yra paprastas redaktorius
-      ir interpretuojama aplinka, kuri pateikiama su standartiniu Pitonu.
+      Integruota Programavimo Aplinka Python'ui. IDLE yra paprastas redaktorius
+      ir interpretuojama aplinka, kuri pateikiama su standartiniu Python'u.
       Tinkama pradedantiesiems, bet taip pat gali būti naudojama kaip
       pavyzdinis kodas tiems, kurie nori sukurti multi-platforminę GUI
       aplikaciją.
@@ -293,7 +293,7 @@ Terminų žodynas
       vietoje ``/`` operatoriaus.  Taip pat žiūrėkite :term:`__future__`.
 
    interaktyvus / interactive
-      Pitonas turi interaktyvų interpretatorių, o tai reiškia, kad
+      Python'as turi interaktyvų interpretatorių, o tai reiškia, kad
       sakinius ir reiškinius galima įvesti interpretatoriaus
       raginime, iškart juos įvykdyti ir pamatyti rezultatą. Tiesiog
       paleiskite ``python`` be argumentų (tikriausiai galite jį
@@ -364,7 +364,7 @@ Terminų žodynas
       :keyword:`if` sakinių kiekį.
 
    sąrašas / list
-      Standartinė Pitono :term:`seka`. Nepaisant pavadinimo jis artimesnis kitų
+      Standartinė Python'o :term:`seka`. Nepaisant pavadinimo jis artimesnis kitų
       programavimo kalbų masyvams, nei rodyklėmis susietais sąrašais, nes
       priėjimas prie elementų yra O(1).
 
@@ -383,7 +383,7 @@ Terminų žodynas
       Klasės klasė. Klasės apibrėžimas sukuria klasės vardą, klasės žodyną
       ir bazinių klasių sąrašą. Metaklasė yra atsakinga už šių trijų
       argumentų paėmimą ir klasės sukūrimą. Dauguma objektiškai orientuotų
-      programavimo kalbų pateikia standartinį įgyvendinimą. Pitonas
+      programavimo kalbų pateikia standartinį įgyvendinimą. Python'as
       šiuo atveju yra išskirtinis, nes jame galima sukurti savo metaklases.
       Daugumai vartotojų niekada nereikia šios priemonės, bet kai
       atsiranda poreikis, metaklasės gali pasiūlyti galingus ir elegantiškus
@@ -441,7 +441,7 @@ Terminų žodynas
    naujojo stiliaus klasė / new-style class
       Bet kuri klasė, kuri paveldi iš :class:`object`. Į tai įeina visi
       standartiniai tipai kaip :class:`list` ar :class:`dict`.  Tik
-      naujo stiliaus klasės gali naudoti naujas visapusiškas Pitono
+      naujo stiliaus klasės gali naudoti naujas visapusiškas Python'o
       ypatybes kaip :attr:`__slots__`, deskriptorius, savybes
       ir :meth:`__getattribute__`.
 
@@ -460,22 +460,22 @@ Terminų žodynas
       kaip sąrašą funkcijai. Žiūrėti :term:`argumentas`.
 
    Python 3000
-      Kodinis pavadinimas kitai svarbiai Pitono versijai, 3.0 (sugalvota
+      Kodinis pavadinimas kitai svarbiai Python'o versijai, 3.0 (sugalvota
       seniai, kai 3 versija dar buvo tolimoje ateityje). Taip pat
       trumpinama „Py3k“.
 
-   pitoniškas / Pythonic
-      Idėja arba kodo gabalas, kuris atitinka daugumą Pitono kalbos idiomų
+   Python'iškas / Pythonic
+      Idėja arba kodo gabalas, kuris atitinka daugumą Python'o kalbos idiomų
       užuot įgyvendina kodą naudojant kitų kalbų koncepcijas. Pavyzdžiui
-      dažna Pitono idioma yra pereiti per visus iteruojamo objekto elementus
+      dažna Python'o idioma yra pereiti per visus iteruojamo objekto elementus
       naudojant :keyword:`for` sakinį. Dauguma kitų kalbų neturi tokio
-      tipo konstrukcijos, taigi žmonės nesusipažinę su Pitonu naudoja
+      tipo konstrukcijos, taigi žmonės nesusipažinę su Python'u naudoja
       skaitliukus::
 
           for i in range(len(food)):
               print food[i]
 
-      Kai tuo tarpu galima naudoti pitonišką metodą::
+      Kai tuo tarpu galima naudoti Python'išką metodą::
 
          for piece in food:
              print piece
@@ -483,7 +483,7 @@ Terminų žodynas
    rodyklių skaičius / reference count
       Rodyklių skaičius į objektą. Kai rodyklių skaičius nukrenta iki
       nulio, jo užimama atmintis yra atlaisvinama. Rodyklių skaičiavimas
-      dažniausiai yra nematomas Pitono kode, bet tai yra svarbiausias
+      dažniausiai yra nematomas Python'o kode, bet tai yra svarbiausias
       elementas :term:`CPython` įgyvendinime.  :mod:`sys` modulis
       apibrėžia :func:`getrefcount` funkciją, kurią programuotojai gali
       iškviesti norėdami gauti rodyklių skaičių į tam tikrą objektą.
@@ -514,7 +514,7 @@ Terminų žodynas
       :meth:`__getslice__` ir :meth:`__setslice__` metodus).
 
    specialus metodas / special method
-      Metodas, kurį iškviečia Pitonas, kad atliktų tam tikro tipo operaciją
+      Metodas, kurį iškviečia Python'as, kad atliktų tam tikro tipo operaciją
       (pvz.: sudėtį). Tokie metodai turi vardus prasidedančius ir pasibaigiančius
       dvigubu pabraukimo brūkšniu. Specialūs metodai yra dokumentuoti: :ref:`specialnames`.
 
@@ -532,17 +532,17 @@ Terminų žodynas
       Dėl to jos labai naudingos dokumentavimo eilutėse.
 
    tipas / type
-      Pitono objekto tipas nustato koks tai yra objektas. Kiekvienas objektas
+      Python'o objekto tipas nustato koks tai yra objektas. Kiekvienas objektas
       turi tipą. Objekto tipas pasiekiamas kaip :attr:`__class__` atributas
       arba gali būti nustatytas naudojant ``type(obj)``.
 
    virtualioji mašina / virtual machine
-      Kompiuteris apibrėžtas programine įranga. Pitono virtualioji
+      Kompiuteris apibrėžtas programine įranga. Python'o virtualioji
       mašina vykdo :term:`baitinį kodą`, sugeneruotą baitinio kodo
       kompiliatoriaus.
 
-   Pitono Zen / Zen of Python
-      Pitono dizaino principų ir filosofijų sąrašas kuris padeda suprasti
+   Python'o Zen / Zen of Python
+      Python'o dizaino principų ir filosofijų sąrašas kuris padeda suprasti
       ir naudoti kalbą. Sąrašą galima rasti surinkus "``import this``"
       interaktyviajame raginime.
 

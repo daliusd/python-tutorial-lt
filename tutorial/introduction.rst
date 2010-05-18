@@ -1,8 +1,8 @@
 .. _tut-informal:
 
-***************
-Įvadas į Pitoną
-***************
+*****************
+Įvadas į Python'ą
+*****************
 
 Pavyzdžiuose, pateikiamuose toliau, įvedamas komandos bei jų išvestį galima
 atskirti pagal tai, ar yra eilutė prasideda raginimu (``>>>`` ir ``...``).
@@ -13,11 +13,11 @@ eilutei reiškia, jog jūs turėsite įvesti tuščią eilutę; taip užbaigiamo
 komandos, kurios užima daugiau nei vieną eilutę.
 
 Dauguma pavyzdžių, net ir tie, kurie prasideda raginimu, turi paaiškinamuosius
-komentarus. Pitone komentarai pradedami simboliu ``#`` ir tęsiasi iki eilutės
+komentarus. Python'e komentarai pradedami simboliu ``#`` ir tęsiasi iki eilutės
 pabaigos. Komentarai gali prasidėti eilutės pradžioje, taip pat po tarpų
 arba po kodo, tačiau ne simbolių eilutės viduje. Simbolių eilutėje
 tai tėra ``#`` simbolis, neatliekantis jokios papildomos funkcijos. Kadangi
-komentarai paaiškina kodą, tačiau Pitonas jų niekaip neinterpretuoja, atkartojant
+komentarai paaiškina kodą, tačiau Python'as jų niekaip neinterpretuoja, atkartojant
 pavyzdžius interaktyviame apvalkale, komentarus galima praleisti.
 
 Pora pavyzdžių::
@@ -30,10 +30,10 @@ Pora pavyzdžių::
 
 .. _tut-calculator:
 
-Pitonas kaip skaičiuoklis
-=========================
+Python'as kaip skaičiuoklis
+===========================
 
-Pradėkime išbandydami porą paprastų Pitono komandų. Pasileiskite interpretatorių
+Pradėkime išbandydami porą paprastų Python'o komandų. Pasileiskite interpretatorių
 ir luktelkite iki pasirodys raginimas ``>>>`` (neturėtų užtrukti).
 
 
@@ -146,7 +146,7 @@ realiąją kompleksinio skaičiaus dalį. ::
    >>>
 
 Interaktyvioje veiksenoje, paskutinė atspausdinta reikšmė yra priskiriama
-kintamajam ``_``. Tai reiškia, kad jums naudojant Pitoną kaip skaičiuoklį,
+kintamajam ``_``. Tai reiškia, kad jums naudojant Python'ą kaip skaičiuoklį,
 kai kuriuos skaičiavimus galima atlikti daug paprasčiau. ::
 
    >>> mokestis = 12.5 / 100
@@ -161,14 +161,14 @@ kai kuriuos skaičiavimus galima atlikti daug paprasčiau. ::
 
 Su šiuo kintamuoju turėtų būti elgiamasi lyg jis būtų skirtas tik skaitymui.
 Nepriskyrinėkite jam reikšmės --- taip sukurtumėte nesusijusį kintamąjį,
-kurio vardas neleistų prieiti prie tikrojo magiško Pitono kintamojo.
+kurio vardas neleistų prieiti prie tikrojo magiško Python'o kintamojo.
 
 .. _tut-strings:
 
 Eilutės
 -------
 
-Pitonas dirba ne tik su skaičiais, bet ir su simbolių eilutėmis, kurias
+Python'as dirba ne tik su skaičiais, bet ir su simbolių eilutėmis, kurias
 galima užrašyto pora būdų. Galima apsupti viengubomis arba dvigubomis
 kabutėmis::
 
@@ -266,7 +266,7 @@ su operacijų rezultatais::
    SyntaxError: invalid syntax
 
 Eilutės gali būti indeksuojamos; kaip ir C kalboje, pirmasis eilutės simbolis
-atitinka indeksą 0. Pitono kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
+atitinka indeksą 0. Python'o kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
 tai eilutė, kurios dydis -- vienas simbolis. Eilučių dalys gali būti nurodomos
 su *išpjovos notacija* (angl. *slice notation*): du indeksai atskirti dvitaškiu. ::
 
@@ -287,7 +287,7 @@ jo naudojamas nulis, o praleistas antrasis indeksas tapatus eilutės ilgio nurod
    >>> word[2:]    # Viskas, kas eina po dviejų pirmų simbolių
    'galba'
 
-Priešingai negu C kalboje, Pitono eilutės negali būti keičiamos. Bandant pakeisti
+Priešingai negu C kalboje, Python'o eilutės negali būti keičiamos. Bandant pakeisti
 eilutės simbolį nurodant indeksą įvyksta klaida::
 
    >>> word[0] = 'x'
@@ -405,7 +405,7 @@ Unikodo eilutės
 
 .. sectionauthor:: Marc-Andre Lemburg <mal@lemburg.com>
 
-Pradedant Pitono versija 2.0 programuotojams pateikiamas naujas duomenų tipas,
+Pradedant Python'o versija 2.0 programuotojams pateikiamas naujas duomenų tipas,
 skirtas tekstinių duomenų saugojimui: Unikodo objektai. Jis gali būti naudojamas
 saugoti bei operuoti Unikodu paremtais duomenimis (daugiau informacijos
 rasite http://lt.wikipedia.org/wiki/Unikodas bei http://www.unicode.org).
@@ -421,7 +421,7 @@ su programinės įrangos daugiakalbyste. Unikodas šias problemas išsprendžia
 pristatydamas vientisą kodų lentelę, kurią galima naudoti visoms rašto
 sistemoms.
 
-Unikodo eilučių sukūrimas Pitone yra ne ką sudėtingesnis negu paprastų
+Unikodo eilučių sukūrimas Python'e yra ne ką sudėtingesnis negu paprastų
 eilučių::
 
    >>> u'Labas, pasauli!'
@@ -429,7 +429,7 @@ eilučių::
 
 Mažoji ``'u'`` prieš kabutę nurodo, kad aprašome Unikodo eilutę. Jeigu
 norite eilutėje naudoti specialius simbolius, galite tai padaryti naudodami
-specialią Pitono sintaksę. ::
+specialią Python'o sintaksę. ::
 
    >>> u'Sveikas,\u0020pasauli!'
    u'Sveikas, pasauli!'
@@ -456,7 +456,7 @@ prieš 'u' yra nelyginis. ::
 Šis režimas naudingas tada, kai reikia įvesti daug pasvirųjų brūkšnelių,
 pavyzdžiui reguliariuosius reiškinius (angl. *regular expression*).
 
-Be šių užrašymo būdų, Pitonas pateikia ir daugiau būdų Unikodo eilutėms sukurti
+Be šių užrašymo būdų, Python'as pateikia ir daugiau būdų Unikodo eilutėms sukurti
 tuomet, kai žinoma teksto koduotė.
 
 .. index:: builtin: unicode
@@ -503,7 +503,7 @@ koduotės pavadinimą. ::
 Sąrašai
 -------
 
-Pitonas pateikia daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
+Python'as pateikia daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
 Lanksčiausias iš tokių tipų yra *sąrašas*, kuris aprašomas kaip laužtiniais
 skliaustais apgaubtas sąrašas kableliais atskirtų elementų. Sąrašo elementai
 neprivalo visi būti to paties tipo. ::
@@ -593,7 +593,7 @@ nurodo tą patį objektą! *Objektų semantiką* aptarsime vėliau.
 Pirmieji žingsniai link programavimo
 ====================================
 
-Be abejonės, Pitonas gali būti naudojamas daug sudėtingesniems darbams negu
+Be abejonės, Python'as gali būti naudojamas daug sudėtingesniems darbams negu
 apskaičiuoti du plius du. Pavyzdžiui, galime apskaičiuoti pradinius *Fibonačio*
 sekos narius::
 
@@ -620,7 +620,7 @@ sekos narius::
   priskyrimas.  Dešinės pusės apskaičiavimas atliekamas iš kairės į dešinę.
 
 * Ciklo konstrukcija :keyword:`while` vykdoma tol, kol sąlyga yra teisinga
-  (šiuo atveju: ``b < 10``). Pitone, panašiai kaip ir C, bet kuris nelygus
+  (šiuo atveju: ``b < 10``). Python'e, panašiai kaip ir C, bet kuris nelygus
   nuliui skaičius laikomas *teisingu*; nulis yra *klaidingas*. Sąlyga taip
   taip pat gali būti eilutės arba sąrašo reikšmė, arba apibendrinant: bet
   kokia seka. Tuščia seka yra *klaidinga*; netuščia (turinti bent vieną
@@ -629,18 +629,18 @@ sekos narius::
   (mažiau negu), ``>`` (daugiau negu), ``==`` (lygu), ``<=`` (mažiau arba lygu),
   ``>=`` (daugiau arba lygu) bei ``!=`` (nelygu).
 
-* Vidinis ciklo kodas yra *įtrauktas* -- tai Pitono būdas sugrupuoti kodo sakinius.
-  Pitonas nesuteikia (kol kas) gudraus eilutės redagavimo galimybės, taigi tarpus
+* Vidinis ciklo kodas yra *įtrauktas* -- tai Python'o būdas sugrupuoti kodo sakinius.
+  Python'as nesuteikia (kol kas) gudraus eilutės redagavimo galimybės, taigi tarpus
   arba tabuliacijos ženklus reikia eilutės pradžioje įterpti rankomis. Praktikoje,
-  visgi, dauguma tekstų redaktorių, naudojamų rašyti Pitono kodą, pateikia
+  visgi, dauguma tekstų redaktorių, naudojamų rašyti Python'o kodą, pateikia
   galimybę automatiškai lygiuoti kodą. Kai sudėtinis kodo sakinys įvedamas
-  interaktyvioje veiksenoje, po jo turi sekti tuščia eilutė tam, kad Pitonas
+  interaktyvioje veiksenoje, po jo turi sekti tuščia eilutė tam, kad Python'as
   suprastų, jog jūs užrašėte paskutinę eilutę. Taip pat turėkite omenyje, kad
   visos to paties kodo bloko eilutės privalo būti įtrauktos vienodu skaičiumi
   tarpo ženklų.
 
 * :keyword:`print` komanda atspausdina duotos išraiškos reikšmę. Tai skiriasi nuo
-  paprasčiausio išraiškos užrašymo prie Pitono raginimo tuo, kad :keyword:`print`
+  paprasčiausio išraiškos užrašymo prie Python'o raginimo tuo, kad :keyword:`print`
   gali atspausdinti daugiau negu vieną reikšmę. Taip pat ji spausdina eilutes
   be kabučių ženklų, o pateikus daugiau negu vieną išraišką, spausdinant tarp
   jų įterpiami tarpo simboliai::

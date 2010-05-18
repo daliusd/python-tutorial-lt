@@ -1,8 +1,8 @@
 .. _tut-using:
 
-*************************************
-Naudojimasis Pitono interpretatoriumi
-*************************************
+***************************************
+Naudojimasis Python'o interpretatoriumi
+***************************************
 
 
 .. _tut-invoking:
@@ -10,9 +10,9 @@ Naudojimasis Pitono interpretatoriumi
 Interpretatoriaus paleidimas
 ============================
 
-Pitono interpretatorius dažniausiai instaliuojamas į :file:`/usr/local/bin/python`;
+Python'o interpretatorius dažniausiai instaliuojamas į :file:`/usr/local/bin/python`;
 pridėję :file:`/usr/local/bin` į savo Unix apvalkalo (angl. *shell*) paieškos kelią,
-galėsite Pitoną paleisti įrašę komandą::
+galėsite Python'ą paleisti įrašę komandą::
 
    python
 
@@ -21,7 +21,7 @@ diegimo metu, aukščiau minėtas kelias nebūtinai yra teisingas;
 pasitikslinkite detales su savo administratoriumi (pvz.:
 :file:`/usr/local/python` yra populiari alternatyva).
 
-Windows sistemose, Pitonas įdiegiamas kataloge :file:`C:\\Python26`, tačiau
+Windows sistemose, Python'as įdiegiamas kataloge :file:`C:\\Python26`, tačiau
 šis nustatymas gali būti pakeistas instaliacijos metu. Norėdami pridėti
 šią direktoriją į paieškos kelią, galite įrašyti tokią komandą į DOS
 terminalą::
@@ -29,10 +29,10 @@ terminalą::
    set path=%path%;C:\python26
 
 Įrašę bylos pabaigos simbolį (:kbd:`Control-D` Unix sistemose, :kbd:`Control-Z`
-Windows) Pitono komandinėje eilutėje išjungsite interpretatorių. Jei tai
+Windows) Python'o komandinėje eilutėje išjungsite interpretatorių. Jei tai
 nesuveikia, galite išjungti interpretatorių surinkę : ``import sys; sys.exit()``.
 
-Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Pitoną
+Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Python'ą
 įdiegęs žmogus galėjo pridėti GNU readline bibliotekos palaikymą, taip
 įgalindamas vartotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
 Turbūt greičiausias būdas patikrinti ar komandinės eilutės redagavimas yra
@@ -50,11 +50,11 @@ arba byla pateikiama per standartinę įvestį, interpretatorius nuskaito ir įv
 
 Antras būdas paleisti interpretatorių yra ``python -c komanda [argumentai] ...``.
 Šiuo būdu paleistas interpretatorius įvykdys sakinius pateiktus *komanda*
-parametre, analogiškai apvalkalo :option:`-c` parinkčiai. Kadangi Pitono
+parametre, analogiškai apvalkalo :option:`-c` parinkčiai. Kadangi Python'o
 sakiniuose dažnai būna tarpų ar kitų simbolių, kuriuos apvalkalas laiko
 specialiais, patartina visą *komandos* turinį apgaubti apostrofais.
 
-Kai kurie Pitono moduliai yra naudingi kaip scenarijai. Jie gali būti iškviesti
+Kai kurie Python'o moduliai yra naudingi kaip scenarijai. Jie gali būti iškviesti
 su ``python -m modulis [argumentai] ...``. Ši eilutė įvykdys bylos *modulis*
 turinį taip, lyg būtumėte parašę tos bylos pilną vardą komandinėje eilutėje.
 
@@ -145,10 +145,10 @@ sukelia išimtį, kuri gali būti suvaldyta :keyword:`try` teiginiu.
 
 .. _tut-scripts:
 
-Pitono vykdomieji scenarijai
-----------------------------
+Python'o vykdomieji scenarijai
+------------------------------
 
-BSD tipo Unix sistemose, Pitono scenarijai gali būti padaryti vykdomaisiais,
+BSD tipo Unix sistemose, Python'o scenarijai gali būti padaryti vykdomaisiais,
 taip pat, kaip apvalkalo scenarijai. Tam bylos pradžioje reikia pridėti tokią
 eilutę::
 
@@ -158,23 +158,23 @@ Kad ši eilutė veiktų, interpretatorius turi būti vartotojo kelyje
 (:envvar:`PATH`), o bylai turi būti suteikta vykdymo būsena. Pirmi du simboliai
 byloje privalo būti ``#!``. Kai kuriose platformose pirmoji eilutė turi baigtis
 Unix tipo eilutės pabaigos simboliu (``'\n'``), o ne Windows (``'\r\n'``).
-Atkreipkite dėmesį, kad grotelės ``#`` Pitone yra naudojamos kaip komentaro
+Atkreipkite dėmesį, kad grotelės ``#`` Python'e yra naudojamos kaip komentaro
 pradžios simbolis.
 
 Scenarijui vykdymo būseną galite suteikti pasinaudoję :program:`chmod` komanda::
 
    $ chmod +x scenarijus.py
 
-Windows sistemose nėra „vykdomosios būsenos“ žymėjimo. Pitono diegimo programa
+Windows sistemose nėra „vykdomosios būsenos“ žymėjimo. Python'o diegimo programa
 automatiškai susieja ``.py`` rinkmenas su ``python.exe``, todėl spragtelėjus
-du kartus ant Pitono bylos, ji bus įvykdyta kaip scenarijus. Byla taip pat
+du kartus ant Python'o bylos, ji bus įvykdyta kaip scenarijus. Byla taip pat
 gali baigtis ``.pyw`` plėtiniu. Tokiu atveju terminalo langas nebus rodomas,
 kaip įprasta.
 
 Išeities teksto koduotė
 -----------------------
 
-ASCII nėra vienintelis kodavimas, kuris gali būti naudojamas Pitono išeities
+ASCII nėra vienintelis kodavimas, kuris gali būti naudojamas Python'o išeities
 tekstuose. Geriausias būdas nurodyti savo koduotę yra įdėti dar vieną specialų
 komentarą iš karto po ``#!`` eilute:
 
@@ -182,7 +182,7 @@ komentarą iš karto po ``#!`` eilute:
 
 Su šia deklaracija, visi simboliai byloje bus traktuojami, kaip turintys
 *koduotė* kodavimą, be to galėsite rašyti Unikodo simbolius tiesiogiai
-pasirinktoje koduotėje. Galimų koduočių sąrašą galite rasti Pitono bibliotekų
+pasirinktoje koduotėje. Galimų koduočių sąrašą galite rasti Python'o bibliotekų
 rodyklėje, :mod:`codecs` skiltyje.
 
 Pavyzdys: norėdami rašyti Unikodo simbolius įskaitant ir Euro valiutos simbolį,
@@ -199,14 +199,14 @@ Jei jūsų teksto redaktorius turi galimybę išsaugoti bylas kaip ``UTF-8`` su
 UTF-8 *baitų eiliškumo žyme* (angl. *byte order mark, BOM*), tuomet galite
 naudoti šį būdą vietoj koduotės deklaracijos. IDLE redaktorius turi tokią
 galimybę, jei pasirinktas ``Options/General/Default Source Encoding/UTF-8``
-nustatymas. Atkreipkite dėmesį, kad senesnės Pitono laidos (2.2 ir ankstesnės)
+nustatymas. Atkreipkite dėmesį, kad senesnės Python'o laidos (2.2 ir ankstesnės)
 neatpažįsta šio parašo. Taip pat operacinės sistemos neatpažįsta BOM
 scenarijuose, kurie prasideda eilute su ``#!`` (naudojama tik Unix sistemose).
 
 Naudojant UTF-8 (su koduotės deklaracija ar BOM parašu), daugumos pasaulio kalbų
 simboliai gali būti naudojami, komentaruose ir simbolių eilutėse, vienu metu. Ne
 ASCII simboliai negali būti naudojami kintamųjų, funkcijų, klasių ir t.t.
-*varduose.* Ši galimybė yra palaikoma nuo Pitono 3 versijos. Kad visi simboliai
+*varduose.* Ši galimybė yra palaikoma nuo Python'o 3 versijos. Kad visi simboliai
 būtų atvaizduoti tvarkingai, jūsų redaktorius turi atpažinti UTF-8 rinkmenas ir
 naudoti šriftą, palaikantį visus simbolius esančius byloje.
 
@@ -215,7 +215,7 @@ naudoti šriftą, palaikantį visus simbolius esančius byloje.
 Interaktyvaus režimo paleidimo byla
 -----------------------------------
 
-Naudojant Pitoną interaktyviai, gali būti naudinga įvykdyti kokias nors komandas
+Naudojant Python'ą interaktyviai, gali būti naudinga įvykdyti kokias nors komandas
 kaskart paleidžiant interpretatorių. Tai atlikti galite pakeitę aplinkos
 kintamojo :envvar:`PYTHONSTARTUP` reikšmę į bylos, su jūsų paleidimo komandomis,
 vardą. Šis būdas yra panašus į Unix apvalkalo :file:`.profile` galimybę.
@@ -223,7 +223,7 @@ vardą. Šis būdas yra panašus į Unix apvalkalo :file:`.profile` galimybę.
 .. XXX This should probably be dumped in an appendix, since most people
    don't use Python interactively in non-trivial ways.
 
-Ši rinkmena yra nuskaitoma tik interaktyvių sesijų metu, bet ne tada, kai Pitonas
+Ši rinkmena yra nuskaitoma tik interaktyvių sesijų metu, bet ne tada, kai Python'as
 nuskaito komandas iš scenarijaus ar kai :file:`/dev/tty` yra pateiktas kaip
 konkretus įvesties šaltinis (nors šiuo atveju interpretatorius elgsis taip pat
 kaip ir interaktyviajame režime). Paleidimo bylos komandos yra vykdomos toje

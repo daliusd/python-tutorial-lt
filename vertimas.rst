@@ -9,11 +9,11 @@ Vertimas
 Tikslas
 =======
 
-Tikslas yra labai paprastas: išversti kažkiek informacijos apie Pitoną
-į Lietuvių kalbą. Tikrai nesiekiama išversti visos Pitono dokumentacijos (bet
+Tikslas yra labai paprastas: išversti kažkiek informacijos apie Python'ą
+į Lietuvių kalbą. Tikrai nesiekiama išversti visos Python'o dokumentacijos (bet
 jei taip ir atsitiks, tarkim per 50 metų, nematau nieko tame blogo).
 
-2009-03-01 – pradėtas versti Pitono vadovėlis (tutorial) ir terminų žodynėlis (glossary).
+2009-03-01 – pradėtas versti Python'o vadovėlis (tutorial) ir terminų žodynėlis (glossary).
 
 2010-02-10 – pakeista vertimo tvarka
 
@@ -32,11 +32,11 @@ mane informuokite (galite tai padaryti paštu dalius@sandbox.lt).
 Tiesa sakant, jūs neprivalote naudotis bitbucket.org, bet tai gali būti
 greitesnis ir paprastesnis būdas.
 
-Šiuo metu angliški failai imami iš pagrindinės Pitono repozitorijos
+Šiuo metu angliški failai imami iš pagrindinės Python'o repozitorijos
 ir tiesiog verčiami: http://svn.python.org/projects/python/trunk/Doc/.
 Jei jūs norite versti kažką kito negu tai, kas dabar yra repozitorijoje,
-paanalizuokite Pitono dokumentaciją. Tiesa sakant, griežtų reikalavimų
-nėra, kad reikia versti būtent iš Pitono dokumentacijos.
+paanalizuokite Python'o dokumentaciją. Tiesa sakant, griežtų reikalavimų
+nėra, kad reikia versti būtent iš Python'o dokumentacijos.
 
 Jei neaišku kaip versti žodį pasitikrinkite viename iš šių šaltinių:
 :ref:`glossary` arba http://www.likit.lt/en-lt/angl.html.
