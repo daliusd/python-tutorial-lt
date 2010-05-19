@@ -1,150 +1,157 @@
 .. _tut-classes:
 
-*******
-Classes
-*******
+******
+Klasės
+******
 
-Python's class mechanism adds classes to the language with a minimum of new
-syntax and semantics.  It is a mixture of the class mechanisms found in C++ and
-Modula-3.  As is true for modules, classes in Python do not put an absolute
-barrier between definition and user, but rather rely on the politeness of the
-user not to "break into the definition."  The most important features of classes
-are retained with full power, however: the class inheritance mechanism allows
-multiple base classes, a derived class can override any methods of its base
-class or classes, and a method can call the method of a base class with the same
-name.  Objects can contain an arbitrary amount of private data.
+Python'o klasių mechanizmas prideda klases į kalbą naudodamas minimalų
+kiekį naujos sintaksės ir semantikos. Naudojamas klasių mechanizmo
+randamo C++ ir Modula-3 kalbose mišinys. Lygiai taip pat kaip ir
+su moduliais, Python'o klasėse nėra absoliučios ribos tarp apibrėžimo
+ir vartotojo - tiesiog tikimasi vartotojo suprantingumo "nesulaužant
+apibrėžimo". Visgi svarbiausios klasių savybės yra pilnai išsaugotos:
+paveldėjimo mechanizmas leidžia naudoti kelias bazines klases, paveldėta
+klasė gali perrašyti bazinės klasės/bazinių klasių metodus ir metodai
+gali iškviesti bazinės klasės metodus tuo pačiu vardu. Objektuose
+galima laikyti reikiamą privačių duomenų kiekį.
 
-In C++ terminology, all class members (including the data members) are *public*,
-and all member functions are *virtual*.  There are no special constructors or
-destructors.  As in Modula-3, there are no shorthands for referencing the
-object's members from its methods: the method function is declared with an
-explicit first argument representing the object, which is provided implicitly by
-the call.  As in Smalltalk, classes themselves are objects, albeit in the wider
-sense of the word: in Python, all data types are objects.  This provides
-semantics for importing and renaming.  Unlike  C++ and Modula-3, built-in types
-can be used as base classes for extension by the user.  Also, like in C++ but
-unlike in Modula-3, most built-in operators with special syntax (arithmetic
-operators, subscripting etc.) can be redefined for class instances.
-
+Jei naudosime C++ terminologiją, visi klasės nariai (taip pat duomenys)
+yra *vieši*, visos klasės funkcijos yra *virtualios*. Taip pat
+neegzistuoja specialūs konstruktoriai ar destruktoriai. Lygiai taip
+pat kaip Modula-3 neegzistuoja sutrumpinimo norint pasiekti objekto
+narius iš jo metodo: metodinė funkcija yra apibrėžiama naudojant
+pirmą argumentą, kuris nurodo objektą, ir šis argumentas visada
+paduodamas kviečiant funkciją. Kaip Smalltalk pačios klasės yra
+objektai, arba platesne žodžio prasme: Python'e visi duomenų tipai
+yra objektai. Tai suteikia importavimo ir pervadinimo semantiką.
+Skirtingai nuo C++ ir Modula-3, standartiniai tipai gali būti
+naudojami kaip bazinės klasės kai vartotojui reikia juos
+praplėsti. Taip pat kaip C++ bet ne kaip Modula-3, dauguma
+standartinių operatorių naudojant specialią sintaksę (aritmetiniai
+operatoriai ir t.t.) klasėse gali būti perrašyti.
 
 .. _tut-terminology:
 
-A Word About Terminology
+Žodis Apie Terminologiją
 ========================
 
-Lacking universally accepted terminology to talk about classes, I will make
-occasional use of Smalltalk and C++ terms.  (I would use Modula-3 terms, since
-its object-oriented semantics are closer to those of Python than C++, but I
-expect that few readers have heard of it.)
+Kadangi trūksta universalios terminologijos šnekant apie klases, aš
+kartais naudosiu Smalltalk ir C++ terminus (aš naudočiau Modula-3
+terminologiją, nes jos objektiškų-orientiškumo semantika
+artimesnė Python'ui negu C++, bet aš nesitikiu, kad daug skaitytojų
+yra apie ją girdėję).
 
-Objects have individuality, and multiple names (in multiple scopes) can be bound
-to the same object.  This is known as aliasing in other languages.  This is
-usually not appreciated on a first glance at Python, and can be safely ignored
-when dealing with immutable basic types (numbers, strings, tuples).  However,
-aliasing has an (intended!) effect on the semantics of Python code involving
-mutable objects such as lists, dictionaries, and most types representing
-entities outside the program (files, windows, etc.).  This is usually used to
-the benefit of the program, since aliases behave like pointers in some respects.
-For example, passing an object is cheap since only a pointer is passed by the
-implementation; and if a function modifies an object passed as an argument, the
-caller will see the change --- this eliminates the need for two different
-argument passing mechanisms as in Pascal.
-
+Kiekvienas objektas yra individualus, yra keletas vardų (skirtingose vietose)
+gali nurodyti į tą patį objektą. Kitose kalbose tai vadinama susitapatinimu.
+Tai dažniausiai nėra įvertinama iš pirmo žvilgsnio ir netgi gali būti
+saugiai ignoruojama, kai dirbama su paprastais nekintamais tipais (skaičiais,
+eilutėmis ar kortežais). Tačiau susitapatinimas turi (planuotą!) efektą
+semantikai Python'o kode kai dirbama su kintamais objektais kaip sąrašai,
+žodynai ir dauguma tipų, kurie reprezentuoja objektus už programos ribų
+(failus, langus ir t.t.). Tai dažniausiai naudojama programos naudai,
+nes susitapatinimas elgiasi kaip rodyklė tam tikrais atžvilgiais.
+Pavyzdžiui, perduoti objektą yra pigu, nes perduodama tik nuoroda. Ir
+jeigu funkcija modifikuoja objektą, kuris buvo perduotas kaip
+argumentas, kvietėjas taip pat matys tuos pakeitimus --- dėka to mums
+nereikia dviejų skirtingų argumentų perdavimo mechanizmų kaip
+Paskalyje.
 
 .. _tut-scopes:
 
-Python Scopes and Name Spaces
-=============================
+Python'o Sritys ir Vardų Erdvės
+===============================
 
-Before introducing classes, I first have to tell you something about Python's
-scope rules.  Class definitions play some neat tricks with namespaces, and you
-need to know how scopes and namespaces work to fully understand what's going on.
-Incidentally, knowledge about this subject is useful for any advanced Python
-programmer.
+Prieš klasių pristatymą, aš pirmiausia turiu papasakoti apie Python'o
+sričių taisykles. Klasių apibrėžtis naudoja kelis triukus su vardų
+erdvėmis ir jūs turite žinoti kaip sritys ir vardų erdvės veikia,
+kad visiškai suprastūmėte kas vyksta. Tuo pačiu šios žinios
+naudingos bet kuriam patyrusiam Python'o programuotojui.
 
-Let's begin with some definitions.
+Pradėkime nuo kelių apibrėžimų.
 
-A *namespace* is a mapping from names to objects.  Most namespaces are currently
-implemented as Python dictionaries, but that's normally not noticeable in any
-way (except for performance), and it may change in the future.  Examples of
-namespaces are: the set of built-in names (functions such as :func:`abs`, and
-built-in exception names); the global names in a module; and the local names in
-a function invocation.  In a sense the set of attributes of an object also form
-a namespace.  The important thing to know about namespaces is that there is
-absolutely no relation between names in different namespaces; for instance, two
-different modules may both define a function "maximize" without confusion ---
-users of the modules must prefix it with the module name.
+*Vardų erdvė* yra vardų į objektus atvaizdis. Dauguma vardų erdvių
+yra įgyvendintos naudojant Python'o žodynus, bet įprastai tai nėra
+matoma (išskyrus greityje) ir ateityje tai gali pasikeisti. Vardų
+erdvių pavyzdžiai: standartinių vardų aibė (funkcijos kaip :func:`abs`, ir
+standartinių išimčių vardai); globalūs vardai modulyje, lokalūs vardai
+funkcijoje. Tam tikra prasme objekto atributų aibė taip pat suformuoja
+vardų erdvę. Svarbiasias dalykas, kurį reikia suprasti apie vardų
+erdves, kad nėra visiškai jokio ryšio tarp vardų skirtingose vardų
+erdvėse. Pvz.: du skirtingi moduliai gali apibrėžti tą pačią funkciją
+"maksimizuoti"a --- tam kad vartotojai nesusimaišytų, modulio
+vartotojai turėtų pridėti modulio vardą prieš funkciją.
 
-By the way, I use the word *attribute* for any name following a dot --- for
-example, in the expression ``z.real``, ``real`` is an attribute of the object
-``z``.  Strictly speaking, references to names in modules are attribute
-references: in the expression ``modname.funcname``, ``modname`` is a module
-object and ``funcname`` is an attribute of it.  In this case there happens to be
-a straightforward mapping between the module's attributes and the global names
-defined in the module: they share the same namespace!  [#]_
+Tarp kitko, aš naudoju žodį *atributas* kiekvienam vardui po taško ---
+pvz.: reiškinyje ``z.real``, ``real`` yra objekto ``z`` atributas.
+Griežtai šnekant, nuorodos į vardus moduliuose yra atributų
+nuorodos: reiškinyje ``modname.funcname``, ``modname`` yra modulio
+objektas ir ``funcname`` yra jo atributas. Šiuo atveju įvyksta tiesioginis
+atvaizdavimas tarp modulio atributo ir globalių vardų apibrėžtų
+modulyje: jie naudojasi ta pačia vardų erdve! [#]_
 
-Attributes may be read-only or writable.  In the latter case, assignment to
-attributes is possible.  Module attributes are writable: you can write
-``modname.the_answer = 42``.  Writable attributes may also be deleted with the
-:keyword:`del` statement.  For example, ``del modname.the_answer`` will remove
-the attribute :attr:`the_answer` from the object named by ``modname``.
+Atributas gali būti tik-skaitomi arba rašomi. Pastaruoju atveju, priskyrimas
+atributams yra galimas. Modulių atributai yra rašomi:  jūs galite parašyti
+``modname.the_answer = 42``. Rašomi atributai gali būti ištrinti
+naudojant raktažodžio :keyword:`del` sakinį.  Pvz.: ``del modname.the_answer``
+pašalins atributą :attr:`the_answer` iš objekto pavadinto ``modname``.
 
-Name spaces are created at different moments and have different lifetimes.  The
-namespace containing the built-in names is created when the Python interpreter
-starts up, and is never deleted.  The global namespace for a module is created
-when the module definition is read in; normally, module namespaces also last
-until the interpreter quits.  The statements executed by the top-level
-invocation of the interpreter, either read from a script file or interactively,
-are considered part of a module called :mod:`__main__`, so they have their own
-global namespace.  (The built-in names actually also live in a module; this is
-called :mod:`__builtin__`.)
+Vardų erdvės yra sukuriamos skirtingais momentais ir gyvuoja skirtingą laiko
+tarpą. Vardų erdvės, kuriose laikomi įtaisyti vardai, yra sukuriamos
+kai Python'o interpretatorius startuoja, ir niekada nėra ištrinamos.
+Globali vardų erdvė moduliui yra sukuriama kaip perskaitomas
+modulio apibrėžimas. Paprastai, modulio vardų erdvė gyvuoja kol
+interpretatorius baigia savo darbą. Sakiniai, kurie yra vykdomi
+interpretoriuje aukščiausiame lygyje (tiek skaitant iš skripto failo
+arba interaktyviai) yra laikomo modulio :mod:`__main__` dalimi, taigi
+jie turi savo vardų erdvę. Įtaisyti vardai taip pat laikomi
+modulyje pavadintame :mod:`__builtin__`.
 
-The local namespace for a function is created when the function is called, and
-deleted when the function returns or raises an exception that is not handled
-within the function.  (Actually, forgetting would be a better way to describe
-what actually happens.)  Of course, recursive invocations each have their own
-local namespace.
+Lokali vardų erdvė funkcijai yra sukuriama kai funkcija yra iškviečiama ir
+yra ištrinama (tiesa sakant, "pamirštama" yra tinkamesnis žodis apibūdinti
+tam kas iš tikro atsitinka) kai funkcija sugrįžta arba iškelia išimtį, kuri nėra
+suvaldoma funkcijoje. Žinoma, kiekvienas rekursyvūs šaukimai turi
+savo lokalią vardų erdvę.
 
-A *scope* is a textual region of a Python program where a namespace is directly
-accessible.  "Directly accessible" here means that an unqualified reference to a
-name attempts to find the name in the namespace.
+*Sritis* yra tekstinis regionas Python'o programoje, kuri vardų erdvę
+yra tiesiogiai pasiekiama. "Tiesiogiai pasiekiama" šiuo atveju reiškia,
+kad neapribotas nuorodą į vardą bando surasti vardą vardų erdvėje.
 
-Although scopes are determined statically, they are used dynamically. At any
-time during execution, there are at least three nested scopes whose namespaces
-are directly accessible: the innermost scope, which is searched first, contains
-the local names; the namespaces of any enclosing functions, which are searched
-starting with the nearest enclosing scope; the middle scope, searched next,
-contains the current module's global names; and the outermost scope (searched
-last) is the namespace containing built-in names.
+Nors sritys yra apibrėžtos statiškai, jos naudojamos dinamiškai. Bet kuriuo
+vykdymo momentu egzistuoja bent trys vidinės sritys, kurių vardų erdvė
+yra tiesiogiai pasiekiama: vidinė sritis, kurioje ieškoma
+pirmiausia, saugo lokalius vardus; vardų sritys bet kuriai funkcijai,
+kurios yra ieškomos nuo artimiausios uždarančios srities; vėliau ieškoma
+vidurinėje srityje, kurioje laikomi dabartinio modulio globalūs vardai.
+Išorinė sritis ieškoma paskutinė ir joje laikomi įtaisyti vardai.
 
-If a name is declared global, then all references and assignments go directly to
-the middle scope containing the module's global names. Otherwise, all variables
-found outside of the innermost scope are read-only (an attempt to write to such
-a variable will simply create a *new* local variable in the innermost scope,
-leaving the identically named outer variable unchanged).
+Jeigu vardas apie paskelbtas globaliai, tada visos nuorodos ir priskyrimai
+vykdomi vidurinei sričiai, kurioje yra modulio globalūs vardai. Kitu
+atveju, visi kintamieji esantis vidinėje srityje yra tik-skaitomi (bandymas
+rašyti į tokį kintamąjį paprasčiausiai sukurs *naują* lokalų kintamąjį
+vidinėje srityje ir nepalies taip pat pavadinto išorinio kintamojo).
 
-Usually, the local scope references the local names of the (textually) current
-function.  Outside functions, the local scope references the same namespace as
-the global scope: the module's namespace. Class definitions place yet another
-namespace in the local scope.
+Įprastai lokali sritis nurodo į lokalius vardus dabartinėje funkcijoje.
+Už funkcijų ribų lokali sritis nurodo tą pačią vardų erdvę kaip
+ir globali sritis: modulio vardų erdvę. Klasės apibrėžtis taip pat
+sukuria dar vieną vardų erdvę lokalioje srityje.
 
-It is important to realize that scopes are determined textually: the global
-scope of a function defined in a module is that module's namespace, no matter
-from where or by what alias the function is called.  On the other hand, the
-actual search for names is done dynamically, at run time --- however, the
-language definition is evolving towards static name resolution, at "compile"
-time, so don't rely on dynamic name resolution!  (In fact, local variables are
-already determined statically.)
+Svarbu suprasti, kad sritys yra nustatomos pagal tekstą: globali
+funkcijos sritis yra apibrėžta modulyje yra to modulio vardų erdvė,
+nesvarbu iš kur ar kokiu vardu ta funkcija yra kviečiama. Iš kitus
+pusės, vardų paieška yra atliekama dinamiškai vykdymo metu ---
+tačiau kalbos apibrėžimas juda link statinio vardų nustatymo
+"kompiliavimo metu", taigi nepasitikėkite dinamišku vardu nustatymu!
+(Tiesa sakant, lokalūs kintamieji jau dabar nustatinėjami statiškai.)
 
-A special quirk of Python is that -- if no :keyword:`global`
-statement is in effect -- assignments to names always go
-into the innermost scope.  Assignments do not copy data --- they just bind names
-to objects.  The same is true for deletions: the statement ``del x`` removes the
-binding of ``x`` from the namespace referenced by the local scope.  In fact, all
-operations that introduce new names use the local scope: in particular, import
-statements and function definitions bind the module or function name in the
-local scope.  (The :keyword:`global` statement can be used to indicate that
-particular variables live in the global scope.)
+Specialus Python'o veiksmas yra, kad jei sakinyje nenaudojamas :keyword:`global`,
+tada priskyrimas vykdomas vidinėje srityje. Priskyrimai nekopijuoja
+duomenų --- jei tik susieja vardą su objektu. Tas pats galioja
+ir trynimui: sakinys ``del x`` pašalina ``x`` susiejimą lokalios sritied vardų erdvėje.
+Tiesa sakant, visos operacijos kurios pristato naujus vardus naudoja lokalią sritį:
+ypač, importavimo sakiniai ir funkcijų apibrėžtys susieja modulį ar funkcijos vardą
+toje lokalioje srityje. (Raktažodis :keyword:`global` sakinyje gali būti naudojamas
+norint nurodyti, kad tam tikras konkretus kintamasis turi būti ieškomas globalioje
+srityje).
 
 
 .. _tut-firstclasses:
