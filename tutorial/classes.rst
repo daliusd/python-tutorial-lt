@@ -156,19 +156,18 @@ srityje).
 
 .. _tut-firstclasses:
 
-A First Look at Classes
-=======================
+Pirmas Žvilgsnis į Klases
+=========================
 
-Classes introduce a little bit of new syntax, three new object types, and some
-new semantics.
-
+Klasės prideda šiek tiek naujos sintaksės, tris naujus objektų tipus
+ir šiek tiek naujos semantikos.
 
 .. _tut-classdefinition:
 
-Class Definition Syntax
------------------------
+Klasių Apibrėžties Sintaksė
+---------------------------
 
-The simplest form of class definition looks like this::
+Paprasčiausia klasės apibrėžtis atrodo taip:
 
    class ClassName:
        <statement-1>
@@ -177,42 +176,42 @@ The simplest form of class definition looks like this::
        .
        <statement-N>
 
-Class definitions, like function definitions (:keyword:`def` statements) must be
-executed before they have any effect.  (You could conceivably place a class
-definition in a branch of an :keyword:`if` statement, or inside a function.)
+Klasių apibrėžties, kaip ir funkcijų apibrėžties (:keyword:`def` reiškinys)
+turi būti įvykdyti, kad jie turėtų kokį nors efektą. (Jūs galite įdėti
+klasės apibrėžtį į sąlyginio sakinio :keyword:`if` šaką, arba į funkciją.)
 
-In practice, the statements inside a class definition will usually be function
-definitions, but other statements are allowed, and sometimes useful --- we'll
-come back to this later.  The function definitions inside a class normally have
-a peculiar form of argument list, dictated by the calling conventions for
-methods --- again, this is explained later.
+Praktikoje, reiškiniai klasės apibrėžtyje dažniausiai bus funkcijų
+apibrėžtys, bet kitokie reiškiniai taip pat yra leidžiami, ir kartais
+tai netgi naudinga --- mes dar prie to sugrįšime. Funkcijų apibrėžtys
+klasėje klasėje dažniausiai turi savitą argumentų sąrašo formą,
+kuri yra kilusi iš sutarto metodų kvietimo --- vėlgi, tai bus paaiškinta
+vėliau.
 
-When a class definition is entered, a new namespace is created, and used as the
-local scope --- thus, all assignments to local variables go into this new
-namespace.  In particular, function definitions bind the name of the new
-function here.
+Kai klasės apibrėžtis yra vykdoma yra sukuriama nauja vardų erdvė ir naudojama
+kaip lokali sritis --- taigi visi priskyrimai lokaliems kintamiesiems
+patenka į šią vardų erdvę. Ypatingai tai galioja funkcijų apibrėžtims, kurios
+susieja naujų funkcijų vardus.
 
-When a class definition is left normally (via the end), a *class object* is
-created.  This is basically a wrapper around the contents of the namespace
-created by the class definition; we'll learn more about class objects in the
-next section.  The original local scope (the one in effect just before the class
-definition was entered) is reinstated, and the class object is bound here to the
-class name given in the class definition header (:class:`ClassName` in the
-example).
-
+Kai klasės apibrėžtis įvykdoma (dažniausiai pabaigoje) yra sukuriamas
+naujas *klasės objektas*. Tai iš esmės yra apgaubtis apie vardų erdvę, kuri
+yra sukurta iš klasės apibrėžties  Mes išmoksime daugiau apie klasių objektus
+kitame skyriuje. Originali lokali sritis (ta kuri buvo naudojama prieš
+įžengiant į klasės apibrėžtį) yra atstatoma ir klasės objektas yra
+susietas su klasės vardu duotu jai klasės apibrėžties antraštėje 
+(pvz.: :class:`ClassName`).
 
 .. _tut-classobjects:
 
-Class Objects
--------------
+Klasių Objektai
+---------------
 
-Class objects support two kinds of operations: attribute references and
-instantiation.
+Klasių objektai palaiko dviejų rušių operacijas: atributų nuorodos ir
+egzemplioriaus sukūrimą.
 
-*Attribute references* use the standard syntax used for all attribute references
-in Python: ``obj.name``.  Valid attribute names are all the names that were in
-the class's namespace when the class object was created.  So, if the class
-definition looked like this::
+*Atributų nuorodos* naudoja standartinę sintaksę, kuri naudojame visoms atributų
+nuorodoms Python'e: ``obj.name``. Validūs atributų vardai yra visi vardai, kurie
+buvo klasės apibrėžtyje kai klasės objektas buvo sukurtas. Taigi, jei
+klasės apibrėžtis atrodo taip::
 
    class MyClass:
        """A simple example class"""
@@ -220,38 +219,39 @@ definition looked like this::
        def f(self):
            return 'hello world'
 
-then ``MyClass.i`` and ``MyClass.f`` are valid attribute references, returning
-an integer and a function object, respectively. Class attributes can also be
-assigned to, so you can change the value of ``MyClass.i`` by assignment.
-:attr:`__doc__` is also a valid attribute, returning the docstring belonging to
-the class: ``"A simple example class"``.
+tada ``MyClass.i`` ir ``MyClass.f`` yra validžios atributų nuorodos,
+kurios grąžina sveikąjį skaičių ir funkcijos objektą, atitinkamai.
+Klasių atributai taip pat gali būti priskiriami, taigi ``MyClass.i`` reikšmė
+gali būti pakeista priskyrimu. :attr:`__doc__` taip pat yra validus atributas, kuris
+grąžina dokumentacijos eilutę, kuri priklauso klasei: ``"A simple example class"``.
 
-Class *instantiation* uses function notation.  Just pretend that the class
-object is a parameterless function that returns a new instance of the class.
-For example (assuming the above class)::
+Klasių *egzempliorių sukūrimas* naudoja funkcijų užrašą. Tiesiog apsimeskite,
+kad klasės objektas yra funkcija be parametrų kuri grąžina nauja
+klasės egzempliorių.
+Pavyzdžiui (jei naudojame aukščiau apibrėžtą klasę)::
 
    x = MyClass()
 
-creates a new *instance* of the class and assigns this object to the local
-variable ``x``.
+sukurią naują klasės *egzempliorių* ir priskiria šį objektą lokaliam kintamajam ``x``.
 
-The instantiation operation ("calling" a class object) creates an empty object.
-Many classes like to create objects with instances customized to a specific
-initial state. Therefore a class may define a special method named
-:meth:`__init__`, like this::
+Egzemplioriaus sukūrimo operacija ("kviečiant" klasės objektą) sukuria naują objektą.
+Dauguma klasių sukuria objektus, kurių egzemplioriai yra pritaikomi
+speficiniai pradinei pozicijai. Todėl klasė gali apibrėžti
+specialų metodą pavadintą :meth:`__init__`, pvz.::
 
    def __init__(self):
        self.data = []
 
-When a class defines an :meth:`__init__` method, class instantiation
-automatically invokes :meth:`__init__` for the newly-created class instance.  So
-in this example, a new, initialized instance can be obtained by::
+Kai klasė apibrėžia :meth:`__init__` metodą, klasės egzemplioriaus
+sukūrimas automatiškai iškviečia meth:`__init__` naujai sukurtam klasės
+egzemplioriui. Taigi šiame pavyzdyje naujas inicijuotas egzempliorius
+gali būti gautas iškviečiant::
 
    x = MyClass()
 
-Of course, the :meth:`__init__` method may have arguments for greater
-flexibility.  In that case, arguments given to the class instantiation operator
-are passed on to :meth:`__init__`.  For example, ::
+Žinoma metodas :meth:`__init__` gali turėti ir argumentus didesniam lankstumui.
+Tokiu atveju argumentai kurie paduodami klasės egzemplioriaus sukūrimo
+operatoriui yra perduodami :meth:`__init__`.  Pavyzdžiui ::
 
    >>> class Complex:
    ...     def __init__(self, realpart, imagpart):
@@ -265,18 +265,20 @@ are passed on to :meth:`__init__`.  For example, ::
 
 .. _tut-instanceobjects:
 
-Instance Objects
-----------------
+Egzempliorių objektai
+---------------------
 
-Now what can we do with instance objects?  The only operations understood by
-instance objects are attribute references.  There are two kinds of valid
-attribute names, data attributes and methods.
+Taigi ką mes galime daryti su egzempliorių objektais? Vienintelė operacija
+kurią supranta egzempliorių objektai yra atributų nuorodos. Yra dviejų
+rušių validūs atributų vardai: duomenų atribudai ir metodai.
 
-*data attributes* correspond to "instance variables" in Smalltalk, and to "data
-members" in C++.  Data attributes need not be declared; like local variables,
-they spring into existence when they are first assigned to.  For example, if
-``x`` is the instance of :class:`MyClass` created above, the following piece of
-code will print the value ``16``, without leaving a trace::
+*duomenų atributai* kurie atitinka Smalltalk „egzempliorių kintamuosius“ ir
+„duomenų narius“ C++. Duomenų atributai turi būti aprašyti. Kaip ir
+lokalųs kintamieji, jei pradeda egzistuoti kai jiems pirmą
+kartą yra priskiriama reikšmė. Pavyzdžiui, jei ``x``
+yra anksčiau sukurtos klases :class:`MyClass` egzempliorius,
+tai žemiau esantis kodas išspausdins reikšmę ``16`` ir
+nepaliks jokios žymės::
 
    x.counter = 1
    while x.counter < 10:
@@ -284,22 +286,22 @@ code will print the value ``16``, without leaving a trace::
    print x.counter
    del x.counter
 
-The other kind of instance attribute reference is a *method*. A method is a
-function that "belongs to" an object.  (In Python, the term method is not unique
-to class instances: other object types can have methods as well.  For example,
-list objects have methods called append, insert, remove, sort, and so on.
-However, in the following discussion, we'll use the term method exclusively to
-mean methods of class instance objects, unless explicitly stated otherwise.)
+Kitas egzemplioriaus atributo nuorodos tipas yra *metodas*. Metodas
+yra funkcija, kuri "priklauso" objektui. (Python'e, terminas metodas
+nėra unikalus klasės egzemplioriams: kiti objektų tipai gali turėti
+metodus taip pat. Pvz, sąrašo objektas turi metodus append, insert,
+remove, sort ir t.t. Tačiau toliau sekančioje diskusijoje mes naudosime
+terminą metodą išskirtinai klasių egzempliorių objektams, nebent
+bus nurodyta kitaip).
 
 .. index:: object: method
 
-Valid method names of an instance object depend on its class.  By definition,
-all attributes of a class that are function  objects define corresponding
-methods of its instances.  So in our example, ``x.f`` is a valid method
-reference, since ``MyClass.f`` is a function, but ``x.i`` is not, since
-``MyClass.i`` is not.  But ``x.f`` is not the same thing as ``MyClass.f`` --- it
-is a *method object*, not a function object.
-
+Validus metodų namai egzemplioriaus objektui priklauso nuo jo klasės.
+Pagal apibrėžimą, visi klasės atributai, kurie yra funkcijų objektai,
+apibrėžia atitinkamus egzemplioriaus metodus. Pavyzdžiui, ``x.f`` yra
+validus metodas, nes ``MyClass.f`` yra funkcija, bet ``x.i`` nėra,
+nes ``MyClass.i`` nėra. Bet ``x.f`` nėra tas pats kas ``MyClass.f`` --- tai
+yra *metodo objektas*, ne funkcijos objektas.
 
 .. _tut-methodobjects:
 
