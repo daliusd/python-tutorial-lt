@@ -305,46 +305,46 @@ yra *metodo objektas*, ne funkcijos objektas.
 
 .. _tut-methodobjects:
 
-Method Objects
---------------
+Metodų Objektai
+---------------
 
-Usually, a method is called right after it is bound::
+Įprastai, metodai yra iškviečiamas iškart po to, kai jis susiejamas::
 
    x.f()
 
-In the :class:`MyClass` example, this will return the string ``'hello world'``.
-However, it is not necessary to call a method right away: ``x.f`` is a method
-object, and can be stored away and called at a later time.  For example::
+
+Klasės :class:`MyClass` pavyzdyje, tai sugrąžins eilutę ``'hello world'``.
+Tačiau, nebūtina kviesti metodą iškart: ``x.f`` yra metodo objektas
+ir gali būti laikomas vėliasniam laikui, Pvz.::
 
    xf = x.f
    while True:
        print xf()
 
-will continue to print ``hello world`` until the end of time.
+Spausdins ``hello world`` begale kartų.
 
-What exactly happens when a method is called?  You may have noticed that
-``x.f()`` was called without an argument above, even though the function
-definition for :meth:`f` specified an argument.  What happened to the argument?
-Surely Python raises an exception when a function that requires an argument is
-called without any --- even if the argument isn't actually used...
+Kas konkrečiai atsitinka, kai metodas yra iškviečiamas? Jūs galėjote
+pastebėti, kad ``x.f()`` (viršuje) buvo iškviestas be argumentų, nors
+apibrėžtis  metodui :meth:`f` argumentą ir nurodė. Kas atsitiko argumentui?
+Žinoma Pythonas išmeta išimtį kai funkcija, kuriai reikia argumentų yra
+iškviečiama be jų --- netgi jei argumentas nėra naudojamas...
 
-Actually, you may have guessed the answer: the special thing about methods is
-that the object is passed as the first argument of the function.  In our
-example, the call ``x.f()`` is exactly equivalent to ``MyClass.f(x)``.  In
-general, calling a method with a list of *n* arguments is equivalent to calling
-the corresponding function with an argument list that is created by inserting
-the method's object before the first argument.
+Tiesa sakant, atsakymą jūs galbūt jau nuspėjote: metodų ypatybė yra
+ta, kad objektas yra perduodamas kaip pirmas argumentas funkcijai. Mūsų
+pavyzdyje, kvietimas ``x.f()`` yra ekvivalentus ``MyClass.f(x)``.  Apibrendinus,
+metodo su *n* argumentų sąrašu kvietimas yra ekvivalentiškas atitinkamos
+funkcijos atitinkamos funkcijos kvietimui su argumentu sąrašu, kuris yra
+sukuriamas pridedant metodo objektą prieš pirmą argumentą.
 
-If you still don't understand how methods work, a look at the implementation can
-perhaps clarify matters.  When an instance attribute is referenced that isn't a
-data attribute, its class is searched.  If the name denotes a valid class
-attribute that is a function object, a method object is created by packing
-(pointers to) the instance object and the function object just found together in
-an abstract object: this is the method object.  When the method object is called
-with an argument list, it is unpacked again, a new argument list is constructed
-from the instance object and the original argument list, and the function object
-is called with this new argument list.
-
+Jei jūs vis dar nesuprantate kaip metodas dirbas, žvilgsnis į įgyvendinimą gali
+viską paaiškinti. Kai egzemplioriaus atributas, kuris nėra duomenų atributas,
+yra nurodomas ieškoma jo klasėje. Jeigu vardas nurodo validų klasės atributą,
+kuris yra funkcijos objektas, metodo objektas yra sukuriamas supakuojant kartu
+egzemplioriaus objektą ir kątik surastos funkcijos objektą į abstraktų obektą ---
+tai ir yra metodo objektas. Kai metodo objektas yra iškviečiamas su argumentų
+sąrašu, jis išpakuojamas vėl, naujas argumentų sąrašas yra sukonstruojamas
+iš egzemplioriaus objekto ir originalaus argumentų sąrašo ir tada funkcijos
+objektas yra iškviečiamas naudojant šį naują argumentų sąrašą.
 
 .. _tut-remarks:
 
