@@ -348,49 +348,54 @@ objektas yra iškviečiamas naudojant šį naują argumentų sąrašą.
 
 .. _tut-remarks:
 
-Random Remarks
-==============
+Atsitiktinės pastabos
+=====================
 
-.. These should perhaps be placed more carefully...
+.. Šios tikriausiai turėtų būti išdėstytos atsargiau...
 
-Data attributes override method attributes with the same name; to avoid
-accidental name conflicts, which may cause hard-to-find bugs in large programs,
-it is wise to use some kind of convention that minimizes the chance of
-conflicts.  Possible conventions include capitalizing method names, prefixing
-data attribute names with a small unique string (perhaps just an underscore), or
-using verbs for methods and nouns for data attributes.
+Duomenų atributai yra svarbesni už metodų atributus tokiu pačiu vardu.
+Tam kad išvengtumėte vardų konflikto, dėl ko gali kilti sunkiai
+randamos klaidos didelėse programose, patartina naudoti tam
+tikrus susitarimus, kad konfliktų tikimybė būtų minimizuota. Galimi
+susitartimai gali būti metodų vardų rašymas iš didžiųjų raidžių,
+pridedant tam tikra unikalią eilutę prie duomenų atributų pradžioje
+(pvz.: pabraukimą) arba metodų vardams naudoti veiksmažodžius,
+o daiktavardžius naudoti duomenų atributams.
 
-Data attributes may be referenced by methods as well as by ordinary users
-("clients") of an object.  In other words, classes are not usable to implement
-pure abstract data types.  In fact, nothing in Python makes it possible to
-enforce data hiding --- it is all based upon convention.  (On the other hand,
-the Python implementation, written in C, can completely hide implementation
-details and control access to an object if necessary; this can be used by
-extensions to Python written in C.)
+Duomenų atribudai gali būti pasiekiami tiek metodų tiek paprastų
+objekto vartotojų ("klientų"). Kitaip sakant, klasės nėra tinkamos
+įgyvendinti abstrakčius duomenų tipus. Tiesa sakant, Python'e nėra
+nieko kas leistų paslėpti duomenis --- viskas yra paremta susitarimu.
+(Iš kitos pusės, Python'o implementacija parašyta C gali visiškai
+paslėpti įgyvendinimo detales ir kontroliuoti priėjimą prie
+objekto, jei tik to reikia. Tai gali būti naudojame naudojant
+Python'o išplėtimus parašytus C.)
 
-Clients should use data attributes with care --- clients may mess up invariants
-maintained by the methods by stamping on their data attributes.  Note that
-clients may add data attributes of their own to an instance object without
-affecting the validity of the methods, as long as name conflicts are avoided ---
-again, a naming convention can save a lot of headaches here.
+Klientai turi naudoti duomenų atributus atsargiai --- klientai gali
+sujaukti metodų prižiūrimus invariantus jei bus pakeisti jų
+duomenų atributai. Pastebėsime, kad klientai gali pridėti savo
+duomenų atributus į egzemplioriaus objektą nepaveikiant metodų
+validumo, tol kol išvengiama vardų konflikto --- vėlgi vardų
+kūrimo susitarimai gali padėti išvengti daug galvos skausmo.
 
-There is no shorthand for referencing data attributes (or other methods!) from
-within methods.  I find that this actually increases the readability of methods:
-there is no chance of confusing local variables and instance variables when
-glancing through a method.
+Python'e nėra sutrumpinimo norint pasiekti duomenų atributus (ar kitus metodus!)
+iš metodo. Aš asmeniškai manau, kad tai padidina metodų skaitomumą:
+nėra galimybės sumaišyti lokalių ir egzemplioriaus kintamųjų besižvalgant
+metode.
 
-Often, the first argument of a method is called ``self``.  This is nothing more
-than a convention: the name ``self`` has absolutely no special meaning to
-Python.  (Note, however, that by not following the convention your code may be
-less readable to other Python programmers, and it is also conceivable that a
-*class browser* program might be written that relies upon such a convention.)
+Dažniausiai, pirmas metodo argumentas yra vadinamas ``self``. Tai tėra
+nieko daugiau tik susitarimas: vardas ``self`` neturi jokios specialios
+reikšmės Python'e. (Tačiau pastebėkite, kad jums nesilaikant šio
+susitarimo jūsų kodas gali būti mažiau skaitomas kitiems Python'o
+progamuotojams, ir labai tikėtina, kad *klasių naršyklės* programa
+gali būti parašyta laikantis šio susitarimo).
 
-Any function object that is a class attribute defines a method for instances of
-that class.  It is not necessary that the function definition is textually
-enclosed in the class definition: assigning a function object to a local
-variable in the class is also ok.  For example::
+Kiekvienas funkcijos objektas, kuris yra klasės atributas, apibrėžia metodą
+šios klasės egzemplioriams. Nėra būtina, kad funkcijos apibrėžtis būtų
+apgaubta klasės apibrėžties tekste: funkcijos priskyrimas lokaliam
+klasės kintamajam taip pat yra galimas. Pvz.::
 
-   # Function defined outside the class
+   # Funkcija apibrėžta už klasės ribų
    def f1(self, x, y):
        return min(x, x+y)
 
@@ -400,13 +405,14 @@ variable in the class is also ok.  For example::
            return 'hello world'
        h = g
 
-Now ``f``, ``g`` and ``h`` are all attributes of class :class:`C` that refer to
-function objects, and consequently they are all methods of instances of
-:class:`C` --- ``h`` being exactly equivalent to ``g``.  Note that this practice
-usually only serves to confuse the reader of a program.
+Dabar ``f``, ``g`` and ``h`` yra klasės :class:`C` atributai, kurie
+nurodo į funkcijų objektus yra to pasekoje jie visi yra klasės
+:class:`C` egzemplioriaus metodai --- ``h`` yra ekvivalentus ``g``.
+Pastebėsime, kad tokia praktika dažniausiai naudojama norint tik
+sumaišyti programos skaitytoją.
 
-Methods may call other methods by using method attributes of the ``self``
-argument::
+Metodai gali kviesti kitus metodus naudodami argumento ``self`` metodo
+atributus::
 
    class Bag:
        def __init__(self):
@@ -417,28 +423,29 @@ argument::
            self.add(x)
            self.add(x)
 
-Methods may reference global names in the same way as ordinary functions.  The
-global scope associated with a method is the module containing the class
-definition.  (The class itself is never used as a global scope!)  While one
-rarely encounters a good reason for using global data in a method, there are
-many legitimate uses of the global scope: for one thing, functions and modules
-imported into the global scope can be used by methods, as well as functions and
-classes defined in it.  Usually, the class containing the method is itself
-defined in this global scope, and in the next section we'll find some good
-reasons why a method would want to reference its own class!
+Metodai gali kreiptis į globalius vardus tokiu pačiu būdų kaip paprastos
+funkcijos. Globali sritis susieta su metodu yra modulis kuriame yra
+klasės apibrėžtis (klasė pati savaime niekada nėra naudojama globalioje
+srityje!). Nors surasti gerą priežastį naudoti globalius duomenis metode
+yra labai sunku, yra daug teisėtų būdų naudoti globalią sritį: metodai
+gali naudoti funkcijas ar modulius importuotus į globalią sritį, taip
+pat metodai gali naudoti funkcijas ar klases apibrėžtas globalioje
+srityje. Dažniausiai, klasė kurioje yra metodai yra taip pat
+apibrėžta globalioje srityje, ir kitoje dalyje mes surasime
+keletą gerų priežasčių kodėl metode gali prireikti nurodyti
+savo paties klasę!
 
-Each value is an object, and therefore has a *class* (also called its *type*).
-It is stored as ``object.__class__``.
-
+Kiekviena reikšmė yra objektas, ir to pasekoje turi *klasę* (taip pat
+vadinama *tipu*). Ji laikoma ``object.__class__``.
 
 .. _tut-inheritance:
 
-Inheritance
-===========
+Paveldėjimas
+============
 
-Of course, a language feature would not be worthy of the name "class" without
-supporting inheritance.  The syntax for a derived class definition looks like
-this::
+Žinoma, kalbos savybė nebūtų verta "klasės" vardo jeigu nepalaikytų
+paveldėjimo. Paveldėtos klasės apibrėžties sintaksė atrodo
+taip::
 
    class DerivedClassName(BaseClassName):
        <statement-1>
@@ -447,50 +454,52 @@ this::
        .
        <statement-N>
 
-The name :class:`BaseClassName` must be defined in a scope containing the
-derived class definition.  In place of a base class name, other arbitrary
-expressions are also allowed.  This can be useful, for example, when the base
-class is defined in another module::
+Vardas :class:`BaseClassName` turi būti apibrėžtas srityje, kur yra
+laikoma paveldėtos klasės apibrėžtis. Viršklasio vardo vietoje, kitos
+norimos išraiškos taip pat yra leidžiamos. Tai tarkim gali būti naudinga
+kai viršklasis yra apibrėžtas kitame modulyje::
 
    class DerivedClassName(modname.BaseClassName):
 
-Execution of a derived class definition proceeds the same as for a base class.
-When the class object is constructed, the base class is remembered.  This is
-used for resolving attribute references: if a requested attribute is not found
-in the class, the search proceeds to look in the base class.  This rule is
-applied recursively if the base class itself is derived from some other class.
+Paveldėtos klasės apibrėžties vykdymas vyksta taip pat kaip ir
+viršklasiui. Kai klasės objektas yra konstruojamas, taip pat
+yra prisimenamas ir viršklasis. Tai naudojama nustatant atributų
+nuorodas: jeigu norimas atributas nėra randamas klasėje, tada
+jo paieška vykdoma jos viršklasyje. Ši taisyklė yra taikoma
+rekursiškai jeigu pats viršklasis yra paveldėtas iš kokios
+nors kitos klasės.
 
-There's nothing special about instantiation of derived classes:
-``DerivedClassName()`` creates a new instance of the class.  Method references
-are resolved as follows: the corresponding class attribute is searched,
-descending down the chain of base classes if necessary, and the method reference
-is valid if this yields a function object.
+Taip pat nėra nieko ypatingo kuriant paveldėtos klasės egzempliorių:
+``DerivedClassName()`` sukuria naują klasės egzempliorių. Metodų
+nuorodos surandamos taip: pirmiausia ieškoma atitinkamos klasės
+atributo ir jeigu reikia tada ieškoma grandine žemyn per viršklasius,
+ir metodo nuoroda yra validi jei ji gražina funkcijos objektą.
 
-Derived classes may override methods of their base classes.  Because methods
-have no special privileges when calling other methods of the same object, a
-method of a base class that calls another method defined in the same base class
-may end up calling a method of a derived class that overrides it.  (For C++
-programmers: all methods in Python are effectively ``virtual``.)
+Paveldėtos klasės gali perrašyti viršklasio metodus. Kadangi
+metodai neturi specialių teisių kviečiant kitus to pačio
+objekto metodus, viršklasio metodas, kuris kviečia kitą metodą apibrėžta
+tame pačiame viršklasyje, galiausiai gali iškviesti paveldėtos klasės
+metodą (kuris perrašė norimą iškviesti metodą). (C++ programuotojams: visi
+metodai Python'e yra ``virtualūs``.)
 
-An overriding method in a derived class may in fact want to extend rather than
-simply replace the base class method of the same name. There is a simple way to
-call the base class method directly: just call ``BaseClassName.methodname(self,
-arguments)``.  This is occasionally useful to clients as well.  (Note that this
-only works if the base class is defined or imported directly in the global
-scope.)
+Metodo perrašymas paveldėtoje klasėje gali praplėsti (užuot tiesiog
+pakeitus) viršklasio metodą tuo pačiu vardu. Yra labai paprastas
+būdas iškviesti bazinės klasės metodą tiesiogiai: tiesiog
+iškvieskite ``BaseClassName.methodname(self, arguments)``.  Tai
+kartais naudingą ir vartotojams. (Pastebėkite, kad tai dirba
+tik tada, kai bazinė klasė yra apibrėžta arba importuota tiesiogiai
+į globalią sritį).
 
-Python has two built-in functions that work with inheritance:
+Python'as turi dvi įtaisytas funkcijas, kurios dirba su paveldėjimu:
 
-* Use :func:`isinstance` to check an object's type: ``isinstance(obj, int)``
-  will be ``True`` only if ``obj.__class__`` is :class:`int` or some class
-  derived from :class:`int`.
+* Naudokite funkciją :func:`isinstance` norėdami patikrinti objekto tipą: ``isinstance(obj, int)``
+  bus ``True`` tik tada kai ``obj.__class__`` yra :class:`int` arba kokia
+  nors klasė paveldėta iš :class:`int`.
 
-* Use :func:`issubclass` to check class inheritance: ``issubclass(bool, int)``
-  is ``True`` since :class:`bool` is a subclass of :class:`int`.  However,
-  ``issubclass(unicode, str)`` is ``False`` since :class:`unicode` is not a
-  subclass of :class:`str` (they only share a common ancestor,
-  :class:`basestring`).
-
+* Naudokite funkciją :func:`issubclass` norėdami patikrinti paveldėjimą: ``issubclass(bool, int)``
+  yra ``True`` kadangi :class:`bool` yra klasės :class:`int` poklasis.  Tačiau,
+  ``issubclass(unicode, str)`` grąžins ``False`` kadangi :class:`unicode` nėra
+  :class:`str` poklasis (jie tik turi bendrą protėvį :class:`basestring`).
 
 
 .. _tut-multiple:
