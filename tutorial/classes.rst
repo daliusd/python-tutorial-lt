@@ -504,11 +504,11 @@ Python'as turi dvi įtaisytas funkcijas, kurios dirba su paveldėjimu:
 
 .. _tut-multiple:
 
-Multiple Inheritance
---------------------
+Sudėtinis paveldėjimas
+----------------------
 
-Python supports a limited form of multiple inheritance as well.  A class
-definition with multiple base classes looks like this::
+Python'as palaiko apribotą sudėtinio paveldėjimo formą. Klasės
+apibrėžtis su keliais viršklasiais atrodo taip::
 
    class DerivedClassName(Base1, Base2, Base3):
        <statement-1>
@@ -517,36 +517,38 @@ definition with multiple base classes looks like this::
        .
        <statement-N>
 
-For old-style classes, the only rule is depth-first, left-to-right.  Thus, if an
-attribute is not found in :class:`DerivedClassName`, it is searched in
-:class:`Base1`, then (recursively) in the base classes of :class:`Base1`, and
-only if it is not found there, it is searched in :class:`Base2`, and so on.
+Seno stiliaus klasėms, vienintelė taisyklė yra pirmiausia-gilyn, iš kairės į dešinę.
+Taigi jei atributas nėra randamas klasėje :class:`DerivedClassName`, tada jo
+ieškoma klasėje :class:`Base1`, tada (rekursyviai) klasės :class:`Base1` viršklasyje ir
+tik tada, jei jo neranda ten, ieškoma klasėje :class:`Base2` ir t.t.
 
-(To some people breadth first --- searching :class:`Base2` and :class:`Base3`
-before the base classes of :class:`Base1` --- looks more natural.  However, this
-would require you to know whether a particular attribute of :class:`Base1` is
-actually defined in :class:`Base1` or in one of its base classes before you can
-figure out the consequences of a name conflict with an attribute of
-:class:`Base2`.  The depth-first rule makes no differences between direct and
-inherited attributes of :class:`Base1`.)
+(Kai kuriems žmonėms ieškojimas klasėse :class:`Base2` ir :class:`Base3`
+prieš ieškant klasės :class:`Base1` viršklasiuose atrodo natūralus. Tačiau
+tai reikalautų žinoti ar tam tikras :class:`Base1` atributas yra iš ties
+apibrėžtas klasėje :class:`Base1` arba viename iš jos viršklasių prieš
+galėdamas numatyti vardų konflikto pasekmes su klasės :class:`Base2`
+atributu. Pirmiausia-gilyn taisyklė nedaro skirtumo tarp tiesioginių
+ir paveldėtų klasės :class:`Base1` atributų.
 
-For :term:`new-style class`\es, the method resolution order changes dynamically
-to support cooperative calls to :func:`super`.  This approach is known in some
-other multiple-inheritance languages as call-next-method and is more powerful
-than the super call found in single-inheritance languages.
+:term:`naujo stiliaus klasė`\se metodų nustatymo tvarka keičiasi dinamiškai,
+kad galėtų palaikyti bendradarbiaujančius funkcijos :func:`super` kvietimus.
+Šis sprendimas keliose kitose sudėtinį paveldėjimą palaikančiose kalbose
+yra žinomas kaip kviesk-kitą-metodą ir yra galingesnis negu super kvietimas
+randamas paveldėjimo iš vieno viršklasio kalbose.
 
-With new-style classes, dynamic ordering is necessary because all  cases of
-multiple inheritance exhibit one or more diamond relationships (where one at
-least one of the parent classes can be accessed through multiple paths from the
-bottommost class).  For example, all new-style classes inherit from
-:class:`object`, so any case of multiple inheritance provides more than one path
-to reach :class:`object`.  To keep the base classes from being accessed more
-than once, the dynamic algorithm linearizes the search order in a way that
-preserves the left-to-right ordering specified in each class, that calls each
-parent only once, and that is monotonic (meaning that a class can be subclassed
-without affecting the precedence order of its parents).  Taken together, these
-properties make it possible to design reliable and extensible classes with
-multiple inheritance.  For more detail, see
+Naujo stiliaus klasėms dinamiškas paveldėjimas yra reikalingas nes visi
+sudėtinio paveldėjimo atvejai naudoja vieną ar daugiau deimantinių
+sąsajų (kai bent viena iš tėvinių klasių gali būti pasiektos keletu kelių
+iš tos pačios viršutinės klasės). Pvz.: visos naujo stiliaus klasės yra
+paveldėtos iš :class:`object`, taigi bet kuris sudėtinio paveldėjimo
+atvejis leidžia daugiau negu vieną būdą pasiekti :class:`object`.  Norint
+viršklasius apsaugoti nuo panaudojimo kelis kartus, dinaminis algoritmas
+liniarizuoja paieškos tvarką taip, kad būtų išlaikyta iš kairės į dešinę
+tvarka nurodyta kiekvienoje klasėje, kuri kviečią tevą tik kartą, ir būtų
+monotonišką (monotoniška reiškia, kad klasė gali būti poklasiu
+nepaveikdama jos tėvų pirmenybės tvarkos). Visą tai paimant kartu,
+šios savybės leidžia kurti patikimas ir išplečiamas klases naudojant
+sudėtinį paveldėjimą. Daugiau informacijos čia:
 http://www.python.org/download/releases/2.3/mro/.
 
 
