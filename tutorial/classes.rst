@@ -554,37 +554,33 @@ http://www.python.org/download/releases/2.3/mro/.
 
 .. _tut-private:
 
-Private Variables
-=================
+Privatūs kintamieji
+===================
 
-There is limited support for class-private identifiers.  Any identifier of the
-form ``__spam`` (at least two leading underscores, at most one trailing
-underscore) is textually replaced with ``_classname__spam``, where ``classname``
-is the current class name with leading underscore(s) stripped.  This mangling is
-done without regard to the syntactic position of the identifier, so it can be
-used to define class-private instance and class variables, methods, variables
-stored in globals, and even variables stored in instances. private to this class
-on instances of *other* classes.  Truncation may occur when the mangled name
-would be longer than 255 characters. Outside classes, or when the class name
-consists of only underscores, no mangling occurs.
+Privatūs klasės identifikatoriai egzistuoja, bet su tam tikrais apribojamais.
+Jei identifikatorius turi formą ``__spam`` (bent du pabraukimo brūkšniai
+priekyje ir daugiausiai vienas pabaigoje) jis yra pakeičiamas į
+``_classname__spam``, kur ``classname`` yra klasės vardas be pabraukimo brūkšnių,
+jei jie buvo klasės vardo gale. Šis pakeitimas atliekamas nepaisant
+sintaksinės identifikatoriaus pozicijos, todėl tai gali būti
+naudojama apibrėžti klasės kintamuosius, metodus, kintamuosius laikomus
+tarp globalių kintamųjų ir netgi kintamuosius laikomus egzemplioriuose,
+kurie yra privatūs šiai klasės *kitos* klasės egzemplioriuje. Gali
+įvykti sutrumpinimas, jei pakeistas vardas yra ilgesnis negu 255
+simboliai. Jei identifikatorius nėra klasėje arba kai klasės vardas
+sudarytas tik iš pabraukimo brūkšnių pakeitimas neįvyksta.
 
-Name mangling is intended to give classes an easy way to define "private"
-instance variables and methods, without having to worry about instance variables
-defined by derived classes, or mucking with instance variables by code outside
-the class.  Note that the mangling rules are designed mostly to avoid accidents;
-it still is possible for a determined soul to access or modify a variable that
-is considered private.  This can even be useful in special circumstances, such
-as in the debugger, and that's one reason why this loophole is not closed.
-(Buglet: derivation of a class with the same name as the base class makes use of
-private variables of the base class possible.)
-
-Notice that code passed to ``exec``, ``eval()`` or ``execfile()`` does not
-consider the classname of the invoking  class to be the current class; this is
-similar to the effect of the  ``global`` statement, the effect of which is
-likewise restricted to  code that is byte-compiled together.  The same
-restriction applies to ``getattr()``, ``setattr()`` and ``delattr()``, as well
-as when referencing ``__dict__`` directly.
-
+Vardų pakeitimo tikslas yra leisti paprastai apibrėžti "privačius"
+egzemplioriaus kintamuosius ir metodus nesujaudinant apie
+egzemplioriaus kintamuosius apibrėžtus paveldėtoje klasėje arba
+egzemplioriaus kintamųjų keitimus už klasės ribų. Pastebėsime,
+kad pakeitimo taisyklės yra sukurtos taip, kad būtų išvengta
+sutapimų. Tačiau visgi įmanoma pasišventusiai sielai pasiekti ir
+modifikuoti kintamuosius, kurie laikomi privačiais. Tai netgi
+gali būti naudinga tam tikrose situacijose, kaip kad derintuvėje
+ir tai vienintelė priežastis kodėl ši skylė yra palikta. Paveldėjimas
+naudojant tokį patį klasės vardą kaip viršklasio leidžia
+naudoti viršklasio privačius kintamuosius.
 
 .. _tut-odds:
 
