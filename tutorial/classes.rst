@@ -584,12 +584,12 @@ naudoti viršklasio privačius kintamuosius.
 
 .. _tut-odds:
 
-Odds and Ends
-=============
+Likučiai
+========
 
-Sometimes it is useful to have a data type similar to the Pascal "record" or C
-"struct", bundling together a few named data items.  An empty class definition
-will do nicely::
+Kartais yra naudinga turėti duomenų tipą panašų į Paskalio "record"
+arba C "struct", kuriame būtų laikomi keli vardiniai duomenų nariai.
+Tuščia klasės apibrėžtis tam puikiai tinka::
 
    class Employee:
        pass
@@ -601,45 +601,47 @@ will do nicely::
    john.dept = 'computer lab'
    john.salary = 1000
 
-A piece of Python code that expects a particular abstract data type can often be
-passed a class that emulates the methods of that data type instead.  For
-instance, if you have a function that formats some data from a file object, you
-can define a class with methods :meth:`read` and :meth:`readline` that get the
-data from a string buffer instead, and pass it as an argument.
+Python'o kodo gabaliukui, kuris tikisi abstraktaus tipo, galima perduoti
+klasė, kuri emuliuoja to duomenų tipo metodus. Tarkime, jei jūs turite
+funksija, kuri formuoja kažkokį duomenų tipą iš failo objekto, jūs galite
+apibrėžti klasę su metodais :meth:`read` ir :meth:`readline` kurie
+gauna duomenis iš eilutės buferio ir perduoti tą buferį kaip
+argumentą.
 
-.. (Unfortunately, this technique has its limitations: a class can't define
-   operations that are accessed by special syntax such as sequence subscripting
-   or arithmetic operators, and assigning such a "pseudo-file" to sys.stdin will
-   not cause the interpreter to read further input from it.)
+.. (Nelaimei, ši technika turi savo ribas: klasė negali
+   apibrėžti operacijas, kurios pasiekiamos naudojant specialią sintaksę,
+   kaip kad sekos nario parinkimas ar aritmetiniai operatoriai, ir tokio
+   „pseudo-failo“ priskyrimas sys.stdin neprivers interpretatoriaus
+   toliau skaityti tolimesnių duomenų iš jo.)
 
-Instance method objects have attributes, too: ``m.im_self`` is the instance
-object with the method :meth:`m`, and ``m.im_func`` is the function object
-corresponding to the method.
+Egzemplioriaus metodų objektai turi atributus taip pat: ``m.im_self`` yra
+egzemplioriaus objektas su metodu :meth:`m`, ir ``m.im_func`` yra funkcijos
+objektas atitinkantis tą metodą.
 
 
 .. _tut-exceptionclasses:
 
-Exceptions Are Classes Too
-==========================
+Išimtys Yra Klasės Taip Pat
+===========================
 
-User-defined exceptions are identified by classes as well.  Using this mechanism
-it is possible to create extensible hierarchies of exceptions.
+Vartotojų apibrėžtos išimtys yra identifikuojamos pagal klases taip pat.
+Naudojant šį mechanizmą galima sukurti praplečiamas išimčių hierarchijas.
 
-There are two new valid (semantic) forms for the raise statement::
+Egzistuoja dvi naujos validžios (semantinės) formos išimčių iškėlimui::
 
    raise Class, instance
 
    raise instance
 
-In the first form, ``instance`` must be an instance of :class:`Class` or of a
-class derived from it.  The second form is a shorthand for::
+Pirmoje formoje ``instance`` privalo būti klasės :class:`Class` egzempliorius
+arba paveldėta klasė iš jo. Antroji forma yra šio reiškinio sutrumpinimas::
 
    raise instance.__class__, instance
 
-A class in an except clause is compatible with an exception if it is the same
-class or a base class thereof (but not the other way around --- an except clause
-listing a derived class is not compatible with a base class).  For example, the
-following code will print B, C, D in that order::
+Klasė except reiškinyje yra suderinama su išimtimi jei ji yra tos
+pačios klasės ar viršklasio (bet ne atvirkščiai --- jei except
+reiškinyje yra poklasis, tai jis nėra suderinamas su viršklasiu). Pavyzdžiui,
+šis kodas atspausdins B, C, D iš eilės::
 
    class B:
        pass
@@ -658,21 +660,21 @@ following code will print B, C, D in that order::
        except B:
            print "B"
 
-Note that if the except clauses were reversed (with ``except B`` first), it
-would have printed B, B, B --- the first matching except clause is triggered.
+Jeigu except reiškiniai būtų surašyti atvirkštine tvarka (su ``except B``
+pirmiausia), tai bus atspausdinta B, B, B --- vykdomas pirmas sutampantis
+except reiškinys.
 
-When an error message is printed for an unhandled exception, the exception's
-class name is printed, then a colon and a space, and finally the instance
-converted to a string using the built-in function :func:`str`.
-
+Kai spausdinamas klaidos pranešimas nesutvarkytai išimčiai, išimties
+klasės vardas yra atspausdinamas, tada dvitaškis ir tarpas, o galiausiai
+egzempliorius paverstas eilute naudojant įtaisyta funkciją :func:`str`.
 
 .. _tut-iterators:
 
-Iterators
-=========
+Iteratoriai
+===========
 
-By now you have probably noticed that most container objects can be looped over
-using a :keyword:`for` statement::
+Iki dabar jūs tikriausiai pastebėjote, kad dauguma konteinerių objektų
+gali būti pereiti naudojant :keyword:`for` reiškinį::
 
    for element in [1, 2, 3]:
        print element
@@ -685,13 +687,14 @@ using a :keyword:`for` statement::
    for line in open("myfile.txt"):
        print line
 
-This style of access is clear, concise, and convenient.  The use of iterators
-pervades and unifies Python.  Behind the scenes, the :keyword:`for` statement
-calls :func:`iter` on the container object.  The function returns an iterator
-object that defines the method :meth:`next` which accesses elements in the
-container one at a time.  When there are no more elements, :meth:`next` raises a
-:exc:`StopIteration` exception which tells the :keyword:`for` loop to terminate.
-This example shows how it all works::
+Šis priėjimo būdas yra aiškus, trumpas ir patogus. Iteratorių naudojimas
+apima ir suvienodina Python'ą. Už scenos, raktažodžio :keyword:`for` reiškinys
+iškviečia :func:`iter` konteinerio objektui.  Funkcija sugrąžina
+iteratoriaus objektą kuris apibrėžią metodą :meth:`next`, kuris pasiekia
+konteinerio elementus po vieną vienu metu. Kai daugiau elementų nėra,
+metodas :meth:`next` iškelia išimtį :exc:`StopIteration` kuri pasako
+raktažodžiui :keyword:`for` pabaigtį ciklą. Šis pavyzdys rodo
+kaip visa tai veikia::
 
    >>> s = 'abc'
    >>> it = iter(s)
@@ -710,10 +713,11 @@ This example shows how it all works::
        it.next()
    StopIteration
 
-Having seen the mechanics behind the iterator protocol, it is easy to add
-iterator behavior to your classes.  Define a :meth:`__iter__` method which
-returns an object with a :meth:`next` method.  If the class defines
-:meth:`next`, then :meth:`__iter__` can just return ``self``::
+Pamačius kaip veikia iteratoriaus protokolas, yra labai paprasta
+pridėti iteratoriaus elgesį į jūsų klases. Apibrėžkite
+metodą :meth:`__iter__`, kuris sugrąžina objektą su
+metodu :meth:`next`.  Jei klasė apibrėžia metodą :meth:`next`, tada
+:meth:`__iter__` gali tiesiog sugrąžinti ``self``::
 
    class Reverse:
        "Iterator for looping over a sequence backwards"
@@ -739,15 +743,16 @@ returns an object with a :meth:`next` method.  If the class defines
 
 .. _tut-generators:
 
-Generators
-==========
+Generatoriai
+============
 
-:term:`Generator`\s are a simple and powerful tool for creating iterators.  They
-are written like regular functions but use the :keyword:`yield` statement
-whenever they want to return data.  Each time :meth:`next` is called, the
-generator resumes where it left-off (it remembers all the data values and which
-statement was last executed).  An example shows that generators can be trivially
-easy to create::
+:term:`Generator`\iai yra paprastas ir galingas įrankis iteratorių kūrimui.
+Jie aprašomi kaip paprasčiausios funkcijos, bet naudojamas raktažodžio
+:keyword:`yield` reiškinys kiekvienąkart kai jiems reikia grąžinti
+duomenis. Kaskart kai iškviečiamas metodas :meth:`next`, generatorius
+sugrįžta į tą vietą, kur jis sustojo (jis prisimena visas duomenų reikšmes ir
+koks reiškinys buvo paskutį kartą vykdomas). Pavyzdys parodo, kad
+generatorius sukurti yra visiškai paprasta::
 
    def reverse(data):
        for index in range(len(data)-1, -1, -1):
@@ -761,42 +766,43 @@ easy to create::
    o
    g
 
-Anything that can be done with generators can also be done with class based
-iterators as described in the previous section.  What makes generators so
-compact is that the :meth:`__iter__` and :meth:`next` methods are created
-automatically.
+Viską ką galima padaryti su generatoriais galima padaryti su klasėmis
+paremtais iteratoriais kaip aprašyti praeitoje dalyje. Generatorių
+forma yra tokia kompaktiška dėl to, kad metodai :meth:`__iter__` ir
+:meth:`next` yra sukuriami automatiškai.
 
-Another key feature is that the local variables and execution state are
-automatically saved between calls.  This made the function easier to write and
-much more clear than an approach using instance variables like ``self.index``
-and ``self.data``.
+Kita esminė savybė yra ta, kad lokalūs kintamieji yra vykdymo būsena
+yra automatiškai išsaugoma tarp kvietimų. Tai leidžia daug lengviau
+rašyti funkcijas ir jos yra daug aiškesnės negu naudojant
+egzemplioriaus kintamuosius kaip ``self.index`` ir ``self.data``.
 
-In addition to automatic method creation and saving program state, when
-generators terminate, they automatically raise :exc:`StopIteration`. In
-combination, these features make it easy to create iterators with no more effort
-than writing a regular function.
-
+Prie viso to, kad automatiškai yra sukuriami metodai ir išsaugoma
+programos būsena, generatoriai automatiškai iškelia 
+:exc:`StopIteration`, kai jie baigia darbą. Visos kartu šios savybės
+leidžia paprastai sukurti iteratorius nevargstant daugiau negu
+rašant paprastą funkciją.
 
 .. _tut-genexps:
 
-Generator Expressions
-=====================
+Generatorių reiškiniai
+======================
 
-Some simple generators can be coded succinctly as expressions using a syntax
-similar to list comprehensions but with parentheses instead of brackets.  These
-expressions are designed for situations where the generator is used right away
-by an enclosing function.  Generator expressions are more compact but less
-versatile than full generator definitions and tend to be more memory friendly
-than equivalent list comprehensions.
+Kai kurie paprasti generatoriai gali būti parašyti kaip reiškiniai
+naudojant sintaksę, kuri panaši į sąrašo užklausą, bet vietoje
+laužtinių skliaustelių naudojant paprastus skliaustelius.
+Šie reiškiniai yra skirti situacijoms kai generatoriai naudojami
+iškarto uždarančioje funkcijoje. Generatorių reiškiniai yra
+kompaktiškesni negu pilnos generatorių apibrėžtys ir linkę labiau
+taupyti atmintį negu atitinkamos sąrašo užklausos.
 
-Examples::
+Pavyzdžiai::
 
-   >>> sum(i*i for i in range(10))                 # sum of squares
+   >>> sum(i*i for i in range(10))                 # kvadratų suma
    285
 
    >>> xvec = [10, 20, 30]
    >>> yvec = [7, 5, 3]
-   >>> sum(x*y for x,y in zip(xvec, yvec))         # dot product
+   >>> sum(x*y for x,y in zip(xvec, yvec))         # skaliarinė sandauga
    260
 
    >>> from math import pi, sin
@@ -812,11 +818,11 @@ Examples::
 
 
 
-.. rubric:: Footnotes
+.. rubric:: Pastabos
 
-.. [#] Except for one thing.  Module objects have a secret read-only attribute called
-   :attr:`__dict__` which returns the dictionary used to implement the module's
-   namespace; the name :attr:`__dict__` is an attribute but not a global name.
-   Obviously, using this violates the abstraction of namespace implementation, and
-   should be restricted to things like post-mortem debuggers.
-
+.. [#] Išskyrus vienam dalykui. Modulių objektai turi slaptą tik-skaitomą atributą
+   pavadintą :attr:`__dict__` kuris sugrąžina žodyną, kuris naudojamas
+   įgyvendinti modulio vardų erdvę. Vardas :attr:`__dict__` yra atributas bet
+   net globalus vardas.
+   Akivaizdu, kad tai pažeidžia vardų erdvės įgyvendimo abstrakciją ir
+   turi būti apribota tik tokiems dalykams kaip pavėluotoms derintuvėms.
