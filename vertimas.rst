@@ -64,13 +64,13 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\index.rst – Dalius Dobravolskas
 * tutorial\appetite.rst – Maksim Norkin
 * tutorial\classes.rst – Dalius Dobravolskas
-* tutorial\controlflow.rst –
+* tutorial\controlflow.rst – Dalius Dobravolskas
 * tutorial\datastructures.rst –
 * tutorial\errors.rst – Maksim Norkin
 * tutorial\floatingpoint.rst –
 * tutorial\inputoutput.rst –
-* tutorial\interactive.rst – Armandas Jarušauskas
-* tutorial\interpreter.rst –
+* tutorial\interactive.rst –
+* tutorial\interpreter.rst – Armandas Jarušauskas
 * tutorial\introduction.rst – Adomas Paltanavičius
 * tutorial\modules.rst – sirex
 * tutorial\stdlib2.rst –
