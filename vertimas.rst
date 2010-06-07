@@ -62,17 +62,17 @@ failo, kurį versite, vardą ir savo inicialus.
 
 * glossary.rst – Dalius Dobravolskas
 * tutorial\index.rst – Dalius Dobravolskas
-* tutorial\appetite.rst – Maksim Norkin
-* tutorial\classes.rst – Dalius Dobravolskas
-* tutorial\controlflow.rst – Dalius Dobravolskas
-* tutorial\datastructures.rst –
-* tutorial\errors.rst – Maksim Norkin
-* tutorial\floatingpoint.rst –
-* tutorial\inputoutput.rst –
-* tutorial\interactive.rst –
+* tutorial\appetite.rst – Dalius Dobravolskas
 * tutorial\interpreter.rst – Armandas Jarušauskas
 * tutorial\introduction.rst – Adomas Paltanavičius
+* tutorial\controlflow.rst – Dalius Dobravolskas
+* tutorial\datastructures.rst – Adomas Paltanavičius
 * tutorial\modules.rst – sirex
-* tutorial\stdlib2.rst –
+* tutorial\inputoutput.rst –
+* tutorial\errors.rst – Maksim Norkin
+* tutorial\classes.rst – Dalius Dobravolskas
 * tutorial\stdlib.rst –
+* tutorial\stdlib2.rst –
 * tutorial\whatnow.rst –
+* tutorial\interactive.rst –
+* tutorial\floatingpoint.rst –
