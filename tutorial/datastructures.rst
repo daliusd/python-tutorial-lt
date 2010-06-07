@@ -46,38 +46,39 @@ Sąrašo duomenų tipas pateikia naudingų metodų. Štai jie:
 .. method:: list.pop([i])
    :noindex:
 
-   Remove the item at the given position in the list, and return it.  If no index
-   is specified, ``a.pop()`` removes and returns the last item in the list.  (The
-   square brackets around the *i* in the method signature denote that the parameter
-   is optional, not that you should type square brackets at that position.  You
-   will see this notation frequently in the Python Library Reference.)
+   Pašalina elementą iš sąrašo pagal poziciją ir ją sugrąžina. Jei indeksas
+   nėra nurodytas, ``a.pop()`` pašalina ir sugrąžina paskutinį sąrašo elementą.
+   (Laužtiniai skliausteliai aplink *i* metodo aprašyme nurodo, kad parametras
+   yra nebūtinas, o ne kad jūs turite naudoti laužtinius skliaustelius
+   toje vietoje. Jūs sutiksite šį būdą dažnai naudojama Python'o Bibliotekos
+   Informacijoje.)
 
 
 .. method:: list.index(x)
    :noindex:
 
-   Return the index in the list of the first item whose value is *x*. It is an
-   error if there is no such item.
+   Sugrąžina pirmą sąrašo elementą, kurio reikšmė yra *x*. Jeigu elemento
+   nėra įvyksta klaida.
 
 
 .. method:: list.count(x)
    :noindex:
 
-   Return the number of times *x* appears in the list.
+   Sugrąžina kiek kartų reikšmė *x* sutinkama sąraše.
 
 
 .. method:: list.sort()
    :noindex:
 
-   Sort the items of the list, in place.
+   Surūšiuoja sąrašo elementus.
 
 
 .. method:: list.reverse()
    :noindex:
 
-   Reverse the elements of the list, in place.
+   Sąrašo elementų tvarka pakeičiama atbulai.
 
-An example that uses most of the list methods::
+Pavyzdys, kuriame panaudojam dauguma sąrašo metodų::
 
    >>> a = [66.25, 333, 333, 1, 1234.5]
    >>> print a.count(333), a.count(66.25), a.count('x')
@@ -101,16 +102,16 @@ An example that uses most of the list methods::
 
 .. _tut-lists-as-stacks:
 
-Using Lists as Stacks
----------------------
+Sąrašo Naudojimas Dėklams
+-------------------------
 
 .. sectionauthor:: Ka-Ping Yee <ping@lfw.org>
 
 
-The list methods make it very easy to use a list as a stack, where the last
-element added is the first element retrieved ("last-in, first-out").  To add an
-item to the top of the stack, use :meth:`append`.  To retrieve an item from the
-top of the stack, use :meth:`pop` without an explicit index.  For example::
+Sąrašo metodai leidžia sąrašą naudoti kaip dėklą (ang. stack)a, kur
+paskutinis pridėtas elementas yra pirmiausia išimamas („paskutinį-į, pirmas-iš“).
+Norėdami pridėti elementą į deklą naudokite :meth:`append`. Norėdami išimtį
+elementą iš dėklo viršaus naudokite meth:`pop` nenurodydami jo indekso. Pavyzdžiui::
 
    >>> stack = [3, 4, 5]
    >>> stack.append(6)
@@ -131,20 +132,20 @@ top of the stack, use :meth:`pop` without an explicit index.  For example::
 
 .. _tut-lists-as-queues:
 
-Using Lists as Queues
----------------------
+Sąrašo Naudojimas Eilėms
+------------------------
 
 .. sectionauthor:: Ka-Ping Yee <ping@lfw.org>
 
 
-You can also use a list conveniently as a queue, where the first element added
-is the first element retrieved ("first-in, first-out").  To add an item to the
-back of the queue, use :meth:`append`.  To retrieve an item from the front of
-the queue, use :meth:`pop` with ``0`` as the index.  For example::
+Jūs taip pat patogiai galite panaudoti sąrašą kaip eilę, kur pirmas pridėtas
+elementas yra pirmas išimamas ("pirmas-į, pirmas-iš"). Elemento pridėjimui
+naudokite :meth:`append`, o elemento išėmimui iš eilės priekio
+naudokite :meth:`pop` su indeksu ``0``.  Pavyzdžiui::
 
    >>> queue = ["Eric", "John", "Michael"]
-   >>> queue.append("Terry")           # Terry arrives
-   >>> queue.append("Graham")          # Graham arrives
+   >>> queue.append("Terry")           # Terry atvyksta
+   >>> queue.append("Graham")          # Graham'as atvyksta
    >>> queue.pop(0)
    'Eric'
    >>> queue.pop(0)
@@ -155,35 +156,36 @@ the queue, use :meth:`pop` with ``0`` as the index.  For example::
 
 .. _tut-functional:
 
-Functional Programming Tools
-----------------------------
+Funkcinio Programavimo Įrankiai
+-------------------------------
 
-There are three built-in functions that are very useful when used with lists:
-:func:`filter`, :func:`map`, and :func:`reduce`.
+Egzistuoja trys įtaisytosios funkcijos, kurios yra labai naudingos su sąrašais:
+:func:`filter`, :func:`map`, ir :func:`reduce`.
 
-``filter(function, sequence)`` returns a sequence consisting of those items from
-the sequence for which ``function(item)`` is true. If *sequence* is a
-:class:`string` or :class:`tuple`, the result will be of the same type;
-otherwise, it is always a :class:`list`. For example, to compute some primes::
+``filter(function, sequence)`` sugrąžina seką sudarytą iš elementų,
+kuriems tenkina funkcijos ``function(item)`` sąlygą. Jei *sequence* yra
+:class:`string` arba :class:`tuple` tipo, rezultatas bus to paties tipo,
+bet kokiu kitu atveju rezultatas visada yra :class:`list`. Pavyzdžiui, kelis
+pirminius skaičius galime suskaičiuoti taip::
 
    >>> def f(x): return x % 2 != 0 and x % 3 != 0
    ...
    >>> filter(f, range(2, 25))
    [5, 7, 11, 13, 17, 19, 23]
 
-``map(function, sequence)`` calls ``function(item)`` for each of the sequence's
-items and returns a list of the return values.  For example, to compute some
-cubes::
+``map(function, sequence)`` iškviečia ``function(item)`` kiekvienam
+sekos elementui ir sugrąžina sugrąžintų reikšmių sąrašą. Pavyzdžiui,
+jei norime suskaičiuoti kelis kubus::
 
    >>> def cube(x): return x*x*x
    ...
    >>> map(cube, range(1, 11))
    [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
 
-More than one sequence may be passed; the function must then have as many
-arguments as there are sequences and is called with the corresponding item from
-each sequence (or ``None`` if some sequence is shorter than another).  For
-example::
+Galima perduoti daugiau negu vieną seką --- funkcija tada privalo
+turėti tiek argumentų kiek yra perduodama sekų. Tada funkcijai perduodami
+argumentai iš kiekvienos sekos, arba ``None``, jei kuri nors seka trumpesnė,
+Pavyzdžiui::
 
    >>> seq = range(8)
    >>> def add(x, y): return x+y
@@ -191,23 +193,23 @@ example::
    >>> map(add, seq, seq)
    [0, 2, 4, 6, 8, 10, 12, 14]
 
-``reduce(function, sequence)`` returns a single value constructed by calling the
-binary function *function* on the first two items of the sequence, then on the
-result and the next item, and so on.  For example, to compute the sum of the
-numbers 1 through 10::
+``reduce(function, sequence)`` sugrąžina vieną reikšmę, kuri sukonstruojama
+naudojant dvejetainę funkciją *function* pirmiems dviems elementams,
+tada rezultatui ir sekančiam elementui ir t.t. Pavyzdžiui, jei norime
+suskaičiuoti sumą nuo 1 iki 10::
 
    >>> def add(x,y): return x+y
    ...
    >>> reduce(add, range(1, 11))
    55
 
-If there's only one item in the sequence, its value is returned; if the sequence
-is empty, an exception is raised.
+Jei sąraše yra tik vienas elementas, jo reikšmė yra sugrąžinama. Jei seka
+tuščia iškeliama išimtis.
 
-A third argument can be passed to indicate the starting value.  In this case the
-starting value is returned for an empty sequence, and the function is first
-applied to the starting value and the first sequence item, then to the result
-and the next item, and so on.  For example, ::
+Galima perduoti trečia arugmentą nurodantį pradinę reikšmę. Tokiu atveju
+pradinė reikšmė sugrąžinama tuščiai sekai, o funkcija iš pradžių
+pritaikoma pradinei reikšmei ir pirmas sekos elementui, tada rezultatai
+ir kitam elementui ir t.t. Pavyzdžiui::
 
    >>> def sum(seq):
    ...     def add(x,y): return x+y
@@ -218,9 +220,9 @@ and the next item, and so on.  For example, ::
    >>> sum([])
    0
 
-Don't use this example's definition of :func:`sum`: since summing numbers is
-such a common need, a built-in function ``sum(sequence)`` is already provided,
-and works exactly like this.
+Nenaudokite šio pavyzdžio apibrėžties :func:`sum`: kadangi skaičių sumavimas
+yra tokia dažna užduotis, kad įtaisytoji funkcija ``sum(sequence)`` jau
+egzistuoja ir ji būtent taip ir dirba.
 
 .. versionadded:: 2.3
 

@@ -66,7 +66,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\interpreter.rst – Armandas Jarušauskas
 * tutorial\introduction.rst – Adomas Paltanavičius
 * tutorial\controlflow.rst – Dalius Dobravolskas
-* tutorial\datastructures.rst – Adomas Paltanavičius
+* tutorial\datastructures.rst – Adomas Paltanavičius, Dalius Dobravolskas
 * tutorial\modules.rst – sirex
 * tutorial\inputoutput.rst –
 * tutorial\errors.rst – Maksim Norkin
