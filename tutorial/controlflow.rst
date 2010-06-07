@@ -1,20 +1,21 @@
 .. _tut-morecontrol:
 
-***********************
-More Control Flow Tools
-***********************
+******************************
+Daugiau Srauto Valdymo Įrankių
+******************************
 
-Besides the :keyword:`while` statement just introduced, Python knows the usual
-control flow statements known from other languages, with some twists.
+Apart tik ką pristatyto reiškinio :keyword:`while`, Python'as pažįsta
+daugiau srauto valdymo įrankių žinomų iš kitų kalbų, tačiau
+yra keletas smulkių skirtumų.
 
 
 .. _tut-if:
 
-:keyword:`if` Statements
-========================
+:keyword:`if` Sakinys
+=====================
 
-Perhaps the most well-known statement type is the :keyword:`if` statement.  For
-example::
+Tikriausiai labiausiai žinomas sakinio tipas yra :keyword:`if` sakinys.
+Pavyzdžiui::
 
    >>> x = int(raw_input("Please enter an integer: "))
    Please enter an integer: 42
@@ -30,31 +31,31 @@ example::
    ...
    More
 
-There can be zero or more :keyword:`elif` parts, and the :keyword:`else` part is
-optional.  The keyword ':keyword:`elif`' is short for 'else if', and is useful
-to avoid excessive indentation.  An  :keyword:`if` ... :keyword:`elif` ...
-:keyword:`elif` ... sequence is a substitute for the ``switch`` or
-``case`` statements found in other languages.
+Gali būti nulis arba daugiau :keyword:`elif` dalių, ir :keyword:`else` dalis yra
+neprivaloma. Raktažodis ':keyword:`elif`' yra 'else if' sutrumpinimas ir yra
+naudingas norint išvengti perkrauto perstumdymo. Raktažodžių :keyword:`if` ...
+:keyword:`elif` ... :keyword:`elif` ... seka yra ``switch`` arba
+``case`` sakinių randamų kitose kalbose pakaitalas.
 
 
 .. _tut-for:
 
-:keyword:`for` Statements
-=========================
+:keyword:`for` Sakinys
+======================
 
 .. index::
    statement: for
    statement: for
 
-The :keyword:`for` statement in Python differs a bit from what you may be used
-to in C or Pascal.  Rather than always iterating over an arithmetic progression
-of numbers (like in Pascal), or giving the user the ability to define both the
-iteration step and halting condition (as C), Python's :keyword:`for` statement
-iterates over the items of any sequence (a list or a string), in the order that
-they appear in the sequence.  For example (no pun intended):
+:keyword:`for` sakinys Python'e šiek tiek skiriasi nuo to prie ko jūs
+galbūt esate pripratęs C arba Pascal. Užuot iteravus per aritmetinę
+skaičių progresiją (kaip Paskalyje) arba leidžiant vartotojui apsibrėžti
+kartu iteracijos žingsnį ir baigimo sąlygą (kaip C), Python'o :keyword:`for`
+sakinys iteruoja per bet kokios sekos narius (sąrašą arba eilutę), tokia
+tvarka kokia jie yra sekoje. Pavyzdžiui:
 
-.. One suggestion was to give a real C example here, but that may only serve to
-   confuse non-C programmers.
+.. Vienas pasiūlymas buvo duoti realų C pavyzdį, bet tai gali tik
+   sumaišyti C neprogramuojančius žmones.
 
 ::
 
@@ -67,11 +68,11 @@ they appear in the sequence.  For example (no pun intended):
    window 6
    defenestrate 12
 
-It is not safe to modify the sequence being iterated over in the loop (this can
-only happen for mutable sequence types, such as lists).  If you need to modify
-the list you are iterating over (for example, to duplicate selected items) you
-must iterate over a copy.  The slice notation makes this particularly
-convenient::
+Modifikuot seką, kuri yra iteruojama, nėra saugu (tai gali įvykti tik
+su kintamais sekų tipais, kaip kad sąrašai). Jeigu jums reikia
+modifikuoti sąrašą per kurį jūs iteruojate (pavyzdžiui, norite
+dvigubinti pasirinktus narius), jūs privalote iteruoti per kopiją.
+Atkarpos naudojimas tam ypač patogus::
 
    >>> for x in a[:]: # make a slice copy of the entire list
    ...    if len(x) > 6: a.insert(0, x)
@@ -82,20 +83,20 @@ convenient::
 
 .. _tut-range:
 
-The :func:`range` Function
-==========================
+:func:`range` Funkcija
+======================
 
-If you do need to iterate over a sequence of numbers, the built-in function
-:func:`range` comes in handy.  It generates lists containing arithmetic
-progressions::
+Jeigu jums reikia iteruoti per skaičių seką, jums pravers įtaisytoji
+funkcija :func:`range` .  Ji sugeneruoja sąrašą, kuriame laikoma aritmetė
+progresija::
 
    >>> range(10)
    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-The given end point is never part of the generated list; ``range(10)`` generates
-a list of 10 values, the legal indices for items of a sequence of length 10.  It
-is possible to let the range start at another number, or to specify a different
-increment (even negative; sometimes this is called the 'step')::
+Duotasis galutinis taškas niekada nėra sąrašo dalis: ``range(10)`` sugeneruoja
+10 reikšmių sąrašą - legalias indekso reikšmes dešimties narių sekai. Taip
+pat galima nurodyti kitokią pirmąją rėžio reikšmę arba nurodyti
+kitokį žingsnį (netgi neigiamą)::
 
    >>> range(5, 10)
    [5, 6, 7, 8, 9]
@@ -104,8 +105,8 @@ increment (even negative; sometimes this is called the 'step')::
    >>> range(-10, -100, -30)
    [-10, -40, -70]
 
-To iterate over the indices of a sequence, you can combine :func:`range` and
-:func:`len` as follows::
+Norėdami iteruoti per sekos indeksus, jūs galite sujungti :func:`range` ir 
+:func:`len` šitaip::
 
    >>> a = ['Mary', 'had', 'a', 'little', 'lamb']
    >>> for i in range(len(a)):
@@ -117,26 +118,25 @@ To iterate over the indices of a sequence, you can combine :func:`range` and
    3 little
    4 lamb
 
-In most such cases, however, it is convenient to use the :func:`enumerate`
-function, see :ref:`tut-loopidioms`.
+Tačiau dažniausiai patogiau naudoti :func:`enumerate` funkciją, žiūrime :ref:`tut-loopidioms`.
 
 
 .. _tut-break:
 
-:keyword:`break` and :keyword:`continue` Statements, and :keyword:`else` Clauses on Loops
-=========================================================================================
+:keyword:`break` ir :keyword:`continue` Sakiniai, bei :keyword:`else` Reiškinys Cikluose 
+========================================================================================
 
-The :keyword:`break` statement, like in C, breaks out of the smallest enclosing
-:keyword:`for` or :keyword:`while` loop.
+:keyword:`break` sakinys, kaip ir C, išeina iš mažiausia uždarančio 
+:keyword:`for` arba :keyword:`while` ciklo.
 
-The :keyword:`continue` statement, also borrowed from C, continues with the next
-iteration of the loop.
+:keyword:`continue` sakinys, taip pat pasiskolintas iš C, pereina prie kitos
+ciklo iteracijos.
 
-Loop statements may have an ``else`` clause; it is executed when the loop
-terminates through exhaustion of the list (with :keyword:`for`) or when the
-condition becomes false (with :keyword:`while`), but not when the loop is
-terminated by a :keyword:`break` statement.  This is exemplified by the
-following loop, which searches for prime numbers::
+Ciklai taip pat gali turi  ``else`` dalį --- ji yra įvykdoma kai
+ciklas pereina visus sąrašo elementus (naudojant :keyword:`for`) arba
+kai sąlyga nebetenkinama (naudojant :keyword:`while`), bet ne tada
+kai sąrašas baigiamas naudojant :keyword:`break`.  Tai pademonstruota
+toliau sekančiu ciklu, kuris ieško pirminių skaičių::
 
    >>> for n in range(2, 10):
    ...     for x in range(2, n):
@@ -159,25 +159,27 @@ following loop, which searches for prime numbers::
 
 .. _tut-pass:
 
-:keyword:`pass` Statements
-==========================
+:keyword:`pass` Sakiniai
+========================
 
-The :keyword:`pass` statement does nothing. It can be used when a statement is
-required syntactically but the program requires no action. For example::
+:keyword:`pass` sakinys nedaro nieko. Jis gali būti naudojamas, kai
+sakinio reikalauja sintaksė, bet iš programos nereikia jokio veiksmo.
+Pavyzdžiui::
 
    >>> while True:
    ...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
    ...
 
-This is commonly used for creating minimal classes::
+Tai dažniausiai naudojama norint sukurti minimalią klasę::
 
    >>> class MyEmptyClass:
    ...     pass
    ...
 
-Another place :keyword:`pass` can be used is as a place-holder for a function or
-conditional body when you are working on new code, allowing you to keep thinking
-at a more abstract level.  The :keyword:`pass` is silently ignored::
+Kita vieta, kur :keyword:`pass` gali būti panaudotas, tai funkcijos
+arba sąlyginio kodo bloko vieta, kai jūs dirbate prie naujo kodo, kas
+leidžia mąstyti abstraktesniame lygyje. :keyword:`pass` yra tyliai
+ignoruojamas::
 
    >>> def initlog(*args):
    ...     pass   # Remember to implement this!
@@ -185,11 +187,11 @@ at a more abstract level.  The :keyword:`pass` is silently ignored::
 
 .. _tut-functions:
 
-Defining Functions
-==================
+Funkcijų Apibrėžimas
+====================
 
-We can create a function that writes the Fibonacci series to an arbitrary
-boundary::
+Mes galime sukurti funkciją, kuri surašo Fibonači skaičių seką iki
+tam tikros ribos::
 
    >>> def fib(n):    # write Fibonacci series up to n
    ...     """Print a Fibonacci series up to n."""
@@ -207,38 +209,34 @@ boundary::
    single: docstrings
    single: strings, documentation
 
-The keyword :keyword:`def` introduces a function *definition*.  It must be
-followed by the function name and the parenthesized list of formal parameters.
-The statements that form the body of the function start at the next line, and
-must be indented.
+:keyword:`def` pradeda funkcijos *apibrėžtį*.  Po jo turi
+sekti funkcijos vardas ir apskliaustas formalių parametrų sąrašas.
+Sakiniai, kurie sudaro funkcijos kūną, prasideda kitoje eilutėje,
+ir privalo būti pastumti.
 
-The first statement of the function body can optionally be a string literal;
-this string literal is the function's documentation string, or :dfn:`docstring`.
-(More about docstrings can be found in the section :ref:`tut-docstrings`.)
-There are tools which use docstrings to automatically produce online or printed
-documentation, or to let the user interactively browse through code; it's good
-practice to include docstrings in code that you write, so make a habit of it.
+Pirmasis funkcijos sakinys gali būti eilutė --- ši eilutė yra
+funkcijos dokumentacijos eilutė arba :dfn:`docstring`.
+(daugiau apie dokumentacijos eilutes galima rasti :ref:`tut-docstrings` skyriuje.)
+Egzistuoja priemonės, kurios naudodamos dokumentacijos eilutes, gali
+automatiškai sukurti dokumentaciją arba leidžia vartotojui interaktyviai
+naršyti po kodą. Dokumentacijos eilučių rašymas yra gera praktika,
+todėl įpraskite jas rašyti.
 
-The *execution* of a function introduces a new symbol table used for the local
-variables of the function.  More precisely, all variable assignments in a
-function store the value in the local symbol table; whereas variable references
-first look in the local symbol table, then in the local symbol tables of
-enclosing functions, then in the global symbol table, and finally in the table
-of built-in names. Thus, global variables cannot be directly assigned a value
-within a function (unless named in a :keyword:`global` statement), although they
-may be referenced.
+Funkcijos *vykdymas* prideda naują simbolių lentelę, kuri naudojama
+funkcijos lokaliems kintamiesiems. Arba tiksliau, visi kintamųjų
+priskyrimai funkcijoje prideda reikšmes į lokalią simbolių lentelę.
+Taigi kintamųjų paieška pirmiausia atliekama lokalioje simbolių 
+lentelėje, tada uždarančios funkcijos lokalioje simbolių lentelėje,
+po to globalioje simbolių lentelėje ir galiausiai įtaisytoje vardų
+lentelėje. Taigi globaliems kintamiesiems negalima tiesiogiai
+priskirti reikšmės funkcijoje (nebent jie būtų paminėti :keyword:`global`
+sakinyje), nors juos galima skaityti.
 
-The actual parameters (arguments) to a function call are introduced in the local
-symbol table of the called function when it is called; thus, arguments are
-passed using *call by value* (where the *value* is always an object *reference*,
-not the value of the object). [#]_ When a function calls another function, a new
-local symbol table is created for that call.
-
-A function definition introduces the function name in the current symbol table.
-The value of the function name has a type that is recognized by the interpreter
-as a user-defined function.  This value can be assigned to another name which
-can then also be used as a function.  This serves as a general renaming
-mechanism::
+Funkcijos apibrėžtis sukuria naują funkcijos vardą dabartinėje
+simbolių lentelėje. Funkcijos vardo reikšmė turi tipą, kurį
+atpažįsta interpretatorius. Ši reikšmė gali būti priskirta kitam
+vardui, kuris vėliau taip pat gali būti naudojamas kaip funkcija.
+Tai naudojama kaip pervadinimo mechanizmas::
 
    >>> fib
    <function fib at 10042ed0>
@@ -246,19 +244,20 @@ mechanism::
    >>> f(100)
    1 1 2 3 5 8 13 21 34 55 89
 
-Coming from other languages, you might object that ``fib`` is not a function but
-a procedure since it doesn't return a value.  In fact, even functions without a
-:keyword:`return` statement do return a value, albeit a rather boring one.  This
-value is called ``None`` (it's a built-in name).  Writing the value ``None`` is
-normally suppressed by the interpreter if it would be the only value written.
-You can see it if you really want to using :keyword:`print`::
+Jeigu jūs atėjote iš kitų kalbų, jūs galite papriekaištauti, kad ``fib`` yra
+ne funkcija, o procedūra, nes ji negrąžina reikšmių. Tiesa sakant,
+netgi funkcijos, kurios nenaudoja :keyword:`return` sakinio grąžina reikšmę,
+tačiau pakankamai nuobodžią. Ši reikšmė yra ``None`` (tai yra įtaisytasis vardas).
+``None`` reikšmė paprastai nespausdinama interpretatoriaus, jei tai yra
+vienintelė reikšmė, kurią reikia atspausdinti. Bet jeigu tikrai norite ją
+pamatyti, tai galite padaryti naudodami :keyword:`print`::
 
    >>> fib(0)
    >>> print fib(0)
    None
 
-It is simple to write a function that returns a list of the numbers of the
-Fibonacci series, instead of printing it::
+Parašyti funkciją, kuri sugrąžina Fibonačių sekos skaičių sąrašą (užuot
+jį spausdinus) yra labai paprasta::
 
    >>> def fib2(n): # return Fibonacci series up to n
    ...     """Return a list containing the Fibonacci series up to n."""
@@ -273,41 +272,41 @@ Fibonacci series, instead of printing it::
    >>> f100                # write the result
    [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
-This example, as usual, demonstrates some new Python features:
+Šis pavyzdys kaip įprasta taip pat demonstruoja kelias naujas Python'o savybes:
 
-* The :keyword:`return` statement returns with a value from a function.
-  :keyword:`return` without an expression argument returns ``None``. Falling off
-  the end of a function also returns ``None``.
+* :keyword:`return` sakinys iš funkcijos grįžta su reikšme.
+  :keyword:`return` be argumentų reiškinio sugrąžina ``None``. Jeigu
+  jis nėra parašytas funkcijos gale funkcija taip pat grąžina ``None``.
 
-* The statement ``result.append(b)`` calls a *method* of the list object
-  ``result``.  A method is a function that 'belongs' to an object and is named
-  ``obj.methodname``, where ``obj`` is some object (this may be an expression),
-  and ``methodname`` is the name of a method that is defined by the object's type.
-  Different types define different methods.  Methods of different types may have
-  the same name without causing ambiguity.  (It is possible to define your own
-  object types and methods, using *classes*, as discussed later in this tutorial.)
-  The method :meth:`append` shown in the example is defined for list objects; it
-  adds a new element at the end of the list.  In this example it is equivalent to
-  ``result = result + [b]``, but more efficient.
+* Sakinys ``result.append(b)`` iškviečia sąrašo objekto ``result`` *metodą*.
+  Metodas yra funkcija, kuri 'priklauso' objektui ir vadinasi
+  ``obj.methodname``, kur ``obj`` yra koks nors objektas (tai gali būti ir reiškinys),
+  ir ``methodname`` yra metodo, kurį apibrėžia objekto tipas, vardas.
+  Skirtingi tipai apibrėžia skirtingus metodus. Skirtingų tipų metodai
+  gali vadintis taip pat nesukeldami problemų. Norint apibrėžti
+  savo objektų tipus ir metodus reikia naudoti *klases*, kurios aprašytos
+  vėliau šitame vadovėlyje. Metodas :meth:`append` (naudojamas pavyzdyje) yra
+  apibrėžtas sąrašo objektams --- jis prideda naują elementą į sąrašo pabaigą.
+  Tai yra tolygu ``result = result + [b]`` bet veikia daug efektyviau.
 
 
 .. _tut-defining:
 
-More on Defining Functions
-==========================
+Daugiau apie Funkcijų Apibrėžimą
+================================
 
-It is also possible to define functions with a variable number of arguments.
-There are three forms, which can be combined.
+Taip pat galima apibrėžti funkcijas su kintamu argumentų skaičiumi.
+Galimso trys formos, kurios gali būti kombinuojamos.
 
 
 .. _tut-defaultargs:
 
-Default Argument Values
------------------------
+Standarinės Argumentų Reikšmės
+------------------------------
 
-The most useful form is to specify a default value for one or more arguments.
-This creates a function that can be called with fewer arguments than it is
-defined to allow.  For example::
+Naudingiausia forma yra numatytų reikšmių naudojimas vienam ar daugiau
+argumentų. Taip sukuriama funkcija, kuri gali būti iškviesta nurodant
+mažiau argumentų negu ji priima. Pavyzdžiui::
 
    def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
        while True:
@@ -318,14 +317,14 @@ defined to allow.  For example::
            if retries < 0: raise IOError, 'refusenik user'
            print complaint
 
-This function can be called either like this: ``ask_ok('Do you really want to
-quit?')`` or like this: ``ask_ok('OK to overwrite the file?', 2)``.
+Šią funkciją galima iškviesti taip: ``ask_ok('Do you really want to
+quit?')`` arba štai šitaip: ``ask_ok('OK to overwrite the file?', 2)``.
 
-This example also introduces the :keyword:`in` keyword. This tests whether or
-not a sequence contains a certain value.
+Šis pavyzdys taip pat demonstruoja :keyword:`in` raktažodį. Šis raktažodis
+tikrina ar reikšmė yra sekoje.
 
-The default values are evaluated at the point of function definition in the
-*defining* scope, so that ::
+Numatytosios reikšmės yra įvertinamos funkcijos apibrėžimo momentu
+*apibrėžimo* srityje, taigi::
 
    i = 5
 
@@ -335,12 +334,13 @@ The default values are evaluated at the point of function definition in the
    i = 6
    f()
 
-will print ``5``.
+atspausdins ``5``.
 
-**Important warning:**  The default value is evaluated only once. This makes a
-difference when the default is a mutable object such as a list, dictionary, or
-instances of most classes.  For example, the following function accumulates the
-arguments passed to it on subsequent calls::
+**Svarbus įspėjimas:**  numatytoji reikšmė įvertinama tik vieną kartą. Tai
+yra svarbu kai naudojamas kintamas objektas kaip sąrašas, žodynas
+ar daugumos klasių egzemplioriai. Pavyzdžiui, žemiau
+esanti funkcija surenka argumentus, kurie perduodami
+jai kiekvienu kvietimu::
 
    def f(a, L=[]):
        L.append(a)
@@ -350,14 +350,14 @@ arguments passed to it on subsequent calls::
    print f(2)
    print f(3)
 
-This will print ::
+Šis kodas atspausdins ::
 
    [1]
    [1, 2]
    [1, 2, 3]
 
-If you don't want the default to be shared between subsequent calls, you can
-write the function like this instead::
+Jeigu jūs nenorite, kad numatytoji reikšmė būtų naudojant kiekvienam
+kvietimui, jūs galite perrašyti funkciją taip::
 
    def f(a, L=None):
        if L is None:
@@ -368,11 +368,11 @@ write the function like this instead::
 
 .. _tut-keywordargs:
 
-Keyword Arguments
------------------
+Raktiniai Argumentai
+--------------------
 
-Functions can also be called using keyword arguments of the form ``keyword =
-value``.  For instance, the following function::
+Funckijos taip pat gali būti kviečiamos naudojant raktinius argumentus naudojant
+tokią formą ``raktas = reikšmė``.  Pavyzdžiui, ši funkcija::
 
    def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
        print "-- This parrot wouldn't", action,
@@ -380,26 +380,27 @@ value``.  For instance, the following function::
        print "-- Lovely plumage, the", type
        print "-- It's", state, "!"
 
-could be called in any of the following ways::
+gali būti iškviesta tokiai būdais::
 
    parrot(1000)
    parrot(action = 'VOOOOOM', voltage = 1000000)
    parrot('a thousand', state = 'pushing up the daisies')
    parrot('a million', 'bereft of life', 'jump')
 
-but the following calls would all be invalid::
+bet sekantys kvietimas yra nevalidus::
 
-   parrot()                     # required argument missing
-   parrot(voltage=5.0, 'dead')  # non-keyword argument following keyword
-   parrot(110, voltage=220)     # duplicate value for argument
-   parrot(actor='John Cleese')  # unknown keyword
+   parrot()                     # trūksta privalomo argumento
+   parrot(voltage=5.0, 'dead')  # neraktainis argumentas seka raktinį argumentą
+   parrot(110, voltage=220)     # sudvigubintas argumentas
+   parrot(actor='John Cleese')  # nežinomas raktinis argumentas
 
-In general, an argument list must have any positional arguments followed by any
-keyword arguments, where the keywords must be chosen from the formal parameter
-names.  It's not important whether a formal parameter has a default value or
-not.  No argument may receive a value more than once --- formal parameter names
-corresponding to positional arguments cannot be used as keywords in the same
-calls. Here's an example that fails due to this restriction::
+Bendrai argumentų sąrašas turi naudoti tik pozicinius argumentus po kurių
+seka bet kokie raktiniai argumentai, kur raktiniai argumentai turi būti parinkti
+iš formalių parametrų vardų. Yra visiškai nesvarbu ar formalūs parametrai
+turi numatytąją reikšmę ar ne. Nė vienas argumentas negali gauti reikšmę
+daugiau negu vieną kartą --- formalūs parametrų vardai atitinkantys pozicinius
+argumentus negali būti naudojami kaip raktiniai argumentai tame pačiame
+kvietime. Čia yra pavyzdys, kuris neveikia dėl šių apribojimų::
 
    >>> def function(a):
    ...     pass
@@ -409,13 +410,13 @@ calls. Here's an example that fails due to this restriction::
      File "<stdin>", line 1, in ?
    TypeError: function() got multiple values for keyword argument 'a'
 
-When a final formal parameter of the form ``**name`` is present, it receives a
-dictionary (see :ref:`typesmapping`) containing all keyword arguments except for
-those corresponding to a formal parameter.  This may be combined with a formal
-parameter of the form ``*name`` (described in the next subsection) which
-receives a tuple containing the positional arguments beyond the formal parameter
-list.  (``*name`` must occur before ``**name``.) For example, if we define a
-function like this::
+Kai paskutinis parametras turi formą ``**name``, jis gauna žodyną
+(žr. :ref:`typesmapping`) kuriame yra visi raktiniai argumentai išskyrus
+tuos, kurie yra aprašyti kaip formalūs parametrai. Ši forma gali būti
+naudojama su ``*name`` parametrų forma (aprašyta kitam poskyryje) kuri
+gauna kortežą, kuriame sudėti poziciniai argumentai neapibrėžti
+formaliame parametrų sąraše. ``*name`` turi būti apibrėžtas prieš ``**name``.
+Pavyzdžiui, jei mes apibrėšime funkciją taip::
 
    def cheeseshop(kind, *arguments, **keywords):
        print "-- Do you have any", kind, "?"
@@ -426,7 +427,7 @@ function like this::
        keys.sort()
        for kw in keys: print kw, ":", keywords[kw]
 
-It could be called like this::
+Ji gali būti iškviečiama taip::
 
    cheeseshop("Limburger", "It's very runny, sir.",
               "It's really very, VERY runny, sir.",
@@ -434,7 +435,7 @@ It could be called like this::
               client="John Cleese",
               sketch="Cheese Shop Sketch")
 
-and of course it would print::
+ir žinoma ji atspausdins::
 
    -- Do you have any Limburger ?
    -- I'm sorry, we're all out of Limburger
@@ -445,23 +446,22 @@ and of course it would print::
    shopkeeper : Michael Palin
    sketch : Cheese Shop Sketch
 
-Note that the :meth:`sort` method of the list of keyword argument names is
-called before printing the contents of the ``keywords`` dictionary; if this is
-not done, the order in which the arguments are printed is undefined.
-
+Pastebėsime, kad argumentų vardų sąrašo metodas :meth:`sort` yra iškviečiamas
+prieš spausdinant žodyno ``keywords`` reikšmes. Jei to nepadarytūmėm,
+tai tvarka, kuria būti atspausdinami argumentai, būtų neapibrėžta.
 
 .. _tut-arbitraryargs:
 
-Arbitrary Argument Lists
-------------------------
+Laisvas Argumentų Sąrašas
+-------------------------
 
 .. index::
   statement: *
 
-Finally, the least frequently used option is to specify that a function can be
-called with an arbitrary number of arguments.  These arguments will be wrapped
-up in a tuple (see :ref:`tut-tuples`).  Before the variable number of arguments,
-zero or more normal arguments may occur. ::
+Galiausiai, rečiausiai naudojama galimybė yra nurodyti, kad funkcija
+gali būti iškviesta su bet kokiu argumentų skaičiumi. Šie argumentai
+bus sudėti į kortežą (žr. :ref:`tut-tuples`). Prieš kintamą argumentų
+skaičių, galima nurodyti nulį ar daugiau normalių argumentų::
 
    def write_multiple_items(file, separator, *args):
        file.write(separator.join(args))
@@ -469,27 +469,26 @@ zero or more normal arguments may occur. ::
 
 .. _tut-unpacking-arguments:
 
-Unpacking Argument Lists
-------------------------
+Argumentų Sąrašo Išpakavimas
+----------------------------
 
-The reverse situation occurs when the arguments are already in a list or tuple
-but need to be unpacked for a function call requiring separate positional
-arguments.  For instance, the built-in :func:`range` function expects separate
-*start* and *stop* arguments.  If they are not available separately, write the
-function call with the  ``*``\ -operator to unpack the arguments out of a list
-or tuple::
+Atvirkštinė situacija įvyksta, kai argumentai jau yra sąraše arba korteže,
+bet turi būti išpakuoti funkcijos kvietimui, kuri reikalauja poziciniu
+argumentų. Pavyzdžiui įtaisytoji funkcija :func:`range` tikisi
+atskirų *pradžios* ir *pabaigos* argumentų. Jeigu jų neturime atskirai,
+funkcijos kvietime panaudokite ``*``\-operatorių tam, kad argumentai
+būtų išpakuoti iš argumentų sąrašo::
 
-   >>> range(3, 6)             # normal call with separate arguments
+   >>> range(3, 6)             # normalus kvietimas su atskirais argumentais
    [3, 4, 5]
    >>> args = [3, 6]
-   >>> range(*args)            # call with arguments unpacked from a list
+   >>> range(*args)            # kvietimas su argumentais išpakuotais iš sąrašo
    [3, 4, 5]
 
 .. index::
   statement: **
 
-In the same fashion, dictionaries can deliver keyword arguments with the ``**``\
--operator::
+Tokiu pat būdu, žodynai gali ištraukti raktinius argumentus naudodami  ``**``\-operatorių::
 
    >>> def parrot(voltage, state='a stiff', action='voom'):
    ...     print "-- This parrot wouldn't", action,
@@ -503,17 +502,17 @@ In the same fashion, dictionaries can deliver keyword arguments with the ``**``\
 
 .. _tut-lambda:
 
-Lambda Forms
-------------
+Lambda Formos
+-------------
 
-By popular demand, a few features commonly found in functional programming
-languages like Lisp have been added to Python.  With the :keyword:`lambda`
-keyword, small anonymous functions can be created. Here's a function that
-returns the sum of its two arguments: ``lambda a, b: a+b``.  Lambda forms can be
-used wherever function objects are required.  They are syntactically restricted
-to a single expression.  Semantically, they are just syntactic sugar for a
-normal function definition.  Like nested function definitions, lambda forms can
-reference variables from the containing scope::
+Pagal populiarų prašymą naują savybė randama kitose funkcinėse programavimo kalbose
+kaip kad Lisp buvo pridėta ir į Python'ą. Naudojant :keyword:`lambda` raktažodį,
+galima kurti mažas anonimines funkcijas. Čia yra funkcija, kuri sugrąžina dviejų
+argumentų sumą: ``lambda a, b: a+b``.  Lambda formos gali būti naudojamas
+kiekvieną kartą kai reikia funkcijos objekto. Jos sintaksiškai yra apribotos
+iki vieno reiškinio. Semantiškai, jos tėra sintaksinis cukrus normalių
+funkcijų apibrėžtims. Kaip yra įdėtinės funkcijos, lambda formos gali
+pasiekti kintamuosius iš išorinės srities::
 
    >>> def make_incrementor(n):
    ...     return lambda x: x + n
@@ -527,41 +526,39 @@ reference variables from the containing scope::
 
 .. _tut-docstrings:
 
-Documentation Strings
----------------------
+Documentacijos Eilutės
+----------------------
 
 .. index::
    single: docstrings
    single: documentation strings
    single: strings, documentation
 
-There are emerging conventions about the content and formatting of documentation
-strings.
 
-The first line should always be a short, concise summary of the object's
-purpose.  For brevity, it should not explicitly state the object's name or type,
-since these are available by other means (except if the name happens to be a
-verb describing a function's operation).  This line should begin with a capital
-letter and end with a period.
+Egzistuoja susitarimai dokumentacijos eilučių turiniui ir formatavimui.
 
-If there are more lines in the documentation string, the second line should be
-blank, visually separating the summary from the rest of the description.  The
-following lines should be one or more paragraphs describing the object's calling
-conventions, its side effects, etc.
+Pirmoji eilutė visada turi būti trumpas, aiškus objekto paskirties
+apibendrinimas. Dėl trumpumo objekto vardas ar tipas neturi būti minimas,
+nes jis ir taip yra matomas (išskyrus, jei vardas yra veiksmažodis
+apibūdinantis funkcijos operaciją). Ši eilutė turi prasidėti
+iš didžiosios raidės ir pasibaigti tašku.
 
-The Python parser does not strip indentation from multi-line string literals in
-Python, so tools that process documentation have to strip indentation if
-desired.  This is done using the following convention. The first non-blank line
-*after* the first line of the string determines the amount of indentation for
-the entire documentation string.  (We can't use the first line since it is
-generally adjacent to the string's opening quotes so its indentation is not
-apparent in the string literal.)  Whitespace "equivalent" to this indentation is
-then stripped from the start of all lines of the string.  Lines that are
-indented less should not occur, but if they occur all their leading whitespace
-should be stripped.  Equivalence of whitespace should be tested after expansion
-of tabs (to 8 spaces, normally).
+Jeigu dokumentacijos eilutėje yra daugiau eilučių, antroji eilutė turi
+būti tuščia, atskirianti apibendrinimą nuo aprašymo. Sekančios eilutės
+turi būti vienas ar daugiau paragrafų aprašančių objekto kvietimo
+būdus, šalutinius efektus ir t.t.
 
-Here is an example of a multi-line docstring::
+Python'o interpetatorius nepašalina pastūmimų iš daugia-eilutės eilutės,
+taigi priemonės, kurios tvarko dokumentaciją turi padaryti tai
+pačios, jei to nori. Tai atliekama pagal tokį susitarimą. Pirma netuščia
+eilutė po pirmos eilutės nustato per kiek yra pastumtas tekstas visai
+dokumentacijai. Mes negalime naudoti pirmosios eilutės, nes ji
+paprastai būną toje pačioje eilutėje kaip atidarančios kabutės, todėl
+jos lygiavimas nėra akivaizdus. Tada šis tarpų "ekvivalentas" nukerpamas
+nuo visų eilučių starto. Tekste neturėtų būti eilučių, kurios pastumtos
+mažiau, bet jei taip atsitinka visi tarpai turi būti nukerpami.
+
+Čia yra daugiau-eilutės dokumentacijos eilutės pavyzdys::
 
    >>> def my_function():
    ...     """Do nothing, but document it.
@@ -578,56 +575,50 @@ Here is an example of a multi-line docstring::
 
 .. _tut-codingstyle:
 
-Intermezzo: Coding Style
-========================
+Intermezzo: Programavimo Stilius
+================================
 
 .. sectionauthor:: Georg Brandl <georg@python.org>
 .. index:: pair: coding; style
 
-Now that you are about to write longer, more complex pieces of Python, it is a
-good time to talk about *coding style*.  Most languages can be written (or more
-concise, *formatted*) in different styles; some are more readable than others.
-Making it easy for others to read your code is always a good idea, and adopting
-a nice coding style helps tremendously for that.
+Dabar kai jūs esate pasiruošę rašyti ilgesnes ir sudėtingesnes Python'o
+programas, tai yra puikus metas pakalbėti apie *programavimo stilių*.
+Dauguma kalbų gali būti rašomas (arba tiksliau sakant *formatuojamas*)
+skirtingais stiliais --- kai kurios yra skaitomesnės negu kitos.
+Rašyti kitiems skaitomą kodą yra gera idėja, todėl gražaus programavimo
+stiliaus naudojimas labai padeda.
 
-For Python, :pep:`8` has emerged as the style guide that most projects adhere to;
-it promotes a very readable and eye-pleasing coding style.  Every Python
-developer should read it at some point; here are the most important points
-extracted for you:
+Python'e dauguma projektų naudoja stilių apibrėžtą :pep:`8` --- kas
+skatina labai skaitomą ir akiai malonų programavimo stilių. Kiekvienas
+Python'o programuotojas privalo jį kada nors perskaityti. Štai
+čia aprašomi patys svarbiausi punktai:
 
-* Use 4-space indentation, and no tabs.
+* Naudokite 4-tarpų pastūmimą, ir nenaudokite tabuliacijos.
 
-  4 spaces are a good compromise between small indentation (allows greater
-  nesting depth) and large indentation (easier to read).  Tabs introduce
-  confusion, and are best left out.
+  4 tarpai yra kompromisas tarp mažo pastūmimo (leidžia naudoti gilesnį
+  įdėjimo gylį) ir didelio pastūmimo (paprasčiau skaityti). Tabuliacija
+  naudoti teisingai yra sudėtinga ir todėl jos nenaudoti iš viso.
 
-* Wrap lines so that they don't exceed 79 characters.
+* Nerašykite eilučių, kurios yra ilgesnės negu 79 simboliai.
 
-  This helps users with small displays and makes it possible to have several
-  code files side-by-side on larger displays.
+  Tai padeda vartotojams, kurie naudoja mažus ekranus ir leidžia
+  stebėti du kodo puslapius turint didelį ekraną.
 
-* Use blank lines to separate functions and classes, and larger blocks of
-  code inside functions.
+* Naudokite tuščias eilutes atskirdami funkcijas ir klases, bei didesnius kodo
+  blokus funkcijos viduje.
 
-* When possible, put comments on a line of their own.
+* Kai įmanoma komentarus rašykite atskiroje eilutėje.
 
-* Use docstrings.
+* Naudokite dokumentacijos eilutes.
 
-* Use spaces around operators and after commas, but not directly inside
-  bracketing constructs: ``a = f(1, 2) + g(3, 4)``.
+* Naudokite tarpus aplink operatorius ir po kablelių, bet ne skliaustelių
+  konstrukcijose: ``a = f(1, 2) + g(3, 4)``.
 
-* Name your classes and functions consistently; the convention is to use
-  ``CamelCase`` for classes and ``lower_case_with_underscores`` for functions
-  and methods.  Always use ``self`` as the name for the first method argument
-  (see :ref:`tut-firstclasses` for more on classes and methods).
+* Vardus klasėms ir funkcijoms duokite nuosekliai. Oficialiai susitarta, kad
+  klasėms vardai turi būti duodami naudojant ``KupranugarioLygius``, o funkcijoms
+  ir metodams ``mažosios_raidės_su_pabraukimais``. Visada naudokite
+  ``self`` vardą pirmam metodo argumentui (žr :ref:`tut-firstclasses` apie
+  klases ir metodus).
 
-* Don't use fancy encodings if your code is meant to be used in international
-  environments.  Plain ASCII works best in any case.
-
-
-.. rubric:: Footnotes
-
-.. [#] Actually, *call by object reference* would be a better description,
-   since if a mutable object is passed, the caller will see any changes the
-   callee makes to it (items inserted into a list).
-
+* Nenaudokite keistų koduočių savo kode, jeigu jūsų kodas yra skirtas tarptautinei
+  aplinkai. Paprasta ASCII koduose yra geriausia dauguma atvejų.
