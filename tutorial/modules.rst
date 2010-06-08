@@ -14,14 +14,14 @@ failuose, kad būtų lengviau surasti, kas kur aprašyta. Tikriausiai norėsite
 aprašytą funkciją panaudoti keliose kitose programose nekopijuojant viso
 funkcijos aprašo į kiekvieną iš tų programų.
 
-Python gali nuskaityti jūsų kodo aprašus iš failo ir suteikia galimybę
+Python'as gali nuskaityti jūsų kodo aprašus iš failo ir suteikia galimybę
 panaudoti kiekvieną aprašytą struktūrą panaudoti kitame skripte ar
 interpretatoriuje. Toks failas vadinamas *moduliu*: apibrėžtos struktūros iš
 vieno modulio, gali būti *importuotos* į kitus modulius arba į jūsų pagrindinį
 modulį (vykdomasis skriptas arba interaktyvus interpretatoriaus režimas, kur
 galite operuoti kintamaisiais).
 
-Modulis yra paprastas failas, kuriame saugomas Python kodas. Failo vardas
+Modulis yra paprastas failas, kuriame saugomas Python'o kodas. Failo vardas
 sudaromas iš modulio pavadinimo ir galūnės: :file:`.py`. Modulyje, pačio
 modulio vardas (kaip simbolių eilutė) saugomas globaliame kintamajame
 ``__name__``. Praktiniam išbandymui, atverkite savo mėgiamą teksto redaktorių
@@ -44,14 +44,14 @@ turinys turėtu būti toks::
            a, b = b, a+b
        return result
 
-Now enter the Python interpreter and import this module with the following
-command::
+Dabar paleiskite Python'o interpretatorių ir importuokite šį moduli
+naudodami tokią komandą::
 
    >>> import fibo
 
-This does not enter the names of the functions defined in ``fibo``  directly in
-the current symbol table; it only enters the module name ``fibo`` there. Using
-the module name you can access the functions::
+Ši komanda funkcijų vardų, kurie yra apibrėžti ``fibo`` modulyje, neprideda
+į dabartinę simbolių lentelę --- į lentelę pridedamas tik modulio vardas
+``fibo``. Naudodami modulio vardą jūs galite pasiekti funkcijas::
 
    >>> fibo.fib(1000)
    1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
@@ -60,7 +60,8 @@ the module name you can access the functions::
    >>> fibo.__name__
    'fibo'
 
-If you intend to use a function often you can assign it to a local name::
+Jeigu jūs planuojate naudoti funkciją dažnai jūs galite ją priskirti
+lokaliam vardui::
 
    >>> fib = fibo.fib
    >>> fib(500)
@@ -69,82 +70,87 @@ If you intend to use a function often you can assign it to a local name::
 
 .. _tut-moremodules:
 
-More on Modules
-===============
+Daugiau apie Modulius
+=====================
 
-A module can contain executable statements as well as function definitions.
-These statements are intended to initialize the module. They are executed only
-the *first* time the module is imported somewhere. [#]_
+Modulyje gali būti sudėti tiek vykdomi sakiniai tiek funkcijų apibrėžtys.
+Šių sakinių tikslas yra modulio inicializavimas. Jie vykdomi tik
+*pirmą* kartą, kai modulis yra importuojamas. [#]_
 
-Each module has its own private symbol table, which is used as the global symbol
-table by all functions defined in the module. Thus, the author of a module can
-use global variables in the module without worrying about accidental clashes
-with a user's global variables. On the other hand, if you know what you are
-doing you can touch a module's global variables with the same notation used to
-refer to its functions, ``modname.itemname``.
+Kiekvienas modulis turi savo privačią simbolių lentelę, kuri naudojama
+kaip globali simbolių lentelę visoms funkcijoms modulyje. Taigi
+modulio autorius gali naudoti globalius kintamuosius nesirūpindamas
+apie atsitiktinius vardų sutapimus su vartotojo globaliais kintamaisiais.
+Iš kitos pusės, jeigu jūs žinote, ką jus darote, jūs galite pasiekti
+modulio globalius kintamuosius naudodamiesi ta pačia sintakse, kurią
+naudojote funkcijoms --- ``modname.itemname``.
 
-Modules can import other modules.  It is customary but not required to place all
-:keyword:`import` statements at the beginning of a module (or script, for that
-matter).  The imported module names are placed in the importing module's global
-symbol table.
+Moduliai gali importuoti modulius. Yra įprasta (nors nebūtina) visus
+:keyword:`import` sakinius surašyti modulio (ar skripto) pradžioje.
+Visi importuotų modulių vardai yra įkeliami į importuojančio modulio
+globalią simbolių lentelę.
 
-There is a variant of the :keyword:`import` statement that imports names from a
-module directly into the importing module's symbol table.  For example::
+:keyword:`import` sakinys turi formą leidžiančią importuoti
+pasirinktus vardus iš modulio tiesiai į importuojančio modulio
+simbolių lentelę. Pavyzdžiui::
 
    >>> from fibo import fib, fib2
    >>> fib(500)
    1 1 2 3 5 8 13 21 34 55 89 144 233 377
 
-This does not introduce the module name from which the imports are taken in the
-local symbol table (so in the example, ``fibo`` is not defined).
+Ši forma neįtraukia modulio (iš kurio importuojama) vardo į lokalia
+simbolių lentelę (taigi šiame pavyzdyje ``fibo`` yra neapibrėžtas).
 
-There is even a variant to import all names that a module defines::
+Egzistuojate netgi forma leidžianti importuoti visus vardus, kuriuos
+apibrėžia modulis::
 
    >>> from fibo import *
    >>> fib(500)
    1 1 2 3 5 8 13 21 34 55 89 144 233 377
 
-This imports all names except those beginning with an underscore (``_``).
+Ši forma importuota visus vardus išskyrus tuos kurie prasideda pabraukimu (``_``).
 
 .. note::
 
-   For efficiency reasons, each module is only imported once per interpreter
-   session.  Therefore, if you change your modules, you must restart the
-   interpreter -- or, if it's just one module you want to test interactively,
-   use :func:`reload`, e.g. ``reload(modulename)``.
+   Dėl efektyvumo kiekvienas modulis importuojamas tik vieną kartą
+   interpretatoriaus sesijai. Taigi, jeigu jūs keičiate savo modulius,
+   jūs privalote perkrauti interpretatorių. Jeigu dirbate
+   tik su vienu moduliu, kurį jūs norite testuoti interaktyviai,
+   galite naudoti :func:`reload`, pvz. ``reload(modulename)``.
 
 
 .. _tut-modulesasscripts:
 
-Executing modules as scripts
-----------------------------
+Moduliai kaip skriptai
+----------------------
 
-When you run a Python module with ::
+Kai jūs vykdote Python'o modulį šitaip:
 
    python fibo.py <arguments>
 
-the code in the module will be executed, just as if you imported it, but with
-the ``__name__`` set to ``"__main__"``.  That means that by adding this code at
-the end of your module::
+kodas modulyje bus įvykdytas, lyg jis būtų importuotas, bet ``__name__``
+kintamasis bus nustatytas į ``"__main__"``.  Taigi jeigu
+jūs pridėsite tokį kodą į modulio pabaigą::
 
    if __name__ == "__main__":
        import sys
        fib(int(sys.argv[1]))
 
-you can make the file usable as a script as well as an importable module,
-because the code that parses the command line only runs if the module is
-executed as the "main" file::
+jūs galite failą naudoti ir kaip importuojamą modulį ir kaip skriptą
+nes kodas, kuris tikrina komandinę eilutę vykdomas tik tada
+kaip modulis vykdomas kaip "pagrindinis" ("main") failas::
 
    $ python fibo.py 50
    1 1 2 3 5 8 13 21 34
 
-If the module is imported, the code is not run::
+Jeigu modulis bus importuotas, kodas nebus vykdomas::
 
    >>> import fibo
    >>>
 
-This is often used either to provide a convenient user interface to a module, or
-for testing purposes (running the module as a script executes a test suite).
+Tai dažniausiai naudojama norint suteikti patogią vartotojo sąsają moduliui
+arba dėl testavimo tikslų (pvz.: modulio paleidimas kaip skripto įvykdo
+testus).
 
 
 .. _tut-searchpath:
