@@ -227,17 +227,19 @@ egzistuoja ir ji būtent taip ir dirba.
 .. versionadded:: 2.3
 
 
-List Comprehensions
--------------------
+Sąrašo Užklausos
+----------------
 
-List comprehensions provide a concise way to create lists without resorting to
-use of :func:`map`, :func:`filter` and/or :keyword:`lambda`. The resulting list
-definition tends often to be clearer than lists built using those constructs.
-Each list comprehension consists of an expression followed by a :keyword:`for`
-clause, then zero or more :keyword:`for` or :keyword:`if` clauses.  The result
-will be a list resulting from evaluating the expression in the context of the
-:keyword:`for` and :keyword:`if` clauses which follow it.  If the expression
-would evaluate to a tuple, it must be parenthesized. ::
+Sąrašo užklausos leidžia paprastai sukurti sąrašus nenaudojant
+funkcijų :func:`map`, :func:`filter` ir/ar :keyword:`lambda` funkcijų.
+Gauta sąrašo apibrėžtis dažniausiai linkusi būti aiškesnė negu naudojant
+paminėtas konstrukcijas. Kiekviena sąrašo užklausa sudaroma iš
+reiškinio po kurio seka :keyword:`for` sakinys, tada gali sekti nulis
+arba daugiau :keyword:`for` arba :keyword:`if` sakinių. Taip
+gausime sąrašą, kuris sudaromas įvertinant reiškinį
+:keyword:`for` ir :keyword:`if` sakinių kontekste, kurie seka po reiškinio.
+Jeigu reiškinio rezultatas yra kortežas, tai rezultatas privalo būti
+apskliaustas::
 
    >>> freshfruit = ['  banana', '  loganberry ', 'passion fruit  ']
    >>> [weapon.strip() for weapon in freshfruit]
@@ -251,7 +253,7 @@ would evaluate to a tuple, it must be parenthesized. ::
    []
    >>> [[x,x**2] for x in vec]
    [[2, 4], [4, 16], [6, 36]]
-   >>> [x, x**2 for x in vec]  # error - parens required for tuples
+   >>> [x, x**2 for x in vec]  # klaida - kortežui reikalingi skliausteliai
      File "<stdin>", line 1, in ?
        [x, x**2 for x in vec]
                   ^
@@ -267,22 +269,22 @@ would evaluate to a tuple, it must be parenthesized. ::
    >>> [vec1[i]*vec2[i] for i in range(len(vec1))]
    [8, 12, -54]
 
-List comprehensions are much more flexible than :func:`map` and can be applied
-to complex expressions and nested functions::
+Sąrašo užklausos yra daug lankstesnės negu :func:`map` ir gali būti
+pritaikytos sudėtingies reiškiniams ir vidinėms funkcijoms::
 
    >>> [str(round(355/113.0, i)) for i in range(1,6)]
    ['3.1', '3.14', '3.142', '3.1416', '3.14159']
 
 
-Nested List Comprehensions
---------------------------
+Įdėtinės Sąrašo Užklausos
+-------------------------
 
-If you've got the stomach for it, list comprehensions can be nested. They are a
-powerful tool but -- like all powerful tools -- they need to be used carefully,
-if at all.
+Jeigu jūs mėgstate sudėtingus dalykus, sąrašo užklausos gali būti įdėtinės.
+Tai yra galingas įrankis, bet kaip visi galingi įrankiai, jos turi būti
+naudojamos atsargiai (arba išvis nenaudojamos).
 
-Consider the following example of a 3x3 matrix held as a list containing three
-lists, one list per row::
+Tarkime turime 3x3 matricą, kuri yra sudaryta iš sąrašo, kuriame laikomi
+trys sąrašai::
 
     >>> mat = [
     ...        [1, 2, 3],
@@ -290,42 +292,44 @@ lists, one list per row::
     ...        [7, 8, 9],
     ...       ]
 
-Now, if you wanted to swap rows and columns, you could use a list
-comprehension::
+Taigi jeigu norėtūmėte sukeisti eilutes ir stulpelius jūs galite
+panaudoti sąrašo užklausas::
 
     >>> print [[row[i] for row in mat] for i in [0, 1, 2]]
     [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 
-Special care has to be taken for the *nested* list comprehension:
+*Įdėtinės* sąrašo užklausos turi būti įvertintos ypatingai:
 
-    To avoid apprehension when nesting list comprehensions, read from right to
-    left.
+    Tam kad išvengti abejonių, kai sąrašo užklausos yra įdedamos viena į kitą,
+    skaitykite iš dešinės į kairę.
 
-A more verbose version of this snippet shows the flow explicitly::
+Skaitomesnė šio kodo versija parodo veikimą aiškiau::
 
     for i in [0, 1, 2]:
         for row in mat:
             print row[i],
         print
 
-In real world, you should prefer built-in functions to complex flow statements.
-The :func:`zip` function would do a great job for this use case::
+Realiame pasaulyje, jūs tūrėtūmėte naudoti įtaisytąsias funkcijas vietoj
+sudėtingų sakinių. Funkciją :func:`zip` šiuo atveju atliks būtent tai,
+ko jums reikia::
 
     >>> zip(*mat)
     [(1, 4, 7), (2, 5, 8), (3, 6, 9)]
 
-See :ref:`tut-unpacking-arguments` for details on the asterisk in this line.
+Žr. :ref:`tut-unpacking-arguments`, ką reiškia žvaigždutė šioje eilutėje.
 
 .. _tut-del:
 
-The :keyword:`del` statement
-============================
+:keyword:`del` sakinys
+======================
 
-There is a way to remove an item from a list given its index instead of its
-value: the :keyword:`del` statement.  This differs from the :meth:`pop` method
-which returns a value.  The :keyword:`del` statement can also be used to remove
-slices from a list or clear the entire list (which we did earlier by assignment
-of an empty list to the slice).  For example::
+Norėdami išimti iš sąrašo elementą pagal indeksą, o ne pagal reikšmę,
+naudokite :keyword:`del` sakinį. Jis skiriasi nuo :meth:`pop` metodo,
+kuris grąžina reikšmę. :keyword:`del` sakinys gali būti
+naudojamas išimti iš sąrašo atkarpas arba norint išvalyti visą sąrašą
+(seniau mes tai atlikome priskirdami tuščia sąrašą atkarpai).
+Pavyzdžiui::
 
    >>> a = [-1, 1, 66.25, 333, 333, 1234.5]
    >>> del a[0]
@@ -338,56 +342,58 @@ of an empty list to the slice).  For example::
    >>> a
    []
 
-:keyword:`del` can also be used to delete entire variables::
+:keyword:`del` gali būti naudojamas kintamųjų pašalinimui::
 
    >>> del a
 
-Referencing the name ``a`` hereafter is an error (at least until another value
-is assigned to it).  We'll find other uses for :keyword:`del` later.
+Po šios operacijos bandymas pasiekti ``a`` yra klaida (nebent kita reikšmė
+yra priskiriama šiam kintamajam). Daugiau :keyword:`del` panaudojimo
+būdų sutiksime vėliau.
 
 
 .. _tut-tuples:
 
-Tuples and Sequences
-====================
+Kortežai ir Sekos
+=================
 
-We saw that lists and strings have many common properties, such as indexing and
-slicing operations.  They are two examples of *sequence* data types (see
-:ref:`typesseq`).  Since Python is an evolving language, other sequence data
-types may be added.  There is also another standard sequence data type: the
-*tuple*.
+Mes pastebėjome, kad sąrašai ir eilutės turi daug bendrų savybių,
+kaip kad indeksavimas ir kirpimo operacijos. *Sekos* duomenų
+tipas turi du pavyzdžius (žr. :ref:`typesseq`). Kadangi Python'as yra
+besivystanti kalba, kiti sekos tipai gali būti pridėti ateityje.
+Taip yar Python'e yra kitas standartinis sekos tipas: *kortežas*.
 
-A tuple consists of a number of values separated by commas, for instance::
+Kortežas yra kelių reikšmių seka atskirta kableliais. Pavyzdžiui::
 
-   >>> t = 12345, 54321, 'hello!'
+   >>> t = 12345, 54321, 'labas!'
    >>> t[0]
    12345
    >>> t
-   (12345, 54321, 'hello!')
+   (12345, 54321, 'labas!')
    >>> # Tuples may be nested:
    ... u = t, (1, 2, 3, 4, 5)
    >>> u
-   ((12345, 54321, 'hello!'), (1, 2, 3, 4, 5))
+   ((12345, 54321, 'labas!'), (1, 2, 3, 4, 5))
 
-As you see, on output tuples are always enclosed in parentheses, so that nested
-tuples are interpreted correctly; they may be input with or without surrounding
-parentheses, although often parentheses are necessary anyway (if the tuple is
-part of a larger expression).
+Kaip jūs matote, kortežų rezultatas visada yra apskliaustas, tam kad
+idėtieji kortežai būtų interpretuojami teisingai. Jų įvedimas galimas
+tiek be tiek su skliausteliais, nors dažniausiai skliausteliai yra
+reikalingi (ypač jei kortežas yra didesnio reiškinio dalis).
 
-Tuples have many uses.  For example: (x, y) coordinate pairs, employee records
-from a database, etc.  Tuples, like strings, are immutable: it is not possible
-to assign to the individual items of a tuple (you can simulate much of the same
-effect with slicing and concatenation, though).  It is also possible to create
-tuples which contain mutable objects, such as lists.
+Kortežai turi daug panaudojimo būdų. Pavyzdžiui: (x, y) koordinačių pora,
+darbuotojo įrašas duombazėje ir t.t. Kortežai, kaip eilutės, yra nekintami,
+t.y. neįmanoma priskirti reikšmės kuriams nors kortežo nariui (tačiau
+tai galite padaryti naudodami kirpimus ir sujungimus). Taip pat galima
+sukurti kortežą, kurio nariai yra kintami objektai (kaip kad sąrašai).
 
-A special problem is the construction of tuples containing 0 or 1 items: the
-syntax has some extra quirks to accommodate these.  Empty tuples are constructed
-by an empty pair of parentheses; a tuple with one item is constructed by
-following a value with a comma (it is not sufficient to enclose a single value
-in parentheses). Ugly, but effective.  For example::
+Išskirtinė problema iškyla norint sukurti kortežus, kurie sudaryti iš 0
+ar 1 nario. Norint tai padaryti reikia žinoti tam tikrus sintaksės
+niuansus. Tuščias kortežas sukonstruojamas naudojant tuščius skliaustelius.
+Kortežas sudarytas iš vieno nario yra sukonstruojamas padedant kablelį
+po reikšmės (apskliausti vieną reikšmę neužteks). Negražu, bet
+efektyvu. Pavyzdžiui::
 
    >>> empty = ()
-   >>> singleton = 'hello',    # <-- note trailing comma
+   >>> singleton = 'hello',    # <-- atkreipkite dėmesį į kablelį
    >>> len(empty)
    0
    >>> len(singleton)
@@ -395,94 +401,100 @@ in parentheses). Ugly, but effective.  For example::
    >>> singleton
    ('hello',)
 
-The statement ``t = 12345, 54321, 'hello!'`` is an example of *tuple packing*:
-the values ``12345``, ``54321`` and ``'hello!'`` are packed together in a tuple.
-The reverse operation is also possible::
+Sakinys ``t = 12345, 54321, 'hello!'`` demonstruoja *kortežo pakavimą*:
+``12345``, ``54321`` ir ``'hello!'`` yra kartu supakuojamas į kortežą.
+Atvirkštinė operacija taip pat yra galima:
 
    >>> x, y, z = t
 
-This is called, appropriately enough, *sequence unpacking*. Sequence unpacking
-requires the list of variables on the left to have the same number of elements
-as the length of the sequence.  Note that multiple assignment is really just a
-combination of tuple packing and sequence unpacking!
+Taip vadinama *sekos išpakavimu*. Sekos išpakavimas reikalauja tiek kintamųjų
+kiek jų yra sekoje. Atkreipsime dėmesį, kad priskyrimas keliams kintamiesiems
+yra tik kortežo pakavimo ir sekos išpakavimo kombinacija!
 
-There is a small bit of asymmetry here:  packing multiple values always creates
-a tuple, and unpacking works for any sequence.
+Čia tėra tik šiek tiek asimetrijos: kelių reikšmių pakavimas visada sukuria
+kortežą, o išpakavimas veikia su bet kokia seka.
 
-.. XXX Add a bit on the difference between tuples and lists.
+.. XXX Pridėti šiek tiek informacijos tarp sąrašų ir kortežų.
 
 
 .. _tut-sets:
 
-Sets
-====
+Aibės
+=====
 
-Python also includes a data type for *sets*.  A set is an unordered collection
-with no duplicate elements.  Basic uses include membership testing and
-eliminating duplicate entries.  Set objects also support mathematical operations
-like union, intersection, difference, and symmetric difference.
+Python'e taip yra duomenų tipas *aibėms*. Aibė yra nesurušiuotų
+elementų rinkinys, kuriame nėra duplikuotų elmeentų. Įprastai
+aibės naudojamos buvimo aibėje tikrinimui ir dvigubų
+narių pašalinimui. Aibės objektai taip pat palaiko
+matematines operacijas kaip sąjunga, sankirta,
+skirtumas ar simetriškas skirtumas.
 
-Here is a brief demonstration::
+Čia demonstruojamos aibių galimybės::
 
    >>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
-   >>> fruit = set(basket)               # create a set without duplicates
+   >>> fruit = set(basket)               # sukuriame aibę be dublikatų
    >>> fruit
    set(['orange', 'pear', 'apple', 'banana'])
-   >>> 'orange' in fruit                 # fast membership testing
+   >>> 'orange' in fruit                 # greitas priklausymo aibei tikrinimas
    True
    >>> 'crabgrass' in fruit
    False
 
-   >>> # Demonstrate set operations on unique letters from two words
+   >>> # Demonstruojame aibių operacijas unikalioms raidėms iš dviejų žodžių
    ...
    >>> a = set('abracadabra')
    >>> b = set('alacazam')
-   >>> a                                  # unique letters in a
+   >>> a                                  # unikalios raidės žodyje a
    set(['a', 'r', 'b', 'c', 'd'])
-   >>> a - b                              # letters in a but not in b
+   >>> a - b                              # raidės, kurios yra a, bet ne b
    set(['r', 'd', 'b'])
-   >>> a | b                              # letters in either a or b
+   >>> a | b                              # raidės, kurios yra arba a arba b
    set(['a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'])
-   >>> a & b                              # letters in both a and b
+   >>> a & b                              # raidės, kurios yra ir a ir b
    set(['a', 'c'])
-   >>> a ^ b                              # letters in a or b but not both
+   >>> a ^ b                              # raidės, kurios yra a arba b, bet ne abiejuose
    set(['r', 'd', 'b', 'm', 'z', 'l'])
 
 
 .. _tut-dictionaries:
 
-Dictionaries
-============
+Žodynai
+=======
 
-Another useful data type built into Python is the *dictionary* (see
-:ref:`typesmapping`). Dictionaries are sometimes found in other languages as
-"associative memories" or "associative arrays".  Unlike sequences, which are
-indexed by a range of numbers, dictionaries are indexed by *keys*, which can be
-any immutable type; strings and numbers can always be keys.  Tuples can be used
-as keys if they contain only strings, numbers, or tuples; if a tuple contains
-any mutable object either directly or indirectly, it cannot be used as a key.
-You can't use lists as keys, since lists can be modified in place using index
-assignments, slice assignments, or methods like :meth:`append` and
-:meth:`extend`.
+Kitas naudingas duomenų tipas Python'e yra *žodynas* (žr.
+:ref:`typesmapping`). Kitose kalbose žodynai vadinami
+"asociatyviąją atmintimi" arba "asociatyviaisiais masyvai".
+Skirtingai nuo sekų, kurios yra indeksuojamos skaičiais,
+žodynai indeksuojami naudojant *raktus*, kuriais gali būti
+bet kuris nekintamas tipas. Eilutės arba skaičiai visada
+gali būti naudojami kaip raktai. Kortežai gali būti
+naudojami kaip raktai jeigu jie sudaryti tik iš eilučių,
+skaičių arba kortežų. Jeigu kortežas yra sudarytas iš kintamų
+objektų (tiesiogiai ar netiesiogiai), jo negalima naudoti rakui.
+Jūs negalite naudoti sąrašų raktams, kadangi sąrašai gali būti
+modifikuojami vietoje naudojant indekso priskyrimą, atkarpų
+priskyrimus arba metodus kaip :meth:`append` ir :meth:`extend`.
 
-It is best to think of a dictionary as an unordered set of *key: value* pairs,
-with the requirement that the keys are unique (within one dictionary). A pair of
-braces creates an empty dictionary: ``{}``. Placing a comma-separated list of
-key:value pairs within the braces adds initial key:value pairs to the
-dictionary; this is also the way dictionaries are written on output.
+Žodynus geriausia įsivaizduoti kaip nesutvarkytą *raktas: reikšmė* porų aibę,
+kur reikalaujama, kad raktas būti žodyne unikalus. Tuščia figūrinių skliaustelių
+pora ``{}`` sukuria tuščia žodyną. Norėdami sukurti žodyną
+su pradinėmis reikšmėmis tarp figūrinių skliaustelių surašysite raktas:reikšmė poras
+atskirtas kableliais. Tokiu pat būdų žodynai yra išvedami.
 
-The main operations on a dictionary are storing a value with some key and
-extracting the value given the key.  It is also possible to delete a key:value
-pair with ``del``. If you store using a key that is already in use, the old
-value associated with that key is forgotten.  It is an error to extract a value
-using a non-existent key.
+Pagrindinė žodynų operacija yra reikšmių įdėjimas pagal raktą
+ir tos reikšmės ištraukimas pagal raktą. Taip pat galima
+iš žodyno pašalinti raktas:reikšmė porą naudojant ``del``.
+Jeigu jūs į žodyną rašote reikšmę naudodami raktą, kuris jau
+žodyne panaudotas, senoji reikšmė yra pamirštama.
+Jeigu bandysite ištraukti reikšmę iš žodyno naudodami neesantį
+raktą gausite klaidą.
 
-The :meth:`keys` method of a dictionary object returns a list of all the keys
-used in the dictionary, in arbitrary order (if you want it sorted, just apply
-the :meth:`sort` method to the list of keys).  To check whether a single key is
-in the dictionary, use the :keyword:`in` keyword.
+Metodas :meth:`keys` sugrąžina žodyno raktų sąrašą, kurie yra naudojami
+žodyne. Sąrašo tvarka nėra apibrėžta, todėl jei norite surūšiuoto sąrašo
+tiesiog panaudokite metodą :meth:`sort` raktų sąrašui. Jeigu norite
+patikrinti ar raktas yra žodyne naudokite raktažodį :keyword:`in`.
 
-Here is a small example using a dictionary::
+Mažas pavyzdys kaip naudoti žodyną::
 
    >>> tel = {'jack': 4098, 'sape': 4139}
    >>> tel['guido'] = 4127
@@ -499,21 +511,21 @@ Here is a small example using a dictionary::
    >>> 'guido' in tel
    True
 
-The :func:`dict` constructor builds dictionaries directly from lists of
-key-value pairs stored as tuples.  When the pairs form a pattern, list
-comprehensions can compactly specify the key-value list. ::
+Funkcija :func:`dict` sukonstruoja žodyną tiesiogiai
+iš kortežų sąrašo, kur korteže laikomos rakto ir reikšmės poros.
+Jeigu poros gali būti sudarytos algoritmiškai, žodyno
+sudarymui galite panaudoti sąrašo užklausą::
 
    >>> dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
    {'sape': 4139, 'jack': 4098, 'guido': 4127}
-   >>> dict([(x, x**2) for x in (2, 4, 6)])     # use a list comprehension
+   >>> dict([(x, x**2) for x in (2, 4, 6)])     # sąrašo užklausos panaudojimas
    {2: 4, 4: 16, 6: 36}
 
-Later in the tutorial, we will learn about Generator Expressions which are even
-better suited for the task of supplying key-values pairs to the :func:`dict`
-constructor.
+Vėliau šiame vadovėlyje išmoksime apie Generatoriaus Reiškinius, kurie
+dar labiau tinka raktas-reikšmė porų sudarymui :func:`dict` funkcijai.
 
-When the keys are simple strings, it is sometimes easier to specify pairs using
-keyword arguments::
+Kai raktai yra paprastos eilutės, tada kartais paprasčiau nurodyti
+poras naudojant raktinius argumentus::
 
    >>> dict(sape=4139, guido=4127, jack=4098)
    {'sape': 4139, 'jack': 4098, 'guido': 4127}
@@ -521,11 +533,11 @@ keyword arguments::
 
 .. _tut-loopidioms:
 
-Looping Techniques
+Perėjimo Technikos
 ==================
 
-When looping through dictionaries, the key and corresponding value can be
-retrieved at the same time using the :meth:`iteritems` method. ::
+Norint pereiti per žodyną, raktas ir jį atitinkantį reikšmė
+gali būti gauta vienu metu naudojant :meth:`iteritems` metodą. ::
 
    >>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
    >>> for k, v in knights.iteritems():
@@ -534,8 +546,8 @@ retrieved at the same time using the :meth:`iteritems` method. ::
    gallahad the pure
    robin the brave
 
-When looping through a sequence, the position index and corresponding value can
-be retrieved at the same time using the :func:`enumerate` function. ::
+Kai einama per seką, pozicijos indeksas ir atitinkanti reikšmė
+gali būti gauta vienu metu naudojant :func:`enumerate` funkciją. ::
 
    >>> for i, v in enumerate(['tic', 'tac', 'toe']):
    ...     print i, v
@@ -544,8 +556,8 @@ be retrieved at the same time using the :func:`enumerate` function. ::
    1 tac
    2 toe
 
-To loop over two or more sequences at the same time, the entries can be paired
-with the :func:`zip` function. ::
+Norėdami pereiti per dvi ar daugiau sekų vienu metu, įrašai gali
+būti sujungti naudojant :func:`zip` funkciją. ::
 
    >>> questions = ['name', 'quest', 'favorite color']
    >>> answers = ['lancelot', 'the holy grail', 'blue']
@@ -556,8 +568,8 @@ with the :func:`zip` function. ::
    What is your quest?  It is the holy grail.
    What is your favorite color?  It is blue.
 
-To loop over a sequence in reverse, first specify the sequence in a forward
-direction and then call the :func:`reversed` function. ::
+Norėdami pereiti seką iš kito gali pirma nurodykite seką
+normalia tvarka ir tada iškvieskite :func:`reversed` funkciją. ::
 
    >>> for i in reversed(xrange(1,10,2)):
    ...     print i
@@ -568,8 +580,8 @@ direction and then call the :func:`reversed` function. ::
    3
    1
 
-To loop over a sequence in sorted order, use the :func:`sorted` function which
-returns a new sorted list while leaving the source unaltered. ::
+Jei norite pereiti per surūšiuotą seką naudokite :func:`sorted` funkciją,
+kuri sugrąžina naują surūšiuotą sąrašą (bet originalų sąrašą palieka nepakeistą). ::
 
    >>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
    >>> for f in sorted(set(basket)):
@@ -583,65 +595,65 @@ returns a new sorted list while leaving the source unaltered. ::
 
 .. _tut-conditions:
 
-More on Conditions
-==================
+Daugiau apie Sąlygas
+====================
 
-The conditions used in ``while`` and ``if`` statements can contain any
-operators, not just comparisons.
+Sąlygos naudojamos ``while`` ir ``if`` sakiniuose gali būti
+naudojami operatoriai (ne tik palyginimai).
 
-The comparison operators ``in`` and ``not in`` check whether a value occurs
-(does not occur) in a sequence.  The operators ``is`` and ``is not`` compare
-whether two objects are really the same object; this only matters for mutable
-objects like lists.  All comparison operators have the same priority, which is
-lower than that of all numerical operators.
+Palyginimo operatoriai ``in`` ir ``not in`` tikrina ar reikšmė
+yra sekoje. Operatoriai ``is`` ir ``is not`` palygina ar
+du objektai yra vienas ir tas pats objektas: tai svarbu tik kintamiems
+tipams kaip kad sąrašai. Visi palyginimo operatoriai yra to paties
+prioriteto, bet mažesnio prioriteto negu skaičių operatoriai.
 
-Comparisons can be chained.  For example, ``a < b == c`` tests whether ``a`` is
-less than ``b`` and moreover ``b`` equals ``c``.
+Palyginimai gali būti sujungiami. Pavyzdžiui, ``a < b == c`` patikrina ar ``a`` yra
+mažiau negu ``b`` ir dar ar ``b`` lygu ``c``.
 
-Comparisons may be combined using the Boolean operators ``and`` and ``or``, and
-the outcome of a comparison (or of any other Boolean expression) may be negated
-with ``not``.  These have lower priorities than comparison operators; between
-them, ``not`` has the highest priority and ``or`` the lowest, so that ``A and
-not B or C`` is equivalent to ``(A and (not B)) or C``. As always, parentheses
-can be used to express the desired composition.
+Palyginimai gali būti sujungti naudojant loginius operatorius ``and`` ir ``or``, ir
+bet kurio palyginimo (ar bet kokio loginio reiškinio) rezultatas gali būti paneigtas
+naudojant ``not``. Šie operatoriai turi mažesnį prioritetą negu palyginimo
+operatoriai --- iš jų ``not`` turi aukščiausia prioritetą ir ``or`` mažiausią,
+taigi ``A and not B or C`` yra tas pats kas ``(A and (not B)) or C``. Kaip visada,
+skliausteliai gali padėti išreikšti norimą kompoziciją.
 
-The Boolean operators ``and`` and ``or`` are so-called *short-circuit*
-operators: their arguments are evaluated from left to right, and evaluation
-stops as soon as the outcome is determined.  For example, if ``A`` and ``C`` are
-true but ``B`` is false, ``A and B and C`` does not evaluate the expression
-``C``.  When used as a general value and not as a Boolean, the return value of a
-short-circuit operator is the last evaluated argument.
+Loginiai operatoriai ``and`` ir ``or`` yra taip pavadinami *trumpos-grandinės*
+operatoriais: jų argumentai yra įvertinami iš kairės į dešinę, ir įvertinimas
+sustabdomas kai tik rezultatas yra nustatomas. Pavyzdžiui, jei ``A`` ir ``C`` yra
+tiesa, bet ``B`` yra netiesa, tai ``A and B and C`` nevertine ``C`` reikšmės.
+Kai naudojamos bendros, o ne loginės, reikšmės, trumpos-grandinės operatorių
+rezultatas yra paskutinis įvertintas argumentas.
 
-It is possible to assign the result of a comparison or other Boolean expression
-to a variable.  For example, ::
+Palyginimo (ar kitos loginio reiškinio) rezultatą galima priskirti kintamajam.
+Pavyzdžiui::
 
    >>> string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
    >>> non_null = string1 or string2 or string3
    >>> non_null
    'Trondheim'
 
-Note that in Python, unlike C, assignment cannot occur inside expressions. C
-programmers may grumble about this, but it avoids a common class of problems
-encountered in C programs: typing ``=`` in an expression when ``==`` was
-intended.
+Pastebėkite, kad Python'e (skirtingai nuo C), priskyrimas negali įvykti
+reiškinyje. C programuotojai gali būti tuo nepatenkinti, bet tai padeda
+išvengti dažnos C problemos, kai panaudojamas ``=`` reiškinyje, kur norėta
+parašyti ``==``.
 
 
 .. _tut-comparing:
 
-Comparing Sequences and Other Types
-===================================
+Sekų ir Kitų Tipų Palyginimas
+=============================
 
-Sequence objects may be compared to other objects with the same sequence type.
-The comparison uses *lexicographical* ordering: first the first two items are
-compared, and if they differ this determines the outcome of the comparison; if
-they are equal, the next two items are compared, and so on, until either
-sequence is exhausted. If two items to be compared are themselves sequences of
-the same type, the lexicographical comparison is carried out recursively.  If
-all items of two sequences compare equal, the sequences are considered equal.
-If one sequence is an initial sub-sequence of the other, the shorter sequence is
-the smaller (lesser) one.  Lexicographical ordering for strings uses the ASCII
-ordering for individual characters.  Some examples of comparisons between
-sequences of the same type::
+Sekų objektai gali būti palyginami su kitais objektais, kurie turi
+tą patį sekos tipą. Palyginimas naudoja *leksikografinę* tvarką:
+pirmiausia palyginami pirmi du nariai, ir jeigu jie skiriasi pagal
+tai nustatomas rezultatas. Jei jie lygus, tada lyginami kitu du nariai,
+ir taip toliau, kol kur nors seka baigiasi. Jeigu patys nariai yra
+sekos, tada rekursiškai leksikografine tvarka lyginami jie patys.
+Jei visi sekos nariai vienodi, tada sekos laikomos lygiomis.
+Jeigu viena seka yra kitos sekos pradžia, tai trumpesnioji
+seka yra mažesnė. Leksikografinė tvarka eilutėms naudoją ASCII
+koduotę atskiroms raidėms. Keletas palyginimo pavyzdžių
+tarp to paties tipo sekų:
 
    (1, 2, 3)              < (1, 2, 4)
    [1, 2, 3]              < [1, 2, 4]
@@ -651,15 +663,14 @@ sequences of the same type::
    (1, 2, 3)             == (1.0, 2.0, 3.0)
    (1, 2, ('aa', 'ab'))   < (1, 2, ('abc', 'a'), 4)
 
-Note that comparing objects of different types is legal.  The outcome is
-deterministic but arbitrary: the types are ordered by their name. Thus, a list
-is always smaller than a string, a string is always smaller than a tuple, etc.
-[#]_ Mixed numeric types are compared according to their numeric value, so 0
-equals 0.0, etc.
+Atkreipkite dėmesį į tai, kad skirtingų tipų palyginimas yra legalus.
+Rezultatas gali būti nustatytas tiksliai (bet viskas gali būti painu):
+tipai yra rūšiuojami pagal vardus. Taigi sąrašas (**l**\ist) yra visada trumpesnis
+už eilutė (**s**\tring), eilutė visada trumpesnė už kortežą (**t**\uple) ir t.t.
+[#]_ Skirtingo tipo skaičiai lyginami pagal jų reikšmę, taigi 0 lygu 0.0 ir t.t.
 
 
-.. rubric:: Footnotes
+.. rubric:: Pastabos
 
-.. [#] The rules for comparing objects of different types should not be relied upon;
-   they may change in a future version of the language.
-
+.. [#] Taisyklės pagal kurias lyginami skirtingi tipai nėra galutinės ir gali
+   pasikeisti ateityje.
