@@ -149,110 +149,113 @@ Jeigu modulis bus importuotas, kodas nebus vykdomas::
    >>>
 
 Tai dažniausiai naudojama norint suteikti patogią vartotojo sąsają moduliui
-arba dėl testavimo tikslų (pvz.: modulio paleidimas kaip skripto įvykdo
+arba testavimo tikslais (pvz.: modulio paleidimas kaip skripto įvykdo
 testus).
 
 
 .. _tut-searchpath:
 
-The Module Search Path
-----------------------
+Modulio Paieškos Kelias
+-----------------------
 
 .. index:: triple: module; search; path
 
-When a module named :mod:`spam` is imported, the interpreter searches for a file
-named :file:`spam.py` in the current directory, and then in the list of
-directories specified by the environment variable :envvar:`PYTHONPATH`.  This
-has the same syntax as the shell variable :envvar:`PATH`, that is, a list of
-directory names.  When :envvar:`PYTHONPATH` is not set, or when the file is not
-found there, the search continues in an installation-dependent default path; on
-Unix, this is usually :file:`.:/usr/local/lib/python`.
+Kai modulis pavadintas :mod:`spam` yra importuojamas, interpretatorius
+ieško failo vardu :file:`spam.py` dabartinėje direktorijoje, o po to
+direktorijų sąraše, kurias nurodo aplinkos kintamasis :envvar:`PYTHONPATH`.
+Šis kintamasis naudoja tokią pačią sintaksę kaip ir apvalkalo kintamasis
+:envvar:`PATH`, t.y. aplankų vardų sąrašas. Jeigu :envvar:`PYTHONPATH` nėra
+nustatytas, arba kai čia nerandamas, paieška tęsiama aplanke, kuris priklauso
+nuo instaliacijos. Unix-tipo sistemoje tai dažniausiai
+yra :file:`.:/usr/local/lib/python`.
 
-Actually, modules are searched in the list of directories given by the variable
-``sys.path`` which is initialized from the directory containing the input script
-(or the current directory), :envvar:`PYTHONPATH` and the installation- dependent
-default.  This allows Python programs that know what they're doing to modify or
-replace the module search path.  Note that because the directory containing the
-script being run is on the search path, it is important that the script not have
-the same name as a standard module, or Python will attempt to load the script as
-a module when that module is imported. This will generally be an error.  See
-section :ref:`tut-standardmodules` for more information.
+Faktiškai, moduliai yra ieškomi aplankų sąraše, kuris laikomas kintamajame
+``sys.path``. Šis kintamasis yra inicializuojamas dabartiniu aplanku (t.y.
+tuo kur paleidžiamas skriptas), :envvar:`PYTHONPATH` ir aplanku, kuris
+priklauso nuo instaliacijos. Tai leidžia Python'o programoms, kurios
+supranta, kas yra daroma, modifikuoti arba pakeisti modulių paieškos kelius.
+Kadangi skripto aplankas yra įdedamas į paieškos kelią nevadinkite savo
+skripto vardu sutampančiu su kokiu nors standartiniu Python'o moduliu,
+nes kitaip Python'as importuojant kokį nors modulį importuos jūsų skriptą,
+o tai dažniausiai yra klaida. Daugiau informacijos apie tai
+skyriuje :ref:`tut-standardmodules`.
 
 
-"Compiled" Python files
------------------------
+"Kompiliuoti" Python'o failai
+-----------------------------
 
-As an important speed-up of the start-up time for short programs that use a lot
-of standard modules, if a file called :file:`spam.pyc` exists in the directory
-where :file:`spam.py` is found, this is assumed to contain an
-already-"byte-compiled" version of the module :mod:`spam`. The modification time
-of the version of :file:`spam.py` used to create :file:`spam.pyc` is recorded in
-:file:`spam.pyc`, and the :file:`.pyc` file is ignored if these don't match.
+"Kompiliuoti" Python'o failai yra svarbus pagreitinimas mažoms programoms,
+kurios naudoja daug modulių. Jeigu :file:`spam.pyc` egzistuoja tame
+pačiame aplanke kaip :file:`spam.py`, daroma prielaida, kad
+modulis :mod:`spam` jau turi "baitinę-kompiliuotą" versiją. Į :file:`spam.pyc`
+įrašomas failo :file:`spam.py` pakeitimo laikas, todėl kai
+laikas esantis :file:`.pyc` nesutampa jis yra ignoruojamas.
 
-Normally, you don't need to do anything to create the :file:`spam.pyc` file.
-Whenever :file:`spam.py` is successfully compiled, an attempt is made to write
-the compiled version to :file:`spam.pyc`.  It is not an error if this attempt
-fails; if for any reason the file is not written completely, the resulting
-:file:`spam.pyc` file will be recognized as invalid and thus ignored later.  The
-contents of the :file:`spam.pyc` file are platform independent, so a Python
-module directory can be shared by machines of different architectures.
+Įprastai, jums nieko nereikia daryti, kad failas :file:`spam.pyc` būtų sukurtas.
+Kaskart, kai :file:`spam.py` yra sėkmingai sukompiliuojamas, jo kompiliuotą
+versiją bandoma rašyti į  :file:`spam.pyc`. Jeigu tai nepavyksta, tai nėra
+klaida. Jei tarkime dėl kokių nors priežasčių įrašomas ne visas failas,
+tai vėliau jis bus atpažįstamas kaip neteisingas ir bus ignoruojamas.
+:file:`spam.pyc` turinys yra nepriklausomas nuo platformos, todėl Python'o
+modulių aplankas gali būti naudojamas vienu metu skirtingų architektūrų
+mašinų.
 
-Some tips for experts:
+Keletas patarimų ekspertams:
 
-* When the Python interpreter is invoked with the :option:`-O` flag, optimized
-  code is generated and stored in :file:`.pyo` files.  The optimizer currently
-  doesn't help much; it only removes :keyword:`assert` statements.  When
-  :option:`-O` is used, *all* :term:`bytecode` is optimized; ``.pyc`` files are
-  ignored and ``.py`` files are compiled to optimized bytecode.
+* Kai Python'o interpretatorius yra iškviečiamas su :option:`-O`, sugeneruojamas
+  optimizuotas kodas ir padedamas į failą :file:`.pyo`. Optimizatorius
+  šiuo metu daug nepadeda: jis tik pašalina :keyword:`assert` sakinius. Kai
+  :option:`-O` yra naudojamas, *visas* :term:`baitinis kodas` yra optimizuotas, ``.pyc``
+  failai yra ignoruojami ir ``.py`` failai kompiliuojami į optimizuotą
+  baitinį kodą.
 
-* Passing two :option:`-O` flags to the Python interpreter (:option:`-OO`) will
-  cause the bytecode compiler to perform optimizations that could in some rare
-  cases result in malfunctioning programs.  Currently only ``__doc__`` strings are
-  removed from the bytecode, resulting in more compact :file:`.pyo` files.  Since
-  some programs may rely on having these available, you should only use this
-  option if you know what you're doing.
+* Jeigu perduosite du :option:`-O` Python'o interpretatoriui (:option:`-OO`), tada
+  baitinio kodo kompiliatorius atliks optimizacijas, kurios kai kuriais retais
+  atvejais gali pagaminti neteisingai veikiančias programas. Šiuo metu tik
+  ``__doc__`` eilutės yra pašalinamos iš baitinio kodo, dėl ko
+  :file:`.pyo` failai yra mažesni.  Kadangi, kai kurios programos gali
+  remtis šių eilučių buvimo, jūs turite naudoti šią galimybę tik tada,
+  kai tikrai žinote, ką darote.
 
-* A program doesn't run any faster when it is read from a :file:`.pyc` or
-  :file:`.pyo` file than when it is read from a :file:`.py` file; the only thing
-  that's faster about :file:`.pyc` or :file:`.pyo` files is the speed with which
-  they are loaded.
+* Programa paleista iš :file:`.pyc` arba :file:`.pyo` neveikia greičiau
+  negu tada, kai ji vykdoma iš :file:`.py` failo --- vienintelis
+  dalykas, kuo :file:`.pyc` arba :file:`.pyo` failai yra greitesni,
+  tai greitis, kuriuo jie yra užkraunami.
 
-* When a script is run by giving its name on the command line, the bytecode for
-  the script is never written to a :file:`.pyc` or :file:`.pyo` file.  Thus, the
-  startup time of a script may be reduced by moving most of its code to a module
-  and having a small bootstrap script that imports that module.  It is also
-  possible to name a :file:`.pyc` or :file:`.pyo` file directly on the command
-  line.
+* Kai skriptas vykdomas nurodant jo vardą komandinėje eilutėje,
+  baitinis kodas niekada nėra rašomas į :file:`.pyc` ar :file:`.pyo` failą.  Taigi,
+  skripto paleidimo laikas gali būti sumažintas jo kodo dalis perkeliant
+  į modulį ir naudojant mažą skriptą, kuris tą modulį importuoja.
 
-* It is possible to have a file called :file:`spam.pyc` (or :file:`spam.pyo`
-  when :option:`-O` is used) without a file :file:`spam.py` for the same module.
-  This can be used to distribute a library of Python code in a form that is
-  moderately hard to reverse engineer.
+* Galima turėti failą :file:`spam.pyc` (arba :file:`spam.pyo`
+  kai naudojama :option:`-O`) be :file:`spam.py` failo tam pačiam
+  moduliui. Tai gali būti panaudojama Python bibliotekų platinimui,
+  nes tokią formą yra pakankamai sunku vėl atgal paversti skaitomu
+  kodu.
 
   .. index:: module: compileall
 
-* The module :mod:`compileall` can create :file:`.pyc` files (or :file:`.pyo`
-  files when :option:`-O` is used) for all modules in a directory.
+* Modulis :mod:`compileall` gali sukurti :file:`.pyc` failus (arba :file:`.pyo`
+  failus kai naudojama :option:`-O`) visiems moduliams aplanke.
 
 
 .. _tut-standardmodules:
 
-Standard Modules
-================
+Standartiniai Moduliai
+======================
 
 .. index:: module: sys
 
-Python comes with a library of standard modules, described in a separate
-document, the Python Library Reference ("Library Reference" hereafter).  Some
-modules are built into the interpreter; these provide access to operations that
-are not part of the core of the language but are nevertheless built in, either
-for efficiency or to provide access to operating system primitives such as
-system calls.  The set of such modules is a configuration option which also
-depends on the underlying platform For example, the :mod:`winreg` module is only
-provided on Windows systems. One particular module deserves some attention:
-:mod:`sys`, which is built into every Python interpreter.  The variables
-``sys.ps1`` and ``sys.ps2`` define the strings used as primary and secondary
-prompts::
+Įprasta Python'o instaliacija turi standartinių modulių biblioteką.
+Kai kurie moduliai yra interpretatoriaus dalis --- jie leidžia atlikti
+operacijas, kurios nėra kalbos branduolio dalis, bet jie yra įtaisyti
+arba dėl efektyvumo arba, kad būtų galima atlikti operacinės sistemos
+primityvus (kaip kad sisteminius kvietimus). Tokių modulių aibė
+priklauso nuo platformos. Pavyzdžiui, modulis :mod:`winreg` yra
+aktualus tik Windows sistemai. Vienas konkretus modulis
+nusipelno šiek tiek dėmesio: :mod:`sys`, kuris yra kiekvieno Python'o
+interpretatoriaus dalis. Kintamieji ``sys.ps1`` ir ``sys.ps2`` apibrėžia
+eilutes, kurios naudojamos kaip pirminis ir antrinis raginimas::
 
    >>> import sys
    >>> sys.ps1
@@ -265,13 +268,14 @@ prompts::
    C>
 
 
-These two variables are only defined if the interpreter is in interactive mode.
+Šiek du kintamieji yra apibrėžti tik jei interpretatorius yra interaktyviame
+rėžime
 
-The variable ``sys.path`` is a list of strings that determines the interpreter's
-search path for modules. It is initialized to a default path taken from the
-environment variable :envvar:`PYTHONPATH`, or from a built-in default if
-:envvar:`PYTHONPATH` is not set.  You can modify it using standard list
-operations::
+Kintamasis ``sys.path`` yra eilučių sąrašas, kuris nustato interpretatoriaus
+modulių paieškos kelią. Jis inicializuojamas keliu paimtu
+iš aplinkos kintamojo :envvar:`PYTHONPATH` arba standartiniu keliu, jei
+:envvar:`PYTHONPATH` nėra nustatytas.  Jūs galite jį modifikuoti naudodami
+standartines sąrašo operacijas::
 
    >>> import sys
    >>> sys.path.append('/ufs/guido/lib/python')
