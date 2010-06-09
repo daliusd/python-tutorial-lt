@@ -1,48 +1,48 @@
 .. _tut-io:
 
-****************
-Input and Output
-****************
+*********************
+Įvedimas ir Išvedimas
+*********************
 
-There are several ways to present the output of a program; data can be printed
-in a human-readable form, or written to a file for future use. This chapter will
-discuss some of the possibilities.
-
+Egzistuoja keli būdai išvesti programos rezultatus. Duomenys gali būti
+išspausdinti žmogui skaitoma forma arba įrašyti į failą ateities naudojimui.
+Ši dalis apžvelgs kelias galimybes.
 
 .. _tut-formatting:
 
-Fancier Output Formatting
-=========================
+Gražesnis Išvedimo Formatavimas
+===============================
 
-So far we've encountered two ways of writing values: *expression statements* and
-the :keyword:`print` statement.  (A third way is using the :meth:`write` method
-of file objects; the standard output file can be referenced as ``sys.stdout``.
-See the Library Reference for more information on this.)
+Kol kas mes sutikome du reikšmių rašymo būdus: *išraiškos sakinius* ir
+:keyword:`print` sakinį.  (trečias būdas :meth:`write` metodo naudojimas
+su failo objektais. Standartinis išvedimo failas gali būti pasiektas
+per ``sys.stdout``.)
 
 .. index:: module: string
 
-Often you'll want more control over the formatting of your output than simply
-printing space-separated values.  There are two ways to format your output; the
-first way is to do all the string handling yourself; using string slicing and
-concatenation operations you can create any layout you can imagine.  The
-standard module :mod:`string` contains some useful operations for padding
-strings to a given column width; these will be discussed shortly.  The second
-way is to use the :meth:`str.format` method.
+Dažnai jums reikės daugiau kontrolės formatuojant išvedamus duomenis negu tiesiog
+spausdinti tarpu atskirtas reikšmes. Egzistuoja du būdai suformatuoti
+jūsų išvedimo duomenis. Pirmas būdas yra visą formatavimą atlikti patiems:
+naudodami eilučių karpymo ir sujungimo operacijas jūs galite sukurti
+tokį išdėstymą kokį tik įsivaizduojate. Standartiniame modulyje :mod:`string`
+galima rasti kelias naudingas operacijas eilučių užpildymui iki reikiamo
+stulpelio pločio (jas peržvelgsime netrukus). Antras būdas yra
+naudoti metodą :meth:`str.format`.
 
-One question remains, of course: how do you convert values to strings? Luckily,
-Python has ways to convert any value to a string: pass it to the :func:`repr`
-or :func:`str` functions.
+Žinoma, išlieka vienas klausimas: kaip konvertuoti reikšmes į eilutes?
+Laimei Python'as turi būdą reikšmes paversti eilutėmis: perduokite
+reikšmę funkcijoms: func:`repr` arba :func:`str`.
 
-The :func:`str` function is meant to return representations of values which are
-fairly human-readable, while :func:`repr` is meant to generate representations
-which can be read by the interpreter (or will force a :exc:`SyntaxError` if
-there is not equivalent syntax).  For objects which don't have a particular
-representation for human consumption, :func:`str` will return the same value as
-:func:`repr`.  Many values, such as numbers or structures like lists and
-dictionaries, have the same representation using either function.  Strings and
-floating point numbers, in particular, have two distinct representations.
+Funkcijos :func:`str` paskirtis yra sugražinti reikšmę, kurią galėtų perskaityti
+žmogus, tuo tarpu :func:`repr` paskirtis yra sugeneruoti reprezentaciją,
+kurią galėtų perskaityti interpretatorius (arba jei tokias formos
+nėra grąžintų :exc:`SyntaxError` klaidą). Objekams, kurie neturi žmogui
+skaitomos formos, :func:`str` sugrąžins tokią pačią reikšmę kaip :func:`repr`.
+Dauguma reikšmių, kaip kad skaičiai ar struktūros kaip sąrašai ar žodynai,
+turi tą pačia reprezentaciją abiems funkcijoms. Eilutės ir slankaus kablelio
+skaičiai --- turi dvi skirtingas reprezentacijas.
 
-Some examples::
+Keletas pavyzdžių::
 
    >>> s = 'Hello, world.'
    >>> str(s)
@@ -58,20 +58,20 @@ Some examples::
    >>> s = 'The value of x is ' + repr(x) + ', and y is ' + repr(y) + '...'
    >>> print s
    The value of x is 32.5, and y is 40000...
-   >>> # The repr() of a string adds string quotes and backslashes:
+   >>> # eilutės repr() prideda kabutes ir kairinį brūkšnį:
    ... hello = 'hello, world\n'
    >>> hellos = repr(hello)
    >>> print hellos
    'hello, world\n'
-   >>> # The argument to repr() may be any Python object:
+   >>> # repr() argumentu gali būti bet koks Python'o objektas:
    ... repr((x, y, ('spam', 'eggs')))
    "(32.5, 40000, ('spam', 'eggs'))"
 
-Here are two ways to write a table of squares and cubes::
+Čia yra du būdai parašyti kvadratų ir kubų lentelę::
 
    >>> for x in range(1, 11):
    ...     print repr(x).rjust(2), repr(x*x).rjust(3),
-   ...     # Note trailing comma on previous line
+   ...     # Atkreipkite dėmesį į kablelį eilutės gale
    ...     print repr(x*x*x).rjust(4)
    ...
     1   1    1
