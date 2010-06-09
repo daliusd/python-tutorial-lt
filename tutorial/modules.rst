@@ -283,11 +283,11 @@ standartines sąrašo operacijas::
 
 .. _tut-dir:
 
-The :func:`dir` Function
-========================
+:func:`dir` Funkcija
+====================
 
-The built-in function :func:`dir` is used to find out which names a module
-defines.  It returns a sorted list of strings::
+Įtaisytoji funkcija :func:`dir` yra naudojama, kai norime sužinoti kokius
+vardus apibrėžia modulis. Ši funkcija sugrąžina surūšiuotą eilučių sąrašą::
 
    >>> import fibo, sys
    >>> dir(fibo)
@@ -304,7 +304,8 @@ defines.  It returns a sorted list of strings::
     'setprofile', 'setrecursionlimit', 'settrace', 'stderr', 'stdin', 'stdout',
     'version', 'version_info', 'warnoptions']
 
-Without arguments, :func:`dir` lists the names you have defined currently::
+Jei funkcija :func:`dir` vykdoma bet argumentų, tai surašomi vardai, kurie
+yra apibrėžti dabar::
 
    >>> a = [1, 2, 3, 4, 5]
    >>> import fibo
@@ -312,12 +313,12 @@ Without arguments, :func:`dir` lists the names you have defined currently::
    >>> dir()
    ['__builtins__', '__doc__', '__file__', '__name__', 'a', 'fib', 'fibo', 'sys']
 
-Note that it lists all types of names: variables, modules, functions, etc.
+Pastebėsime, kad surąšomi visų tipų vardai: kintamieji, moduliai, funkcijos ir t.t.
 
 .. index:: module: __builtin__
 
-:func:`dir` does not list the names of built-in functions and variables.  If you
-want a list of those, they are defined in the standard module
+Funkcija :func:`dir` neišrašo įtaisytų funkcijų ir kintamųjų. Jeigu
+jūs norite gauti jų sąrašą, jie yra apibrėžti standartiniame modulyje
 :mod:`__builtin__`::
 
    >>> import __builtin__
@@ -350,31 +351,32 @@ want a list of those, they are defined in the standard module
 
 .. _tut-packages:
 
-Packages
+Pakuotės
 ========
 
-Packages are a way of structuring Python's module namespace by using "dotted
-module names".  For example, the module name :mod:`A.B` designates a submodule
-named ``B`` in a package named ``A``.  Just like the use of modules saves the
-authors of different modules from having to worry about each other's global
-variable names, the use of dotted module names saves the authors of multi-module
-packages like NumPy or the Python Imaging Library from having to worry about
-each other's module names.
+Pakuotės yra būdas struktūrizuoti Python'o modulių vardų edrvę
+naudojant "taškais atskirtus modulių vardus". Pavyzdžiui, modulis :mod:`A.B`
+nurodo submodulį ``B`` pakuotėje ``A``. Lygiai taip kaip moduliai
+apsaugo skirtingų modulių autorius nuo rūpesčio dėl vienodų
+globalių kintamųjų vardų, taip taškais atskirti modulių vardai apsaugo
+multi-modulinių pakuočių (tokių kaip NumPy ar Python Imaging Library)
+autorius nuo rūpesčio dėl vienodų modulių vardų.
 
-Suppose you want to design a collection of modules (a "package") for the uniform
-handling of sound files and sound data.  There are many different sound file
-formats (usually recognized by their extension, for example: :file:`.wav`,
-:file:`.aiff`, :file:`.au`), so you may need to create and maintain a growing
-collection of modules for the conversion between the various file formats.
-There are also many different operations you might want to perform on sound data
-(such as mixing, adding echo, applying an equalizer function, creating an
-artificial stereo effect), so in addition you will be writing a never-ending
-stream of modules to perform these operations.  Here's a possible structure for
-your package (expressed in terms of a hierarchical filesystem)::
+Tarkime jūs norite sukurti modulių kolekciją ("pakuotę")
+universalią garso failų ir duomenų tvarkymui. Kadangi egzistuoja
+įvairūs failų formatai (dažniausiai atpažįstami pagal plėtinį,
+pvz.: :file:`.wav`, :file:`.aiff`, :file:`.au`), todėl
+jums reikės sukurti ir palaikyti augančią modulių
+kolekciją įvairiems failų formatams. Taip pat egzistuoja daug skirtingų
+operacijų, kurias jus norite atlikti su garso duomenimis (miksavimas,
+aido pridėjimas, ekvalaizerio pritaikymas, dirbtinio stereo efekto
+sukūrimas), taigi jūs taip pat tūrėsite rašyti daug modulių, kurie
+atliks šias operacijas. Tai galėtų būti jūsų pakuotės struktūra
+(pavaizduota kaip hierarchinė failų sistema)::
 
-   sound/                          Top-level package
-         __init__.py               Initialize the sound package
-         formats/                  Subpackage for file format conversions
+   sound/                          Aukščiausio lygio pakuotė
+         __init__.py               Garso pakuotės inicializacija
+         formats/                  Subpakuotė failų formatų konvertavimui
                  __init__.py
                  wavread.py
                  wavwrite.py
@@ -383,181 +385,183 @@ your package (expressed in terms of a hierarchical filesystem)::
                  auread.py
                  auwrite.py
                  ...
-         effects/                  Subpackage for sound effects
+         effects/                  Subpakuotė garso efektams
                  __init__.py
                  echo.py
                  surround.py
                  reverse.py
                  ...
-         filters/                  Subpackage for filters
+         filters/                  Subpakuotė filtrams
                  __init__.py
                  equalizer.py
                  vocoder.py
                  karaoke.py
                  ...
 
-When importing the package, Python searches through the directories on
-``sys.path`` looking for the package subdirectory.
+Kai importuojame pakuotė, Python'as ieško pakuotės aplanko aplankuose
+nurodytose ``sys.path``.
 
-The :file:`__init__.py` files are required to make Python treat the directories
-as containing packages; this is done to prevent directories with a common name,
-such as ``string``, from unintentionally hiding valid modules that occur later
-on the module search path. In the simplest case, :file:`__init__.py` can just be
-an empty file, but it can also execute initialization code for the package or
-set the ``__all__`` variable, described later.
+:file:`__init__.py` failas yra reikalingas tam, kad Python'as aplanką
+atpažintų kaip pakuotę. Taip daroma todėl, kad dažni vardai (tarkim
+``string``), netyčia nepaslėptų galiojančių modulių, kurie randami
+vėliau modulių paieškos kelyje. Paprasčiausiu atveju :file:`__init__.py`
+gali būti tiesiog tuščias failas, bet jei reikia jis gali įvykdyti
+inicializacijos kodą pakuotei arba nustatyti kintamąjį
+``__all__`` (aprašytas vėliau).
 
-Users of the package can import individual modules from the package, for
-example::
+Pakuotės vartotojai gali importuoti individualius modulius iš pakuotės.
+Pavyzdžiui::
 
    import sound.effects.echo
 
-This loads the submodule :mod:`sound.effects.echo`.  It must be referenced with
-its full name. ::
+Ši komanda paleidžia submodulį :mod:`sound.effects.echo`. Norint jį naudoti
+reikia nurodyti pilną vardą::
 
    sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
 
-An alternative way of importing the submodule is::
+Alternatyvus būdas importuotį submodulį yra::
 
    from sound.effects import echo
 
-This also loads the submodule :mod:`echo`, and makes it available without its
-package prefix, so it can be used as follows::
+Ši komanda taip pat paleidžia submodulį :mod:`echo` ir leidžia jį naudoti
+nenurodant pakuotės. Todėl jį galima naudoti taip::
 
    echo.echofilter(input, output, delay=0.7, atten=4)
 
-Yet another variation is to import the desired function or variable directly::
+Kitas variantas yra importuoti norimą funkciją ar kintamąjį tiesiogiai::
 
    from sound.effects.echo import echofilter
 
-Again, this loads the submodule :mod:`echo`, but this makes its function
-:func:`echofilter` directly available::
+Vėlgi, tai užkrauną submodulį :mod:`echo`, bet jo funkcija
+:func:`echofilter` dabar pasiekiama tiesiogiai::
 
    echofilter(input, output, delay=0.7, atten=4)
 
-Note that when using ``from package import item``, the item can be either a
-submodule (or subpackage) of the package, or some  other name defined in the
-package, like a function, class or variable.  The ``import`` statement first
-tests whether the item is defined in the package; if not, it assumes it is a
-module and attempts to load it.  If it fails to find it, an :exc:`ImportError`
-exception is raised.
+Atkreipkime dėmesį, kad naudojant ``from pakuotė import narys``, *narys* gali
+būti pakuotės submodulis (ar subpakuotė), koks nors vardas,
+arba koks nors vardas apibrėžtas pakuotėje (funkcija, klasė ar kintamasis).
+``import`` sakinys pirmiausia testuoja ar narys yra apibrėžtas pakuotėje
+ir jeigu ne tada daro prielaidą, kad narys yra modulis ir bando jį pakrauti.
+Jeigu ir tada jo neranda, tada iškelia išimtis :exc:`ImportError`.
 
-Contrarily, when using syntax like ``import item.subitem.subsubitem``, each item
-except for the last must be a package; the last item can be a module or a
-package but can't be a class or function or variable defined in the previous
-item.
+Priešingai, kai naudojama sintaksė ``import item.subitem.subsubitem``, kiekvienas
+narys išskyrus paskutinį privalo būti pakuotė. Paskutinis narys gali
+būti modulis, pakuotė, bet negali būti klasė, funkcija, kintamasis (kaip
+tai buvo galima daryti prieš tai).
 
 
 .. _tut-pkg-import-star:
 
-Importing \* From a Package
----------------------------
+\* Impotavimas Iš Pakuotės
+--------------------------
 
 .. index:: single: __all__
 
-Now what happens when the user writes ``from sound.effects import *``?  Ideally,
-one would hope that this somehow goes out to the filesystem, finds which
-submodules are present in the package, and imports them all.  Unfortunately,
-this operation does not work very well on Windows platforms, where the
-filesystem does not always have accurate information about the case of a
-filename!  On these platforms, there is no guaranteed way to know whether a file
-:file:`ECHO.PY` should be imported as a module :mod:`echo`, :mod:`Echo` or
-:mod:`ECHO`.  (For example, Windows 95 has the annoying practice of showing all
-file names with a capitalized first letter.)  The DOS 8+3 filename restriction
-adds another interesting problem for long module names.
+Kas atsitiks, jeigu vartotojas parašys ``from sound.effects import *``? Idealiu
+atveju vartotojas tikėsis, kad ši komanda kažkaip nueis į failų sistemą,
+ras kurie submoduliai priklauso pakuotei ir juos visus importuos. Nelaimei
+ši operacija nedirba gerai Windows platformoje, kur failų sistema ne
+visada turi informaciją apie failo vardo raidžių lygį! Šioje platformoje,
+nėra garantuoto būdo žinoti ar :file:`ECHO.PY` turi būti importuotas kaip
+:mod:`echo`, :mod:`Echo` ar :mod:`ECHO`. (Pavyzdžiui, Windows 95 turi
+erzinantį įprotį rodyti visus failų vardus naudojant pirmą didžiąją raidę).
+DOS 8+3 failų vardų apribojimai prideda kitą įdomią problemą ilgiems modulių
+vardams.
 
-The only solution is for the package author to provide an explicit index of the
-package.  The import statement uses the following convention: if a package's
-:file:`__init__.py` code defines a list named ``__all__``, it is taken to be the
-list of module names that should be imported when ``from package import *`` is
-encountered.  It is up to the package author to keep this list up-to-date when a
-new version of the package is released.  Package authors may also decide not to
-support it, if they don't see a use for importing \* from their package.  For
-example, the file :file:`sounds/effects/__init__.py` could contain the following
-code::
+Vienintelis sprendimas yra pakuotės autoriui išskirtinai išvardinti
+pakuotės turinį. *import* sakinys naudoja tokį susitarimą: jei
+pakuotės :file:`__init__.py` faile apibrėžiamas sąrašas ``__all__`` kintamajame,
+jis turi būti naudojamas, kai modulių vardai importuojami naudojant
+``from package import *``. Pakuotės autorius yra atsakingas, kad šis sąrašas
+būtų atnaujinamas su kiekviena nauja pakuotės versija. Pakuotės autorius
+gali taip pat nuspręsti jo nepalaikyti, jeigu jie nemato prasmės naudoti
+\* importavimą su jų pakuote. Pavyzdžiui :file:`sounds/effects/__init__.py`
+failo turinys gali būti toks::
 
    __all__ = ["echo", "surround", "reverse"]
 
-This would mean that ``from sound.effects import *`` would import the three
-named submodules of the :mod:`sound` package.
+Tai reiškia, kad ``from sound.effects import *`` importuos tris
+išvardinus submodulius iš :mod:`sound` pakuotės.
 
-If ``__all__`` is not defined, the statement ``from sound.effects import *``
-does *not* import all submodules from the package :mod:`sound.effects` into the
-current namespace; it only ensures that the package :mod:`sound.effects` has
-been imported (possibly running any initialization code in :file:`__init__.py`)
-and then imports whatever names are defined in the package.  This includes any
-names defined (and submodules explicitly loaded) by :file:`__init__.py`.  It
-also includes any submodules of the package that were explicitly loaded by
-previous import statements.  Consider this code::
+Jeigu ``__all__`` nėra apibrėžtas, sakinys ``from sound.effects import *``
+*neimportuoja* visų submodulių iš pakuotės :mod:`sound.effects` į
+dabartinę vardų erdvę --- tai tik užtikrins, kad pakuotė
+:mod:`sound.effects` bus importuota, įvykdys inicializacijos
+kodą :file:`__init__.py` faile ir tada importuos visus vardus apibrėžtus
+pakuotėje. Į tai įeina visi vardai apibrėžti (ir submoduliai išskirtinai
+paleisti) faile :file:`__init__.py`. Į tai taip pat įeina
+bet kokie pakuotės submoduliai, kurie buvo išskirtinai paleisti
+senesnių importavimo sakinių. Pažiūrėkite į šį kodą::
 
    import sound.effects.echo
    import sound.effects.surround
    from sound.effects import *
 
-In this example, the echo and surround modules are imported in the current
-namespace because they are defined in the :mod:`sound.effects` package when the
-``from...import`` statement is executed.  (This also works when ``__all__`` is
-defined.)
+Šiame pavyzdyje, echo ir surround moduliai yra importuojami į dabartinę
+vardų erdvę, kadangi jie yra apibrėžti :mod:`sound.effects` pakuotėje, kai
+``from...import`` sakinys yra įvykdomas. (Tai dirba taip pat, kai
+``__all__`` yra apibrėžtas)
 
-Note that in general the practice of importing ``*`` from a module or package is
-frowned upon, since it often causes poorly readable code. However, it is okay to
-use it to save typing in interactive sessions, and certain modules are designed
-to export only names that follow certain patterns.
+Pastebėsime, kad geriau nenaudoti ``*`` improtavimo iš modulių
+ar pakuočių, nes dažniausiai dėl to kodas tampa prastai skaitomas.
+Tačiau, nieko blogo tai daryti interaktyvioje sesijoje norint sutaupyti
+klaviatūros spausdinimo laiko, o taip pat kai kurie moduliai yra sukurti
+taip, kad būtų išeksportuojami tik tam tikri vardai.
 
-Remember, there is nothing wrong with using ``from Package import
-specific_submodule``!  In fact, this is the recommended notation unless the
-importing module needs to use submodules with the same name from different
-packages.
+Prisiminkite, kad nėra nieko blogo naudoti ``from Pakuotė import
+specifinis_submodulis``!  Tiesa sakant, tai rekomenduojamas būdas nebent
+submodulis iš kitos pakuotės naudoja tokį patį vardą.
 
 
-Intra-package References
-------------------------
+Nuorodos tarp Pakuočių
+----------------------
 
-The submodules often need to refer to each other.  For example, the
-:mod:`surround` module might use the :mod:`echo` module.  In fact, such
-references are so common that the :keyword:`import` statement first looks in the
-containing package before looking in the standard module search path. Thus, the
-:mod:`surround` module can simply use ``import echo`` or ``from echo import
-echofilter``.  If the imported module is not found in the current package (the
-package of which the current module is a submodule), the :keyword:`import`
-statement looks for a top-level module with the given name.
+Submoduliai dažnai rodo vienas į kitą. Tarkime, modulis :mod:`surround` gali
+naudoti modulį :mod:`echo`.  Tiesa sakant, tokios nuorodos yra tokios
+dažnos, kad :keyword:`import` sakinys pirmiausiai tikrina jau turimas pakuotes
+prieš ieškodamas modulių paieškos kelyje. Taigi,
+modulis :mod:`surround` gali tiesiog naudoti ``import echo`` arba ``from echo import
+echofilter``.  Jeigu importuojamas modulis nerandamas dabartinėje
+pakuotėje (t.y. pakuotėje, kurioje šis modulis yra submodulis),
+tada :keyword:`import` sakinys ieško aukščiausio lygio modulio duotu
+vardu.
 
-When packages are structured into subpackages (as with the :mod:`sound` package
-in the example), you can use absolute imports to refer to submodules of siblings
-packages.  For example, if the module :mod:`sound.filters.vocoder` needs to use
-the :mod:`echo` module in the :mod:`sound.effects` package, it can use ``from
-sound.effects import echo``.
+Kai pakuotė yra struktūrizuota į subpakuotes (pavyzdžiui kaip tai padaryta
+:mod:`sound` pakuotėje), jūs galite naudoti absoliučius importavimus norėdami
+nurodyti į gretimų pakuočių submodulius. Pavyzdžiui, jei modulis
+:mod:`sound.filters.vocoder` turi naudoti :mod:`echo` modulį iš :mod:`sound.effects` pakuotės,
+tai tada galima naudoti ``from sound.effects import echo``.
 
-Starting with Python 2.5, in addition to the implicit relative imports described
-above, you can write explicit relative imports with the ``from module import
-name`` form of import statement. These explicit relative imports use leading
-dots to indicate the current and parent packages involved in the relative
-import. From the :mod:`surround` module for example, you might use::
+Pradedant Python 2.5 versija, prie netiesiogiai nurodytų reliatyvių
+importavimų aprašytų viršuje, jūs galite naudoti griežtai nurodytus
+reliatyvius importavimus naudodami ``from module import name`` formą.
+Šie griežtai nurodyti reliatyvūs importavimai naudoją tašką, kuris nurodo
+dabartinį arba tėvinę pakuotę. Pavyzdžiui, iš :mod:`surround` modulio jūs
+galite naudoti::
 
    from . import echo
    from .. import formats
    from ..filters import equalizer
 
-Note that both explicit and implicit relative imports are based on the name of
-the current module. Since the name of the main module is always ``"__main__"``,
-modules intended for use as the main module of a Python application should
-always use absolute imports.
+Atkreipsime dėmesį, kad tiek netiesiogiai tiek griežtai nurodyti
+importavimai paremti dabartinio modulio vardu. Kadangi pagrindinio modulio
+vardas visada yra ``"__main__"`` moduliai, kurie bus naudojami kaip
+pagrindiniai Python'o programos moduliai turi naudoti absoliučius
+importavimus.
 
+Pakuotės Keliose Direktorijose
+------------------------------
 
-Packages in Multiple Directories
---------------------------------
+Pakuotės palaiko dar vieną specialų atributą --- :attr:`__path__`.  Šis
+atributas inicializuojamas kaip sąrašas, kuriame yra aplankas, kuriame
+yra pakuotės :file:`__init__.py` failas (prieš tai, kai kodas yra įvykdomas
+tame faile). Šis kintamasis gali būti modifikuojamas ir tai paveiks
+kaip atliekama modulių ir subpakuočių paieška pakuotėje.
 
-Packages support one more special attribute, :attr:`__path__`.  This is
-initialized to be a list containing the name of the directory holding the
-package's :file:`__init__.py` before the code in that file is executed.  This
-variable can be modified; doing so affects future searches for modules and
-subpackages contained in the package.
+Nors ši savybė nėra dažnai naudojama, ji gali būti panaudota norint
+išplėsti modulių randamų pakuotėje aibę.
 
-While this feature is not often needed, it can be used to extend the set of
-modules found in a package.
+.. rubric:: Pastabos
 
-
-.. rubric:: Footnotes
-
-.. [#] In fact function definitions are also 'statements' that are 'executed'; the
-   execution enters the function name in the module's global symbol table.
-
+.. [#] Funkcijų apibrėžtis irgi yra 'sakiniai', kurie yra 'vykdomi'; Vykdymas
+   prideda funkcijos vardą į modulio globalią simbolių lentelę.
