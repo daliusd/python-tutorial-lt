@@ -69,7 +69,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\datastructures.rst – Adomas Paltanavičius, Dalius Dobravolskas
 * tutorial\modules.rst – sirex, Dalius Dobravolskas
 * tutorial\inputoutput.rst – Dalius Dobravolskas
-* tutorial\errors.rst – Maksim Norkin
+* tutorial\errors.rst – Dalius Dobravolskas
 * tutorial\classes.rst – Dalius Dobravolskas
 * tutorial\stdlib.rst –
 * tutorial\stdlib2.rst –
