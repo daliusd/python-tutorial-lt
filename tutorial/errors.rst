@@ -1,20 +1,21 @@
 .. _tut-errors:
 
-*********************
+******************
 Klaidos ir išimtys
-*********************
+******************
 
-Nuo dabar klaidos pranešimai nebuvo daugiau minami, bet jeigu jūs jau bandėte 
-mūsų pavyzdžius, tikriausiai matėte kelis. Čia yra ( mažiausiai ) dvi
-erzinančios klaidų rūšys: *sinteksės klaidos* ir *išimtys*.
+Iki šiol klaidų pranešimai buvo tik minimi, bet jeigu jūs bandėte
+vykdyti pavyzdžius jūs tikriausiai kelias matėte. Egzistuoja
+mažiausiai dvi skirtingos klaidų rūšys: *sintaksės klaidos* ir *išimtys*.
 
 .. _tut-syntaxerrors:
 
 Sintaksės klaidos
-=============
+=================
 
-Sintaksės klaidos taip pat žinomos //parsing// klaidos, yra turbūt dažniausiai 
-pasitaikančios klaidų rūšys, jeigu dar mokotes Python::
+Sintaksės klaidos taip pat žinomos kaip teksto analizės
+klaidos, yra turbūt dažniausiai pasitaikanti klaidų rūšis, kol
+jūs dar mokotės Python'o::
 
 
    >>> while True print 'Sveikas pasauli'
@@ -23,25 +24,25 @@ pasitaikančios klaidų rūšys, jeigu dar mokotes Python::
                       ^
    SyntaxError: invalid syntax
 
-// ČIa baigiau
-The parser repeats the offending line and displays a little 'arrow' pointing at
-the earliest point in the line where the error was detected.  The error is
-caused by (or at least detected at) the token *preceding* the arrow: in the
-example, the error is detected at the keyword :keyword:`print`, since a colon
-(``':'``) is missing before it.  File name and line number are printed so you
-know where to look in case the input came from a script.
-
+Teksto analizatorius pakartoja eilutę su klaida ir parodo mažą 'rodyklę',
+kur pirmiausiai buvo surasta klaida. Klaida yra sukelta ar bent jau
+nustatyta ties komanda, kuri yra aprašyta prieš rodyklę. Pavyzdyje
+klaida rasta raktažodyje :keyword:`print`, nes prieš jį
+trūksta dvitaškio (``':'``). Failo vardas ir eilutės numeris
+yra atspausdinami, kad jūs žinotumėte, kur žiūrėto, jei klaida
+įvyko vykdant skriptą.
 
 .. _tut-exceptions:
 
-Exceptions
-==========
+Išimtys
+=======
 
-Even if a statement or expression is syntactically correct, it may cause an
-error when an attempt is made to execute it. Errors detected during execution
-are called *exceptions* and are not unconditionally fatal: you will soon learn
-how to handle them in Python programs.  Most exceptions are not handled by
-programs, however, and result in error messages as shown here::
+Net nei sakinys ar reiškinys yra sintaksiškai teisingi, tai gali sukelti
+klaidą, kai juos bandoma įvykdyti. Klaidos, kurios nustatomos vykdymo
+metu yra vadinamos *išimtimis* ir yra besąlygiškai neišvengiamos: jūs
+netrukus išmoksite kad jas suvaldyti Python'o programose. Tačiau dauguma
+išimčių nėra suvaldomos programoje ir baigiasi klaidos pranešimu
+kaip parodyti čia::
 
    >>> 10 * (1/0)
    Traceback (most recent call last):
@@ -56,23 +57,24 @@ programs, however, and result in error messages as shown here::
      File "<stdin>", line 1, in ?
    TypeError: cannot concatenate 'str' and 'int' objects
 
-The last line of the error message indicates what happened. Exceptions come in
-different types, and the type is printed as part of the message: the types in
-the example are :exc:`ZeroDivisionError`, :exc:`NameError` and :exc:`TypeError`.
-The string printed as the exception type is the name of the built-in exception
-that occurred.  This is true for all built-in exceptions, but need not be true
-for user-defined exceptions (although it is a useful convention). Standard
-exception names are built-in identifiers (not reserved keywords).
+Paskutinė klaidos pranešimo eilutė nurodo, kas įvyko. Išimtys būna
+skirtingų tipų ir tipas parašomas kaip dalis pranešimo. Pavyzdyje
+tipai yra :exc:`ZeroDivisionError`, :exc:`NameError` ir :exc:`TypeError`.
+Eilutė, kuri parašyta kaip išimties tipas, yra įtaisytos išimties,
+kuri įvyko, vardas. Tai galioja visoms įtaisytoms išimtims, bet
+nebūtinai tiesa vartotojo apibrėžtoms išimtims (nors tai ir yra
+naudingas susitartimas). Standartinių išimčių vardai yra
+įtaisyti identifikatoriai (ne rezervuoti raktažodžiai).
 
-The rest of the line provides detail based on the type of exception and what
-caused it.
+Likusi eilutės dalis pateikia detalią informaciją priklausomai nuo
+išimties tipo ir kas sukėlė išimtį.
 
-The preceding part of the error message shows the context where the exception
-happened, in the form of a stack traceback. In general it contains a stack
-traceback listing source lines; however, it will not display lines read from
-standard input.
+Prieš einanti klaidos pranešimo dalis parodo kontekstą, kuriame įvyko
+išimtis dėklo pėdsakų (ang. traceback) forma. Bendrai jame yra dėklo
+pėdsakai nurodantys kodo eilutes, tačiau eilutės perskaitytos iš
+standartinės įvesties.
 
-:ref:`bltin-exceptions` lists the built-in exceptions and their meanings.
+:ref:`bltin-exceptions` išvardintos įtaisytos išimtys ir jų prasmė.
 
 
 .. _tut-handling:
