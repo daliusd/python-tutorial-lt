@@ -71,7 +71,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\inputoutput.rst – Dalius Dobravolskas
 * tutorial\errors.rst – Dalius Dobravolskas
 * tutorial\classes.rst – Dalius Dobravolskas
-* tutorial\stdlib.rst –
+* tutorial\stdlib.rst – Dalius Dobravolskas
 * tutorial\stdlib2.rst –
 * tutorial\whatnow.rst –
 * tutorial\interactive.rst –

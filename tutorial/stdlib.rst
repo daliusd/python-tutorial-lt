@@ -1,33 +1,32 @@
 .. _tut-brieftour:
 
-**********************************
-Brief Tour of the Standard Library
-**********************************
+****************************************
+Trumpa Standartinės Bibliotekos Apžvalga
+****************************************
 
 
 .. _tut-os-interface:
 
-Operating System Interface
+Operacinės Sistemos Sąsaja
 ==========================
 
-The :mod:`os` module provides dozens of functions for interacting with the
-operating system::
+:mod:`os` modulis suteikia galimybę bendrauti su operacine sistema::
 
    >>> import os
    >>> os.system('time 0:02')
    0
-   >>> os.getcwd()      # Return the current working directory
+   >>> os.getcwd()      # grąžina dabartinė darbinę direktoriją
    'C:\\Python26'
    >>> os.chdir('/server/accesslogs')
 
-Be sure to use the ``import os`` style instead of ``from os import *``.  This
-will keep :func:`os.open` from shadowing the built-in :func:`open` function which
-operates much differently.
+Būtinai naudokite ``import os`` stilių vietoje ``from os import *``.  Tai
+neleis funkcijai :func:`os.open` paslėpti įtaisytos funkcijos :func:`open`,
+kuri dirba visai kitaip.
 
 .. index:: builtin: help
 
-The built-in :func:`dir` and :func:`help` functions are useful as interactive
-aids for working with large modules like :mod:`os`::
+Įtaisytos funkcijos :func:`dir` ir :func:`help` yra naudingos
+interaktyviai dirbant su dideliais moduliais kaip :mod:`os`::
 
    >>> import os
    >>> dir(os)
@@ -35,8 +34,8 @@ aids for working with large modules like :mod:`os`::
    >>> help(os)
    <returns an extensive manual page created from the module's docstrings>
 
-For daily file and directory management tasks, the :mod:`shutil` module provides
-a higher level interface that is easier to use::
+Kasdienam darbui su failais ir direktorijomis modulis mod:`shutil`
+suteikia aukštesnio lygio sąsają, kurią lengviau naudoti::
 
    >>> import shutil
    >>> shutil.copyfile('data.db', 'archive.db')
@@ -45,11 +44,12 @@ a higher level interface that is easier to use::
 
 .. _tut-file-wildcards:
 
-File Wildcards
-==============
+Failų Paieška
+=============
 
-The :mod:`glob` module provides a function for making file lists from directory
-wildcard searches::
+:mod:`glob` modulyje galima rasti funkciją, kuri leidžią į sąrašą
+iš direktorijos surinkti norimus failus nurodant tų failų
+vardo požymius::
 
    >>> import glob
    >>> glob.glob('*.py')
@@ -58,46 +58,48 @@ wildcard searches::
 
 .. _tut-command-line-arguments:
 
-Command Line Arguments
-======================
+Komandinės Eilutės Argumentai
+=============================
 
-Common utility scripts often need to process command line arguments. These
-arguments are stored in the :mod:`sys` module's *argv* attribute as a list.  For
-instance the following output results from running ``python demo.py one two
-three`` at the command line::
+Pagalbinei skriptai dažnai turi dirbti su komandinės eilutės argumentais.
+Šiek argumentai laikomi modulio :mod:`sys` atributų sąraše *argv*.
+Pavyzdžiui jei įvykdysite komandą ``python demo.py one two three``
+komandinė eilutėje gausite::
 
    >>> import sys
    >>> print sys.argv
    ['demo.py', 'one', 'two', 'three']
 
-The :mod:`getopt` module processes *sys.argv* using the conventions of the Unix
-:func:`getopt` function.  More powerful and flexible command line processing is
-provided by the :mod:`optparse` module.
+:mod:`getopt` modulis sutvarko *sys.argv* naudodamas Unix'ės :func:`getopt`
+funkcijos susitarimą.  Daugiau galimybių ir lankstumo dirbant
+su komandine eilute gali suteikti :mod:`optparse` modulis.
 
 
 .. _tut-stderr:
 
 Error Output Redirection and Program Termination
-================================================
+Klaidų Išvesties Nukreipimas ir Programos Pabaigimas
+====================================================
 
-The :mod:`sys` module also has attributes for *stdin*, *stdout*, and *stderr*.
-The latter is useful for emitting warnings and error messages to make them
-visible even when *stdout* has been redirected::
+:mod:`sys` modulyje taip pat galima rasti atributus *stdin*, *stdout*, and *stderr*.
+Pastarasis yra naudingas norint parodyti klaidų pranešimus netgi tada
+kai *stdout* (standartinė išvestis) yra nukreipta (t.y. nematoma vartotojui)::
 
    >>> sys.stderr.write('Warning, log file not found starting a new one\n')
    Warning, log file not found starting a new one
 
-The most direct way to terminate a script is to use ``sys.exit()``.
+Pats tiesiausias būdas pabaigti skripto veikimą yra naudoti ``sys.exit()``.
 
 
 .. _tut-string-pattern-matching:
 
-String Pattern Matching
-=======================
+Eilučių Rašo Atpažinimas
+========================
 
-The :mod:`re` module provides regular expression tools for advanced string
-processing. For complex matching and manipulation, regular expressions offer
-succinct, optimized solutions::
+:mod:`re` modulis suteikia galimybę naudotis reguliariais reiškiniais
+(ang. regular expression) sudėtingesniam eilučių tvarkymui.
+Sudėtingam rašto atpažinimui ir manipuliacijoms, reguliarūs
+reiškiniai siūlo trumpą ir optimizuotą sprendimą::
 
    >>> import re
    >>> re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
@@ -105,20 +107,29 @@ succinct, optimized solutions::
    >>> re.sub(r'(\b[a-z]+) \1', r'\1', 'cat in the the hat')
    'cat in the hat'
 
-When only simple capabilities are needed, string methods are preferred because
-they are easier to read and debug::
+Jeigu reikia paprasto sprendimo, rekomenduojama naudoti eilučių metodus,
+kuriuos paprasčiau skaityti ir derinti::
 
    >>> 'tea for too'.replace('too', 'two')
    'tea for two'
 
+Vertėjo pastaba: iš savo patirties galiu pasakyti, kad reguliarių
+reiškinių reikia vengti. Yra toks posakis: žmogus turėjo problemą,
+pagalvojo, kad reguliarūs reiškiniai padės ją išspręsti --- dabar
+jis turi dvi problemas. Yra priemonių, kurios teksto analizei
+tinka daug labiau (pvz.: pyparsing). Vėlgi universalaus atsakymo,
+ką geriausiai naudoti nėra, nes jeigu jums reikia kažko veikiančio
+tikrai greitai reguliarūs reiškiniai gali būti ir geriausias
+pasirinkimas.
+
 
 .. _tut-mathematics:
 
-Mathematics
-===========
+Matematika
+==========
 
-The :mod:`math` module gives access to the underlying C library functions for
-floating point math::
+:mod:`math` modulis leidžia prieiti prie C bibliotekos slankaus
+kablelio funkcijų::
 
    >>> import math
    >>> math.cos(math.pi / 4.0)
@@ -126,27 +137,27 @@ floating point math::
    >>> math.log(1024, 2)
    10.0
 
-The :mod:`random` module provides tools for making random selections::
+:mod:`random` modulis leidžia dirbti su atsitiktiniu pasirinkimu::
 
    >>> import random
    >>> random.choice(['apple', 'pear', 'banana'])
    'apple'
-   >>> random.sample(xrange(100), 10)   # sampling without replacement
+   >>> random.sample(xrange(100), 10)   # atsitiktinis parinkimas
    [30, 83, 16, 4, 8, 81, 41, 50, 18, 33]
-   >>> random.random()    # random float
+   >>> random.random()    # atsitiktinis realusis skaičius
    0.17970987693706186
-   >>> random.randrange(6)    # random integer chosen from range(6)
+   >>> random.randrange(6)    # atsitiktinis sveikas skaičius iš pasirinktos atkarpos
    4
 
 
 .. _tut-internet-access:
 
-Internet Access
-===============
+Interneto Prieiga
+=================
 
-There are a number of modules for accessing the internet and processing internet
-protocols. Two of the simplest are :mod:`urllib2` for retrieving data from urls
-and :mod:`smtplib` for sending mail::
+Egzistuoja ne vienas modulis priėjimui prie interneto ir interneto protokolų
+valdymui. Du paprasčiausi yra :mod:`urllib2` duomenų parsisiuntimui pagal
+nurodytą URL ir :mod:`smtplib` laiškų siuntimui::
 
    >>> import urllib2
    >>> for line in urllib2.urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl'):
@@ -165,19 +176,19 @@ and :mod:`smtplib` for sending mail::
    ... """)
    >>> server.quit()
 
-(Note that the second example needs a mailserver running on localhost.)
+(Pastaba: antrasis pavyzdys reikalauja lokalaus pašto serverio veikiančio lokaliai)
 
 
 .. _tut-dates-and-times:
 
-Dates and Times
+Datos ir Laikai
 ===============
 
-The :mod:`datetime` module supplies classes for manipulating dates and times in
-both simple and complex ways. While date and time arithmetic is supported, the
-focus of the implementation is on efficient member extraction for output
-formatting and manipulation.  The module also supports objects that are timezone
-aware. ::
+:mod:`datetime` modulyje rasite klasių datos ir laiko manipuliavimui.
+Nors datos ir laiko aritmetines operacijos yra palaikomos,
+pagrindinis tikslas yra efektyvus informacijos ištraukimas duomenų
+formatavimui ir išvedimui. Modulis taip pat palaiko objektus, kurie
+supranta laiko zonas ::
 
    # dates are easily constructed and formatted
    >>> from datetime import date
@@ -196,11 +207,11 @@ aware. ::
 
 .. _tut-data-compression:
 
-Data Compression
-================
+Duomenų Suspaudimas
+===================
 
-Common data archiving and compression formats are directly supported by modules
-including: :mod:`zlib`, :mod:`gzip`, :mod:`bz2`, :mod:`zipfile` and
+Dažni duomenų archyvavimo ir suspaudimo formatai yra tiesiog palaikomi
+modulių, pvz.: :mod:`zlib`, :mod:`gzip`, :mod:`bz2`, :mod:`zipfile` ir
 :mod:`tarfile`. ::
 
    >>> import zlib
@@ -218,16 +229,17 @@ including: :mod:`zlib`, :mod:`gzip`, :mod:`bz2`, :mod:`zipfile` and
 
 .. _tut-performance-measurement:
 
-Performance Measurement
-=======================
+Našumo Matavimas
+================
 
-Some Python users develop a deep interest in knowing the relative performance of
-different approaches to the same problem. Python provides a measurement tool
-that answers those questions immediately.
+Kai kurie Python vartotojai nori žinoti kaip skirtingi tos pačios problemos
+sprendimai paveikia našumą. Python'e yra priemonių matavimui, kurios
+šiuos klausimus atsako iškart.
 
-For example, it may be tempting to use the tuple packing and unpacking feature
-instead of the traditional approach to swapping arguments. The :mod:`timeit`
-module quickly demonstrates a modest performance advantage::
+Pavyzdžiui, argumentų sukeitimui galime norėti naudoti kortežų išpakavimo
+ir supakavimo savybes vietoje tradicinio būdo sukeisti argumentus
+vietomis. :mod:`timeit` modulis greitai parodytis maža našumo
+privalumą::
 
    >>> from timeit import Timer
    >>> Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
@@ -235,26 +247,27 @@ module quickly demonstrates a modest performance advantage::
    >>> Timer('a,b = b,a', 'a=1; b=2').timeit()
    0.54962537085770791
 
-In contrast to :mod:`timeit`'s fine level of granularity, the :mod:`profile` and
-:mod:`pstats` modules provide tools for identifying time critical sections in
-larger blocks of code.
+Jeigu :mod:`timeit` modulis yra labai tikslus matuojant mažas operacijas, :mod:`profile`
+ir :mod:`pstats` moduliai gali būti naudojami dideliuose kodo blokuose norint
+identifikuoti kritines sekcijas.
 
 
 .. _tut-quality-control:
 
-Quality Control
-===============
+Kokybės Kontrolė
+================
 
-One approach for developing high quality software is to write tests for each
-function as it is developed and to run those tests frequently during the
-development process.
+Vienas būdas rašyti aukštos kokybės programinę įrangą yra testų
+rašymas kiekvienas funkcijai, kai ji yra kuriama, ir jų dažnas
+vykdymas kūrimo procese.
 
-The :mod:`doctest` module provides a tool for scanning a module and validating
-tests embedded in a program's docstrings.  Test construction is as simple as
-cutting-and-pasting a typical call along with its results into the docstring.
-This improves the documentation by providing the user with an example and it
-allows the doctest module to make sure the code remains true to the
-documentation::
+:mod:`doctest` modulis suteikia priemones modulių peržiūrai ir testų,
+kurie surašyti į dokumentacijos eilutes, tikrinimui. Testavimo
+konstrukcija yra paprasta: tereikia tipinį kvietimą ir jo
+rezultatus iš python interpretatoriaus perkelti į dokumentacijos
+eilutę. Taip dokumentacijoje vartotojui pateikia pavyzdžiai ir
+jei leidžia doctest moduliui užtikrinti, kad kodas sutampa su
+dokumentacija::
 
    def average(values):
        """Computes the arithmetic mean of a list of numbers.
@@ -267,9 +280,9 @@ documentation::
    import doctest
    doctest.testmod()   # automatically validate the embedded tests
 
-The :mod:`unittest` module is not as effortless as the :mod:`doctest` module,
-but it allows a more comprehensive set of tests to be maintained in a separate
-file::
+:mod:`unittest` modulio naudojimas nėra toks paprastas kaip :mod:`doctest` modulio,
+bet jis leidžia rašyti detalesnius testus, kuriuos galima laikyti atskirame
+faile::
 
    import unittest
 
@@ -286,30 +299,30 @@ file::
 
 .. _tut-batteries-included:
 
-Batteries Included
-==================
+Baterijos Pridedamos
+====================
 
-Python has a "batteries included" philosophy.  This is best seen through the
-sophisticated and robust capabilities of its larger packages. For example:
+Python'as laikosi "baterijos pridedamos" filosofijos. Tai geriausiai matoma
+žiūrint į rafinuotas ir tvirtas didesnių pakuočių galimybes. Pavyzdžiui:
 
-* The :mod:`xmlrpclib` and :mod:`SimpleXMLRPCServer` modules make implementing
-  remote procedure calls into an almost trivial task.  Despite the modules
-  names, no direct knowledge or handling of XML is needed.
+* :mod:`xmlrpclib` ir :mod:`SimpleXMLRPCServer` moduliai nuotolinį
+  procedūrų kvietimą padaro trivialia užduotimi. Nepaisant modulių
+  vardų, jums nereikia nieko žinoti apie XML ar su juo dirbti
+  tiesiogiai.
 
-* The :mod:`email` package is a library for managing email messages, including
-  MIME and other RFC 2822-based message documents. Unlike :mod:`smtplib` and
-  :mod:`poplib` which actually send and receive messages, the email package has
-  a complete toolset for building or decoding complex message structures
-  (including attachments) and for implementing internet encoding and header
-  protocols.
+* :mod:`email` pakuotė yra biblioteka darbui su el. laiškų pranešimai,
+  įskaitant ir MIME ir kitus RFC 2822-paremtus žinučių dokumentus. Skirtingai
+  nuo :mod:`smtplib` ir :mod:`poplib`, kurie iš tikro gauna ir siunčia
+  pranešimus, turi pilną įrankinę sudėtingų pranešimų struktūrų (taip pat
+  priedų) kūrimui ir iškodavimui, taip pat internetiniam kodavimui
+  ir antraščių protokolų valdymui.
 
-* The :mod:`xml.dom` and :mod:`xml.sax` packages provide robust support for
-  parsing this popular data interchange format. Likewise, the :mod:`csv` module
-  supports direct reads and writes in a common database format. Together, these
-  modules and packages greatly simplify data interchange between python
-  applications and other tools.
+* :mod:`xml.dom` ir :mod:`xml.sax` pakuotės pilnai palaiko šį populiarų
+  duomenų pasikeitimo formatą. :mod:`csv` modulis palaiko dažno
+  duombazių formato skaitymą ir rašymą. Kartų, šie moduliai ir
+  pakuotės labai supaprastina duomenų pasikeitimą tarp python'o
+  programų ir kitų priemonių.
 
-* Internationalization is supported by a number of modules including
-  :mod:`gettext`, :mod:`locale`, and the :mod:`codecs` package.
-
-
+* Internacionalizacija yra palaikoma naudojant ne vieną modulį
+  tarp kurių yra  :mod:`gettext`, :mod:`locale` ir the :mod:`codecs`
+  pakuotė.
