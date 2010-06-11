@@ -79,14 +79,15 @@ standartinės įvesties.
 
 .. _tut-handling:
 
-Handling Exceptions
-===================
+Išimčių Valdymas
+================
 
-It is possible to write programs that handle selected exceptions. Look at the
-following example, which asks the user for input until a valid integer has been
-entered, but allows the user to interrupt the program (using :kbd:`Control-C` or
-whatever the operating system supports); note that a user-generated interruption
-is signalled by raising the :exc:`KeyboardInterrupt` exception. ::
+Programą galima parašyti taip, kad ji suvaldytų pasirinktas išimtis. Pažiūrėkime
+į žemiau esantį pavyzdį, kuris prašo vartotoją įvesti teisingą skaičių tol kol
+jis yra įvedamas, bet taip pat leidžia vartotojui nutraukti programą
+(naudojant :kbd:`Control-C` ar bet kokią kitą būdą, kurį palaiko operacinė sistema).
+Pastebėsime, kad vartotojo sugeneruotas nutraukimas yra signalizuojamas iškeliant
+:exc:`KeyboardInterrupt` išimtį::
 
    >>> while True:
    ...     try:
@@ -96,37 +97,40 @@ is signalled by raising the :exc:`KeyboardInterrupt` exception. ::
    ...         print "Oops!  That was no valid number.  Try again..."
    ...
 
-The :keyword:`try` statement works as follows.
+:keyword:`try` sakinys dirba taip:
 
-* First, the *try clause* (the statement(s) between the :keyword:`try` and
-  :keyword:`except` keywords) is executed.
+* Pirmiausia, vykdomas *try paragrafas* (tarp :keyword:`try` ir :keyword:`except` raktažodžių)
 
-* If no exception occurs, the *except clause* is skipped and execution of the
-  :keyword:`try` statement is finished.
+* Jei išimtis neįvyksta, *except paragrafas* yra praleidžiamas ir
+  :keyword:`try` sakinys yra baigiamas.
 
-* If an exception occurs during execution of the try clause, the rest of the
-  clause is skipped.  Then if its type matches the exception named after the
-  :keyword:`except` keyword, the except clause is executed, and then execution
-  continues after the :keyword:`try` statement.
+* Jei išimtis įvyksta *try* vykdymo metu, likusi paragrafo dalis yra praleidžiama.
+  Jeigu išimties tipas sutampa su vardu po
+  :keyword:`except` raktažodžio, tada except paragrafas yra įvykdomas ir
+  tada vykdymas tęsiamas po :keyword:`try` sakinio.
 
-* If an exception occurs which does not match the exception named in the except
-  clause, it is passed on to outer :keyword:`try` statements; if no handler is
-  found, it is an *unhandled exception* and execution stops with a message as
-  shown above.
+* Jei įvyksta išimtis, kuri nesutampa su išimtimi paminėtoje except
+  paragrafe, ji perduodama išoriniam :keyword:`try` sakiniui. Jeigu
+  nesurandama, kas suvaldytų išimtį, ji tampa *nesuvaldyta išimtimi*,
+  vykdymas yra sustabdomas ir parodomas klaidos pranešimas kaip parodyta
+  aukščiau.
 
-A :keyword:`try` statement may have more than one except clause, to specify
-handlers for different exceptions.  At most one handler will be executed.
-Handlers only handle exceptions that occur in the corresponding try clause, not
-in other handlers of the same :keyword:`try` statement.  An except clause may
-name multiple exceptions as a parenthesized tuple, for example::
+:keyword:`try` sakinys gali turėti daugiau negu vieną except paragrafą, jei
+norima suvaldyti skirtingas išimtis. Daugiausiai bus įvykdytas vienas
+paragrafas. *except* dalyje suvaldomos tik išimtys, kurios ateina iš
+try paragrafo, bet ne iš kitų to paties :keyword:`try` sakinio except dalių.
+Except paragrafe galima išvardinti kelias išimtis kortežo formoje,
+pavyzdžiui::
 
    ... except (RuntimeError, TypeError, NameError):
    ...     pass
 
-The last except clause may omit the exception name(s), to serve as a wildcard.
-Use this with extreme caution, since it is easy to mask a real programming error
-in this way!  It can also be used to print an error message and then re-raise
-the exception (allowing a caller to handle the exception as well)::
+Paskutiniame except paragrafe galima praleisti išimties vardą ir tai
+bus interpretuojama kaip bet kokia išimtis. Naudokite šią galimybę
+ypač atsargiai, nes taip galima paslėpti tikras programavimo
+klaidas! Tai taip pat galima naudoti klaidos pranešimo
+atspausdinimui ir tada vėl pakelti išimtį (taip leidžiant
+kvietėjui suvaldyti išimtį taip pat)::
 
    import sys
 
@@ -142,10 +146,10 @@ the exception (allowing a caller to handle the exception as well)::
        print "Unexpected error:", sys.exc_info()[0]
        raise
 
-The :keyword:`try` ... :keyword:`except` statement has an optional *else
-clause*, which, when present, must follow all except clauses.  It is useful for
-code that must be executed if the try clause does not raise an exception.  For
-example::
+:keyword:`try` ... :keyword:`except` sakinys turi papildomą *else
+paragrafą*, kuris, jam esant, turi sekti po visų except paragrafų.
+Jis naudingas tuo atveju, jei try paragrafas nepakelia išimties.
+Pavyzdžiui::
 
    for arg in sys.argv[1:]:
        try:
@@ -156,26 +160,27 @@ example::
            print arg, 'has', len(f.readlines()), 'lines'
            f.close()
 
-The use of the :keyword:`else` clause is better than adding additional code to
-the :keyword:`try` clause because it avoids accidentally catching an exception
-that wasn't raised by the code being protected by the :keyword:`try` ...
-:keyword:`except` statement.
+:keyword:`else` naudojimas yra geresnis variantas negu papildomo kodo
+rašymas the :keyword:`try` paragrafe, kadangi tai padeda išvengti
+atsitiktinio išimties pagavimo, kuri nebuvo sukelta kodo, kuris
+yra apsaugotas :keyword:`try` ... :keyword:`except` sakiniu.
 
-When an exception occurs, it may have an associated value, also known as the
-exception's *argument*. The presence and type of the argument depend on the
-exception type.
+Kai įvyksta išimtis, ji gali turėti susietą reikšmę, taip pat žinomą kaip
+išimties *argumentas*. Argumento egzistavimas ir tipas priklauso nuo
+išimties tipo.
 
-The except clause may specify a variable after the exception name (or tuple).
-The variable is bound to an exception instance with the arguments stored in
-``instance.args``.  For convenience, the exception instance defines
-:meth:`__getitem__` and :meth:`__str__` so the arguments can be accessed or
-printed directly without having to reference ``.args``.
+Išimties sakinys gali nurodyti kintamąjį po išimties vardo (arba kortežo).
+Kintamasis yra susietas su išimties egzemplioriumi per kintamąjį
+padėtą į ``instance.args``.  Patogumo dėlei, išimties egzempliorius
+apibrėžia :meth:`__getitem__` ir :meth:`__str__` tam, kad argumentus
+būtų galima pasiekti arba atspausdinti tiesiogiai nesikreipiant į
+``.args``.
 
-But use of ``.args`` is discouraged.  Instead, the preferred use is to pass a
-single argument to an exception (which can be a tuple if multiple arguments are
-needed) and have it bound to the ``message`` attribute.  One may also
-instantiate an exception first before raising it and add any attributes to it as
-desired. ::
+Be to ``.args`` naudojimas yra nerekomenduotinas. Vietoje to, rekomenduojama
+perduoti vieną argumentą išimčiai (kas gali būti kortežas, jeigu reikia
+perduoti kelis argumentus) ir susieti jį su ``message`` atributu.
+Taip pat galima inicializuoti išimtį prieš ją pakeliant ir pridėti bet kokius
+norimus atributus::
 
    >>> try:
    ...    raise Exception('spam', 'eggs')
@@ -193,12 +198,12 @@ desired. ::
    x = spam
    y = eggs
 
-If an exception has an argument, it is printed as the last part ('detail') of
-the message for unhandled exceptions.
+Jei išimtis turi argumentą, jis yra atspausdinamas kaip paskutinė
+pranešimo dalis nesuvaldytai išimčiai.
 
-Exception handlers don't just handle exceptions if they occur immediately in the
-try clause, but also if they occur inside functions that are called (even
-indirectly) in the try clause. For example::
+Išimtys yra suvaldomos ne tik tada, kai jos iškart seka try paragrafe, bet taip
+pat jeigu jos įvyksta funkcijos viduje, kuri yra iškviesta try paragrade.
+Pavyzdžiui::
 
    >>> def this_fails():
    ...     x = 1/0
@@ -213,25 +218,25 @@ indirectly) in the try clause. For example::
 
 .. _tut-raising:
 
-Raising Exceptions
-==================
+Išimčių Pakėlimas
+=================
 
-The :keyword:`raise` statement allows the programmer to force a specified
-exception to occur. For example::
+:keyword:`raise` sakinys leidžia programuotojui pakelti norimą išimtį.
+Pavyzdžiui::
 
    >>> raise NameError, 'HiThere'
    Traceback (most recent call last):
      File "<stdin>", line 1, in ?
    NameError: HiThere
 
-The first argument to :keyword:`raise` names the exception to be raised.  The
-optional second argument specifies the exception's argument.  Alternatively, the
-above could be written as ``raise NameError('HiThere')``.  Either form works
-fine, but there seems to be a growing stylistic preference for the latter.
+Pirmas :keyword:`raise` argumentas yra išimties, kurią norima pakelti, vardas.
+Papildomas antrasis argumentas nurodo išimties argumentą. Alternatyviai
+tą patį galima parašyti kaip ``raise NameError('HiThere')``.  Abi
+formos dirba gerai, bet atrodo, kad žmonėms pastaroji forma patinka labiau.
 
-If you need to determine whether an exception was raised but don't intend to
-handle it, a simpler form of the :keyword:`raise` statement allows you to
-re-raise the exception::
+Jeigu jums tik reikia sužinoti ar išimtis buvo pakelta bet jūs nenorite
+jos suvaldyti, paprastesne :keyword:`raise` sakinio forma leidžia
+vėl pakelti išimtį::
 
    >>> try:
    ...     raise NameError, 'HiThere'
@@ -247,12 +252,12 @@ re-raise the exception::
 
 .. _tut-userexceptions:
 
-User-defined Exceptions
-=======================
+Vartotojų apibrėžtos Išimtys
+============================
 
-Programs may name their own exceptions by creating a new exception class.
-Exceptions should typically be derived from the :exc:`Exception` class, either
-directly or indirectly.  For example::
+Programos gali sukurti savo išimtys sukurdamos naujas išimčių klases.
+Išimtys įprastai turėtų būti paveldėtos iš :exc:`Exception` klasės (tiesiogiai
+ar netiesiogiai). Pavyzdžiui::
 
    >>> class MyError(Exception):
    ...     def __init__(self, value):
@@ -271,16 +276,16 @@ directly or indirectly.  For example::
      File "<stdin>", line 1, in ?
    __main__.MyError: 'oops!'
 
-In this example, the default :meth:`__init__` of :class:`Exception` has been
-overridden.  The new behavior simply creates the *value* attribute.  This
-replaces the default behavior of creating the *args* attribute.
+Šiame pavyzdyje numatytasis :class:`Exception` klasės metodas :meth:`__init__`
+buvo perrašytas. Naujas elgesys paprasčiausiai sukuria *value* atributą.
+Tai pakeičia įprasta *args* atributo sukūrimą.
 
-Exception classes can be defined which do anything any other class can do, but
-are usually kept simple, often only offering a number of attributes that allow
-information about the error to be extracted by handlers for the exception.  When
-creating a module that can raise several distinct errors, a common practice is
-to create a base class for exceptions defined by that module, and subclass that
-to create specific exception classes for different error conditions::
+Išimčių klasės gali apibrėžti bet ką, ką daro kitos klasės, bet dažniausiai
+būną paprastos, dažniausiai leidžiančios tik daugiau atributų saugoti
+informacijai apie klaidą. Kai kuriamas modulis, kuris gali pakelti kelias
+skirtingas išimtis, dažna praktika yra sukurti bazinę klasę išimtims
+apibrėžtoms tame modulyje ir tada kitas išimčių klases paveldėti
+iš tos klasės::
 
    class Error(Exception):
        """Base class for exceptions in this module."""
@@ -313,22 +318,21 @@ to create specific exception classes for different error conditions::
            self.next = next
            self.message = message
 
-Most exceptions are defined with names that end in "Error," similar to the
-naming of the standard exceptions.
+Dauguma išimčių pavadinimas baigiasi "Error", taip kaip ir standarinės
+išimtys.
 
-Many standard modules define their own exceptions to report errors that may
-occur in functions they define.  More information on classes is presented in
-chapter :ref:`tut-classes`.
-
+Dauguma standartinių modulių apibrėžia savo išimtis klaidų, kurios
+gali įvykti modulyje apibrėžtose funkcijose, pranešimui. Daugiau
+informacijos apie klases galima rasti skyriuje :ref:`tut-classes`.
 
 .. _tut-cleanup:
 
-Defining Clean-up Actions
-=========================
+Išvalymo Apibrėžimas
+====================
 
-The :keyword:`try` statement has another optional clause which is intended to
-define clean-up actions that must be executed under all circumstances.  For
-example::
+:keyword:`try` sakinys turi dar vieną papildomą paragrafą,
+kuris yra skirtas išvalymui ir yra įvykdomas bet kokiomis
+sąlygomis. Pavyzdžiui::
 
    >>> try:
    ...     raise KeyboardInterrupt
@@ -340,16 +344,16 @@ example::
      File "<stdin>", line 2, in ?
    KeyboardInterrupt
 
-A *finally clause* is always executed before leaving the :keyword:`try`
-statement, whether an exception has occurred or not. When an exception has
-occurred in the :keyword:`try` clause and has not been handled by an
-:keyword:`except` clause (or it has occurred in a :keyword:`except` or
-:keyword:`else` clause), it is re-raised after the :keyword:`finally` clause has
-been executed.  The :keyword:`finally` clause is also executed "on the way out"
-when any other clause of the :keyword:`try` statement is left via a
-:keyword:`break`, :keyword:`continue` or :keyword:`return` statement.  A more
-complicated example (having :keyword:`except` and :keyword:`finally` clauses in
-the same :keyword:`try` statement works as of Python 2.5)::
+*finally paragrafas* yra vykdomas visada prieš paliekant :keyword:`try`
+sakinį, nepaisant to ar išimtys įvyko ar ne. Jeigu išimtis
+įvyko :keyword:`try` paragrafe ir nebuvo suvaldyti nei :keyword:`except`
+paragrafe (arba jei ji įvyko :keyword:`except` arba :keyword:`else` paragrafuose),
+ji yra vėl pakeliama po :keyword:`finally` paragrafo įvykdymo.
+:keyword:`finally` paragrafas yra vykdomas ir tuo atveju, jei kitas
+:keyword:`try` sakinio paragrafas yra paliekamas įvykdžius :keyword:`break`,
+:keyword:`continue` ar :keyword:`return` sakinį.  Šiek tiek
+sudėtingesnis pavyzdys (:keyword:`except` ir :keyword:`finally` paragrafai
+tame pačiame :keyword:`try` sakinyje dirba nuo Python 2.5 versijos)::
 
    >>> def divide(x, y):
    ...     try:
@@ -374,41 +378,40 @@ the same :keyword:`try` statement works as of Python 2.5)::
      File "<stdin>", line 3, in divide
    TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
-As you can see, the :keyword:`finally` clause is executed in any event.  The
-:exc:`TypeError` raised by dividing two strings is not handled by the
-:keyword:`except` clause and therefore re-raised after the :keyword:`finally`
-clause has been executed.
+Kaip matote :keyword:`finally` paragrafas yra įvykdomas bet kokiu atveju.
+:exc:`TypeError` pakelta dalinant dvi eilutes nėra suvaldoma :keyword:`except`
+paragrafe todėl vėl pakeliama po to kai :keyword:`finally` paragrafas
+baigia savo darbą.
 
-In real world applications, the :keyword:`finally` clause is useful for
-releasing external resources (such as files or network connections), regardless
-of whether the use of the resource was successful.
+Realiame pasaulyje, :keyword:`finally` paragrafas praverčia atlaisvinant
+išorinius resursus (failai ar tinklo jungtys), nepaisant to ar
+resursų panaudojimas buvo sėkmingas ar ne.
 
 
 .. _tut-cleanup-with:
 
-Predefined Clean-up Actions
-===========================
+Numatytas Išvalymas
+===================
 
-Some objects define standard clean-up actions to be undertaken when the object
-is no longer needed, regardless of whether or not the operation using the object
-succeeded or failed. Look at the following example, which tries to open a file
-and print its contents to the screen. ::
+Kai kurie objektai apibrėžia standartinius išvalymo veiksmus tam atvejui
+kai paimtas objektas yra nebereikalingas --- nesvarbu ar operacija,
+kuri naudoja tą objektą pavyko ar baigėsi nesėkme. Pažiūrėkime į
+sekantį pavyzdį, kuriame bandoma atidaryti failą ir atspausdinti jo
+turinį į ekraną::
 
    for line in open("myfile.txt"):
        print line
 
-The problem with this code is that it leaves the file open for an indeterminate
-amount of time after the code has finished executing. This is not an issue in
-simple scripts, but can be a problem for larger applications. The
-:keyword:`with` statement allows objects like files to be used in a way that
-ensures they are always cleaned up promptly and correctly. ::
+Šio kodo problema yra ta, kad failas yra paliekamas atidarytas neapibrėžtam
+laiko tarpui po to, kai kodas baigia vykdymą. Tai nėra problema paprastame
+skripte, bet gali būti problema didelėje programoje. :keyword:`with` sakinys
+leidžia objektus naudoti taip, kad jie visada teisingai ir laiku būtų
+išvalyti::
 
    with open("myfile.txt") as f:
        for line in f:
            print line
 
-After the statement is executed, the file *f* is always closed, even if a
-problem was encountered while processing the lines. Other objects which provide
-predefined clean-up actions will indicate this in their documentation.
-
-
+Po sakinio vykdymo, failas *f* yra visada uždaromas, netgi jei kilo kažkokių
+problemų skaitant eilutes. Jei objektai turi numatytą išvalymą, tai būna
+paminėta dokumentacijoje.
