@@ -1,68 +1,56 @@
 .. _tut-whatnow:
 
-*********
-What Now?
-*********
+**********
+Kas Dabar?
+**********
 
-Reading this tutorial has probably reinforced your interest in using Python ---
-you should be eager to apply Python to solving your real-world problems. Where
-should you go to learn more?
+Šis vadovėlis tikriausiai sustiprino jūsų norą naudoti Python'ą --- jūs
+tikriausiai nekantraujate panaudoti Python'ą realių pasaulio problemų
+sprendime. Kur jūs turėtumėte eiti, kad išmoktumėte daugiau?
 
-This tutorial is part of Python's documentation set.   Some other documents in
-the set are:
+Šis vadovėlis yra Python'o dokumentacijos dalis. Kai kurie kiti
+dokumentai esantys joje yra:
 
 * :ref:`library-index`:
 
-  You should browse through this manual, which gives complete (though terse)
-  reference material about types, functions, and the modules in the standard
-  library.  The standard Python distribution includes a *lot* of additional code.
-  There are modules to read Unix mailboxes, retrieve documents via HTTP, generate
-  random numbers, parse command-line options, write CGI programs, compress data,
-  and many other tasks. Skimming through the Library Reference will give you an
-  idea of what's available.
+  Jūs turite naršyti per šį vadovą, kuris pilnai (nors ir glaustai) aprašo
+  tipus, funkcijas ir standartinės bibliotekos modulius. Standartinė
+  Python'o distribucijoje yra daug papildomo kodo. Čia rasite modulių
+  skirtų skaityti Unix'ines pašto dėžutes, gauti dokumentus naudojantis
+  HTTP, generuoti atsitiktinius skaičius, analizuoti komandinę eilutę,
+  rašyti CGI programas, suspausti duomenis ir atlikti kitas užduotis.
+  Jei tiesiog peržvelgsite Library Reference dokumentą turėsite susidarę
+  bendrą įspūdį, ką galima padaryti.
 
-* :ref:`install-index` explains how to install external modules written by other
-  Python users.
+* :ref:`install-index` paaiškina kaip instaliuoti išorinius modulius parašytus
+  kitų Python'o vartotojų.
 
-* :ref:`reference-index`: A detailed explanation of Python's syntax and
-  semantics.  It's heavy reading, but is useful as a complete guide to the
-  language itself.
+* :ref:`reference-index`: detalus Python'o sintaksės ir semantikos išaiškinimas.
+  Jis sunkiai skaitomas, bet čia rasite naudingos informacijos apie pačią
+  kalbą.
 
-More Python resources:
+Daugiau Python'o resursų:
 
-* http://www.python.org:  The major Python Web site.  It contains code,
-  documentation, and pointers to Python-related pages around the Web.  This Web
-  site is mirrored in various places around the world, such as Europe, Japan, and
-  Australia; a mirror may be faster than the main site, depending on your
-  geographical location.
+* http://www.python.org:  pagrindinis Python'o tinklapis. Jame rasite kodą,
+  dokumentacija ir nuorodų į kitųs su Python'u susijusius tinklapius.
 
-* http://docs.python.org:  Fast access to Python's  documentation.
+* http://docs.python.org:  greitai pasiekiama Python'o dokumentacija.
 
-* http://pypi.python.org: The Python Package Index, previously also nicknamed
-  the Cheese Shop, is an index of user-created Python modules that are available
-  for download.  Once you begin releasing code, you can register it here so that
-  others can find it.
+* http://pypi.python.org: Python Package Index (seniau dar vadinosi
+  Cheese Shop) yra vartotojų sukurtų Python'o modulių indeksas, kuriuos
+  galima parsisiųsti. Kai tik pradėsite leisti kodą, jūs galėsite
+  užsiregistruoti čia, kad kiti galėtų jį rasti.
 
-* http://aspn.activestate.com/ASPN/Python/Cookbook/: The Python Cookbook is a
-  sizable collection of code examples, larger modules, and useful scripts.
-  Particularly notable contributions are collected in a book also titled Python
+* http://aspn.activestate.com/ASPN/Python/Cookbook/: The Python Cookbook yra
+  kodo pavyzdžių kolekcija, didesni moduliai ir naudingi skriptai.
+  Geresni pavyzdžiai yra surinkti ir išleisti kaip knygą pavadinimu Python
   Cookbook (O'Reilly & Associates, ISBN 0-596-00797-3.)
 
-For Python-related questions and problem reports, you can post to the newsgroup
-:newsgroup:`comp.lang.python`, or send them to the mailing list at
-python-list@python.org.  The newsgroup and mailing list are gatewayed, so
-messages posted to one will automatically be forwarded to the other.  There are
-around 120 postings a day (with peaks up to several hundred), asking (and
-answering) questions, suggesting new features, and announcing new modules.
-Before posting, be sure to check the list of `Frequently Asked Questions
-<http://www.python.org/doc/faq/>`_ (also called the FAQ), or look for it in the
-:file:`Misc/` directory of the Python source distribution.  Mailing list
-archives are available at http://mail.python.org/pipermail/. The FAQ answers
-many of the questions that come up again and again, and may already contain the
-solution for your problem.
-
-.. Postings figure based on average of last six months activity as
-   reported by www.egroups.com; Jan. 2000 - June 2000: 21272 msgs / 182
-   days = 116.9 msgs / day and steadily increasing. (XXX up to date figures?)
-
-
+Apie su Python'u susijusias problemas ir iškilusius klausimus galite
+rašyti į naujienų grupę :newsgroup:`comp.lang.python` arba siųsti juos
+į el. konferenciją python-list@python.org.  Naujienų grupė ir el. konferencija
+yra susietos, todėl jei žinutę siųsite į vieną iš jų, tai ji bus
+automatiškai persiunčiama į kitą. Prieš klausdami galite pasitikrinti
+`Frequently Asked Questions <http://www.python.org/doc/faq/>`_ (Dažniausiai
+Užduodami Klausimai). El. konferencijos archyvą galima rasti
+http://mail.python.org/pipermail/.
