@@ -72,7 +72,7 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\errors.rst – Dalius Dobravolskas
 * tutorial\classes.rst – Dalius Dobravolskas
 * tutorial\stdlib.rst – Dalius Dobravolskas
-* tutorial\stdlib2.rst –
+* tutorial\stdlib2.rst – Dalius Dobravolskas
 * tutorial\whatnow.rst –
 * tutorial\interactive.rst –
 * tutorial\floatingpoint.rst –

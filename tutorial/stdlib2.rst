@@ -1,29 +1,31 @@
 .. _tut-brieftourtwo:
 
-*********************************************
-Brief Tour of the Standard Library -- Part II
-*********************************************
+*******************************************************
+Trumpa Standartinės Bibliotekos Apžvalga -- Antra Dalis
+*******************************************************
 
-This second tour covers more advanced modules that support professional
-programming needs.  These modules rarely occur in small scripts.
-
+Ši dalis apžvelgia sudėtingesnius modulius, kurie reikalingi
+profesionaliam programavimui. Šie moduliai retai naudojami
+mažuose skriptuose.
 
 .. _tut-output-formatting:
 
-Output Formatting
-=================
+Išvesties Formatavimas
+======================
 
-The :mod:`repr` module provides a version of :func:`repr` customized for
-abbreviated displays of large or deeply nested containers::
+:mod:`repr` modulyje rasite :func:`repr` funkcijos
+versiją skirtą dideliems arba giliai įdėtiems konteinerių
+objektams::
 
    >>> import repr
    >>> repr.repr(set('supercalifragilisticexpialidocious'))
    "set(['a', 'c', 'd', 'e', 'f', 'g', ...])"
 
-The :mod:`pprint` module offers more sophisticated control over printing both
-built-in and user defined objects in a way that is readable by the interpreter.
-When the result is longer than one line, the "pretty printer" adds line breaks
-and indentation to more clearly reveal data structure::
+:mod:`pprint` modulis leidžia rafinuočiau atspausdinti
+tiek įtaisytus tiek vartojo apibrėžtus objektus interpretatorius
+skaitomu būdu. Jeigu rezultatas yra ilgesnis negu viena eilutė,
+"pretty printer" prideda eilučių pabaigos simbolius ir
+pastumia tekstą, kad duomenų struktūra būtų suprantamesnė::
 
    >>> import pprint
    >>> t = [[[['black', 'cyan'], 'white', ['green', 'red']], [['magenta',
@@ -36,8 +38,8 @@ and indentation to more clearly reveal data structure::
      [['magenta', 'yellow'],
       'blue']]]
 
-The :mod:`textwrap` module formats paragraphs of text to fit a given screen
-width::
+:mod:`textwrap` modulis suformatuoja teksto paragrafą, kad jis tilptų
+į nurodytą ekrano plotį::
 
    >>> import textwrap
    >>> doc = """The wrap() method is just like fill() except that it returns
@@ -50,9 +52,10 @@ width::
    instead of one big string with newlines
    to separate the wrapped lines.
 
-The :mod:`locale` module accesses a database of culture specific data formats.
-The grouping attribute of locale's format function provides a direct way of
-formatting numbers with group separators::
+:mod:`locale` modulis prieina prie nuo kultūros priklausančių datos
+formatų duombazės. Lokalės formatavimo funkcijos grupavimo
+atributas leidžia tiesiogiai formatuoti skaičius naudojant grupių
+atskyrimą::
 
    >>> import locale
    >>> locale.setlocale(locale.LC_ALL, 'English_United States.1252')
@@ -68,28 +71,31 @@ formatting numbers with group separators::
 
 .. _tut-templating:
 
-Templating
-==========
+Šablonai
+========
 
-The :mod:`string` module includes a versatile :class:`Template` class with a
-simplified syntax suitable for editing by end-users.  This allows users to
-customize their applications without having to alter the application.
+:mod:`string` modulyje rasite visapusišką :class:`Template` klasę, kuri
+leis naudoti supaprastintą sintaksę, kurią gali suprasti ir
+paprastas vartotojas. Tai leidžia vartotojui modifikuoti programos
+elgesį nekeičiant pačios programos.
 
-The format uses placeholder names formed by ``$`` with valid Python identifiers
-(alphanumeric characters and underscores).  Surrounding the placeholder with
-braces allows it to be followed by more alphanumeric letters with no intervening
-spaces.  Writing ``$$`` creates a single escaped ``$``::
+Rezervuotų vietų vardai formuojami su ``$`` with ir teisingu
+Python'o identifikatoriumi (t.y. žodis, kurį gali sudaryti skaičiai, raidės
+ir pabraukimo brūkšniai). Jeigu rezervuotą vietą apskliaudus figūriniais
+skliausteliais, tai po to gali sekti kiti simboliai be tarpų. 
+Parašius ``$$`` jis paverčiamas vienu ``$``::
 
    >>> from string import Template
    >>> t = Template('${village}folk send $$10 to $cause.')
    >>> t.substitute(village='Nottingham', cause='the ditch fund')
    'Nottinghamfolk send $10 to the ditch fund.'
 
-The :meth:`substitute` method raises a :exc:`KeyError` when a placeholder is not
-supplied in a dictionary or a keyword argument. For mail-merge style
-applications, user supplied data may be incomplete and the
-:meth:`safe_substitute` method may be more appropriate --- it will leave
-placeholders unchanged if data is missing::
+:meth:`substitute` metodas pakelia :exc:`KeyError`, jeigu rezervuotai
+vietai nepateikiamas argumentas. Jeigu mums reikia, kad funkcija
+veiktų net tuo atveju, kai vartotojas pateikia ne visą informaciją,
+galima naudoti :meth:`safe_substitute` metodą, jeigu ji tinkama.
+Naudojant šia funkciją rezervuota vieta bus nepakeista, jei
+duomenų truks::
 
    >>> t = Template('Return the $item to $owner.')
    >>> d = dict(item='unladen swallow')
@@ -100,9 +106,10 @@ placeholders unchanged if data is missing::
    >>> t.safe_substitute(d)
    'Return the unladen swallow to $owner.'
 
-Template subclasses can specify a custom delimiter.  For example, a batch
-renaming utility for a photo browser may elect to use percent signs for
-placeholders such as the current date, image sequence number, or file format::
+Šablonų poklasiai gali apibrėžti kitokį rezervuotos vietos atpažinimo
+ženklą. Pavyzdžiui nuotraukų pervadinimo programėlė gali naudoti
+procento ženklą rezervuotai vietai atpažinti (pvz. datai, paveikslėlio
+numeris ar failo formatas)::
 
    >>> import time, os.path
    >>> photofiles = ['img_1074.jpg', 'img_1076.jpg', 'img_1077.jpg']
@@ -122,22 +129,21 @@ placeholders such as the current date, image sequence number, or file format::
    img_1076.jpg --> Ashley_1.jpg
    img_1077.jpg --> Ashley_2.jpg
 
-Another application for templating is separating program logic from the details
-of multiple output formats.  This makes it possible to substitute custom
-templates for XML files, plain text reports, and HTML web reports.
-
+Kitas šablonų naudojimo tikslas yra programos logikos ir skirtingų formatų
+išvedimo atskyrimas. Tai leidžia rezultatus išvesti kaip XML failą,
+paprastą tekstinę ar HTML ataskaitą.
 
 .. _tut-binary-formats:
 
-Working with Binary Data Record Layouts
+Darbas su Dvejetainiais Duomenų Įrašais
 =======================================
 
-The :mod:`struct` module provides :func:`pack` and :func:`unpack` functions for
-working with variable length binary record formats.  The following example shows
-how to loop through header information in a ZIP file without using the
-:mod:`zipfile` module.  Pack codes ``"H"`` and ``"I"`` represent two and four
-byte unsigned numbers respectively.  The ``"<"`` indicates that they are
-standard size and in little-endian byte order::
+:mod:`struct` modulio funkcijos :func:`pack` ir :func:`unpack` leidžia
+dirbti su kintamo ilgio dvejetainiais įrašų formatais. Sekantis pavyzdys
+parodo kaip perskaityti ZIP failo antraštę nenaudojant :mod:`zipfile` modulio.
+Pakavimo kodai ``"H"`` ir ``"I"`` reprezentuoja dviejų ir keturių baitų
+skaitinę reikšmę be ženklo atitinkamai. ``"<"`` reiškia, kad jie
+yra įprasto dydžio ir išsidėstę didėjančių baitų tvarka::
 
    import struct
 
@@ -159,16 +165,17 @@ standard size and in little-endian byte order::
 
 .. _tut-multi-threading:
 
-Multi-threading
-===============
+Daugiagijiškumas
+================
 
-Threading is a technique for decoupling tasks which are not sequentially
-dependent.  Threads can be used to improve the responsiveness of applications
-that accept user input while other tasks run in the background.  A related use
-case is running I/O in parallel with computations in another thread.
+Gijos naudojamos norint atskirti užduotis, kurios nėra viena nuo kitos
+priklausomos. Gijos gali būti naudojamos norint pagerinti programos
+reagavimo laiką, kuri gauna vartotojo įvedamus duomenis ir tuo tarpu
+vykdo kitas užduotis fone. Susijęs panaudojimo variantas yra
+duomenų skaitymas ir rašymas vykdant skaičiavimus kitoje gijoje.
 
-The following code shows how the high level :mod:`threading` module can run
-tasks in background while the main program continues to run::
+Žemiau esantis kodas rodo kaip aukšto lygio modulis :mod:`threading` gali
+vykdyti užduotis fone kol pagrindinė programa yra vykdoma::
 
    import threading, zipfile
 
@@ -190,26 +197,28 @@ tasks in background while the main program continues to run::
    background.join()    # Wait for the background task to finish
    print 'Main program waited until background was done.'
 
-The principal challenge of multi-threaded applications is coordinating threads
-that share data or other resources.  To that end, the threading module provides
-a number of synchronization primitives including locks, events, condition
-variables, and semaphores.
+Pagrindinė problema daugiagijiškoje programoje yra gijų,
+kurios dalinasi duomenimis ir kitais resursais, koordinavimas.
+Gijų modulis leidžia naudoti sinchronizavimo primityvus kaip
+spynas (ang. lock), įvykius (ang. event), sąlygų kintamuosius
+(ang. condition variable) ar semaforus.
 
-While those tools are powerful, minor design errors can result in problems that
-are difficult to reproduce.  So, the preferred approach to task coordination is
-to concentrate all access to a resource in a single thread and then use the
-:mod:`Queue` module to feed that thread with requests from other threads.
-Applications using :class:`Queue.Queue` objects for inter-thread communication
-and coordination are easier to design, more readable, and more reliable.
-
+Nors šios priemonės yra galingos, mažiausia klaida gali baigtis klaida,
+kurią sunku atgaminti. Rekomenduojamas būdas užduočių koordinavimui
+yra sukoncentruoti priėjimą prie visų resursų vienoj gijoje ir tada
+naudoti :mod:`Queue` modulį, tam kad tai gijai perduoti užsakymus
+iš kitų gijų. Programos, kurios naudoja :class:`Queue.Queue` objektus
+bendravimui tarp gijų yra lengviau sukuriamos, skaitomesnės ir
+patikimesnės.
 
 .. _tut-logging:
 
-Logging
-=======
+Žurnalas
+========
 
-The :mod:`logging` module offers a full featured and flexible logging system.
-At its simplest, log messages are sent to a file or to ``sys.stderr``::
+:mod:`logging` modul leidžia naudoti pilną ir lanksčią žurnalo sistemą.
+Paprasčiausias variantas yra visas žurnalo pranešimus siųsti į failą arba
+``sys.stderr``::
 
    import logging
    logging.debug('Debugging information')
@@ -218,39 +227,39 @@ At its simplest, log messages are sent to a file or to ``sys.stderr``::
    logging.error('Error occurred')
    logging.critical('Critical error -- shutting down')
 
-This produces the following output::
+To rezultatas yra toks::
 
    WARNING:root:Warning:config file server.conf not found
    ERROR:root:Error occurred
    CRITICAL:root:Critical error -- shutting down
 
-By default, informational and debugging messages are suppressed and the output
-is sent to standard error.  Other output options include routing messages
-through email, datagrams, sockets, or to an HTTP Server.  New filters can select
-different routing based on message priority: :const:`DEBUG`, :const:`INFO`,
-:const:`WARNING`, :const:`ERROR`, and :const:`CRITICAL`.
+Įprastai, informaciniai ir derinimo pranešimai yra sulaikomi ir
+rezultatas siunčiamas į standartinių klaidų rašymo vietą. Kiti
+išvedimo rezultatai yra pranešimų siuntimas paštu, į serverį ir
+t.t. Nauji filtrai gali pasirinkti skirtingus pranešimo
+rašymo/siuntimo būdus priklausomai nuo pranešimo prioriteto:
+:const:`DEBUG`, :const:`INFO`, :const:`WARNING`, :const:`ERROR`, and :const:`CRITICAL`.
 
-The logging system can be configured directly from Python or can be loaded from
-a user editable configuration file for customized logging without altering the
-application.
-
+Žurnalo sistema gali būti konfigūruojama tiesiogiai iš Python'o arba gali
+būti užkrauta iš vartotojo konfigūruojamo failo.
 
 .. _tut-weak-references:
 
-Weak References
-===============
+Silpnos Nuorodos
+================
 
-Python does automatic memory management (reference counting for most objects and
-:term:`garbage collection` to eliminate cycles).  The memory is freed shortly
-after the last reference to it has been eliminated.
+Python'as atmintį valdo automatiškai (daugumai objektų skaičiuojamos
+nuorodos ir naudojamas :term:`šiukšlių surinkimas` ciklų eliminavimui).
+Atmintis atlaisvinama ne už ilgo po to, kai paskutinė nuorodą į ją
+yra panaikinama.
 
-This approach works fine for most applications but occasionally there is a need
-to track objects only as long as they are being used by something else.
-Unfortunately, just tracking them creates a reference that makes them permanent.
-The :mod:`weakref` module provides tools for tracking objects without creating a
-reference.  When the object is no longer needed, it is automatically removed
-from a weakref table and a callback is triggered for weakref objects.  Typical
-applications include caching objects that are expensive to create::
+Šis būdas tinka daugumai programų bet kartais reikia sekti objektus tik
+tiek kiek jie yra naudojami kažkur kitur. Nelaimei vien tam, kad
+juos sekti, yra sukuriama nuorodą, kuri padaro juos amžinus.
+:mod:`weakref` modulis leidžia sekti objektus nesukūrus jiems nuorodų.
+Kai objektas tampa nebereikalingu jis automatiškai išimamas
+iš *weakref* lentelės.  Tipiškai programos saugo objektus, kuriuos
+yra brangu sukurti::
 
    >>> import weakref, gc
    >>> class A:
@@ -259,18 +268,18 @@ applications include caching objects that are expensive to create::
    ...     def __repr__(self):
    ...             return str(self.value)
    ...
-   >>> a = A(10)                   # create a reference
+   >>> a = A(10)                   # sukuriame nuorodą
    >>> d = weakref.WeakValueDictionary()
-   >>> d['primary'] = a            # does not create a reference
-   >>> d['primary']                # fetch the object if it is still alive
+   >>> d['primary'] = a            # nuoroda nesukuriama
+   >>> d['primary']                # gauname objektą, jei jis dar gyvas
    10
-   >>> del a                       # remove the one reference
-   >>> gc.collect()                # run garbage collection right away
+   >>> del a                       # pašaliname nuorodą
+   >>> gc.collect()                # paleidžiame šiukšlių surinkimą
    0
-   >>> d['primary']                # entry was automatically removed
+   >>> d['primary']                # įrašas buvo automatiškai pašalintas
    Traceback (most recent call last):
      File "<stdin>", line 1, in <module>
-       d['primary']                # entry was automatically removed
+       d['primary']                # įrašas buvo automatiškai pašalintas
      File "C:/python26/lib/weakref.py", line 46, in __getitem__
        o = self.data[key]()
    KeyError: 'primary'
@@ -278,18 +287,18 @@ applications include caching objects that are expensive to create::
 
 .. _tut-list-tools:
 
-Tools for Working with Lists
+Priemonės Darbui su Sąrašais
 ============================
 
-Many data structure needs can be met with the built-in list type. However,
-sometimes there is a need for alternative implementations with different
-performance trade-offs.
+Dauguma duomenų struktūrų poreikių gali būti pasiekti naudojant
+įtaisytus tipus. Tačiau kartais reikia alternatyvaus įgyvendinimo
+su skirtingais našumo reikalavimais.
 
-The :mod:`array` module provides an :class:`array()` object that is like a list
-that stores only homogeneous data and stores it more compactly.  The following
-example shows an array of numbers stored as two byte unsigned binary numbers
-(typecode ``"H"``) rather than the usual 16 bytes per entry for regular lists of
-python int objects::
+:mod:`array` modulyje rasite :class:`array()` objektą, kuris yra panašus
+į sąrašą, kuris laiko vienodus objektus ir laiko juos kompaktiškiau.
+Sekantis pavyzdys parodo skaičių masyvą, laikomą kaip dviejų baitų
+dvejetainius skaičius be ženklo (tipo kodas ``"H"``) vietoje 16 baitų
+kiekvienam nariui kaip tai daroma paprastame Python'o sąraše::
 
    >>> from array import array
    >>> a = array('H', [4000, 10, 700, 22222])
@@ -298,10 +307,10 @@ python int objects::
    >>> a[1:3]
    array('H', [10, 700])
 
-The :mod:`collections` module provides a :class:`deque()` object that is like a
-list with faster appends and pops from the left side but slower lookups in the
-middle. These objects are well suited for implementing queues and breadth first
-tree searches::
+:mod:`collections` modulyje rasite :class:`deque()` objektą, panašų į sąrašą
+su greitesniais sąrašo papildymais ir išėmimais iš kairės, bet lėtesne
+peržiūra iš vidurio. Šie objektai labai tinka eilių ir paieškos į plotį
+pirmiausia medžių įgyvendinimui::
 
    >>> from collections import deque
    >>> d = deque(["task1", "task2", "task3"])
@@ -317,9 +326,9 @@ tree searches::
                return m
            unsearched.append(m)
 
-In addition to alternative list implementations, the library also offers other
-tools such as the :mod:`bisect` module with functions for manipulating sorted
-lists::
+Papildomai alternatyviems sąrašų įgyvendinimams, biblioteka taip pat
+siūlo priemones kaip :mod:`bisect` modulis su funkcijomis skirtoms
+surūšiuotų manipuliavimui::
 
    >>> import bisect
    >>> scores = [(100, 'perl'), (200, 'tcl'), (400, 'lua'), (500, 'python')]
@@ -327,36 +336,38 @@ lists::
    >>> scores
    [(100, 'perl'), (200, 'tcl'), (300, 'ruby'), (400, 'lua'), (500, 'python')]
 
-The :mod:`heapq` module provides functions for implementing heaps based on
-regular lists.  The lowest valued entry is always kept at position zero.  This
-is useful for applications which repeatedly access the smallest element but do
-not want to run a full list sort::
+:mod:`heapq` modulyje rasite funkcijas reikalingas krūvų (ang. heap) paremtų
+sąrašais įgyvendinimui. Mažiausia reikšmė visada laikoma nulinėje
+pozicijoje. Tai praverčia programose, kurioms dažnai reikia pasiekti
+mažiausią elementą nerūšiuojant sąrašo pilnai::
 
    >>> from heapq import heapify, heappop, heappush
    >>> data = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
-   >>> heapify(data)                      # rearrange the list into heap order
-   >>> heappush(data, -5)                 # add a new entry
-   >>> [heappop(data) for i in range(3)]  # fetch the three smallest entries
+   >>> heapify(data)                      # surūšiuojame sąrašą krūvos tvarka
+   >>> heappush(data, -5)                 # pridedame naują narį
+   >>> [heappop(data) for i in range(3)]  # gauname tris mažiausius narius
    [-5, 0, 1]
 
 
 .. _tut-decimal-fp:
 
-Decimal Floating Point Arithmetic
-=================================
+Dešimtainė Slankaus Kablelio Aritmetika
+=======================================
 
-The :mod:`decimal` module offers a :class:`Decimal` datatype for decimal
-floating point arithmetic.  Compared to the built-in :class:`float`
-implementation of binary floating point, the new class is especially helpful for
-financial applications and other uses which require exact decimal
-representation, control over precision, control over rounding to meet legal or
-regulatory requirements, tracking of significant decimal places, or for
-applications where the user expects the results to match calculations done by
-hand.
+:mod:`decimal` modulis leidžia naudoti :class:`Decimal` duomenų tipą skirta
+dešimtainei slankaus kablelio aritmetikai. Jeigu palyginsime šį modulį
+su įtaisyta :class:`float` klase skirta dvejetainėms slankaus kablelio
+operacijoms, tai ši nauja klasė labai praverčia finansinėms programoms
+ir kitiems atvejams, kurie reikalauja tikslios dešimtainės išraiškos,
+tikslumo kontrolės, tikslumo apvalinant norint atitikti legalumo
+ar reguliavimo reikalavimus, sekimo iki pasirinktos svarbios
+dešimtainės vietos, arba programoms, kur vartotojas tikisi, kad
+rezultatas sutaps su ranka atliktais skaičiavimais.
 
-For example, calculating a 5% tax on a 70 cent phone charge gives different
-results in decimal floating point and binary floating point. The difference
-becomes significant if the results are rounded to the nearest cent::
+Pavyzdžiui, 5% mokesčio skaičiavimas 70 centų telefono sąskaitai duos
+skirtingus rezultatus naudojant dešimtainį ir dvejetainį slankų
+kablelį. Skirtumas pasidaro akivaizdus, jeigu rezultatas yra
+suapvalinamas iki artimiausio cento::
 
    >>> from decimal import *
    >>> Decimal('0.70') * Decimal('1.05')
@@ -364,13 +375,16 @@ becomes significant if the results are rounded to the nearest cent::
    >>> .70 * 1.05
    0.73499999999999999
 
-The :class:`Decimal` result keeps a trailing zero, automatically inferring four
-place significance from multiplicands with two place significance.  Decimal
-reproduces mathematics as done by hand and avoids issues that can arise when
-binary floating point cannot exactly represent decimal quantities.
+:class:`Decimal` rezultatas palieka paskutinį nulį, automatiškai
+nurodantį keturių vietų po kablelio svarbą iš dviejų daugiklių su dviem
+svarbiomis vietomis po kablelio. Dešimtainis skaičiavimas atspindį
+matematiką atliekamą ranka ir padeda išvengti problemų, kurios kyla
+kai dvejetainis slankus kablelis negali tiksliai atspindėti
+dešimtainių kiekių.
 
-Exact representation enables the :class:`Decimal` class to perform modulo
-calculations and equality tests that are unsuitable for binary floating point::
+Tiksli reprezentacija leidžia :class:`Decimal` klasei atlikti modulio
+skaičiavimus ir lygybės testus, kurie nėra įmanomi naudojant dvejetainį
+slankų kablelį::
 
    >>> Decimal('1.00') % Decimal('.10')
    Decimal("0.00")
@@ -382,10 +396,9 @@ calculations and equality tests that are unsuitable for binary floating point::
    >>> sum([0.1]*10) == 1.0
    False
 
-The :mod:`decimal` module provides arithmetic with as much precision as needed::
+:mod:`decimal` modulis leidžia atlikti aritmetines operacijas su tokiu tikslumu
+kokio reikia::
 
    >>> getcontext().prec = 36
    >>> Decimal(1) / Decimal(7)
    Decimal("0.142857142857142857142857142857142857")
-
-
