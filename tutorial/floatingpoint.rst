@@ -1,114 +1,114 @@
 .. _tut-fp-issues:
 
-**************************************************
-Floating Point Arithmetic:  Issues and Limitations
-**************************************************
+******************************************************
+Slankaus Kablelio Aritmetika: Problemos ir Apribojimai
+******************************************************
 
 .. sectionauthor:: Tim Peters <tim_one@users.sourceforge.net>
 
 
-Floating-point numbers are represented in computer hardware as base 2 (binary)
-fractions.  For example, the decimal fraction ::
+Slankaus kablelio skaičiai kompiuterio atmintyje yra reprezentuojami
+kaip dvejetainės dalys. Pavyzdžiui, dešimtainis skaičius::
 
    0.125
 
-has value 1/10 + 2/100 + 5/1000, and in the same way the binary fraction ::
+yra dešimtainių dalių suma 1/10 + 2/100 + 5/1000. Tuo tarpu skaičius
+užrašytas dvejetainėje formoje::
 
    0.001
 
-has value 0/2 + 0/4 + 1/8.  These two fractions have identical values, the only
-real difference being that the first is written in base 10 fractional notation,
-and the second in base 2.
+yra lygus 0/2 + 0/4 + 1/8. Šie du skaičiai yra lygis. Vienintelis
+skirtumas tarp jų yra toks, kad pirmasis yra parašytas dešimtainėje
+sistemoje, o antrasis dvejetainėje.
 
-Unfortunately, most decimal fractions cannot be represented exactly as binary
-fractions.  A consequence is that, in general, the decimal floating-point
-numbers you enter are only approximated by the binary floating-point numbers
-actually stored in the machine.
+Nelaimei, dauguma realių dešimtainių skaičių negali būti tiksliai
+pavaizduoti dvejetainėje formoje. To pasekmė yra tokia, kad
+dauguma dešimtainių skaičių yra tik apytiksliai išreiškiami
+dvejetaine forma laikoma kompiuteryje.
 
-The problem is easier to understand at first in base 10.  Consider the fraction
-1/3.  You can approximate that as a base 10 fraction::
+Problemą iš pradžių lengviau suprasti dešimtainėje sistemoje. Tarkime turime
+1/3. Apytiksliai dešimtainėje sistemoje tai galima užrašyti kaip::
 
    0.3
 
-or, better, ::
+arba, geriau, ::
 
    0.33
 
-or, better, ::
+arba, dar geriau, ::
 
    0.333
 
-and so on.  No matter how many digits you're willing to write down, the result
-will never be exactly 1/3, but will be an increasingly better approximation of
-1/3.
+ir t.t. Nesvarbu kiek skaičių jūs užrašysite, rezultatas niekada nebus tiksliai
+lygus 1/3, bet tik bus tikslesnė 1/3 aproksimacija.
 
-In the same way, no matter how many base 2 digits you're willing to use, the
-decimal value 0.1 cannot be represented exactly as a base 2 fraction.  In base
-2, 1/10 is the infinitely repeating fraction ::
+Tuo pačiu būdu, nesvarbu kiek dvejetainio skaičius skaitmenų naudosite, dešimtainė
+reikšmė 0.1 negali būti tiksliai pavaizduota dvejetainėje sistemoje.
+Dvejetainėje sistemoje 1/10 yra amžinai pasikartojanti seka::
 
    0.0001100110011001100110011001100110011001100110011...
 
-Stop at any finite number of bits, and you get an approximation.  This is why
-you see things like::
+Sustojate ties tam tikru skaitmeniu ir jūs turite apytikslę reikšmę. Štai
+todėl jūs matote tokius dalykus::
 
    >>> 0.1
    0.10000000000000001
 
-On most machines today, that is what you'll see if you enter 0.1 at a Python
-prompt.  You may not, though, because the number of bits used by the hardware to
-store floating-point values can vary across machines, and Python only prints a
-decimal approximation to the true decimal value of the binary approximation
-stored by the machine.  On most machines, if Python were to print the true
-decimal value of the binary approximation stored for 0.1, it would have to
-display ::
+Tai yra būtent tai, ką jūs matysite jei įvesite 0.1 reikšmę Python'e.
+Aišku, galbūt jūs matysite kitokį vaizdą, nes skirtingi kompiuteriai
+gali naudoti skirtingą bitų skaičių laikyti slankaus kablelio skaičius.
+Python'as atspausdina dvejetainės aproksimacijos dešimtainėje formoje.
+Jeigu Python'as turėtų atspausdinti tikrą dešimtainę 0.1 reikšmę,
+jis turėtų parodyti::
 
    >>> 0.1
    0.1000000000000000055511151231257827021181583404541015625
 
-instead!  The Python prompt uses the built-in :func:`repr` function to obtain a
-string version of everything it displays.  For floats, ``repr(float)`` rounds
-the true decimal value to 17 significant digits, giving ::
+Python'as naudoja įtaisytą funkciją :func:`repr`, kad parodytų objekto eilutės
+versiją. Slankaus kablelio skaičiams ``repr(float)`` suapvalina
+tikrą dešimtainę reikšmę iki 17 ženklo::
 
    0.10000000000000001
 
-``repr(float)`` produces 17 significant digits because it turns out that's
-enough (on most machines) so that ``eval(repr(x)) == x`` exactly for all finite
-floats *x*, but rounding to 16 digits is not enough to make that true.
+``repr(float)`` parodo 17 ženklų po kablelio kadangi to pakanka daugeliui
+kompiuterių, todėl ``eval(repr(x)) == x`` yra teisinga visiems
+slankaus kablelio *x*, bet jeigu skaičius bus suapvalintas iki 16 skaičiaus
+po kablelio tai nebebus tiesa.
 
-Note that this is in the very nature of binary floating-point: this is not a bug
-in Python, and it is not a bug in your code either.  You'll see the same kind of
-thing in all languages that support your hardware's floating-point arithmetic
-(although some languages may not *display* the difference by default, or in all
-output modes).
+Pastebėsime, kad taip tiesiog veikia dvejetainei slankaus kablelio skaičiai ---
+tai nėra Python ar klaida jūsų kode. Jūs galite pamatyti tokį patį
+veikimą ir kitose kalbose, kurios palaiko aparatinę slankaus kablelio
+aritmetiką. Nors kai kurios kalbos gali ir neparodyti *skirtumo*
+įprastai.
 
-Python's built-in :func:`str` function produces only 12 significant digits, and
-you may wish to use that instead.  It's unusual for ``eval(str(x))`` to
-reproduce *x*, but the output may be more pleasant to look at::
+Python'o įtaisytoji funkcija :func:`str` panaudoja tik 12 skaičių po kablelio ir
+jūs dažniausiai ją ir norėtsite naudoti. ``eval(str(x))`` tikriausiai
+neatgamins *x* reikšmės, bet rezultatas gali būti mielesnis akiai::
 
    >>> print str(0.1)
    0.1
 
-It's important to realize that this is, in a real sense, an illusion: the value
-in the machine is not exactly 1/10, you're simply rounding the *display* of the
-true machine value.
+Labai svarbu suprasti, kad tai yra iliuzija: reikšmė mašinoje nėra tiksliai
+1/10 --- jūs tiesiog apvalinate tikrąją kompiuterio reikšmę.
 
-Other surprises follow from this one.  For example, after seeing ::
+Iš čia seka kita siurprizai. Pavyzdžiui, pamatę::
 
    >>> 0.1
    0.10000000000000001
 
-you may be tempted to use the :func:`round` function to chop it back to the
-single digit you expect.  But that makes no difference::
+jūs galite užsimanyti panaudot :func:`round` (apvalinimo) funkciją, taip tikėdamiesi
+gauti reikšmę su vienu skaičiumi po kablelio. Tačiau tai nieko nepakeis::
 
    >>> round(0.1, 1)
    0.10000000000000001
 
-The problem is that the binary floating-point value stored for "0.1" was already
-the best possible binary approximation to 1/10, so trying to round it again
-can't make it better:  it was already as good as it gets.
+Problema yra ta, kad slankaus kablelio formoje išsaugote "0.1" reikšmė
+jau yra geriausia įmanoma dvejetainė 1/10 aproksimacija, taigi bandymas
+ją apvalinti nieko nepakeis --- ji jau buvo tokia gera kokia tik gali
+būti.
 
-Another consequence is that since 0.1 is not exactly 1/10, summing ten values of
-0.1 may not yield exactly 1.0, either::
+Kita problema yra, tokia, kad 0.1 nėra tiksliai 1/10, taigi
+susumavus 0.1 dešimt kartų negausime tiksliai 1.0::
 
    >>> sum = 0.0
    >>> for i in range(10):
@@ -117,57 +117,58 @@ Another consequence is that since 0.1 is not exactly 1/10, summing ten values of
    >>> sum
    0.99999999999999989
 
-Binary floating-point arithmetic holds many surprises like this.  The problem
-with "0.1" is explained in precise detail below, in the "Representation Error"
-section.  See `The Perils of Floating Point <http://www.lahey.com/float.htm>`_
-for a more complete account of other common surprises.
+Dvejetainė slankaus kablelio aritmetika slepia ne vieną tokį siurpriza.
+Problema su "0.1" detaliau paaiškinta žemiau skyriuje "Atvaizdavimo
+Klaida". `The Perils of Floating Point <http://www.lahey.com/float.htm>`_
+rasite daugiau dažnų siurprizų pavyzdžių.
 
-As that says near the end, "there are no easy answers."  Still, don't be unduly
-wary of floating-point!  The errors in Python float operations are inherited
-from the floating-point hardware, and on most machines are on the order of no
-more than 1 part in 2\*\*53 per operation.  That's more than adequate for most
-tasks, but you do need to keep in mind that it's not decimal arithmetic, and
-that every float operation can suffer a new rounding error.
+Kaip sakoma gale "nėra lengvų atsakymų". Visgi nebūkite per daug
+atsargūs dirbdami su slankiu kableliu. Klaidos Python'e kylančios
+su slankiu kableliu yra paveldėtos iš aparatinės įrangos ir
+daugumoje mašinų klaidos galimybė yra ne didesnį negu
+1 iš 2\*\*53.  Tai daugiau negu adekvatu daugumai užduočių, bet jūs turite
+prisiminti, kad tai ne dešimtainė aritmetika ir kad kiekviena
+slankaus kablelio operacija prideda apvalinimo klaidą.
 
-While pathological cases do exist, for most casual use of floating-point
-arithmetic you'll see the result you expect in the end if you simply round the
-display of your final results to the number of decimal digits you expect.
-:func:`str` usually suffices, and for finer control see the :meth:`str.format`
-method's format specifiers in :ref:`formatstrings`.
-
+Nors egzistuoja patologiniai atvejai, dauguma atvejų jūs matysite
+tą rezultatą, kurio ir tikėjotės, jei galiausiai rezultatą
+suapvalinsite iki norimo skaičiaus po kablelio.
+Dažniausiai pakanka :func:`str` funkcijos, o jei reikia daugiau
+galimybių naudokite :meth:`str.format` metodą.
 
 .. _tut-fp-error:
 
-Representation Error
-====================
+Atvaizdavimo Klaida
+===================
 
-This section explains the "0.1" example in detail, and shows how you can perform
-an exact analysis of cases like this yourself.  Basic familiarity with binary
-floating-point representation is assumed.
+Šis skyrius paaiškina "0.1" pavyzdį detaliau ir paaiškina, kaip jūs galite
+atlikti tokių atvejų analizę patys. Darome prielaidą, kad su slankaus
+kablelio dvejetainiais skaičiais skaitytojas yra susipažinęs.
 
-:dfn:`Representation error` refers to the fact that some (most, actually)
-decimal fractions cannot be represented exactly as binary (base 2) fractions.
-This is the chief reason why Python (or Perl, C, C++, Java, Fortran, and many
-others) often won't display the exact decimal number you expect::
+:dfn:`Atvaizdavimo klaida` reiškia, kad kai kurie (tiesa sakant, dauguma)
+dešimtainių trupmenų negali būti išreikštos kaip dvejetainės trupmenos.
+Tai yra pagrindinė priežastis kodėl Python'as (Perl, C, C++, Java, Fortran ir
+daug kitų kalbų) dažnai tiksliai neatvaizduos dešimtainio skaičiaus
+kaip jūs tikitės::
 
    >>> 0.1
    0.10000000000000001
 
-Why is that?  1/10 is not exactly representable as a binary fraction. Almost all
-machines today (November 2000) use IEEE-754 floating point arithmetic, and
-almost all platforms map Python floats to IEEE-754 "double precision".  754
-doubles contain 53 bits of precision, so on input the computer strives to
-convert 0.1 to the closest fraction it can of the form *J*/2**\ *N* where *J* is
-an integer containing exactly 53 bits.  Rewriting ::
+Kodėl tai atsitinka?  1/10 nėra tiksliai reprezentuojama kaip dvejetainė trupmena.
+Beveik visos mašinos šiandien (2000 Lapkritis) naudoja IEEE-754 slankaus kablelio
+aritmetiką ir beveik visos platformos slankaus kablelio skaičius Python'e
+naudoja kaip IEEE-754 "dvigubu tikslumo".  754 naudoja 53 tikslumo bitus,
+taigi 0.1 sukonvertuojamas į artimiausią trupmeną *J*/2**\ *N* formoje,
+kur *J* yra sveikasis skaičius sudarytas iš 53 bitų. Perrašius::
 
    1 / 10 ~= J / (2**N)
 
-as ::
+kaip ::
 
    J ~= 2**N / 10
 
-and recalling that *J* has exactly 53 bits (is ``>= 2**52`` but ``< 2**53``),
-the best value for *N* is 56::
+ir paėmus, kad *J* turi lygiai 53 bitus (yra ``>= 2**52`` bet ``< 2**53``),
+tinkamiausia reikšmė *N* yra 56::
 
    >>> 2**52
    4503599627370496L
@@ -176,44 +177,43 @@ the best value for *N* is 56::
    >>> 2**56/10
    7205759403792793L
 
-That is, 56 is the only value for *N* that leaves *J* with exactly 53 bits.  The
-best possible value for *J* is then that quotient rounded::
+Taip jau yra, kad 56 yra vienintelė *N* reikšmė, kurią naudojant *J* turi tiksliai 53 bits.
+Tinkamiausia *J* reikšmė tada yra suapvalintas dalmuo::
 
    >>> q, r = divmod(2**56, 10)
    >>> r
    6L
 
-Since the remainder is more than half of 10, the best approximation is obtained
-by rounding up::
+Kadangi liekana yra didesnė negu 10 pusė, geriausia aproksimacija
+gaunama apvalinant viršun::
 
    >>> q+1
    7205759403792794L
 
-Therefore the best possible approximation to 1/10 in 754 double precision is
-that over 2\*\*56, or ::
+Taigi geriausia 1/10 aproksimacija 754 formoje yra 2\*\*56, arba ::
 
    7205759403792794 / 72057594037927936
 
-Note that since we rounded up, this is actually a little bit larger than 1/10;
-if we had not rounded up, the quotient would have been a little bit smaller than
-1/10.  But in no case can it be *exactly* 1/10!
+Pastebėkite, kad dėl to jog mes ją suapvalinome aukštyn, tai yra šiek tiek
+daugiau negu 1/10. Jei mes nebūtumėm apvalinę dalmuo būtų buvęs truputi
+mažesnis negu 1/10. Bet jokiu būtų jis negali būti *tiksliai* lygus
+1/10.
 
-So the computer never "sees" 1/10:  what it sees is the exact fraction given
-above, the best 754 double approximation it can get::
+Taigi kompiuteris niekada "nemato" 1/10. Tai ką jis mato yra tiksli trupmena
+duota aukščiau. Geriausia 254 dviguba aproksimacija, kurią jis gali gauti yra::
 
    >>> .1 * 2**56
    7205759403792794.0
 
-If we multiply that fraction by 10\*\*30, we can see the (truncated) value of
-its 30 most significant decimal digits::
+Jei mes padaugintumėme tą trupmeną iš 10\*\*30 mes galėtumėme pamatyti (nukirptą)
+reikšmę iki 30 ženklų po kablelio::
 
    >>> 7205759403792794 * 10**30 / 2**56
    100000000000000005551115123125L
 
-meaning that the exact number stored in the computer is approximately equal to
-the decimal value 0.100000000000000005551115123125.  Rounding that to 17
-significant digits gives the 0.10000000000000001 that Python displays (well,
-will display on any 754-conforming platform that does best-possible input and
-output conversions in its C library --- yours may not!).
-
-
+kas reiškia, jog tiksli reikšmė laikoma kompiuteryje apytiksliai yra lygi
+0.100000000000000005551115123125.  Suapvalinus ją iki 17 ženklų po kablelio
+gauname 0.10000000000000001, kurią ir rodo Python'as.
+(tiksliau, taip bus rodoma ant bet kurios 754-formą palaikančios platformos,
+kurioje C biblioteka padaro geriausią įmanomą įvesties ir išvesties
+konvertavimą --- jūsų sistemą gali būti kitokia!).

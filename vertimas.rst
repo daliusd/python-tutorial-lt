@@ -74,4 +74,4 @@ failo, kurį versite, vardą ir savo inicialus.
 * tutorial\stdlib.rst – Dalius Dobravolskas
 * tutorial\stdlib2.rst – Dalius Dobravolskas
 * tutorial\whatnow.rst – Dalius Dobravolskas
-* tutorial\floatingpoint.rst –
+* tutorial\floatingpoint.rst – Dalius Dobravolskas
