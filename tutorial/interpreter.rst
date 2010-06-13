@@ -28,7 +28,7 @@ terminalą::
 
    set path=%path%;C:\python26
 
-Įrašę bylos pabaigos simbolį (:kbd:`Control-D` Unix sistemose, :kbd:`Control-Z`
+Įrašę failo pabaigos simbolį (:kbd:`Control-D` Unix sistemose, :kbd:`Control-Z`
 Windows) Python'o komandinėje eilutėje išjungsite interpretatorių. Jei tai
 nesuveikia, galite išjungti interpretatorių surinkę : ``import sys; sys.exit()``.
 
@@ -37,16 +37,15 @@ Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Python
 įgalindamas vartotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
 Turbūt greičiausias būdas patikrinti ar komandinės eilutės redagavimas yra
 palaikomas - surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą -
-redagavimas įjungtas; įvadą į klavišus rasite priede: :ref:`tut-interacting`.
-Jei pyptelėjimo nesigirdi arba išvedama ``^P``, redagavimo palaikymas
+redagavimas įjungtas. Jei pyptelėjimo nesigirdi arba išvedama ``^P``, redagavimo palaikymas
 neįjungtas; galėsite tik trinti simbolius, toje pačioje eilutėje, naudodami
 Backspace klavišą.
 
 Interpretatoriaus darbas šiek tiek primena Unix apvalkalą: kai interpretatorius
 iškviečiamas prijungus standartinę įvestį prie TTY įrenginio, jis nuskaito ir
-vykdo komandas interaktyviai; kai iškviečiamas su bylos pavadinimo parametru
-arba byla pateikiama per standartinę įvestį, interpretatorius nuskaito ir įvykdo
-*scenarijų* esantį byloje.
+vykdo komandas interaktyviai; kai iškviečiamas su failo pavadinimo parametru
+arba failu pateikiamu per standartinę įvestį, interpretatorius nuskaito ir įvykdo
+*skriptą* esantį faile.
 
 Antras būdas paleisti interpretatorių yra ``python -c komanda [argumentai] ...``.
 Šiuo būdu paleistas interpretatorius įvykdys sakinius pateiktus *komanda*
@@ -54,20 +53,20 @@ parametre, analogiškai apvalkalo :option:`-c` parinkčiai. Kadangi Python'o
 sakiniuose dažnai būna tarpų ar kitų simbolių, kuriuos apvalkalas laiko
 specialiais, patartina visą *komandos* turinį apgaubti apostrofais.
 
-Kai kurie Python'o moduliai yra naudingi kaip scenarijai. Jie gali būti iškviesti
-su ``python -m modulis [argumentai] ...``. Ši eilutė įvykdys bylos *modulis*
-turinį taip, lyg būtumėte parašę tos bylos pilną vardą komandinėje eilutėje.
+Kai kurie Python'o moduliai yra naudingi kaip skriptai. Jie gali būti iškviesti
+su ``python -m modulis [argumentai] ...``. Ši eilutė įvykdys failo *modulis*
+turinį taip, lyg būtumėte parašę to failo pilną vardą komandinėje eilutėje.
 
-Atkreipkite dėmesį, kad ``python byla`` ir ``python <byla`` skiriasi. Pastaruoju
+Atkreipkite dėmesį, kad ``python failas`` ir ``python <failas`` skiriasi. Pastaruoju
 atveju, įvesties reikalavimas, pavyzdžiui kviečiant input() ar raw_input(), yra
-užpildomas iš *bylos*. Kadangi byla yra nuskaitoma dar prieš pradedant vykdyti
-scenarijų, bylos pabaiga bus rasta iškart. Pirmu atveju (kurio jūs dažniausiai
+užpildomas iš *failo*. Kadangi failas yra nuskaitomas dar prieš pradedant vykdyti
+skriptą, failo pabaiga bus rasta iškart. Pirmu atveju (kurio jūs dažniausiai
 ir norite), duomenys bus imami iš įrenginio, kuris yra sujungtas su standartine
 interpretatoriaus įvestimi.
 
-Kartais, kai vykdomas scenarijus, gali būti naudinga persijungti į interaktyvų
-režimą scenarijaus vykdymo pabaigoje. Tai galima padaryti su :option:`-i`
-parinktimi prieš scenarijų. (Šis būdas neveikia, jei scenarijus yra nuskaitomas
+Kartais, kai vykdomas skriptas, gali būti naudinga persijungti į interaktyvų
+režimą skripto vykdymo pabaigoje. Tai galima padaryti su :option:`-i`
+parinktimi prieš skriptą. (Šis būdas neveikia, jei skriptas yra nuskaitomas
 iš standartinės įvesties dėl tos pačios priežasties, kuri aprašyta praėjusioje
 pastraipoje.)
 
@@ -76,11 +75,11 @@ pastraipoje.)
 Argumentų perdavimas
 --------------------
 
-Kai pateikti, scenarijaus pavadinimas ir kiti argumentai yra perduodami
-scenarijui, naudojant ``sys.argv`` kintamąjį, eilučių sąrašo (angl.
+Kai pateikti, skripto pavadinimas ir kiti argumentai yra perduodami
+skriptui, naudojant ``sys.argv`` kintamąjį, eilučių sąrašo (ang.
 *list of strings*) pavidalu. Sąrašo ilgis ne mažesnis už vienetą; kai
-scenarijus ir argumentai neperduodami, ``sys.argv[0]`` bus tuščia eilutė. Kai
-scenarijaus vardas yra pateiktas kaip ``-`` (kas reiškia standartinę įvestį),
+skriptas ir argumentai neperduodami, ``sys.argv[0]`` bus tuščia eilutė. Kai
+skripto vardas yra pateiktas kaip ``-`` (kas reiškia standartinę įvestį),
 ``sys.argv[0]`` įgauna ``'-'`` reikšmę. Kai naudojama :option:`-c` *komanda*,
 ``sys.argv[0]`` reikšmė bus ``'-c'``. Jei naudojamas :option:`-m` *modulis*,
 ``sys.argv[0]`` reikšmė bus pilnas modulio vardas. Parinktys rastos po
@@ -107,7 +106,7 @@ nurodoma interpretatoriaus versija bei autorinių teisių pranešimas::
    >>>
 
 Tęsiamosios eilutės yra naudojamos įvedinėjant komandas užimančias daugiau nei
-vieną eilutę. Kaip pavyzdį galime naudoti šį :keyword:`if` sąlygos teiginį::
+vieną eilutę. Kaip pavyzdį galime naudoti šį :keyword:`if` sąlygos sakinį::
 
    >>> pasaulis_yra_plokscias = 1
    >>> if pasaulis_yra_plokscias:
@@ -129,9 +128,9 @@ Klaidų valdymas
 Kai įvyksta klaida, interpretatorius atspausdina klaidos pranešimą ir dėklo
 pėdsaką (angl. *stack trace*). Jei klaida įvyksta interaktyviajame režime,
 interpretatorius tiesiog grįžta į pirminį raginimą; jei įvestis buvo nuskaityta
-iš bylos, interpretatorius atspausdins dėklo pėdsaką ir baigs darbą grąžindamas
+iš failo, interpretatorius atspausdins dėklo pėdsaką ir baigs darbą grąžindamas
 atitinkamą (nelygų nuliui) būsenos kodą. Išimtys suvaldytos naudojant
-:keyword:`except` sakinį :keyword:`try` teiginyje, šiame kontekste nėra laikomos
+:keyword:`except` sakinį :keyword:`try` sakinyje, šiame kontekste nėra laikomos
 klaidomis. Kai kurios klaidos yra besąlygiškai lemtingos ir priverčia
 interpretatorių baigti darbą su klaidos būsena nelygia nuliui; prie tokių klaidų
 priskiriami vidiniai neatitikimai bei kai kurie atminties trūkumo atvejai. Visi
@@ -145,29 +144,29 @@ sukelia išimtį, kuri gali būti suvaldyta :keyword:`try` teiginiu.
 
 .. _tut-scripts:
 
-Python'o vykdomieji scenarijai
-------------------------------
+Python'o vykdomieji skriptai
+----------------------------
 
-BSD tipo Unix sistemose, Python'o scenarijai gali būti padaryti vykdomaisiais,
-taip pat, kaip apvalkalo scenarijai. Tam bylos pradžioje reikia pridėti tokią
+BSD tipo Unix sistemose, Python'o skriptai gali būti padaryti vykdomaisiais,
+taip pat, kaip apvalkalo skriptai. Tam failo pradžioje reikia pridėti tokią
 eilutę::
 
    #! /usr/bin/env python
 
 Kad ši eilutė veiktų, interpretatorius turi būti vartotojo kelyje
-(:envvar:`PATH`), o bylai turi būti suteikta vykdymo būsena. Pirmi du simboliai
-byloje privalo būti ``#!``. Kai kuriose platformose pirmoji eilutė turi baigtis
+(:envvar:`PATH`), o failui turi būti suteikta vykdymo būsena. Pirmi du simboliai
+faile privalo būti ``#!``. Kai kuriose platformose pirmoji eilutė turi baigtis
 Unix tipo eilutės pabaigos simboliu (``'\n'``), o ne Windows (``'\r\n'``).
 Atkreipkite dėmesį, kad grotelės ``#`` Python'e yra naudojamos kaip komentaro
 pradžios simbolis.
 
-Scenarijui vykdymo būseną galite suteikti pasinaudoję :program:`chmod` komanda::
+Skriptui vykdymo būseną galite suteikti pasinaudoję :program:`chmod` komanda::
 
-   $ chmod +x scenarijus.py
+   $ chmod +x skriptas.py
 
 Windows sistemose nėra „vykdomosios būsenos“ žymėjimo. Python'o diegimo programa
 automatiškai susieja ``.py`` rinkmenas su ``python.exe``, todėl spragtelėjus
-du kartus ant Python'o bylos, ji bus įvykdyta kaip scenarijus. Byla taip pat
+du kartus ant Python'o failai, jis bus įvykdytas kaip skriptas. Failas taip pat
 gali baigtis ``.pyw`` plėtiniu. Tokiu atveju terminalo langas nebus rodomas,
 kaip įprasta.
 
@@ -180,14 +179,14 @@ komentarą iš karto po ``#!`` eilute:
 
    # -*- coding: <koduotė> -*-
 
-Su šia deklaracija, visi simboliai byloje bus traktuojami, kaip turintys
+Su šia deklaracija, visi simboliai faile bus traktuojami, kaip turintys
 *koduotė* kodavimą, be to galėsite rašyti Unikodo simbolius tiesiogiai
 pasirinktoje koduotėje. Galimų koduočių sąrašą galite rasti Python'o bibliotekų
 rodyklėje, :mod:`codecs` skiltyje.
 
 Pavyzdys: norėdami rašyti Unikodo simbolius įskaitant ir Euro valiutos simbolį,
 galite naudoti ISO-8859-15 kodavimą, kur Euro simbolio eilės numeris yra 164.
-Šis scenarijus atspausdins reikšmę 8364 (Kodas atitinkantis Euro simbolį Unikode)
+Šis skriptas atspausdins reikšmę 8364 (Kodas atitinkantis Euro simbolį Unikode)
 ir baigs darbą::
 
    # -*- coding: iso-8859-15 -*-
@@ -195,46 +194,46 @@ ir baigs darbą::
    valiuta = u"€"
    print ord(valiuta)
 
-Jei jūsų teksto redaktorius turi galimybę išsaugoti bylas kaip ``UTF-8`` su
+Jei jūsų teksto redaktorius turi galimybę išsaugoti failas kaip ``UTF-8`` su
 UTF-8 *baitų eiliškumo žyme* (angl. *byte order mark, BOM*), tuomet galite
 naudoti šį būdą vietoj koduotės deklaracijos. IDLE redaktorius turi tokią
 galimybę, jei pasirinktas ``Options/General/Default Source Encoding/UTF-8``
 nustatymas. Atkreipkite dėmesį, kad senesnės Python'o laidos (2.2 ir ankstesnės)
 neatpažįsta šio parašo. Taip pat operacinės sistemos neatpažįsta BOM
-scenarijuose, kurie prasideda eilute su ``#!`` (naudojama tik Unix sistemose).
+skriptuose, kurie prasideda eilute su ``#!`` (naudojama tik Unix sistemose).
 
 Naudojant UTF-8 (su koduotės deklaracija ar BOM parašu), daugumos pasaulio kalbų
 simboliai gali būti naudojami, komentaruose ir simbolių eilutėse, vienu metu. Ne
 ASCII simboliai negali būti naudojami kintamųjų, funkcijų, klasių ir t.t.
 *varduose.* Ši galimybė yra palaikoma nuo Python'o 3 versijos. Kad visi simboliai
 būtų atvaizduoti tvarkingai, jūsų redaktorius turi atpažinti UTF-8 rinkmenas ir
-naudoti šriftą, palaikantį visus simbolius esančius byloje.
+naudoti šriftą, palaikantį visus simbolius esančius faile.
 
 .. _tut-startup:
 
-Interaktyvaus režimo paleidimo byla
------------------------------------
+Interaktyvaus režimo paleidimo failas
+-------------------------------------
 
 Naudojant Python'ą interaktyviai, gali būti naudinga įvykdyti kokias nors komandas
 kaskart paleidžiant interpretatorių. Tai atlikti galite pakeitę aplinkos
-kintamojo :envvar:`PYTHONSTARTUP` reikšmę į bylos, su jūsų paleidimo komandomis,
+kintamojo :envvar:`PYTHONSTARTUP` reikšmę į failo, su jūsų paleidimo komandomis,
 vardą. Šis būdas yra panašus į Unix apvalkalo :file:`.profile` galimybę.
 
 .. XXX This should probably be dumped in an appendix, since most people
    don't use Python interactively in non-trivial ways.
 
 Ši rinkmena yra nuskaitoma tik interaktyvių sesijų metu, bet ne tada, kai Python'as
-nuskaito komandas iš scenarijaus ar kai :file:`/dev/tty` yra pateiktas kaip
+nuskaito komandas iš skripto ar kai :file:`/dev/tty` yra pateiktas kaip
 konkretus įvesties šaltinis (nors šiuo atveju interpretatorius elgsis taip pat
-kaip ir interaktyviajame režime). Paleidimo bylos komandos yra vykdomos toje
-pačioje vardų srityje, kurioje vykdomos interaktyvios komandos, todėl bylos
+kaip ir interaktyviajame režime). Paleidimo failo komandos yra vykdomos toje
+pačioje vardų srityje, kurioje vykdomos interaktyvios komandos, todėl failo
 sukurti ar importuoti objektai gali būti naudojami iškart interaktyviojoje
-sesijoje. Šioje byloje taip pat galite keisti ir raginimus ``sys.ps1`` bei
+sesijoje. Šiame faile taip pat galite keisti ir raginimus ``sys.ps1`` bei
 ``sys.ps2``.
 
-Jei norite nuskaityti papildomas paleidimo bylas, galite tai padaryti
-globalioje paleidimo byloje. Pavyzdžiui: ``if os.path.isfile('.pythonrc.py'):
-execfile('.pythonrc.py')``. Jei norite naudoti paleidimo bylą scenarijuje,
+Jei norite nuskaityti papildomus paleidimo failus, galite tai padaryti
+globaliame paleidimo faile. Pavyzdžiui: ``if os.path.isfile('.pythonrc.py'):
+execfile('.pythonrc.py')``. Jei norite naudoti paleidimo failą skripte,
 turite tai aprašyti::
 
    import os
@@ -243,7 +242,7 @@ turite tai aprašyti::
        execfile(rinkmena)
 
 
-.. rubric:: Išnašos
+.. rubric:: Pastabos
 
 .. [#] Bėdos su GNU Readline paketu gali tam sutrukdyti.
 
