@@ -54,17 +54,17 @@ Vertėjai
 Čia surašyti asmenys, kurie prisidėjo prie kiekvieno skyriaus vertimo:
 
 * glossary.rst – Dalius Dobravolskas
-* tutorial\index.rst – Dalius Dobravolskas
-* tutorial\appetite.rst – Dalius Dobravolskas
-* tutorial\interpreter.rst – Armandas Jarušauskas
-* tutorial\introduction.rst – Adomas Paltanavičius
-* tutorial\controlflow.rst – Dalius Dobravolskas
-* tutorial\datastructures.rst – Adomas Paltanavičius, Dalius Dobravolskas
-* tutorial\modules.rst – sirex, Dalius Dobravolskas
-* tutorial\inputoutput.rst – Dalius Dobravolskas
-* tutorial\errors.rst – Dalius Dobravolskas
-* tutorial\classes.rst – Dalius Dobravolskas
-* tutorial\stdlib.rst – Dalius Dobravolskas
-* tutorial\stdlib2.rst – Dalius Dobravolskas
-* tutorial\whatnow.rst – Dalius Dobravolskas
-* tutorial\floatingpoint.rst – Dalius Dobravolskas
+* tutorial\\index.rst – Dalius Dobravolskas
+* tutorial\\appetite.rst – Dalius Dobravolskas
+* tutorial\\interpreter.rst – Armandas Jarušauskas
+* tutorial\\introduction.rst – Adomas Paltanavičius
+* tutorial\\controlflow.rst – Dalius Dobravolskas
+* tutorial\\datastructures.rst – Adomas Paltanavičius, Dalius Dobravolskas
+* tutorial\\modules.rst – sirex, Dalius Dobravolskas
+* tutorial\\inputoutput.rst – Dalius Dobravolskas
+* tutorial\\errors.rst – Dalius Dobravolskas
+* tutorial\\classes.rst – Dalius Dobravolskas
+* tutorial\\stdlib.rst – Dalius Dobravolskas
+* tutorial\\stdlib2.rst – Dalius Dobravolskas
+* tutorial\\whatnow.rst – Dalius Dobravolskas
+* tutorial\\floatingpoint.rst – Dalius Dobravolskas
