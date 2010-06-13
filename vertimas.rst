@@ -4,18 +4,12 @@
 Vertimas
 ********
 
-.. vertimas::
-
 Tikslas
 =======
 
 Tikslas yra labai paprastas: išversti kažkiek informacijos apie Python'ą
 į Lietuvių kalbą. Tikrai nesiekiama išversti visos Python'o dokumentacijos (bet
 jei taip ir atsitiks, tarkim per 50 metų, nematau nieko tame blogo).
-
-2009-03-01 – pradėtas versti Python'o vadovėlis (tutorial) ir terminų žodynėlis (glossary).
-
-2010-02-10 – pakeista vertimo tvarka
 
 Kaip prisidėti?
 ===============
@@ -50,15 +44,14 @@ Aš naudoju tokį būdą::
     hg clone http://bitbucket.org/ianb/virtualenv/
     python virtualenv/virtualenv.py pytut
     cd pytut
-    ./bin/sudo easy_install Sphinx
+    ./bin/easy_install Sphinx
     hg clone http://bitbucket.org/Dalius/python-tutorial-lt/
     ./bin/sphinx-build -b html python-tutorial-lt/ pytut
 
 Vertėjai
 ========
 
-Jei ruošiatės versti kažkurį failą prieš tai darydami pridėkite
-failo, kurį versite, vardą ir savo inicialus.
+Čia surašyti asmenys, kurie prisidėjo prie kiekvieno skyriaus vertimo:
 
 * glossary.rst – Dalius Dobravolskas
 * tutorial\index.rst – Dalius Dobravolskas
