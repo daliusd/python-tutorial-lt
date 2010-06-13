@@ -11,7 +11,7 @@ sprendime. Kur jūs turėtumėte eiti, kad išmoktumėte daugiau?
 Šis vadovėlis yra Python'o dokumentacijos dalis. Kai kurie kiti
 dokumentai esantys joje yra:
 
-* :ref:`library-index`:
+* `Python Library Reference <http://docs.python.org/library/>`__
 
   Jūs turite naršyti per šį vadovą, kuris pilnai (nors ir glaustai) aprašo
   tipus, funkcijas ir standartinės bibliotekos modulius. Standartinė
@@ -22,10 +22,10 @@ dokumentai esantys joje yra:
   Jei tiesiog peržvelgsite Library Reference dokumentą turėsite susidarę
   bendrą įspūdį, ką galima padaryti.
 
-* :ref:`install-index` paaiškina kaip instaliuoti išorinius modulius parašytus
+* `Installing Python Modules <http://docs.python.org/install/>`__ paaiškina kaip instaliuoti išorinius modulius parašytus
   kitų Python'o vartotojų.
 
-* :ref:`reference-index`: detalus Python'o sintaksės ir semantikos išaiškinimas.
+* `Python Reference Manual <http://docs.python.org/reference/>`__: detalus Python'o sintaksės ir semantikos išaiškinimas.
   Jis sunkiai skaitomas, bet čia rasite naudingos informacijos apie pačią
   kalbą.
 
