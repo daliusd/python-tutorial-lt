@@ -63,13 +63,13 @@ tipai yra :exc:`ZeroDivisionError`, :exc:`NameError` ir :exc:`TypeError`.
 Eilutė, kuri parašyta kaip išimties tipas, yra įtaisytos išimties,
 kuri įvyko, vardas. Tai galioja visoms įtaisytoms išimtims, bet
 nebūtinai tiesa vartotojo apibrėžtoms išimtims (nors tai ir yra
-naudingas susitartimas). Standartinių išimčių vardai yra
+naudingas susitarimas). Standartinių išimčių vardai yra
 įtaisyti identifikatoriai (ne rezervuoti raktažodžiai).
 
 Likusi eilutės dalis pateikia detalią informaciją priklausomai nuo
 išimties tipo ir kas sukėlė išimtį.
 
-Prieš einanti klaidos pranešimo dalis parodo kontekstą, kuriame įvyko
+Priešais einanti klaidos pranešimo dalis parodo kontekstą, kuriame įvyko
 išimtis dėklo pėdsakų (ang. traceback) forma. Bendrai jame yra dėklo
 pėdsakai nurodantys kodo eilutes, tačiau eilutės perskaitytos iš
 standartinės įvesties.
@@ -86,7 +86,7 @@ Programą galima parašyti taip, kad ji suvaldytų pasirinktas išimtis. Pažiū
 į žemiau esantį pavyzdį, kuris prašo vartotoją įvesti teisingą skaičių tol kol
 jis yra įvedamas, bet taip pat leidžia vartotojui nutraukti programą
 (naudojant :kbd:`Control-C` ar bet kokią kitą būdą, kurį palaiko operacinė sistema).
-Pastebėsime, kad vartotojo sugeneruotas nutraukimas yra signalizuojamas iškeliant
+Pastebėsime, kad vartotojo sugeneruotas nutraukimas yra signalizuojamas sukeliant
 :exc:`KeyboardInterrupt` išimtį::
 
    >>> while True:
@@ -129,7 +129,7 @@ Paskutiniame except paragrafe galima praleisti išimties vardą ir tai
 bus interpretuojama kaip bet kokia išimtis. Naudokite šią galimybę
 ypač atsargiai, nes taip galima paslėpti tikras programavimo
 klaidas! Tai taip pat galima naudoti klaidos pranešimo
-atspausdinimui ir tada vėl pakelti išimtį (taip leidžiant
+atspausdinimui ir tada vėl sukelti išimtį (taip leidžiant
 kvietėjui suvaldyti išimtį taip pat)::
 
    import sys
@@ -148,7 +148,7 @@ kvietėjui suvaldyti išimtį taip pat)::
 
 :keyword:`try` ... :keyword:`except` sakinys turi papildomą *else
 paragrafą*, kuris, jam esant, turi sekti po visų except paragrafų.
-Jis naudingas tuo atveju, jei try paragrafas nepakelia išimties.
+Jis naudingas tuo atveju, jei try paragrafas nesukelia išimties.
 Pavyzdžiui::
 
    for arg in sys.argv[1:]:
@@ -179,7 +179,7 @@ būtų galima pasiekti arba atspausdinti tiesiogiai nesikreipiant į
 Be to ``.args`` naudojimas yra nerekomenduotinas. Vietoje to, rekomenduojama
 perduoti vieną argumentą išimčiai (kas gali būti kortežas, jeigu reikia
 perduoti kelis argumentus) ir susieti jį su ``message`` atributu.
-Taip pat galima inicializuoti išimtį prieš ją pakeliant ir pridėti bet kokius
+Taip pat galima inicializuoti išimtį prieš ją sukeliant ir pridėti bet kokius
 norimus atributus::
 
    >>> try:
@@ -202,7 +202,7 @@ Jei išimtis turi argumentą, jis yra atspausdinamas kaip paskutinė
 pranešimo dalis nesuvaldytai išimčiai.
 
 Išimtys yra suvaldomos ne tik tada, kai jos iškart seka try paragrafe, bet taip
-pat jeigu jos įvyksta funkcijos viduje, kuri yra iškviesta try paragrade.
+pat jeigu jos įvyksta funkcijos viduje, kuri yra iškviesta try paragrafe.
 Pavyzdžiui::
 
    >>> def this_fails():
@@ -221,7 +221,7 @@ Pavyzdžiui::
 Išimčių Pakėlimas
 =================
 
-:keyword:`raise` sakinys leidžia programuotojui pakelti norimą išimtį.
+:keyword:`raise` sakinys leidžia programuotojui sukelti norimą išimtį.
 Pavyzdžiui::
 
    >>> raise NameError, 'HiThere'
@@ -229,14 +229,14 @@ Pavyzdžiui::
      File "<stdin>", line 1, in ?
    NameError: HiThere
 
-Pirmas :keyword:`raise` argumentas yra išimties, kurią norima pakelti, vardas.
+Pirmas :keyword:`raise` argumentas yra išimties, kurią norima sukelti, vardas.
 Papildomas antrasis argumentas nurodo išimties argumentą. Alternatyviai
 tą patį galima parašyti kaip ``raise NameError('HiThere')``.  Abi
 formos dirba gerai, bet atrodo, kad žmonėms pastaroji forma patinka labiau.
 
-Jeigu jums tik reikia sužinoti ar išimtis buvo pakelta bet jūs nenorite
+Jeigu jums tik reikia sužinoti ar išimtis buvo sukelta bet jūs nenorite
 jos suvaldyti, paprastesne :keyword:`raise` sakinio forma leidžia
-vėl pakelti išimtį::
+vėl sukelti išimtį::
 
    >>> try:
    ...     raise NameError, 'HiThere'
@@ -282,7 +282,7 @@ Tai pakeičia įprasta *args* atributo sukūrimą.
 
 Išimčių klasės gali apibrėžti bet ką, ką daro kitos klasės, bet dažniausiai
 būną paprastos, dažniausiai leidžiančios tik daugiau atributų saugoti
-informacijai apie klaidą. Kai kuriamas modulis, kuris gali pakelti kelias
+informacijai apie klaidą. Kai kuriamas modulis, kuris gali sukelti kelias
 skirtingas išimtis, dažna praktika yra sukurti bazinę klasę išimtims
 apibrėžtoms tame modulyje ir tada kitas išimčių klases paveldėti
 iš tos klasės::
@@ -318,7 +318,7 @@ iš tos klasės::
            self.next = next
            self.message = message
 
-Dauguma išimčių pavadinimas baigiasi "Error", taip kaip ir standarinės
+Dauguma išimčių pavadinimas baigiasi "Error", taip kaip ir standartinės
 išimtys.
 
 Dauguma standartinių modulių apibrėžia savo išimtis klaidų, kurios
@@ -348,7 +348,7 @@ sąlygomis. Pavyzdžiui::
 sakinį, nepaisant to ar išimtys įvyko ar ne. Jeigu išimtis
 įvyko :keyword:`try` paragrafe ir nebuvo suvaldyti nei :keyword:`except`
 paragrafe (arba jei ji įvyko :keyword:`except` arba :keyword:`else` paragrafuose),
-ji yra vėl pakeliama po :keyword:`finally` paragrafo įvykdymo.
+ji yra vėl sukeliama po :keyword:`finally` paragrafo įvykdymo.
 :keyword:`finally` paragrafas yra vykdomas ir tuo atveju, jei kitas
 :keyword:`try` sakinio paragrafas yra paliekamas įvykdžius :keyword:`break`,
 :keyword:`continue` ar :keyword:`return` sakinį.  Šiek tiek
@@ -379,8 +379,8 @@ tame pačiame :keyword:`try` sakinyje dirba nuo Python 2.5 versijos)::
    TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
 Kaip matote :keyword:`finally` paragrafas yra įvykdomas bet kokiu atveju.
-:exc:`TypeError` pakelta dalinant dvi eilutes nėra suvaldoma :keyword:`except`
-paragrafe todėl vėl pakeliama po to kai :keyword:`finally` paragrafas
+:exc:`TypeError` sukelta dalinant dvi eilutes nėra suvaldoma :keyword:`except`
+paragrafe todėl vėl sukeliama po to kai :keyword:`finally` paragrafas
 baigia savo darbą.
 
 Realiame pasaulyje, :keyword:`finally` paragrafas praverčia atlaisvinant

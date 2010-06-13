@@ -352,7 +352,7 @@ kokie bandymai naudoti failo objektą automatiškai nepavyks. ::
 Gera praktika yra naudoti :keyword:`with` raktažodį dirbant su failų
 objektais. Šio raktažodžio privalumas yra tas, kad failas yra
 tinkamai uždaromas, kai jo naudojimas yra baigiamas, net jei pakeliui
-yra iškeliama išimtis. Be to tai daug trumpiau negu rašyti
+yra sukeliama išimtis. Be to tai daug trumpiau negu rašyti
 :keyword:`try`\ -\ :keyword:`finally` blokus::
 
     >>> with open('/tmp/workfile', 'r') as f:

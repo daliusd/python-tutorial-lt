@@ -355,7 +355,7 @@ Terminų žodynas
    iteratorius
       Objektas, kuris reprezentuoja duomenų srautą. Pakartotini iteratoriaus
       metodo :meth:`next` kvietimai grąžina sekantį narį sraute. Kai daugiau
-      duomenų nebėra, išmetama :exc:`StopIteration` išimtis. Nuo šios
+      duomenų nebėra, sukeliama :exc:`StopIteration` išimtis. Nuo šios
       akimirkos iteratoriaus objektas yra išnaudotas ir bet kuris tolesnis
       :meth:`next` metodo kvietimas tiesiog išmes :exc:`StopIteration` vėl.
       Iteratoriai taip pat turi turėti :meth:`__iter__` metodą, kuris sugrąžina

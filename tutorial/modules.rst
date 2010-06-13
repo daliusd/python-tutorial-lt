@@ -442,7 +442,7 @@ būti pakuotės submodulis (ar subpakuotė), koks nors vardas,
 arba koks nors vardas apibrėžtas pakuotėje (funkcija, klasė ar kintamasis).
 ``import`` sakinys pirmiausia testuoja ar narys yra apibrėžtas pakuotėje
 ir jeigu ne tada daro prielaidą, kad narys yra modulis ir bando jį pakrauti.
-Jeigu ir tada jo neranda, tada iškelia išimtis :exc:`ImportError`.
+Jeigu ir tada jo neranda, tada sukelia išimtis :exc:`ImportError`.
 
 Priešingai, kai naudojama sintaksė ``import item.subitem.subsubitem``, kiekvienas
 narys išskyrus paskutinį privalo būti pakuotė. Paskutinis narys gali

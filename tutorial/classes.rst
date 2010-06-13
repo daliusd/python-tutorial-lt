@@ -108,7 +108,7 @@ modulyje pavadintame :mod:`__builtin__`.
 
 Lokali vardų erdvė funkcijai yra sukuriama kai funkcija yra iškviečiama ir
 yra ištrinama (tiesa sakant, "pamirštama" yra tinkamesnis žodis apibūdinti
-tam kas iš tikro atsitinka) kai funkcija sugrįžta arba iškelia išimtį, kuri nėra
+tam kas iš tikro atsitinka) kai funkcija sugrįžta arba sukelia išimtį, kuri nėra
 suvaldoma funkcijoje. Žinoma, kiekvienas rekursyvūs šaukimai turi
 savo lokalią vardų erdvę.
 
@@ -326,7 +326,7 @@ Spausdins ``hello world`` begale kartų.
 Kas konkrečiai atsitinka, kai metodas yra iškviečiamas? Jūs galėjote
 pastebėti, kad ``x.f()`` (viršuje) buvo iškviestas be argumentų, nors
 apibrėžtis  metodui :meth:`f` argumentą ir nurodė. Kas atsitiko argumentui?
-Žinoma Pythonas išmeta išimtį kai funkcija, kuriai reikia argumentų yra
+Žinoma Pythonas sukelia išimtį kai funkcija, kuriai reikia argumentų yra
 iškviečiama be jų --- netgi jei argumentas nėra naudojamas...
 
 Tiesa sakant, atsakymą jūs galbūt jau nuspėjote: metodų ypatybė yra
@@ -692,7 +692,7 @@ apima ir suvienodina Python'ą. Už scenos, raktažodžio :keyword:`for` reiški
 iškviečia :func:`iter` konteinerio objektui.  Funkcija sugrąžina
 iteratoriaus objektą kuris apibrėžią metodą :meth:`next`, kuris pasiekia
 konteinerio elementus po vieną vienu metu. Kai daugiau elementų nėra,
-metodas :meth:`next` iškelia išimtį :exc:`StopIteration` kuri pasako
+metodas :meth:`next` sukelia išimtį :exc:`StopIteration` kuri pasako
 raktažodžiui :keyword:`for` pabaigtį ciklą. Šis pavyzdys rodo
 kaip visa tai veikia::
 

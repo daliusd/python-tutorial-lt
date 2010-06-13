@@ -110,7 +110,7 @@ Sąrašo Naudojimas Dėklams
 
 Sąrašo metodai leidžia sąrašą naudoti kaip dėklą (ang. stack)a, kur
 paskutinis pridėtas elementas yra pirmiausia išimamas („paskutinį-į, pirmas-iš“).
-Norėdami pridėti elementą į deklą naudokite :meth:`append`. Norėdami išimtį
+Norėdami pridėti elementą į deklą naudokite :meth:`append`. Norėdami išimti
 elementą iš dėklo viršaus naudokite meth:`pop` nenurodydami jo indekso. Pavyzdžiui::
 
    >>> stack = [3, 4, 5]
@@ -204,7 +204,7 @@ suskaičiuoti sumą nuo 1 iki 10::
    55
 
 Jei sąraše yra tik vienas elementas, jo reikšmė yra sugrąžinama. Jei seka
-tuščia iškeliama išimtis.
+tuščia sukeliama išimtis.
 
 Galima perduoti trečia arugmentą nurodantį pradinę reikšmę. Tokiu atveju
 pradinė reikšmė sugrąžinama tuščiai sekai, o funkcija iš pradžių
