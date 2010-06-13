@@ -1,8 +1,8 @@
 .. _tut-intro:
 
-*******************
-Apetito sužadinimas
-*******************
+****************
+Apetitui sukelti
+****************
 
 Jeigu jūs dirbate kompiuteriu po kiek laiko pastebėsite, kad yra užduočių, kurias
 jūs norėtumėte automatizuoti. Pavyzdžiui, jūs galite norėti atlikti teksto pakeitimo
@@ -11,12 +11,13 @@ nuotraukų kiekį ypatinga tvarka. Galbūt jūs norėtumėte parašyti mažą du
 specializuotą grafinę programą arba paprastą žaidimą.
 
 Jeigu jūs esate profesionalus programuotojas, jums tikriausiai reikia
-dirbti su keliomis C/C++/Java bibliotekomis, bet įprastas darbo ciklas rašai/kompiliuoji/testuoti/perkompiliuoji jums yra per lėtas. Galbūt jūs rašote testavimo įrankį tokiai
+dirbti su keliomis C/C++/Java bibliotekomis, bet įprastas darbo ciklas
+rašai/kompiliuoji/testuoti/perkompiliuoji jums yra per lėtas. Galbūt jūs rašote testavimo įrankį tokiai
 bibliotekai ir testinio kodo rašymas yra varginanti užduotis. Arba galbūt jūs
 parašėte programą, kuri galėtų naudoti praplėtimo kalbą ir jūs nenorite sukurti
-visos naudos kalbos jūsų aplikacijai.
+visos naujos kalbos jūsų aplikacijai.
 
-Python'as yra kalba jums.
+Python'as yra kalba kaip tik jums.
 
 Jūs, žinoma, galite rašyti Unix'o arba Windows'ų skriptus kai kurioms šių
 užduočių, bet skriptai tinka failų operacijoms ir tekstinių duomenų keitimui,
@@ -37,8 +38,8 @@ dauguma dalykų padaromi taip pat lengvai Python'u kaip ir paminėtomis kalbomis
 Python'as leidžia jūsų programas išskaidyti į modulius, kurie gali būti panaudoti
 kitose Python'o programose. Python'e yra daug standartinių modulių, kuriuos jūs
 galite naudoti kaip pagrindą savo programoms arba kaip pavyzdį pradedant mokytis
-programuoti Python'u. Kai kuriu iš šių modulių leidžia atlikti failų operacijas,
-sisteminius kvietimus, socket'ų operacijas arba netgi grafines vartotojo aplinkas naudojant
+programuoti Python'u. Kai kurie iš šių modulių leidžia atlikti failų operacijas,
+sisteminius kvietimus, lizdų (ang. socket) operacijas arba netgi grafines vartotojo aplinkas naudojant
 bibliotekas kaip Tk.
 
 Python'as yra interpretuojama kalba, o tai reiškia kad jūs galite sutaupyti daug  laiko,
