@@ -27,28 +27,27 @@ kalba.
 Šis vadovėlis neformaliai supažindina skaitytoją su pagrindinėmis Python'o
 kalbos koncepcijomis ir savybėmis. Jums tikrai padės, jei po ranka
 turėsite Python'o interpretatorių, bet visi pavyzdžiai yra išsamūs, todėl
-vadovėlį galima skaityti tiesiog taip.
+vadovėlį galima ir tiesiog skaityti.
 
-*Vertėjo pastaba:* Daugumą pavyzdžių galite išbandyti http://py.sandbox.lt,
-jei negalite ar nenorite instaliuoti Python'o interpretatoriaus dabar.
-
-Jei jums reikia standartinių objektų ir modulių aprašymo, žiūrėkite *Python Library
-Reference* dokumentą. *Python Reference Manual* formaliai aprašo kalbą.
-Jei norite rašyti plėtinius C ar C++ skaitykite *Extending and Embedding
-the Python Interpreter and Python/C API Reference*. Taip pat yra keletas
-knygų aprašančių Python'ą išsamiai.
+Jei jums reikia standartinių objektų ir modulių aprašymo, žiūrėkite
+`Python Library Reference <http://docs.python.org/library/>`__ dokumentą.
+`Python Reference Manual <http://docs.python.org/reference/>`__ formaliai
+aprašo kalbą. Jei norite rašyti plėtinius C ar C++ skaitykite
+`Extending and Embedding the Python Interpreter <http://docs.python.org/extending/>`__ ir
+`Python/C API Reference <http://docs.python.org/c-api/>`__. Taip pat galima
+įsigyti knygų aprašančių Python'ą išsamiai.
 
 *Vertėjo pastaba:* Dokumentų pavadinimai neišversti į lietuvių kalbą, nes
-dokumentų lietuvių kalba nėra.
+dokumentų lietuvių kalba šiuo metu nėra (2010-06-13).
 
 Šis vadovėlis nėra bandymas išsamiai aprašyti kiekvieną savybę ar netgi
 kiekvieną dažnai naudojamą savybę. Čia aprašytos Python'o savybės, kurias
 verta paminėti, ir vadovėlis leis suprasti kalbos pobūdį ir stilių. Perskaitę
 jį jūs galėsite skaityti ir rašyti Python'o modulius ir programas, ir būsite
 pasiruošę išmokti daugiau apie Python'o bibliotekos modulius aprašytus
-*Python Library Reference*.
+*Python Library Reference* dokumente.
 
-Taip pat verta permesti akimis: :ref:`glossary`.
+Taip pat verta permesti akimis :ref:`Terminų Žodyną <glossary>`.
 
 .. toctree::
 
