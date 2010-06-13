@@ -199,7 +199,7 @@ Senas eilučių formatavimas
 --------------------------
 
 Operatorius ``%`` taip pat gali būti naudojamas eilučių formatavimui.
-Jis interpretuoja argumentą panašiai kaip :cfunc:`sprintf`\ funkcija.
+Jis interpretuoja argumentą panašiai kaip C funkcija `sprintf`.
 Pavyzdžiui::
 
    >>> import math

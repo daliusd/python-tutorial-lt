@@ -13,7 +13,7 @@ objektinio programavimo modelį. Dėl elegantiškos Python'o sintaksės, dinami�
 tipizavimo ir interpretatorius, Python'as yra ideali kalba scenarijų rašymui
 ir greitam aplikacijų kūrimui įvairiose srityse įvairioms platformoms.
 
-Python'o interpretatorių ir plačią standartinę biblioteką galima nemokamai
+Python'o interpretatorių ir didelę standartinę biblioteką galima nemokamai
 parsisiųsti kodo arba binariniu formatu visoms pagrindinėms platformoms
 iš Python'o puslapio http://www.python.org/. Taip pat Python'ą galima laisvai
 platinti. Šiame puslapyje taip rasite informacijos apie kitus nemokamus
@@ -64,5 +64,4 @@ Taip pat verta permesti akimis: :ref:`glossary`.
    stdlib.rst
    stdlib2.rst
    whatnow.rst
-   interactive.rst
    floatingpoint.rst

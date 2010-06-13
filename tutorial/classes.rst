@@ -746,7 +746,7 @@ metodu :meth:`next`.  Jei klasė apibrėžia metodą :meth:`next`, tada
 Generatoriai
 ============
 
-:term:`Generator`\iai yra paprastas ir galingas įrankis iteratorių kūrimui.
+:term:`Generatoriai <generatorius>` yra paprastas ir galingas įrankis iteratorių kūrimui.
 Jie aprašomi kaip paprasčiausios funkcijos, bet naudojamas raktažodžio
 :keyword:`yield` reiškinys kiekvienąkart kai jiems reikia grąžinti
 duomenis. Kaskart kai iškviečiamas metodas :meth:`next`, generatorius

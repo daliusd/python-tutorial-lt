@@ -26,15 +26,15 @@ Terminų žodynas
       Įrankis pateikiamas kaip :file:`Tools/scripts/2to3`. Žiūrėti
       :ref:`2to3-reference`.
 
-   abstrakčioji bazinė klasė / abstract base class
-      Abstrakčioji bazinė klasė (ABC) papildo neišreikštinį tipizavimą suteikdama
-      būdą apibrėžti klasės šabloninę sąsają kai kitų technikų (pvz.: :func:`hasattr`)
-      naudojimas yra nepatogus. Python'e yra daug standartinių ABC duomenų
-      struktūroms (:mod:`collections` modulyje), skaičiams (:mod:`numbers`
+   abstrakčioji bazinė klasė
+      Abstrakčioji bazinė klasė (ABC, ang. abstract base class) papildo neišreikštinį
+      tipizavimą suteikdama būdą apibrėžti klasės šabloninę sąsają kai kitų technikų
+      (pvz.: :func:`hasattr`) naudojimas yra nepatogus. Python'e yra daug standartinių
+      ABC duomenų struktūroms (:mod:`collections` modulyje), skaičiams (:mod:`numbers`
       modulyje), srautams (:mod:`io` modulyje). Galima kurti savo ABC
       naudojant :mod:`abc` modulį.
 
-   argumentas / argument
+   argumentas
       Reikšmė perduota funkcijai arba metodui ir priskirta lokaliam
       kintamajam su vardu funkcijoje. Funkcija arba metodas gali
       turėti tiek pozicinius argumentas tiek vardinius argumentus
@@ -46,7 +46,7 @@ Terminų žodynas
       Betkoks reiškinys gali būti naudojamas argumentų sąraše ir apskaičiuota
       reikšmė yra perduodama lokaliam kintamajam.
 
-   atributas / attribute
+   atributas
       Reikšmė susieta su objektu, kuri yra pasiekiama pagal vardą naudojant
       taško išraišką. Pvz.: jei objektas *o* turi atributą *a* tai jis
       gali būti pasiektas kaip *o.a*.
@@ -56,25 +56,27 @@ Terminų žodynas
       Dictator For Life sutrumpinimas), taip pat žinomas kaip `Guido van Rossum
       <http://www.python.org/~guido/>`_, Python'o kūrėjas.
 
-   baitinis kodas / bytecode
+   baitinis kodas
       Python'o kodas yra kompiliuojamas į baitinį kodą – vidinę Python'o programos
       reprezentaciją interpretatoriuje. Python'o baitinis kodas yra išsaugojamas
       ``.pyc`` ir ``.pyo`` failuose, kad to paties failo vykdymas būtų greitesnis
       vykdant antrą kartą (išvengiama perkompiliavimo iš kodo į baitinį kodą).
-      Sakoma, kad "tarpinė kalba" yra vykdoma :term:`virtualiojoje mašinoje`
+      Sakoma, kad "tarpinė kalba" yra vykdoma :term:`virtualiojoje mašinoje <virtualioji mašina>`
       kuri vykdo mašininį kodą kiekvienam baitiniam kodui.
 
-   klasė / class
+   klasė
         Šablonas, kuris naudojamas kurti vartotojo apibrėžtus objektus.
         Klasės apibrėžimas dažniausiai susideda iš metodų apibrėžimų,
         kurie operuoja su tos klasės objektais.
 
-   klasikinė klasė / classic class
+   klasikinė klasė
         Bet kuri klasė, kuri nėra paveldėta iš :class:`object`. Taip
         pat žiūrėto :term:`naujo stiliaus klasė`. Klasikinės klasės bus
         išimtos iš Python'o 3.0.
 
-   keitimas / coercion
+   keitimas
+        (Ang. coercion)
+
         Neišreikštinis vieno tipo objekto konvertavimas į kitą tipą per operaciją,
         kurioje naudojami du to paties tipo argumentai. Pavyzdžiui
         ``int(3.15)`` konvertuoja slankiojo kablelio skaičių į sveiką skaičių ``3``, bet
@@ -87,7 +89,7 @@ Terminų žodynas
         (net jei argumentų tipai yra suderinami) turėtų būti normalizuojami programuotojo,
         pvz.: ``float(3)+4.5`` užuot tiesiog rašius ``3+4.5``.
 
-   kompleksinis skaičius / complex number
+   kompleksinis skaičius
       Pažįstamos realiųjų skaičių sistemos plėtinys, kuriame visi skaičiai
       yra išreiškiami kaip realios ir menamosios dalių suma. Menamieji
       skaičiai yra realieji skaičiai padauginti iš menamojo vieneto (kvadratinė
@@ -99,7 +101,9 @@ Terminų žodynas
       yra pakankamai sudėtinga matematikos tema. Jei nesate tikras ar jums jų reikia,
       galite ramiai juos ignoruoti.
 
-   konteksto valdiklis / context manager
+   konteksto valdiklis
+      (Ang. context manager)
+
       Objektas, kuris valdo aplinką sakinyje su :keyword:`with` konstrukcija.
       Objekte reikia apibrėžti :meth:`__enter__` ir :meth:`__exit__` metodus.
       Daugiau informacijos :pep:`343`.
@@ -109,13 +113,13 @@ Terminų žodynas
       „CPython“ naudojamas, kai reikia atskirti šį įgyvendinimą nuo kitų, pvz.:
       Jython arba IronPython.
 
-   dekoratorius / decorator
+   dekoratorius
       Funkcija, kuri grąžina kitą funkciją, dažniausiai naudojant
       funkcijos transformacijos sintaksę ``@wrapper``. Dažnas
       pavyzdys dekoratoriams yra :func:`classmethod` ir :func:`staticmethod`.
 
       Dekoratoriaus sintaksė yra sukurta tik dėl patogumo. Pavyzdžiui
-      šie du funkcijos apibrėžimai yra lygiaverčiai:
+      šie du funkcijos apibrėžimai yra lygiaverčiai::
 
          def f(...):
              ...
@@ -125,7 +129,7 @@ Terminų žodynas
          def f(...):
              ...
 
-   deskriptorius / descriptor
+   deskriptorius
       Bet kuris *naujo stiliaus* objektas, kuris apibrėžia metodus :meth:`__get__`,
       :meth:`__set__` arba :meth:`__delete__`. Kai klasės atributas yra
       deskriptorius, jo specialūs metodai kviečiami tuo metu, kai bandoma
@@ -138,20 +142,26 @@ Terminų žodynas
 
       Daugiau informacijos apie deskriptorius rasite :ref:`descriptors`.
 
-   žodynas / dictionary
+   žodynas
+      (Ang. dictionary)
+
       Asociatyvus masyvas, kur raktai yra atvaizduoti į reikšmes. Klasės
       :class:`dict` naudojimas labai panašus į klasės :class:`list` naudojimą,
       bet raktais gali būti bet kokie objektai turintys :meth:`__hash__` funkciją,
       ne tik sveiki skaičiai.
 
-   dokumentavimo eilutė / docstring
+   dokumentavimo eilutė
+      (Ang. docstring)
+
       Eilutės objektas, kuris yra pirmas reiškinys klasėje, funkcijoje ar
       modulyje. Nors šis objektas yra ignoruojamas, kai kodas yra
       vykdomas, kompiliatorius jį atpažįsta ir priskiria :attr:`__doc__`
       atributui. Kadangi jis yra pasiekiamas naudojant introspekciją, tai
       yra įprasta vieta objektų dokumentavimui.
 
-   neišreikštinis tipizavimas / duck-typing
+   neišreikštinis tipizavimas
+      (Ang. duck-typing)
+
       Python'iškas programavimo stilius, kuris nustato objekto tipą analizuojant
       jo metodus arba atributus užuot analizuojant objekto santykį su tam tikru
       tipu (jei versti tiesiogiai iš anglų kalbos, tai būtų anties tipizavimas
@@ -171,20 +181,24 @@ Terminų žodynas
       egzistavimu. Ši technika kontrastuoja su :term:`LBYL` stiliaus
       programavimu dažnu daugelyje kitų programavimo kalbų (pvz.: C).
 
-   reiškinys / expression
+   reiškinys
+      (Ang. expression)
+
       Sintaksės gabalas, kuris gali būti apskaičiuotas. Kitais žodžiais,
       reiškinys yra tokių elementų kaip vardai, atributų pasiekimai, operatorių
       arba funkcijų kvietimai, junginys, kurio visi nariai grąžina reikšmę.
       Kitaip, nei daugelyje kitų programavimo kalbų, ne visos Python'o
-      konstrukcijos yra reiškiniai. Dar būna :term:`sakiniai`, kurie negali
+      konstrukcijos yra reiškiniai. Dar būna :term:`sakiniai <sakinys>`, kurie negali
       būti naudojami kaip reiškiniai. Pvz.: raktiniai žodžiai :keyword:`print`
       arba :keyword:`if`.  Priskyrimai taip pat yra sakiniai, o ne reiškiniai.
 
-   išplėtimo modulis / extension module
+   išplėtimo modulis
+      (Ang. extension module)
+
       Modulis parašytas C arba C++ naudojant Python'o C API skirtas bendradarbiavimui tarp
       Python'o branduolio ir vartotojo kodo.
 
-   funkcija / function
+   funkcija
       Sakinių grupė, grąžinanti reikšmę. Funkcijai gali būti perduoti
       argumentai, kurie gali būti naudojami skaičiavimuose. Taip pat
       žiūrėti terminus :term:`argumentas` ir :term:`metodas`.
@@ -206,13 +220,15 @@ Terminų žodynas
          >>> __future__.division
          _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192)
 
-   šiukšlių surinkimas / garbage collection
+   šiukšlių surinkimas
+      (Ang. garbage collection)
+
       Atminties atlaisvinimo procesas kai ji nebenaudojama. Python'as
       atlieka šiukšlių surinkimą naudodamas rodyklių skaičiavimą
       ir ciklišką šiukšlių surinkiklį, kuris sugeba aptikti ir
       nutraukti rodyklių ciklus.
 
-   generatorius / generator
+   generatorius
       Funkcija, kuri grąžina iteratorių. Ji panaši į normalią funkciją
       išskyrus tai, kad jos reikšmės yra grąžinamos naudojant
       :keyword:`yield` sakinį vietoje :keyword:`return` sakinio.  Generatoriaus
@@ -224,7 +240,7 @@ Terminų žodynas
 
       .. index:: single: generator expression
 
-   generatorinis reiškinys / generator expression
+   generatorinis reiškinys
       Reiškinys, kuris grąžina generatorių. Jis panašus į normalų reiškinį
       po kurio seka :keyword:`for` reiškinys apibrėžiantis ciklo
       kintamuosius, ribas ir papildomą :keyword:`if` reiškinį. Kombinuotas
@@ -236,9 +252,11 @@ Terminų žodynas
    GIL
       Žiūrime :term:`globalus interpretatoriaus užrakinimas`.
 
-   globalus interpretatoriaus užrakinimas / global interpreter lock
+   globalus interpretatoriaus užrakinimas
+      (Ang. global interpreter lock)
+
       Python'o gijų naudojamas užrakinimas, kuris garantuoja, kad
-      tik viena gija vykdo :term:`CPython` :term:`virtualiąją mašiną`
+      tik viena gija vykdo :term:`CPython` :term:`virtualiąją mašiną <virtualioji mašina>`
       vienu metu. Tai supaprastina CPython įgyvendinimą užtikrinant,
       kad du procesai negali pasiekti tos pačios atminties vienu metu.
       Viso interpretatoriaus užrakinimas leidžia interpretatoriui
@@ -249,7 +267,9 @@ Terminų žodynas
       nebuvo sėkmingas, nes nukentėdavo greitis dažnai pasitaikančiose
       vieno-procesoriaus mašinose.
 
-   maišomas / hashable
+   maišomas
+      (Ang. hashable)
+
       Objektas yra *maišomas* jei jo maišos reikšmė niekada nepasikeičia
       per jo gyvavimo laiką (tam reikia :meth:`__hash__` metodo) ir jis
       gali būti palygintas su kitais objektais (tam reikia :meth:`__eq__`
@@ -272,14 +292,18 @@ Terminų žodynas
       pavyzdinis kodas tiems, kurie nori sukurti multi-platforminę GUI
       aplikaciją.
 
-   nekintamas / immutable
+   nekintamas
+      (Ang. immutable)
+
       Objektas su fiksuota reikšme. Nekintamais objektais gali būti skaičiai,
       eilutės ir kortežai. Tokie objektai negali būti keičiami. Turi būti
       sukurtas naujas objektas, jei norime sukurti kitokią reikšmę. Jie yra
       svarbūs situacijose, kur reikia konstantinės maišos reikšmės, pvz.: rakto
       žodynui.
 
-   sveikųjų skaičių dalyba / integer division
+   sveikųjų skaičių dalyba
+      (Ang. integer division)
+
       Matematinė dalyba numetant liekaną. Pvz.: reiškinys ``11/4`` apskaičiuojamas
       kaip ``2``, kai tuo tarpu realiųjų skaičių dalyboje būtų grąžinta
       ``2.75``.  Taip pat dar vadinama *grindų dalyba*.
@@ -292,7 +316,7 @@ Terminų žodynas
       skaičių dalyba gali būti nurodoma priverstinai naudojant ``//`` operatorių
       vietoje ``/`` operatoriaus.  Taip pat žiūrėkite :term:`__future__`.
 
-   interaktyvus / interactive
+   interaktyvus
       Python'as turi interaktyvų interpretatorių, o tai reiškia, kad
       sakinius ir reiškinius galima įvesti interpretatoriaus
       raginime, iškart juos įvykdyti ir pamatyti rezultatą. Tiesiog
@@ -301,16 +325,17 @@ Terminų žodynas
       įrankis išbandyti naujas idėjas arba analizuoti modulius
       (prisiminkite ``help(x)``).
 
-   interpretuojamas / interpreted
-      Python is an interpreted language, as opposed to a compiled one,
-      though the distinction can be blurry because of the presence of the
-      bytecode compiler.  This means that source files can be run directly
-      without explicitly creating an executable which is then run.
-      Interpreted languages typically have a shorter development/debug cycle
-      than compiled ones, though their programs generally also run more
-      slowly.  See also :term:`interactive`.
+   interpretuojamas
+      Python'as yra interpretuojama kalba, o ne kompiliuojama, nors
+      skirtumas gali būti ir nepastebimas dėl baitinio kodo
+      kompiliatoriaus. Tai reiškia, kad kodo failai gali būti
+      vykdomi tiesiogiai nekuriant vykdomųjų failų, kurie vėliau
+      turi būti paleisti. Interpretuojamos kalbos dažniausiai
+      padeda greičiau programuoti ir derinti, negu dirbant su
+      kompiliuojančiomis kalbomis, tačiau įprastai jos yra
+      lėtesnės. Žiurime taip pat :term:`interaktyvus`.
 
-   iteruojamas / iterable
+   iteruojamas
       Objektas, kuris gali grąžinti savo narius po vieną.
       Iteruojamo objekto pavyzdys galėtų būti bet kuris sekos tipas
       (pvz.: :class:`list`, :class:`str`, ir :class:`tuple`) ir kai kurie
@@ -327,7 +352,7 @@ Terminų žodynas
       ciklui.  Taip pat žiūrėti: :term:`iteratorius`, :term:`seka`, ir
       :term:`generatorius`.
 
-   iteratorius / iterator
+   iteratorius
       Objektas, kuris reprezentuoja duomenų srautą. Pakartotini iteratoriaus
       metodo :meth:`next` kvietimai grąžina sekantį narį sraute. Kai daugiau
       duomenų nebėra, išmetama :exc:`StopIteration` išimtis. Nuo šios
@@ -346,7 +371,9 @@ Terminų žodynas
 
       Daugiau informacijos galima rasti :ref:`typeiter`.
 
-   vardinis argumentas / keyword argument
+   raktinis argumentas
+      (Ang. keyword argument)
+
       Argumentas prieš kurį parašoma  ``variable_name=`` kvietime.
       Kintamojo vardas nurodo lokalų kintamąjį funkcijoje, kuriai
       perduodama reikšmė. ``**`` naudojamas vardinių argumentų priėmimui
@@ -363,7 +390,9 @@ Terminų žodynas
       :term:`EAFP` stiliui ir gali būti atpažintas pagal didelį
       :keyword:`if` sakinių kiekį.
 
-   sąrašas / list
+   sąrašas
+      (Ang. list)
+
       Standartinė Python'o :term:`seka`. Nepaisant pavadinimo jis artimesnis kitų
       programavimo kalbų masyvams, nei rodyklėmis susietais sąrašais, nes
       priėjimas prie elementų yra O(1).
@@ -375,11 +404,13 @@ Terminų žodynas
       aibės nuo 0 iki 255. :keyword:`if` sakinys yra papildomas. Jei jis bus praleistas
       duotame pavyzdyje bus apdoroti visi elementai iš aibės nuo 0 iki 255.
 
-   atvaizdis / mapping
+   atvaizdis
+      (Ang. mapping)
+
       Konteinerio objektas (pvz.: :class:`dict`) kuris palaiko reikšmių paiešką
       pagal raktus naudojant specialų metodą :meth:`__getitem__`.
 
-   metaklasė / metaclass
+   metaklasė
       Klasės klasė. Klasės apibrėžimas sukuria klasės vardą, klasės žodyną
       ir bazinių klasių sąrašą. Metaklasė yra atsakinga už šių trijų
       argumentų paėmimą ir klasės sukūrimą. Dauguma objektiškai orientuotų
@@ -393,18 +424,22 @@ Terminų žodynas
 
       Daugiau informacijos gali rasti :ref:`metaclasses`.
 
-   metodas / method
+   metodas
       Funkcija, kuri apibrėžiama klasės viduje. Jei ji iškviečiama kaip
       klasės egzemplioriaus atributas, metodas gaus egzemplioriaus objektą
-      kaip pirmąjį savo argumentą (žiūrime :term:`argument`). Dažniausiai
+      kaip pirmąjį savo argumentą (žiūrime :term:`argumentas`). Dažniausiai
       jis vadinamas ``self``.
       Taip pat žiūrėti :term:`funkcija` and :term:`įdėtinė sritis`.
 
-   kintamas / mutable
+   kintamas
+      (Ang. mutable)
+
       Kintamas objektas gali pakeisti savo reikšmę bet išlaikyti :func:`id`.
       Taip pat žiūrėti :term:`nekintamas`.
 
-   vardinis kortežas / named tuple
+   vardinis kortežas
+      (Ang. named tuple)
+
       Bet kuri į kortežą panaši klasė, kurios indeksuojami elementai gali
       būti pasiekti naudojant vardinius atributus. Pvz.: :func:`time.localtime`
       sugrąžina į kortežą panašų objektą, kur *year* (metai) gali būti
@@ -418,7 +453,9 @@ Terminų žodynas
       suteikia papildomas galimybes, pvz.: save-dokumentuojančią išraišką
       kaip ``Employee(name='Jonas', title='programuotojas')``.
 
-   vardų erdvė / namespace
+   vardų erdvė
+      (Ang. namespace)
+
       Vieta, kur laikomi kintamieji. Vardų erdvės yra įgyvendintos kaip
       žodynai. Egzistuoja lokali, globali ir įtaisytoji erdvės bei
       vidinė erdvė objektuose (arba metoduose). Vardų erdvės
@@ -431,14 +468,18 @@ Terminų žodynas
       yra įgyvendintos :mod:`random` ir :mod:`itertools` moduliuose
       atitinkamai.
 
-   įdėtinė sritis / nested scope
+   įdėtinė sritis
+      (Ang. nested scope)
+
       Galimybė kreiptis į kintamuosius ribotame apibrėžime. Pavyzdžiui,
       funkcija apibrėžta kitos funkcijos viduje gali kreiptis
       į kintamąjį išorinėje funkcijoje. Atkreipkite dėmesį, kad įdėtinė
       sritis dirbs tik su rodyklėms, bet net priskyrimams, kurie yra visada
       rašomi artimiausioje srityje.
 
-   naujojo stiliaus klasė / new-style class
+   naujo stiliaus klasė
+      (Ang. new-style class)
+
       Bet kuri klasė, kuri paveldi iš :class:`object`. Į tai įeina visi
       standartiniai tipai kaip :class:`list` ar :class:`dict`.  Tik
       naujo stiliaus klasės gali naudoti naujas visapusiškas Python'o
@@ -447,12 +488,12 @@ Terminų žodynas
 
       Daugiau informacijos galima rasti :ref:`newstyle`.
 
-   objektas / object
+   objektas
       Bet kuris duomenų vienetas su būsena (atributų ar reikšmės)
       ir apibrėžtu elgesiu (metodais). Taip pat pirmine bazine
-      klase, jei tai  :term:`naujo stiliaus klasė`class`.
+      klase, jei tai :term:`naujo stiliaus klasė`.
 
-   pozicinis argumentas / positional argument
+   pozicinis argumentas
       Argumentai priskirti lokaliems vardams funkcijoje ar metode
       nustatant jų eilę pagal tai kaip jie buvo kviečiami.
       ``*`` yra naudojamas kai reikia priimti kelis pozicinius
@@ -464,7 +505,7 @@ Terminų žodynas
       seniai, kai 3 versija dar buvo tolimoje ateityje). Taip pat
       trumpinama „Py3k“.
 
-   Python'iškas / Pythonic
+   Python'iškas
       Idėja arba kodo gabalas, kuris atitinka daugumą Python'o kalbos idiomų
       užuot įgyvendina kodą naudojant kitų kalbų koncepcijas. Pavyzdžiui
       dažna Python'o idioma yra pereiti per visus iteruojamo objekto elementus
@@ -480,13 +521,15 @@ Terminų žodynas
          for piece in food:
              print piece
 
-   rodyklių skaičius / reference count
-      Rodyklių skaičius į objektą. Kai rodyklių skaičius nukrenta iki
-      nulio, jo užimama atmintis yra atlaisvinama. Rodyklių skaičiavimas
+   nuorodų skaičius
+      (Ang. reference count)
+
+      Nuorodų skaičius į objektą. Kai nuorodų skaičius nukrenta iki
+      nulio, jo užimama atmintis yra atlaisvinama. Nuorodų skaičiavimas
       dažniausiai yra nematomas Python'o kode, bet tai yra svarbiausias
       elementas :term:`CPython` įgyvendinime.  :mod:`sys` modulis
       apibrėžia :func:`getrefcount` funkciją, kurią programuotojai gali
-      iškviesti norėdami gauti rodyklių skaičių į tam tikrą objektą.
+      iškviesti norėdami gauti nuorodų skaičių į tam tikrą objektą.
 
    __slots__
       Apibrėžimas naujo stiliaus klasėje (žr. :term:`naujo stiliaus klasė`),
@@ -496,7 +539,9 @@ Terminų žodynas
       situacijoms, kai reikalingas didelis egzempliorių skaičius, o atmintį
       reikia išnaudoti efektyviai.
 
-   seka / sequence
+   seka
+      (Ang. sequence)
+
       :term:`iteruojamas` objektas, kuris palaiko efektyvų elementų pasiekimą
       per indeksus naudojant specialų :meth:`__getitem__` metodą ir apibrėžia
       :meth:`len` metodą, kuris sugrąžina sekos ilgį.
@@ -504,26 +549,32 @@ Terminų žodynas
       :class:`tuple` ir :class:`unicode`. Atkreipkite dėmesį į tai,
       kad :class:`dict` taip pat palaiko :meth:`__getitem__` ir :meth:`__len__`,
       bet yra atvaizdis, o ne seka, nes paieškai naudojami
-      :term:`nekintami` raktai, o ne sveikieji skaičiai.
+      :term:`nekintami <nekintamas>` raktai, o ne sveikieji skaičiai.
 
-   atkarpa / slice
-      Objektas, kuris paprastai turi dalį :term:`sekos`. Atkarpa paprastai
+   atkarpa
+      (Ang. slice)
+
+      Objektas, kuris paprastai turi dalį :term:`sekos <seka>`. Atkarpa paprastai
       sukuriama naudojant ``[]`` išraišką su dvitaškiais tarp skaičių, kai keli
       paduodami, pvz.: ``variable_name[1:3:5]``. Laužtiniai skliaustai
       naudoja klasės :class:`slice` objektus (arba senesnėse versijose
       :meth:`__getslice__` ir :meth:`__setslice__` metodus).
 
-   specialus metodas / special method
+   specialus metodas
       Metodas, kurį iškviečia Python'as, kad atliktų tam tikro tipo operaciją
       (pvz.: sudėtį). Tokie metodai turi vardus prasidedančius ir pasibaigiančius
       dvigubu pabraukimo brūkšniu. Specialūs metodai yra dokumentuoti: :ref:`specialnames`.
 
-   sakinys / statement
+   sakinys
+      (Ang. statement)
+
       Sakinys yra kodo bloko dalis. Sakinys yra arba :term:`reiškinys` arba
       viena iš kelių konstrukcijų su raktiniu žodžiu (pvz.: :keyword:`if`,
       :keyword:`while` arba :keyword:`print`).
 
-   eilutė su trigubomis kabutėmis / triple-quoted string
+   eilutė su trigubomis kabutėmis
+      (Ang. triple-quoted string)
+
       Eilutė, kuri yra apsupta trimis kabutėmis (") arba apostrofais (').
       Nors jose nėra jokio funkcionalumo, kurio negalima būtų padaryti
       su paprastomis eilutėmis, jos yra naudingos dėl kelių priežasčių.
@@ -531,17 +582,17 @@ Terminų žodynas
       ženklo ir leidžia sujungti kelias eilutes be pratęsimo simbolio.
       Dėl to jos labai naudingos dokumentavimo eilutėse.
 
-   tipas / type
+   tipas
       Python'o objekto tipas nustato koks tai yra objektas. Kiekvienas objektas
       turi tipą. Objekto tipas pasiekiamas kaip :attr:`__class__` atributas
       arba gali būti nustatytas naudojant ``type(obj)``.
 
-   virtualioji mašina / virtual machine
+   virtualioji mašina
       Kompiuteris apibrėžtas programine įranga. Python'o virtualioji
-      mašina vykdo :term:`baitinį kodą`, sugeneruotą baitinio kodo
-      kompiliatoriaus.
+      mašina vykdo :term:`baitinį kodą <baitinis kodas>`, sugeneruotą
+      baitinio kodo kompiliatoriaus.
 
-   Python'o Zen / Zen of Python
+   Python'o Zen
       Python'o dizaino principų ir filosofijų sąrašas kuris padeda suprasti
       ir naudoti kalbą. Sąrašą galima rasti surinkus "``import this``"
       interaktyviajame raginime.
