@@ -301,8 +301,8 @@ Galimos trys formos, kurios gali būti kombinuojamos.
 
 .. _tut-defaultargs:
 
-Standarinės Argumentų Reikšmės
-------------------------------
+Numatytos Argumentų Reikšmės
+----------------------------
 
 Naudingiausia forma yra numatytų reikšmių naudojimas vienam ar daugiau
 argumentų. Taip sukuriama funkcija, kuri gali būti iškviesta nurodant
