@@ -24,7 +24,7 @@ Sąrašo duomenų tipas pateikia naudingų metodų. Štai jie:
 .. method:: list.extend(L)
    :noindex:
 
-   Išplečia sąrašą kitu duotu sąrašu -- pridėdamas visus duoto sąrašo ``L```
+   Išplečia sąrašą kitu duotu sąrašu -- pridėdamas visus duoto sąrašo ``L``
    elementus į sąrašo pabaigą. Tai tas pats kaip ir ``a[len(a):] = L``.
 
 
@@ -50,8 +50,7 @@ Sąrašo duomenų tipas pateikia naudingų metodų. Štai jie:
    nėra nurodytas, ``a.pop()`` pašalina ir sugrąžina paskutinį sąrašo elementą.
    (Laužtiniai skliausteliai aplink *i* metodo aprašyme nurodo, kad parametras
    yra nebūtinas, o ne kad jūs turite naudoti laužtinius skliaustelius
-   toje vietoje. Jūs sutiksite šį būdą dažnai naudojama Python'o Bibliotekos
-   Informacijoje.)
+   toje vietoje. Jūs sutiksite šį būdą dažnai naudojama Python'o dokumentacijoje.)
 
 
 .. method:: list.index(x)
@@ -108,10 +107,10 @@ Sąrašo Naudojimas Dėklams
 .. sectionauthor:: Ka-Ping Yee <ping@lfw.org>
 
 
-Sąrašo metodai leidžia sąrašą naudoti kaip dėklą (ang. stack)a, kur
+Sąrašo metodai leidžia sąrašą naudoti kaip dėklą (ang. stack), kur
 paskutinis pridėtas elementas yra pirmiausia išimamas („paskutinį-į, pirmas-iš“).
 Norėdami pridėti elementą į deklą naudokite :meth:`append`. Norėdami išimti
-elementą iš dėklo viršaus naudokite meth:`pop` nenurodydami jo indekso. Pavyzdžiui::
+elementą iš dėklo viršaus naudokite :meth:`pop` nenurodydami jo indekso. Pavyzdžiui::
 
    >>> stack = [3, 4, 5]
    >>> stack.append(6)
@@ -184,7 +183,7 @@ jei norime suskaičiuoti kelis kubus::
 
 Galima perduoti daugiau negu vieną seką --- funkcija tada privalo
 turėti tiek argumentų kiek yra perduodama sekų. Tada funkcijai perduodami
-argumentai iš kiekvienos sekos, arba ``None``, jei kuri nors seka trumpesnė,
+argumentai iš kiekvienos sekos, arba ``None``, jei kuri nors seka trumpesnė.
 Pavyzdžiui::
 
    >>> seq = range(8)
@@ -423,7 +422,7 @@ Aibės
 =====
 
 Python'e taip yra duomenų tipas *aibėms*. Aibė yra nesurušiuotų
-elementų rinkinys, kuriame nėra duplikuotų elmeentų. Įprastai
+elementų rinkinys, kuriame nėra duplikuotų elementų. Įprastai
 aibės naudojamos buvimo aibėje tikrinimui ir dvigubų
 narių pašalinimui. Aibės objektai taip pat palaiko
 matematines operacijas kaip sąjunga, sankirta,
@@ -461,8 +460,8 @@ skirtumas ar simetriškas skirtumas.
 Žodynai
 =======
 
-Kitas naudingas duomenų tipas Python'e yra *žodynas* (žr.
-:ref:`typesmapping`). Kitose kalbose žodynai vadinami
+Kitas naudingas duomenų tipas Python'e yra *žodynas*. Kitose
+kalbose žodynai vadinami
 "asociatyviąją atmintimi" arba "asociatyviaisiais masyvai".
 Skirtingai nuo sekų, kurios yra indeksuojamos skaičiais,
 žodynai indeksuojami naudojant *raktus*, kuriais gali būti
@@ -475,7 +474,7 @@ Jūs negalite naudoti sąrašų raktams, kadangi sąrašai gali būti
 modifikuojami vietoje naudojant indekso priskyrimą, atkarpų
 priskyrimus arba metodus kaip :meth:`append` ir :meth:`extend`.
 
-Žodynus geriausia įsivaizduoti kaip nesutvarkytą *raktas: reikšmė* porų aibę,
+Žodynus geriausia įsivaizduoti kaip nesutvarkytą *raktas:reikšmė* porų aibę,
 kur reikalaujama, kad raktas būti žodyne unikalus. Tuščia figūrinių skliaustelių
 pora ``{}`` sukuria tuščia žodyną. Norėdami sukurti žodyną
 su pradinėmis reikšmėmis tarp figūrinių skliaustelių surašysite raktas:reikšmė poras
@@ -533,8 +532,8 @@ poras naudojant vardinius argumentus::
 
 .. _tut-loopidioms:
 
-Perėjimo Technikos
-==================
+Iteravimo Technikos
+===================
 
 Norint pereiti per žodyną, raktas ir jį atitinkantį reikšmė
 gali būti gauta vienu metu naudojant :meth:`iteritems` metodą. ::
@@ -598,7 +597,7 @@ kuri sugrąžina naują surūšiuotą sąrašą (bet originalų sąrašą paliek
 Daugiau apie Sąlygas
 ====================
 
-Sąlygos naudojamos ``while`` ir ``if`` sakiniuose gali būti
+Sąlygose naudojamose ``while`` ir ``if`` sakiniuose gali būti
 naudojami operatoriai (ne tik palyginimai).
 
 Palyginimo operatoriai ``in`` ir ``not in`` tikrina ar reikšmė
@@ -620,7 +619,7 @@ skliausteliai gali padėti išreikšti norimą kompoziciją.
 Loginiai operatoriai ``and`` ir ``or`` yra taip pavadinami *trumpos-grandinės*
 operatoriais: jų argumentai yra įvertinami iš kairės į dešinę, ir įvertinimas
 sustabdomas kai tik rezultatas yra nustatomas. Pavyzdžiui, jei ``A`` ir ``C`` yra
-tiesa, bet ``B`` yra netiesa, tai ``A and B and C`` nevertine ``C`` reikšmės.
+tiesa, bet ``B`` yra netiesa, tai ``A and B and C`` nevertina ``C`` reikšmės.
 Kai naudojamos bendros, o ne loginės, reikšmės, trumpos-grandinės operatorių
 rezultatas yra paskutinis įvertintas argumentas.
 
@@ -653,7 +652,7 @@ Jei visi sekos nariai vienodi, tada sekos laikomos lygiomis.
 Jeigu viena seka yra kitos sekos pradžia, tai trumpesnioji
 seka yra mažesnė. Leksikografinė tvarka eilutėms naudoją ASCII
 koduotę atskiroms raidėms. Keletas palyginimo pavyzdžių
-tarp to paties tipo sekų:
+tarp to paties tipo sekų::
 
    (1, 2, 3)              < (1, 2, 4)
    [1, 2, 3]              < [1, 2, 4]
