@@ -18,10 +18,10 @@ galima laikyti reikiamą privačių duomenų kiekį.
 Jei naudosime C++ terminologiją, visi klasės nariai (taip pat duomenys)
 yra *vieši*, visos klasės funkcijos yra *virtualios*. Taip pat
 neegzistuoja specialūs konstruktoriai ar destruktoriai. Lygiai taip
-pat kaip Modula-3 neegzistuoja sutrumpinimo norint pasiekti objekto
-narius iš jo metodo: metodinė funkcija yra apibrėžiama naudojant
+pat kaip Modula-3 neegzistuoja sutrumpinimas norint pasiekti objekto
+narius iš jo metodo: metodo funkcija yra apibrėžiama naudojant
 pirmą argumentą, kuris nurodo objektą, ir šis argumentas visada
-paduodamas kviečiant funkciją. Kaip Smalltalk pačios klasės yra
+paduodamas kviečiant funkciją. Kaip ir Smalltalk pačios klasės yra
 objektai, arba platesne žodžio prasme: Python'e visi duomenų tipai
 yra objektai. Tai suteikia importavimo ir pervadinimo semantiką.
 Skirtingai nuo C++ ir Modula-3, standartiniai tipai gali būti
@@ -41,7 +41,7 @@ terminologiją, nes jos objektiškų-orientiškumo semantika
 artimesnė Python'ui negu C++, bet aš nesitikiu, kad daug skaitytojų
 yra apie ją girdėję).
 
-Kiekvienas objektas yra individualus, yra keletas vardų (skirtingose vietose)
+Kiekvienas objektas yra individualus, bet keletas vardų (skirtingose vietose)
 gali nurodyti į tą patį objektą. Kitose kalbose tai vadinama susitapatinimu.
 Tai dažniausiai nėra įvertinama iš pirmo žvilgsnio ir netgi gali būti
 saugiai ignoruojama, kai dirbama su paprastais nekintamais tipais (skaičiais,
@@ -78,7 +78,7 @@ funkcijoje. Tam tikra prasme objekto atributų aibė taip pat suformuoja
 vardų erdvę. Svarbiasias dalykas, kurį reikia suprasti apie vardų
 erdves, kad nėra visiškai jokio ryšio tarp vardų skirtingose vardų
 erdvėse. Pvz.: du skirtingi moduliai gali apibrėžti tą pačią funkciją
-"maksimizuoti"a --- tam kad vartotojai nesusimaišytų, modulio
+"maksimizuoti" --- tam kad vartotojai nesusimaišytų, modulio
 vartotojai turėtų pridėti modulio vardą prieš funkciją.
 
 Tarp kitko, aš naudoju žodį *atributas* kiekvienam vardui po taško ---
@@ -112,13 +112,13 @@ tam kas iš tikro atsitinka) kai funkcija sugrįžta arba sukelia išimtį, kuri
 suvaldoma funkcijoje. Žinoma, kiekvienas rekursyvūs šaukimai turi
 savo lokalią vardų erdvę.
 
-*Sritis* yra tekstinis regionas Python'o programoje, kuri vardų erdvę
+*Sritis* yra tekstinis regionas Python'o programoje, kur vardų erdvė
 yra tiesiogiai pasiekiama. "Tiesiogiai pasiekiama" šiuo atveju reiškia,
-kad neapribotas nuorodą į vardą bando surasti vardą vardų erdvėje.
+kad neapribotos nuorodos į vardą bando surasti vardą vardų erdvėje.
 
 Nors sritys yra apibrėžtos statiškai, jos naudojamos dinamiškai. Bet kuriuo
-vykdymo momentu egzistuoja bent trys vidinės sritys, kurių vardų erdvė
-yra tiesiogiai pasiekiama: vidinė sritis, kurioje ieškoma
+vykdymo momentu egzistuoja bent trys vidinės sritys, kurių vardų erdvės
+yra tiesiogiai pasiekiamos: vidinė sritis, kurioje ieškoma
 pirmiausia, saugo lokalius vardus; vardų sritys bet kuriai funkcijai,
 kurios yra ieškomos nuo artimiausios uždarančios srities; vėliau ieškoma
 vidurinėje srityje, kurioje laikomi dabartinio modulio globalūs vardai.
@@ -140,13 +140,13 @@ funkcijos sritis yra apibrėžta modulyje yra to modulio vardų erdvė,
 nesvarbu iš kur ar kokiu vardu ta funkcija yra kviečiama. Iš kitus
 pusės, vardų paieška yra atliekama dinamiškai vykdymo metu ---
 tačiau kalbos apibrėžimas juda link statinio vardų nustatymo
-"kompiliavimo metu", taigi nepasitikėkite dinamišku vardu nustatymu!
+"kompiliavimo metu", taigi nepasitikėkite dinamišku vardų nustatymu!
 (Tiesa sakant, lokalūs kintamieji jau dabar nustatinėjami statiškai.)
 
-Specialus Python'o veiksmas yra, kad jei sakinyje nenaudojamas :keyword:`global`,
+Ypatinga Python'e yra tai, kad jei sakinyje nenaudojamas :keyword:`global`,
 tada priskyrimas vykdomas vidinėje srityje. Priskyrimai nekopijuoja
 duomenų --- jei tik susieja vardą su objektu. Tas pats galioja
-ir trynimui: sakinys ``del x`` pašalina ``x`` susiejimą lokalios sritied vardų erdvėje.
+ir trynimui: sakinys ``del x`` pašalina ``x`` susiejimą lokalios srities vardų erdvėje.
 Tiesa sakant, visos operacijos kurios pristato naujus vardus naudoja lokalią sritį:
 ypač, importavimo sakiniai ir funkcijų apibrėžtys susieja modulį ar funkcijos vardą
 toje lokalioje srityje. (Raktažodis :keyword:`global` sakinyje gali būti naudojamas
