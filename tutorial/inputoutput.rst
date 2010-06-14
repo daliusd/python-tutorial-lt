@@ -31,14 +31,14 @@ naudoti metodą :meth:`str.format`.
 
 Žinoma, išlieka vienas klausimas: kaip konvertuoti reikšmes į eilutes?
 Laimei Python'as turi būdą reikšmes paversti eilutėmis: perduokite
-reikšmę funkcijoms: func:`repr` arba :func:`str`.
+reikšmę funkcijoms: :func:`repr` arba :func:`str`.
 
 Funkcijos :func:`str` paskirtis yra sugražinti reikšmę, kurią galėtų perskaityti
 žmogus, tuo tarpu :func:`repr` paskirtis yra sugeneruoti reprezentaciją,
 kurią galėtų perskaityti interpretatorius (arba jei tokias formos
-nėra grąžintų :exc:`SyntaxError` klaidą). Objekams, kurie neturi žmogui
+nėra grąžintų :exc:`SyntaxError` klaidą). Objektams, kurie neturi žmogui
 skaitomos formos, :func:`str` sugrąžins tokią pačią reikšmę kaip :func:`repr`.
-Dauguma reikšmių, kaip kad skaičiai ar struktūros kaip sąrašai ar žodynai,
+Dauguma reikšmių, kaip kad skaičiai, struktūros, sąrašai ar žodynai,
 turi tą pačia reprezentaciją abiems funkcijoms. Eilutės ir slankaus kablelio
 skaičiai --- turi dvi skirtingas reprezentacijas.
 
@@ -108,7 +108,7 @@ Egzistuoja panašūs metodai :meth:`ljust` ir :meth:`center`. Šie metodai
 nieko nerašo --- jie tiesiog sugrąžina eilutę. Jei paduota eilutė
 yra per ilga, ji nėra sutrumpinama, bet grąžinama nepakeista. Tai žinoma
 sugadins jūsų išdėstymą, bet tai geriau negu sutrumpinta eilutė (dėl ko
-būtų rodoma neteisinga reikšmė). Jeigu ju tenkina, kad eilute bus sutrumpinta
+būtų rodoma neteisinga reikšmė). Jeigu jus tenkina, kad eilute bus sutrumpinta
 tai galite atlikti kirpdami, pvz.: ``x.ljust(n)[:n]``.
 
 Yra kitas metodas :meth:`zfill`, kuris užpildo skaitines reikšmes nuliais
@@ -191,10 +191,6 @@ naudojant '**' užrašą::
 Tai ypač patogu naudoti kartu su įtaisyta funkcija :func:`vars`, kuri
 sugrąžina žodyną, kuriame laikomi visi lokalūs kintamieji.
 
-Pilną eilučių formatavimo naudojant metodą :meth:`str.format` apžvalgą rasite
-:ref:`formatstrings`.
-
-
 Senas eilučių formatavimas
 --------------------------
 
@@ -210,9 +206,6 @@ Kadangi :meth:`str.format` yra pakankamai naujas, dauguma Python'o kodo vis
 dar naudoja ``%`` operatorių. Tačiau, kadangi šis seno stiliau formatavimas
 ilgainiui iš kalbos bus pašalintas rekomenduojama naudoti
 :meth:`str.format`.
-
-Daugiau informacijos galima rasti :ref:`string-formatting` dalyje.
-
 
 .. _tut-files:
 
@@ -265,7 +258,7 @@ argumentas. Jeigu *size* ura praleidžiamas arba neigiamas, tada perskaitomas
 visas failo turinys ir sugrąžinamas. Tačiau, jei failas yra dukart didesnis negu
 yra atminties jūsų mašinoje, tai jau jūsų problema. Kitu atveju daugiausiai
 *size* baitų yra perskaitoma ir sugrąžinama. Jeigu pasiekiamas failo galas
-``f.read()`` sugrąžinas tuščią eilutę (``""``). ::
+``f.read()`` sugrąžina tuščią eilutę (``""``). ::
 
    >>> f.read()
    'This is the entire file.\n'
@@ -276,7 +269,7 @@ yra atminties jūsų mašinoje, tai jau jūsų problema. Kitu atveju daugiausiai
 yra paliekamas eilutės gale ir jo ten nebus tik tuo atveju, jei paskutinė
 eilutė neturi eilutės pabaigos simbolio. Dėl to sugrąžinta reikšmė tampa
 aiški, jei ``f.readline()`` sugrąžina tuščią eilutę, reiškia failo pabaiga yra
-pasiekta. Tuo tarpu tuščia eilutė nurodo ``'\n'`` --- eilutė, kurioje yra
+pasiekta. Tuo tarpu tuščią eilutę nurodo ``'\n'`` --- eilutė, kurioje yra
 tik naujos eilutės simbolis. ::
 
    >>> f.readline()
@@ -331,10 +324,10 @@ tai naudojama reikšmė 0, t.y. nuo failo pradžios::
 
    >>> f = open('/tmp/workfile', 'r+')
    >>> f.write('0123456789abcdef')
-   >>> f.seek(5)     # Go to the 6th byte in the file
+   >>> f.seek(5)     # Eik prie 6-to failo baito
    >>> f.read(1)
    '5'
-   >>> f.seek(-3, 2) # Go to the 3rd byte before the end
+   >>> f.seek(-3, 2) # Eik prie 3-io baito nuo galo
    >>> f.read(1)
    'd'
 
@@ -372,7 +365,7 @@ Failų objektai turi kelis papildomus metodus, kaip kad :meth:`isatty` ir
 .. index:: module: pickle
 
 Eilutes yra paprasta rašyti ir skaityti iš failo. Skaitines reikšmes
-reikalauja šiek tiek daugiau pastangu, kadangi :meth:`read` metodas grąžina
+reikalauja šiek tiek daugiau pastangų, kadangi :meth:`read` metodas grąžina
 tik eilutes, kurias po to reikia perduoti funkcijoms kaip kad :func:`int`,
 kurios gavusios eilutę ``'123'`` grąžina skaitinę reikmę 123. Tačiau,
 jeigu jums reikia saugoti sudėtingesnius duomenų tipus kaip sąrašus,
