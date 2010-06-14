@@ -29,7 +29,7 @@ kur pirmiausiai buvo surasta klaida. Klaida yra sukelta ar bent jau
 nustatyta ties komanda, kuri yra aprašyta prieš rodyklę. Pavyzdyje
 klaida rasta raktažodyje :keyword:`print`, nes prieš jį
 trūksta dvitaškio (``':'``). Failo vardas ir eilutės numeris
-yra atspausdinami, kad jūs žinotumėte, kur žiūrėto, jei klaida
+yra atspausdinami, kad jūs žinotumėte, kur žiūrėti, jei klaida
 įvyko vykdant skriptą.
 
 .. _tut-exceptions:
@@ -37,12 +37,12 @@ yra atspausdinami, kad jūs žinotumėte, kur žiūrėto, jei klaida
 Išimtys
 =======
 
-Net nei sakinys ar reiškinys yra sintaksiškai teisingi, tai gali sukelti
+Net jei sakinys ar reiškinys yra sintaksiškai teisingi, tai gali sukelti
 klaidą, kai juos bandoma įvykdyti. Klaidos, kurios nustatomos vykdymo
 metu yra vadinamos *išimtimis* ir yra besąlygiškai neišvengiamos: jūs
-netrukus išmoksite kad jas suvaldyti Python'o programose. Tačiau dauguma
+netrukus išmoksite kaip jas suvaldyti Python'o programose. Tačiau dauguma
 išimčių nėra suvaldomos programoje ir baigiasi klaidos pranešimu
-kaip parodyti čia::
+kaip parodyta čia::
 
    >>> 10 * (1/0)
    Traceback (most recent call last):
@@ -74,9 +74,6 @@ išimtis dėklo pėdsakų (ang. traceback) forma. Bendrai jame yra dėklo
 pėdsakai nurodantys kodo eilutes, tačiau eilutės perskaitytos iš
 standartinės įvesties.
 
-:ref:`bltin-exceptions` išvardintos įtaisytos išimtys ir jų prasmė.
-
-
 .. _tut-handling:
 
 Išimčių Valdymas
@@ -85,7 +82,7 @@ Išimčių Valdymas
 Programą galima parašyti taip, kad ji suvaldytų pasirinktas išimtis. Pažiūrėkime
 į žemiau esantį pavyzdį, kuris prašo vartotoją įvesti teisingą skaičių tol kol
 jis yra įvedamas, bet taip pat leidžia vartotojui nutraukti programą
-(naudojant :kbd:`Control-C` ar bet kokią kitą būdą, kurį palaiko operacinė sistema).
+(naudojant :kbd:`Control-C` ar bet kokį kitą būdą, kurį palaiko operacinė sistema).
 Pastebėsime, kad vartotojo sugeneruotas nutraukimas yra signalizuojamas sukeliant
 :exc:`KeyboardInterrupt` išimtį::
 
@@ -218,7 +215,7 @@ Pavyzdžiui::
 
 .. _tut-raising:
 
-Išimčių Pakėlimas
+Išimčių Sukėlimas
 =================
 
 :keyword:`raise` sakinys leidžia programuotojui sukelti norimą išimtį.
@@ -255,7 +252,7 @@ vėl sukelti išimtį::
 Vartotojų apibrėžtos Išimtys
 ============================
 
-Programos gali sukurti savo išimtys sukurdamos naujas išimčių klases.
+Programos gali sukurti savo išimtis sukurdamos naujas išimčių klases.
 Išimtys įprastai turėtų būti paveldėtos iš :exc:`Exception` klasės (tiesiogiai
 ar netiesiogiai). Pavyzdžiui::
 
@@ -346,7 +343,7 @@ sąlygomis. Pavyzdžiui::
 
 *finally paragrafas* yra vykdomas visada prieš paliekant :keyword:`try`
 sakinį, nepaisant to ar išimtys įvyko ar ne. Jeigu išimtis
-įvyko :keyword:`try` paragrafe ir nebuvo suvaldyti nei :keyword:`except`
+įvyko :keyword:`try` paragrafe ir nebuvo suvaldyta nei :keyword:`except`
 paragrafe (arba jei ji įvyko :keyword:`except` arba :keyword:`else` paragrafuose),
 ji yra vėl sukeliama po :keyword:`finally` paragrafo įvykdymo.
 :keyword:`finally` paragrafas yra vykdomas ir tuo atveju, jei kitas
