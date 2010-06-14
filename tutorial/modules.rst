@@ -6,7 +6,7 @@ Moduliai
 
 Jei išjungsite Python interpretatorių ir vėliau vėl jį įjungsite, visi jūsų
 aprašai (funkcijos ir kintamieji), aprašyti interpretatoriuje, dings. Todėl,
-jei ketinate rašyti sudėtingesnę programą, geriau naudotis teksto redaktoriumi,
+jei ketinate rašyti sudėtingesnę programą, geriau naudotis teksto redaktoriumi
 kintamųjų ir funkcijų aprašymui, kuriuos vėliau galėsite panaudoti
 interpretatoriuje. Failas, kuriame saugomas jūsų paruoštas kodas, vadinamas
 *skriptu*. Programai didėjant, tikriausiai kils poreikis išskaidyti ją keliuose
@@ -18,7 +18,7 @@ Python'as gali nuskaityti jūsų kodo aprašus iš failo ir suteikia galimybę
 panaudoti kiekvieną aprašytą struktūrą panaudoti kitame skripte ar
 interpretatoriuje. Toks failas vadinamas *moduliu*: apibrėžtos struktūros iš
 vieno modulio, gali būti *importuotos* į kitus modulius arba į jūsų pagrindinį
-modulį (vykdomasis skriptas arba interaktyvus interpretatoriaus režimas, kur
+modulį (vykdomąjį skriptą arba interaktyvaus interpretatoriaus režimą, kur
 galite operuoti kintamaisiais).
 
 Modulis yra paprastas failas, kuriame saugomas Python'o kodas. Failo vardas
@@ -108,7 +108,7 @@ apibrėžia modulis::
    >>> fib(500)
    1 1 2 3 5 8 13 21 34 55 89 144 233 377
 
-Ši forma importuota visus vardus išskyrus tuos kurie prasideda pabraukimu (``_``).
+Ši forma importuoja visus vardus išskyrus tuos kurie prasideda pabraukimu (``_``).
 
 .. note::
 
@@ -149,8 +149,8 @@ Jeigu modulis bus importuotas, kodas nebus vykdomas::
    >>>
 
 Tai dažniausiai naudojama norint suteikti patogią vartotojo sąsają moduliui
-arba testavimo tikslais (pvz.: modulio paleidimas kaip skripto įvykdo
-testus).
+arba testavimo tikslais (pvz.: modulį paleidžiant kaip skriptą įvykdomi
+testai).
 
 
 .. _tut-searchpath:
@@ -165,7 +165,7 @@ ieško failo vardu :file:`spam.py` dabartinėje direktorijoje, o po to
 direktorijų sąraše, kurias nurodo aplinkos kintamasis :envvar:`PYTHONPATH`.
 Šis kintamasis naudoja tokią pačią sintaksę kaip ir apvalkalo kintamasis
 :envvar:`PATH`, t.y. aplankų vardų sąrašas. Jeigu :envvar:`PYTHONPATH` nėra
-nustatytas, arba kai čia nerandamas, paieška tęsiama aplanke, kuris priklauso
+nustatytas, arba kai modulis čia nerandamas, paieška tęsiama aplanke, kuris priklauso
 nuo instaliacijos. Unix-tipo sistemoje tai dažniausiai
 yra :file:`.:/usr/local/lib/python`.
 
@@ -304,7 +304,7 @@ vardus apibrėžia modulis. Ši funkcija sugrąžina surūšiuotą eilučių są
     'setprofile', 'setrecursionlimit', 'settrace', 'stderr', 'stdin', 'stdout',
     'version', 'version_info', 'warnoptions']
 
-Jei funkcija :func:`dir` vykdoma bet argumentų, tai surašomi vardai, kurie
+Jei funkcija :func:`dir` vykdoma be argumentų, tai surašomi vardai, kurie
 yra apibrėžti dabar::
 
    >>> a = [1, 2, 3, 4, 5]
@@ -452,8 +452,8 @@ tai buvo galima daryti prieš tai).
 
 .. _tut-pkg-import-star:
 
-\* Impotavimas Iš Pakuotės
---------------------------
+\* Importavimas Iš Pakuotės
+---------------------------
 
 .. index:: single: __all__
 
@@ -474,8 +474,8 @@ pakuotės :file:`__init__.py` faile apibrėžiamas sąrašas ``__all__`` kintama
 jis turi būti naudojamas, kai modulių vardai importuojami naudojant
 ``from package import *``. Pakuotės autorius yra atsakingas, kad šis sąrašas
 būtų atnaujinamas su kiekviena nauja pakuotės versija. Pakuotės autorius
-gali taip pat nuspręsti jo nepalaikyti, jeigu jie nemato prasmės naudoti
-\* importavimą su jų pakuote. Pavyzdžiui :file:`sounds/effects/__init__.py`
+gali taip pat nuspręsti jo nepalaikyti, jeigu jis nemato prasmės naudoti
+\* importavimą su jo pakuote. Pavyzdžiui :file:`sounds/effects/__init__.py`
 failo turinys gali būti toks::
 
    __all__ = ["echo", "surround", "reverse"]
@@ -536,7 +536,7 @@ Pradedant Python 2.5 versija, prie netiesiogiai nurodytų reliatyvių
 importavimų aprašytų viršuje, jūs galite naudoti griežtai nurodytus
 reliatyvius importavimus naudodami ``from module import name`` formą.
 Šie griežtai nurodyti reliatyvūs importavimai naudoją tašką, kuris nurodo
-dabartinį arba tėvinę pakuotę. Pavyzdžiui, iš :mod:`surround` modulio jūs
+dabartinę arba tėvinę pakuotę. Pavyzdžiui, iš :mod:`surround` modulio jūs
 galite naudoti::
 
    from . import echo
@@ -563,5 +563,5 @@ išplėsti modulių randamų pakuotėje aibę.
 
 .. rubric:: Pastabos
 
-.. [#] Funkcijų apibrėžtis irgi yra 'sakiniai', kurie yra 'vykdomi'; Vykdymas
+.. [#] Funkcijų apibrėžtys irgi yra 'sakiniai', kurie yra 'vykdomi'; Vykdymas
    prideda funkcijos vardą į modulio globalią simbolių lentelę.
