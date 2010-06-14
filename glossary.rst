@@ -371,7 +371,7 @@ Terminų žodynas
 
       Daugiau informacijos galima rasti :ref:`typeiter`.
 
-   raktinis argumentas
+   vardinis argumentas
       (Ang. keyword argument)
 
       Argumentas prieš kurį parašoma  ``variable_name=`` kvietime.

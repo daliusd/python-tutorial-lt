@@ -136,14 +136,14 @@ poziciją::
    >>> print '{1} and {0}'.format('spam', 'eggs')
    eggs and spam
 
-Jei raktiniai argumentai yra naudojami formatavimo metode, jų reikšmės
+Jei vardiniai argumentai yra naudojami formatavimo metode, jų reikšmės
 yra nurodomos naudojant argumento vardą. ::
 
    >>> print 'This {food} is {adjective}.'.format(
    ...       food='spam', adjective='absolutely horrible')
    This spam is absolutely horrible.
 
-Poziciniai ir raktiniai argumentai gali būti naudojami vienu metu::
+Poziciniai ir vardiniai argumentai gali būti naudojami vienu metu::
 
    >>> print 'The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred',
    ...                                                    other='Georg')
@@ -181,7 +181,7 @@ tiesiog perduodant žodyną ir naudojant laužtinius skliaustelius
    ...        'Dcab: {0[Dcab]:d}'.format(table))
    Jack: 4098; Sjoerd: 4127; Dcab: 8637678
 
-Tą patį galima atlikti perduodant lentelę kaip raktinius argumentus
+Tą patį galima atlikti perduodant lentelę kaip vardinius argumentus
 naudojant '**' užrašą::
 
    >>> table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}

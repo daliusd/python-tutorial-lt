@@ -33,9 +33,9 @@ Pavyzdžiui::
 
 Gali būti nulis arba daugiau :keyword:`elif` dalių, ir :keyword:`else` dalis yra
 neprivaloma. Raktažodis ':keyword:`elif`' yra 'else if' sutrumpinimas ir yra
-naudingas norint išvengti perkrauto perstumdymo. Raktažodžių :keyword:`if` ...
+naudingas norint išvengti perkrauto teksto stumdymo. Raktažodžių :keyword:`if` ...
 :keyword:`elif` ... :keyword:`elif` ... seka yra ``switch`` arba
-``case`` sakinių randamų kitose kalbose pakaitalas.
+``case`` sakinių randamų kitose kalbose atitikmuo.
 
 
 .. _tut-for:
@@ -48,9 +48,9 @@ naudingas norint išvengti perkrauto perstumdymo. Raktažodžių :keyword:`if` .
    statement: for
 
 :keyword:`for` sakinys Python'e šiek tiek skiriasi nuo to prie ko jūs
-galbūt esate pripratęs C arba Pascal. Užuot iteravus per aritmetinę
+galbūt esate pripratę C arba Pascal. Užuot iteravus per aritmetinę
 skaičių progresiją (kaip Paskalyje) arba leidžiant vartotojui apsibrėžti
-kartu iteracijos žingsnį ir baigimo sąlygą (kaip C), Python'o :keyword:`for`
+vienu metu iteracijos žingsnį ir baigimo sąlygą (kaip C), Python'o :keyword:`for`
 sakinys iteruoja per bet kokios sekos narius (sąrašą arba eilutę), tokia
 tvarka kokia jie yra sekoje. Pavyzdžiui:
 
@@ -68,13 +68,13 @@ tvarka kokia jie yra sekoje. Pavyzdžiui:
    window 6
    defenestrate 12
 
-Modifikuot seką, kuri yra iteruojama, nėra saugu (tai gali įvykti tik
+Modifikuoti seką, kuri yra iteruojama, nėra saugu (tai gali įvykti tik
 su kintamais sekų tipais, kaip kad sąrašai). Jeigu jums reikia
 modifikuoti sąrašą per kurį jūs iteruojate (pavyzdžiui, norite
 dvigubinti pasirinktus narius), jūs privalote iteruoti per kopiją.
 Atkarpos naudojimas tam ypač patogus::
 
-   >>> for x in a[:]: # make a slice copy of the entire list
+   >>> for x in a[:]: # padarome viso sąrašo kopiją naudodami atkarpos notaciją
    ...    if len(x) > 6: a.insert(0, x)
    ...
    >>> a
@@ -87,7 +87,7 @@ Atkarpos naudojimas tam ypač patogus::
 ======================
 
 Jeigu jums reikia iteruoti per skaičių seką, jums pravers įtaisytoji
-funkcija :func:`range` .  Ji sugeneruoja sąrašą, kuriame laikoma aritmetė
+funkcija :func:`range` .  Ji sugeneruoja sąrašą, kuriame laikoma aritmetinė
 progresija::
 
    >>> range(10)
@@ -95,7 +95,7 @@ progresija::
 
 Duotasis galutinis taškas niekada nėra sąrašo dalis: ``range(10)`` sugeneruoja
 10 reikšmių sąrašą - legalias indekso reikšmes dešimties narių sekai. Taip
-pat galima nurodyti kitokią pirmąją rėžio reikšmę arba nurodyti
+pat galima nurodyti kitokią pirmąją reikšmę arba nurodyti
 kitokį žingsnį (netgi neigiamą)::
 
    >>> range(5, 10)
@@ -126,7 +126,7 @@ Tačiau dažniausiai patogiau naudoti :func:`enumerate` funkciją, žiūrime :re
 :keyword:`break` ir :keyword:`continue` Sakiniai, bei :keyword:`else` Reiškinys Cikluose 
 ========================================================================================
 
-:keyword:`break` sakinys, kaip ir C, išeina iš mažiausia uždarančio 
+:keyword:`break` sakinys, kaip ir C, išeina iš mažiausio uždarančio
 :keyword:`for` arba :keyword:`while` ciklo.
 
 :keyword:`continue` sakinys, taip pat pasiskolintas iš C, pereina prie kitos
@@ -144,7 +144,7 @@ toliau sekančiu ciklu, kuris ieško pirminių skaičių::
    ...             print n, 'equals', x, '*', n/x
    ...             break
    ...     else:
-   ...         # loop fell through without finding a factor
+   ...         # ciklas baigėsi neradęs daliklių
    ...         print n, 'is a prime number'
    ...
    2 is a prime number
@@ -167,7 +167,7 @@ sakinio reikalauja sintaksė, bet iš programos nereikia jokio veiksmo.
 Pavyzdžiui::
 
    >>> while True:
-   ...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
+   ...     pass  # Laukiame kol vartotojas nutrauks programą naudodamasis klaviatūra (Ctrl+C)
    ...
 
 Tai dažniausiai naudojama norint sukurti minimalią klasę::
@@ -182,7 +182,7 @@ leidžia mąstyti abstraktesniame lygyje. :keyword:`pass` yra tyliai
 ignoruojamas::
 
    >>> def initlog(*args):
-   ...     pass   # Remember to implement this!
+   ...     pass   # Nepamiršk parašyti funkcijos!
    ...
 
 .. _tut-functions:
@@ -279,7 +279,7 @@ jį spausdinus) yra labai paprasta::
   jis nėra parašytas funkcijos gale funkcija taip pat grąžina ``None``.
 
 * Sakinys ``result.append(b)`` iškviečia sąrašo objekto ``result`` *metodą*.
-  Metodas yra funkcija, kuri 'priklauso' objektui ir vadinasi
+  Metodas yra funkcija, kuri „priklauso“ objektui ir vadinasi
   ``obj.methodname``, kur ``obj`` yra koks nors objektas (tai gali būti ir reiškinys),
   ir ``methodname`` yra metodo, kurį apibrėžia objekto tipas, vardas.
   Skirtingi tipai apibrėžia skirtingus metodus. Skirtingų tipų metodai
@@ -296,7 +296,7 @@ Daugiau apie Funkcijų Apibrėžimą
 ================================
 
 Taip pat galima apibrėžti funkcijas su kintamu argumentų skaičiumi.
-Galimso trys formos, kurios gali būti kombinuojamos.
+Galimos trys formos, kurios gali būti kombinuojamos.
 
 
 .. _tut-defaultargs:
@@ -324,7 +324,7 @@ quit?')`` arba štai šitaip: ``ask_ok('OK to overwrite the file?', 2)``.
 tikrina ar reikšmė yra sekoje.
 
 Numatytosios reikšmės yra įvertinamos funkcijos apibrėžimo momentu
-*apibrėžimo* srityje, taigi::
+*apibrėžties* srityje, taigi::
 
    i = 5
 
@@ -368,11 +368,11 @@ kvietimui, jūs galite perrašyti funkciją taip::
 
 .. _tut-keywordargs:
 
-Raktiniai Argumentai
+Vardiniai Argumentai
 --------------------
 
-Funckijos taip pat gali būti kviečiamos naudojant raktinius argumentus naudojant
-tokią formą ``raktas = reikšmė``.  Pavyzdžiui, ši funkcija::
+Funckijos taip pat gali būti kviečiamos naudojant vardinius argumentus naudojant
+tokią formą ``vardas = reikšmė``.  Pavyzdžiui, ši funkcija::
 
    def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
        print "-- This parrot wouldn't", action,
@@ -390,16 +390,16 @@ gali būti iškviesta tokiai būdais::
 bet sekantys kvietimas yra nevalidus::
 
    parrot()                     # trūksta privalomo argumento
-   parrot(voltage=5.0, 'dead')  # neraktainis argumentas seka raktinį argumentą
+   parrot(voltage=5.0, 'dead')  # nevardinis argumentas seka vardinį argumentą
    parrot(110, voltage=220)     # sudvigubintas argumentas
-   parrot(actor='John Cleese')  # nežinomas raktinis argumentas
+   parrot(actor='John Cleese')  # nežinomas vardinis argumentas
 
 Bendrai argumentų sąrašas turi naudoti tik pozicinius argumentus po kurių
-seka bet kokie raktiniai argumentai, kur raktiniai argumentai turi būti parinkti
+seka bet kokie vardiniai argumentai, kur vardiniai argumentai turi būti parinkti
 iš formalių parametrų vardų. Yra visiškai nesvarbu ar formalūs parametrai
 turi numatytąją reikšmę ar ne. Nė vienas argumentas negali gauti reikšmę
 daugiau negu vieną kartą --- formalūs parametrų vardai atitinkantys pozicinius
-argumentus negali būti naudojami kaip raktiniai argumentai tame pačiame
+argumentus negali būti naudojami kaip vardiniai argumentai tame pačiame
 kvietime. Čia yra pavyzdys, kuris neveikia dėl šių apribojimų::
 
    >>> def function(a):
@@ -410,8 +410,8 @@ kvietime. Čia yra pavyzdys, kuris neveikia dėl šių apribojimų::
      File "<stdin>", line 1, in ?
    TypeError: function() got multiple values for keyword argument 'a'
 
-Kai paskutinis parametras turi formą ``**name``, jis gauna žodyną
-(žr. :ref:`typesmapping`) kuriame yra visi raktiniai argumentai išskyrus
+Kai paskutinis parametras turi formą ``**name``, jis gauna
+:term:`žodyną <žodynas>`, kuriame yra visi vardiniai argumentai išskyrus
 tuos, kurie yra aprašyti kaip formalūs parametrai. Ši forma gali būti
 naudojama su ``*name`` parametrų forma (aprašyta kitam poskyryje) kuri
 gauna kortežą, kuriame sudėti poziciniai argumentai neapibrėžti
@@ -488,7 +488,7 @@ būtų išpakuoti iš argumentų sąrašo::
 .. index::
   statement: **
 
-Tokiu pat būdu, žodynai gali ištraukti raktinius argumentus naudodami  ``**``\-operatorių::
+Tokiu pat būdu, žodynai gali ištraukti vardinius argumentus naudodami  ``**``\-operatorių::
 
    >>> def parrot(voltage, state='a stiff', action='voom'):
    ...     print "-- This parrot wouldn't", action,
@@ -523,10 +523,11 @@ pasiekti kintamuosius iš išorinės srities::
    >>> f(1)
    43
 
+*Vertėjo pastaba*: nuo Python 3.0 versijos lambda funkcijos yra išimtos todėl venkite jas naudoti.
 
 .. _tut-docstrings:
 
-Documentacijos Eilutės
+Dokumentacijos Eilutės
 ----------------------
 
 .. index::
@@ -548,7 +549,7 @@ būti tuščia, atskirianti apibendrinimą nuo aprašymo. Sekančios eilutės
 turi būti vienas ar daugiau paragrafų aprašančių objekto kvietimo
 būdus, šalutinius efektus ir t.t.
 
-Python'o interpetatorius nepašalina pastūmimų iš daugia-eilutės eilutės,
+Python'o interpetatorius nepašalina pastūmimų iš daugiaeilutės eilutės,
 taigi priemonės, kurios tvarko dokumentaciją turi padaryti tai
 pačios, jei to nori. Tai atliekama pagal tokį susitarimą. Pirma netuščia
 eilutė po pirmos eilutės nustato per kiek yra pastumtas tekstas visai
@@ -558,7 +559,7 @@ jos lygiavimas nėra akivaizdus. Tada šis tarpų "ekvivalentas" nukerpamas
 nuo visų eilučių starto. Tekste neturėtų būti eilučių, kurios pastumtos
 mažiau, bet jei taip atsitinka visi tarpai turi būti nukerpami.
 
-Čia yra daugiau-eilutės dokumentacijos eilutės pavyzdys::
+Čia yra daugiaeilutės dokumentacijos eilutės pavyzdys::
 
    >>> def my_function():
    ...     """Do nothing, but document it.
@@ -588,7 +589,7 @@ skirtingais stiliais --- kai kurios yra skaitomesnės negu kitos.
 Rašyti kitiems skaitomą kodą yra gera idėja, todėl gražaus programavimo
 stiliaus naudojimas labai padeda.
 
-Python'e dauguma projektų naudoja stilių apibrėžtą :pep:`8` --- kas
+Python'e dauguma projektų naudoja stilių apibrėžtą :pep:`8` dokumente --- kas
 skatina labai skaitomą ir akiai malonų programavimo stilių. Kiekvienas
 Python'o programuotojas privalo jį kada nors perskaityti. Štai
 čia aprašomi patys svarbiausi punktai:
@@ -617,7 +618,7 @@ Python'o programuotojas privalo jį kada nors perskaityti. Štai
 * Vardus klasėms ir funkcijoms duokite nuosekliai. Oficialiai susitarta, kad
   klasėms vardai turi būti duodami naudojant ``KupranugarioLygius``, o funkcijoms
   ir metodams ``mažosios_raidės_su_pabraukimais``. Visada naudokite
-  ``self`` vardą pirmam metodo argumentui (žr :ref:`tut-firstclasses` apie
+  ``self`` vardą pirmam metodo argumentui (žr. :ref:`tut-firstclasses` apie
   klases ir metodus).
 
 * Nenaudokite keistų koduočių savo kode, jeigu jūsų kodas yra skirtas tarptautinei

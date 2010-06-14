@@ -525,7 +525,7 @@ Vėliau šiame vadovėlyje išmoksime apie Generatoriaus Reiškinius, kurie
 dar labiau tinka raktas-reikšmė porų sudarymui :func:`dict` funkcijai.
 
 Kai raktai yra paprastos eilutės, tada kartais paprasčiau nurodyti
-poras naudojant raktinius argumentus::
+poras naudojant vardinius argumentus::
 
    >>> dict(sape=4139, guido=4127, jack=4098)
    {'sape': 4139, 'jack': 4098, 'guido': 4127}
