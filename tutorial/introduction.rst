@@ -5,7 +5,7 @@
 *****************
 
 Pavyzdžiuose, pateikiamuose toliau, įvedamas komandos bei jų išvestį galima
-atskirti pagal tai, ar yra eilutė prasideda raginimu (``>>>`` ir ``...``).
+atskirti pagal tai, ar eilutė prasideda raginimu (``>>>`` ir ``...``).
 Norėdami pakartoti pavyzdį savarankiškai, perrašykite viską, kas eina pavyzdyje
 po raginimo. Eilutės, neprasidedančios raginimu, yra išvestis iš
 interpretatoriaus. Turėkite omenyje, kad antrasis raginimo variantas (``...``) tuščiai
@@ -91,7 +91,7 @@ Priešingu atveju įvyks klaida::
 
 Taip pat galima dirbti su slankaus kablelio skaičiais. Jeigu naudosime vieną
 iš anksčiau aptartų operatorių su argumentais, kurių vienas -- sveikas skaičius,
-o kitas -- slankaus kablelio skaičiais, tuomet rezultatas bus slankaus kablelio::
+o kitas -- slankaus kablelio skaičius, tuomet rezultatas bus slankaus kablelio::
 
    >>> 3 * 3.75 / 1.5
    7.5
@@ -99,7 +99,7 @@ o kitas -- slankaus kablelio skaičiais, tuomet rezultatas bus slankaus kablelio
    3.5
 
 Be to, galima naudoti ir kompleksinius skaičius. Menamoji dalis aprašoma
-naudojant galūnę ``j``` arba ``J``. Kompleksiniai skaičiai su nenuline realiąja
+naudojant galūnę ``j`` arba ``J``. Kompleksiniai skaičiai su nenuline realiąja
 dalimi užrašomi kaip ``(realioji+menamojiJ)``, arba pasinaudojama
 ``complex(realioji, menamoji)`` funkcija.
 ::
@@ -128,7 +128,7 @@ skaičiaus *z*, naudokite ``z.real`` (realiąjai daliai) ir ``z.imag``
 
 Sveikų ir slankaus kablelio skaičių konvertavimo funkcijos (``float``,
 ``int`` ir ``long``) neveikia kompleksiniams skaičiams -- nes nėra vienaprasmio
-būdo to atlikti. Naudodami ``abs(z)`` gausite kompleksinio skaičiaus modulį
+būdo tai atlikti. Naudodami ``abs(z)`` gausite kompleksinio skaičiaus modulį
 (slankaus kablelio skaičiaus pavidalu). Jau minėtas ``z.real`` leis gauti
 realiąją kompleksinio skaičiaus dalį. ::
 
@@ -169,7 +169,7 @@ Eilutės
 -------
 
 Python'as dirba ne tik su skaičiais, bet ir su simbolių eilutėmis, kurias
-galima užrašyto pora būdų. Galima apsupti viengubomis arba dvigubomis
+galima užrašyti pora būdų. Galima apsupti viengubomis arba dvigubomis
 kabutėmis::
 
    >>> 'spam eggs'
@@ -205,7 +205,7 @@ Ankstesnis pavyzdys ekrane atspausdintų::
 Kita vertus, jeigu eilutę pažymime kaip „neapdorojamą“ (angl. *raw*), tuomet ``\n``
 nepradeda naujos eilutės. Neapdorojamose eilutėse pasvirieji brūkšneliai
 taip pat praranda savo reikšmę (t.y. lieka pasviraisiais brūkšneliais),
-tačiau skirstymas į eilutes nėra prarandamas -- lieka taip, kaip užrašyta:
+tačiau skirstymas į eilutes nėra prarandamas -- lieka taip, kaip užrašyta::
 
    hello = r"This is a rather long string containing\n\
    several lines of text much as you would do in C."
@@ -217,7 +217,7 @@ atspausdintų::
    This is a rather long string containing\n\
    several lines of text much as you would do in C.
 
-Dar galima eilutes apgaubti poromis trigubų kabučių: ``"""``` arba ``'''``.
+Dar galima eilutes apgaubti poromis trigubų kabučių: ``"""`` arba ``'''``.
 Eilučių pabaigų nereikia užrašyti specialiai, bus paliekamas toks skaidymas
 į eilutes, kaip užrašyme. ::
 
@@ -268,7 +268,7 @@ su operacijų rezultatais::
 Eilutės gali būti indeksuojamos; kaip ir C kalboje, pirmasis eilutės simbolis
 atitinka indeksą 0. Python'o kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
 tai eilutė, kurios dydis -- vienas simbolis. Eilučių dalys gali būti nurodomos
-su *išpjovos notacija* (angl. *slice notation*): du indeksai atskirti dvitaškiu. ::
+naudojant :term:`atkarpos notaciją <atkarpa>` (ang. *slice notation*): du indeksai atskirti dvitaškiu. ::
 
    >>> word
    'Pagalba'
@@ -279,7 +279,7 @@ su *išpjovos notacija* (angl. *slice notation*): du indeksai atskirti dvitaški
    >>> word[2:4]
    'ga'
 
-Išpjovos indeksai gali būti nenurodyti; jeigu praleistas pirmasis indeksas, vietoje
+Atkarpos indeksai gali būti nenurodyti; jeigu praleistas pirmasis indeksas, vietoje
 jo naudojamas nulis, o praleistas antrasis indeksas tapatus eilutės ilgio nurodymui. ::
 
    >>> word[:2]    # Du pirmi simboliai
@@ -306,7 +306,7 @@ Tačiau naujų eilučių sukūrimas sudedant turimas yra paprastas ir efektyvus:
    >>> 'Kav' + word[1]
    'Kava'
 
-Naudinga išpjovų operacijų savybė: ``s[:i] + s[i:]`` visuomet lygu ``s``.
+Naudinga atkarpų operacijų savybė: ``s[:i] + s[i:]`` visuomet lygu ``s``.
 ::
 
    >>> word[:2] + word[2:]
@@ -315,7 +315,7 @@ Naudinga išpjovų operacijų savybė: ``s[:i] + s[i:]`` visuomet lygu ``s``.
    'Pagalba'
 
 Išeinantys iš ribų indeksai yra tvarkingai apdorojami. Per didelis indeksas 
-pakeičiamas eilutės ilgiu. Jeigu išpjovos pradžios indeksas didesnis už
+pakeičiamas eilutės ilgiu. Jeigu aktarpos pradžios indeksas didesnis už
 pabaigos indeksą, gausime tuščią eilutę. ::
 
    >>> word[1:100]
@@ -326,7 +326,7 @@ pabaigos indeksą, gausime tuščią eilutę. ::
    ''
 
 Kaip indeksus galima naudoti ir neigiamus skaičius, tokiu atveju skaičiuojama
-nuo dešinės. Pavyzdžiui,::
+nuo dešinės. Pavyzdžiui::
 
    >>> word[-1]     # Paskutinis simbolis
    'a'
@@ -344,7 +344,7 @@ dešinės nėra skaičiuojama. ::
    'P'
 
 Išeinantys iš ribų neigiami indeksai yra apkarpomi, tačiau tai galioja
-tik išpjovoms::
+tik atkarpoms::
 
    >>> word[-100:]
    'Pagalba'
@@ -353,7 +353,7 @@ tik išpjovoms::
      File "<stdin>", line 1, in ?
    IndexError: string index out of range
 
-Bus lengviau atsiminti, kaip veikia išpjovos, jeigu galvosite apie indeksus
+Bus lengviau atsiminti, kaip veikia atkarpos, jeigu galvosite apie indeksus
 kaip apie rodykles *tarp* simbolių, o eilutės kraštą prieš pirmą simbolį kaip
 turintį nulinį indeksą. Tuomet eilutės, sudarytos iš *n* simbolių, dešinys
 kraštas turės indeksą *n*. ::
@@ -365,11 +365,11 @@ kraštas turės indeksą *n*. ::
    -7  -6  -5  -4  -3  -2  -1
 
 Pirma skaičių eilutė parodo indeksų 0..7 vietas simbolių eilutėje. Antroji
-eilutė -- atitinkamai atvaizduoja neigiamus indeksus. Tada išpjova nuo *i*
+eilutė -- atitinkamai atvaizduoja neigiamus indeksus. Tada atkarpa nuo *i*
 iki *j* susideda iš visų simbolių, esančių tarp *i* ir *j*.
 
-Neneigiamiems indeksams, išpjovos ilgis yra indeksų skirtumas (jeigu abu
-indeksai yra eilutės ribose). Tarkime, išpjovos ``word[1:3]`` ilgis yra
+Neneigiamiems indeksams, atkarpos ilgis yra indeksų skirtumas (jeigu abu
+indeksai yra eilutės ribose). Tarkime, atkarpos ``word[1:3]`` ilgis yra
 2.
 
 Standartinė funkcija :func:`len` grąžina eilutės ilgį.
@@ -377,26 +377,6 @@ Standartinė funkcija :func:`len` grąžina eilutės ilgį.
    >>> s = 'supercalifragilisticexpialidocious'
    >>> len(s)
    34
-
-
-.. seealso::
-
-   :ref:`typesseq`
-      Simbolių eilutės, o taip pat ir Unikodo eilutės, aprašomos tolesniame
-      skyrelyje, yra *sekų tipai*, todėl leidžia naudoti visiems sekų tipams
-      apibrėžtas operacijas.
-
-   :ref:`string-methods`
-      Ir paprastos eilutės, ir Unikodo eilutės pateikia daug metodų nesudėtingoms
-      teksto transformacijoms bei teksto paieškai.
-
-   :ref:`new-string-formatting`
-      Čia aprašoma, kaip suformuoti eilutes su :meth:`str.format` metodu.
-
-   :ref:`string-formatting`
-      Čia detaliau aprašoma, kaip suformuoti eilutes naudojant senesnį metodą --
-      paprastoms arba Unikodo eilutėms kviečiamą ``%`` operatorių.
-
 
 .. _tut-unicodestrings:
 
@@ -439,7 +419,7 @@ specialią Python'o sintaksę. ::
 
 Visi kiti simboliai interpretuojami pagal tai, kokį Unikodo kodą jie
 atitinka. Jeigu jūs užrašote eilutes naudodami Latin-1 koduotę (turinčią
-daugumai vakarų Europos kalbų skirtų simbolių), tikrai įvertinsite tai,
+daugumai vakarų Europos kalbų skirtų simbolių), tikrai pamatysite tai,
 kad pirmi 256 Unikodo rašmenys sutampa su Latin-1 kodų lentele.
 
 Ypatingiems poreikiams galima naudoti neapdorojamas (angl. *raw*) eilutes --
@@ -513,7 +493,7 @@ neprivalo visi būti to paties tipo. ::
    ['spam', 'eggs', 100, 1234]
 
 Kaip ir simbolių eilučių indeksai, sąrašų indeksai prasideda nuo 0, sąrašai gali
-būti išpjauti, sujungti ir taip toliau::
+būti atkirpti, sujungti ir taip toliau::
 
    >>> a[0]
    'spam'
@@ -537,7 +517,7 @@ pakeisti::
    >>> a
    ['spam', 'eggs', 123, 1234]
 
-Išpjovoms (angl. *slice*) taip pat galima priskirti reikšmes, net jeigu tai pakeičia
+Atkarpoms (ang. *slice*) taip pat galima priskirti reikšmes, net jeigu tai pakeičia
 sąrašo dydį arba jį ištuština::
 
    >>> # Pakeiskime porą elementų:
@@ -616,33 +596,33 @@ sekos narius::
 * Pirmoje eilutėje naudojamas *priskyrimas keliems kintamiesiems*: kintamieji
   ``a`` ir ``b`` tuo pat metu įgauna reikšmes; atitinkamai 0 ir 1. Panašus
   priskyrimas naudojamas ir paskutinėje eilutėje, kas parodo, kad visos dešinės
-  priskyrimo pusės išraiškos apskaičiuojamos anksčiau nei atliekamas bet koks
+  priskyrimo pusės reiškiniai apskaičiuojami anksčiau nei atliekamas bet koks
   priskyrimas.  Dešinės pusės apskaičiavimas atliekamas iš kairės į dešinę.
 
 * Ciklo konstrukcija :keyword:`while` vykdoma tol, kol sąlyga yra teisinga
   (šiuo atveju: ``b < 10``). Python'e, panašiai kaip ir C, bet kuris nelygus
-  nuliui skaičius laikomas *teisingu*; nulis yra *klaidingas*. Sąlyga taip
+  nuliui skaičius laikomas *teisingu*; nulis yra *neteisingas*. Sąlyga taip
   taip pat gali būti eilutės arba sąrašo reikšmė, arba apibendrinant: bet
-  kokia seka. Tuščia seka yra *klaidinga*; netuščia (turinti bent vieną
+  kokia seka. Tuščia seka yra *neteisinga*; netuščia (turinti bent vieną
   elementą) yra *teisinga*. Pavyzdyje naudojama sąlyga yra paprastas palyginimas.
   Standartiniai palyginimo operatoriai užrašomi kaip ir C kalboje: ``<``
   (mažiau negu), ``>`` (daugiau negu), ``==`` (lygu), ``<=`` (mažiau arba lygu),
   ``>=`` (daugiau arba lygu) bei ``!=`` (nelygu).
 
-* Vidinis ciklo kodas yra *įtrauktas* -- tai Python'o būdas sugrupuoti kodo sakinius.
+* Vidinis ciklo kodas yra *pastumtas* -- tai Python'o būdas sugrupuoti kodo sakinius.
   Python'as nesuteikia (kol kas) gudraus eilutės redagavimo galimybės, taigi tarpus
   arba tabuliacijos ženklus reikia eilutės pradžioje įterpti rankomis. Praktikoje,
   visgi, dauguma tekstų redaktorių, naudojamų rašyti Python'o kodą, pateikia
   galimybę automatiškai lygiuoti kodą. Kai sudėtinis kodo sakinys įvedamas
   interaktyvioje veiksenoje, po jo turi sekti tuščia eilutė tam, kad Python'as
   suprastų, jog jūs užrašėte paskutinę eilutę. Taip pat turėkite omenyje, kad
-  visos to paties kodo bloko eilutės privalo būti įtrauktos vienodu skaičiumi
+  visos to paties kodo bloko eilutės privalo būti pastumtos vienodu skaičiumi
   tarpo ženklų.
 
-* :keyword:`print` komanda atspausdina duotos išraiškos reikšmę. Tai skiriasi nuo
-  paprasčiausio išraiškos užrašymo prie Python'o raginimo tuo, kad :keyword:`print`
+* :keyword:`print` komanda atspausdina duoto reiškinio reikšmę. Tai skiriasi nuo
+  paprasčiausio reiškinio užrašymo prie Python'o raginimo tuo, kad :keyword:`print`
   gali atspausdinti daugiau negu vieną reikšmę. Taip pat ji spausdina eilutes
-  be kabučių ženklų, o pateikus daugiau negu vieną išraišką, spausdinant tarp
+  be kabučių ženklų, o pateikus daugiau negu vieną reiškinį, spausdinant tarp
   jų įterpiami tarpo simboliai::
 
      >>> i = 256*256
