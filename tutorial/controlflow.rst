@@ -523,8 +523,6 @@ pasiekti kintamuosius iš išorinės srities::
    >>> f(1)
    43
 
-*Vertėjo pastaba*: nuo Python 3.0 versijos lambda funkcijos yra išimtos todėl venkite jas naudoti.
-
 .. _tut-docstrings:
 
 Dokumentacijos Eilutės
