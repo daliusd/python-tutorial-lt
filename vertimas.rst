@@ -8,17 +8,58 @@ Tikslas
 =======
 
 Tikslas yra labai paprastas: išversti kažkiek informacijos apie Python'ą
-į Lietuvių kalbą. Tikrai nesiekiama išversti visos Python'o dokumentacijos (bet
+į lietuvių kalbą. Tikrai nesiekiama išversti visos Python'o dokumentacijos (bet
 jei taip ir atsitiks, tarkim per 50 metų, nematau nieko tame blogo).
+
+Tikslinė auditorija
+-------------------
+
+Kai buvau mažas ir kvailas geros literatūros apie programavimą lietuvių kalba
+rasti buvo labai sunku. Nei anglų nei rusų kalbos nemokėjau tiek, kad galėčiau
+skaityti ir tuo labiau suprasti. Man išties pasisekė, kad tuo metu jau
+egzistavo `Jaunųjų Programuotojų Mokykla <http://aldona.mii.lt/pms/jpm/>`__,
+taigi jie man davė pirmą taip reikalingą spyrį, kad pradėčiau gaudytis kas kur
+kaip ir su kuo valgoma. Vėliau susidarė draugų ratas ir atsirado literatūros
+tiek anglų tiek rusų kalba (rusiškos deja taip ir nesupratau iš esmės).
+
+Taigi pirmiausiai šis vertimas skirtas žmonėms, kurie dar nemoka anglų kalbos
+(galbūt tik pradeda mokytis) ir jau tikrai nebemoka rusiškai (tokia tad ta
+Nepriklausomybės karta). Nebijokite, jei visko nesuprasite iš pradžių (šis
+vadovėlis išties yra labai techniškas). Jei kas neaišku visada galite
+paklausti žinančių žmonių. Jų galite rasti
+`Python el. konferencijoje <http://www.konferencijos.lt/mailman/listinfo/python>`__.
+
+O vėliau jums tikriausiai vistiek teks išmokti anglų kalbą --- iš kitos pusės,
+tai nebus taip jau ir sudėtinga, kai būsite pagauti azarto ir reikės išsiaiškinti
+kaip reikia padaryti vieną ar kitą dalyką.
+
+Beje, jei nepatenkate į tikslinę auditoriją, tai dar nereiškia, kad šis vadovėlis
+jums netinka.
+
+Padėkos žodis
+-------------
+
+Dėkoju prie vertimo vienaip ar kitaip prisidėjusiems žmonėms: Adomui Paltanavičiui,
+Armandui Jarušauskui, Mantui Zimnickui, Maksim Norkin, Vytautui Šalteniui,
+Martynui Jociui, Martynui Sklizmantui, Albertui Agėjavui, Mariui Gedminui,
+Jurgiui Pralgauskiui, Agniui Vasiliauskui, Audriui Kažukauskui, Bogdan M. Maryniuk
+ir kitiems asmenims, kurie vienaip ar kitaip prisidėjo prie vertimo.
+
+Jeigu norite prisidėti prie vertimo visada tai galite padaryti. Kaip? Perskaitykite
+kitame skyriuje.
 
 Kaip prisidėti?
 ===============
 
-Dokumentacija bus verčiama naudojantis bitbucket.org sistemoje
+Prisidėti galima įvairiais būdais: naujais vertimais, pataisymais ir t.t.
+Pataisymus galite tiesiog atsiųsti man, bet jei norite tai galite daryti
+ir kaip tikri programuotojai.
+
+Dokumentacija yra verčiama naudojantis bitbucket.org sistemoje
 sukurta Mercurial repozitorija: http://bitbucket.org/Dalius/python-tutorial-lt/
 
 Susikurkite paskyrą http://bitbucket.org arba prisijunkite ten naudodamiesi
-OpenId (jūs žinoma rinksitės šį variantą!). Tada jums reikės šakutinti (kaip
+OpenId (jūs žinoma rinksitės šį variantą!). Tada jums reikės šakoti (kaip
 teisingai verčiasi fork'inti?) python-tutorial-lt repozitoriją ir jeigu
 norėsite, kad jūsų vertimas būtų įtrauktas į pagrindinę repozitoriją tiesiog
 mane informuokite (galite tai padaryti paštu dalius@sandbox.lt).

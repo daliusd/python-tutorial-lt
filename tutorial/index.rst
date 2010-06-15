@@ -47,7 +47,7 @@ jį jūs galėsite skaityti ir rašyti Python'o modulius ir programas, ir būsit
 pasiruošę išmokti daugiau apie Python'o bibliotekos modulius aprašytus
 *Python Library Reference* dokumente.
 
-Taip pat verta permesti akimis :ref:`Terminų Žodyną <glossary>`.
+Taip pat verta permesti akimis skyrių apie :ref:`Vertimą <vertimas>` ir :ref:`Terminų Žodyną <glossary>`.
 
 .. toctree::
 
