@@ -166,13 +166,13 @@ direktorijų sąraše, kurias nurodo aplinkos kintamasis :envvar:`PYTHONPATH`.
 Šis kintamasis naudoja tokią pačią sintaksę kaip ir apvalkalo kintamasis
 :envvar:`PATH`, t.y. aplankų vardų sąrašas. Jeigu :envvar:`PYTHONPATH` nėra
 nustatytas, arba kai modulis čia nerandamas, paieška tęsiama aplanke, kuris priklauso
-nuo instaliacijos. Unix-tipo sistemoje tai dažniausiai
+nuo įdiegimo. Unix-tipo sistemoje tai dažniausiai
 yra :file:`.:/usr/local/lib/python`.
 
 Faktiškai, moduliai yra ieškomi aplankų sąraše, kuris laikomas kintamajame
 ``sys.path``. Šis kintamasis yra inicializuojamas dabartiniu aplanku (t.y.
 tuo kur paleidžiamas skriptas), :envvar:`PYTHONPATH` ir aplanku, kuris
-priklauso nuo instaliacijos. Tai leidžia Python'o programoms, kurios
+priklauso nuo įdiegimo. Tai leidžia Python'o programoms, kurios
 supranta, kas yra daroma, modifikuoti arba pakeisti modulių paieškos kelius.
 Kadangi skripto aplankas yra įdedamas į paieškos kelią nevadinkite savo
 skripto vardu sutampančiu su kokiu nors standartiniu Python'o moduliu,
@@ -246,7 +246,7 @@ Standartiniai Moduliai
 
 .. index:: module: sys
 
-Įprasta Python'o instaliacija turi standartinių modulių biblioteką.
+Įprastas Python'o įdiegimas turi standartinių modulių biblioteką.
 Kai kurie moduliai yra interpretatoriaus dalis --- jie leidžia atlikti
 operacijas, kurios nėra kalbos branduolio dalis, bet jie yra įtaisyti
 arba dėl efektyvumo arba, kad būtų galima atlikti operacinės sistemos

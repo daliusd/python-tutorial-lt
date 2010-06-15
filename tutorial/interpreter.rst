@@ -10,7 +10,7 @@ Naudojimasis Python'o interpretatoriumi
 Interpretatoriaus paleidimas
 ============================
 
-Python'o interpretatorius dažniausiai instaliuojamas į :file:`/usr/local/bin/python`;
+Python'o interpretatorius dažniausiai įdiegiamas į :file:`/usr/local/bin/python`;
 pridėję :file:`/usr/local/bin` į savo Unix apvalkalo (angl. *shell*) paieškos kelią,
 galėsite Python'ą paleisti įrašę komandą::
 
@@ -22,7 +22,7 @@ pasitikslinkite detales su savo administratoriumi (pvz.:
 :file:`/usr/local/python` yra populiari alternatyva).
 
 Windows sistemose, Python'as įdiegiamas kataloge :file:`C:\\Python26`, tačiau
-šis nustatymas gali būti pakeistas instaliacijos metu. Norėdami pridėti
+šis nustatymas gali būti pakeistas įdiegimo metu. Norėdami pridėti
 šią direktoriją į paieškos kelią, galite įrašyti tokią komandą į DOS
 terminalą::
 

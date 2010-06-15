@@ -22,7 +22,7 @@ dokumentai esantys joje yra:
   Jei tiesiog peržvelgsite Library Reference dokumentą turėsite susidarę
   bendrą įspūdį, ką galima padaryti.
 
-* `Installing Python Modules <http://docs.python.org/install/>`__ paaiškina kaip instaliuoti išorinius modulius parašytus
+* `Installing Python Modules <http://docs.python.org/install/>`__ paaiškina kaip įdiegti išorinius modulius parašytus
   kitų Python'o vartotojų.
 
 * `Python Reference Manual <http://docs.python.org/reference/>`__: detalus Python'o sintaksės ir semantikos išaiškinimas.
