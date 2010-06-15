@@ -92,7 +92,7 @@ modulyje: jie naudojasi ta pačia vardų erdve! [#]_
 Atributas gali būti tik-skaitomi arba rašomi. Pastaruoju atveju, priskyrimas
 atributams yra galimas. Modulių atributai yra rašomi:  jūs galite parašyti
 ``modname.the_answer = 42``. Rašomi atributai gali būti ištrinti
-naudojant raktažodžio :keyword:`del` sakinį.  Pvz.: ``del modname.the_answer``
+naudojant bazinio žodžio :keyword:`del` sakinį.  Pvz.: ``del modname.the_answer``
 pašalins atributą :attr:`the_answer` iš objekto pavadinto ``modname``.
 
 Vardų erdvės yra sukuriamos skirtingais momentais ir gyvuoja skirtingą laiko
@@ -149,7 +149,7 @@ duomenų --- jei tik susieja vardą su objektu. Tas pats galioja
 ir trynimui: sakinys ``del x`` pašalina ``x`` susiejimą lokalios srities vardų erdvėje.
 Tiesa sakant, visos operacijos kurios pristato naujus vardus naudoja lokalią sritį:
 ypač, importavimo sakiniai ir funkcijų apibrėžtys susieja modulį ar funkcijos vardą
-toje lokalioje srityje. (Raktažodis :keyword:`global` sakinyje gali būti naudojamas
+toje lokalioje srityje. (Bazinis žodis :keyword:`global` sakinyje gali būti naudojamas
 norint nurodyti, kad tam tikras konkretus kintamasis turi būti ieškomas globalioje
 srityje).
 
@@ -688,12 +688,12 @@ gali būti pereiti naudojant :keyword:`for` reiškinį::
        print line
 
 Šis priėjimo būdas yra aiškus, trumpas ir patogus. Iteratorių naudojimas
-apima ir suvienodina Python'ą. Už scenos, raktažodžio :keyword:`for` reiškinys
+apima ir suvienodina Python'ą. Už scenos, bazinio žodžio :keyword:`for` reiškinys
 iškviečia :func:`iter` konteinerio objektui.  Funkcija sugrąžina
 iteratoriaus objektą kuris apibrėžią metodą :meth:`next`, kuris pasiekia
 konteinerio elementus po vieną vienu metu. Kai daugiau elementų nėra,
 metodas :meth:`next` sukelia išimtį :exc:`StopIteration` kuri pasako
-raktažodžiui :keyword:`for` pabaigtį ciklą. Šis pavyzdys rodo
+baziniam žodžiui :keyword:`for` pabaigtį ciklą. Šis pavyzdys rodo
 kaip visa tai veikia::
 
    >>> s = 'abc'
@@ -747,7 +747,7 @@ Generatoriai
 ============
 
 :term:`Generatoriai <generatorius>` yra paprastas ir galingas įrankis iteratorių kūrimui.
-Jie aprašomi kaip paprasčiausios funkcijos, bet naudojamas raktažodžio
+Jie aprašomi kaip paprasčiausios funkcijos, bet naudojamas bazinio žodžio
 :keyword:`yield` reiškinys kiekvienąkart kai jiems reikia grąžinti
 duomenis. Kaskart kai iškviečiamas metodas :meth:`next`, generatorius
 sugrįžta į tą vietą, kur jis sustojo (jis prisimena visas duomenų reikšmes ir

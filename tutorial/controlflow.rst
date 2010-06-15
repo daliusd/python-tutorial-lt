@@ -32,8 +32,8 @@ Pavyzdžiui::
    More
 
 Gali būti nulis arba daugiau :keyword:`elif` dalių, ir :keyword:`else` dalis yra
-neprivaloma. Raktažodis ':keyword:`elif`' yra 'else if' sutrumpinimas ir yra
-naudingas norint išvengti perkrauto teksto stumdymo. Raktažodžių :keyword:`if` ...
+neprivaloma. Bazinis žodis ':keyword:`elif`' yra 'else if' sutrumpinimas ir yra
+naudingas norint išvengti perkrauto teksto stumdymo. Bazinių žodžių :keyword:`if` ...
 :keyword:`elif` ... :keyword:`elif` ... seka yra ``switch`` arba
 ``case`` sakinių randamų kitose kalbose atitikmuo.
 
@@ -320,7 +320,7 @@ mažiau argumentų negu ji priima. Pavyzdžiui::
 Šią funkciją galima iškviesti taip: ``ask_ok('Do you really want to
 quit?')`` arba štai šitaip: ``ask_ok('OK to overwrite the file?', 2)``.
 
-Šis pavyzdys taip pat demonstruoja :keyword:`in` raktažodį. Šis raktažodis
+Šis pavyzdys taip pat demonstruoja :keyword:`in` bazinį žodį. Šis raktažodis
 tikrina ar reikšmė yra sekoje.
 
 Numatytosios reikšmės yra įvertinamos funkcijos apibrėžimo momentu
@@ -506,7 +506,7 @@ Lambda Formos
 -------------
 
 Pagal populiarų prašymą naują savybė randama kitose funkcinėse programavimo kalbose
-kaip kad Lisp buvo pridėta ir į Python'ą. Naudojant :keyword:`lambda` raktažodį,
+kaip kad Lisp buvo pridėta ir į Python'ą. Naudojant :keyword:`lambda` bazinį žodį,
 galima kurti mažas anonimines funkcijas. Čia yra funkcija, kuri sugrąžina dviejų
 argumentų sumą: ``lambda a, b: a+b``.  Lambda formos gali būti naudojamas
 kiekvieną kartą kai reikia funkcijos objekto. Jos sintaksiškai yra apribotos

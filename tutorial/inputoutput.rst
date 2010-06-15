@@ -342,8 +342,8 @@ kokie bandymai naudoti failo objektą automatiškai nepavyks. ::
      File "<stdin>", line 1, in ?
    ValueError: I/O operation on closed file
 
-Gera praktika yra naudoti :keyword:`with` raktažodį dirbant su failų
-objektais. Šio raktažodžio privalumas yra tas, kad failas yra
+Gera praktika yra naudoti :keyword:`with` bazinę žodį dirbant su failų
+objektais. Šio bazinio žodžio privalumas yra tas, kad failas yra
 tinkamai uždaromas, kai jo naudojimas yra baigiamas, net jei pakeliui
 yra sukeliama išimtis. Be to tai daug trumpiau negu rašyti
 :keyword:`try`\ -\ :keyword:`finally` blokus::

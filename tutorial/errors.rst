@@ -27,7 +27,7 @@ jūs dar mokotės Python'o::
 Teksto analizatorius pakartoja eilutę su klaida ir parodo mažą 'rodyklę',
 kur pirmiausiai buvo surasta klaida. Klaida yra sukelta ar bent jau
 nustatyta ties komanda, kuri yra aprašyta prieš rodyklę. Pavyzdyje
-klaida rasta raktažodyje :keyword:`print`, nes prieš jį
+klaida rasta bazinio žodžio :keyword:`print` naudojime, nes prieš jį
 trūksta dvitaškio (``':'``). Failo vardas ir eilutės numeris
 yra atspausdinami, kad jūs žinotumėte, kur žiūrėti, jei klaida
 įvyko vykdant skriptą.
@@ -64,7 +64,7 @@ Eilutė, kuri parašyta kaip išimties tipas, yra įtaisytos išimties,
 kuri įvyko, vardas. Tai galioja visoms įtaisytoms išimtims, bet
 nebūtinai tiesa vartotojo apibrėžtoms išimtims (nors tai ir yra
 naudingas susitarimas). Standartinių išimčių vardai yra
-įtaisyti identifikatoriai (ne rezervuoti raktažodžiai).
+įtaisyti identifikatoriai (ne rezervuoti baziniai žodžiai).
 
 Likusi eilutės dalis pateikia detalią informaciją priklausomai nuo
 išimties tipo ir kas sukėlė išimtį.
@@ -96,14 +96,14 @@ Pastebėsime, kad vartotojo sugeneruotas nutraukimas yra signalizuojamas sukelia
 
 :keyword:`try` sakinys dirba taip:
 
-* Pirmiausia, vykdomas *try paragrafas* (tarp :keyword:`try` ir :keyword:`except` raktažodžių)
+* Pirmiausia, vykdomas *try paragrafas* (tarp :keyword:`try` ir :keyword:`except` bazinių žodžių)
 
 * Jei išimtis neįvyksta, *except paragrafas* yra praleidžiamas ir
   :keyword:`try` sakinys yra baigiamas.
 
 * Jei išimtis įvyksta *try* vykdymo metu, likusi paragrafo dalis yra praleidžiama.
   Jeigu išimties tipas sutampa su vardu po
-  :keyword:`except` raktažodžio, tada except paragrafas yra įvykdomas ir
+  :keyword:`except` bazinio žodžio, tada except paragrafas yra įvykdomas ir
   tada vykdymas tęsiamas po :keyword:`try` sakinio.
 
 * Jei įvyksta išimtis, kuri nesutampa su išimtimi paminėtoje except

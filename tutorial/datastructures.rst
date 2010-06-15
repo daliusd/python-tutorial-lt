@@ -491,7 +491,7 @@ raktą gausite klaidą.
 Metodas :meth:`keys` sugrąžina žodyno raktų sąrašą, kurie yra naudojami
 žodyne. Sąrašo tvarka nėra apibrėžta, todėl jei norite surūšiuoto sąrašo
 tiesiog panaudokite metodą :meth:`sort` raktų sąrašui. Jeigu norite
-patikrinti ar raktas yra žodyne naudokite raktažodį :keyword:`in`.
+patikrinti ar raktas yra žodyne naudokite bazinį žodį :keyword:`in`.
 
 Mažas pavyzdys kaip naudoti žodyną::
 
