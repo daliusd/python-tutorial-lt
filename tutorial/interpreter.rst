@@ -194,7 +194,7 @@ ir baigs darbą::
    valiuta = u"€"
    print ord(valiuta)
 
-Jei jūsų teksto redaktorius turi galimybę išsaugoti failas kaip ``UTF-8`` su
+Jei jūsų teksto redaktorius turi galimybę išsaugoti failą kaip ``UTF-8`` su
 UTF-8 *baitų eiliškumo žyme* (angl. *byte order mark, BOM*), tuomet galite
 naudoti šį būdą vietoj koduotės deklaracijos. IDLE redaktorius turi tokią
 galimybę, jei pasirinktas ``Options/General/Default Source Encoding/UTF-8``
@@ -202,12 +202,13 @@ nustatymas. Atkreipkite dėmesį, kad senesnės Python'o laidos (2.2 ir ankstesn
 neatpažįsta šio parašo. Taip pat operacinės sistemos neatpažįsta BOM
 skriptuose, kurie prasideda eilute su ``#!`` (naudojama tik Unix sistemose).
 
-Naudojant UTF-8 (su koduotės deklaracija ar BOM parašu), daugumos pasaulio kalbų
-simboliai gali būti naudojami, komentaruose ir simbolių eilutėse, vienu metu. Ne
-ASCII simboliai negali būti naudojami kintamųjų, funkcijų, klasių ir t.t.
-*varduose.* Ši galimybė yra palaikoma nuo Python'o 3 versijos. Kad visi simboliai
-būtų atvaizduoti tvarkingai, jūsų redaktorius turi atpažinti UTF-8 rinkmenas ir
-naudoti šriftą, palaikantį visus simbolius esančius faile.
+Naudojant UTF-8 (su koduotės deklaracija ar BOM parašu) komentaruose ir
+simbolių eilutėse vienu metu gali būti naudojami daugumos pasaulio kalbų
+simboliai. Ne ASCII simboliai negali būti naudojami kintamųjų, funkcijų, klasių ir t.t.
+*varduose.* Galimybė naudoti unikodo simbolius yra palaikoma nuo Python'o
+3 versijos. Kad visi simboliai būtų atvaizduoti tvarkingai, jūsų redaktorius
+turi atpažinti UTF-8 rinkmenas ir naudoti šriftą, palaikantį visus simbolius
+esančius faile.
 
 .. _tut-startup:
 
