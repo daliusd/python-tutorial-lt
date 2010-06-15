@@ -15,7 +15,7 @@ Operacinės Sistemos Sąsaja
    >>> import os
    >>> os.system('time 0:02')
    0
-   >>> os.getcwd()      # grąžina dabartinė darbinę direktoriją
+   >>> os.getcwd()      # grąžina dabartinę darbinę direktoriją
    'C:\\Python26'
    >>> os.chdir('/server/accesslogs')
 
@@ -34,7 +34,7 @@ interaktyviai dirbant su dideliais moduliais kaip :mod:`os`::
    >>> help(os)
    <returns an extensive manual page created from the module's docstrings>
 
-Kasdienam darbui su failais ir direktorijomis modulis mod:`shutil`
+Kasdienam darbui su failais ir direktorijomis modulis :mod:`shutil`
 suteikia aukštesnio lygio sąsają, kurią lengviau naudoti::
 
    >>> import shutil
@@ -64,7 +64,7 @@ Komandinės Eilutės Argumentai
 Pagalbinei skriptai dažnai turi dirbti su komandinės eilutės argumentais.
 Šiek argumentai laikomi modulio :mod:`sys` atributų sąraše *argv*.
 Pavyzdžiui jei įvykdysite komandą ``python demo.py one two three``
-komandinė eilutėje gausite::
+komandinėje eilutėje gausite::
 
    >>> import sys
    >>> print sys.argv
@@ -77,7 +77,6 @@ su komandine eilute gali suteikti :mod:`optparse` modulis.
 
 .. _tut-stderr:
 
-Error Output Redirection and Program Termination
 Klaidų Išvesties Nukreipimas ir Programos Pabaigimas
 ====================================================
 
@@ -93,8 +92,8 @@ Pats tiesiausias būdas pabaigti skripto veikimą yra naudoti ``sys.exit()``.
 
 .. _tut-string-pattern-matching:
 
-Eilučių Rašo Atpažinimas
-========================
+Eilučių Rašto Atpažinimas
+=========================
 
 :mod:`re` modulis suteikia galimybę naudotis reguliariais reiškiniais
 (ang. regular expression) sudėtingesniam eilučių tvarkymui.
@@ -303,17 +302,17 @@ Baterijos Pridedamos
 ====================
 
 Python'as laikosi "baterijos pridedamos" filosofijos. Tai geriausiai matoma
-žiūrint į rafinuotas ir tvirtas didesnių pakuočių galimybes. Pavyzdžiui:
+žiūrint į rafinuotas ir užtikrintas didesnių pakuočių galimybes. Pavyzdžiui:
 
 * :mod:`xmlrpclib` ir :mod:`SimpleXMLRPCServer` moduliai nuotolinį
   procedūrų kvietimą padaro trivialia užduotimi. Nepaisant modulių
   vardų, jums nereikia nieko žinoti apie XML ar su juo dirbti
   tiesiogiai.
 
-* :mod:`email` pakuotė yra biblioteka darbui su el. laiškų pranešimai,
+* :mod:`email` pakuotė yra biblioteka darbui su el. laiškų pranešimais,
   įskaitant ir MIME ir kitus RFC 2822-paremtus žinučių dokumentus. Skirtingai
   nuo :mod:`smtplib` ir :mod:`poplib`, kurie iš tikro gauna ir siunčia
-  pranešimus, turi pilną įrankinę sudėtingų pranešimų struktūrų (taip pat
+  pranešimus, ši pakuotė turi pilną įrankinę sudėtingų pranešimų struktūrų (taip pat
   priedų) kūrimui ir iškodavimui, taip pat internetiniam kodavimui
   ir antraščių protokolų valdymui.
 
