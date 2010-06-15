@@ -356,10 +356,9 @@ Kortežai ir Sekos
 =================
 
 Mes pastebėjome, kad sąrašai ir eilutės turi daug bendrų savybių,
-kaip kad indeksavimas ir kirpimo operacijos. *Sekos* duomenų
-tipas turi du pavyzdžius (žr. :ref:`typesseq`). Kadangi Python'as yra
-besivystanti kalba, kiti sekos tipai gali būti pridėti ateityje.
-Taip yar Python'e yra kitas standartinis sekos tipas: *kortežas*.
+kaip kad indeksavimas ir kirpimo operacijos. Jie yra *sekos* duomenų
+tipų pavyzdžiai. Kadangi Python'as yra besivystanti kalba, kiti sekos tipai gali
+būti pridėti ateityje. Python'e yra ir kitas standartinis sekos tipas: *kortežas*.
 
 Kortežas yra kelių reikšmių seka atskirta kableliais. Pavyzdžiui::
 
