@@ -75,7 +75,7 @@ kompiuterių, todėl ``eval(repr(x)) == x`` yra teisinga visiems
 slankaus kablelio *x*, bet jeigu skaičius bus suapvalintas iki 16 skaičiaus
 po kablelio tai nebebus tiesa.
 
-Pastebėsime, kad taip tiesiog veikia dvejetainei slankaus kablelio skaičiai ---
+Pastebėsime, kad taip tiesiog veikia dvejetainiai slankaus kablelio skaičiai ---
 tai nėra Python ar klaida jūsų kode. Jūs galite pamatyti tokį patį
 veikimą ir kitose kalbose, kurios palaiko aparatinę slankaus kablelio
 aritmetiką. Nors kai kurios kalbos gali ir neparodyti *skirtumo*
@@ -102,7 +102,7 @@ gauti reikšmę su vienu skaičiumi po kablelio. Tačiau tai nieko nepakeis::
    >>> round(0.1, 1)
    0.10000000000000001
 
-Problema yra ta, kad slankaus kablelio formoje išsaugote "0.1" reikšmė
+Problema yra ta, kad slankaus kablelio formoje išsaugota "0.1" reikšmė
 jau yra geriausia įmanoma dvejetainė 1/10 aproksimacija, taigi bandymas
 ją apvalinti nieko nepakeis --- ji jau buvo tokia gera kokia tik gali
 būti.
@@ -122,10 +122,10 @@ Problema su "0.1" detaliau paaiškinta žemiau skyriuje "Atvaizdavimo
 Klaida". `The Perils of Floating Point <http://www.lahey.com/float.htm>`_
 rasite daugiau dažnų siurprizų pavyzdžių.
 
-Kaip sakoma gale "nėra lengvų atsakymų". Visgi nebūkite per daug
+Kaip galiausiai sakoma "lengvų atsakymų nėra". Visgi nebūkite per daug
 atsargūs dirbdami su slankiu kableliu. Klaidos Python'e kylančios
 su slankiu kableliu yra paveldėtos iš aparatinės įrangos ir
-daugumoje mašinų klaidos galimybė yra ne didesnį negu
+daugumoje mašinų klaidos galimybė yra ne didesnė negu
 1 iš 2\*\*53.  Tai daugiau negu adekvatu daugumai užduočių, bet jūs turite
 prisiminti, kad tai ne dešimtainė aritmetika ir kad kiekviena
 slankaus kablelio operacija prideda apvalinimo klaidą.
@@ -157,7 +157,7 @@ kaip jūs tikitės::
 Kodėl tai atsitinka?  1/10 nėra tiksliai reprezentuojama kaip dvejetainė trupmena.
 Beveik visos mašinos šiandien (2000 Lapkritis) naudoja IEEE-754 slankaus kablelio
 aritmetiką ir beveik visos platformos slankaus kablelio skaičius Python'e
-naudoja kaip IEEE-754 "dvigubu tikslumo".  754 naudoja 53 tikslumo bitus,
+naudoja kaip "dvigubu tikslumo" IEEE-754.  754 naudoja 53 tikslumo bitus,
 taigi 0.1 sukonvertuojamas į artimiausią trupmeną *J*/2**\ *N* formoje,
 kur *J* yra sveikasis skaičius sudarytas iš 53 bitų. Perrašius::
 
