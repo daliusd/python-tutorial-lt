@@ -22,7 +22,7 @@ objektams::
    "set(['a', 'c', 'd', 'e', 'f', 'g', ...])"
 
 :mod:`pprint` modulis leidžia rafinuočiau atspausdinti
-tiek įtaisytus tiek vartojo apibrėžtus objektus interpretatorius
+tiek įtaisytus tiek vartojo apibrėžtus objektus interpretatoriui
 skaitomu būdu. Jeigu rezultatas yra ilgesnis negu viena eilutė,
 "pretty printer" prideda eilučių pabaigos simbolius ir
 pastumia tekstą, kad duomenų struktūra būtų suprantamesnė::
@@ -205,7 +205,7 @@ spynas (ang. lock), įvykius (ang. event), sąlygų kintamuosius
 
 Nors šios priemonės yra galingos, mažiausia klaida gali baigtis klaida,
 kurią sunku atgaminti. Rekomenduojamas būdas užduočių koordinavimui
-yra sukoncentruoti priėjimą prie visų resursų vienoj gijoje ir tada
+yra sukoncentruoti priėjimą prie visų resursų vienoje gijoje ir tada
 naudoti :mod:`Queue` modulį, tam kad tai gijai perduoti užsakymus
 iš kitų gijų. Programos, kurios naudoja :class:`Queue.Queue` objektus
 bendravimui tarp gijų yra lengviau sukuriamos, skaitomesnės ir
@@ -216,8 +216,8 @@ patikimesnės.
 Žurnalas
 ========
 
-:mod:`logging` modul leidžia naudoti pilną ir lanksčią žurnalo sistemą.
-Paprasčiausias variantas yra visas žurnalo pranešimus siųsti į failą arba
+:mod:`logging` modulis leidžia naudoti pilną ir lanksčią žurnalo sistemą.
+Paprasčiausias variantas yra visus žurnalo pranešimus siųsti į failą arba
 ``sys.stderr``::
 
    import logging
@@ -309,8 +309,8 @@ kiekvienam nariui kaip tai daroma paprastame Python'o sąraše::
 
 :mod:`collections` modulyje rasite :class:`deque()` objektą, panašų į sąrašą
 su greitesniais sąrašo papildymais ir išėmimais iš kairės, bet lėtesne
-peržiūra iš vidurio. Šie objektai labai tinka eilių ir paieškos į plotį
-pirmiausia medžių įgyvendinimui::
+peržiūra iš vidurio. Šie objektai labai tinka eilių ir kai kurių
+paieškos medžių įgyvendinimui::
 
    >>> from collections import deque
    >>> d = deque(["task1", "task2", "task3"])
