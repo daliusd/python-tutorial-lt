@@ -167,7 +167,7 @@ ir šiek tiek naujos semantikos.
 Klasių Apibrėžties Sintaksė
 ---------------------------
 
-Paprasčiausia klasės apibrėžtis atrodo taip:
+Paprasčiausia klasės apibrėžtis atrodo taip::
 
    class ClassName:
        <statement-1>
@@ -182,10 +182,10 @@ klasės apibrėžtį į sąlyginio sakinio :keyword:`if` šaką, arba į funkcij
 
 Praktikoje, reiškiniai klasės apibrėžtyje dažniausiai bus funkcijų
 apibrėžtys, bet kitokie reiškiniai taip pat yra leidžiami, ir kartais
-tai netgi naudinga --- mes dar prie to sugrįšime. Funkcijų apibrėžtys
-klasėje klasėje dažniausiai turi savitą argumentų sąrašo formą,
-kuri yra kilusi iš sutarto metodų kvietimo --- vėlgi, tai bus paaiškinta
-vėliau.
+tai netgi naudinga (mes dar prie to sugrįšime). Funkcijų apibrėžtys
+klasėje dažniausiai turi savitą argumentų sąrašo formą,
+kuri yra kilusi iš sutarto metodų kvietimo (tai bus paaiškinta
+vėliau).
 
 Kai klasės apibrėžtis yra vykdoma yra sukuriama nauja vardų erdvė ir naudojama
 kaip lokali sritis --- taigi visi priskyrimai lokaliems kintamiesiems
@@ -193,9 +193,9 @@ patenka į šią vardų erdvę. Ypatingai tai galioja funkcijų apibrėžtims, k
 susieja naujų funkcijų vardus.
 
 Kai klasės apibrėžtis įvykdoma (dažniausiai pabaigoje) yra sukuriamas
-naujas *klasės objektas*. Tai iš esmės yra apgaubtis apie vardų erdvę, kuri
-yra sukurta iš klasės apibrėžties  Mes išmoksime daugiau apie klasių objektus
-kitame skyriuje. Originali lokali sritis (ta kuri buvo naudojama prieš
+naujas *klasės objektas*. Tai iš esmės yra apgaubta vardų erdvė, kuri
+yra sukurta iš klasės apibrėžties (mes išmoksime daugiau apie klasių objektus
+kitame skyriuje). Originali lokali sritis (ta kuri buvo naudojama prieš
 įžengiant į klasės apibrėžtį) yra atstatoma ir klasės objektas yra
 susietas su klasės vardu duotu jai klasės apibrėžties antraštėje 
 (pvz.: :class:`ClassName`).
@@ -208,7 +208,7 @@ Klasių Objektai
 Klasių objektai palaiko dviejų rušių operacijas: atributų nuorodos ir
 egzemplioriaus sukūrimą.
 
-*Atributų nuorodos* naudoja standartinę sintaksę, kuri naudojame visoms atributų
+*Atributų nuorodos* naudoja standartinę sintaksę, kurią naudojame visoms atributų
 nuorodoms Python'e: ``obj.name``. Validūs atributų vardai yra visi vardai, kurie
 buvo klasės apibrėžtyje kai klasės objektas buvo sukurtas. Taigi, jei
 klasės apibrėžtis atrodo taip::
@@ -272,9 +272,9 @@ Taigi ką mes galime daryti su egzempliorių objektais? Vienintelė operacija
 kurią supranta egzempliorių objektai yra atributų nuorodos. Yra dviejų
 rušių validūs atributų vardai: duomenų atribudai ir metodai.
 
-*duomenų atributai* kurie atitinka Smalltalk „egzempliorių kintamuosius“ ir
+*duomenų atributai* atitinka Smalltalk „egzempliorių kintamuosius“ ir
 „duomenų narius“ C++. Duomenų atributai turi būti aprašyti. Kaip ir
-lokalųs kintamieji, jei pradeda egzistuoti kai jiems pirmą
+lokalūs kintamieji jie pradeda egzistuoti, kai jiems pirmą
 kartą yra priskiriama reikšmė. Pavyzdžiui, jei ``x``
 yra anksčiau sukurtos klases :class:`MyClass` egzempliorius,
 tai žemiau esantis kodas išspausdins reikšmę ``16`` ir
@@ -291,7 +291,7 @@ yra funkcija, kuri "priklauso" objektui. (Python'e, terminas metodas
 nėra unikalus klasės egzemplioriams: kiti objektų tipai gali turėti
 metodus taip pat. Pvz, sąrašo objektas turi metodus append, insert,
 remove, sort ir t.t. Tačiau toliau sekančioje diskusijoje mes naudosime
-terminą metodą išskirtinai klasių egzempliorių objektams, nebent
+terminą „metodas“ išskirtinai klasių egzempliorių objektams, nebent
 bus nurodyta kitaip).
 
 .. index:: object: method
@@ -336,9 +336,9 @@ metodo su *n* argumentų sąrašu kvietimas yra ekvivalentiškas atitinkamos
 funkcijos atitinkamos funkcijos kvietimui su argumentu sąrašu, kuris yra
 sukuriamas pridedant metodo objektą prieš pirmą argumentą.
 
-Jei jūs vis dar nesuprantate kaip metodas dirbas, žvilgsnis į įgyvendinimą gali
-viską paaiškinti. Kai egzemplioriaus atributas, kuris nėra duomenų atributas,
-yra nurodomas ieškoma jo klasėje. Jeigu vardas nurodo validų klasės atributą,
+Jei jūs vis dar nesuprantate kaip dirba metodas, žvilgsnis į įgyvendinimą gali
+viską paaiškinti. Pirmiausia klasėje ieškoma egzemplioriaus atributo,
+kuris nėra duomenų atributas. Jeigu vardas nurodo validų klasės atributą,
 kuris yra funkcijos objektas, metodo objektas yra sukuriamas supakuojant kartu
 egzemplioriaus objektą ir kątik surastos funkcijos objektą į abstraktų obektą ---
 tai ir yra metodo objektas. Kai metodo objektas yra iškviečiamas su argumentų
@@ -368,7 +368,7 @@ objekto vartotojų ("klientų"). Kitaip sakant, klasės nėra tinkamos
 nieko kas leistų paslėpti duomenis --- viskas yra paremta susitarimu.
 (Iš kitos pusės, Python'o implementacija parašyta C gali visiškai
 paslėpti įgyvendinimo detales ir kontroliuoti priėjimą prie
-objekto, jei tik to reikia. Tai gali būti naudojame naudojant
+objekto, jei tik to reikia. Tai gali būti padaryta naudojant
 Python'o išplėtimus parašytus C.)
 
 Klientai turi naudoti duomenų atributus atsargiai --- klientai gali
@@ -376,7 +376,7 @@ sujaukti metodų prižiūrimus invariantus jei bus pakeisti jų
 duomenų atributai. Pastebėsime, kad klientai gali pridėti savo
 duomenų atributus į egzemplioriaus objektą nepaveikiant metodų
 validumo, tol kol išvengiama vardų konflikto --- vėlgi vardų
-kūrimo susitarimai gali padėti išvengti daug galvos skausmo.
+kūrimo susitarimai gali padėti išvengti daug problemų.
 
 Python'e nėra sutrumpinimo norint pasiekti duomenų atributus (ar kitus metodus!)
 iš metodo. Aš asmeniškai manau, kad tai padidina metodų skaitomumą:
@@ -527,10 +527,10 @@ prieš ieškant klasės :class:`Base1` viršklasiuose atrodo natūralus. Tačiau
 tai reikalautų žinoti ar tam tikras :class:`Base1` atributas yra iš ties
 apibrėžtas klasėje :class:`Base1` arba viename iš jos viršklasių prieš
 galėdamas numatyti vardų konflikto pasekmes su klasės :class:`Base2`
-atributu. Pirmiausia-gilyn taisyklė nedaro skirtumo tarp tiesioginių
+atributu. Pirmiausia-gilyn taisyklė neskiria tiesioginių
 ir paveldėtų klasės :class:`Base1` atributų.
 
-:term:`naujo stiliaus klasė`\se metodų nustatymo tvarka keičiasi dinamiškai,
+:term:`naujo stiliaus klasėse <naujo stiliaus klasė>` metodų nustatymo tvarka keičiasi dinamiškai,
 kad galėtų palaikyti bendradarbiaujančius funkcijos :func:`super` kvietimus.
 Šis sprendimas keliose kitose sudėtinį paveldėjimą palaikančiose kalbose
 yra žinomas kaip kviesk-kitą-metodą ir yra galingesnis negu super kvietimas
@@ -565,13 +565,13 @@ jei jie buvo klasės vardo gale. Šis pakeitimas atliekamas nepaisant
 sintaksinės identifikatoriaus pozicijos, todėl tai gali būti
 naudojama apibrėžti klasės kintamuosius, metodus, kintamuosius laikomus
 tarp globalių kintamųjų ir netgi kintamuosius laikomus egzemplioriuose,
-kurie yra privatūs šiai klasės *kitos* klasės egzemplioriuje. Gali
+kurie yra privatūs šiai klasei *kitos* klasės egzemplioriuje. Gali
 įvykti sutrumpinimas, jei pakeistas vardas yra ilgesnis negu 255
 simboliai. Jei identifikatorius nėra klasėje arba kai klasės vardas
 sudarytas tik iš pabraukimo brūkšnių pakeitimas neįvyksta.
 
 Vardų pakeitimo tikslas yra leisti paprastai apibrėžti "privačius"
-egzemplioriaus kintamuosius ir metodus nesujaudinant apie
+egzemplioriaus kintamuosius ir metodus nesijaudinant apie
 egzemplioriaus kintamuosius apibrėžtus paveldėtoje klasėje arba
 egzemplioriaus kintamųjų keitimus už klasės ribų. Pastebėsime,
 kad pakeitimo taisyklės yra sukurtos taip, kad būtų išvengta
@@ -602,8 +602,8 @@ Tuščia klasės apibrėžtis tam puikiai tinka::
    john.salary = 1000
 
 Python'o kodo gabaliukui, kuris tikisi abstraktaus tipo, galima perduoti
-klasė, kuri emuliuoja to duomenų tipo metodus. Tarkime, jei jūs turite
-funksija, kuri formuoja kažkokį duomenų tipą iš failo objekto, jūs galite
+klasę, kuri emuliuoja to duomenų tipo metodus. Tarkime, jei jūs turite
+funkcija, kuri formuoja kažkokį duomenų tipą iš failo objekto, jūs galite
 apibrėžti klasę su metodais :meth:`read` ir :meth:`readline` kurie
 gauna duomenis iš eilutės buferio ir perduoti tą buferį kaip
 argumentą.
@@ -627,7 +627,7 @@ Išimtys Yra Klasės Taip Pat
 Vartotojų apibrėžtos išimtys yra identifikuojamos pagal klases taip pat.
 Naudojant šį mechanizmą galima sukurti praplečiamas išimčių hierarchijas.
 
-Egzistuoja dvi naujos validžios (semantinės) formos išimčių iškėlimui::
+Egzistuoja dvi naujos validžios (semantinės) formos išimčių sukėlimui::
 
    raise Class, instance
 
@@ -767,7 +767,7 @@ generatorius sukurti yra visiškai paprasta::
    g
 
 Viską ką galima padaryti su generatoriais galima padaryti su klasėmis
-paremtais iteratoriais kaip aprašyti praeitoje dalyje. Generatorių
+paremtais iteratoriais kaip aprašyta praeitoje dalyje. Generatorių
 forma yra tokia kompaktiška dėl to, kad metodai :meth:`__iter__` ir
 :meth:`next` yra sukuriami automatiškai.
 
