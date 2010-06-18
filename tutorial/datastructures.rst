@@ -63,7 +63,7 @@ Sąrašo duomenų tipas pateikia naudingų metodų. Štai jie:
 .. method:: list.count(x)
    :noindex:
 
-   Sugrąžina kiek kartų reikšmė *x* sutinkama sąraše.
+   Sugrąžina, kiek kartų reikšmė *x* sutinkama sąraše.
 
 
 .. method:: list.sort()
@@ -490,7 +490,7 @@ raktą gausite klaidą.
 Metodas :meth:`keys` sugrąžina žodyne naudojamų raktų sąrašą.
 Sąrašo tvarka nėra apibrėžta, todėl, jei norite surikiuoto sąrašo,
 tiesiog panaudokite metodą :meth:`sort` raktų sąrašui. Jeigu norite
-patikrinti ar raktas yra žodyne, naudokite bazinį žodį :keyword:`in`.
+patikrinti, ar raktas yra žodyne, naudokite bazinį žodį :keyword:`in`.
 
 Mažas pavyzdys kaip naudoti žodyną::
 
@@ -599,7 +599,7 @@ Daugiau apie sąlygas
 Sąlygose naudojamose ``while`` ir ``if`` sakiniuose gali būti
 naudojami operatoriai (ne tik palyginimai).
 
-Palyginimo operatoriai ``in`` ir ``not in`` tikrina ar reikšmė
+Palyginimo operatoriai ``in`` ir ``not in`` tikrina, ar reikšmė
 yra sekoje. Operatoriai ``is`` ir ``is not`` palygina ar
 du objektai yra vienas ir tas pats objektas: tai svarbu tik kintamiems
 tipams kaip kad sąrašai. Visi palyginimo operatoriai yra to paties
