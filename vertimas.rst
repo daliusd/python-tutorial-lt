@@ -42,8 +42,9 @@ Padėkos žodis
 Dėkoju prie vertimo vienaip ar kitaip prisidėjusiems žmonėms: Adomui Paltanavičiui,
 Armandui Jarušauskui, Mantui Zimnickui, Maksim Norkin, Vytautui Šalteniui,
 Martynui Jociui, Martynui Sklizmantui, Albertui Agėjavui, Mariui Gedminui,
-Jurgiui Pralgauskiui, Agniui Vasiliauskui, Audriui Kažukauskui, Bogdan M. Maryniuk
-ir kitiems asmenims, kurie vienaip ar kitaip prisidėjo prie vertimo.
+Jurgiui Pralgauskiui, Agniui Vasiliauskui, Audriui Kažukauskui, Bogdan M. Maryniuk,
+Vakarui Liutinkevičiui ir kitiems asmenims, kurie vienaip ar kitaip prisidėjo
+prie vertimo.
 
 Jeigu norite prisidėti prie vertimo visada tai galite padaryti. Kaip? Perskaitykite
 kitame skyriuje.

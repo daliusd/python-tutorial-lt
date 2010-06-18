@@ -10,14 +10,15 @@
 Python'as yra lengvai išmokstama, galinga programavimo kalba. Ji turi
 efektyvias aukšto lygio duomenų struktūras ir paprastą, bet efektyvų
 objektinio programavimo modelį. Dėl elegantiškos Python'o sintaksės, dinamiško
-tipizavimo ir interpretatorius, Python'as yra ideali kalba scenarijų rašymui
+tipizavimo ir interpretatoriaus, Python'as yra ideali kalba scenarijų rašymui
 ir greitam aplikacijų kūrimui įvairiose srityse įvairioms platformoms.
 
-Python'o interpretatorių ir didelę standartinę biblioteką galima nemokamai
-parsisiųsti kodo arba binariniu formatu visoms pagrindinėms platformoms
-iš Python'o puslapio http://www.python.org/. Taip pat Python'ą galima laisvai
-platinti. Šiame puslapyje taip rasite informacijos apie kitus nemokamus
-Python'o modulius, programas ir įrankius, bet papildomą dokumentaciją.
+Python'o interpretatorių ir didelę standartinę biblioteką visoms
+pagrindinėms platformoms, bei jų išeities tekstus, galima parsisiųsti iš
+Python'o svetainės http://www.python.org/. Parsisiųstą kopiją vėliau galima
+laisvai platinti. Šiame vadovėlyje taip pat rasite informacijos apie kitus
+nemokamus Python'o modulius, programas, įrankius, bei papildomą
+dokumentaciją.
 
 Python'o interpretatorius yra lengvai praplečiamas naujomis funkcijomis
 ir duomenų tipais naudojant C arba C++ (arba kitas kalbas, kurias galima

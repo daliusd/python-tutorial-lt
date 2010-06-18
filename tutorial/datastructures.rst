@@ -421,7 +421,7 @@ Aibės
 =====
 
 Python'e taip yra duomenų tipas *aibėms*. Aibė yra nesurikiuotų
-elementų rinkinys, kuriame nėra sudvejintų elementų. Įprastai
+elementų rinkinys, kuriame nėra pasikartojančių elementų. Įprastai
 aibės naudojamos buvimo aibėje tikrinimui ir dvigubų
 narių pašalinimui. Aibės objektai taip pat palaiko
 matematines operacijas kaip sąjunga, sankirta,
@@ -467,7 +467,7 @@ Skirtingai nuo sekų, kurios yra indeksuojamos skaičiais,
 bet kuris nekintamas tipas. Eilutės arba skaičiai visada
 gali būti naudojami kaip raktai. Kortežai gali būti
 naudojami kaip raktai, jeigu jie sudaryti tik iš eilučių,
-skaičių arba kortežų. Jeigu kortežas yra sudarytas iš kintamų
+skaičių ar kortežų. Jeigu kortežas yra sudarytas iš kintamų
 objektų (tiesiogiai ar netiesiogiai), jo negalima naudoti rakui.
 Jūs negalite naudoti sąrašų raktams, kadangi sąrašai gali būti
 modifikuojami vietoje naudojant indekso priskyrimą, atkarpų
