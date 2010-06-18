@@ -1,13 +1,13 @@
 .. _tut-brieftour:
 
 ****************************************
-Trumpa Standartinės Bibliotekos Apžvalga
+Trumpa standartinės bibliotekos apžvalga
 ****************************************
 
 
 .. _tut-os-interface:
 
-Operacinės Sistemos Sąsaja
+Operacinės sistemos sąsaja
 ==========================
 
 :mod:`os` modulis suteikia galimybę bendrauti su operacine sistema::
@@ -44,7 +44,7 @@ suteikia aukštesnio lygio sąsają, kurią lengviau naudoti::
 
 .. _tut-file-wildcards:
 
-Failų Paieška
+Failų paieška
 =============
 
 :mod:`glob` modulyje galima rasti funkciją, kuri leidžią į sąrašą
@@ -58,7 +58,7 @@ vardo požymius::
 
 .. _tut-command-line-arguments:
 
-Komandinės Eilutės Argumentai
+Komandinės eilutės argumentai
 =============================
 
 Pagalbinei skriptai dažnai turi dirbti su komandinės eilutės argumentais.
@@ -77,7 +77,7 @@ su komandine eilute gali suteikti :mod:`optparse` modulis.
 
 .. _tut-stderr:
 
-Klaidų Išvesties Nukreipimas ir Programos Pabaigimas
+Klaidų išvesties nukreipimas ir programos pabaigimas
 ====================================================
 
 :mod:`sys` modulyje taip pat galima rasti atributus *stdin*, *stdout*, and *stderr*.
@@ -92,7 +92,7 @@ Pats tiesiausias būdas pabaigti skripto veikimą yra naudoti ``sys.exit()``.
 
 .. _tut-string-pattern-matching:
 
-Eilučių Rašto Atpažinimas
+Eilučių rašto atpažinimas
 =========================
 
 :mod:`re` modulis suteikia galimybę naudotis reguliariais reiškiniais
@@ -151,7 +151,7 @@ kablelio funkcijų::
 
 .. _tut-internet-access:
 
-Interneto Prieiga
+Interneto prieiga
 =================
 
 Egzistuoja ne vienas modulis priėjimui prie interneto ir interneto protokolų
@@ -180,7 +180,7 @@ nurodytą URL ir :mod:`smtplib` laiškų siuntimui::
 
 .. _tut-dates-and-times:
 
-Datos ir Laikai
+Datos ir laikai
 ===============
 
 :mod:`datetime` modulyje rasite klasių datos ir laiko manipuliavimui.
@@ -206,7 +206,7 @@ supranta laiko zonas ::
 
 .. _tut-data-compression:
 
-Duomenų Suspaudimas
+Duomenų suspaudimas
 ===================
 
 Dažni duomenų archyvavimo ir suspaudimo formatai yra tiesiog palaikomi
@@ -228,7 +228,7 @@ modulių, pvz.: :mod:`zlib`, :mod:`gzip`, :mod:`bz2`, :mod:`zipfile` ir
 
 .. _tut-performance-measurement:
 
-Našumo Matavimas
+Našumo matavimas
 ================
 
 Kai kurie Python vartotojai nori žinoti kaip skirtingi tos pačios problemos
@@ -253,7 +253,7 @@ identifikuoti kritines sekcijas.
 
 .. _tut-quality-control:
 
-Kokybės Kontrolė
+Kokybės kontrolė
 ================
 
 Vienas būdas rašyti aukštos kokybės programinę įrangą yra testų
@@ -298,7 +298,7 @@ faile::
 
 .. _tut-batteries-included:
 
-Baterijos Pridedamos
+Baterijos pridedamos
 ====================
 
 Python'as laikosi "baterijos pridedamos" filosofijos. Tai geriausiai matoma

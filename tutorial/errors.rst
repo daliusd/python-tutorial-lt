@@ -76,7 +76,7 @@ standartinės įvesties.
 
 .. _tut-handling:
 
-Išimčių Valdymas
+Išimčių valdymas
 ================
 
 Programą galima parašyti taip, kad ji suvaldytų pasirinktas išimtis. Pažiūrėkime
@@ -215,7 +215,7 @@ Pavyzdžiui::
 
 .. _tut-raising:
 
-Išimčių Sukėlimas
+Išimčių sukėlimas
 =================
 
 :keyword:`raise` sakinys leidžia programuotojui sukelti norimą išimtį.
@@ -249,7 +249,7 @@ vėl sukelti išimtį::
 
 .. _tut-userexceptions:
 
-Vartotojų apibrėžtos Išimtys
+Vartotojų apibrėžtos išimtys
 ============================
 
 Programos gali sukurti savo išimtis sukurdamos naujas išimčių klases.
@@ -324,7 +324,7 @@ informacijos apie klases galima rasti skyriuje :ref:`tut-classes`.
 
 .. _tut-cleanup:
 
-Išvalymo Apibrėžimas
+Išvalymo apibrėžimas
 ====================
 
 :keyword:`try` sakinys turi dar vieną papildomą paragrafą,
@@ -387,7 +387,7 @@ resursų panaudojimas buvo sėkmingas ar ne.
 
 .. _tut-cleanup-with:
 
-Numatytas Išvalymas
+Numatytas išvalymas
 ===================
 
 Kai kurie objektai apibrėžia standartinius išvalymo veiksmus tam atvejui

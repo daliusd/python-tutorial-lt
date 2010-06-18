@@ -32,7 +32,7 @@ operatoriai ir t.t.) klasėse gali būti perrašyti.
 
 .. _tut-terminology:
 
-Žodis Apie Terminologiją
+Žodis apie terminologiją
 ========================
 
 Kadangi trūksta universalios terminologijos šnekant apie klases, aš
@@ -58,7 +58,7 @@ Paskalyje.
 
 .. _tut-scopes:
 
-Python'o Sritys ir Vardų Erdvės
+Python'o sritys ir vardų erdvės
 ===============================
 
 Prieš klasių pristatymą, aš pirmiausia turiu papasakoti apie Python'o
@@ -156,7 +156,7 @@ srityje).
 
 .. _tut-firstclasses:
 
-Pirmas Žvilgsnis į Klases
+Pirmas žvilgsnis į klases
 =========================
 
 Klasės prideda šiek tiek naujos sintaksės, tris naujus objektų tipus
@@ -164,7 +164,7 @@ ir šiek tiek naujos semantikos.
 
 .. _tut-classdefinition:
 
-Klasių Apibrėžties Sintaksė
+Klasių apibrėžties sintaksė
 ---------------------------
 
 Paprasčiausia klasės apibrėžtis atrodo taip::
@@ -202,7 +202,7 @@ susietas su klasės vardu duotu jai klasės apibrėžties antraštėje
 
 .. _tut-classobjects:
 
-Klasių Objektai
+Klasių objektai
 ---------------
 
 Klasių objektai palaiko dviejų rušių operacijas: atributų nuorodos ir
@@ -305,7 +305,7 @@ yra *metodo objektas*, ne funkcijos objektas.
 
 .. _tut-methodobjects:
 
-Metodų Objektai
+Metodų objektai
 ---------------
 
 Įprastai, metodai yra iškviečiamas iškart po to, kai jis susiejamas::
@@ -621,7 +621,7 @@ objektas atitinkantis tą metodą.
 
 .. _tut-exceptionclasses:
 
-Išimtys Yra Klasės Taip Pat
+Išimtys yra klasės taip pat
 ===========================
 
 Vartotojų apibrėžtos išimtys yra identifikuojamos pagal klases taip pat.

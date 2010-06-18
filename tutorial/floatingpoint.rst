@@ -1,7 +1,7 @@
 .. _tut-fp-issues:
 
 ******************************************************
-Slankaus Kablelio Aritmetika: Problemos ir Apribojimai
+Slankaus kablelio aritmetika: problemos ir apribojimai
 ******************************************************
 
 .. sectionauthor:: Tim Peters <tim_one@users.sourceforge.net>
@@ -138,7 +138,7 @@ galimybių naudokite :meth:`str.format` metodą.
 
 .. _tut-fp-error:
 
-Atvaizdavimo Klaida
+Atvaizdavimo klaida
 ===================
 
 Šis skyrius paaiškina "0.1" pavyzdį detaliau ir paaiškina, kaip jūs galite

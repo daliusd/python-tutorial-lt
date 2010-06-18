@@ -1,7 +1,7 @@
 .. _tut-brieftourtwo:
 
 *******************************************************
-Trumpa Standartinės Bibliotekos Apžvalga -- Antra Dalis
+Trumpa standartinės bibliotekos apžvalga -- antra dalis
 *******************************************************
 
 Ši dalis apžvelgia sudėtingesnius modulius, kurie reikalingi
@@ -10,7 +10,7 @@ mažuose skriptuose.
 
 .. _tut-output-formatting:
 
-Išvesties Formatavimas
+Išvesties formatavimas
 ======================
 
 :mod:`repr` modulyje rasite :func:`repr` funkcijos
@@ -135,7 +135,7 @@ paprastą tekstinę ar HTML ataskaitą.
 
 .. _tut-binary-formats:
 
-Darbas su Dvejetainiais Duomenų Įrašais
+Darbas su dvejetainiais duomenų įrašais
 =======================================
 
 :mod:`struct` modulio funkcijos :func:`pack` ir :func:`unpack` leidžia
@@ -245,7 +245,7 @@ būti užkrauta iš vartotojo konfigūruojamo failo.
 
 .. _tut-weak-references:
 
-Silpnos Nuorodos
+Silpnos nuorodos
 ================
 
 Python'as atmintį valdo automatiškai (daugumai objektų skaičiuojamos
@@ -287,7 +287,7 @@ yra brangu sukurti::
 
 .. _tut-list-tools:
 
-Priemonės Darbui su Sąrašais
+Priemonės darbui su sąrašais
 ============================
 
 Dauguma duomenų struktūrų poreikių gali būti pasiekti naudojant
@@ -351,7 +351,7 @@ mažiausią elementą nerūšiuojant sąrašo pilnai::
 
 .. _tut-decimal-fp:
 
-Dešimtainė Slankaus Kablelio Aritmetika
+Dešimtainė slankaus kablelio aritmetika
 =======================================
 
 :mod:`decimal` modulis leidžia naudoti :class:`Decimal` duomenų tipą skirta

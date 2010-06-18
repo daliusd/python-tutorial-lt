@@ -1,7 +1,7 @@
 .. _tut-morecontrol:
 
 ******************************
-Daugiau Srauto Valdymo Įrankių
+Daugiau srauto valdymo įrankių
 ******************************
 
 Apart tik ką pristatyto reiškinio :keyword:`while`, Python'as pažįsta
@@ -11,7 +11,7 @@ yra keletas smulkių skirtumų.
 
 .. _tut-if:
 
-:keyword:`if` Sakinys
+:keyword:`if` sakinys
 =====================
 
 Tikriausiai labiausiai žinomas sakinio tipas yra :keyword:`if` sakinys.
@@ -40,7 +40,7 @@ naudingas norint išvengti perkrauto teksto stumdymo. Bazinių žodžių :keywor
 
 .. _tut-for:
 
-:keyword:`for` Sakinys
+:keyword:`for` sakinys
 ======================
 
 .. index::
@@ -83,7 +83,7 @@ Atkarpos naudojimas tam ypač patogus::
 
 .. _tut-range:
 
-:func:`range` Funkcija
+:func:`range` funkcija
 ======================
 
 Jeigu jums reikia iteruoti per skaičių seką, jums pravers įtaisytoji
@@ -123,7 +123,7 @@ Tačiau dažniausiai patogiau naudoti :func:`enumerate` funkciją, žiūrime :re
 
 .. _tut-break:
 
-:keyword:`break` ir :keyword:`continue` Sakiniai, bei :keyword:`else` Reiškinys Cikluose 
+:keyword:`break` ir :keyword:`continue` sakiniai, bei :keyword:`else` reiškinys cikluose 
 ========================================================================================
 
 :keyword:`break` sakinys, kaip ir C, išeina iš mažiausio uždarančio
@@ -159,7 +159,7 @@ toliau sekančiu ciklu, kuris ieško pirminių skaičių::
 
 .. _tut-pass:
 
-:keyword:`pass` Sakiniai
+:keyword:`pass` sakiniai
 ========================
 
 :keyword:`pass` sakinys nedaro nieko. Jis gali būti naudojamas, kai
@@ -187,7 +187,7 @@ ignoruojamas::
 
 .. _tut-functions:
 
-Funkcijų Apibrėžimas
+Funkcijų apibrėžimas
 ====================
 
 Mes galime sukurti funkciją, kuri surašo Fibonači skaičių seką iki
@@ -292,7 +292,7 @@ jį spausdinus) yra labai paprasta::
 
 .. _tut-defining:
 
-Daugiau apie Funkcijų Apibrėžimą
+Daugiau apie funkcijų apibrėžimą
 ================================
 
 Taip pat galima apibrėžti funkcijas su kintamu argumentų skaičiumi.
@@ -301,7 +301,7 @@ Galimos trys formos, kurios gali būti kombinuojamos.
 
 .. _tut-defaultargs:
 
-Numatytos Argumentų Reikšmės
+Numatytos argumentų reikšmės
 ----------------------------
 
 Naudingiausia forma yra numatytų reikšmių naudojimas vienam ar daugiau
@@ -368,7 +368,7 @@ kvietimui, jūs galite perrašyti funkciją taip::
 
 .. _tut-keywordargs:
 
-Vardiniai Argumentai
+Vardiniai argumentai
 --------------------
 
 Funckijos taip pat gali būti kviečiamos naudojant vardinius argumentus naudojant
@@ -452,7 +452,7 @@ tai tvarka, kuria būti atspausdinami argumentai, būtų neapibrėžta.
 
 .. _tut-arbitraryargs:
 
-Laisvas Argumentų Sąrašas
+Laisvas argumentų sąrašas
 -------------------------
 
 .. index::
@@ -469,7 +469,7 @@ skaičių, galima nurodyti nulį ar daugiau normalių argumentų::
 
 .. _tut-unpacking-arguments:
 
-Argumentų Sąrašo Išpakavimas
+Argumentų sąrašo išpakavimas
 ----------------------------
 
 Atvirkštinė situacija įvyksta, kai argumentai jau yra sąraše arba korteže,
@@ -502,7 +502,7 @@ Tokiu pat būdu, žodynai gali ištraukti vardinius argumentus naudodami  ``**``
 
 .. _tut-lambda:
 
-Lambda Formos
+Lambda formos
 -------------
 
 Pagal populiarų prašymą naują savybė randama kitose funkcinėse programavimo kalbose
@@ -525,7 +525,7 @@ pasiekti kintamuosius iš išorinės srities::
 
 .. _tut-docstrings:
 
-Dokumentacijos Eilutės
+Dokumentacijos eilutės
 ----------------------
 
 .. index::
@@ -574,7 +574,7 @@ mažiau, bet jei taip atsitinka visi tarpai turi būti nukerpami.
 
 .. _tut-codingstyle:
 
-Intermezzo: Programavimo Stilius
+Intermezzo: programavimo stilius
 ================================
 
 .. sectionauthor:: Georg Brandl <georg@python.org>

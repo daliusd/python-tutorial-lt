@@ -101,7 +101,7 @@ Pavyzdys, kuriame panaudojam dauguma sąrašo metodų::
 
 .. _tut-lists-as-stacks:
 
-Sąrašo Naudojimas Dėklams
+Sąrašo naudojimas dėklams
 -------------------------
 
 .. sectionauthor:: Ka-Ping Yee <ping@lfw.org>
@@ -131,7 +131,7 @@ elementą iš dėklo viršaus naudokite :meth:`pop` nenurodydami jo indekso. Pav
 
 .. _tut-lists-as-queues:
 
-Sąrašo Naudojimas Eilėms
+Sąrašo naudojimas eilėms
 ------------------------
 
 .. sectionauthor:: Ka-Ping Yee <ping@lfw.org>
@@ -155,7 +155,7 @@ naudokite :meth:`pop` su indeksu ``0``.  Pavyzdžiui::
 
 .. _tut-functional:
 
-Funkcinio Programavimo Įrankiai
+Funkcinio programavimo įrankiai
 -------------------------------
 
 Egzistuoja trys įtaisytosios funkcijos, kurios yra labai naudingos su sąrašais:
@@ -226,7 +226,7 @@ egzistuoja ir ji būtent taip ir dirba.
 .. versionadded:: 2.3
 
 
-Sąrašo Užklausos
+Sąrašo užklausos
 ----------------
 
 Sąrašo užklausos leidžia paprastai sukurti sąrašus nenaudojant
@@ -275,7 +275,7 @@ pritaikytos sudėtingies reiškiniams ir vidinėms funkcijoms::
    ['3.1', '3.14', '3.142', '3.1416', '3.14159']
 
 
-Įdėtinės Sąrašo Užklausos
+Įdėtinės sąrašo užklausos
 -------------------------
 
 Jeigu jūs mėgstate sudėtingus dalykus, sąrašo užklausos gali būti įdėtinės.
@@ -352,7 +352,7 @@ būdų sutiksime vėliau.
 
 .. _tut-tuples:
 
-Kortežai ir Sekos
+Kortežai ir sekos
 =================
 
 Mes pastebėjome, kad sąrašai ir eilutės turi daug bendrų savybių,
@@ -531,7 +531,7 @@ poras naudojant vardinius argumentus::
 
 .. _tut-loopidioms:
 
-Iteravimo Technikos
+Iteravimo technikos
 ===================
 
 Norint pereiti per žodyną, raktas ir jį atitinkantį reikšmė
@@ -593,7 +593,7 @@ kuri sugrąžina naują surūšiuotą sąrašą (bet originalų sąrašą paliek
 
 .. _tut-conditions:
 
-Daugiau apie Sąlygas
+Daugiau apie sąlygas
 ====================
 
 Sąlygose naudojamose ``while`` ir ``if`` sakiniuose gali būti
@@ -638,7 +638,7 @@ parašyti ``==``.
 
 .. _tut-comparing:
 
-Sekų ir Kitų Tipų Palyginimas
+Sekų ir kitų tipų palyginimas
 =============================
 
 Sekų objektai gali būti palyginami su kitais objektais, kurie turi

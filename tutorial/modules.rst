@@ -155,7 +155,7 @@ testai).
 
 .. _tut-searchpath:
 
-Modulio Paieškos Kelias
+Modulio paieškos kelias
 -----------------------
 
 .. index:: triple: module; search; path
@@ -241,7 +241,7 @@ Keletas patarimų ekspertams:
 
 .. _tut-standardmodules:
 
-Standartiniai Moduliai
+Standartiniai moduliai
 ======================
 
 .. index:: module: sys
@@ -283,7 +283,7 @@ standartines sąrašo operacijas::
 
 .. _tut-dir:
 
-:func:`dir` Funkcija
+:func:`dir` funkcija
 ====================
 
 Įtaisytoji funkcija :func:`dir` yra naudojama, kai norime sužinoti kokius
@@ -452,7 +452,7 @@ tai buvo galima daryti prieš tai).
 
 .. _tut-pkg-import-star:
 
-\* Importavimas Iš Pakuotės
+\* Importavimas iš pakuotės
 ---------------------------
 
 .. index:: single: __all__
@@ -513,7 +513,7 @@ specifinis_submodulis``!  Tiesa sakant, tai rekomenduojamas būdas nebent
 submodulis iš kitos pakuotės naudoja tokį patį vardą.
 
 
-Nuorodos tarp Pakuočių
+Nuorodos tarp pakuočių
 ----------------------
 
 Submoduliai dažnai rodo vienas į kitą. Tarkime, modulis :mod:`surround` gali
@@ -549,7 +549,7 @@ vardas visada yra ``"__main__"`` moduliai, kurie bus naudojami kaip
 pagrindiniai Python'o programos moduliai turi naudoti absoliučius
 importavimus.
 
-Pakuotės Keliose Direktorijose
+Pakuotės keliose direktorijose
 ------------------------------
 
 Pakuotės palaiko dar vieną specialų atributą --- :attr:`__path__`.  Šis

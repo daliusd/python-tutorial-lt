@@ -1,7 +1,7 @@
 .. _tut-io:
 
 *********************
-Įvedimas ir Išvedimas
+Įvedimas ir išvedimas
 *********************
 
 Egzistuoja keli būdai išvesti programos rezultatus. Duomenys gali būti
@@ -10,7 +10,7 @@ išspausdinti žmogui skaitoma forma arba įrašyti į failą ateities naudojimu
 
 .. _tut-formatting:
 
-Gražesnis Išvedimo Formatavimas
+Gražesnis išvedimo formatavimas
 ===============================
 
 Kol kas mes sutikome du reikšmių rašymo būdus: *išraiškos sakinius* ir
@@ -209,7 +209,7 @@ ilgainiui iš kalbos bus pašalintas rekomenduojama naudoti
 
 .. _tut-files:
 
-Failų Skaitymas ir Rašymas
+Failų skaitymas ir rašymas
 ==========================
 
 .. index::
@@ -247,7 +247,7 @@ nepriklausomas nuo platformos.
 
 .. _tut-filemethods:
 
-Failų Objektų Metodai
+Failų objektų metodai
 ---------------------
 
 Likę pavyzdžiai šioje dalyje tikėsis, kad failo objektas ``f`` yra jau sukurtas.
@@ -359,7 +359,7 @@ Failų objektai turi kelis papildomus metodus, kaip kad :meth:`isatty` ir
 
 .. _tut-pickle:
 
-:mod:`pickle` Modulis
+:mod:`pickle` modulis
 ---------------------
 
 .. index:: module: pickle

@@ -1,7 +1,7 @@
 .. _tut-whatnow:
 
 **********
-Kas Dabar?
+Kas dabar?
 **********
 
 Šis vadovėlis tikriausiai sustiprino jūsų norą naudoti Python'ą --- jūs
