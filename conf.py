@@ -14,7 +14,7 @@ sys.path.append(os.path.abspath('tools/sphinxext'))
 # ---------------------
 
 extensions = ['sphinx.ext.refcounting', 'sphinx.ext.coverage',
-              'sphinx.ext.doctest', 'pyspecific']
+              'sphinx.ext.doctest', 'pyspecific', 'rst2pdf.pdfbuilder']
 templates_path = ['tools/sphinxext']
 
 # General substitutions.
@@ -130,3 +130,9 @@ coverage_ignore_c_items = {
 #    'cfunction': [...]
 }
 
+pdf_use_index = False
+pdf_use_modindex = False
+pdf_use_coverpage = False
+pdf_language='lt_LT'
+pdf_font_path=['/usr/share/fonts',]
+pdf_stylesheets = ['sphinx','kerning','a4']
