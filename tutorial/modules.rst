@@ -287,7 +287,7 @@ standartines sąrašo operacijas::
 ====================
 
 Įtaisytoji funkcija :func:`dir` yra naudojama, kai norime sužinoti kokius
-vardus apibrėžia modulis. Ši funkcija sugrąžina surūšiuotą eilučių sąrašą::
+vardus apibrėžia modulis. Ši funkcija sugrąžina surikiuotą eilučių sąrašą::
 
    >>> import fibo, sys
    >>> dir(fibo)

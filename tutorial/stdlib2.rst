@@ -328,7 +328,7 @@ paieškos medžių įgyvendinimui::
 
 Papildomai alternatyviems sąrašų įgyvendinimams, biblioteka taip pat
 siūlo priemones kaip :mod:`bisect` modulis su funkcijomis skirtoms
-surūšiuotų manipuliavimui::
+surikiuoti sekų manipuliavimui::
 
    >>> import bisect
    >>> scores = [(100, 'perl'), (200, 'tcl'), (400, 'lua'), (500, 'python')]
@@ -339,11 +339,11 @@ surūšiuotų manipuliavimui::
 :mod:`heapq` modulyje rasite funkcijas reikalingas krūvų (ang. heap) paremtų
 sąrašais įgyvendinimui. Mažiausia reikšmė visada laikoma nulinėje
 pozicijoje. Tai praverčia programose, kurioms dažnai reikia pasiekti
-mažiausią elementą nerūšiuojant sąrašo pilnai::
+mažiausią elementą nerikiuojant sąrašo pilnai::
 
    >>> from heapq import heapify, heappop, heappush
    >>> data = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
-   >>> heapify(data)                      # surūšiuojame sąrašą krūvos tvarka
+   >>> heapify(data)                      # surikiuojame sąrašą krūvos tvarka
    >>> heappush(data, -5)                 # pridedame naują narį
    >>> [heappop(data) for i in range(3)]  # gauname tris mažiausius narius
    [-5, 0, 1]

@@ -46,17 +46,17 @@ Sąrašo duomenų tipas pateikia naudingų metodų. Štai jie:
 .. method:: list.pop([i])
    :noindex:
 
-   Pašalina elementą iš sąrašo pagal poziciją ir ją sugrąžina. Jei indeksas
-   nėra nurodytas, ``a.pop()`` pašalina ir sugrąžina paskutinį sąrašo elementą.
+   Pašalina elementą iš sąrašo pagal poziciją ir sugrąžina toje pozicijoje buvusią reikšmę.
+   Jei indeksas nėra nurodytas, ``a.pop()`` pašalina ir sugrąžina paskutinį sąrašo elementą.
    (Laužtiniai skliausteliai aplink *i* metodo aprašyme nurodo, kad parametras
    yra nebūtinas, o ne kad jūs turite naudoti laužtinius skliaustelius
-   toje vietoje. Jūs sutiksite šį būdą dažnai naudojama Python'o dokumentacijoje.)
+   toje vietoje. Jūs sutiksite šį būdą dažnai naudojamą Python'o dokumentacijoje.)
 
 
 .. method:: list.index(x)
    :noindex:
 
-   Sugrąžina pirmą sąrašo elementą, kurio reikšmė yra *x*. Jeigu elemento
+   Sugrąžina pirmą sąrašo elementą, kurio reikšmė yra *x*. Jeigu elemento,
    nėra įvyksta klaida.
 
 
@@ -69,7 +69,7 @@ Sąrašo duomenų tipas pateikia naudingų metodų. Štai jie:
 .. method:: list.sort()
    :noindex:
 
-   Surūšiuoja sąrašo elementus.
+   Surikiuoja sąrašo elementus.
 
 
 .. method:: list.reverse()
@@ -108,9 +108,9 @@ Sąrašo naudojimas dėklams
 
 
 Sąrašo metodai leidžia sąrašą naudoti kaip dėklą (ang. stack), kur
-paskutinis pridėtas elementas yra pirmiausia išimamas („paskutinį-į, pirmas-iš“).
-Norėdami pridėti elementą į deklą naudokite :meth:`append`. Norėdami išimti
-elementą iš dėklo viršaus naudokite :meth:`pop` nenurodydami jo indekso. Pavyzdžiui::
+paskutinis pridėtas elementas yra pirmiausia išimamas („paskutinis įdetas, pirmas išimtas“).
+Norėdami pridėti elementą į deklą, naudokite :meth:`append`. Norėdami išimti
+elementą iš dėklo viršaus, naudokite :meth:`pop` nenurodydami indekso. Pavyzdžiui::
 
    >>> stack = [3, 4, 5]
    >>> stack.append(6)
@@ -291,7 +291,7 @@ trys sąrašai::
     ...        [7, 8, 9],
     ...       ]
 
-Taigi jeigu norėtūmėte sukeisti eilutes ir stulpelius jūs galite
+Taigi, jeigu norėtumėte sukeisti eilutes ir stulpelius, jūs galite
 panaudoti sąrašo užklausas::
 
     >>> print [[row[i] for row in mat] for i in [0, 1, 2]]
@@ -299,7 +299,7 @@ panaudoti sąrašo užklausas::
 
 *Įdėtinės* sąrašo užklausos turi būti įvertintos ypatingai:
 
-    Tam kad išvengti abejonių, kai sąrašo užklausos yra įdedamos viena į kitą,
+    Kad išvengtumėte abejonių, kai sąrašo užklausos yra įdedamos viena į kitą,
     skaitykite iš dešinės į kairę.
 
 Skaitomesnė šio kodo versija parodo veikimą aiškiau::
@@ -309,7 +309,7 @@ Skaitomesnė šio kodo versija parodo veikimą aiškiau::
             print row[i],
         print
 
-Realiame pasaulyje, jūs tūrėtūmėte naudoti įtaisytąsias funkcijas vietoj
+Realiame pasaulyje, jūs turėtumėte naudoti įtaisytąsias funkcijas vietoj
 sudėtingų sakinių. Funkciją :func:`zip` šiuo atveju atliks būtent tai,
 ko jums reikia::
 
@@ -327,7 +327,7 @@ Norėdami išimti iš sąrašo elementą pagal indeksą, o ne pagal reikšmę,
 naudokite :keyword:`del` sakinį. Jis skiriasi nuo :meth:`pop` metodo,
 kuris grąžina reikšmę. :keyword:`del` sakinys gali būti
 naudojamas išimti iš sąrašo atkarpas arba norint išvalyti visą sąrašą
-(seniau mes tai atlikome priskirdami tuščia sąrašą atkarpai).
+(seniau mes tai atlikome priskirdami tuščią sąrašą atkarpai).
 Pavyzdžiui::
 
    >>> a = [-1, 1, 66.25, 333, 333, 1234.5]
@@ -358,7 +358,7 @@ Kortežai ir sekos
 Mes pastebėjome, kad sąrašai ir eilutės turi daug bendrų savybių,
 kaip kad indeksavimas ir kirpimo operacijos. Jie yra *sekos* duomenų
 tipų pavyzdžiai. Kadangi Python'as yra besivystanti kalba, kiti sekos tipai gali
-būti pridėti ateityje. Python'e yra ir kitas standartinis sekos tipas: *kortežas*.
+būti pridėti ateityje. Python'e yra ir kitas standartinis sekos tipas: *kortežas* (ang. tuple).
 
 Kortežas yra kelių reikšmių seka atskirta kableliais. Pavyzdžiui::
 
@@ -367,7 +367,7 @@ Kortežas yra kelių reikšmių seka atskirta kableliais. Pavyzdžiui::
    12345
    >>> t
    (12345, 54321, 'labas!')
-   >>> # Tuples may be nested:
+   >>> # Kortežai gali būti įdėti vienas į kitą:
    ... u = t, (1, 2, 3, 4, 5)
    >>> u
    ((12345, 54321, 'labas!'), (1, 2, 3, 4, 5))
@@ -379,7 +379,7 @@ reikalingi (ypač jei kortežas yra didesnio reiškinio dalis).
 
 Kortežai turi daug panaudojimo būdų. Pavyzdžiui: (x, y) koordinačių pora,
 darbuotojo įrašas duombazėje ir t.t. Kortežai, kaip eilutės, yra nekintami,
-t.y. neįmanoma priskirti reikšmės kuriams nors kortežo nariui (tačiau
+t.y. neįmanoma priskirti reikšmės kuriam nors kortežo nariui (tačiau
 tai galite padaryti naudodami kirpimus ir sujungimus). Taip pat galima
 sukurti kortežą, kurio nariai yra kintami objektai (kaip kad sąrašai).
 
@@ -405,8 +405,8 @@ Atvirkštinė operacija taip pat yra galima:
 
    >>> x, y, z = t
 
-Taip vadinama *sekos išpakavimu*. Sekos išpakavimas reikalauja tiek kintamųjų
-kiek jų yra sekoje. Atkreipsime dėmesį, kad priskyrimas keliams kintamiesiems
+Tai vadinama *sekos išpakavimu*. Sekos išpakavimas reikalauja tiek kintamųjų
+kiek reikšmių yra sekoje. Atkreipsime dėmesį, kad priskyrimas keliams kintamiesiems
 yra tik kortežo pakavimo ir sekos išpakavimo kombinacija!
 
 Čia tėra tik šiek tiek asimetrijos: kelių reikšmių pakavimas visada sukuria
@@ -420,8 +420,8 @@ kortežą, o išpakavimas veikia su bet kokia seka.
 Aibės
 =====
 
-Python'e taip yra duomenų tipas *aibėms*. Aibė yra nesurušiuotų
-elementų rinkinys, kuriame nėra duplikuotų elementų. Įprastai
+Python'e taip yra duomenų tipas *aibėms*. Aibė yra nesurikiuotų
+elementų rinkinys, kuriame nėra sudvejintų elementų. Įprastai
 aibės naudojamos buvimo aibėje tikrinimui ir dvigubų
 narių pašalinimui. Aibės objektai taip pat palaiko
 matematines operacijas kaip sąjunga, sankirta,
@@ -461,12 +461,12 @@ skirtumas ar simetriškas skirtumas.
 
 Kitas naudingas duomenų tipas Python'e yra *žodynas*. Kitose
 kalbose žodynai vadinami
-"asociatyviąją atmintimi" arba "asociatyviaisiais masyvai".
+"asociatyviąją atmintimi" arba "asociatyviaisiais masyvais".
 Skirtingai nuo sekų, kurios yra indeksuojamos skaičiais,
 žodynai indeksuojami naudojant *raktus*, kuriais gali būti
 bet kuris nekintamas tipas. Eilutės arba skaičiai visada
 gali būti naudojami kaip raktai. Kortežai gali būti
-naudojami kaip raktai jeigu jie sudaryti tik iš eilučių,
+naudojami kaip raktai, jeigu jie sudaryti tik iš eilučių,
 skaičių arba kortežų. Jeigu kortežas yra sudarytas iš kintamų
 objektų (tiesiogiai ar netiesiogiai), jo negalima naudoti rakui.
 Jūs negalite naudoti sąrašų raktams, kadangi sąrašai gali būti
@@ -474,10 +474,10 @@ modifikuojami vietoje naudojant indekso priskyrimą, atkarpų
 priskyrimus arba metodus kaip :meth:`append` ir :meth:`extend`.
 
 Žodynus geriausia įsivaizduoti kaip nesutvarkytą *raktas:reikšmė* porų aibę,
-kur reikalaujama, kad raktas būti žodyne unikalus. Tuščia figūrinių skliaustelių
+kur reikalaujama, kad raktas būtų žodyne unikalus. Tuščia figūrinių skliaustelių
 pora ``{}`` sukuria tuščia žodyną. Norėdami sukurti žodyną
 su pradinėmis reikšmėmis tarp figūrinių skliaustelių surašysite raktas:reikšmė poras
-atskirtas kableliais. Tokiu pat būdų žodynai yra išvedami.
+atskirtas kableliais. Tokiu pat būdu žodynai yra išvedami.
 
 Pagrindinė žodynų operacija yra reikšmių įdėjimas pagal raktą
 ir tos reikšmės ištraukimas pagal raktą. Taip pat galima
@@ -487,10 +487,10 @@ Jeigu jūs į žodyną rašote reikšmę naudodami raktą, kuris jau
 Jeigu bandysite ištraukti reikšmę iš žodyno naudodami neesantį
 raktą gausite klaidą.
 
-Metodas :meth:`keys` sugrąžina žodyno raktų sąrašą, kurie yra naudojami
-žodyne. Sąrašo tvarka nėra apibrėžta, todėl jei norite surūšiuoto sąrašo
+Metodas :meth:`keys` sugrąžina žodyne naudojamų raktų sąrašą.
+Sąrašo tvarka nėra apibrėžta, todėl, jei norite surikiuoto sąrašo,
 tiesiog panaudokite metodą :meth:`sort` raktų sąrašui. Jeigu norite
-patikrinti ar raktas yra žodyne naudokite bazinį žodį :keyword:`in`.
+patikrinti ar raktas yra žodyne, naudokite bazinį žodį :keyword:`in`.
 
 Mažas pavyzdys kaip naudoti žodyną::
 
@@ -554,8 +554,8 @@ gali būti gauta vienu metu naudojant :func:`enumerate` funkciją. ::
    1 tac
    2 toe
 
-Norėdami pereiti per dvi ar daugiau sekų vienu metu, įrašai gali
-būti sujungti naudojant :func:`zip` funkciją. ::
+Norėdami pereiti per dvi ar daugiau sekų vienu metu, galite
+sujungti įrašus naudodami :func:`zip` funkciją. ::
 
    >>> questions = ['name', 'quest', 'favorite color']
    >>> answers = ['lancelot', 'the holy grail', 'blue']
@@ -566,7 +566,7 @@ būti sujungti naudojant :func:`zip` funkciją. ::
    What is your quest?  It is the holy grail.
    What is your favorite color?  It is blue.
 
-Norėdami pereiti seką iš kito gali pirma nurodykite seką
+Norėdami pereiti seką iš kito galo, pirma nurodykite seką
 normalia tvarka ir tada iškvieskite :func:`reversed` funkciją. ::
 
    >>> for i in reversed(xrange(1,10,2)):
@@ -578,8 +578,8 @@ normalia tvarka ir tada iškvieskite :func:`reversed` funkciją. ::
    3
    1
 
-Jei norite pereiti per surūšiuotą seką naudokite :func:`sorted` funkciją,
-kuri sugrąžina naują surūšiuotą sąrašą (bet originalų sąrašą palieka nepakeistą). ::
+Jei norite pereiti per surikiuotą seką, naudokite :func:`sorted` funkciją,
+kuri sugrąžina naują surikiuotą sąrašą (bet originalų sąrašą palieka nepakeistą). ::
 
    >>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
    >>> for f in sorted(set(basket)):
@@ -615,7 +615,7 @@ operatoriai --- iš jų ``not`` turi aukščiausia prioritetą ir ``or`` mažiau
 taigi ``A and not B or C`` yra tas pats kas ``(A and (not B)) or C``. Kaip visada,
 skliausteliai gali padėti išreikšti norimą kompoziciją.
 
-Loginiai operatoriai ``and`` ir ``or`` yra taip pavadinami *trumpos-grandinės*
+Loginiai operatoriai ``and`` ir ``or`` yra taip pavadinami *trumpos grandinės*
 operatoriais: jų argumentai yra įvertinami iš kairės į dešinę, ir įvertinimas
 sustabdomas kai tik rezultatas yra nustatomas. Pavyzdžiui, jei ``A`` ir ``C`` yra
 tiesa, bet ``B`` yra netiesa, tai ``A and B and C`` nevertina ``C`` reikšmės.
@@ -644,12 +644,12 @@ Sekų ir kitų tipų palyginimas
 Sekų objektai gali būti palyginami su kitais objektais, kurie turi
 tą patį sekos tipą. Palyginimas naudoja *leksikografinę* tvarką:
 pirmiausia palyginami pirmi du nariai, ir jeigu jie skiriasi pagal
-tai nustatomas rezultatas. Jei jie lygus, tada lyginami kitu du nariai,
+tai nustatomas rezultatas. Jei jie lygūs, tada lyginami kitu du nariai,
 ir taip toliau, kol kur nors seka baigiasi. Jeigu patys nariai yra
 sekos, tada rekursiškai leksikografine tvarka lyginami jie patys.
 Jei visi sekos nariai vienodi, tada sekos laikomos lygiomis.
 Jeigu viena seka yra kitos sekos pradžia, tai trumpesnioji
-seka yra mažesnė. Leksikografinė tvarka eilutėms naudoją ASCII
+seka yra mažesnė. Leksikografinė tvarka eilutėms naudoja ASCII
 koduotę atskiroms raidėms. Keletas palyginimo pavyzdžių
 tarp to paties tipo sekų::
 
@@ -663,7 +663,7 @@ tarp to paties tipo sekų::
 
 Atkreipkite dėmesį į tai, kad skirtingų tipų palyginimas yra legalus.
 Rezultatas gali būti nustatytas tiksliai (bet viskas gali būti painu):
-tipai yra rūšiuojami pagal vardus. Taigi sąrašas (**l**\ist) yra visada trumpesnis
+tipai yra rikiuojami pagal vardus. Taigi sąrašas (**l**\ist) yra visada trumpesnis
 už eilutė (**s**\tring), eilutė visada trumpesnė už kortežą (**t**\uple) ir t.t.
 [#]_ Skirtingo tipo skaičiai lyginami pagal jų reikšmę, taigi 0 lygu 0.0 ir t.t.
 

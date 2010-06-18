@@ -6,7 +6,7 @@ Apetitui sukelti
 
 Jeigu jūs dirbate kompiuteriu po kiek laiko pastebėsite, kad yra užduočių, kurias
 jūs norėtumėte automatizuoti. Pavyzdžiui, jūs galite norėti atlikti teksto pakeitimo
-operaciją dideliam tekstinių failų kiekiui, arba pervadinti ir surūšiuoti didelį
+operaciją dideliam tekstinių failų kiekiui, arba pervadinti ir surikiuoti didelį
 nuotraukų kiekį ypatinga tvarka. Galbūt jūs norėtumėte parašyti mažą duombazę,
 specializuotą grafinę programą arba paprastą žaidimą.
 
