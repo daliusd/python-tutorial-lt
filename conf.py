@@ -135,6 +135,6 @@ language = 'lt'
 pdf_use_index = False
 pdf_use_modindex = False
 pdf_use_coverpage = False
-pdf_language='lt_LT'
+pdf_language='lt'
 pdf_font_path=['/usr/share/fonts',]
 pdf_stylesheets = ['sphinx','kerning','a4']
