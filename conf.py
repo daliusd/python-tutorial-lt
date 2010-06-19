@@ -130,6 +130,8 @@ coverage_ignore_c_items = {
 #    'cfunction': [...]
 }
 
+language = 'lt'
+
 pdf_use_index = False
 pdf_use_modindex = False
 pdf_use_coverpage = False
