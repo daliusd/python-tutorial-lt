@@ -20,7 +20,7 @@ visos naujos kalbos jūsų aplikacijai.
 Python'as yra kalba kaip tik jums.
 
 Jūs, žinoma, galite rašyti Unix'o arba Windows'ų skriptus kai kurioms šių
-užduočių, bet skriptai tinka failų operacijoms ir tekstinių duomenų keitimui,
+užduočių, nes skriptai tinka failinėms operacijoms ir tekstinių duomenų keitimui,
 bet nėra tinkami grafinėms aplikacijoms ar žaidimams. Jūs galite rašyti
 C/C++/Java programą, bet jums reikės tikrai daug laiko norint parašyti
 pačią pirmą programos versiją. Python'ą yra paprasčiau naudoti, jį galima
@@ -42,7 +42,7 @@ programuoti Python'u. Kai kurie iš šių modulių leidžia atlikti failų opera
 sisteminius kvietimus, lizdų (ang. socket) operacijas arba netgi grafines vartotojo aplinkas naudojant
 bibliotekas kaip Tk.
 
-Python'as yra interpretuojama kalba, o tai reiškia kad jūs galite sutaupyti daug  laiko,
+Python'as yra interpretuojama kalba, o tai reiškia kad jūs galite sutaupyti daug laiko,
 nes programos kūrimo metu nereikia kompiliuoti ir saistyti. Interpretatorius gali
 būti naudojamas interaktyviai, todėl jūs galite lengvai eksperimentuoti su įvairiomis
 kalbos galimybėmis, rašyti programas pasibandymui, arba testuoti funkcijas programuodami
