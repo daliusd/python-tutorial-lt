@@ -22,7 +22,7 @@ modulį (vykdomąjį skriptą arba interaktyvaus interpretatoriaus režimą, kur
 galite operuoti kintamaisiais).
 
 Modulis yra paprastas failas, kuriame saugomas Python'o kodas. Failo vardas
-sudaromas iš modulio pavadinimo ir galūnės: :file:`.py`. Modulyje, pačio
+sudaromas iš modulio pavadinimo ir galūnės: :file:`.py`. Modulyje pačio
 modulio vardas (kaip simbolių eilutė) saugomas globaliame kintamajame
 ``__name__``. Praktiniam išbandymui, atverkite savo mėgiamą teksto redaktorių
 ir einamajame kataloge sukurkite naują failą pavadinimu :file:`fibo.py`. Failo
@@ -78,7 +78,7 @@ Modulyje gali būti sudėti tiek vykdomi sakiniai tiek funkcijų apibrėžtys.
 *pirmą* kartą, kai modulis yra importuojamas. [#]_
 
 Kiekvienas modulis turi savo privačią simbolių lentelę, kuri naudojama
-kaip globali simbolių lentelę visoms funkcijoms modulyje. Taigi
+kaip globali simbolių lentelė visoms funkcijoms modulyje. Taigi
 modulio autorius gali naudoti globalius kintamuosius nesirūpindamas
 apie atsitiktinius vardų sutapimus su vartotojo globaliais kintamaisiais.
 Iš kitos pusės, jeigu jūs žinote, ką jus darote, jūs galite pasiekti
