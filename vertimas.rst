@@ -80,15 +80,24 @@ Jei neaišku kaip versti žodį pasitikrinkite viename iš šių šaltinių:
 Kaip testuoti savo vertimą?
 ===========================
 
-Aš naudoju tokį būdą::
+Aš naudoju tokį būdą (Ubuntu Linux sistemoje)::
 
     cd projects
     hg clone http://bitbucket.org/ianb/virtualenv/
     python virtualenv/virtualenv.py pytut
     cd pytut
     ./bin/easy_install Sphinx
+    ./bin/easy_install rst2pdf
     hg clone http://bitbucket.org/Dalius/python-tutorial-lt/
     ./bin/sphinx-build -b html python-tutorial-lt/ pytut
+
+rst2pdf įdiegimas gali nesuveikti. Tam jums gali tekti suinstaliuoti
+kelias papildomas programas::
+
+    sudo aptitude install build-essential
+    sudo aptitude install python-dev
+
+Alternatyva yra iš conf.py failo išmesti *rst2pdf.pdfbuilder*.
 
 Vertėjai
 ========
