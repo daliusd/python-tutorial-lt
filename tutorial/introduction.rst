@@ -4,21 +4,22 @@
 Įvadas į Python'ą
 *****************
 
-Pavyzdžiuose, pateikiamuose toliau, įvedamas komandos bei jų išvestį galima
+Pavyzdžiuose, pateikiamuose toliau, įvedamas komandas bei jų išvestį galima
 atskirti pagal tai, ar eilutė prasideda raginimu (``>>>`` ir ``...``).
 Norėdami pakartoti pavyzdį savarankiškai, perrašykite viską, kas eina pavyzdyje
-po raginimo. Eilutės, neprasidedančios raginimu, yra išvestis iš
-interpretatoriaus. Turėkite omenyje, kad antrasis raginimo variantas (``...``) tuščiai
-eilutei reiškia, jog jūs turėsite įvesti tuščią eilutę; taip užbaigiamos
-komandos, kurios užima daugiau nei vieną eilutę.
+po raginimo. Eilutės, neprasidedančios raginimu, yra interpretatoriaus
+išvestis. Atkreipkite dėmesį, jog norėdami užbaigti komandą, užimančią daugiau
+nei vieną eilutę (tuo metu bus rodomas antrasis raginimo variantas ``...``),
+turėsite įvesti tuščią eilutę.
 
 Dauguma pavyzdžių, net ir tie, kurie prasideda raginimu, turi paaiškinamuosius
 komentarus. Python'e komentarai pradedami simboliu ``#`` ir tęsiasi iki eilutės
 pabaigos. Komentarai gali prasidėti eilutės pradžioje, taip pat po tarpų
 arba po kodo, tačiau ne simbolių eilutės viduje. Simbolių eilutėje
-tai tėra ``#`` simbolis, neatliekantis jokios papildomos funkcijos. Kadangi
-komentarai paaiškina kodą, tačiau Python'as jų niekaip neinterpretuoja, atkartojant
-pavyzdžius interaktyviame apvalkale, komentarus galima praleisti.
+``#`` tėra paprastas simbolis, neatliekantis jokios papildomos funkcijos.
+Kadangi komentarai paaiškina kodą, tačiau Python'as jų niekaip
+neinterpretuoja, bandydami pateiktus kodo fragmentus interaktyviame
+apvalkale komentarus galite tiesiog praleisti.
 
 Pora pavyzdžių::
 
@@ -34,7 +35,7 @@ Python'as kaip skaičiuoklis
 ===========================
 
 Pradėkime išbandydami porą paprastų Python'o komandų. Pasileiskite interpretatorių
-ir luktelkite iki pasirodys raginimas ``>>>`` (neturėtų užtrukti).
+ir luktelėkite, kol pasirodys raginimas ``>>>``. (Neturėtų užtrukti.)
 
 
 .. _tut-numbers:
@@ -80,8 +81,8 @@ Reikšmę galima priskirti iš karto keliems kintamiesiems::
    >>> z
    0
 
-Kintamieji turi būti apibrėžti (jiems priskirta reikšmė) prieš naudojant.
-Priešingu atveju įvyks klaida::
+Prieš naudojant, kintamieji turi būti apibrėžti (jiems priskirta reikšmė),
+kitaip įvyks klaida::
 
    >>> # pabandome gauti neapibrėžto kintamojo reikšmę
    ... n
@@ -159,8 +160,8 @@ kai kuriuos skaičiavimus galima atlikti daug paprasčiau. ::
    113.06
    >>>
 
-Su šiuo kintamuoju turėtų būti elgiamasi lyg jis būtų skirtas tik skaitymui.
-Nepriskyrinėkite jam reikšmės --- taip sukurtumėte nesusijusį kintamąjį,
+Su šiuo kintamuoju turėtų būti elgiamasi taip, lyg jis būtų skirtas tik skaitymui.
+Nepriskirkite jam reikšmės, nes taip sukursite nesusijusį kintamąjį,
 kurio vardas neleistų prieiti prie tikrojo magiško Python'o kintamojo.
 
 .. _tut-strings:
@@ -168,8 +169,8 @@ kurio vardas neleistų prieiti prie tikrojo magiško Python'o kintamojo.
 Eilutės
 -------
 
-Python'as dirba ne tik su skaičiais, bet ir su simbolių eilutėmis, kurias
-galima užrašyti pora būdų. Galima apsupti viengubomis arba dvigubomis
+Python'as dirba ne tik su skaičiais, bet ir su simbolių eilutėmis. Jas
+galima užrašyti dviem būdais --- apsupti viengubomis arba dvigubomis
 kabutėmis::
 
    >>> 'spam eggs'
@@ -234,10 +235,10 @@ ekrane išvestų::
         -H hostname               Hostname to connect to
 
 Interpretatorius atspausdina operacijų su eilutėmis rezultatus visiškai taip
-pat, kaip eilutės ir įvedamos: apgaubia kabutėmis iš šonų, o viduje eilutės
+pat, kaip eilutės yra įvedamos: apgaubia kabutėmis iš šonų, o viduje eilutės
 esančios kabutės užrašomos pridedant pasvirąjį brūkšnelį. Jeigu eilutės
 viduje yra vienguba kabutė, eilutė spausdinama apgaubta dvigubomis kabutėmis.
-Kitais atvejais apgaubiama dvigubomis kabutėmis. (Komanda :keyword:`print`,
+Kitais atvejais apgaubiama viengubomis kabutėmis. (Komanda :keyword:`print`,
 kurią aptarsime kiek vėliau, gali būti naudojama atspausdini eilutes be
 apgaubiančių kabučių.)
 
@@ -389,17 +390,17 @@ Pradedant Python'o versija 2.0 programuotojams pateikiamas naujas duomenų tipas
 skirtas tekstinių duomenų saugojimui: Unikodo objektai. Jis gali būti naudojamas
 saugoti bei operuoti Unikodu paremtais duomenimis (daugiau informacijos
 rasite http://lt.wikipedia.org/wiki/Unikodas bei http://www.unicode.org).
-Šis duomenų tipas taip pat gerai integruojasi su paprastomis simbolių
-eilutėmis; esant poreikiui tipų pakeitimas atliekamas automatiškai.
+Šis duomenų tipas yra suderinamas su paprastomis simbolių
+eilutėmis: prireikus pakeičiamas automatiškai.
 
-Didelis Unikodo pranašumas yra tai, kad šis standartas aprašo visus ženklus,
-naudojamus bet kuriame dabarties bei senovės tekste. Prieš Unikodą
-būdavo apsiribojama 256-ių rašto ženklų lentelėmis. Tekstai būdavo
-susiejami su šiomis lentelėmis, kurios aprašydavo skaičių ir rašto ženklų
-sąryšį. Tai sukurdavo labai daug maišaties, ypač ten, kur tai susiję
-su programinės įrangos daugiakalbyste. Unikodas šias problemas išsprendžia
-pristatydamas vientisą kodų lentelę, kurią galima naudoti visoms rašto
-sistemoms.
+Didelis Unikodo pranašumas yra tai, kad šis standartas aprašo visus ženklus:
+tiek naudojamus dabartiniuose, tiek naudotus senoviniuose
+tekstuose.  Anksčiau, prieš sukuriant Unikodą, buvo naudojamos 256-ių rašto
+ženklų kodavimo lentelės. Kiekvienas tekstas buvo susietas su kuria
+nors iš jų. Tokia sistema sukeldavo labai daug maišaties, ypač ten, kur tai
+buvo susiję su programinės įrangos daugiakalbyste. Unikodas šias
+problemas išsprendžia pristatydamas vientisą kodų lentelę, kurią galima
+naudoti visoms rašto sistemoms
 
 Unikodo eilučių sukūrimas Python'e yra ne ką sudėtingesnis negu paprastų
 eilučių::
@@ -484,9 +485,10 @@ Sąrašai
 -------
 
 Python'as pateikia daug *sudėtinių* duomenų tipų, naudojamų apjungti kitas reikšmes.
-Lanksčiausias iš tokių tipų yra *sąrašas*, kuris aprašomas kaip laužtiniais
-skliaustais apgaubtas sąrašas kableliais atskirtų elementų. Sąrašo elementai
-neprivalo visi būti to paties tipo. ::
+Lanksčiausias iš tokių tipų yra *sąrašas*, kuris aprašomas laužtiniais
+skliausteliais apgaubiant kelis iš eilės einančius, vienas nuo kito
+kableliais atskirtus, elementus. Sąrašo elementai
+gali būti skirtingų tipų. ::
 
    >>> a = ['spam', 'eggs', 100, 1234]
    >>> a
@@ -591,21 +593,21 @@ sekos narius::
    5
    8
 
-Šis pavyzdys pristatė porą naujų dalykų.
+Šiame pavyzdyje buvo panaudota keletas naujų dalykų.
 
 * Pirmoje eilutėje naudojamas *priskyrimas keliems kintamiesiems*: kintamieji
-  ``a`` ir ``b`` tuo pat metu įgauna reikšmes; atitinkamai 0 ir 1. Panašus
-  priskyrimas naudojamas ir paskutinėje eilutėje, kas parodo, kad visos dešinės
+  ``a`` ir ``b`` reikšmes (atitinkamai 0 ir 1) įgauna tuo pat metu. Panašus
+  priskyrimas naudojamas ir paskutinėje eilutėje. Čia galima pamatyti, kad visos dešinės
   priskyrimo pusės reiškiniai apskaičiuojami anksčiau nei atliekamas bet koks
   priskyrimas.  Dešinės pusės apskaičiavimas atliekamas iš kairės į dešinę.
 
 * Ciklo konstrukcija :keyword:`while` vykdoma tol, kol sąlyga yra teisinga
   (šiuo atveju: ``b < 10``). Python'e, panašiai kaip ir C, bet kuris nelygus
-  nuliui skaičius laikomas *teisingu*; nulis yra *neteisingas*. Sąlyga taip
-  taip pat gali būti eilutės arba sąrašo reikšmė, arba apibendrinant: bet
-  kokia seka. Tuščia seka yra *neteisinga*; netuščia (turinti bent vieną
-  elementą) yra *teisinga*. Pavyzdyje naudojama sąlyga yra paprastas palyginimas.
-  Standartiniai palyginimo operatoriai užrašomi kaip ir C kalboje: ``<``
+  nuliui skaičius laikomas logine konstanta *teisinga*. Analogiškai, nulis yra laikomas
+  logine konstanta *klaidinga*. Sąlyga taip taip pat gali būti eilutės arba sąrašo
+  reikšmė. Apibendrinant: bet kokia seka. Tuščia seka yra laikoma *klaidinga*;
+  netuščia (turinti bent vieną elementą) laikoma *teisinga*. Pavyzdyje naudojama sąlyga
+  yra paprastas palyginimas. Standartiniai palyginimo operatoriai užrašomi kaip ir C kalboje: ``<``
   (mažiau negu), ``>`` (daugiau negu), ``==`` (lygu), ``<=`` (mažiau arba lygu),
   ``>=`` (daugiau arba lygu) bei ``!=`` (nelygu).
 
@@ -614,7 +616,7 @@ sekos narius::
   arba tabuliacijos ženklus reikia eilutės pradžioje įterpti rankomis. Praktikoje,
   visgi, dauguma tekstų redaktorių, naudojamų rašyti Python'o kodą, pateikia
   galimybę automatiškai lygiuoti kodą. Kai sudėtinis kodo sakinys įvedamas
-  interaktyvioje veiksenoje, po jo turi sekti tuščia eilutė tam, kad Python'as
+  interaktyvioje veiksenoje, po jo turi būti įrašyta tuščia eilutė tam, kad Python'as
   suprastų, jog jūs užrašėte paskutinę eilutę. Taip pat turėkite omenyje, kad
   visos to paties kodo bloko eilutės privalo būti pastumtos vienodu skaičiumi
   tarpo ženklų.
@@ -638,5 +640,5 @@ sekos narius::
      ...
      1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
 
-  Tačiau interpretatorius įterps naują eilutę prieš pateikdamas raginimą, jei
-  ankstesnė eilutė nebuvo užbaigta.
+  Tačiau interpretatorius įterps naujos eilutės simbolį prieš
+  pateikdamas raginimą, jei ankstesnė eilutė nebuvo užbaigta.
