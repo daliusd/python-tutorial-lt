@@ -1,4 +1,4 @@
 .PHONY: all
-all: output
-output: tutorial
-	python tools/sphinx-build.py . tutorial
+all: html
+html: tutorial
+	python tools/sphinx-build.py -b html . html
