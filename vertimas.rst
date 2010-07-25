@@ -33,8 +33,8 @@ O vėliau jums tikriausiai vistiek teks išmokti anglų kalbą --- iš kitos pus
 tai nebus taip jau ir sudėtinga, kai būsite pagauti azarto ir reikės išsiaiškinti
 kaip reikia padaryti vieną ar kitą dalyką.
 
-Beje, jei nepatenkate į tikslinę auditoriją, tai dar nereiškia, kad šis vadovėlis
-jums netinka.
+Beje, jei nepatenkate į aukščiau aprašytą tikslinę auditoriją, tai dar
+nereiškia, kad šis vadovėlis jums netinka.
 
 Padėkos žodis
 -------------
@@ -91,6 +91,10 @@ Aš naudoju tokį būdą (Ubuntu Linux sistemoje)::
     hg clone http://bitbucket.org/Dalius/python-tutorial-lt/
     ./bin/sphinx-build -b html python-tutorial-lt/ pytut
 
+Galite naudoti ir supaprastintą aukščiau aprašytų komandų variantą::
+
+    make && firefox ./html/index.html
+
 rst2pdf įdiegimas gali nesuveikti. Tam jums gali tekti suinstaliuoti
 kelias papildomas programas::
 
@@ -98,6 +102,7 @@ kelias papildomas programas::
     sudo aptitude install python-dev
 
 Alternatyva yra iš conf.py failo išmesti *rst2pdf.pdfbuilder*.
+
 
 Vertėjai
 ========
