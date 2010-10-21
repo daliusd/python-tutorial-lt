@@ -14,7 +14,14 @@ sys.path.append(os.path.abspath('tools/sphinxext'))
 # ---------------------
 
 extensions = ['sphinx.ext.refcounting', 'sphinx.ext.coverage',
-              'sphinx.ext.doctest', 'pyspecific', 'rst2pdf.pdfbuilder']
+              'sphinx.ext.doctest', 'pyspecific']
+try:
+    import rst2pdf.pdfbuilder
+    extensions.append('rst2pdf.pdfbuilder')
+except ImportError:
+    pass
+
+
 templates_path = ['tools/sphinxext']
 
 # General substitutions.
