@@ -473,7 +473,7 @@ Argumentų sąrašo išpakavimas
 ----------------------------
 
 Atvirkštinė situacija įvyksta, kai argumentai jau yra sąraše arba korteže,
-bet turi būti išpakuoti funkcijos kvietimui, kuri reikalauja poziciniu
+bet turi būti išpakuoti funkcijos kvietimui, kuri reikalauja pozicinių
 argumentų. Pavyzdžiui įtaisytoji funkcija :func:`range` tikisi
 atskirų *pradžios* ir *pabaigos* argumentų. Jeigu jų neturime atskirai,
 funkcijos kvietime panaudokite ``*``\-operatorių tam, kad argumentai
