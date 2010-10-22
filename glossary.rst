@@ -223,7 +223,7 @@ Terminų žodynas
       turi būti paleisti. Interpretuojamos kalbos dažniausiai
       padeda greičiau programuoti ir derinti, negu dirbant su
       kompiliuojančiomis kalbomis, tačiau įprastai jos yra
-      lėtesnės. Žiurime taip pat :term:`interaktyvus`.
+      lėtesnės. Žiūrime taip pat :term:`interaktyvus`.
 
    iteruojamas
       Objektas, kuris gali grąžinti savo narius po vieną.
