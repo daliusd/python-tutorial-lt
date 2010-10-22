@@ -13,7 +13,7 @@ dokumentai esantys joje yra:
 
 * `Python Library Reference <http://docs.python.org/library/>`__
 
-  Jūs turite naršyti per šį vadovą, kuris pilnai (nors ir glaustai) aprašo
+  Jūs turite naršyti šį vadovą, kuris pilnai (nors ir glaustai) aprašo
   tipus, funkcijas ir standartinės bibliotekos modulius. Standartinė
   Python'o distribucijoje yra daug papildomo kodo. Čia rasite modulių
   skirtų skaityti Unix'ines pašto dėžutes, gauti dokumentus naudojantis
@@ -43,7 +43,7 @@ Daugiau Python'o resursų:
 
 * http://aspn.activestate.com/ASPN/Python/Cookbook/: The Python Cookbook yra
   kodo pavyzdžių kolekcija, didesni moduliai ir naudingi skriptai.
-  Geresni pavyzdžiai yra surinkti ir išleisti kaip knygą pavadinimu Python
+  Geresni pavyzdžiai yra surinkti ir išleisti kaip knyga pavadinimu Python
   Cookbook (O'Reilly & Associates, ISBN 0-596-00797-3.)
 
 Apie su Python'u susijusias problemas ir iškilusius klausimus galite
