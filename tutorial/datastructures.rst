@@ -468,7 +468,7 @@ bet kuris nekintamas tipas. Eilutės arba skaičiai visada
 gali būti naudojami kaip raktai. Kortežai gali būti
 naudojami kaip raktai, jeigu jie sudaryti tik iš eilučių,
 skaičių ar kortežų. Jeigu kortežas yra sudarytas iš kintamų
-objektų (tiesiogiai ar netiesiogiai), jo negalima naudoti rakui.
+objektų (tiesiogiai ar netiesiogiai), jo negalima naudoti raktui.
 Jūs negalite naudoti sąrašų raktams, kadangi sąrašai gali būti
 modifikuojami vietoje naudojant indekso priskyrimą, atkarpų
 priskyrimus arba metodus kaip :meth:`append` ir :meth:`extend`.
