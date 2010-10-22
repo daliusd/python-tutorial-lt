@@ -158,7 +158,7 @@ Pavyzdžiui::
            f.close()
 
 :keyword:`else` naudojimas yra geresnis variantas negu papildomo kodo
-rašymas the :keyword:`try` paragrafe, kadangi tai padeda išvengti
+rašymas :keyword:`try` paragrafe, kadangi tai padeda išvengti
 atsitiktinio išimties pagavimo, kuri nebuvo sukelta kodo, kuris
 yra apsaugotas :keyword:`try` ... :keyword:`except` sakiniu.
 
