@@ -254,7 +254,7 @@ Likę pavyzdžiai šioje dalyje tikėsis, kad failo objektas ``f`` yra jau sukur
 
 Tam, kad perskaitytumėte failo turinį, iškvieskite ``f.read(size)``. Tai
 perskaitys dalį duomenų ir grąžins juos kaip eilutę. *size* yra nebūtinas skaitinis
-argumentas. Jeigu *size* ura praleidžiamas arba neigiamas, tada perskaitomas
+argumentas. Jeigu *size* yra praleidžiamas arba neigiamas, tada perskaitomas
 visas failo turinys ir sugrąžinamas. Tačiau, jei failas yra dukart didesnis negu
 yra atminties jūsų mašinoje, tai jau jūsų problema. Kitu atveju daugiausiai
 *size* baitų yra perskaitoma ir sugrąžinama. Jeigu pasiekiamas failo galas
