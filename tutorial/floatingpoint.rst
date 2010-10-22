@@ -17,7 +17,7 @@ užrašytas dvejetainėje formoje::
 
    0.001
 
-yra lygus 0/2 + 0/4 + 1/8. Šie du skaičiai yra lygis. Vienintelis
+yra lygus 0/2 + 0/4 + 1/8. Šie du skaičiai yra lygūs. Vienintelis
 skirtumas tarp jų yra toks, kad pirmasis yra parašytas dešimtainėje
 sistemoje, o antrasis dvejetainėje.
 
@@ -42,7 +42,7 @@ arba, dar geriau, ::
 ir t.t. Nesvarbu kiek skaičių jūs užrašysite, rezultatas niekada nebus tiksliai
 lygus 1/3, bet tik bus tikslesnė 1/3 aproksimacija.
 
-Tuo pačiu būdu, nesvarbu kiek dvejetainio skaičius skaitmenų naudosite, dešimtainė
+Tuo pačiu būdu, nesvarbu kiek dvejetainio skaičiaus skaitmenų naudosite, dešimtainė
 reikšmė 0.1 negali būti tiksliai pavaizduota dvejetainėje sistemoje.
 Dvejetainėje sistemoje 1/10 yra amžinai pasikartojanti seka::
 
