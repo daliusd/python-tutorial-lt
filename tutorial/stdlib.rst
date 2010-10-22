@@ -34,7 +34,7 @@ interaktyviai dirbant su dideliais moduliais kaip :mod:`os`::
    >>> help(os)
    <returns an extensive manual page created from the module's docstrings>
 
-Kasdienam darbui su failais ir direktorijomis modulis :mod:`shutil`
+Kasdieniam darbui su failais ir direktorijomis modulis :mod:`shutil`
 suteikia aukštesnio lygio sąsają, kurią lengviau naudoti::
 
    >>> import shutil
@@ -175,7 +175,7 @@ nurodytą URL ir :mod:`smtplib` laiškų siuntimui::
    ... """)
    >>> server.quit()
 
-(Pastaba: antrasis pavyzdys reikalauja lokalaus pašto serverio veikiančio lokaliai)
+(Pastaba: antrasis pavyzdys reikalauja lokalaus pašto serverio)
 
 
 .. _tut-dates-and-times:
@@ -237,7 +237,7 @@ sprendimai paveikia našumą. Python'e yra priemonių matavimui, kurios
 
 Pavyzdžiui, argumentų sukeitimui galime norėti naudoti kortežų išpakavimo
 ir supakavimo savybes vietoje tradicinio būdo sukeisti argumentus
-vietomis. :mod:`timeit` modulis greitai parodytis maža našumo
+vietomis. :mod:`timeit` modulis greitai parodys mažą našumo
 privalumą::
 
    >>> from timeit import Timer
@@ -264,8 +264,8 @@ vykdymas kūrimo procese.
 kurie surašyti į dokumentacijos eilutes, tikrinimui. Testavimo
 konstrukcija yra paprasta: tereikia tipinį kvietimą ir jo
 rezultatus iš python interpretatoriaus perkelti į dokumentacijos
-eilutę. Taip dokumentacijoje vartotojui pateikia pavyzdžiai ir
-jei leidžia doctest moduliui užtikrinti, kad kodas sutampa su
+eilutę. Taip dokumentacijoje vartotojui pateikiami pavyzdžiai ir
+jie leidžia doctest moduliui užtikrinti, kad kodas sutampa su
 dokumentacija::
 
    def average(values):
