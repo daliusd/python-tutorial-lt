@@ -22,7 +22,7 @@ objektams::
    "set(['a', 'c', 'd', 'e', 'f', 'g', ...])"
 
 :mod:`pprint` modulis leidžia rafinuočiau atspausdinti
-tiek įtaisytus tiek vartojo apibrėžtus objektus interpretatoriui
+tiek įtaisytus tiek vartotojo apibrėžtus objektus interpretatoriui
 skaitomu būdu. Jeigu rezultatas yra ilgesnis negu viena eilutė,
 "pretty printer" prideda eilučių pabaigos simbolius ir
 pastumia tekstą, kad duomenų struktūra būtų suprantamesnė::
@@ -79,7 +79,7 @@ leis naudoti supaprastintą sintaksę, kurią gali suprasti ir
 paprastas vartotojas. Tai leidžia vartotojui modifikuoti programos
 elgesį nekeičiant pačios programos.
 
-Rezervuotų vietų vardai formuojami su ``$`` with ir teisingu
+Rezervuotų vietų vardai formuojami su ``$`` ir teisingu
 Python'o identifikatoriumi (t.y. žodis, kurį gali sudaryti skaičiai, raidės
 ir pabraukimo brūkšniai). Jeigu rezervuotą vietą apskliaudus figūriniais
 skliausteliais, tai po to gali sekti kiti simboliai be tarpų. 
@@ -255,7 +255,7 @@ yra panaikinama.
 
 Šis būdas tinka daugumai programų bet kartais reikia sekti objektus tik
 tiek kiek jie yra naudojami kažkur kitur. Nelaimei vien tam, kad
-juos sekti, yra sukuriama nuorodą, kuri padaro juos amžinus.
+juos sekti, yra sukuriama nuoroda, kuri padaro juos amžinus.
 :mod:`weakref` modulis leidžia sekti objektus nesukūrus jiems nuorodų.
 Kai objektas tampa nebereikalingu jis automatiškai išimamas
 iš *weakref* lentelės.  Tipiškai programos saugo objektus, kuriuos
@@ -377,7 +377,7 @@ suapvalinamas iki artimiausio cento::
 
 :class:`Decimal` rezultatas palieka paskutinį nulį, automatiškai
 nurodantį keturių vietų po kablelio svarbą iš dviejų daugiklių su dviem
-svarbiomis vietomis po kablelio. Dešimtainis skaičiavimas atspindį
+svarbiomis vietomis po kablelio. Dešimtainis skaičiavimas atspindi
 matematiką atliekamą ranka ir padeda išvengti problemų, kurios kyla
 kai dvejetainis slankus kablelis negali tiksliai atspindėti
 dešimtainių kiekių.
