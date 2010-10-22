@@ -87,22 +87,29 @@ Aš naudoju tokį būdą (Ubuntu Linux sistemoje)::
     python virtualenv/virtualenv.py pytut
     cd pytut
     ./bin/easy_install Sphinx
-    ./bin/easy_install rst2pdf
     hg clone http://bitbucket.org/Dalius/python-tutorial-lt/
     ./bin/sphinx-build -b html python-tutorial-lt/ pytut
 
-Galite naudoti ir supaprastintą aukščiau aprašytų komandų variantą::
+Jei norite sugeneruoti pdf'ą taip pat reikės įdiegti rst2pdf biblioteką::
 
-    make && firefox ./html/index.html
+    ./bin/easy_install rst2pdf
 
-rst2pdf įdiegimas gali nesuveikti. Tam jums gali tekti suinstaliuoti
-kelias papildomas programas::
+Prieš tai jums gali tekti suinstaliuoti kelias papildomas programas::
 
     sudo aptitude install build-essential
     sudo aptitude install python-dev
 
-Alternatyva yra iš conf.py failo išmesti *rst2pdf.pdfbuilder*.
+Taip pat galima dirbti be virtualenv aplinkos. Įdiekite reikalingas
+bibliotekas tiesiai į sistemą::
 
+    sudo apt-get install python-sphinx rst2pdf
+
+Naudokitės paruoštu make failu::
+
+    make && firefox ./html/index.html
+
+Šio būdo trūkumas yra toks, kad python-sphinx biblioteka yra
+pakankamai sena (be lietuviškų vertimų).
 
 Vertėjai
 ========
