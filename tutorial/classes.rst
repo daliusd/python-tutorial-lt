@@ -109,7 +109,7 @@ modulyje pavadintame :mod:`__builtin__`.
 Lokali vardų erdvė funkcijai yra sukuriama kai funkcija yra iškviečiama ir
 yra ištrinama (tiesa sakant, "pamirštama" yra tinkamesnis žodis apibūdinti
 tam kas iš tikro atsitinka) kai funkcija sugrįžta arba sukelia išimtį, kuri nėra
-suvaldoma funkcijoje. Žinoma, kiekvienas rekursyvūs šaukimai turi
+suvaldoma funkcijoje. Žinoma, kiekvienas rekursyvūs šaukimas turi
 savo lokalią vardų erdvę.
 
 *Sritis* yra tekstinis regionas Python'o programoje, kur vardų erdvė
@@ -124,7 +124,7 @@ kurios yra ieškomos nuo artimiausios uždarančios srities; vėliau ieškoma
 vidurinėje srityje, kurioje laikomi dabartinio modulio globalūs vardai.
 Išorinė sritis ieškoma paskutinė ir joje laikomi įtaisyti vardai.
 
-Jeigu vardas apie paskelbtas globaliai, tada visos nuorodos ir priskyrimai
+Jeigu vardas yra paskelbtas globaliai, tada visos nuorodos ir priskyrimai
 vykdomi vidurinei sričiai, kurioje yra modulio globalūs vardai. Kitu
 atveju, visi kintamieji esantis vidinėje srityje yra tik-skaitomi (bandymas
 rašyti į tokį kintamąjį paprasčiausiai sukurs *naują* lokalų kintamąjį
@@ -331,7 +331,7 @@ iškviečiama be jų --- netgi jei argumentas nėra naudojamas...
 
 Tiesa sakant, atsakymą jūs galbūt jau nuspėjote: metodų ypatybė yra
 ta, kad objektas yra perduodamas kaip pirmas argumentas funkcijai. Mūsų
-pavyzdyje, kvietimas ``x.f()`` yra ekvivalentus ``MyClass.f(x)``.  Apibrendinus,
+pavyzdyje, kvietimas ``x.f()`` yra ekvivalentus ``MyClass.f(x)``.  Apibendrinus,
 metodo su *n* argumentų sąrašu kvietimas yra ekvivalentiškas atitinkamos
 funkcijos atitinkamos funkcijos kvietimui su argumentu sąrašu, kuris yra
 sukuriamas pridedant metodo objektą prieš pirmą argumentą.
@@ -340,7 +340,7 @@ Jei jūs vis dar nesuprantate kaip dirba metodas, žvilgsnis į įgyvendinimą g
 viską paaiškinti. Pirmiausia klasėje ieškoma egzemplioriaus atributo,
 kuris nėra duomenų atributas. Jeigu vardas nurodo validų klasės atributą,
 kuris yra funkcijos objektas, metodo objektas yra sukuriamas supakuojant kartu
-egzemplioriaus objektą ir kątik surastos funkcijos objektą į abstraktų obektą ---
+egzemplioriaus objektą ir ką tik surastos funkcijos objektą į abstraktų objektą ---
 tai ir yra metodo objektas. Kai metodo objektas yra iškviečiamas su argumentų
 sąrašu, jis išpakuojamas vėl, naujas argumentų sąrašas yra sukonstruojamas
 iš egzemplioriaus objekto ir originalaus argumentų sąrašo ir tada funkcijos
@@ -357,12 +357,12 @@ Duomenų atributai yra svarbesni už metodų atributus tokiu pačiu vardu.
 Tam kad išvengtumėte vardų konflikto, dėl ko gali kilti sunkiai
 randamos klaidos didelėse programose, patartina naudoti tam
 tikrus susitarimus, kad konfliktų tikimybė būtų minimizuota. Galimi
-susitartimai gali būti metodų vardų rašymas iš didžiųjų raidžių,
+susitarimai gali būti metodų vardų rašymas iš didžiųjų raidžių,
 pridedant tam tikra unikalią eilutę prie duomenų atributų pradžioje
 (pvz.: pabraukimą) arba metodų vardams naudoti veiksmažodžius,
 o daiktavardžius naudoti duomenų atributams.
 
-Duomenų atribudai gali būti pasiekiami tiek metodų tiek paprastų
+Duomenų atributai gali būti pasiekiami tiek metodų tiek paprastų
 objekto vartotojų ("klientų"). Kitaip sakant, klasės nėra tinkamos
 įgyvendinti abstrakčius duomenų tipus. Tiesa sakant, Python'e nėra
 nieko kas leistų paslėpti duomenis --- viskas yra paremta susitarimu.
@@ -387,7 +387,7 @@ Dažniausiai, pirmas metodo argumentas yra vadinamas ``self``. Tai tėra
 nieko daugiau tik susitarimas: vardas ``self`` neturi jokios specialios
 reikšmės Python'e. (Tačiau pastebėkite, kad jums nesilaikant šio
 susitarimo jūsų kodas gali būti mažiau skaitomas kitiems Python'o
-progamuotojams, ir labai tikėtina, kad *klasių naršyklės* programa
+programuotojams, ir labai tikėtina, kad *klasių naršyklės* programa
 gali būti parašyta laikantis šio susitarimo).
 
 Kiekvienas funkcijos objektas, kuris yra klasės atributas, apibrėžia metodą
@@ -469,7 +469,7 @@ jo paieška vykdoma jos viršklasyje. Ši taisyklė yra taikoma
 rekursiškai jeigu pats viršklasis yra paveldėtas iš kokios
 nors kitos klasės.
 
-Taip pat nėra nieko ypatingo kuriant paveldėtos klasės egzempliorių:
+Taip pat nevyksta nieko ypatingo kuriant paveldėtos klasės egzempliorių:
 ``DerivedClassName()`` sukuria naują klasės egzempliorių. Metodų
 nuorodos surandamos taip: pirmiausia ieškoma atitinkamos klasės
 atributo ir jeigu reikia tada ieškoma grandine žemyn per viršklasius,
@@ -483,10 +483,10 @@ metodą (kuris perrašė norimą iškviesti metodą). (C++ programuotojams: visi
 metodai Python'e yra ``virtualūs``.)
 
 Metodo perrašymas paveldėtoje klasėje gali praplėsti (užuot tiesiog
-pakeitus) viršklasio metodą tuo pačiu vardu. Yra labai paprastas
-būdas iškviesti bazinės klasės metodą tiesiogiai: tiesiog
+pakeitus) viršklasio metodą tuo pačiu vardu. Bazinės klasės metodą
+iškviesti tiesiogiai yra labai paprasta: tiesiog
 iškvieskite ``BaseClassName.methodname(self, arguments)``.  Tai
-kartais naudingą ir vartotojams. (Pastebėkite, kad tai dirba
+kartais naudinga ir vartotojams. (Pastebėkite, kad tai veikia
 tik tada, kai bazinė klasė yra apibrėžta arba importuota tiesiogiai
 į globalią sritį).
 
@@ -544,8 +544,8 @@ paveldėtos iš :class:`object`, taigi bet kuris sudėtinio paveldėjimo
 atvejis leidžia daugiau negu vieną būdą pasiekti :class:`object`.  Norint
 viršklasius apsaugoti nuo panaudojimo kelis kartus, dinaminis algoritmas
 liniarizuoja paieškos tvarką taip, kad būtų išlaikyta iš kairės į dešinę
-tvarka nurodyta kiekvienoje klasėje, kuri kviečią tevą tik kartą, ir būtų
-monotonišką (monotoniška reiškia, kad klasė gali būti poklasiu
+tvarka nurodyta kiekvienoje klasėje, kuri kviečią tėvą tik kartą, ir būtų
+monotoniška (monotoniška reiškia, kad klasė gali būti poklasiu
 nepaveikdama jos tėvų pirmenybės tvarkos). Visą tai paimant kartu,
 šios savybės leidžia kurti patikimas ir išplečiamas klases naudojant
 sudėtinį paveldėjimą. Daugiau informacijos čia:
@@ -751,7 +751,7 @@ Jie aprašomi kaip paprasčiausios funkcijos, bet naudojamas bazinio žodžio
 :keyword:`yield` reiškinys kiekvienąkart kai jiems reikia grąžinti
 duomenis. Kaskart kai iškviečiamas metodas :meth:`next`, generatorius
 sugrįžta į tą vietą, kur jis sustojo (jis prisimena visas duomenų reikšmes ir
-koks reiškinys buvo paskutį kartą vykdomas). Pavyzdys parodo, kad
+koks reiškinys buvo paskutinį kartą vykdomas). Pavyzdys parodo, kad
 generatorius sukurti yra visiškai paprasta::
 
    def reverse(data):
@@ -771,7 +771,7 @@ paremtais iteratoriais kaip aprašyta praeitoje dalyje. Generatorių
 forma yra tokia kompaktiška dėl to, kad metodai :meth:`__iter__` ir
 :meth:`next` yra sukuriami automatiškai.
 
-Kita esminė savybė yra ta, kad lokalūs kintamieji yra vykdymo būsena
+Kita esminė savybė yra ta, kad lokalūs kintamieji ir jų vykdymo būsena
 yra automatiškai išsaugoma tarp kvietimų. Tai leidžia daug lengviau
 rašyti funkcijas ir jos yra daug aiškesnės negu naudojant
 egzemplioriaus kintamuosius kaip ``self.index`` ir ``self.data``.
