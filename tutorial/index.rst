@@ -4,8 +4,8 @@
   Python'o vadovėlis
 ######################
 
-:Release: |version|
-:Date: |today|
+:Leidimas: |version|
+:Data: |today|
 
 Python'as yra lengvai išmokstama, galinga programavimo kalba. Ji turi
 efektyvias aukšto lygio duomenų struktūras ir paprastą, bet efektyvų
