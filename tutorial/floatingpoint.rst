@@ -102,7 +102,7 @@ gauti reikšmę su vienu skaičiumi po kablelio. Tačiau tai nieko nepakeis::
    >>> round(0.1, 1)
    0.10000000000000001
 
-Problema yra ta, kad slankaus kablelio formoje išsaugota "0.1" reikšmė
+Problema yra ta, kad slankaus kablelio formoje išsaugota „0.1“ reikšmė
 jau yra geriausia įmanoma dvejetainė 1/10 aproksimacija, taigi bandymas
 ją apvalinti nieko nepakeis --- ji jau buvo tokia gera kokia tik gali
 būti.
@@ -118,11 +118,11 @@ susumavus 0.1 dešimt kartų negausime tiksliai 1.0::
    0.99999999999999989
 
 Dvejetainė slankaus kablelio aritmetika slepia ne vieną tokį siurpriza.
-Problema su "0.1" detaliau paaiškinta žemiau skyriuje "Atvaizdavimo
-Klaida". `The Perils of Floating Point <http://www.lahey.com/float.htm>`_
+Problema su „0.1“ detaliau paaiškinta žemiau skyriuje „Atvaizdavimo
+Klaida“. `The Perils of Floating Point <http://www.lahey.com/float.htm>`_
 rasite daugiau dažnų siurprizų pavyzdžių.
 
-Kaip galiausiai sakoma "lengvų atsakymų nėra". Visgi nebūkite per daug
+Kaip galiausiai sakoma „lengvų atsakymų nėra“. Visgi nebūkite per daug
 atsargūs dirbdami su slankiu kableliu. Klaidos Python'e kylančios
 su slankiu kableliu yra paveldėtos iš aparatinės įrangos ir
 daugumoje mašinų klaidos galimybė yra ne didesnė negu
@@ -141,7 +141,7 @@ galimybių naudokite :meth:`str.format` metodą.
 Atvaizdavimo klaida
 ===================
 
-Šis skyrius paaiškina "0.1" pavyzdį detaliau ir paaiškina, kaip jūs galite
+Šis skyrius paaiškina „0.1“ pavyzdį detaliau ir paaiškina, kaip jūs galite
 atlikti tokių atvejų analizę patys. Darome prielaidą, kad su slankaus
 kablelio dvejetainiais skaičiais skaitytojas yra susipažinęs.
 
@@ -156,9 +156,9 @@ kaip jūs tikitės::
 
 Kodėl tai atsitinka?  1/10 nėra tiksliai reprezentuojama kaip dvejetainė trupmena.
 Beveik visos mašinos šiandien (2000 Lapkritis) naudoja IEEE-754 slankaus kablelio
-aritmetiką ir beveik visos platformos slankaus kablelio skaičius Python'e
-naudoja kaip "dvigubu tikslumo" IEEE-754.  754 naudoja 53 tikslumo bitus,
-taigi 0.1 sukonvertuojamas į artimiausią trupmeną *J*/2**\ *N* formoje,
+aritmetiką ir beveik visose platformose Python'e naudojamas „dvigubo tikslumo“
+IEEE-754 slankaus kablelio skaičius. 754 naudoja 53 tikslumo bitus,
+taigi 0.1 konvertuojamas į artimiausią trupmeną *J*/2**\ *N* formoje,
 kur *J* yra sveikasis skaičius sudarytas iš 53 bitų. Perrašius::
 
    1 / 10 ~= J / (2**N)
@@ -167,7 +167,7 @@ kaip ::
 
    J ~= 2**N / 10
 
-ir paėmus, kad *J* turi lygiai 53 bitus (yra ``>= 2**52`` bet ``< 2**53``),
+ir tarus, kad *J* turi lygiai 53 bitus (yra ``>= 2**52`` bet ``< 2**53``),
 tinkamiausia reikšmė *N* yra 56::
 
    >>> 2**52
@@ -177,7 +177,7 @@ tinkamiausia reikšmė *N* yra 56::
    >>> 2**56/10
    7205759403792793L
 
-Taip jau yra, kad 56 yra vienintelė *N* reikšmė, kurią naudojant *J* turi tiksliai 53 bits.
+Taip jau yra, kad 56 yra vienintelė *N* reikšmė, kurią naudojant *J* turi tiksliai 53 bitus.
 Tinkamiausia *J* reikšmė tada yra suapvalintas dalmuo::
 
    >>> q, r = divmod(2**56, 10)
@@ -199,7 +199,7 @@ daugiau negu 1/10. Jei mes nebūtumėm apvalinę dalmuo būtų buvęs truputi
 mažesnis negu 1/10. Bet jokiu būtų jis negali būti *tiksliai* lygus
 1/10.
 
-Taigi kompiuteris niekada "nemato" 1/10. Tai ką jis mato yra tiksli trupmena
+Taigi kompiuteris niekada „nemato“ 1/10. Tai ką jis mato yra tiksli trupmena
 duota aukščiau. Geriausia 254 dviguba aproksimacija, kurią jis gali gauti yra::
 
    >>> .1 * 2**56
