@@ -56,8 +56,8 @@ Sąrašo duomenų tipas pateikia naudingų metodų. Štai jie:
 .. method:: list.index(x)
    :noindex:
 
-   Sugrąžina pirmą sąrašo elementą, kurio reikšmė yra *x*. Jeigu elemento,
-   nėra įvyksta klaida.
+   Sugrąžina pirmą sąrašo elemento poziciją, kur reikšmė yra x.
+   Jeigu elemento, nėra įvyksta klaida.
 
 
 .. method:: list.count(x)
