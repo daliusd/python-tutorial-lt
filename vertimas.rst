@@ -94,13 +94,30 @@ Jei norite sugeneruoti pdf'ą taip pat reikės įdiegti rst2pdf biblioteką::
 
     ./bin/easy_install rst2pdf
 
-Prieš tai jums gali tekti suinstaliuoti kelias papildomas programas::
+Prieš tai jums gali tekti įsirašyti kelis papildomus paketus::
 
     sudo aptitude install build-essential
     sudo aptitude install python-dev
 
-Taip pat galima dirbti be virtualenv aplinkos. Įdiekite reikalingas
-bibliotekas tiesiai į sistemą::
+Kitas variantas – naudoti buildout (Ubuntu Linux sistemoje)::
+
+    cd projects
+    hg clone http://bitbucket.org/vakaras/python-tutorial-lt
+    make bootstrap
+    make buildout
+
+Kai darbo aplinka paruošta, galima susigeneruoti HTML (PDF) ir iš karto jį
+atverti::
+    
+    make show-html                      # Sugeneruoja HTML ir atveria 
+                                        # naršyklėje.
+    make show-pdf                       # Sugeneruoja PDF ir jį parodo.
+
+    make html                           # Tiesiog sugeneruoja HTML.
+    make pdf                            # Tiesiog sugeneruoja PDF.
+
+Taip pat galima dirbti ir be virtualenv ar buildout aplinkos. Įdiekite 
+reikalingas bibliotekas tiesiai į sistemą::
 
     sudo apt-get install python-sphinx rst2pdf
 

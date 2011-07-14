@@ -2,3 +2,8 @@ syntax: glob
 *.pyc
 *.swp
 html/
+.installed.cfg
+bin/
+bootstrap.py
+build/
+parts/
