@@ -554,7 +554,7 @@ pačios, jei to nori. Tai atliekama pagal tokį susitarimą. Pirma netuščia
 eilutė po pirmos eilutės nustato per kiek yra pastumtas tekstas visai
 dokumentacijai. Mes negalime naudoti pirmosios eilutės, nes ji
 paprastai būną toje pačioje eilutėje kaip atidarančios kabutės, todėl
-jos lygiavimas nėra akivaizdus. Tada šis tarpų "ekvivalentas" nukerpamas
+jos lygiavimas nėra akivaizdus. Tada šis tarpų „ekvivalentas“ nukerpamas
 nuo visų eilučių starto. Tekste neturėtų būti eilučių, kurios pastumtos
 mažiau, bet jei taip atsitinka visi tarpai turi būti nukerpami.
 

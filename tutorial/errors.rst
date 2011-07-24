@@ -315,7 +315,7 @@ iš tos klasės::
            self.next = next
            self.message = message
 
-Dauguma išimčių pavadinimas baigiasi "Error", taip kaip ir standartinės
+Dauguma išimčių pavadinimas baigiasi „Error“, taip kaip ir standartinės
 išimtys.
 
 Dauguma standartinių modulių apibrėžia savo išimtis klaidų, kurios

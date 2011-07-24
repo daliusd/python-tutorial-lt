@@ -138,7 +138,7 @@ Sąrašo naudojimas eilėms
 
 
 Jūs taip pat patogiai galite panaudoti sąrašą kaip eilę, kur pirmas pridėtas
-elementas yra pirmas išimamas ("pirmas-į, pirmas-iš"). Elemento pridėjimui
+elementas yra pirmas išimamas („pirmas-į, pirmas-iš“). Elemento pridėjimui
 naudokite :meth:`append`, o elemento išėmimui iš eilės priekio
 naudokite :meth:`pop` su indeksu ``0``.  Pavyzdžiui::
 
@@ -461,7 +461,7 @@ skirtumas ar simetriškas skirtumas.
 
 Kitas naudingas duomenų tipas Python'e yra *žodynas*. Kitose
 kalbose žodynai vadinami
-"asociatyviąją atmintimi" arba "asociatyviaisiais masyvais".
+„asociatyviąją atmintimi“ arba „asociatyviaisiais masyvais“.
 Skirtingai nuo sekų, kurios yra indeksuojamos skaičiais,
 žodynai indeksuojami naudojant *raktus*, kuriais gali būti
 bet kuris nekintamas tipas. Eilutės arba skaičiai visada

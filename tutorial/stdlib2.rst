@@ -24,7 +24,7 @@ objektams::
 :mod:`pprint` modulis leidžia rafinuočiau atspausdinti
 tiek įtaisytus tiek vartotojo apibrėžtus objektus interpretatoriui
 skaitomu būdu. Jeigu rezultatas yra ilgesnis negu viena eilutė,
-"pretty printer" prideda eilučių pabaigos simbolius ir
+„pretty printer“ prideda eilučių pabaigos simbolius ir
 pastumia tekstą, kad duomenų struktūra būtų suprantamesnė::
 
    >>> import pprint

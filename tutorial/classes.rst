@@ -8,8 +8,8 @@ Python'o klasių mechanizmas prideda klases į kalbą naudodamas minimalų
 kiekį naujos sintaksės ir semantikos. Naudojamas klasių mechanizmo
 randamo C++ ir Modula-3 kalbose mišinys. Lygiai taip pat kaip ir
 su moduliais, Python'o klasėse nėra absoliučios ribos tarp apibrėžimo
-ir vartotojo -- tiesiog tikimasi vartotojo suprantingumo "nesulaužant
-apibrėžimo". Visgi svarbiausios klasių savybės yra pilnai išsaugotos:
+ir vartotojo -- tiesiog tikimasi vartotojo suprantingumo „nesulaužant
+apibrėžimo“. Visgi svarbiausios klasių savybės yra pilnai išsaugotos:
 paveldėjimo mechanizmas leidžia naudoti kelias bazines klases, paveldėta
 klasė gali perrašyti bazinės klasės/bazinių klasių metodus ir metodai
 gali iškviesti bazinės klasės metodus tuo pačiu vardu. Objektuose
@@ -78,7 +78,7 @@ funkcijoje. Tam tikra prasme objekto atributų aibė taip pat suformuoja
 vardų erdvę. Svarbiasias dalykas, kurį reikia suprasti apie vardų
 erdves, kad nėra visiškai jokio ryšio tarp vardų skirtingose vardų
 erdvėse. Pvz.: du skirtingi moduliai gali apibrėžti tą pačią funkciją
-"maksimizuoti" --- tam kad vartotojai nesusimaišytų, modulio
+„maksimizuoti“ --- tam kad vartotojai nesusimaišytų, modulio
 vartotojai turėtų pridėti modulio vardą prieš funkciją.
 
 Tarp kitko, aš naudoju žodį *atributas* kiekvienam vardui po taško ---
@@ -107,13 +107,13 @@ jie turi savo vardų erdvę. Įtaisyti vardai taip pat laikomi
 modulyje pavadintame :mod:`__builtin__`.
 
 Lokali vardų erdvė funkcijai yra sukuriama kai funkcija yra iškviečiama ir
-yra ištrinama (tiesa sakant, "pamirštama" yra tinkamesnis žodis apibūdinti
+yra ištrinama (tiesa sakant, „pamirštama“ yra tinkamesnis žodis apibūdinti
 tam kas iš tikro atsitinka) kai funkcija sugrįžta arba sukelia išimtį, kuri nėra
 suvaldoma funkcijoje. Žinoma, kiekvienas rekursyvūs šaukimas turi
 savo lokalią vardų erdvę.
 
 *Sritis* yra tekstinis regionas Python'o programoje, kur vardų erdvė
-yra tiesiogiai pasiekiama. "Tiesiogiai pasiekiama" šiuo atveju reiškia,
+yra tiesiogiai pasiekiama. „Tiesiogiai pasiekiama“ šiuo atveju reiškia,
 kad neapribotos nuorodos į vardą bando surasti vardą vardų erdvėje.
 
 Nors sritys yra apibrėžtos statiškai, jos naudojamos dinamiškai. Bet kuriuo
@@ -140,7 +140,7 @@ funkcijos sritis yra apibrėžta modulyje yra to modulio vardų erdvė,
 nesvarbu iš kur ar kokiu vardu ta funkcija yra kviečiama. Iš kitus
 pusės, vardų paieška yra atliekama dinamiškai vykdymo metu ---
 tačiau kalbos apibrėžimas juda link statinio vardų nustatymo
-"kompiliavimo metu", taigi nepasitikėkite dinamišku vardų nustatymu!
+„kompiliavimo metu“, taigi nepasitikėkite dinamišku vardų nustatymu!
 (Tiesa sakant, lokalūs kintamieji jau dabar nustatinėjami statiškai.)
 
 Ypatinga Python'e yra tai, kad jei sakinyje nenaudojamas :keyword:`global`,
@@ -234,7 +234,7 @@ Pavyzdžiui (jei naudojame aukščiau apibrėžtą klasę)::
 
 sukurią naują klasės *egzempliorių* ir priskiria šį objektą lokaliam kintamajam ``x``.
 
-Egzemplioriaus sukūrimo operacija ("kviečiant" klasės objektą) sukuria naują objektą.
+Egzemplioriaus sukūrimo operacija („kviečiant“ klasės objektą) sukuria naują objektą.
 Dauguma klasių sukuria objektus, kurių egzemplioriai yra pritaikomi
 speficiniai pradinei pozicijai. Todėl klasė gali apibrėžti
 specialų metodą pavadintą :meth:`__init__`, pvz.::
@@ -287,7 +287,7 @@ nepaliks jokios žymės::
    del x.counter
 
 Kitas egzemplioriaus atributo nuorodos tipas yra *metodas*. Metodas
-yra funkcija, kuri "priklauso" objektui. (Python'e, terminas metodas
+yra funkcija, kuri „priklauso“ objektui. (Python'e, terminas metodas
 nėra unikalus klasės egzemplioriams: kiti objektų tipai gali turėti
 metodus taip pat. Pvz, sąrašo objektas turi metodus append, insert,
 remove, sort ir t.t. Tačiau toliau sekančioje diskusijoje mes naudosime
@@ -363,7 +363,7 @@ pridedant tam tikra unikalią eilutę prie duomenų atributų pradžioje
 o daiktavardžius naudoti duomenų atributams.
 
 Duomenų atributai gali būti pasiekiami tiek metodų tiek paprastų
-objekto vartotojų ("klientų"). Kitaip sakant, klasės nėra tinkamos
+objekto vartotojų („klientų“). Kitaip sakant, klasės nėra tinkamos
 įgyvendinti abstrakčius duomenų tipus. Tiesa sakant, Python'e nėra
 nieko kas leistų paslėpti duomenis --- viskas yra paremta susitarimu.
 (Iš kitos pusės, Python'o implementacija parašyta C gali visiškai
@@ -443,7 +443,7 @@ vadinama *tipu*). Ji laikoma ``object.__class__``.
 Paveldėjimas
 ============
 
-Žinoma, kalbos savybė nebūtų verta "klasės" vardo jeigu nepalaikytų
+Žinoma, kalbos savybė nebūtų verta „klasės“ vardo jeigu nepalaikytų
 paveldėjimo. Paveldėtos klasės apibrėžties sintaksė atrodo
 taip::
 
@@ -570,7 +570,7 @@ kurie yra privatūs šiai klasei *kitos* klasės egzemplioriuje. Gali
 simboliai. Jei identifikatorius nėra klasėje arba kai klasės vardas
 sudarytas tik iš pabraukimo brūkšnių pakeitimas neįvyksta.
 
-Vardų pakeitimo tikslas yra leisti paprastai apibrėžti "privačius"
+Vardų pakeitimo tikslas yra leisti paprastai apibrėžti „privačius“
 egzemplioriaus kintamuosius ir metodus nesijaudinant apie
 egzemplioriaus kintamuosius apibrėžtus paveldėtoje klasėje arba
 egzemplioriaus kintamųjų keitimus už klasės ribų. Pastebėsime,
@@ -587,8 +587,8 @@ naudoti viršklasio privačius kintamuosius.
 Likučiai
 ========
 
-Kartais yra naudinga turėti duomenų tipą panašų į Paskalio "record"
-arba C "struct", kuriame būtų laikomi keli vardiniai duomenų nariai.
+Kartais yra naudinga turėti duomenų tipą panašų į Paskalio „record“
+arba C „struct“, kuriame būtų laikomi keli vardiniai duomenų nariai.
 Tuščia klasės apibrėžtis tam puikiai tinka::
 
    class Employee:

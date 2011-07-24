@@ -138,7 +138,7 @@ jūs pridėsite tokį kodą į modulio pabaigą::
 
 jūs galite failą naudoti ir kaip importuojamą modulį ir kaip skriptą
 nes kodas, kuris tikrina komandinę eilutę vykdomas tik tada
-kaip modulis vykdomas kaip "pagrindinis" ("main") failas::
+kaip modulis vykdomas kaip „pagrindinis“ („main“) failas::
 
    $ python fibo.py 50
    1 1 2 3 5 8 13 21 34
@@ -181,13 +181,13 @@ o tai dažniausiai yra klaida. Daugiau informacijos apie tai
 skyriuje :ref:`tut-standardmodules`.
 
 
-"Kompiliuoti" Python'o failai
+„Kompiliuoti“ Python'o failai
 -----------------------------
 
-"Kompiliuoti" Python'o failai yra svarbus pagreitinimas mažoms programoms,
+„Kompiliuoti“ Python'o failai yra svarbus pagreitinimas mažoms programoms,
 kurios naudoja daug modulių. Jeigu :file:`spam.pyc` egzistuoja tame
 pačiame aplanke kaip :file:`spam.py`, daroma prielaida, kad
-modulis :mod:`spam` jau turi "baitinę-kompiliuotą" versiją. Į :file:`spam.pyc`
+modulis :mod:`spam` jau turi „baitinę-kompiliuotą“ versiją. Į :file:`spam.pyc`
 įrašomas failo :file:`spam.py` pakeitimo laikas, todėl kai
 laikas esantis :file:`.pyc` nesutampa jis yra ignoruojamas.
 
@@ -355,14 +355,14 @@ Pakuotės
 ========
 
 Pakuotės yra būdas struktūrizuoti Python'o modulių vardų edrvę
-naudojant "taškais atskirtus modulių vardus". Pavyzdžiui, modulis :mod:`A.B`
+naudojant „taškais atskirtus modulių vardus“. Pavyzdžiui, modulis :mod:`A.B`
 nurodo submodulį ``B`` pakuotėje ``A``. Lygiai taip kaip moduliai
 apsaugo skirtingų modulių autorius nuo rūpesčio dėl vienodų
 globalių kintamųjų vardų, taip taškais atskirti modulių vardai apsaugo
 multi-modulinių pakuočių (tokių kaip NumPy ar Python Imaging Library)
 autorius nuo rūpesčio dėl vienodų modulių vardų.
 
-Tarkime jūs norite sukurti modulių kolekciją ("pakuotę")
+Tarkime jūs norite sukurti modulių kolekciją („pakuotę“)
 universalią garso failų ir duomenų tvarkymui. Kadangi egzistuoja
 įvairūs failų formatai (dažniausiai atpažįstami pagal plėtinį,
 pvz.: :file:`.wav`, :file:`.aiff`, :file:`.au`), todėl

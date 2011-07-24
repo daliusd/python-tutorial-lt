@@ -301,7 +301,7 @@ faile::
 Baterijos pridedamos
 ====================
 
-Python'as laikosi "baterijos pridedamos" filosofijos. Tai geriausiai matoma
+Python'as laikosi „baterijos pridedamos“ filosofijos. Tai geriausiai matoma
 žiūrint į rafinuotas ir užtikrintas didesnių pakuočių galimybes. Pavyzdžiui:
 
 * :mod:`xmlrpclib` ir :mod:`SimpleXMLRPCServer` moduliai nuotolinį
