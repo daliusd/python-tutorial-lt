@@ -5,7 +5,7 @@ Daugiau srauto valdymo įrankių
 ******************************
 
 Apart tik ką pristatyto reiškinio :keyword:`while`, Python'as pažįsta
-daugiau srauto valdymo įrankių žinomų iš kitų kalbų, tačiau
+daugiau srauto valdymo įrankių, žinomų iš kitų kalbų, tačiau
 yra keletas smulkių skirtumų.
 
 
@@ -52,7 +52,7 @@ galbūt esate pripratę C arba Pascal. Užuot iteravus per aritmetinę
 skaičių progresiją (kaip Paskalyje) arba leidžiant vartotojui apsibrėžti
 vienu metu iteracijos žingsnį ir baigimo sąlygą (kaip C), Python'o :keyword:`for`
 sakinys iteruoja per bet kokios sekos narius (sąrašą arba eilutę), tokia
-tvarka kokia jie yra sekoje. Pavyzdžiui:
+tvarka, kokia jie yra sekoje. Pavyzdžiui:
 
 .. Vienas pasiūlymas buvo duoti realų C pavyzdį, bet tai gali tik
    sumaišyti C neprogramuojančius žmones.
@@ -70,7 +70,7 @@ tvarka kokia jie yra sekoje. Pavyzdžiui:
 
 Modifikuoti seką, kuri yra iteruojama, nėra saugu (tai gali įvykti tik
 su kintamais sekų tipais, kaip kad sąrašai). Jeigu jums reikia
-modifikuoti sąrašą per kurį jūs iteruojate (pavyzdžiui, norite
+modifikuoti sąrašą, per kurį jūs iteruojate (pavyzdžiui, norite
 dvigubinti pasirinktus narius), jūs privalote iteruoti per kopiją.
 Atkarpos naudojimas tam ypač patogus::
 
@@ -132,11 +132,11 @@ Tačiau dažniausiai patogiau naudoti :func:`enumerate` funkciją, žiūrime :re
 :keyword:`continue` sakinys, taip pat pasiskolintas iš C, pereina prie kitos
 ciklo iteracijos.
 
-Ciklai taip pat gali turi  ``else`` dalį --- ji yra įvykdoma kai
+Ciklai taip pat gali turėti  ``else`` dalį --- ji yra įvykdoma, kai
 ciklas pereina visus sąrašo elementus (naudojant :keyword:`for`) arba
-kai sąlyga nebetenkinama (naudojant :keyword:`while`), bet ne tada
+kai sąlyga nebetenkinama (naudojant :keyword:`while`), bet ne tada,
 kai sąrašas baigiamas naudojant :keyword:`break`.  Tai pademonstruota
-toliau sekančiu ciklu, kuris ieško pirminių skaičių::
+ciklo, kuris ieško pirminių skaičių, pavyzdžiu::
 
    >>> for n in range(2, 10):
    ...     for x in range(2, n):
@@ -216,8 +216,8 @@ ir privalo būti pastumti.
 
 Pirmasis funkcijos sakinys gali būti eilutė --- ši eilutė yra
 funkcijos dokumentacijos eilutė arba :dfn:`docstring`.
-(daugiau apie dokumentacijos eilutes galima rasti :ref:`tut-docstrings` skyriuje.)
-Egzistuoja priemonės, kurios naudodamos dokumentacijos eilutes, gali
+(Daugiau apie dokumentacijos eilutes galima rasti :ref:`tut-docstrings` skyriuje.)
+Egzistuoja priemonės, kurios, naudodamos dokumentacijos eilutes, gali
 automatiškai sukurti dokumentaciją arba leidžia vartotojui interaktyviai
 naršyti po kodą. Dokumentacijos eilučių rašymas yra gera praktika,
 todėl įpraskite jas rašyti.
@@ -276,7 +276,8 @@ jį spausdinus) yra labai paprasta::
 
 * :keyword:`return` sakinys iš funkcijos grįžta su reikšme.
   :keyword:`return` be argumentų reiškinio sugrąžina ``None``. Jeigu
-  jis nėra parašytas funkcijos gale funkcija taip pat grąžina ``None``.
+  funkcija baigiama nesutikus :keyword:`return` sakinio, tai ji taip
+  pat grąžina ``None``.
 
 * Sakinys ``result.append(b)`` iškviečia sąrašo objekto ``result`` *metodą*.
   Metodas yra funkcija, kuri „priklauso“ objektui ir vadinasi
@@ -287,7 +288,7 @@ jį spausdinus) yra labai paprasta::
   savo objektų tipus ir metodus reikia naudoti *klases*, kurios aprašytos
   vėliau šitame vadovėlyje. Metodas :meth:`append` (naudojamas pavyzdyje) yra
   apibrėžtas sąrašo objektams --- jis prideda naują elementą į sąrašo pabaigą.
-  Tai yra tolygu ``result = result + [b]`` bet veikia daug efektyviau.
+  Tai yra tolygu ``result = result + [b]``, bet veikia daug efektyviau.
 
 
 .. _tut-defining:

@@ -239,7 +239,7 @@ pat, kaip eilutės yra įvedamos: apgaubia kabutėmis iš šonų, o viduje eilut
 esančios kabutės užrašomos pridedant pasvirąjį brūkšnelį. Jeigu eilutės
 viduje yra vienguba kabutė, eilutė spausdinama apgaubta dvigubomis kabutėmis.
 Kitais atvejais apgaubiama viengubomis kabutėmis. (Komanda :keyword:`print`,
-kurią aptarsime kiek vėliau, gali būti naudojama atspausdini eilutes be
+kurią aptarsime kiek vėliau, gali būti naudojama eilutėms atspausdinti be
 apgaubiančių kabučių.)
 
 Eilutės gali būti sujungtos (pridėtos viena prie kitos) naudojant ``+``
@@ -575,7 +575,7 @@ nurodo tą patį objektą! *Objektų semantiką* aptarsime vėliau.
 Pirmieji žingsniai link programavimo
 ====================================
 
-Be abejonės, Python'as gali būti naudojamas daug sudėtingesniems darbams negu
+Be abejonės, Python'as gali būti naudojamas daug sudėtingesniems darbams, negu
 apskaičiuoti du plius du. Pavyzdžiui, galime apskaičiuoti pradinius *Fibonačio*
 sekos narius::
 
@@ -604,7 +604,7 @@ sekos narius::
 * Ciklo konstrukcija :keyword:`while` vykdoma tol, kol sąlyga yra teisinga
   (šiuo atveju: ``b < 10``). Python'e, panašiai kaip ir C, bet kuris nelygus
   nuliui skaičius laikomas logine konstanta *teisinga*. Analogiškai, nulis yra laikomas
-  logine konstanta *klaidinga*. Sąlyga taip taip pat gali būti eilutės arba sąrašo
+  logine konstanta *klaidinga*. Sąlyga taip pat gali būti eilutės arba sąrašo
   reikšmė. Apibendrinant: bet kokia seka. Tuščia seka yra laikoma *klaidinga*;
   netuščia (turinti bent vieną elementą) laikoma *teisinga*. Pavyzdyje naudojama sąlyga
   yra paprastas palyginimas. Standartiniai palyginimo operatoriai užrašomi kaip ir C kalboje: ``<``
@@ -612,7 +612,7 @@ sekos narius::
   ``>=`` (daugiau arba lygu) bei ``!=`` (nelygu).
 
 * Vidinis ciklo kodas yra *pastumtas* -- tai Python'o būdas sugrupuoti kodo sakinius.
-  Python'as nesuteikia (kol kas) gudraus eilutės redagavimo galimybės, taigi tarpus
+  Python'as nesuteikia (kol kas) gudrių eilutės redagavimo galimybių, taigi tarpus
   arba tabuliacijos ženklus reikia eilutės pradžioje įterpti rankomis. Praktikoje,
   visgi, dauguma tekstų redaktorių, naudojamų rašyti Python'o kodą, pateikia
   galimybę automatiškai lygiuoti kodą. Kai sudėtinis kodo sakinys įvedamas

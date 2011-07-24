@@ -35,7 +35,7 @@ nesuveikia, galite išjungti interpretatorių surinkę : ``import sys; sys.exit(
 Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Python'ą
 įdiegęs žmogus galėjo pridėti GNU readline bibliotekos palaikymą, taip
 įgalindamas vartotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
-Turbūt greičiausias būdas patikrinti ar komandinės eilutės redagavimas yra
+Turbūt greičiausias būdas patikrinti, ar komandinės eilutės redagavimas yra
 palaikomas - surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą -
 redagavimas įjungtas. Jei pyptelėjimo nesigirdi arba išvedama ``^P``, redagavimo palaikymas
 neįjungtas; galėsite tik trinti simbolius, toje pačioje eilutėje, naudodami
@@ -94,8 +94,8 @@ Interaktyvus režimas
 
 Kai komandos yra nuskaitomos iš TTY įrenginio, sakome, kad interpretatorius yra
 interaktyviajame režime. Šiame režime *pirminis raginimas* (dažniausiai trys
-daugiau-už ženklai ```>>>```) reiškia, kad interpretatorius yra pasiruošęs
-nuskaityti sekančią komandą; antrinis raginimas (trys taškai ``...``) reiškia,
+„daugiau“ ženklai ```>>>```) reiškia, kad interpretatorius yra pasiruošęs
+nuskaityti kitą komandą; antrinis raginimas (trys taškai ``...``) reiškia,
 kad laukiamas prieš tai įvestos komandos pratęsimas. Prieš atspausdindamas
 pirmąjį raginimą, interpretatorius parodo pasisveikinimo žinutę, kurioje
 nurodoma interpretatoriaus versija bei autorinių teisių pranešimas::
@@ -129,7 +129,7 @@ Kai įvyksta klaida, interpretatorius atspausdina klaidos pranešimą ir dėklo
 pėdsaką (angl. *stack trace*). Jei klaida įvyksta interaktyviajame režime,
 interpretatorius tiesiog grįžta į pirminį raginimą; jei įvestis buvo nuskaityta
 iš failo, interpretatorius atspausdins dėklo pėdsaką ir baigs darbą grąžindamas
-atitinkamą (nelygų nuliui) būsenos kodą. Išimtys suvaldytos naudojant
+atitinkamą (nelygų nuliui) būsenos kodą. Išimtys, suvaldytos naudojant
 :keyword:`except` sakinį :keyword:`try` sakinyje, šiame kontekste nėra laikomos
 klaidomis. Kai kurios klaidos yra besąlygiškai lemtingos ir priverčia
 interpretatorių baigti darbą su klaidos būsena nelygia nuliui; prie tokių klaidų
@@ -166,7 +166,7 @@ Skriptui vykdymo būseną galite suteikti pasinaudoję :program:`chmod` komanda:
 
 Windows sistemose nėra „vykdomosios būsenos“ žymėjimo. Python'o diegimo programa
 automatiškai susieja ``.py`` rinkmenas su ``python.exe``, todėl spragtelėjus
-du kartus ant Python'o failai, jis bus įvykdytas kaip skriptas. Failas taip pat
+du kartus ant Python'o failo, jis bus įvykdytas kaip skriptas. Failas taip pat
 gali baigtis ``.pyw`` plėtiniu. Tokiu atveju terminalo langas nebus rodomas,
 kaip įprasta.
 
@@ -207,8 +207,8 @@ simbolių eilutėse vienu metu gali būti naudojami daugumos pasaulio kalbų
 simboliai. Ne ASCII simboliai negali būti naudojami kintamųjų, funkcijų, klasių ir t.t.
 *varduose.* Galimybė naudoti unikodo simbolius yra palaikoma nuo Python'o
 3 versijos. Kad visi simboliai būtų atvaizduoti tvarkingai, jūsų redaktorius
-turi atpažinti UTF-8 rinkmenas ir naudoti šriftą, palaikantį visus simbolius
-esančius faile.
+turi atpažinti UTF-8 rinkmenas ir naudoti šriftą, palaikantį visus
+faile esančius simbolius.
 
 .. _tut-startup:
 

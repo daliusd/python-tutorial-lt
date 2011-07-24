@@ -73,11 +73,11 @@ Tarp kitko, programa yra pavadinta pagal BBC laidą „Monty Python's Flying
 Circus“ ir neturi nieko bendro su reptilijomis. Nuorodos į Monty Python ištraukas
 dokumentacijoje yra ne tik leidžiamos, bet ir skatinamos!
 
-Dabar kai jūs jau esate susižavėjęs Python'u, jūs norite jį panagrinėti detaliau. Kadangi
+Dabar, kai jūs jau esate susižavėjęs Python'u, jūs norite jį panagrinėti detaliau. Kadangi
 geriausias būdas išmokti kalbą yra ją naudoti, vadovėlis kviečia jus žaisti su
 Python'o interpretatoriumi beskaitant.
 
-Kitoje dalyje, paaiškinta kaip naudotis interpretatoriumi. Tai nėra labai įdomi informacija,
+Kitoje dalyje paaiškinta, kaip naudotis interpretatoriumi. Tai nėra labai įdomi informacija,
 bet būtina norint išbandyti vėliau pateiktus pavyzdžius.
 
 Likęs vadovėlis supažindina su įvairiomis Python kalbos savybėmis ir sistema per pavyzdžius.
