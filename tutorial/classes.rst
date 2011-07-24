@@ -8,7 +8,7 @@ Python'o klasių mechanizmas prideda klases į kalbą naudodamas minimalų
 kiekį naujos sintaksės ir semantikos. Naudojamas klasių mechanizmo
 randamo C++ ir Modula-3 kalbose mišinys. Lygiai taip pat kaip ir
 su moduliais, Python'o klasėse nėra absoliučios ribos tarp apibrėžimo
-ir vartotojo - tiesiog tikimasi vartotojo suprantingumo "nesulaužant
+ir vartotojo -- tiesiog tikimasi vartotojo suprantingumo "nesulaužant
 apibrėžimo". Visgi svarbiausios klasių savybės yra pilnai išsaugotos:
 paveldėjimo mechanizmas leidžia naudoti kelias bazines klases, paveldėta
 klasė gali perrašyti bazinės klasės/bazinių klasių metodus ir metodai

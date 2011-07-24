@@ -252,7 +252,7 @@ apskliaustas::
    []
    >>> [[x,x**2] for x in vec]
    [[2, 4], [4, 16], [6, 36]]
-   >>> [x, x**2 for x in vec]  # klaida - kortežui reikalingi skliausteliai
+   >>> [x, x**2 for x in vec]  # klaida -- kortežui reikalingi skliausteliai
      File "<stdin>", line 1, in ?
        [x, x**2 for x in vec]
                   ^

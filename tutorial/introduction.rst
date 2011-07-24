@@ -24,7 +24,7 @@ apvalkale komentarus galite tiesiog praleisti.
 Pora pavyzdžių::
 
    # čia pirmasis komentaras
-   SPAM = 1                 # o čia - antrasis komentaras
+   SPAM = 1                 # o čia -- antrasis komentaras
                             # ...ir trečiasis!
    STRING = "# Tai nėra komentaras."
 
@@ -53,7 +53,7 @@ o interpretatorius užrašo rezultatą. Reiškinių sintaksė paprasta: operator
    >>> # Tai komentaras
    ... 2+2
    4
-   >>> 2+2  # o čia - komentaras toje pačioje eilutėje, kaip ir kodas
+   >>> 2+2  # o čia -- komentaras toje pačioje eilutėje, kaip ir kodas
    4
    >>> (50-5*6)/4
    5

@@ -94,7 +94,7 @@ progresija::
    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 Duotasis galutinis taškas niekada nėra sąrašo dalis: ``range(10)`` sugeneruoja
-10 reikšmių sąrašą - legalias indekso reikšmes dešimties narių sekai. Taip
+10 reikšmių sąrašą -- legalias indekso reikšmes dešimties narių sekai. Taip
 pat galima nurodyti kitokią pirmąją reikšmę arba nurodyti
 kitokį žingsnį (netgi neigiamą)::
 

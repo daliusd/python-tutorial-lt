@@ -36,7 +36,7 @@ Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Python
 įdiegęs žmogus galėjo pridėti GNU readline bibliotekos palaikymą, taip
 įgalindamas vartotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
 Turbūt greičiausias būdas patikrinti, ar komandinės eilutės redagavimas yra
-palaikomas - surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą -
+palaikomas -- surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą --
 redagavimas įjungtas. Jei pyptelėjimo nesigirdi arba išvedama ``^P``, redagavimo palaikymas
 neįjungtas; galėsite tik trinti simbolius, toje pačioje eilutėje, naudodami
 Backspace klavišą.
