@@ -186,7 +186,7 @@ kabutėmis::
    >>> '"Isn\'t," she said.'
    '"Isn\'t," she said.'
 
-Simbolių eilutės gali aprėpti porą eilučių. Naudojant pasvirąjį brūkšnelį
+Simbolių eilutės gali aprėpti porą eilučių. Naudojant kairinį brūkšnį
 eilutės gale galima nurodyti, kad toliau einanti eilutė yra šios tęsinys::
 
    >>> hello = "This is a rather long string containing\n\
@@ -195,7 +195,7 @@ eilutės gale galima nurodyti, kad toliau einanti eilutė yra šios tęsinys::
    ... significant."
    >>> print hello
 
-Turėkite omenyje, kad pasvirasis brūkšnelis sujungia gretimas eilutes
+Turėkite omenyje, kad kairinis brūkšnys sujungia gretimas eilutes
 į vieną, todėl naujas eilutes reikia sudaryti naudojant ``\n``.
 Ankstesnis pavyzdys ekrane atspausdintų::
 
@@ -204,8 +204,8 @@ Ankstesnis pavyzdys ekrane atspausdintų::
        Note that whitespace at the beginning of the line is significant.
 
 Kita vertus, jeigu eilutę pažymime kaip „neapdorojamą“ (angl. *raw*), tuomet ``\n``
-nepradeda naujos eilutės. Neapdorojamose eilutėse pasvirieji brūkšneliai
-taip pat praranda savo reikšmę (t.y. lieka pasviraisiais brūkšneliais),
+nepradeda naujos eilutės. Neapdorojamose eilutėse kairiniai brūkšniai
+taip pat praranda savo reikšmę (t.y. lieka kairiniais brūkšniais),
 tačiau skirstymas į eilutes nėra prarandamas -- lieka taip, kaip užrašyta::
 
    hello = r"This is a rather long string containing\n\
@@ -236,7 +236,7 @@ ekrane išvestų::
 
 Interpretatorius atspausdina operacijų su eilutėmis rezultatus visiškai taip
 pat, kaip eilutės yra įvedamos: apgaubia kabutėmis iš šonų, o viduje eilutės
-esančios kabutės užrašomos pridedant pasvirąjį brūkšnelį. Jeigu eilutės
+esančios kabutės užrašomos pridedant kairinį brūkšnį. Jeigu eilutės
 viduje yra vienguba kabutė, eilutė spausdinama apgaubta dvigubomis kabutėmis.
 Kitais atvejais apgaubiama viengubomis kabutėmis. (Komanda :keyword:`print`,
 kurią aptarsime kiek vėliau, gali būti naudojama eilutėms atspausdinti be
@@ -426,7 +426,7 @@ kad pirmi 256 Unikodo rašmenys sutampa su Latin-1 kodų lentele.
 Ypatingiems poreikiams galima naudoti neapdorojamas (angl. *raw*) eilutes --
 visai taip pat, kaip ir paprastų eilučių atveju. Norėdami tokias 
 eilutes įvesti, prieš atidarančią kabutę parašykite 'ur'. Tuomet ``\uXXXX``
-užrašymas bus apdorojamas tik tuomet, kai pasvirųjų brūkšnelių skaičius
+užrašymas bus apdorojamas tik tuomet, kai kairinių brūkšnių skaičius
 prieš 'u' yra nelyginis. ::
 
    >>> ur'Sveikas,\u0020pasauli!'
@@ -434,7 +434,7 @@ prieš 'u' yra nelyginis. ::
    >>> ur'Sveikas,\\u0020pasauli!'
    u'Sveikas,\\\\u0020pasauli!'
 
-Šis režimas naudingas tada, kai reikia įvesti daug pasvirųjų brūkšnelių,
+Šis režimas naudingas tada, kai reikia įvesti daug kairinių brūkšnių,
 pavyzdžiui reguliariuosius reiškinius (angl. *regular expression*).
 
 Be šių užrašymo būdų, Python'as pateikia ir daugiau būdų Unikodo eilutėms sukurti
