@@ -62,7 +62,7 @@ skirtingų tipų ir tipas parašomas kaip dalis pranešimo. Pavyzdyje
 tipai yra :exc:`ZeroDivisionError`, :exc:`NameError` ir :exc:`TypeError`.
 Eilutė, kuri parašyta kaip išimties tipas, yra įtaisytos išimties,
 kuri įvyko, vardas. Tai galioja visoms įtaisytoms išimtims, bet
-nebūtinai tiesa naudotojo apibrėžtoms išimtims (nors tai ir yra
+nebūtinai yra tiesa naudotojo apibrėžtoms išimtims (nors tai ir yra
 naudingas susitarimas). Standartinių išimčių vardai yra
 įtaisyti identifikatoriai (ne rezervuoti baziniai žodžiai).
 

@@ -78,7 +78,7 @@ funkcijoje. Tam tikra prasme objekto atributų aibė taip pat suformuoja
 vardų erdvę. Svarbiasias dalykas, kurį reikia suprasti apie vardų
 erdves, kad nėra visiškai jokio ryšio tarp vardų skirtingose vardų
 erdvėse. Pvz.: du skirtingi moduliai gali apibrėžti tą pačią funkciją
-„maksimizuoti“ --- tam kad naudotojai nesusimaišytų, modulio
+„maksimizuoti“ --- tam, kad naudotojai nesusimaišytų, modulio
 naudotojai turėtų pridėti modulio vardą prieš funkciją.
 
 Tarp kitko, aš naudoju žodį *atributas* kiekvienam vardui po taško ---
@@ -137,7 +137,7 @@ sukuria dar vieną vardų erdvę lokalioje srityje.
 
 Svarbu suprasti, kad sritys yra nustatomos pagal tekstą: globali
 funkcijos sritis yra apibrėžta modulyje yra to modulio vardų erdvė,
-nesvarbu iš kur ar kokiu vardu ta funkcija yra kviečiama. Iš kitus
+nesvarbu iš kur ar kokiu vardu ta funkcija yra kviečiama. Iš kitos
 pusės, vardų paieška yra atliekama dinamiškai vykdymo metu ---
 tačiau kalbos apibrėžimas juda link statinio vardų nustatymo
 „kompiliavimo metu“, taigi nepasitikėkite dinamišku vardų nustatymu!

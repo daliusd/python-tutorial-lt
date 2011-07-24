@@ -596,8 +596,8 @@ Python'o programuotojas privalo jį kada nors perskaityti. Štai
 * Naudokite 4-tarpų pastūmimą, ir nenaudokite tabuliacijos.
 
   4 tarpai yra kompromisas tarp mažo pastūmimo (leidžia naudoti gilesnį
-  įdėjimo gylį) ir didelio pastūmimo (paprasčiau skaityti). Tabuliacija
-  naudoti teisingai yra sudėtinga ir todėl jos nenaudoti iš viso.
+  įdėjimo gylį) ir didelio pastūmimo (paprasčiau skaityti). Tabuliaciją
+  naudoti teisingai yra sudėtinga ir todėl geriau jos nenaudoti iš viso.
 
 * Nerašykite eilučių, kurios yra ilgesnės negu 79 simboliai.
 
