@@ -70,7 +70,7 @@ Likusi eilutės dalis pateikia detalią informaciją priklausomai nuo
 išimties tipo ir kas sukėlė išimtį.
 
 Priešais einanti klaidos pranešimo dalis parodo kontekstą, kuriame įvyko
-išimtis dėklo pėdsakų (ang. traceback) forma. Bendrai jame yra dėklo
+išimtis dėklo pėdsakų (angl. traceback) forma. Bendrai jame yra dėklo
 pėdsakai nurodantys kodo eilutes, tačiau eilutės perskaitytos iš
 standartinės įvesties.
 

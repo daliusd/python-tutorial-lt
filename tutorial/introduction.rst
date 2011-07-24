@@ -269,7 +269,7 @@ su operacijų rezultatais::
 Eilutės gali būti indeksuojamos; kaip ir C kalboje, pirmasis eilutės simbolis
 atitinka indeksą 0. Python'o kalboje nėra atskiro tipo simboliams aprašyti; simbolis --
 tai eilutė, kurios dydis -- vienas simbolis. Eilučių dalys gali būti nurodomos
-naudojant :term:`atkarpos notaciją <atkarpa>` (ang. *slice notation*): du indeksai atskirti dvitaškiu. ::
+naudojant :term:`atkarpos notaciją <atkarpa>` (angl. *slice notation*): du indeksai atskirti dvitaškiu. ::
 
    >>> word
    'Pagalba'
@@ -519,7 +519,7 @@ pakeisti::
    >>> a
    ['spam', 'eggs', 123, 1234]
 
-Atkarpoms (ang. *slice*) taip pat galima priskirti reikšmes, net jeigu tai pakeičia
+Atkarpoms (angl. *slice*) taip pat galima priskirti reikšmes, net jeigu tai pakeičia
 sąrašo dydį arba jį ištuština::
 
    >>> # Pakeiskime porą elementų:

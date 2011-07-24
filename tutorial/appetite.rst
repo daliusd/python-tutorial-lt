@@ -40,7 +40,7 @@ Python'as leidžia jūsų programas išskaidyti į modulius, kurie gali būti pa
 kitose Python'o programose. Python'e yra daug standartinių modulių, kuriuos jūs
 galite naudoti kaip pagrindą savo programoms arba kaip pavyzdį pradedant mokytis
 programuoti Python'u. Kai kurie iš šių modulių leidžia atlikti failų operacijas,
-sisteminius kvietimus, lizdų (ang. socket) operacijas arba netgi grafines vartotojo aplinkas naudojant
+sisteminius kvietimus, lizdų (angl. socket) operacijas arba netgi grafines vartotojo aplinkas naudojant
 bibliotekas kaip Tk.
 
 Python'as yra interpretuojama kalba, o tai reiškia kad jūs galite sutaupyti daug laiko,

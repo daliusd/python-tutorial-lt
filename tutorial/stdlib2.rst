@@ -200,8 +200,8 @@ vykdyti užduotis fone kol pagrindinė programa yra vykdoma::
 Pagrindinė problema daugiagijiškoje programoje yra gijų,
 kurios dalinasi duomenimis ir kitais resursais, koordinavimas.
 Gijų modulis leidžia naudoti sinchronizavimo primityvus kaip
-spynas (ang. lock), įvykius (ang. event), sąlygų kintamuosius
-(ang. condition variable) ar semaforus.
+spynas (angl. lock), įvykius (angl. event), sąlygų kintamuosius
+(angl. condition variable) ar semaforus.
 
 Nors šios priemonės yra galingos, mažiausia klaida gali baigtis klaida,
 kurią sunku atgaminti. Rekomenduojamas būdas užduočių koordinavimui
@@ -336,7 +336,7 @@ surikiuoti sekų manipuliavimui::
    >>> scores
    [(100, 'perl'), (200, 'tcl'), (300, 'ruby'), (400, 'lua'), (500, 'python')]
 
-:mod:`heapq` modulyje rasite funkcijas reikalingas krūvų (ang. heap) paremtų
+:mod:`heapq` modulyje rasite funkcijas reikalingas krūvų (angl. heap) paremtų
 sąrašais įgyvendinimui. Mažiausia reikšmė visada laikoma nulinėje
 pozicijoje. Tai praverčia programose, kurioms dažnai reikia pasiekti
 mažiausią elementą nerikiuojant sąrašo pilnai::

@@ -76,7 +76,7 @@ Argumentų perdavimas
 --------------------
 
 Kai pateikti, skripto pavadinimas ir kiti argumentai yra perduodami
-skriptui, naudojant ``sys.argv`` kintamąjį, eilučių sąrašo (ang.
+skriptui, naudojant ``sys.argv`` kintamąjį, eilučių sąrašo (angl.
 *list of strings*) pavidalu. Sąrašo ilgis ne mažesnis už vienetą; kai
 skriptas ir argumentai neperduodami, ``sys.argv[0]`` bus tuščia eilutė. Kai
 skripto vardas yra pateiktas kaip ``-`` (kas reiškia standartinę įvestį),

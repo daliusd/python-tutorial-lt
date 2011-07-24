@@ -96,7 +96,7 @@ Eilučių rašto atpažinimas
 =========================
 
 :mod:`re` modulis suteikia galimybę naudotis reguliariais reiškiniais
-(ang. regular expression) sudėtingesniam eilučių tvarkymui.
+(angl. regular expression) sudėtingesniam eilučių tvarkymui.
 Sudėtingam rašto atpažinimui ir manipuliacijoms, reguliarūs
 reiškiniai siūlo trumpą ir optimizuotą sprendimą::
 

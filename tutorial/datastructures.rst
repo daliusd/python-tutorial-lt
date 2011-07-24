@@ -107,7 +107,7 @@ Sąrašo naudojimas dėklams
 .. sectionauthor:: Ka-Ping Yee <ping@lfw.org>
 
 
-Sąrašo metodai leidžia sąrašą naudoti kaip dėklą (ang. stack), kur
+Sąrašo metodai leidžia sąrašą naudoti kaip dėklą (angl. stack), kur
 paskutinis pridėtas elementas yra pirmiausia išimamas („paskutinis įdetas, pirmas išimtas“).
 Norėdami pridėti elementą į deklą, naudokite :meth:`append`. Norėdami išimti
 elementą iš dėklo viršaus, naudokite :meth:`pop` nenurodydami indekso. Pavyzdžiui::
@@ -358,7 +358,7 @@ Kortežai ir sekos
 Mes pastebėjome, kad sąrašai ir eilutės turi daug bendrų savybių,
 kaip kad indeksavimas ir kirpimo operacijos. Jie yra *sekos* duomenų
 tipų pavyzdžiai. Kadangi Python'as yra besivystanti kalba, kiti sekos tipai gali
-būti pridėti ateityje. Python'e yra ir kitas standartinis sekos tipas: *kortežas* (ang. tuple).
+būti pridėti ateityje. Python'e yra ir kitas standartinis sekos tipas: *kortežas* (angl. tuple).
 
 Kortežas yra kelių reikšmių seka atskirta kableliais. Pavyzdžiui::
 

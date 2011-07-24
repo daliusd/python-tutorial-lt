@@ -376,8 +376,8 @@ kodą norint išsaugoti sudėtingus duomenų tipus, Python'as turi
 standartinį modulį :mod:`pickle`. Tai yra nerealus modulis, kuris
 gali paimti beveik bet kurį Python'o objektą (netgi tam tikras Python'o
 kodo formas!) ir sukonvertuoti jį į eilutę. Šis
-procesas vadinamas marinavimu (ang. :dfn:`pickling`). Objekto rekonstravimas
-iš eilutės yra vadinamas išmarinavimu (ang. :dfn:`unpickling`).
+procesas vadinamas marinavimu (angl. :dfn:`pickling`). Objekto rekonstravimas
+iš eilutės yra vadinamas išmarinavimu (angl. :dfn:`unpickling`).
 Tarp marinavimo ir išmarinavimo, objektas eilutėje gali
 būti padėtas į failą arba persiųstas per tinklą į kitą mašiną.
 
@@ -397,7 +397,7 @@ daug objektų arba kai jūs nenorite rašyti marinuotų duomenų į failą)
 :mod:`pickle` yra standartinis būdas Python'e duomenų saugojimui
 ir naudojimui kitose programose (arba toje pačioje programoje, kai ji
 bus iškviesta ateityje). Techninis terminas tam yra ilgalaikis
-(ang. :dfn:`persistent`) objektas.  Kadangi :mod:`pickle` yra
+(angl. :dfn:`persistent`) objektas.  Kadangi :mod:`pickle` yra
 dažnai naudojamas, daugelis autorių rašančių Python'o plėtinius
 pasirūpina, kad naujus duomenų tipus (pvz.: matricas) būtų galima
 tinkamai marinuoti ir išmarinuoti.
