@@ -62,7 +62,7 @@ skirtingų tipų ir tipas parašomas kaip dalis pranešimo. Pavyzdyje
 tipai yra :exc:`ZeroDivisionError`, :exc:`NameError` ir :exc:`TypeError`.
 Eilutė, kuri parašyta kaip išimties tipas, yra įtaisytos išimties,
 kuri įvyko, vardas. Tai galioja visoms įtaisytoms išimtims, bet
-nebūtinai tiesa vartotojo apibrėžtoms išimtims (nors tai ir yra
+nebūtinai tiesa naudotojo apibrėžtoms išimtims (nors tai ir yra
 naudingas susitarimas). Standartinių išimčių vardai yra
 įtaisyti identifikatoriai (ne rezervuoti baziniai žodžiai).
 
@@ -80,10 +80,10 @@ Išimčių valdymas
 ================
 
 Programą galima parašyti taip, kad ji suvaldytų pasirinktas išimtis. Pažiūrėkime
-į žemiau esantį pavyzdį, kuris prašo vartotoją įvesti teisingą skaičių tol kol
-jis yra įvedamas, bet taip pat leidžia vartotojui nutraukti programą
+į žemiau esantį pavyzdį, kuris prašo naudotoją įvesti teisingą skaičių tol kol
+jis yra įvedamas, bet taip pat leidžia naudotojui nutraukti programą
 (naudojant :kbd:`Control-C` ar bet kokį kitą būdą, kurį palaiko operacinė sistema).
-Pastebėsime, kad vartotojo sugeneruotas nutraukimas yra signalizuojamas sukeliant
+Pastebėsime, kad naudotojo sugeneruotas nutraukimas yra signalizuojamas sukeliant
 :exc:`KeyboardInterrupt` išimtį::
 
    >>> while True:
@@ -249,7 +249,7 @@ vėl sukelti išimtį::
 
 .. _tut-userexceptions:
 
-Vartotojų apibrėžtos išimtys
+Naudotojų apibrėžtos išimtys
 ============================
 
 Programos gali sukurti savo išimtis sukurdamos naujas išimčių klases.

@@ -80,7 +80,7 @@ Modulyje gali būti sudėti tiek vykdomi sakiniai tiek funkcijų apibrėžtys.
 Kiekvienas modulis turi savo privačią simbolių lentelę, kuri naudojama
 kaip globali simbolių lentelė visoms funkcijoms modulyje. Taigi
 modulio autorius gali naudoti globalius kintamuosius nesirūpindamas
-apie atsitiktinius vardų sutapimus su vartotojo globaliais kintamaisiais.
+apie atsitiktinius vardų sutapimus su naudotojo globaliais kintamaisiais.
 Iš kitos pusės, jeigu jūs žinote, ką jus darote, jūs galite pasiekti
 modulio globalius kintamuosius naudodamiesi ta pačia sintakse, kurią
 naudojote funkcijoms --- ``modname.itemname``.
@@ -148,7 +148,7 @@ Jeigu modulis bus importuotas, kodas nebus vykdomas::
    >>> import fibo
    >>>
 
-Tai dažniausiai naudojama norint suteikti patogią vartotojo sąsają moduliui
+Tai dažniausiai naudojama norint suteikti patogią naudotojo sąsają moduliui
 arba testavimo tikslais (pvz.: modulį paleidžiant kaip skriptą įvykdomi
 testai).
 
@@ -409,7 +409,7 @@ gali būti tiesiog tuščias failas, bet jei reikia jis gali įvykdyti
 inicializacijos kodą pakuotei arba nustatyti kintamąjį
 ``__all__`` (aprašytas vėliau).
 
-Pakuotės vartotojai gali importuoti individualius modulius iš pakuotės.
+Pakuotės naudotojai gali importuoti individualius modulius iš pakuotės.
 Pavyzdžiui::
 
    import sound.effects.echo
@@ -457,8 +457,8 @@ tai buvo galima daryti prieš tai).
 
 .. index:: single: __all__
 
-Kas atsitiks, jeigu vartotojas parašys ``from sound.effects import *``? Idealiu
-atveju vartotojas tikėsis, kad ši komanda kažkaip nueis į failų sistemą,
+Kas atsitiks, jeigu naudotojas parašys ``from sound.effects import *``? Idealiu
+atveju naudotojas tikėsis, kad ši komanda kažkaip nueis į failų sistemą,
 ras kurie submoduliai priklauso pakuotei ir juos visus importuos. Nelaimei
 ši operacija nedirba gerai Windows platformoje, kur failų sistema ne
 visada turi informaciją apie failo vardo raidžių lygį! Šioje platformoje,

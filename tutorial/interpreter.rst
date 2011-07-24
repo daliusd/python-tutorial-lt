@@ -34,7 +34,7 @@ nesuveikia, galite išjungti interpretatorių surinkę : ``import sys; sys.exit(
 
 Teksto rinkimas interpretatoriuje nėra labai rafinuotas. Unix sistemose, Python'ą
 įdiegęs žmogus galėjo pridėti GNU readline bibliotekos palaikymą, taip
-įgalindamas vartotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
+įgalindamas naudotojus naudoti interaktyvų redagavimą, bei komandų istoriją.
 Turbūt greičiausias būdas patikrinti, ar komandinės eilutės redagavimas yra
 palaikomas -- surinkti Control-P interpretatoriuje. Jei išgirdote pyptelėjimą --
 redagavimas įjungtas. Jei pyptelėjimo nesigirdi arba išvedama ``^P``, redagavimo palaikymas
@@ -153,7 +153,7 @@ eilutę::
 
    #! /usr/bin/env python
 
-Kad ši eilutė veiktų, interpretatorius turi būti vartotojo kelyje
+Kad ši eilutė veiktų, interpretatorius turi būti naudotojo kelyje
 (:envvar:`PATH`), o failui turi būti suteikta vykdymo būsena. Pirmi du simboliai
 faile privalo būti ``#!``. Kai kuriose platformose pirmoji eilutė turi baigtis
 Unix tipo eilutės pabaigos simboliu (``'\n'``), o ne Windows (``'\r\n'``).

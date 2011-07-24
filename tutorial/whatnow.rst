@@ -23,7 +23,7 @@ dokumentai esantys joje yra:
   bendrą įspūdį, ką galima padaryti.
 
 * `Installing Python Modules <http://docs.python.org/install/>`__ paaiškina kaip įdiegti išorinius modulius parašytus
-  kitų Python'o vartotojų.
+  kitų Python'o naudotojų.
 
 * `Python Reference Manual <http://docs.python.org/reference/>`__: detalus Python'o sintaksės ir semantikos išaiškinimas.
   Jis sunkiai skaitomas, bet čia rasite naudingos informacijos apie pačią
@@ -37,7 +37,7 @@ Daugiau Python'o resursų:
 * http://docs.python.org:  greitai pasiekiama Python'o dokumentacija.
 
 * http://pypi.python.org: Python Package Index (seniau dar vadinosi
-  Cheese Shop) yra vartotojų sukurtų Python'o modulių indeksas, kuriuos
+  Cheese Shop) yra naudotojų sukurtų Python'o modulių indeksas, kuriuos
   galima parsisiųsti. Kai tik pradėsite leisti kodą, jūs galėsite
   užsiregistruoti čia, kad kiti galėtų jį rasti.
 

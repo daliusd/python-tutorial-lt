@@ -371,7 +371,7 @@ kurios gavusios eilutę ``'123'`` grąžina skaitinę reikmę 123. Tačiau,
 jeigu jums reikia saugoti sudėtingesnius duomenų tipus kaip sąrašus,
 žodynus ar klasių egzempliorius, viskas pasidaro daug sudėtingiau.
 
-Tam, kad vartotojui nereiktų nuolat vargti rašant ir derinant
+Tam, kad naudotojui nereiktų nuolat vargti rašant ir derinant
 kodą norint išsaugoti sudėtingus duomenų tipus, Python'as turi
 standartinį modulį :mod:`pickle`. Tai yra nerealus modulis, kuris
 gali paimti beveik bet kurį Python'o objektą (netgi tam tikras Python'o

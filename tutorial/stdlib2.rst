@@ -22,7 +22,7 @@ objektams::
    "set(['a', 'c', 'd', 'e', 'f', 'g', ...])"
 
 :mod:`pprint` modulis leidžia rafinuočiau atspausdinti
-tiek įtaisytus tiek vartotojo apibrėžtus objektus interpretatoriui
+tiek įtaisytus tiek naudotojo apibrėžtus objektus interpretatoriui
 skaitomu būdu. Jeigu rezultatas yra ilgesnis negu viena eilutė,
 „pretty printer“ prideda eilučių pabaigos simbolius ir
 pastumia tekstą, kad duomenų struktūra būtų suprantamesnė::
@@ -76,7 +76,7 @@ atskyrimą::
 
 :mod:`string` modulyje rasite visapusišką :class:`Template` klasę, kuri
 leis naudoti supaprastintą sintaksę, kurią gali suprasti ir
-paprastas vartotojas. Tai leidžia vartotojui modifikuoti programos
+paprastas naudotojas. Tai leidžia naudotojui modifikuoti programos
 elgesį nekeičiant pačios programos.
 
 Rezervuotų vietų vardai formuojami su ``$`` ir teisingu
@@ -92,7 +92,7 @@ Parašius ``$$`` jis paverčiamas vienu ``$``::
 
 :meth:`substitute` metodas pakelia :exc:`KeyError`, jeigu rezervuotai
 vietai nepateikiamas argumentas. Jeigu mums reikia, kad funkcija
-veiktų net tuo atveju, kai vartotojas pateikia ne visą informaciją,
+veiktų net tuo atveju, kai naudotojas pateikia ne visą informaciją,
 galima naudoti :meth:`safe_substitute` metodą, jeigu ji tinkama.
 Naudojant šia funkciją rezervuota vieta bus nepakeista, jei
 duomenų truks::
@@ -170,7 +170,7 @@ Daugiagijiškumas
 
 Gijos naudojamos norint atskirti užduotis, kurios nėra viena nuo kitos
 priklausomos. Gijos gali būti naudojamos norint pagerinti programos
-reagavimo laiką, kuri gauna vartotojo įvedamus duomenis ir tuo tarpu
+reagavimo laiką, kuri gauna naudotojo įvedamus duomenis ir tuo tarpu
 vykdo kitas užduotis fone. Susijęs panaudojimo variantas yra
 duomenų skaitymas ir rašymas vykdant skaičiavimus kitoje gijoje.
 
@@ -241,7 +241,7 @@ rašymo/siuntimo būdus priklausomai nuo pranešimo prioriteto:
 :const:`DEBUG`, :const:`INFO`, :const:`WARNING`, :const:`ERROR`, and :const:`CRITICAL`.
 
 Žurnalo sistema gali būti konfigūruojama tiesiogiai iš Python'o arba gali
-būti užkrauta iš vartotojo konfigūruojamo failo.
+būti užkrauta iš naudotojo konfigūruojamo failo.
 
 .. _tut-weak-references:
 
@@ -361,7 +361,7 @@ operacijoms, tai ši nauja klasė labai praverčia finansinėms programoms
 ir kitiems atvejams, kurie reikalauja tikslios dešimtainės išraiškos,
 tikslumo kontrolės, tikslumo apvalinant norint atitikti legalumo
 ar reguliavimo reikalavimus, sekimo iki pasirinktos svarbios
-dešimtainės vietos, arba programoms, kur vartotojas tikisi, kad
+dešimtainės vietos, arba programoms, kur naudotojas tikisi, kad
 rezultatas sutaps su ranka atliktais skaičiavimais.
 
 Pavyzdžiui, 5% mokesčio skaičiavimas 70 centų telefono sąskaitai duos

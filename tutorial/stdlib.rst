@@ -82,7 +82,7 @@ Klaidų išvesties nukreipimas ir programos pabaigimas
 
 :mod:`sys` modulyje taip pat galima rasti atributus *stdin*, *stdout*, and *stderr*.
 Pastarasis yra naudingas norint parodyti klaidų pranešimus netgi tada
-kai *stdout* (standartinė išvestis) yra nukreipta (t.y. nematoma vartotojui)::
+kai *stdout* (standartinė išvestis) yra nukreipta (t.y. nematoma naudotojui)::
 
    >>> sys.stderr.write('Warning, log file not found starting a new one\n')
    Warning, log file not found starting a new one
@@ -231,7 +231,7 @@ modulių, pvz.: :mod:`zlib`, :mod:`gzip`, :mod:`bz2`, :mod:`zipfile` ir
 Našumo matavimas
 ================
 
-Kai kurie Python vartotojai nori žinoti kaip skirtingi tos pačios problemos
+Kai kurie Python naudotojai nori žinoti kaip skirtingi tos pačios problemos
 sprendimai paveikia našumą. Python'e yra priemonių matavimui, kurios
 šiuos klausimus atsako iškart.
 
@@ -264,7 +264,7 @@ vykdymas kūrimo procese.
 kurie surašyti į dokumentacijos eilutes, tikrinimui. Testavimo
 konstrukcija yra paprasta: tereikia tipinį kvietimą ir jo
 rezultatus iš python interpretatoriaus perkelti į dokumentacijos
-eilutę. Taip dokumentacijoje vartotojui pateikiami pavyzdžiai ir
+eilutę. Taip dokumentacijoje naudotojui pateikiami pavyzdžiai ir
 jie leidžia doctest moduliui užtikrinti, kad kodas sutampa su
 dokumentacija::
 

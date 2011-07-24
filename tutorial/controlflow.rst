@@ -49,7 +49,7 @@ naudingas norint išvengti perkrauto teksto stumdymo. Bazinių žodžių :keywor
 
 :keyword:`for` sakinys Python'e šiek tiek skiriasi nuo to prie ko jūs
 galbūt esate pripratę C arba Pascal. Užuot iteravus per aritmetinę
-skaičių progresiją (kaip Paskalyje) arba leidžiant vartotojui apsibrėžti
+skaičių progresiją (kaip Paskalyje) arba leidžiant naudotojui apsibrėžti
 vienu metu iteracijos žingsnį ir baigimo sąlygą (kaip C), Python'o :keyword:`for`
 sakinys iteruoja per bet kokios sekos narius (sąrašą arba eilutę), tokia
 tvarka, kokia jie yra sekoje. Pavyzdžiui:
@@ -167,7 +167,7 @@ sakinio reikalauja sintaksė, bet iš programos nereikia jokio veiksmo.
 Pavyzdžiui::
 
    >>> while True:
-   ...     pass  # Laukiame kol vartotojas nutrauks programą naudodamasis klaviatūra (Ctrl+C)
+   ...     pass  # Laukiame kol naudotojas nutrauks programą naudodamasis klaviatūra (Ctrl+C)
    ...
 
 Tai dažniausiai naudojama norint sukurti minimalią klasę::
@@ -218,7 +218,7 @@ Pirmasis funkcijos sakinys gali būti eilutė --- ši eilutė yra
 funkcijos dokumentacijos eilutė arba :dfn:`docstring`.
 (Daugiau apie dokumentacijos eilutes galima rasti :ref:`tut-docstrings` skyriuje.)
 Egzistuoja priemonės, kurios, naudodamos dokumentacijos eilutes, gali
-automatiškai sukurti dokumentaciją arba leidžia vartotojui interaktyviai
+automatiškai sukurti dokumentaciją arba leidžia naudotojui interaktyviai
 naršyti po kodą. Dokumentacijos eilučių rašymas yra gera praktika,
 todėl įpraskite jas rašyti.
 
@@ -601,7 +601,7 @@ Python'o programuotojas privalo jį kada nors perskaityti. Štai
 
 * Nerašykite eilučių, kurios yra ilgesnės negu 79 simboliai.
 
-  Tai padeda vartotojams, kurie naudoja mažus ekranus ir leidžia
+  Tai padeda naudotojams, kurie naudoja mažus ekranus ir leidžia
   stebėti du kodo puslapius turint didelį ekraną.
 
 * Naudokite tuščias eilutes atskirdami funkcijas ir klases, bei didesnius kodo

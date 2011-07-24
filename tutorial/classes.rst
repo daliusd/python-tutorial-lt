@@ -8,7 +8,7 @@ Python'o klasių mechanizmas prideda klases į kalbą naudodamas minimalų
 kiekį naujos sintaksės ir semantikos. Naudojamas klasių mechanizmo
 randamo C++ ir Modula-3 kalbose mišinys. Lygiai taip pat kaip ir
 su moduliais, Python'o klasėse nėra absoliučios ribos tarp apibrėžimo
-ir vartotojo -- tiesiog tikimasi vartotojo suprantingumo „nesulaužant
+ir naudotojo -- tiesiog tikimasi naudotojo suprantingumo „nesulaužant
 apibrėžimo“. Visgi svarbiausios klasių savybės yra pilnai išsaugotos:
 paveldėjimo mechanizmas leidžia naudoti kelias bazines klases, paveldėta
 klasė gali perrašyti bazinės klasės/bazinių klasių metodus ir metodai
@@ -25,7 +25,7 @@ paduodamas kviečiant funkciją. Kaip ir Smalltalk pačios klasės yra
 objektai, arba platesne žodžio prasme: Python'e visi duomenų tipai
 yra objektai. Tai suteikia importavimo ir pervadinimo semantiką.
 Skirtingai nuo C++ ir Modula-3, standartiniai tipai gali būti
-naudojami kaip bazinės klasės kai vartotojui reikia juos
+naudojami kaip bazinės klasės kai naudotojui reikia juos
 praplėsti. Taip pat kaip C++ bet ne kaip Modula-3, dauguma
 standartinių operatorių naudojant specialią sintaksę (aritmetiniai
 operatoriai ir t.t.) klasėse gali būti perrašyti.
@@ -78,8 +78,8 @@ funkcijoje. Tam tikra prasme objekto atributų aibė taip pat suformuoja
 vardų erdvę. Svarbiasias dalykas, kurį reikia suprasti apie vardų
 erdves, kad nėra visiškai jokio ryšio tarp vardų skirtingose vardų
 erdvėse. Pvz.: du skirtingi moduliai gali apibrėžti tą pačią funkciją
-„maksimizuoti“ --- tam kad vartotojai nesusimaišytų, modulio
-vartotojai turėtų pridėti modulio vardą prieš funkciją.
+„maksimizuoti“ --- tam kad naudotojai nesusimaišytų, modulio
+naudotojai turėtų pridėti modulio vardą prieš funkciją.
 
 Tarp kitko, aš naudoju žodį *atributas* kiekvienam vardui po taško ---
 pvz.: reiškinyje ``z.real``, ``real`` yra objekto ``z`` atributas.
@@ -363,7 +363,7 @@ pridedant tam tikra unikalią eilutę prie duomenų atributų pradžioje
 o daiktavardžius naudoti duomenų atributams.
 
 Duomenų atributai gali būti pasiekiami tiek metodų tiek paprastų
-objekto vartotojų („klientų“). Kitaip sakant, klasės nėra tinkamos
+objekto naudotojų („klientų“). Kitaip sakant, klasės nėra tinkamos
 įgyvendinti abstrakčius duomenų tipus. Tiesa sakant, Python'e nėra
 nieko kas leistų paslėpti duomenis --- viskas yra paremta susitarimu.
 (Iš kitos pusės, Python'o implementacija parašyta C gali visiškai
@@ -486,7 +486,7 @@ Metodo perrašymas paveldėtoje klasėje gali praplėsti (užuot tiesiog
 pakeitus) viršklasio metodą tuo pačiu vardu. Bazinės klasės metodą
 iškviesti tiesiogiai yra labai paprasta: tiesiog
 iškvieskite ``BaseClassName.methodname(self, arguments)``.  Tai
-kartais naudinga ir vartotojams. (Pastebėkite, kad tai veikia
+kartais naudinga ir naudotojams. (Pastebėkite, kad tai veikia
 tik tada, kai bazinė klasė yra apibrėžta arba importuota tiesiogiai
 į globalią sritį).
 
@@ -624,7 +624,7 @@ objektas atitinkantis tą metodą.
 Išimtys yra klasės taip pat
 ===========================
 
-Vartotojų apibrėžtos išimtys yra identifikuojamos pagal klases taip pat.
+Naudotojų apibrėžtos išimtys yra identifikuojamos pagal klases taip pat.
 Naudojant šį mechanizmą galima sukurti praplečiamas išimčių hierarchijas.
 
 Egzistuoja dvi naujos validžios (semantinės) formos išimčių sukėlimui::
