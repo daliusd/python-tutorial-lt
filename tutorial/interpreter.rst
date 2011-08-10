@@ -94,7 +94,7 @@ Interaktyvus režimas
 
 Kai komandos yra nuskaitomos iš TTY įrenginio, sakome, kad interpretatorius yra
 interaktyviajame režime. Šiame režime *pirminis raginimas* (dažniausiai trys
-„daugiau“ ženklai ```>>>```) reiškia, kad interpretatorius yra pasiruošęs
+„daugiau“ ženklai ``>>>``) reiškia, kad interpretatorius yra pasiruošęs
 nuskaityti kitą komandą; antrinis raginimas (trys taškai ``...``) reiškia,
 kad laukiamas prieš tai įvestos komandos pratęsimas. Prieš atspausdindamas
 pirmąjį raginimą, interpretatorius parodo pasisveikinimo žinutę, kurioje
