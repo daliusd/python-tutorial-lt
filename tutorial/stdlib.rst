@@ -318,7 +318,7 @@ Python'as laikosi „baterijos pridedamos“ filosofijos. Tai geriausiai matoma
 
 * :mod:`xml.dom` ir :mod:`xml.sax` pakuotės pilnai palaiko šį populiarų
   duomenų pasikeitimo formatą. :mod:`csv` modulis palaiko dažno
-  duombazių formato skaitymą ir rašymą. Kartų, šie moduliai ir
+  duombazių formato skaitymą ir rašymą. Kartu, šie moduliai ir
   pakuotės labai supaprastina duomenų pasikeitimą tarp python'o
   programų ir kitų priemonių.
 
