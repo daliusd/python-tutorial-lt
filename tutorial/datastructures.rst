@@ -664,7 +664,7 @@ tarp to paties tipo sekų::
 Atkreipkite dėmesį į tai, kad skirtingų tipų palyginimas yra legalus.
 Rezultatas gali būti nustatytas tiksliai (bet viskas gali būti painu):
 tipai yra rikiuojami pagal vardus. Taigi sąrašas (**l**\ist) yra visada trumpesnis
-už eilutė (**s**\tring), eilutė visada trumpesnė už kortežą (**t**\uple) ir t.t.
+už eilutę (**s**\tring), eilutė visada trumpesnė už kortežą (**t**\uple) ir t.t.
 [#]_ Skirtingo tipo skaičiai lyginami pagal jų reikšmę, taigi 0 lygu 0.0 ir t.t.
 
 
