@@ -13,8 +13,7 @@ sys.path.append(os.path.abspath('tools/sphinxext'))
 # General configuration
 # ---------------------
 
-extensions = ['sphinx.ext.refcounting', 'sphinx.ext.coverage',
-              'sphinx.ext.doctest', 'pyspecific']
+extensions = ['sphinx.ext.coverage', 'sphinx.ext.doctest']
 try:
     import rst2pdf.pdfbuilder
     extensions.append('rst2pdf.pdfbuilder')

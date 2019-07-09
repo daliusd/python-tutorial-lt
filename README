@@ -1,11 +1,11 @@
 Prepare working environment
 ===========================
 
- $ sudo apt-get install python-sphinx rst2pdf
+ $ pipenv install
+ $ pipenv shell
 
 
 Generate HTML output
 ====================
 
  $ make
-

@@ -2,7 +2,7 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = bin/sphinx-build
+SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
 
@@ -14,7 +14,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 .PHONY: help clean html dirhtml pickle json htmlhelp qthelp latex changes linkcheck doctest
 
 default: tutorial vertimas.rst
-	python tools/sphinx-build.py -b html . $(BUILDDIR)/html
+	sphinx-build -b html . $(BUILDDIR)/html
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
