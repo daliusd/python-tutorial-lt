@@ -57,7 +57,7 @@ Prisidėti galima įvairiais būdais: naujais vertimais, pataisymais ir t.t.
 Vertimo repozitorija: https://github.com/daliusd/python-tutorial-lt
 
 Jei neaišku kaip versti žodį pasitikrinkite viename iš šių šaltinių:
-:ref:`glossary` arba http://www.likit.lt/en-lt/angl.html.
+:ref:`glossary` arba http://ims.mii.lt/ALK%C5%BD/.
 
 Vertėjai
 ========
