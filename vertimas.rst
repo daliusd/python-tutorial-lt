@@ -53,80 +53,11 @@ Kaip prisidėti?
 ===============
 
 Prisidėti galima įvairiais būdais: naujais vertimais, pataisymais ir t.t.
-Pataisymus galite tiesiog atsiųsti man, bet jei norite tai galite daryti
-ir kaip tikri programuotojai.
 
-Dokumentacija yra verčiama naudojantis bitbucket.org sistemoje
-sukurta Mercurial repozitorija: http://bitbucket.org/Dalius/python-tutorial-lt/
-
-Susikurkite paskyrą http://bitbucket.org arba prisijunkite ten naudodamiesi
-OpenId (jūs žinoma rinksitės šį variantą!). Tada jums reikės šakoti (kaip
-teisingai verčiasi fork'inti?) python-tutorial-lt repozitoriją ir jeigu
-norėsite, kad jūsų vertimas būtų įtrauktas į pagrindinę repozitoriją tiesiog
-mane informuokite (galite tai padaryti paštu dalius@sandbox.lt).
-
-Tiesa sakant, jūs neprivalote naudotis bitbucket.org, bet tai gali būti
-greitesnis ir paprastesnis būdas.
-
-Šiuo metu angliški failai imami iš pagrindinės Python'o repozitorijos
-ir tiesiog verčiami: http://svn.python.org/projects/python/trunk/Doc/.
-Jei jūs norite versti kažką kito negu tai, kas dabar yra repozitorijoje,
-paanalizuokite Python'o dokumentaciją. Tiesa sakant, griežtų reikalavimų
-nėra, kad reikia versti būtent iš Python'o dokumentacijos.
+Vertimo repozitorija: https://github.com/daliusd/python-tutorial-lt
 
 Jei neaišku kaip versti žodį pasitikrinkite viename iš šių šaltinių:
 :ref:`glossary` arba http://www.likit.lt/en-lt/angl.html.
-
-Kaip testuoti savo vertimą?
-===========================
-
-Aš naudoju tokį būdą (Ubuntu Linux sistemoje)::
-
-    cd projects
-    hg clone http://bitbucket.org/ianb/virtualenv/
-    python virtualenv/virtualenv.py pytut
-    cd pytut
-    ./bin/easy_install Sphinx
-    hg clone http://bitbucket.org/Dalius/python-tutorial-lt/
-    ./bin/sphinx-build -b html python-tutorial-lt/ pytut
-
-Jei norite sugeneruoti pdf'ą taip pat reikės įdiegti rst2pdf biblioteką::
-
-    ./bin/easy_install rst2pdf
-
-Prieš tai jums gali tekti įsirašyti kelis papildomus paketus::
-
-    sudo aptitude install build-essential
-    sudo aptitude install python-dev
-
-Kitas variantas – naudoti buildout (Ubuntu Linux sistemoje)::
-
-    cd projects
-    hg clone http://bitbucket.org/vakaras/python-tutorial-lt
-    make bootstrap
-    make buildout
-
-Kai darbo aplinka paruošta, galima susigeneruoti HTML (PDF) ir iš karto jį
-atverti::
-    
-    make show-html                      # Sugeneruoja HTML ir atveria 
-                                        # naršyklėje.
-    make show-pdf                       # Sugeneruoja PDF ir jį parodo.
-
-    make html                           # Tiesiog sugeneruoja HTML.
-    make pdf                            # Tiesiog sugeneruoja PDF.
-
-Taip pat galima dirbti ir be virtualenv ar buildout aplinkos. Įdiekite 
-reikalingas bibliotekas tiesiai į sistemą::
-
-    sudo apt-get install python-sphinx rst2pdf
-
-Naudokitės paruoštu make failu::
-
-    make && firefox ./html/index.html
-
-Šio būdo trūkumas yra toks, kad python-sphinx biblioteka yra
-pakankamai sena (be lietuviškų vertimų).
 
 Vertėjai
 ========

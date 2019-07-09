@@ -1,11 +1,13 @@
-Prepare working environment
-===========================
+PASTABA: projektas nebevystomas. Perkėliau į git'ą, nes lengviau randamas, nei bitbucket'e.
+
+Paruoškite darbo aplinką
+========================
 
  $ pipenv install
  $ pipenv shell
 
 
-Generate HTML output
-====================
+Sugeneruokite HTMLą
+===================
 
  $ make
